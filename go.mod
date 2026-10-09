@@ -8,3 +8,5 @@ require (
 	golang.org/x/sys v0.49.0 // indirect
 	google.golang.org/protobuf v1.36.11 // indirect
 )
+
+replace go.etcd.io/raft/v3 => ./.local-runs/raft
