@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "resolved_on": "2026-10-10",
+  "modules": [
+    {
+      "module": "go.etcd.io/raft/v3",
+      "version": "v3.7.0",
+      "sum": "h1:BGzlwx07bLv8PW6OU5HObuz1y4hlPZUXA07pM1mPUh4=",
+      "go_mod_sum": "h1:6gX6T2X907DjnjsFLODnTxba77stjs84W9gTTI0GUNA=",
+      "upstream_zip_sha256": "1dd9bfb2dc99832d7a236d2a4a39f4a8cdb3fbbbe28187ec8c0a478f7a96cec7"
+    },
+    {
+      "module": "github.com/anishathalye/porcupine",
+      "version": "v1.3.1",
+      "sum": "h1:fBZ4/NGNPnIDdd6xNtrNk9/GiEQ0L4FO5+scINN+t0E=",
+      "go_mod_sum": "h1:WM0SsFjWNl2Y4BqHr/E/ll2yY1GY1jqn+W7Z/84Zoog=",
+      "upstream_zip_sha256": "ed7d64fdef1df58ed8a3c6aa31e185c9f5649bf6607bb6708144c91253073ecc"
+    },
+    {
+      "module": "golang.org/x/sys",
+      "version": "v0.49.0",
+      "sum": "h1:XbzkgYJHdqh/8m2Uu0W/dQv8nktxx4BFHp1M0gROTXA=",
+      "go_mod_sum": "h1:hNLxWAXmnKAxqDtdwIYC4bM9oQPEecfsnNMuSxOs3og=",
+      "upstream_zip_sha256": "e73a06591ca0d7016ce3ccb45c36a8ed7128468aecc1a357f94d815c760c6b31"
+    },
+    {
+      "module": "google.golang.org/protobuf",
+      "version": "v1.36.11",
+      "sum": "h1:fV6ZwhNocDyBLK0dj+fg8ektcVegBBuEolpbTQyBNVE=",
+      "go_mod_sum": "h1:HTf+CrKn2C3g5S8VImy6tdcUvCska2kB7j23XfzDpco=",
+      "upstream_zip_sha256": "14983d36c56a814ed91b6d652f2b8f895baba1b84eb43b28a0b132c8637cd274"
+    }
+  ]
+}

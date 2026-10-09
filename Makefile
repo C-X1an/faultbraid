@@ -1,4 +1,8 @@
+ifeq ($(OS),Windows_NT)
+SHELL := sh.exe
+else
 SHELL := /bin/sh
+endif
 export GOTOOLCHAIN ?= local
 GO ?= go
 PYTHON ?= python3
@@ -6,8 +10,7 @@ PYTHON ?= python3
 bootstrap:
 	$(PYTHON) scripts/bootstrap.py
 build:
-	mkdir -p bin
-	$(GO) build -trimpath -o bin/faultbraid ./cmd/faultbraid
+	$(PYTHON) scripts/build.py
 fmt:
 	gofmt -w cmd internal tests
 fmt-check:
@@ -63,4 +66,4 @@ target system:
 differential:
 	$(GO) test -count=1 ./tests/differential
 campaign: build
-	./bin/faultbraid campaign -seed-start 0 -count 1000 -outdir .local-runs/campaign
+	$(PYTHON) scripts/campaign.py
