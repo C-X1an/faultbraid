@@ -1,0 +1,101 @@
+diff --git a/raft.go b/raft.go
+index b5fce08..13d26e8 100644
+--- a/raft.go
++++ b/raft.go
+@@ -141,6 +141,14 @@ type Config struct {
+ 	// unnecessary leader switching.
+ 	ElectionTick int
++	//
++	// ElectionRandom, when non-nil, selects the election-timeout offset in
++	// [0,n). It is called only with n == ElectionTick and is retained by this
++	// raft instance. A result outside [0,n) causes a panic. Nil preserves the
++	// upstream cryptographic global random source.
++	//
++	// FaultBraid instrumentation: added for deterministic record/replay.
++	ElectionRandom func(n int) int
+ 	// HeartbeatTick is the number of Node.Tick invocations that must pass between
+ 	// heartbeats. That is, a leader sends heartbeat messages to maintain its
+ 	// leadership every HeartbeatTick ticks.
+ 	HeartbeatTick int
+@@ -416,6 +424,7 @@ type raft struct {
+ 
+ 	heartbeatTimeout int
+ 	electionTimeout  int
++	electionRandom   func(int) int
+ 	// randomizedElectionTimeout is a random number between
+ 	// [electiontimeout, 2 * electiontimeout - 1]. It gets reset
+ 	// when raft changes its state to follower or candidate.
+@@ -456,6 +465,7 @@ func newRaft(c *Config) *raft {
+ 		trk:                         tracker.MakeProgressTracker(c.MaxInflightMsgs, c.MaxInflightBytes),
+ 		electionTimeout:             c.ElectionTick,
+ 		heartbeatTimeout:            c.HeartbeatTick,
++		electionRandom:              c.ElectionRandom,
+ 		logger:                      c.Logger,
+ 		checkQuorum:                 c.CheckQuorum,
+ 		preVote:                     c.PreVote,
+@@ -2051,7 +2061,16 @@ func (r *raft) pastElectionTimeout() bool {
+ }
+ 
+ func (r *raft) resetRandomizedElectionTimeout() {
+-	r.randomizedElectionTimeout = r.electionTimeout + globalRand.Intn(r.electionTimeout)
++	offset := 0
++	if r.electionRandom == nil {
++		offset = globalRand.Intn(r.electionTimeout)
++	} else {
++		offset = r.electionRandom(r.electionTimeout)
++		if offset < 0 || offset >= r.electionTimeout {
++			r.logger.Panicf("election random result %d is outside [0,%d)", offset, r.electionTimeout)
++		}
++	}
++	r.randomizedElectionTimeout = r.electionTimeout + offset
+ }
+ 
+ func (r *raft) sendTimeoutNow(to uint64) {
+diff --git a/raft_test.go b/raft_test.go
+index d1b83d0..c639520 100644
+--- a/raft_test.go
++++ b/raft_test.go
+@@ -1123,6 +1123,43 @@ func TestPastElectionTimeout(t *testing.T) {
+ 	}
+ }
+ 
++func TestElectionRandomInjection(t *testing.T) {
++	choices := []int{3, 7, 0}
++	calls := 0
++	cfg := newTestConfig(1, 10, 1, newTestMemoryStorage(withPeers(1)))
++	cfg.ElectionRandom = func(n int) int {
++		assert.Equal(t, 10, n)
++		choice := choices[calls]
++		calls++
++		return choice
++	}
++	r := newRaft(cfg)
++	assert.Equal(t, 13, r.randomizedElectionTimeout)
++	r.resetRandomizedElectionTimeout()
++	assert.Equal(t, 17, r.randomizedElectionTimeout)
++	r.resetRandomizedElectionTimeout()
++	assert.Equal(t, 10, r.randomizedElectionTimeout)
++	assert.Equal(t, len(choices), calls)
++}
++
++func TestElectionRandomInjectionRejectsOutOfRange(t *testing.T) {
++	for _, choice := range []int{-1, 10} {
++		t.Run(fmt.Sprintf("choice=%d", choice), func(t *testing.T) {
++			defer func() {
++				if recover() == nil {
++					t.Fatalf("expected panic for election random choice %d", choice)
++				}
++			}()
++			cfg := newTestConfig(1, 10, 1, newTestMemoryStorage(withPeers(1)))
++			cfg.ElectionRandom = func(n int) int {
++				assert.Equal(t, 10, n)
++				return choice
++			}
++			newRaft(cfg)
++		})
++	}
++}
++
+ // TestStepIgnoreOldTermMsg to ensure that the Step function ignores the message
+ // from old term and does not pass it to the actual stepX function.
+ func TestStepIgnoreOldTermMsg(t *testing.T) {

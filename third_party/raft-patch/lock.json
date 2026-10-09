@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "module": "go.etcd.io/raft/v3",
+  "version": "v3.7.0",
+  "sum": "h1:BGzlwx07bLv8PW6OU5HObuz1y4hlPZUXA07pM1mPUh4=",
+  "go_mod_sum": "h1:6gX6T2X907DjnjsFLODnTxba77stjs84W9gTTI0GUNA=",
+  "upstream_zip_sha256": "1dd9bfb2dc99832d7a236d2a4a39f4a8cdb3fbbbe28187ec8c0a478f7a96cec7",
+  "patch_sha256": "01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647",
+  "prepared_tree_sha256": "759d80ebc875f015ae01d96d516cb8362f706a453ec18b4d1f9695c5c939444c"
+}

@@ -1,0 +1,13 @@
+FaultBraid instrumented etcd/raft source patch
+
+This directory contains a minimal source patch for etcd/raft v3.7.0.
+The upstream project is https://github.com/etcd-io/raft at tag v3.7.0,
+commit b867cf13f6bc0dae21204302df97bc2355c3af55.
+
+The patch adds Config.ElectionRandom and upstream tests for deterministic,
+per-instance election timeout selection. Modified files carry a FaultBraid
+instrumentation notice in the added API documentation. The prepared upstream
+source is generated under .local-runs and is not committed.
+
+etcd/raft v3.7.0 is licensed under the Apache License, Version 2.0. A copy is
+included as LICENSE in this directory. The upstream archive has no NOTICE file.
