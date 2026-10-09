@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "model": "disk-register-v1",
+  "events": [
+    {
+      "at": 1,
+      "kind": "write",
+      "value": 7
+    },
+    {
+      "at": 2,
+      "kind": "crash",
+      "value": 0
+    },
+    {
+      "at": 3,
+      "kind": "read",
+      "value": 0
+    },
+    {
+      "at": 4,
+      "kind": "write",
+      "value": 9
+    },
+    {
+      "at": 5,
+      "kind": "sync",
+      "value": 0
+    },
+    {
+      "at": 6,
+      "kind": "crash",
+      "value": 0
+    },
+    {
+      "at": 7,
+      "kind": "read",
+      "value": 0
+    }
+  ],
+  "steps": [
+    {
+      "at": 1,
+      "sequence": 0,
+      "kind": "write",
+      "volatile": 7,
+      "durable": 0
+    },
+    {
+      "at": 2,
+      "sequence": 1,
+      "kind": "crash",
+      "volatile": 0,
+      "durable": 0
+    },
+    {
+      "at": 3,
+      "sequence": 2,
+      "kind": "read",
+      "volatile": 0,
+      "durable": 0,
+      "observed": 0
+    },
+    {
+      "at": 4,
+      "sequence": 3,
+      "kind": "write",
+      "volatile": 9,
+      "durable": 0
+    },
+    {
+      "at": 5,
+      "sequence": 4,
+      "kind": "sync",
+      "volatile": 9,
+      "durable": 9
+    },
+    {
+      "at": 6,
+      "sequence": 5,
+      "kind": "crash",
+      "volatile": 9,
+      "durable": 9
+    },
+    {
+      "at": 7,
+      "sequence": 6,
+      "kind": "read",
+      "volatile": 9,
+      "durable": 9,
+      "observed": 9
+    }
+  ],
+  "digest": "2b3caa64c5c66f37f3519d59f4b69cc810e7f0efd4384a5eb806c746e6c332e9"
+}

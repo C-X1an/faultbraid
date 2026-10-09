@@ -1,0 +1,14 @@
+/.local-runs/
+/bin/
+*.test
+*.out
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+/private/
+/runtime/
+/.codex/
+/AGENTS.override.md
+/.DS_Store

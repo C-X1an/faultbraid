@@ -1,0 +1,210 @@
+{
+  "scope": "Kernel subset; full release remains blocked",
+  "criteria": [
+    {
+      "id": "AC-001",
+      "requirement": "FR-001",
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+      ],
+      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+    },
+    {
+      "id": "AC-002",
+      "requirement": "FR-002",
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+      ],
+      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+    },
+    {
+      "id": "AC-003",
+      "requirement": "FR-002",
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+      ],
+      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+    },
+    {
+      "id": "AC-004",
+      "requirement": "FR-003",
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+      ],
+      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+    },
+    {
+      "id": "AC-005",
+      "requirement": "FR-004",
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+      ],
+      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+    },
+    {
+      "id": "AC-006",
+      "requirement": "FR-005",
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+      ],
+      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+    },
+    {
+      "id": "AC-007",
+      "requirement": "FR-006",
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+      ],
+      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+    },
+    {
+      "id": "AC-008",
+      "requirement": "FR-007",
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+      ],
+      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+    },
+    {
+      "id": "AC-009",
+      "requirement": "FR-008",
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+      ],
+      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+    },
+    {
+      "id": "AC-010",
+      "requirement": "FR-012",
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+      ],
+      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+    },
+    {
+      "id": "AC-011",
+      "requirement": "FR-009",
+      "status": "NOT RUN",
+      "evidence": [],
+      "note": "Required full-target behavior has not been executed."
+    },
+    {
+      "id": "AC-012",
+      "requirement": "FR-010",
+      "status": "NOT RUN",
+      "evidence": [],
+      "note": "Required full-target behavior has not been executed."
+    },
+    {
+      "id": "AC-013",
+      "requirement": "REL-002",
+      "status": "NOT RUN",
+      "evidence": [],
+      "note": "Required full-target behavior has not been executed."
+    },
+    {
+      "id": "AC-014",
+      "requirement": "REL-003",
+      "status": "NOT RUN",
+      "evidence": [],
+      "note": "Required full-target behavior has not been executed."
+    },
+    {
+      "id": "AC-015",
+      "requirement": "FR-011",
+      "status": "NOT RUN",
+      "evidence": [],
+      "note": "Required full-target behavior has not been executed."
+    },
+    {
+      "id": "AC-016",
+      "requirement": "FR-002",
+      "status": "NOT RUN",
+      "evidence": [],
+      "note": "9,724-case local oracle passed, but required Porcupine integration remains NOT RUN; criterion is not passed."
+    },
+    {
+      "id": "AC-017",
+      "requirement": "SEC-002",
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261009T183457-ceed810e39/run.json"
+      ],
+      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+    },
+    {
+      "id": "AC-018",
+      "requirement": "NFR-003",
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261009T183437-2fd67af1c6/run.json"
+      ],
+      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+    },
+    {
+      "id": "AC-019",
+      "requirement": "FR-013",
+      "status": "NOT RUN",
+      "evidence": [],
+      "note": "Required full-target behavior has not been executed."
+    },
+    {
+      "id": "AC-020",
+      "requirement": "NFR-004",
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261009T183735-e527918963/run.json"
+      ],
+      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+    },
+    {
+      "id": "AC-021",
+      "requirement": "SEC-003",
+      "status": "PASS",
+      "evidence": [
+        "verification/public-inventory-audit.json"
+      ],
+      "note": "Exact public source inventory, original Git historical paths, known-private-marker scan and unapproved-export negative control passed. Final ZIP checked against this list. Heuristic scan is not a comprehensive online secret audit."
+    },
+    {
+      "id": "AC-022",
+      "requirement": "PERF-001",
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261009T183516-11cad33b9f/run.json"
+      ],
+      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+    },
+    {
+      "id": "AC-023",
+      "requirement": "PERF-002",
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261009T183516-11cad33b9f/run.json"
+      ],
+      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+    },
+    {
+      "id": "AC-024",
+      "requirement": "PERF-003",
+      "status": "NOT RUN",
+      "evidence": [],
+      "note": "Required full-target behavior has not been executed."
+    }
+  ],
+  "independent_review": {
+    "status": "NOT RUN",
+    "reason": "No separate read-only verifier was executed"
+  },
+  "supported_toolchain_verified": false
+}

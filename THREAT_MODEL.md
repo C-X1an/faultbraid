@@ -1,0 +1,23 @@
+# Threat model
+Method: STRIDE at explicit trust boundaries, plus resource/evidence abuse. This document is a design, not evidence that the system is secure.
+
+Assets: correctness of verdicts, source/trace provenance, host files, CI tokens, private planning material, reviewer trust and machine resources. Actors: trusted maintainer, authorized engineer, untrusted input author, fork PR author, compromised dependency and local privileged attacker. Core code and OS are trusted; imported bytes are not. There is no multi-tenant service or live model in the core.
+
+| ID | Preconditions and threat | Impact / likelihood | Mitigation | Residual risk | Required evidence |
+|---|---|---|---|---|---|
+| T01 | Crafted large/deep/duplicate JSON | resource exhaustion or ambiguous verdict; high | byte/depth/operation limits, strict fields, duplicate detection | parser/runtime bugs | AC-001,AC-017 fuzz/known-bad inputs |
+| T02 | Exponential histories | CPU/memory denial; high | state budget, bounded memo/operation count, cancellation | bounded expensive runs still consume resources | AC-005,AC-017 |
+| T03 | HTML/script/control characters in input | report XSS or misleading terminal; medium | html/template escaping, no script/assets, safe ID grammar, bounded JSON errors | browser vulnerabilities/local unsafe viewing | AC-010 |
+| T04 | Trace or result edited | false reproducibility; high | rerun model, compare canonical digest, source identity and raw evidence | maintainer/root can rewrite all evidence and hashes | AC-009,AC-014,CI rerun |
+| T05 | Hidden entropy or nondeterministic iteration | replay mismatch and false diagnosis; high | per-node injected entropy, sorted iteration, one scheduler, negative controls | uncontrolled new dependency behavior | AC-014,upstream source review |
+| T06 | Missing pending write treated as failed | false INVALID or false VALID verdict; high | completion semantics with optional pending writes; independent model | unsupported client history formats | AC-004,AC-016 |
+| T07 | Mock disk mistaken for real durability | false resilience claims; high | explicit model bounds, separate process conformance | physical power loss/filesystem behavior not certified | AC-013,AC-019 and limitations |
+| T08 | Untrusted plugin/native target | host command execution/exfiltration; high if allowed | only built-in targets; no executable/path in data; explicit disposable process lab | built-in dependencies execute trusted code | public source review,SEC-001 |
+| T09 | Output path symlink or existing file | overwrite host data; medium | exclusive file creation; new tool-owned directory; no input-derived paths | trusted operator can choose sensitive parent paths | AC-010 output-path tests |
+| T10 | Secret/private planning accidentally exported | confidentiality loss; high | public/private sibling roots, allowlist export, history/content audit, no parent git init | heuristic scans cannot guarantee absence | AC-021,manual release review |
+| T11 | Malicious PR/dependency | token theft or supply-chain compromise; medium | no pull_request_target execution, contents:read, pinned actions, reviewed module hashes, govulncheck | trusted release workflow/registry compromise | CI review + scanner evidence |
+| T12 | Agent edits tests/evidence to pass | invalid portfolio claim; high | immutable criteria, separate verifier, mutation controls, retained raw logs and reproducible CI | one actor controlling all artifacts can forge them | AC-018, final reviewer findings |
+| T13 | Broken reducer removes causal prerequisites | irrelevant or non-executable counterexample; high | rerun target, reject invalid scenarios, same invariant fingerprint, final replay | different root cause may share fingerprint | AC-015 |
+| T14 | Child crash/leak or loopback endpoint abused locally | resource use, contaminated test; medium | owned process group, timeouts, bounded bodies, loopback, temporary storage, teardown checks | other local users are not a strong isolation boundary | AC-019 |
+
+Authentication/authorization and secrets are not invented for an offline tool. Workload identity, SSRF, public tenant isolation, sandbox escape and prompt injection become relevant only if somebody adds a network execution service or AI workflow; these are non-goals and require a new threat review. Local loopback is not authentication. The seed opens no network socket. Dependency licenses and instrumented-source patches must be preserved. Never call simulated partitions a defense against hostile network peers or claim Byzantine tolerance.

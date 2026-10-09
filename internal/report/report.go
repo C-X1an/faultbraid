@@ -1,0 +1,92 @@
+// Package report renders static, escaped reports and exclusively creates files.
+package report
+
+import (
+	"bytes"
+	"errors"
+	"github.com/C-X1an/faultbraid/internal/history"
+	"html/template"
+	"io"
+	"os"
+	"path/filepath"
+)
+
+const MaxReportBytes = 8 << 20
+const page = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>FaultBraid - history inspection</title>
+<style>body{font:17px/1.6 system-ui,sans-serif;max-width:70rem;margin:auto;padding:2rem}h1{font-size:2.4rem;line-height:1.2}table{border-collapse:collapse;width:100%;overflow-wrap:anywhere}th,td{padding:.65rem;text-align:left;border-bottom:1px solid}code{font-size:.9em}a:focus{outline:3px solid}small{font-size:.85em}.status{font-size:1.5rem;font-weight:700}section{margin-block:2rem}caption{text-align:left;font-weight:600;padding:.5rem 0}</style></head>
+<body><header><p>FAULTBRAID / EXPERIMENTAL KERNEL</p><h1>A history you can inspect.</h1><p class="status">{{.Result.Status}}</p><p>{{.Result.Reason}}</p></header>
+<main><section aria-labelledby="scope"><h2 id="scope">What this result means</h2><p>This bounded check concerns one integer-register history. It is not a distributed-target test, security guarantee or proof about every possible execution.</p><p>Initial value: <code>{{.History.Initial}}</code>. Visited search states: <code>{{.Result.States}}</code>.</p><p>Legal witness: {{range .Result.Witness}}<code>{{.}}</code> {{else}}none{{end}}. Pending writes may be included or omitted; pending reads have no observed result.</p></section>
+<section aria-labelledby="ops"><h2 id="ops">Operation intervals</h2><table><caption>Input history, version {{.History.Version}}</caption><thead><tr><th scope="col">ID</th><th scope="col">Kind</th><th scope="col">Value</th><th scope="col">Call</th><th scope="col">Return</th></tr></thead><tbody>{{range .History.Operations}}<tr><td>{{.ID}}</td><td>{{.Kind}}</td><td>{{.Value}}</td><td>{{.Call}}</td><td>{{if .Return}}{{.Return}}{{else}}pending{{end}}</td></tr>{{end}}</tbody></table></section>
+<section><h2>Reproduce, do not infer</h2><p>Use the original JSON and the same source and search budget. INVALID means all admissible orders were exhausted. INCONCLUSIVE means the search stopped without a verdict. Diagnostic history reduction does not establish an executable failure scenario.</p></section></main><footer><small>Local report. No external resources, scripts or data uploads.</small></footer></body></html>`
+
+var tmpl = template.Must(template.New("report").Parse(page))
+
+func Render(h history.History, r history.Result) ([]byte, error) {
+	if len(h.Operations) > history.MaxOperations || len(r.Witness) > history.MaxOperations || len(r.Reason) > 1024 {
+		return nil, errors.New("report input exceeds limit")
+	}
+	for _, op := range h.Operations {
+		if len(op.ID) > 1024 || len(op.Kind) > 1024 {
+			return nil, errors.New("report string exceeds limit")
+		}
+	}
+	for _, id := range r.Witness {
+		if len(id) > 1024 {
+			return nil, errors.New("report string exceeds limit")
+		}
+	}
+	if r.Status != history.Valid && r.Status != history.Invalid && r.Status != history.Inconclusive {
+		return nil, errors.New("invalid report status")
+	}
+	var b bytes.Buffer
+	if err := tmpl.Execute(&b, struct {
+		History history.History
+		Result  history.Result
+	}{h, r}); err != nil {
+		return nil, err
+	}
+	if b.Len() > MaxReportBytes {
+		return nil, errors.New("report output exceeds limit")
+	}
+	return b.Bytes(), nil
+}
+
+// WriteExclusive never overwrites an existing leaf and rejects existing symlink
+// parents. The local operator and filesystem are trusted; this is not a defense
+// against a privileged concurrent parent-directory rename race.
+func WriteExclusive(path string, data []byte) error {
+	if len(data) > MaxReportBytes {
+		return errors.New("output exceeds limit")
+	}
+	full, err := filepath.Abs(path)
+	if err != nil {
+		return err
+	}
+	for parent := filepath.Dir(full); ; parent = filepath.Dir(parent) {
+		st, err := os.Lstat(parent)
+		if err != nil {
+			return err
+		}
+		if st.Mode()&os.ModeSymlink != 0 || !st.IsDir() {
+			return errors.New("unsafe output parent")
+		}
+		next := filepath.Dir(parent)
+		if next == parent {
+			break
+		}
+	}
+	f, err := os.OpenFile(full, os.O_WRONLY|os.O_CREATE|os.O_EXCL, 0600)
+	if err != nil {
+		return err
+	}
+	n, writeErr := f.Write(data)
+	if writeErr == nil && n != len(data) {
+		writeErr = io.ErrShortWrite
+	}
+	closeErr := f.Close()
+	if writeErr != nil {
+		return writeErr
+	}
+	return closeErr
+}

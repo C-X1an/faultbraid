@@ -1,0 +1,2 @@
+# History semantics
+Read API_SPEC.md and ACCEPTANCE_SPEC.md. Pending writes may be included or omitted; pending reads have no observed value. Precedence is strict return<call. Never memoize a partially explored failed state after cancellation/budget exhaustion. The finite permutation oracle must not call production search internals. Diagnostic reduction must recheck every accepted candidate and must not claim causal replay.
