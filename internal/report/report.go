@@ -76,8 +76,13 @@ func WriteExclusive(path string, data []byte) error {
 			break
 		}
 	}
-	f, err := os.OpenFile(full, os.O_WRONLY|os.O_CREATE|os.O_EXCL, 0600)
+	f, err := openExclusive(full)
 	if err != nil {
+		return err
+	}
+	if err := protectFile(f); err != nil {
+		_ = f.Close()
+		_ = os.Remove(full)
 		return err
 	}
 	n, writeErr := f.Write(data)

@@ -80,6 +80,9 @@ func run(args []string, stdin io.Reader, stdout, stderr io.Writer) int {
 			return fail(stderr, "INVALID_INPUT", err.Error())
 		}
 		if err := sim.Replay(t); err != nil {
+			if errors.Is(err, sim.ErrUnsupportedVersion) {
+				return fail(stderr, "UNSUPPORTED_VERSION", err.Error())
+			}
 			return fail(stderr, "REPLAY_MISMATCH", err.Error())
 		}
 		if err := json.NewEncoder(stdout).Encode(map[string]string{"status": "PASS", "digest": t.Digest, "scope": t.Model}); err != nil {
@@ -89,6 +92,9 @@ func run(args []string, stdin io.Reader, stdout, stderr io.Writer) int {
 	}
 	h, err := history.Decode(reader)
 	if err != nil {
+		if errors.Is(err, history.ErrUnsupportedVersion) {
+			return fail(stderr, "UNSUPPORTED_VERSION", err.Error())
+		}
 		return fail(stderr, "INVALID_INPUT", err.Error())
 	}
 	opts := history.Options{MaxStates: *max}
@@ -99,6 +105,9 @@ func run(args []string, stdin io.Reader, stdout, stderr io.Writer) int {
 		}
 		if err := json.NewEncoder(stdout).Encode(r); err != nil {
 			return 2
+		}
+		if r.Status == history.Inconclusive {
+			return 3
 		}
 		return 0
 	}

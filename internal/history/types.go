@@ -7,6 +7,8 @@ import (
 	"io"
 )
 
+var ErrUnsupportedVersion = errors.New("unsupported history version")
+
 const MaxOperations = 24
 const DefaultMaxStates = 100000
 const MaxStatesLimit = 1000000
@@ -49,7 +51,7 @@ func Decode(r io.Reader) (History, error) {
 }
 func (h History) Validate() error {
 	if h.Version != 1 {
-		return errors.New("unsupported history version")
+		return ErrUnsupportedVersion
 	}
 	if len(h.Operations) > MaxOperations {
 		return errors.New("too many operations")

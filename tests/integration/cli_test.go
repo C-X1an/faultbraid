@@ -5,13 +5,18 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"runtime"
 	"strings"
 	"testing"
 )
 
 func TestRealCLI(t *testing.T) {
 	tmp := t.TempDir()
-	binary := filepath.Join(tmp, "faultbraid")
+	binaryName := "faultbraid"
+	if runtime.GOOS == "windows" {
+		binaryName += ".exe"
+	}
+	binary := filepath.Join(tmp, binaryName)
 	root := "../.."
 	build := exec.Command("go", "build", "-o", binary, "./cmd/faultbraid")
 	build.Dir = root
@@ -47,14 +52,48 @@ func TestRealCLI(t *testing.T) {
 		}
 	}
 	call(3, "check", "-in", filepath.Join(root, "examples/valid.json"), "-max-states", "1")
+	minimized := call(3, "minimize", "-in", filepath.Join(root, "examples/invalid.json"), "-max-checks", "1")
+	var reduction map[string]any
+	if e := json.Unmarshal(minimized, &reduction); e != nil || reduction["status"] != "INCONCLUSIVE" || reduction["one_minimal"] != false {
+		t.Fatalf("bad inconclusive reduction %s %v", minimized, e)
+	}
 	call(2, "check", "-max-states", "nope")
 	call(2, "missing")
 	call(2, "check", "-out", "ignored.html")
+	unsupportedHistory := filepath.Join(tmp, "history-v2.json")
+	if e := os.WriteFile(unsupportedHistory, []byte(`{"version":2,"initial":0,"operations":[]}`), 0600); e != nil {
+		t.Fatal(e)
+	}
+	if b := call(2, "check", "-in", unsupportedHistory); !strings.Contains(string(b), "UNSUPPORTED_VERSION") {
+		t.Fatalf("wrong history version classification: %s", b)
+	}
 	dir := filepath.Join(tmp, "demo")
 	call(0, "demo", "-outdir", dir)
 	call(2, "demo", "-outdir", dir)
 	tracePath := filepath.Join(dir, "disk-trace.json")
 	call(0, "replay", "-in", tracePath)
+	for name, replacement := range map[string]any{"version": float64(2), "model": "other-model"} {
+		original, e := os.ReadFile(tracePath)
+		if e != nil {
+			t.Fatal(e)
+		}
+		var unsupported map[string]any
+		if e = json.Unmarshal(original, &unsupported); e != nil {
+			t.Fatal(e)
+		}
+		unsupported[name] = replacement
+		encoded, e := json.Marshal(unsupported)
+		if e != nil {
+			t.Fatal(e)
+		}
+		path := filepath.Join(tmp, "unsupported-"+name+".json")
+		if e = os.WriteFile(path, encoded, 0600); e != nil {
+			t.Fatal(e)
+		}
+		if b := call(2, "replay", "-in", path); !strings.Contains(string(b), "UNSUPPORTED_VERSION") {
+			t.Fatalf("wrong trace %s classification: %s", name, b)
+		}
+	}
 	b, e := os.ReadFile(tracePath)
 	if e != nil {
 		t.Fatal(e)

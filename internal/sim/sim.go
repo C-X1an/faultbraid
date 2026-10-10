@@ -13,6 +13,8 @@ import (
 
 const MaxEvents = 100000
 
+var ErrUnsupportedVersion = errors.New("unsupported trace version or model")
+
 type Event struct {
 	At    uint64 `json:"at"`
 	Kind  string `json:"kind"`
@@ -158,7 +160,7 @@ func Run(events []Event) (Trace, error) {
 // Replay executes the model again and compares the entire canonical envelope.
 func Replay(t Trace) error {
 	if t.Version != 1 || t.Model != "disk-register-v1" {
-		return errors.New("unsupported trace version or model")
+		return ErrUnsupportedVersion
 	}
 	if len(t.Steps) > MaxEvents {
 		return errors.New("step limit exceeded")

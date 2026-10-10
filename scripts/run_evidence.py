@@ -4,6 +4,45 @@ from __future__ import annotations
 import argparse,datetime,hashlib,json,os,platform,signal,subprocess,sys,time,uuid
 from pathlib import Path
 IGNORE={'.git','.local-runs','bin','__pycache__','.pytest_cache'}
+
+class _WindowsJob:
+ def __init__(self):
+  self.handle=None;self.assigned=False
+  if os.name!='nt':return
+  import ctypes
+  from ctypes import wintypes
+  class IO_COUNTERS(ctypes.Structure):
+   _fields_=[('ReadOperationCount',ctypes.c_uint64),('WriteOperationCount',ctypes.c_uint64),('OtherOperationCount',ctypes.c_uint64),('ReadTransferCount',ctypes.c_uint64),('WriteTransferCount',ctypes.c_uint64),('OtherTransferCount',ctypes.c_uint64)]
+  class BASIC_LIMITS(ctypes.Structure):
+   _fields_=[('PerProcessUserTimeLimit',ctypes.c_int64),('PerJobUserTimeLimit',ctypes.c_int64),('LimitFlags',wintypes.DWORD),('MinimumWorkingSetSize',ctypes.c_size_t),('MaximumWorkingSetSize',ctypes.c_size_t),('ActiveProcessLimit',wintypes.DWORD),('Affinity',ctypes.c_size_t),('PriorityClass',wintypes.DWORD),('SchedulingClass',wintypes.DWORD)]
+  class EXTENDED_LIMITS(ctypes.Structure):
+   _fields_=[('BasicLimitInformation',BASIC_LIMITS),('IoInfo',IO_COUNTERS),('ProcessMemoryLimit',ctypes.c_size_t),('JobMemoryLimit',ctypes.c_size_t),('PeakProcessMemoryUsed',ctypes.c_size_t),('PeakJobMemoryUsed',ctypes.c_size_t)]
+  kernel32=ctypes.WinDLL('kernel32',use_last_error=True)
+  kernel32.CreateJobObjectW.argtypes=[wintypes.LPVOID,wintypes.LPCWSTR]
+  kernel32.CreateJobObjectW.restype=wintypes.HANDLE
+  kernel32.SetInformationJobObject.argtypes=[wintypes.HANDLE,ctypes.c_int,wintypes.LPVOID,wintypes.DWORD]
+  kernel32.AssignProcessToJobObject.argtypes=[wintypes.HANDLE,wintypes.HANDLE]
+  kernel32.TerminateJobObject.argtypes=[wintypes.HANDLE,wintypes.UINT]
+  kernel32.CloseHandle.argtypes=[wintypes.HANDLE]
+  self._kernel32=kernel32
+  self.handle=kernel32.CreateJobObjectW(None,None)
+  if not self.handle:raise ctypes.WinError(ctypes.get_last_error())
+  limits=EXTENDED_LIMITS();limits.BasicLimitInformation.LimitFlags=0x00002000
+  if not kernel32.SetInformationJobObject(self.handle,9,ctypes.byref(limits),ctypes.sizeof(limits)):
+   self.close();raise ctypes.WinError(ctypes.get_last_error())
+ def assign(self,proc):
+  if self.handle is None:return
+  import ctypes
+  from ctypes import wintypes
+  if not self._kernel32.AssignProcessToJobObject(self.handle,wintypes.HANDLE(int(proc._handle))):
+   raise ctypes.WinError(ctypes.get_last_error())
+  self.assigned=True
+ def terminate(self):
+  if self.handle is not None and self.assigned:self._kernel32.TerminateJobObject(self.handle,1)
+ def close(self):
+  if self.handle is not None:
+   self._kernel32.CloseHandle(self.handle);self.handle=None
+
 def sha(path:Path)->str:
  h=hashlib.sha256()
  with path.open('rb') as f:
@@ -13,7 +52,9 @@ def source_identity(root:Path)->dict:
  files=[]
  for p in sorted(root.rglob('*')):
   rel=p.relative_to(root)
-  if any(x in IGNORE for x in rel.parts) or p.is_symlink() or not p.is_file():continue
+  if p.is_symlink() or (hasattr(p,'is_junction') and p.is_junction()):raise ValueError('source tree contains symlink or junction: '+rel.as_posix())
+  if any(x in IGNORE for x in rel.parts):continue
+  if not p.is_file():continue
   files.append({'path':rel.as_posix(),'sha256':sha(p)})
  tree=hashlib.sha256(json.dumps(files,sort_keys=True,separators=(',',':')).encode()).hexdigest()
  def git(*args):
@@ -49,14 +90,23 @@ def execute(command:list[str],cwd:Path,outdir:Path,category:str='verification',r
  start=datetime.datetime.now(datetime.timezone.utc).isoformat();clock=time.monotonic();reason='completed';code=None
  with stdout.open('xb') as so,stderr.open('xb') as se:
   try:
+   job=_WindowsJob()
    proc=subprocess.Popen(command,cwd=cwd,stdout=so,stderr=se,env=env,start_new_session=os.name=='posix')
+   try:
+    job.assign(proc)
+   except OSError:
+    job.close();job=None
    while proc.poll() is None:
     if time.monotonic()-clock>timeout or stdout.stat().st_size+stderr.stat().st_size>20*1024*1024:
      reason='timeout' if time.monotonic()-clock>timeout else 'output_limit'
      try:
       if os.name=='posix':os.killpg(proc.pid,signal.SIGKILL)
-      else:proc.kill()
+      elif job is not None:job.terminate()
+      else:subprocess.run(['taskkill','/PID',str(proc.pid),'/T','/F'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,timeout=10)
      except ProcessLookupError:pass
+     except (OSError,subprocess.TimeoutExpired):
+      try:proc.kill()
+      except OSError:pass
      break
     time.sleep(.02)
    code=proc.wait()
@@ -64,6 +114,8 @@ def execute(command:list[str],cwd:Path,outdir:Path,category:str='verification',r
    status='PASS' if code==0 and reason=='completed' else 'FAIL'
   except OSError:
    status='BLOCKED';reason='spawn_error';se.write(b'Command could not be started.\n')
+  finally:
+   if 'job' in locals() and job is not None:job.close()
  end=datetime.datetime.now(datetime.timezone.utc).isoformat()
  record={'schema_version':1,'run_id':run_id,'category':category,'requirements':requirements or [],'command':command,'cwd':str(cwd),'started_utc':start,'ended_utc':end,'duration_seconds':time.monotonic()-clock,'status':status,'reason':reason,'exit_code':code,'environment':runtime,'source':identity,'stdout':{'path':str(stdout),'sha256':sha(stdout),'bytes':stdout.stat().st_size},'stderr':{'path':str(stderr),'sha256':sha(stderr),'bytes':stderr.stat().st_size}}
  (folder/'run.json').write_text(json.dumps(record,indent=2)+'\n')

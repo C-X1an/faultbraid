@@ -2,7 +2,6 @@ package report
 
 import (
 	"github.com/C-X1an/faultbraid/internal/history"
-	"os"
 	"path/filepath"
 	"strings"
 	"testing"
@@ -30,21 +29,14 @@ func TestEscapesAndExclusiveOutput(t *testing.T) {
 	if e := WriteExclusive(out, b); e == nil {
 		t.Fatal("overwrote output")
 	}
-	st, e := os.Stat(out)
-	if e != nil || st.Mode().Perm() != 0600 {
-		t.Fatal("output permissions")
-	}
+	assertProtectedOutput(t, out)
 	alias := filepath.Join(dir, "alias.html")
-	if e := os.Symlink(out, alias); e != nil {
-		t.Fatal(e)
-	}
+	makeLeafAlias(t, out, alias)
 	if e := WriteExclusive(alias, b); e == nil {
 		t.Fatal("followed leaf symlink")
 	}
 	parent := filepath.Join(dir, "alias-dir")
-	if e := os.Symlink(dir, parent); e != nil {
-		t.Fatal(e)
-	}
+	makeParentAlias(t, dir, parent)
 	if e := WriteExclusive(filepath.Join(parent, "new.html"), b); e == nil {
 		t.Fatal("followed parent symlink")
 	}
