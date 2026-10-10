@@ -58,6 +58,10 @@ copied and at most 64 KiB; decoding has recursion limit 8. Default log limit is
 Outstanding requests and replicated write identities are capped at 4096 each.
 There is no compaction or automatic dedup eviction.
 
+The target checks the complete prospective Ready log against Config.LogLimitBytes
+before Stage, on followers as well as leaders. A caller-supplied Store with larger
+capacity cannot enlarge that target admission bound.
+
 Unit tests cover majority reads/writes, partitions/healing, retries, recovery,
 all six crash barriers, physical journal reopening, every truncated final-record
 position, corruption, failed IO, malformed frames and ten repeated fixed logical

@@ -362,7 +362,13 @@ func (t *Target) drain(effects *[]Effect) error {
 		if err := t.barrier(BeforeAppend, effects); err != nil {
 			return err
 		}
-		if err := t.cfg.Store.Stage(Batch{Entries: rd.Entries, HardState: rd.HardState}); err != nil {
+		batch := Batch{Entries: rd.Entries, HardState: rd.HardState}
+		// Config is the target's admission bound even when the caller supplies a
+		// Store with a larger independent capacity. Followers need this guard too.
+		if err := t.boundBatch(batch); err != nil {
+			return err
+		}
+		if err := t.cfg.Store.Stage(batch); err != nil {
 			return err
 		}
 		if err := t.barrier(AfterStageBeforeFlush, effects); err != nil {
@@ -448,6 +454,27 @@ func (t *Target) drain(effects *[]Effect) error {
 		}
 	}
 	return nil
+}
+
+func (t *Target) boundBatch(batch Batch) error {
+	storage := t.cfg.Store.Storage()
+	hard, conf, err := storage.InitialState()
+	if err != nil {
+		return err
+	}
+	last, err := storage.LastIndex()
+	if err != nil {
+		return err
+	}
+	if last >= math.MaxUint64 || last > t.cfg.LogLimitBytes/4+3 {
+		return ErrLimit
+	}
+	entries, err := storage.Entries(1, last+1, math.MaxUint64)
+	if err != nil {
+		return err
+	}
+	_, err = mergeBatch(State{Entries: entries, HardState: hard, ConfState: conf}, batch, t.cfg.LogLimitBytes)
+	return err
 }
 func (t *Target) decodeMessage(data []byte) (*pb.Message, error) {
 	if len(data) == 0 || len(data) > MaxFrameBytes {
