@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 import hashlib,json,os,subprocess,sys,tempfile,time,unittest
 from pathlib import Path
+from unittest import mock
+import run_evidence
 from run_evidence import execute
 class EvidenceTests(unittest.TestCase):
  def test_real_success_and_failure(self):
   with tempfile.TemporaryDirectory() as d:
    root=Path(d);(root/'input.txt').write_bytes(b'fixture')
-   for expected in (0,7):
+   for expected in ((0,7,259) if os.name=='nt' else (0,7)):
     code=f'import sys;sys.stdout.buffer.write(b"actual stdout\\n");sys.stderr.buffer.write(b"actual stderr\\n");sys.exit({expected})'
     r=execute([sys.executable,'-c',code],root,root/'.local-runs',timeout=10)
     self.assertEqual(r['exit_code'],expected);self.assertEqual(r['status'],'PASS' if expected==0 else 'FAIL')
@@ -30,16 +32,47 @@ class EvidenceTests(unittest.TestCase):
    with self.assertRaisesRegex(ValueError,'source tree contains symlink or junction'):
     execute([sys.executable,'-c','pass'],root,root/'.local-runs',timeout=10)
  def test_timeout_cleans_descendant_process(self):
+  self._check_descendant_cleanup(parent_exits=False)
+ def test_normal_success_cleans_descendant_process(self):
+  self._check_descendant_cleanup(parent_exits=True)
+ def _check_descendant_cleanup(self,parent_exits):
   with tempfile.TemporaryDirectory() as d:
-   root=Path(d);pid_path=root/'child.pid'
-   child='import time;time.sleep(30)'
-   parent='import pathlib,subprocess,sys,time;child=subprocess.Popen([sys.executable,"-c",'+repr(child)+']);pathlib.Path('+repr(str(pid_path))+').write_bytes((str(child.pid)+"\\n").encode());time.sleep(30)'
-   r=execute([sys.executable,'-c',parent],root,root/'.local-runs',timeout=.5)
-   self.assertEqual(r['reason'],'timeout')
+   root=Path(d);pid_path=root/'child.pid';ready_path=root/'child.ready'
+   child='import pathlib,time;pathlib.Path('+repr(str(ready_path))+').write_bytes(b"ready");time.sleep(30)'
+   parent='import pathlib,subprocess,sys,time\nchild=subprocess.Popen([sys.executable,"-c",'+repr(child)+'])\npathlib.Path('+repr(str(pid_path))+').write_bytes((str(child.pid)+"\\n").encode())\ndeadline=time.monotonic()+3\nwhile not pathlib.Path('+repr(str(ready_path))+').exists() and time.monotonic()<deadline:time.sleep(.01)\nif not pathlib.Path('+repr(str(ready_path))+').exists():raise RuntimeError("descendant did not start")\n'+('sys.exit(0)' if parent_exits else 'time.sleep(30)')
+   r=execute([sys.executable,'-c',parent],root,root/'.local-runs',timeout=4)
+   self.assertEqual(r['status'],'PASS' if parent_exits else 'FAIL')
+   self.assertEqual(r['reason'],'completed' if parent_exits else 'timeout')
    child_pid=int(pid_path.read_bytes().strip())
-   deadline=time.monotonic()+5
-   while _process_alive(child_pid) and time.monotonic()<deadline:time.sleep(.05)
-   self.assertFalse(_process_alive(child_pid),'timed-out command left descendant running')
+   try:
+    self.assertEqual(ready_path.read_bytes(),b'ready','descendant never executed its fixture')
+    self.assertTrue(_wait_dead(child_pid),'command left descendant running')
+    print(json.dumps({'fixture':'descendant_cleanup','parent_exits':parent_exits,'child_pid':child_pid,'child_started':True,'child_alive_after_cleanup':False,'run_status':r['status'],'run_reason':r['reason']}))
+   finally:_stop_fixture_process(child_pid)
+ @unittest.skipUnless(os.name=='nt','Win32 suspended-process ownership boundary')
+ def test_job_assignment_failure_cannot_execute_command(self):
+  with tempfile.TemporaryDirectory() as d:
+   root=Path(d);marker=root/'executed.txt';child_pid_path=root/'child.pid';owned=[]
+   child='import time;time.sleep(30)'
+   parent='import pathlib,subprocess,sys;pathlib.Path('+repr(str(marker))+').write_text("executed");child=subprocess.Popen([sys.executable,"-c",'+repr(child)+']);pathlib.Path('+repr(str(child_pid_path))+').write_text(str(child.pid))'
+   def reject_assignment(job,proc):
+    owned.append(proc.pid)
+    # Give a wrongly unsuspended command time to run; the real process must stay suspended.
+    time.sleep(.2)
+    raise OSError('intentional job-assignment failure')
+   with mock.patch.object(run_evidence._WindowsJob,'assign',reject_assignment):
+    r=execute([sys.executable,'-c',parent],root,root/'.local-runs',timeout=10)
+   self.assertEqual(r['status'],'BLOCKED');self.assertEqual(r['reason'],'containment_error');self.assertIsNone(r['exit_code'])
+   self.assertEqual(len(owned),1,'negative control did not create a real suspended process')
+   try:
+    self.assertTrue(_wait_dead(owned[0]),'unassigned suspended process survived')
+    self.assertFalse(marker.exists(),'command executed before ownership was established')
+    self.assertFalse(child_pid_path.exists(),'unassigned command spawned a child')
+    self.assertEqual(hashlib.sha256(Path(r['stderr']['path']).read_bytes()).hexdigest(),r['stderr']['sha256'])
+    print(json.dumps({'fixture':'assignment_failure','suspended_pid':owned[0],'process_alive_after_cleanup':False,'command_executed':False,'run_status':r['status'],'run_reason':r['reason']}))
+   finally:
+    _stop_fixture_process(owned[0])
+    if child_pid_path.exists():_stop_fixture_process(int(child_pid_path.read_text()))
 
 def _process_alive(pid:int)->bool:
  if os.name!='nt':
@@ -52,10 +85,28 @@ def _process_alive(pid:int)->bool:
   except ProcessLookupError:return False
   except PermissionError:return True
  import ctypes
- handle=ctypes.windll.kernel32.OpenProcess(0x1000,False,pid)
- if not handle:return False
+ from ctypes import wintypes
+ kernel32=ctypes.WinDLL('kernel32',use_last_error=True)
+ kernel32.OpenProcess.argtypes=[wintypes.DWORD,wintypes.BOOL,wintypes.DWORD];kernel32.OpenProcess.restype=wintypes.HANDLE
+ kernel32.GetExitCodeProcess.argtypes=[wintypes.HANDLE,ctypes.POINTER(wintypes.DWORD)];kernel32.GetExitCodeProcess.restype=wintypes.BOOL
+ kernel32.CloseHandle.argtypes=[wintypes.HANDLE];kernel32.CloseHandle.restype=wintypes.BOOL
+ handle=kernel32.OpenProcess(0x1000,False,pid)
+ if not handle:
+  error=ctypes.get_last_error()
+  if error in (87,1168):return False # ERROR_INVALID_PARAMETER / ERROR_NOT_FOUND.
+  raise ctypes.WinError(error)
  try:
-  code=ctypes.c_ulong()
-  return bool(ctypes.windll.kernel32.GetExitCodeProcess(handle,ctypes.byref(code))) and code.value==259
- finally:ctypes.windll.kernel32.CloseHandle(handle)
+  code=wintypes.DWORD()
+  if not kernel32.GetExitCodeProcess(handle,ctypes.byref(code)):raise ctypes.WinError(ctypes.get_last_error())
+  return code.value==259
+ finally:kernel32.CloseHandle(handle)
+def _wait_dead(pid):
+ deadline=time.monotonic()+5
+ while _process_alive(pid) and time.monotonic()<deadline:time.sleep(.02)
+ return not _process_alive(pid)
+def _stop_fixture_process(pid):
+ # Test failure cleanup is restricted to the PID created by this fixture.
+ if not _process_alive(pid):return
+ try:os.kill(pid,9)
+ except ProcessLookupError:pass
 if __name__=='__main__':unittest.main()
