@@ -73,6 +73,7 @@ type execution struct {
 	count, bytes       int
 	reason             string
 	ops                map[string]int
+	possible           map[string]bool
 }
 
 type trackedEntropy struct {
@@ -111,7 +112,7 @@ func run(ctx context.Context, s Scenario, opts Options) (Trace, error) {
 	if !opts.Identity.Identified() {
 		return Trace{}, errors.New("identified build required for target execution")
 	}
-	x := &execution{ctx: ctx, ops: map[string]int{}, trace: Trace{Version: 1, Model: "raft-trace-v1", Scenario: s,
+	x := &execution{ctx: ctx, ops: map[string]int{}, possible: map[string]bool{}, trace: Trace{Version: 1, Model: "raft-trace-v1", Scenario: s,
 		Header:  Header{opts.Identity.SourceTreeSHA, opts.Identity.ModuleLockSHA, opts.Identity.PatchSHA, buildinfo.SchedulerVersion, buildinfo.EntropyVersion, s.Seed, string(s.TargetVariant()), 0},
 		Choices: []raftadapter.Choice{}, Events: []Record{}, History: history.History{Version: 1, Operations: []history.Operation{}}}}
 	initial, _ := json.Marshal(x.trace)
@@ -218,6 +219,16 @@ func run(ctx context.Context, s Scenario, opts Options) (Trace, error) {
 			}
 		}
 	}
+	// Keep every causal attempt, but rejected-only calls cannot be optional
+	// history effects. Any earlier possible admission remains pending across
+	// later before-admission rejections on another node.
+	observed := make([]history.Operation, 0, len(x.trace.History.Operations))
+	for _, op := range x.trace.History.Operations {
+		if x.possible[op.ID] || op.Return != nil {
+			observed = append(observed, op)
+		}
+	}
+	x.trace.History.Operations = observed
 	if x.reason != "" {
 		x.trace.Result = history.Result{Status: history.Inconclusive, Witness: []string{}, Reason: x.reason}
 	} else {
@@ -311,6 +322,14 @@ func (x *execution) step(id uint64, input target.Event, parent uint64, kind, pre
 	x.count++
 	n := x.nodes[id]
 	effects, err := n.target.Step(input)
+	if !errors.Is(err, raft.ErrProposalDropped) {
+		switch invocation := input.(type) {
+		case target.Write:
+			x.possible[invocation.RequestID] = true
+		case target.Read:
+			x.possible[invocation.RequestID] = true
+		}
+	}
 	batch := struct {
 		Input   target.Event
 		Effects []target.Effect
@@ -404,6 +423,9 @@ func (x *execution) action(a Action) error {
 			x.trace.History.Operations = append(x.trace.History.Operations, history.Operation{ID: *a.RequestID, Kind: strings.TrimPrefix(a.Kind, "invoke_"), Value: value, Call: int64(x.ordinal)})
 		}
 		if !n.alive {
+			// An unavailable timeout provides no affirmative target admission
+			// evidence. It remains unknown under the declared collector contract.
+			x.possible[*a.RequestID] = true
 			x.count++
 			x.record(parent, id, "unavailable", nil, "pending")
 			return nil

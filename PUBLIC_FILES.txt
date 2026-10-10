@@ -44,6 +44,7 @@ docs/adr/004.md
 docs/adr/005.md
 docs/adr/006.md
 docs/adr/008.md
+docs/adr/009-portable-source-identity.md
 docs/codec/raft-trace-v1.golden.json
 docs/demo/DEMO.md
 docs/demo/invalid-history.html
@@ -113,6 +114,7 @@ tests/acceptance_locked/spec.json
 tests/acceptance_locked/spec.sha256
 tests/integration/cli_test.go
 tests/security/limits_test.go
+tests/system/admission_test.go
 tests/system/helpers_test.go
 tests/system/raft_test.go
 tests/system/replay_test.go

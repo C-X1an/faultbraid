@@ -323,6 +323,7 @@ class Gate:
             test_names = set(re.findall(r'(?m)^func\s+(Test\w+)\s*\(', self._read(path).decode('utf-8')))
             package_pass = test_pass = False
             logical_output = []
+            plain_package = None
             for line in text.splitlines():
                 if line.startswith('{'):
                     try:
@@ -334,13 +335,24 @@ class Gate:
                         test_pass |= event.get('Test', '').split('/')[0] in test_names
                     if isinstance(event, dict) and event.get('Package') == package and isinstance(event.get('Output'), str):
                         logical_output.append(event['Output'])
-                elif re.match(r'^ok\s+' + re.escape(package) + r'\s+', line) and 'no tests to run' not in line and '[no test files]' not in line:
-                    package_pass = True
+                elif line.startswith('pkg: '):
+                    plain_package = line[5:].strip()
+                elif line.startswith('ok'):
+                    if re.match(r'^ok\s+' + re.escape(package) + r'\s+', line) and 'no tests to run' not in line and '[no test files]' not in line:
+                        package_pass = True
+                    plain_package = None
                 elif re.match(r'^\s*--- PASS: (\S+)\s+\(', line):
                     test_pass |= re.match(r'^\s*--- PASS: (\S+)\s+\(', line)[1].split('/')[0] in test_names
+                elif plain_package == package:
+                    logical_output.append(line + '\n')
             if criterion['required_test_level'] == 'performance':
                 benchmark_command = (is_go_test and any(arg == '-bench' or arg.startswith('-bench=') for arg in command)) or 'benchmark' in make_targets
-                return benchmark_command and package_pass and bool(re.search(r'(?m)^Benchmark\w+[-\s].*\bns/op\b', text + '\n' + ''.join(logical_output)))
+                benchmark_names = set()
+                for test_path in self.current:
+                    if str(PurePosixPath(test_path).parent) == directory and test_path.endswith('_test.go'):
+                        benchmark_names.update(re.findall(r'(?m)^func\s+(Benchmark\w+)\s*\(', self._read(test_path).decode('utf-8')))
+                measured = set(re.findall(r'(?m)^(Benchmark\w+)(?:/[^\s]+)?(?:-\d+)?\s+[^\n]*\bns/op\b', ''.join(logical_output)))
+                return benchmark_command and package_pass and bool(measured & benchmark_names)
             restricted = any(arg in {'-run', '-json'} or arg.startswith(('-run=', '-json=')) for arg in command)
             return package_pass and bool(test_names) and (test_pass or not restricted)
         if path == 'scripts/test_evidence.py':

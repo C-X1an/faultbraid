@@ -165,7 +165,7 @@ def main() -> int:
     owned_path(DEST)
     if os.path.lexists(DEST):
         if tree_digest(DEST) == lock["prepared_tree_sha256"]:
-            print(f"instrumented raft already prepared: {DEST}")
+            print(f"instrumented raft already prepared: {DEST.relative_to(ROOT).as_posix()}")
             return 0
         fail(f"destination exists with unexpected contents: {DEST}")
 
@@ -185,11 +185,11 @@ def main() -> int:
         safe_extract(zip_path, temporary, prefix)
         apply_directory = temporary.relative_to(ROOT).as_posix()
         run(
-            ["git", "apply", "--check", f"--directory={apply_directory}", str(PATCH_PATH)],
+            ["git", "-c", "core.autocrlf=false", "apply", "--check", f"--directory={apply_directory}", str(PATCH_PATH)],
             cwd=ROOT,
         )
         run(
-            ["git", "apply", f"--directory={apply_directory}", str(PATCH_PATH)],
+            ["git", "-c", "core.autocrlf=false", "apply", f"--directory={apply_directory}", str(PATCH_PATH)],
             cwd=ROOT,
         )
         actual = tree_digest(temporary)
@@ -203,7 +203,7 @@ def main() -> int:
             tree_digest(temporary)
             shutil.rmtree(temporary)
 
-    print(f"prepared instrumented raft {lock['version']} at {DEST}")
+    print(f"prepared instrumented raft {lock['version']} at {DEST.relative_to(ROOT).as_posix()}")
     return 0
 
 

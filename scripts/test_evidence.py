@@ -5,6 +5,15 @@ from unittest import mock
 import run_evidence
 from run_evidence import execute
 class EvidenceTests(unittest.TestCase):
+ def test_source_paths_use_utf8_byte_order(self):
+  with tempfile.TemporaryDirectory() as d:
+   root=Path(d);names=['i0.dat','\u0130.dat','A.dat','a0.dat','delete-\x7f.dat','\U0001f9ea.dat']
+   for name in names:(root/name).write_bytes(b'regular fixture\n')
+   result=run_evidence.source_identity(root)
+   expected=[{'path':name,'sha256':hashlib.sha256(b'regular fixture\n').hexdigest()} for name in sorted(names,key=lambda name:name.encode('utf-8'))]
+   self.assertEqual(result['files'],expected)
+   self.assertEqual(result['source_tree_sha256'],hashlib.sha256(json.dumps(expected,sort_keys=True,separators=(',',':'),ensure_ascii=True).encode()).hexdigest())
+
  def test_real_success_and_failure(self):
   with tempfile.TemporaryDirectory() as d:
    root=Path(d);(root/'input.txt').write_bytes(b'fixture')

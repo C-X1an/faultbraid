@@ -8,6 +8,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 import unittest
+import zipfile
 from unittest.mock import patch
 
 SCRIPT = Path(__file__).resolve().parents[1] / "third_party/raft-patch/prepare.py"
@@ -25,6 +26,33 @@ def directory_alias(alias, target):
 
 
 class PrepareTests(unittest.TestCase):
+    def test_archive_fixture_ignores_inherited_autocrlf(self):
+        """Real Git application in a non-Git source copy; upstream is a fixture."""
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            destination = root / ".local-runs/raft"
+            patch_path = root / "fixture.patch"
+            patch_path.write_bytes(b"diff --git a/source.go b/source.go\n--- a/source.go\n+++ b/source.go\n@@ -1 +1 @@\n-before\n+after\n")
+            archive = root / "fixture.zip"
+            with zipfile.ZipFile(archive, "w") as output:
+                output.writestr("example.invalid/raft@v0.0.0/source.go", b"before\n")
+            lock_path = root / "fixture-lock.json"
+            lock_path.write_text(json.dumps({
+                "schema": 1, "module": "example.invalid/raft", "version": "v0.0.0",
+                "patch_sha256": prepare.sha256_file(patch_path),
+                "upstream_zip_sha256": prepare.sha256_file(archive),
+                "prepared_tree_sha256": hashlib.sha256(b"source.go\0after\n\0").hexdigest(),
+            }), encoding="utf-8")
+            self.assertFalse((root / ".git").exists())
+            # No persistent Git/OS settings are modified. Only downloading is
+            # replaced by this explicitly synthetic zip; real git apply runs.
+            with patch.multiple(prepare, ROOT=root, DEST=destination,
+                                LOCK_PATH=lock_path, PATCH_PATH=patch_path), \
+                 patch.object(prepare, "download", return_value={"Zip": str(archive)}), \
+                 patch.dict(os.environ, {"GIT_CONFIG_COUNT": "1", "GIT_CONFIG_KEY_0": "core.autocrlf", "GIT_CONFIG_VALUE_0": "true"}):
+                self.assertEqual(prepare.main(), 0)
+            self.assertEqual((destination / "source.go").read_bytes(), b"after\n")
+
     def test_exact_regular_fixture_is_accepted(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

@@ -38,7 +38,7 @@ class Fixture:
             'scripts/clean_verify.py': b'# Synthetic unit fixture, not a clean checkout.\n',
             'scripts/public_audit.py': b'# Synthetic unit fixture, not a privacy audit.\n',
             'tests/acceptance_locked/acceptance_test.go': b'package fixture\nfunc TestFixture(t *testing.T) {}\n',
-            'internal/history/checker_test.go': b'package fixture\nfunc TestFixture(t *testing.T) {}\n',
+            'internal/history/checker_test.go': b'package fixture\nfunc TestFixture(t *testing.T) {}\nfunc BenchmarkFixture(b *testing.B) {}\n',
             'docs/codec/unit.golden.json': b'{"fixture_only":true}\n',
             'third_party/raft-patch/lock.json': b'{"fixture_only":true}\n',
             'dependency.lock.json': b'{"fixture_only":true}\n',
@@ -310,6 +310,42 @@ class FullGateTests(unittest.TestCase):
 
     def test_benchmark_output_without_benchmark_execution_is_rejected(self):
         self.fixture.change_run(self.fixture.go, lambda record: record.update(command=['go', 'test', '-json', './...']))
+        self.blocked('AC-022: no successful evidence executes')
+
+    def test_benchmark_from_another_package_is_not_history_measurement(self):
+        for use_json in (False, True):
+            with self.subTest(json=use_json):
+                def wrong_package(record):
+                    record['command'] = ['go', 'test', '-count=1', '-bench=BenchmarkOther', './...'] + (['-json'] if use_json else [])
+                    if use_json:
+                        events = [
+                            {'Action':'pass','Package':'faultbraid/tests/acceptance_locked','Test':'TestFixture'},
+                            {'Action':'pass','Package':'faultbraid/tests/acceptance_locked'},
+                            {'Action':'pass','Package':'faultbraid/internal/history'},
+                            {'Action':'output','Package':'faultbraid/internal/sim','Output':'BenchmarkOther-8  1  25 ns/op\n'},
+                            {'Action':'pass','Package':'faultbraid/internal/sim'},
+                        ]
+                        data = ('\n'.join(json.dumps(event) for event in events)+'\n').encode()
+                    else:
+                        data = b'ok  faultbraid/tests/acceptance_locked  0.01s\nok  faultbraid/internal/history  0.01s\ngoos: windows\ngoarch: amd64\npkg: faultbraid/internal/sim\nBenchmarkOther-8  1  25 ns/op\nok  faultbraid/internal/sim  0.01s\n'
+                    (self.fixture.root / record['stdout']['path']).write_bytes(data)
+                    record['stdout'].update(bytes=len(data), sha256=digest(data))
+                self.fixture.change_run(self.fixture.go, wrong_package)
+                self.blocked('AC-022: no successful evidence executes')
+
+    def test_plain_benchmark_binds_package_and_source_name(self):
+        def plain(record):
+            record['command'] = ['go','test','-count=1','-bench=.','./...']
+            data = b'ok  faultbraid/tests/acceptance_locked  0.01s\npkg: faultbraid/internal/sim\nBenchmarkOther-8  1  99 ns/op\nok  faultbraid/internal/sim  0.01s\npkg: faultbraid/internal/history\nBenchmarkFixture-8  100  25 ns/op\nok  faultbraid/internal/history  0.01s\n'
+            (self.fixture.root / record['stdout']['path']).write_bytes(data)
+            record['stdout'].update(bytes=len(data),sha256=digest(data))
+        self.fixture.change_run(self.fixture.go,plain)
+        self.assertEqual(Gate(self.fixture.root).problems(),[])
+        def unknown_name(record):
+            data=(self.fixture.root / record['stdout']['path']).read_bytes().replace(b'BenchmarkFixture-',b'BenchmarkUndeclared-')
+            (self.fixture.root / record['stdout']['path']).write_bytes(data)
+            record['stdout'].update(bytes=len(data),sha256=digest(data))
+        self.fixture.change_run(self.fixture.go,unknown_name)
         self.blocked('AC-022: no successful evidence executes')
 
     def test_requirement_binding_is_required(self):

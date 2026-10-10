@@ -9,7 +9,6 @@ import (
 	"io/fs"
 	"os"
 	"path/filepath"
-	"runtime"
 	"sort"
 	"strings"
 	"unicode/utf16"
@@ -62,13 +61,8 @@ func FromFiles(root string) (Identity, error) {
 	if err != nil {
 		return Identity{}, err
 	}
-	sort.Slice(files, func(i, j int) bool {
-		left, right := files[i].Path, files[j].Path
-		if runtime.GOOS == "windows" {
-			left, right = strings.ToLower(left), strings.ToLower(right)
-		}
-		return left < right
-	})
+	// Go string order is UTF-8 byte order, independent of OS and Unicode folding.
+	sort.Slice(files, func(i, j int) bool { return files[i].Path < files[j].Path })
 	var encoded bytes.Buffer
 	encoder := json.NewEncoder(&encoded)
 	encoder.SetEscapeHTML(false)
@@ -78,7 +72,7 @@ func FromFiles(root string) (Identity, error) {
 	// Match the evidence runner's compact Python JSON ensure_ascii encoding.
 	var canonical bytes.Buffer
 	for _, r := range strings.TrimSuffix(encoded.String(), "\n") {
-		if r < 128 {
+		if r < 127 {
 			canonical.WriteRune(r)
 		} else if r <= 0xffff {
 			fmt.Fprintf(&canonical, "\\u%04x", r)

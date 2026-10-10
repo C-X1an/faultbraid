@@ -183,7 +183,7 @@ def sha(path:Path)->str:
  return h.hexdigest()
 def source_identity(root:Path)->dict:
  files=[]
- for p in sorted(root.rglob('*')):
+ for p in sorted(root.rglob('*'),key=lambda path:path.relative_to(root).as_posix().encode('utf-8')):
   rel=p.relative_to(root)
   if p.is_symlink() or (hasattr(p,'is_junction') and p.is_junction()):raise ValueError('source tree contains symlink or junction: '+rel.as_posix())
   if any(x in IGNORE for x in rel.parts):continue
