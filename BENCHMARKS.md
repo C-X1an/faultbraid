@@ -1,6 +1,8 @@
 # Benchmark methodology
 No performance values in this document are assumed. Observed seed measurements, when present, are in verification/SEED_RESULTS.md with raw synthetic logs.
 
+The current Check12 and CheckOverlap12 benchmarks report actual `states/op` as well as time and allocations. Model10000 now runs 2500 equal-time write/sync/crash/read groups, with each recovered read asserted in the corresponding test. The historical Linux samples below used 10000 sequential writes for Model10000 and did not report benchmark state counts; they are retained as measurements of that earlier workload. New workload measurements remain NOT YET MEASURED until their recorded benchmark command executes.
+
 | Experiment | Claim / workload | Instrument / repetitions | Interpretation |
 |---|---|---|---|
 | Register checker | Common sequential/overlapping 12-operation histories | Go benchmark, allocation reporting, 1 warmup and 7 measured repeats, fixed fixture | ns/op, allocations and explored states; not target throughput |

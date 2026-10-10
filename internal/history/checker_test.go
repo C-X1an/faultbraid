@@ -44,10 +44,13 @@ func BenchmarkCheckOverlap12(b *testing.B) {
 	}
 	b.ReportAllocs()
 	b.ResetTimer()
+	var states uint64
 	for i := 0; i < b.N; i++ {
 		r, e := Check(context.Background(), h, Options{100000})
 		if e != nil || r.Status != Valid {
 			b.Fatalf("overlap %+v %v", r, e)
 		}
+		states += uint64(r.States)
 	}
+	b.ReportMetric(float64(states)/float64(b.N), "states/op")
 }

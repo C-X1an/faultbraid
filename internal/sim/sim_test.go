@@ -125,15 +125,18 @@ func FuzzReplay(f *testing.F) {
 }
 
 func TestModel10000Target(t *testing.T) {
-	events := make([]Event, 10000)
-	for i := range events {
-		events[i] = Event{At: uint64(i), Kind: "write", Value: int64(i)}
-	}
+	events := model10000Workload()
 	start := time.Now()
 	tr, e := Run(events)
 	elapsed := time.Since(start)
-	if e != nil || len(tr.Steps) != 10000 || tr.Steps[9999].Volatile != 9999 || elapsed > 2*time.Second {
+	if e != nil || len(tr.Steps) != 10000 || tr.Steps[9999].Volatile != 2500 || elapsed > 2*time.Second {
 		t.Fatalf("AC-023 model target elapsed=%s error=%v", elapsed, e)
+	}
+	for i := 0; i < 2500; i++ {
+		step := tr.Steps[i*4+3]
+		if step.Observed == nil || *step.Observed != int64(i+1) || step.Durable != int64(i+1) {
+			t.Fatalf("equal-time write/sync/crash/read group %d lost durable value", i)
+		}
 	}
 	t.Logf("AC-023 model10000: duration=%s; no Raft/process throughput claim", elapsed)
 }
