@@ -149,6 +149,12 @@ func (e *ElectionRandom) Func() func(int) int {
 		}
 		var value int
 		value, e.err = e.entropy.Draw(e.stream, bound)
+		if e.err == nil && (value < 0 || value >= bound) {
+			e.err = fmt.Errorf("election entropy value outside [0,%d)", bound)
+		}
+		if e.err != nil {
+			return 0
+		}
 		return value
 	}
 }
