@@ -32,9 +32,51 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+def reject_alias(path: Path) -> None:
+    """lstat works for dangling links and Python 3.11 Windows reparse points."""
+    try:
+        metadata = path.lstat()
+    except FileNotFoundError:
+        return
+    if stat.S_ISLNK(metadata.st_mode) or (
+        getattr(metadata, "st_file_attributes", 0)
+        & getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0x400)
+    ):
+        fail(f"source path is a symbolic link or reparse point: {path}")
+
+
+def owned_path(path: Path) -> None:
+    """Check every existing component before following or removing it."""
+    try:
+        relative = path.relative_to(ROOT)
+    except ValueError:
+        fail(f"source path is outside the public workspace: {path}")
+    current = ROOT
+    reject_alias(current)
+    for part in relative.parts:
+        current /= part
+        reject_alias(current)
+    resolved = path.resolve(strict=False)
+    resolved_root = ROOT.resolve(strict=True)
+    if resolved_root != resolved and resolved_root not in resolved.parents:
+        fail(f"source path resolves outside the public workspace: {path}")
+
+
 def tree_digest(root: Path) -> str:
+    reject_alias(root)
+    if not root.is_dir():
+        fail(f"source tree is not a directory: {root}")
     digest = hashlib.sha256()
-    files = sorted(path for path in root.rglob("*") if path.is_file())
+    files: list[Path] = []
+    # Inspect directories before descent so even an alias to matching bytes fails.
+    for directory, directories, names in os.walk(root, followlinks=False):
+        base = Path(directory)
+        for name in directories + names:
+            path = base / name
+            reject_alias(path)
+            if path.is_file():
+                files.append(path)
+    files.sort()
     for path in files:
         relative = path.relative_to(root).as_posix().encode("utf-8")
         digest.update(relative)
@@ -120,7 +162,8 @@ def main() -> int:
         fail("unsupported lock schema")
     if sha256_file(PATCH_PATH) != lock["patch_sha256"]:
         fail("patch SHA-256 does not match lock.json")
-    if DEST.exists():
+    owned_path(DEST)
+    if os.path.lexists(DEST):
         if tree_digest(DEST) == lock["prepared_tree_sha256"]:
             print(f"instrumented raft already prepared: {DEST}")
             return 0
@@ -133,7 +176,8 @@ def main() -> int:
 
     DEST.parent.mkdir(parents=True, exist_ok=True)
     temporary = DEST.parent / f".raft.prepare.{os.getpid()}"
-    if temporary.exists():
+    owned_path(temporary)
+    if os.path.lexists(temporary):
         fail(f"temporary destination already exists: {temporary}")
     temporary.mkdir()
     try:
@@ -154,6 +198,9 @@ def main() -> int:
         temporary.rename(DEST)
     finally:
         if temporary.exists():
+            owned_path(temporary)
+            # No recursive cleanup may follow a changed source alias.
+            tree_digest(temporary)
             shutil.rmtree(temporary)
 
     print(f"prepared instrumented raft {lock['version']} at {DEST}")
