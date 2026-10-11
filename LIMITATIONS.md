@@ -47,3 +47,6 @@ Fresh-checkout verification uses a new committed clone and build cache on the sa
 The reviewed public inventory, staged tree, reachable Git history and deterministic export are audited for known private paths/content and malformed archives. Detection is heuristic and requires manual review; neither an allowlist nor a secret scanner proves approved content safe. Unreachable Git objects and external artifacts are outside a reachable-history audit. Raw runs and confidential/operator material must remain local and excluded.
 
 No production scale, tenant isolation, live monitoring, TLS service, cloud deployment, complete formal proof or hardware power-loss certification is established. Repository publication and actual CI are separate deliverables; no badge represents an unexecuted job or substitutes for acceptance evidence.
+
+
+Corrected-source A4 local evidence is in [VERIFICATION_REPORT](VERIFICATION_REPORT.md). Original B1 final review rejected mutation byte receipts; corrected controls and fresh committed reproduction now ran, with separate final assessment/publication/hosted CI still pending. Historical A3 receipts remain unchanged and labelled.

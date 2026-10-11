@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "finding": "FV-04",
+  "status": "OPEN",
+  "candidate_commit": "f7f2abc7057758e52133df328400baa52159d8ba",
+  "candidate_source_tree_sha256": "3d07d812a7c7179fe49f0fa95f58c213dc992dda2e96bd142c7f4a02be68f432",
+  "scope": "Actual machine-recorded baseline/mutant/restored hashes compared against the displayed summary; no mutation executed or originals altered; semantic FAIL evidence retained",
+  "comparisons": [
+    {
+      "mutation": "ignore_real_time",
+      "site": "internal/history/check.go",
+      "runs": [
+        "20261011T165712-1551a2e693",
+        "20261011T165715-f9d13b8686",
+        "20261011T165717-5350a5d417"
+      ],
+      "actual_statuses": [
+        "PASS",
+        "FAIL",
+        "PASS"
+      ],
+      "original_sha256": "9711c04ac3d6b8310d4b335e9e2906bd4bc037672efb6aaef913a653ca6b4c06",
+      "reported_mutant_sha256": "0367343a8e375792fecb211c05557e7283ece9bdae61a360770d31712044ba93",
+      "actual_mutant_sha256": "5c9ca6bf0b5fa2e00840d086e1a660fc8632e40203283fcd7841604de466b92c",
+      "actual_restored_sha256": "370521bde841fb7ca5a29dee587398cfa063bd8e4aba0105de710cf270f50010",
+      "reported_mutant_hash_matches_actual": false,
+      "restored_source_bytes_match_baseline": false,
+      "actual_mutant_is_exact_CRLF_form_of_reported_LF_text": true,
+      "actual_restored_is_exact_CRLF_form_of_baseline_LF_bytes": true
+    },
+    {
+      "mutation": "drop_pending_effect",
+      "site": "internal/history/check.go",
+      "runs": [
+        "20261011T165723-84b5ef3eca",
+        "20261011T165726-ea8514683e",
+        "20261011T165729-7f9f4f1c96"
+      ],
+      "actual_statuses": [
+        "PASS",
+        "FAIL",
+        "PASS"
+      ],
+      "original_sha256": "9711c04ac3d6b8310d4b335e9e2906bd4bc037672efb6aaef913a653ca6b4c06",
+      "reported_mutant_sha256": "5249e4942ae2b38e5e925c9037d2a68be1a76b2af22853818aa4bdf96446f208",
+      "actual_mutant_sha256": "365ccbf68df03e12153896fcd145c2bb35bf592652e66b133fc980968f4a3a61",
+      "actual_restored_sha256": "370521bde841fb7ca5a29dee587398cfa063bd8e4aba0105de710cf270f50010",
+      "reported_mutant_hash_matches_actual": false,
+      "restored_source_bytes_match_baseline": false,
+      "actual_mutant_is_exact_CRLF_form_of_reported_LF_text": true,
+      "actual_restored_is_exact_CRLF_form_of_baseline_LF_bytes": true
+    },
+    {
+      "mutation": "budget_as_valid",
+      "site": "internal/history/check.go",
+      "runs": [
+        "20261011T165735-a0f7600f46",
+        "20261011T165738-f2f0275939",
+        "20261011T165742-f543aa392d"
+      ],
+      "actual_statuses": [
+        "PASS",
+        "FAIL",
+        "PASS"
+      ],
+      "original_sha256": "9711c04ac3d6b8310d4b335e9e2906bd4bc037672efb6aaef913a653ca6b4c06",
+      "reported_mutant_sha256": "728f5b56d73db6713bc7c4f3ef7b5e60851084621da6b66311af26c46ce1c157",
+      "actual_mutant_sha256": "22966d0482bfc9005f40ecb719ed6441936cdf57e07fef8af8f8ef45cc28df25",
+      "actual_restored_sha256": "370521bde841fb7ca5a29dee587398cfa063bd8e4aba0105de710cf270f50010",
+      "reported_mutant_hash_matches_actual": false,
+      "restored_source_bytes_match_baseline": false,
+      "actual_mutant_is_exact_CRLF_form_of_reported_LF_text": true,
+      "actual_restored_is_exact_CRLF_form_of_baseline_LF_bytes": true
+    },
+    {
+      "mutation": "crash_keeps_volatile",
+      "site": "internal/sim/sim.go",
+      "runs": [
+        "20261011T165748-3b92379973",
+        "20261011T165752-cca9f9cab2",
+        "20261011T165755-80df907093"
+      ],
+      "actual_statuses": [
+        "PASS",
+        "FAIL",
+        "PASS"
+      ],
+      "original_sha256": "9e6adcf34507acc1097210bafbf45720db9c7f09562cbb3208dbde56c194a266",
+      "reported_mutant_sha256": "83462dc9c192534657cfc6ad1cc24f05388e79b3947a224fe2ad70e97621f13a",
+      "actual_mutant_sha256": "d4e04d62dbc7956634f365f165d8fa8b99dbc22e3a8b748379557e04988b4a02",
+      "actual_restored_sha256": "c2ea855a9df3456a45f8550c85591dd3db89f476788cba5013427b0a51093f4b",
+      "reported_mutant_hash_matches_actual": false,
+      "restored_source_bytes_match_baseline": false,
+      "actual_mutant_is_exact_CRLF_form_of_reported_LF_text": true,
+      "actual_restored_is_exact_CRLF_form_of_baseline_LF_bytes": true
+    },
+    {
+      "mutation": "trust_recorded_output",
+      "site": "internal/sim/sim.go",
+      "runs": [
+        "20261011T165801-372483c851",
+        "20261011T165805-1201e06726",
+        "20261011T165809-23c2315dec"
+      ],
+      "actual_statuses": [
+        "PASS",
+        "FAIL",
+        "PASS"
+      ],
+      "original_sha256": "9e6adcf34507acc1097210bafbf45720db9c7f09562cbb3208dbde56c194a266",
+      "reported_mutant_sha256": "34a4755d4e47495df97c2b993fec81510296dcfc1d843400f41491071b7c62b1",
+      "actual_mutant_sha256": "0aa2950ee8a3bf42b6182756d8691319ec5f90270ad79383eb78edc82374bdb0",
+      "actual_restored_sha256": "c2ea855a9df3456a45f8550c85591dd3db89f476788cba5013427b0a51093f4b",
+      "reported_mutant_hash_matches_actual": false,
+      "restored_source_bytes_match_baseline": false,
+      "actual_mutant_is_exact_CRLF_form_of_reported_LF_text": true,
+      "actual_restored_is_exact_CRLF_form_of_baseline_LF_bytes": true
+    }
+  ],
+  "actual_reviewer_rejection": "20261011T173050-045a20b713",
+  "checker_script_sha256": "9f49917fe57c558e2826bc91fe48cfd4a22c89905498f7602c6627fe6c19e629"
+}

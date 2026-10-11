@@ -1,38 +1,36 @@
 # Benchmark methodology and measured results
 
-The current run records91 calibrated samples across13 groups: a separate warmup, then seven measured repetitions per group,100ms requested interval, CPU4. [20261011T170421-048ed5cb2f](verification/curated/20261011T170421-048ed5cb2f/run.json) (17.426s); warmup [20261011T170410-6fedc5bb4f](verification/curated/20261011T170410-6fedc5bb4f/run.json) (8.459s). Executed commit `007ef4ee5d47dddc8878d1c09607979b2b69c7fb`, complete source SHA256 `abad9b97745475faf3d7d26d48f9a77ee4c6b90edf190acb1de274a4fca0db8b` (276 files). Later prose/evidence curation does not rewrite that identity; execution inputs are compared by the release gate.
+A separate warmup followed by seven measured repetitions per group produced 91 samples across 13 groups;100 ms requested intervals and CPU4. [20261011T175804-10e36b68c3](verification/curated/20261011T175804-10e36b68c3/run.json) (20.796 s); warmup [20261011T175752-97e0f8660d](verification/curated/20261011T175752-97e0f8660d/run.json) (9.515 s). Executed commit `2e8379a7ee18c388d31b6b963c67ed04faa5a41e`, complete source SHA256 `53eb9fa9ddeca5e426a7b2eab34976b5ddd72e555eddaecb11125101ad4db86a` (622 files). Later prose/evidence curation preserves original identities; the gate compares every execution input.
 
-Hardware: Intel Core i9-13900H,20 logical CPUs,34,048,978,944 host bytes; Windows11 amd64,Go1.27.2, actual pinned dependency/patch identities. Host memory is not an inferred allocation limit. GOMAXPROCS is selected by `-cpu=4`. No other FaultBraid heavy command was scheduled during this measured run, but the shared desktop was not an exclusive benchmark machine. Calibration/setup and GC may affect samples; native child startup is measured separately. No fastest-run selection or cross-host speedup claim.
+Intel Core i9-13900H,20 logical CPUs,34,048,978,944 host bytes; Windows11 amd64 and Go1.27.2. Host totals are not allocation limits. No other FaultBraid heavy work was scheduled during the measured run; the shared desktop was not an exclusive benchmark machine. Calibration, setup and GC may affect samples. No fastest-run selection or cross-host speedup claim.
 
-| Workload | Median ns/op | Min–max ns/op | Q1–Q3 ns/op | Median B/op | Median allocs/op | Observed states / result |
+| Workload | Median ns/op | Min–max | Q1–Q3 | Median B/op | Median allocs/op | States / result |
 |---|---:|---:|---:|---:|---:|---|
-| `BenchmarkCheck12-4` | 812.9 | 747.4–941.1 | 777.85–856.65 | 936 | 6 | 13.0 |
-| `BenchmarkCheckOverlap12-4` | 133406 | 127248–146084 | 130779–138417.5 | 109440 | 26 | 1911.0 |
-| `BenchmarkOracleSequential12-4` | 1416 | 1344–1529 | 1361.5–1453.5 | 616 | 6 | — |
-| `BenchmarkSearchBudgetCurve/operations-12-4` | 180651 | 173913–206684 | 176124–200790 | 109248 | 25 | 4096.0; INCONCLUSIVE |
-| `BenchmarkSearchBudgetCurve/operations-16-4` | 182837 | 177186–196386 | 179932.5–188654.5 | 110272 | 27 | 4096.0; INCONCLUSIVE |
-| `BenchmarkSearchBudgetCurve/operations-24-4` | 231441 | 190754–333872 | 209555–254865 | 110464 | 27 | 4096.0; INCONCLUSIVE |
-| `BenchmarkSearchBudgetCurve/operations-4-4` | 735 | 711.4–787.6 | 715.85–780.4 | 520 | 4 | 16.0; INVALID |
-| `BenchmarkSearchBudgetCurve/operations-8-4` | 63590 | 60515–65667 | 62683.5–64966 | 54088 | 17 | 1352.0; INVALID |
-| `BenchmarkModel10000-4` | 7295793 | 6953367–8856179 | 7133120–7354746 | 13104785 | 22583 | — |
-| `BenchmarkScenarioReduction/baseline-run-4` | 2966259 | 2786092–3218217 | 2918570–3037108 | 2804985 | 33587 | 12.0 actions |
-| `BenchmarkScenarioReduction/ddmin-4` | 1.211991e+08 | 1.148882e+08–2.040019e+08 | 1.198908e+08–1.28172e+08 | 105797904 | 1237377 | 5.0 actions |
-| `BenchmarkScenarioReduction/greedy-4` | 1.087114e+08 | 1.071354e+08–1.175331e+08 | 1.072352e+08–1.093955e+08 | 99740064 | 1161940 | 5.0 actions |
-| `BenchmarkTargetHealthy-4` | 2862748 | 2731616–3023604 | 2803116–2918867 | 2819555 | 33694 | 3.0 |
+| `BenchmarkCheck12-4` | 842.5 | 748.7–1044 | 787.6–871.8 | 936 | 6 | 13.0 |
+| `BenchmarkCheckOverlap12-4` | 124685 | 120762–128943 | 122385–127027.5 | 109440 | 26 | 1911.0 |
+| `BenchmarkOracleSequential12-4` | 1294 | 1278–1329 | 1288.5–1308 | 616 | 6 | — |
+| `BenchmarkSearchBudgetCurve/operations-12-4` | 170437 | 163590–183652 | 166268–175088.5 | 109248 | 25 | 4096.0; INCONCLUSIVE |
+| `BenchmarkSearchBudgetCurve/operations-16-4` | 169811 | 166828–173027 | 167841.5–172482.5 | 110272 | 27 | 4096.0; INCONCLUSIVE |
+| `BenchmarkSearchBudgetCurve/operations-24-4` | 184599 | 171318–189143 | 179345.5–185239.5 | 110464 | 27 | 4096.0; INCONCLUSIVE |
+| `BenchmarkSearchBudgetCurve/operations-4-4` | 758.6 | 739.2–845.8 | 747.75–791.3 | 520 | 4 | 16.0; INVALID |
+| `BenchmarkSearchBudgetCurve/operations-8-4` | 62275 | 59688–70311 | 60162.5–64811.5 | 54088 | 17 | 1352.0; INVALID |
+| `BenchmarkModel10000-4` | 6915607 | 6745688–7060887 | 6786710–6924241 | 13579247 | 22586 | — |
+| `BenchmarkScenarioReduction/baseline-run-4` | 2740442 | 2676438–3119882 | 2712612–2859882 | 2793782 | 33584 | 12.0 actions |
+| `BenchmarkScenarioReduction/ddmin-4` | 1.265664e+08 | 1.14233e+08–1.347039e+08 | 1.174805e+08–1.311446e+08 | 106134880 | 1237436 | 5.0 actions |
+| `BenchmarkScenarioReduction/greedy-4` | 1.033919e+08 | 9.817445e+07–1.483382e+08 | 1.011768e+08–1.190752e+08 | 99583868 | 1161876 | 5.0 actions |
+| `BenchmarkTargetHealthy-4` | 2772184 | 2592996–2903707 | 2701794–2854350 | 2808946 | 33692 | 3.0 |
 
-All individual calibrated samples and inclusive quartiles are in [benchmark-summary.json](verification/release/benchmark-summary.json), with its original input SHA256. `Model10000` is one10,000-event model execution comprising2,500 equal-time write/sync/crash/read groups, not one event or distributed transaction. Healthy-target cost includes403 trace events and history checking; it is not request throughput. Difficult12/16/24 histories reach4,096 explored states and remain INCONCLUSIVE.
+All raw calibrated samples and inclusive quartiles are in [benchmark summary](verification/release-a4/benchmark-summary.json). `Model10000` measures one 10,000-event write/sync/crash/read execution (2,500 groups), not one event or transaction. Healthy target includes trace/history work, not request throughput. Histories hitting4,096 states remain INCONCLUSIVE. Greedy/ddmin compare one fixed12-action unsafe fixture and return5 actions; counts and bytes are in the samples. The separate CLI fixture starts with 11 actions. No global minimum is claimed.
 
-Reduction benchmarks compare strategies on one fixed deliberate unsafe fixture:12 original actions,5 final actions; greedy24 candidate checks/8 replays and ddmin32 checks/6 replays. Both retain the same failure invariant and bounded1-minimality, with no global-minimality claim. The separate CLI demo fixture reduces11 actions to5 with24 candidate checks/4 replay checks. The separate1,000-seed campaign command lasted10.397s (outer campaign32.148s including build/unsafe/replays), counted every outcome, and matched10/10 selected unsafe replay digests. These satisfy the named finite targets, not statistical correctness confidence.
+The complete1,000-seed command took 10.633 s; outer campaign 38.818 s including build and ten selected unsafe replays. Native1/4/16 conformance took 5991/5992/6035 ms; this is one conformance run/profile, not seven-repeat performance evidence. Native CPU/RSS/request p50/p95/p99 are NOT RUN; aggregate timings cannot supply those tails. No production-scale extrapolation.
 
-The separate native conformance observations at request limits1/4/16 lasted6,092/6,030/6,020ms with observed peaks1/4/16,856/884/888 successful HTTP posts and2,328/3,651/4,092 journal bytes. This is one recorded conformance run per profile, not seven repeated performance samples. Native CPU/RSS and individual-request p50/p95/p99 are **NOT RUN**; aggregate means cannot supply those tails. No cloud/production-scale extrapolation follows.
+Targets: common12-operation checking<1 s;10,000 model events<2 s; ten matching replay digests and1,000 outcomes. These are finite named targets, not statistical correctness confidence.
 
-Target thresholds: common12-operation checking<1s;10,000 model events<2s;10/10 matching target replay digests;1,000 requested seed outcomes. Raw measured variability remains visible. Capacity bounds, tested examples and observed production scale are distinct; there are no production users.
-
-Historical results below retain their original workload/toolchain. Model10000 in the legacy run was10,000 sequential writes, so its values are not a speed comparison with the current durability/crash workload.
+Historical measurements below retain their original toolchain and workload; legacy Model10000 uses sequential writes and is not comparable to the current crash/durability workload.
 
 ## Observed local-kernel results - 2026-10-10 Singapore
 
-[20261009T183516-11cad33b9f](verification/curated/20261009T183516-11cad33b9f/run.json). Executed source commit `1ff0c7e093fee8f552c889cb8cf9c9ac59f4efcf`; Go1.23.2 linux/amd64, AMD EPYC 9V74 host, shared container. Seven repetitions, Go benchmark calibration, 100ms requested benchmark interval per repetition. The `-5` suffix records the runtime processor setting; host model name is not an exclusive 80-core allocation.
+[20261009T183516-11cad33b9f](verification/curated/20261009T183516-11cad33b9f/run.json). Executed source commit `1ff0c7e093fee8f552c889cb8cf9c9ac59f4efcf`; Go1.23.2 linux/amd64, AMD EPYC 9V74 host, shared container. Seven repetitions, Go benchmark calibration, 100 ms requested benchmark interval per repetition. The `-5` suffix records the runtime processor setting; host model name is not an exclusive 80-core allocation.
 
 | Synthetic workload | Median per operation | Min-max across repetitions | Median B/op | Median allocations/op |
 |---|---:|---:|---:|---:|

@@ -6,218 +6,218 @@
       "requirement": "FR-001",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-002",
       "requirement": "FR-002",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-003",
       "requirement": "FR-002",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-004",
       "requirement": "FR-003",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-005",
       "requirement": "FR-004",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-006",
       "requirement": "FR-005",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-007",
       "requirement": "FR-006",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-008",
       "requirement": "FR-007",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-009",
       "requirement": "FR-008",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-010",
       "requirement": "FR-012",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-011",
       "requirement": "FR-009",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-012",
       "requirement": "FR-010",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-013",
       "requirement": "REL-002",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-014",
       "requirement": "REL-003",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json",
-        "verification/curated/20261011T170547-4066dd239e/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json",
+        "verification/curated/20261011T175945-40cbff969b/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-015",
       "requirement": "FR-011",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json",
-        "verification/curated/20261011T170547-4066dd239e/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json",
+        "verification/curated/20261011T175945-40cbff969b/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-016",
       "requirement": "FR-002",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-017",
       "requirement": "SEC-002",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-018",
       "requirement": "NFR-003",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170233-b5771def95/run.json"
+        "verification/curated/20261011T175556-359deaa09c/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-019",
       "requirement": "FR-013",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json",
-        "verification/curated/20261011T170516-2d33cec802/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json",
+        "verification/curated/20261011T175911-780718a2e3/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-020",
       "requirement": "NFR-004",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T165127-3ea1dec7ce/run.json"
+        "verification/curated/20261011T174337-073ea8eb96/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-021",
       "requirement": "SEC-003",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170348-a68d9c0feb/run.json"
+        "verification/curated/20261011T175712-a5e53254ce/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-022",
       "requirement": "PERF-001",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170421-048ed5cb2f/run.json"
+        "verification/curated/20261011T175804-10e36b68c3/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-023",
       "requirement": "PERF-002",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170421-048ed5cb2f/run.json"
+        "verification/curated/20261011T175804-10e36b68c3/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a4/."
     },
     {
       "id": "AC-024",
       "requirement": "PERF-003",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T170119-6f3f0950e8/run.json",
-        "verification/curated/20261011T170441-46975730ac/run.json"
+        "verification/curated/20261011T175440-7751cf1b5d/run.json",
+        "verification/curated/20261011T175828-1b131e43d7/run.json"
       ],
       "note": "Complete package smoke32 checks plus separately measured1000 attempted seeds, all outcome histories/results/hash accounting and ten replays of the separately labelled unsafe variant; finite workload only."
     }
@@ -228,6 +228,6 @@
   },
   "supported_toolchain_verified": true,
   "supported_toolchain_evidence": [
-    "verification/curated/20261011T170345-f9cecc1fdf/run.json"
+    "verification/curated/20261011T175708-5af6bac592/run.json"
   ]
 }
