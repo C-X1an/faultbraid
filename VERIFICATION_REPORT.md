@@ -29,6 +29,8 @@ Native runs lasted6,092/6,030/6,020ms and recorded856/884/888 successful HTTP me
 
 ## Preserved failures and corrections
 
+The A3 five kernel mutation controls below executed real PASS / semantic assertion FAIL / PASS, but their Windows text writes changed disposable source line endings. Their summary hashes describe normalized text, rather than the actual mutant files, and byte restoration was not established. These original receipts remain historical evidence with this limitation. The corrected runner uses byte writes and checks the entire disposable source identity; corrected source-matched controls and final review are pending.
+
 | Observed failure/control | Resolution and evidence |
 |---|---|
 | Initial1,000 campaign:998 VALID,2 ERROR (seeds365/854) due to contingent crash/restart actions | General workload generator corrected; no seed exceptions. [Original](verification/curated/20261011T074443-a404a14eef/run.json), current full campaign above. |
