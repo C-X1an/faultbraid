@@ -81,6 +81,39 @@ func TestFileStoreRealJournalTargetRecovery(t *testing.T) {
 		t.Fatal("journal recovery lost payload identity")
 	}
 }
+
+func TestFileStoreCountsOnlySuccessfulActualSync(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "sync-count.journal")
+	store, err := NewFileStore(path, 0)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer store.Close()
+	if store.SyncCount() != 1 {
+		t.Fatal("new journal did not count its successful initialization fsync")
+	}
+	if err := store.Stage(Batch{}); err != nil {
+		t.Fatal(err)
+	}
+	if err := store.Flush(); err != nil || store.SyncCount() != 1 {
+		t.Fatalf("empty batch invented an fsync: count=%d error=%v", store.SyncCount(), err)
+	}
+	if err := store.Stage(Batch{HardState: &pb.HardState{Term: new(uint64(1))}}); err != nil {
+		t.Fatal(err)
+	}
+	if err := store.Flush(); err != nil || store.SyncCount() != 2 {
+		t.Fatalf("actual journal flush was not counted: count=%d error=%v", store.SyncCount(), err)
+	}
+	if err := store.Stage(Batch{HardState: &pb.HardState{Term: new(uint64(2))}}); err != nil {
+		t.Fatal(err)
+	}
+	if err := store.file.Close(); err != nil {
+		t.Fatal(err)
+	}
+	if err := store.Flush(); err == nil || store.SyncCount() != 2 {
+		t.Fatalf("failed IO changed successful fsync count: count=%d error=%v", store.SyncCount(), err)
+	}
+}
 func journalFixture(t *testing.T) ([]byte, int) {
 	t.Helper()
 	c := newCluster(t, Safe)

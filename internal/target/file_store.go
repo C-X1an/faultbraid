@@ -26,6 +26,7 @@ type FileStore struct {
 	file         *os.File
 	poisoned     bool
 	journalLimit uint64
+	syncs        uint64
 }
 
 func NewFileStore(path string, limit uint64) (*FileStore, error) {
@@ -47,6 +48,19 @@ func NewFileStore(path string, limit uint64) (*FileStore, error) {
 	return s, nil
 }
 func (s *FileStore) Close() error { s.poisoned = true; return s.file.Close() }
+
+// SyncCount is diagnostic evidence of successful calls to this handle's actual
+// File.Sync, including journal initialization or interrupted-tail truncation.
+// Like all FileStore methods it must be read by the serialized store owner.
+// It is not a physical power-loss guarantee and resets when the file is reopened.
+func (s *FileStore) SyncCount() uint64 { return s.syncs }
+func (s *FileStore) sync() error {
+	err := s.file.Sync()
+	if err == nil {
+		s.syncs++
+	}
+	return err
+}
 func (s *FileStore) Stage(b Batch) error {
 	if s.poisoned {
 		return ErrStopped
@@ -87,7 +101,7 @@ func (s *FileStore) Flush() error {
 		err = writeFull(s.file, record)
 	}
 	if err == nil {
-		err = s.file.Sync()
+		err = s.sync()
 	}
 	if err != nil {
 		s.poisoned = true
@@ -130,7 +144,7 @@ func (s *FileStore) Recover() (State, error) {
 	}
 	if len(data) == 0 {
 		if err = writeFull(s.file, journalMagic); err == nil {
-			err = s.file.Sync()
+			err = s.sync()
 		}
 		if err != nil {
 			s.poisoned = true
@@ -176,7 +190,7 @@ func (s *FileStore) Recover() (State, error) {
 	}
 	if pos != len(data) {
 		if err = s.file.Truncate(int64(pos)); err == nil {
-			err = s.file.Sync()
+			err = s.sync()
 		}
 		if err != nil {
 			s.poisoned = true
