@@ -20,3 +20,12 @@ The resulting target must be described as **instrumented etcd/raft v3.7.0**.
 The generated source lives at `.local-runs/raft` and is intentionally ignored.
 The full upstream test suite, including the added injection tests, is the
 conformance check for the patched dependency.
+
+The prepared-tree digest hashes UTF-8 relative names, a NUL separator, exact file
+bytes and a final NUL for each file. Files are ordered by casefolded relative
+path components, with original components breaking ties. This explicitly keeps
+the original Windows-established pin portable; names and contents are never
+normalized. Native `Path` sorting previously produced a different aggregate on
+Linux from the same 164 files, blocking the first hosted builds before tests.
+The ordering repair preserves every archive, patch and prepared-tree digest in
+`lock.json`; mixed-case/component-order regression tests cover both path flavors.

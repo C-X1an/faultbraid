@@ -6,7 +6,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
-from pathlib import Path, PurePosixPath
+from pathlib import Path, PurePath, PurePosixPath
 import shutil
 import stat
 import subprocess
@@ -62,6 +62,17 @@ def owned_path(path: Path) -> None:
         fail(f"source path resolves outside the public workspace: {path}")
 
 
+def tree_path_key(path: PurePath, root: PurePath) -> tuple[tuple[str, ...], tuple[str, ...]]:
+    """Keep the original pinned component order independent of host Path flavor.
+
+    The pin was established with Windows' casefolded component comparison.
+    Original component spelling breaks ties deterministically on other hosts.
+    File names and file bytes are hashed verbatim; no normalization is applied.
+    """
+    parts = path.relative_to(root).parts
+    return tuple(part.casefold() for part in parts), parts
+
+
 def tree_digest(root: Path) -> str:
     reject_alias(root)
     if not root.is_dir():
@@ -76,7 +87,7 @@ def tree_digest(root: Path) -> str:
             reject_alias(path)
             if path.is_file():
                 files.append(path)
-    files.sort()
+    files.sort(key=lambda path: tree_path_key(path, root))
     for path in files:
         relative = path.relative_to(root).as_posix().encode("utf-8")
         digest.update(relative)

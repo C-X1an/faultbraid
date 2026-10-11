@@ -4,7 +4,7 @@ import hashlib
 import importlib.util
 import json
 import os
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 import subprocess
 import tempfile
 import unittest
@@ -26,6 +26,31 @@ def directory_alias(alias, target):
 
 
 class PrepareTests(unittest.TestCase):
+    def test_tree_order_is_independent_of_path_flavor(self):
+        """Mixed case, directory prefixes and case ties have a fixed order."""
+        names = ['z.go', 'LICENSE', 'b.go', 'B/go.mod', 'a.go', 'A.go']
+        expected = ['A.go', 'a.go', 'B/go.mod', 'b.go', 'LICENSE', 'z.go']
+        for flavor, root_name in ((PurePosixPath, '/source'), (PureWindowsPath, 'C:/source')):
+            with self.subTest(flavor=flavor.__name__):
+                root = flavor(root_name)
+                ordered = sorted((root / name for name in names),
+                                 key=lambda path: prepare.tree_path_key(path, root))
+                self.assertEqual([path.relative_to(root).as_posix() for path in ordered], expected)
+
+    def test_tree_digest_preserves_pinned_component_order_and_bytes(self):
+        """The aggregate hashes exact names/bytes in the portable pin order."""
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            fixtures = {'z.go': b'z\n', 'LICENSE': b'license\r\n',
+                        'b.go': b'b\n', 'B/go.mod': b'module fixture\n', 'a.go': b'a\n'}
+            for name, data in fixtures.items():
+                path = root / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(data)
+            expected_bytes = (b'a.go\0a\n\0B/go.mod\0module fixture\n\0'
+                              b'b.go\0b\n\0LICENSE\0license\r\n\0z.go\0z\n\0')
+            self.assertEqual(prepare.tree_digest(root), hashlib.sha256(expected_bytes).hexdigest())
+
     def test_archive_fixture_ignores_inherited_autocrlf(self):
         """Real Git application in a non-Git source copy; upstream is a fixture."""
         with tempfile.TemporaryDirectory() as folder:
