@@ -25,5 +25,5 @@ jobs:
         with:
           languages: go
           build-mode: manual
-      - run: make build
+      - run: make bootstrap build
       - uses: github/codeql-action/analyze@9f759ee644a3e7c15c1390abf49868036c00067b
