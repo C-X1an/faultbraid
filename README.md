@@ -4,7 +4,7 @@ Make a distributed-state failure small enough to understand.
 
 FaultBraid is an experimental correctness workbench for a single integer register built on **instrumented etcd/raft v3.7.0**. It runs three fixed voters under explicit virtual faults, checks the collected history, re-executes saved traces, and reduces a failing scenario into a smaller executable reproducer. A separate native lab exercises the same integration code in real loopback child processes with checksummed disk journals.
 
-**Implementation and release acceptance are separate.** The target, entropy hook, fault runner, scenario reducer, independent differential checks and native lab are implemented. Applicable source-matched local acceptance and clean verification passed on Go1.27.2 Windows. Independent final review of all 24 criteria, hosted Linux runtime CI and publication remain pending. Consult [VERIFICATION_REPORT.md](VERIFICATION_REPORT.md) and [TEST_MATRIX.md](TEST_MATRIX.md) for actual outcomes and source identities; earlier kernel-only records remain historical evidence.
+**Implementation and release acceptance are separate.** The target, entropy hook, fault runner, scenario reducer, independent differential checks and native lab are implemented. Applicable source-matched local acceptance and clean verification passed on Go1.27.2 Windows. Independent final review of all 24 criteria passed on C1. Hosted Linux runtime CI and publication remain pending. Consult [VERIFICATION_REPORT.md](VERIFICATION_REPORT.md) and [TEST_MATRIX.md](TEST_MATRIX.md) for actual outcomes and source identities; earlier kernel-only records remain historical evidence.
 
 ## Run locally
 
@@ -98,4 +98,7 @@ FaultBraid is a finite experiment, not a production database, new consensus algo
 Start contributions with [CONTRIBUTING.md](CONTRIBUTING.md) and the [locked acceptance contract](ACCEPTANCE_SPEC.md). Original source is [MIT-licensed](LICENSE); dependencies and the instrumented Raft patch retain their upstream licenses and notices in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 
-Corrected-source A4 local evidence is in [VERIFICATION_REPORT](VERIFICATION_REPORT.md). Original B1 final review rejected mutation byte receipts; corrected controls and fresh committed reproduction now ran, with separate final assessment/publication/hosted CI still pending. Historical A3 receipts remain unchanged and labelled.
+Corrected-source A4 local evidence is in [VERIFICATION_REPORT](VERIFICATION_REPORT.md). Original B1 final review rejected mutation byte receipts; corrected controls and fresh committed reproduction now ran, with the separate final assessment now passed; publication and hosted CI remain pending. Historical A3 receipts remain unchanged and labelled.
+
+
+The [independent all 24 assessment](verification/reviews/final-c1-assessment.json) is a separate read-only review, scoped to all 24 locked criteria and the exact C1 packet/export. FV-01–04 are resolved; original rejected assessments and failures remain inspectable. Live full verification and hosted/publication results must be recorded separately.

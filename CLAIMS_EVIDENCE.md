@@ -13,6 +13,9 @@ Executed commit `2e8379a7ee18c388d31b6b963c67ed04faa5a41e`, complete source SHA2
 | Supported toolchain and clean reproduction | [20261011T174337-073ea8eb96](verification/curated/20261011T174337-073ea8eb96/run.json); [20261011T175708-5af6bac592](verification/curated/20261011T175708-5af6bac592/run.json) | Exact committed clone and fresh cache; same host/module cache |
 | Actual byte-preserving semantic mutation controls | [controls](verification/release-a4/kernel-mutations.json) | Five selected controls, not an overall mutation score |
 | Measured checker/model/target/reduction costs | [BENCHMARKS](BENCHMARKS.md) | All91 calibrated samples; uncertainty and spread retained |
-| Separate final review / hosted CI / publication | Pending / NOT RUN / NOT RUN | Local commands do not imply these gates |
+| Separate final review / hosted CI / publication | PASS / NOT RUN / NOT RUN | Local commands do not imply these gates |
 
 No production users, scale, cloud deployment, universal correctness or security/physical crash certification is claimed. Original A3/B1 receipts and rejected byte evidence remain historical.
+
+
+The [independent all 24 assessment](verification/reviews/final-c1-assessment.json) is a separate read-only review, scoped to all 24 locked criteria and the exact C1 packet/export. FV-01–04 are resolved; original rejected assessments and failures remain inspectable. Live full verification and hosted/publication results must be recorded separately.

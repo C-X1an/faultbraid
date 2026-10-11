@@ -1,6 +1,6 @@
 # Requirement and test matrix
 
-All24 applicable local rows use actual corrected-source A4 commands. Independent final assessment and hosted CI are separate gates. Executed commit `2e8379a7ee18c388d31b6b963c67ed04faa5a41e`, complete source SHA256 `53eb9fa9ddeca5e426a7b2eab34976b5ddd72e555eddaecb11125101ad4db86a` (622 files). Later prose/evidence curation preserves original identities; the gate compares every execution input.
+All24 applicable local rows use actual corrected-source A4 commands. Independent final assessment passed on C1; hosted CI remains a separate pending gate. Executed commit `2e8379a7ee18c388d31b6b963c67ed04faa5a41e`, complete source SHA256 `53eb9fa9ddeca5e426a7b2eab34976b5ddd72e555eddaecb11125101ad4db86a` (622 files). Later prose/evidence curation preserves original identities; the gate compares every execution input.
 
 | Acceptance | Requirement | Locked contract | Local result | Evidence |
 |---|---|---|---|---|
@@ -30,3 +30,6 @@ All24 applicable local rows use actual corrected-source A4 commands. Independent
 | AC-024 | PERF-003 | `tests/system/campaign_test.go` | PASS | [20261011T175440-7751cf1b5d](verification/curated/20261011T175440-7751cf1b5d/run.json), [20261011T175828-1b131e43d7](verification/curated/20261011T175828-1b131e43d7/run.json) |
 
 AC-024 includes the actual1,000-seed campaign and32-seed package smoke test. AC-016 retains genuine UNKNOWN controls. AC-019 runs production native processes and File.Sync. AC-020 is a fresh committed clone/cache on the same host. AC-021 requires the final public export audit separately. Five corrected byte-exact kernel controls and the Store.Flush control are linked in [VERIFICATION_REPORT](VERIFICATION_REPORT.md). Original A3 kernel byte-hash/restoration defects remain labelled historical. No locked assertion is weakened or skipped.
+
+
+The [independent all 24 assessment](verification/reviews/final-c1-assessment.json) is a separate read-only review, scoped to all 24 locked criteria and the exact C1 packet/export. FV-01–04 are resolved; original rejected assessments and failures remain inspectable. Live full verification and hosted/publication results must be recorded separately.

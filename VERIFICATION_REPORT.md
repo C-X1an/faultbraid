@@ -1,6 +1,6 @@
 # Verification report
 
-The corrected workbench passed the applicable local commands on pinned Go1.27.2 Windows. Separate final all 24 assessment, the live full gate, hosted Linux/CodeQL and publication remain pending. The original B1 assessment rejected mutation byte evidence; it is retained as a failure.
+The corrected workbench passed the applicable local commands on pinned Go1.27.2 Windows. Separate final review of all 24 criteria passed on C1. Live full verification, hosted Linux/CodeQL and publication remain pending. The original B1 assessment rejected mutation byte evidence; it is retained as a failure.
 
 Executed commit `2e8379a7ee18c388d31b6b963c67ed04faa5a41e`, complete source SHA256 `53eb9fa9ddeca5e426a7b2eab34976b5ddd72e555eddaecb11125101ad4db86a` (622 files). Later prose/evidence curation preserves original identities; the gate compares every execution input.
 
@@ -30,7 +30,7 @@ Native conformance lasted 5991/5992/6035 ms and observed 854/876/890 successful 
 
 ## Preserved failures and corrections
 
-FV-04: the original A3 five kernel controls ran real PASS / semantic FAIL / PASS, but Windows text conversion made their reported mutant hashes inaccurate and disposable restored bytes different from baseline. [Original controls](verification/release/kernel-mutations.json) remain unchanged with this limitation. The corrected A4 runner reads/writes/hashes actual bytes and checks both the declared site change and full isolated source restoration. Its current actual controls are above. [Separate actual retest](verification/release-a4/fv04-independent-retest.json) independently verified all 15 control records and rejected two extra byte changes; FV-04 is scoped-resolved. Final all24 review remains pending. An attempted correction run failed its copy identity guard because the report was edited during execution; [actual failure](verification/curated/20261011T174129-cee7d780c2/run.json) and its nine partial records are retained and receive no release credit.
+FV-04: the original A3 five kernel controls ran real PASS / semantic FAIL / PASS, but Windows text conversion made their reported mutant hashes inaccurate and disposable restored bytes different from baseline. [Original controls](verification/release/kernel-mutations.json) remain unchanged with this limitation. The corrected A4 runner reads/writes/hashes actual bytes and checks both the declared site change and full isolated source restoration. Its current actual controls are above. [Separate actual retest](verification/release-a4/fv04-independent-retest.json) independently verified all 15 control records and rejected two extra byte changes; FV-04 is scoped-resolved. Final review of all 24 criteria passed; see [independent all 24 assessment](verification/reviews/final-c1-assessment.json). An attempted correction run failed its copy identity guard because the report was edited during execution; [actual failure](verification/curated/20261011T174129-cee7d780c2/run.json) and its nine partial records are retained and receive no release credit.
 
 | Observed failure/control | Resolution and evidence |
 |---|---|
@@ -46,8 +46,13 @@ The [release index](verification/release/index.json) includes actual FAILs and e
 
 ## NOT RUN and limits
 
-Independent final approval, live full release verification, final exact curated export audit, GitHub publication and hosted Linux native/CodeQL are pending. Native seven-repeat CPU/RSS/request p50/p95/p99, production scale/users, cloud deployment and physical crash certification are NOT RUN. Snapshots, compaction and dynamic membership are unsupported. Finite fuzz, mutation and seed campaigns do not prove universal correctness or security.
+Independent final approval and exact C1 export audit passed. Live full release verification, GitHub publication and hosted Linux native/CodeQL remain pending. Native seven-repeat CPU/RSS/request p50/p95/p99, production scale/users, cloud deployment and physical crash certification are NOT RUN. Snapshots, compaction and dynamic membership are unsupported. Finite fuzz, mutation and seed campaigns do not prove universal correctness or security.
 
 ## Evidence provenance
 
 [Current index](verification/release-a4/index.json) contains actual command records, including expected negative controls. All original statuses, timing, source tables and raw hashes remain intact. Declared operator-path redactions and CRLF-to-LF text normalization have their own curated hashes. [Artifact provenance](verification/release-a4/artifact-provenance.json) records product artifact transformations. Previous versioned receipts remain inspectable; private research, profiles, prompts and agent session/chat logs are excluded. SHA256 supplies integrity, not external organizational attestation. Legacy kernel evidence is unchanged in [SEED_RESULTS](verification/SEED_RESULTS.md).
+
+
+The [independent all 24 assessment](verification/reviews/final-c1-assessment.json) is a separate read-only review, scoped to all 24 locked criteria and the exact C1 packet/export. FV-01–04 are resolved; original rejected assessments and failures remain inspectable. Live full verification and hosted/publication results must be recorded separately.
+
+Two integrator curation attempts stopped before changing public files because relative operator paths were rejected. The private projector now recognizes only the known workspace ancestor/private path prefix and declares its redaction; original record fields and hashes remain intact. Failed attempts receive no release credit: [failure](verification/curated/20261011T182354-000de40f74/run.json), [failure](verification/curated/20261011T182521-577a825129/run.json).

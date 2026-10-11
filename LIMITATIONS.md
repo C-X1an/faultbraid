@@ -4,7 +4,7 @@
 
 Implemented components include the bounded register checker and diagnostic history reducer; queue/disk-model kernel; pinned instrumented three-voter Raft target; explicit election entropy; staged/flushed stores and named crash barriers; virtual faults, causal traces and two-pass replay; executable ddmin/greedy scenario reduction; independent Porcupine/finite-oracle differential checks; bounded seed campaigns; static inspectors; and the same-target native loopback/FileStore process lab.
 
-Applicable local acceptance and exact committed clean verification passed on the supported Windows toolchain. Independent final review of all 24 acceptance criteria, hosted Linux runtime CI, the final curated public-content audit and repository publication remain pending. Scoped results and earlier runs cannot replace those gates. Read [VERIFICATION_REPORT.md](VERIFICATION_REPORT.md), [TEST_MATRIX.md](TEST_MATRIX.md) and [CLAIMS_EVIDENCE.md](CLAIMS_EVIDENCE.md) for source-bound status rather than inferring release readiness from implementation presence.
+Applicable local acceptance and exact committed clean verification passed on the supported Windows toolchain. Independent final review of all 24 acceptance criteria and the exact C1 public-content audit passed. Hosted Linux runtime CI and repository publication remain pending. Scoped results and earlier runs cannot replace those gates. Read [VERIFICATION_REPORT.md](VERIFICATION_REPORT.md), [TEST_MATRIX.md](TEST_MATRIX.md) and [CLAIMS_EVIDENCE.md](CLAIMS_EVIDENCE.md) for source-bound status rather than inferring release readiness from implementation presence.
 
 ## Finite correctness and workload scope
 
@@ -49,4 +49,7 @@ The reviewed public inventory, staged tree, reachable Git history and determinis
 No production scale, tenant isolation, live monitoring, TLS service, cloud deployment, complete formal proof or hardware power-loss certification is established. Repository publication and actual CI are separate deliverables; no badge represents an unexecuted job or substitutes for acceptance evidence.
 
 
-Corrected-source A4 local evidence is in [VERIFICATION_REPORT](VERIFICATION_REPORT.md). Original B1 final review rejected mutation byte receipts; corrected controls and fresh committed reproduction now ran, with separate final assessment/publication/hosted CI still pending. Historical A3 receipts remain unchanged and labelled.
+Corrected-source A4 local evidence is in [VERIFICATION_REPORT](VERIFICATION_REPORT.md). Original B1 final review rejected mutation byte receipts; corrected controls and fresh committed reproduction now ran, with the separate final assessment now passed; publication and hosted CI remain pending. Historical A3 receipts remain unchanged and labelled.
+
+
+The [independent all 24 assessment](verification/reviews/final-c1-assessment.json) is a separate read-only review, scoped to all 24 locked criteria and the exact C1 packet/export. FV-01–04 are resolved; original rejected assessments and failures remain inspectable. Live full verification and hosted/publication results must be recorded separately.

@@ -223,8 +223,28 @@
     }
   ],
   "independent_review": {
-    "status": "NOT RUN",
-    "reason": "Separate final assessment pending completed evidence/export packet"
+    "status": "PASS",
+    "assessment": {
+      "path": "verification/reviews/final-c1-assessment.json",
+      "sha256": "41e6046382966b7bed524d2c5970c97b16a14f0b391ed712f4265c040470a7a5"
+    },
+    "evidence": [
+      "verification/curated/20261011T180956-48c292bdc5/run.json",
+      "verification/curated/20261011T181019-efd67db864/run.json",
+      "verification/curated/20261011T181322-25fdabe6de/run.json",
+      "verification/curated/20261011T181650-2b5ab7afc9/run.json",
+      "verification/curated/20261011T182028-f99310bcc6/run.json",
+      "verification/curated/20261011T181651-fd2780db09/run.json",
+      "verification/curated/20261011T181654-78361f60f6/run.json",
+      "verification/curated/20261011T181655-caeac64c3c/run.json",
+      "verification/curated/20261011T181655-fbe2aacc30/run.json",
+      "verification/curated/20261011T181656-53a7a6ae65/run.json",
+      "verification/curated/20261011T181657-5e8a7ac0a4/run.json",
+      "verification/curated/20261011T181657-26b9fa4f11/run.json",
+      "verification/curated/20261011T181658-703dd01f72/run.json",
+      "verification/curated/20261011T181659-e9c0bf8cc1/run.json"
+    ],
+    "scope": "Actual separate read-only all24 review of C1; original full source and raw hashes preserved; later result/prose curation changes no execution inputs"
   },
   "supported_toolchain_verified": true,
   "supported_toolchain_evidence": [
