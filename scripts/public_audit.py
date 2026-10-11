@@ -179,6 +179,17 @@ class Audit:
         # filesystem identity after root alias validation, not path spelling.
         if not os.path.samefile(top, self.root):
             raise ValueError('public root is not this repository top level')
+        # --no-replace-objects does not disable legacy graft ancestry. Refuse
+        # both the effective graft file and its environment override before
+        # trusting rev-list as a complete reachable-history enumeration.
+        if 'GIT_GRAFT_FILE' in os.environ:
+            raise ValueError('Git graft environment override is not auditable')
+        graft = Path(self.git('rev-parse', '--git-path', 'info/grafts').decode('utf-8').strip())
+        if not graft.is_absolute():
+            graft = self.root / graft
+        graft = safe_components(graft)
+        if os.path.lexists(graft):
+            raise ValueError('legacy grafted Git history is not complete')
         if self.git('rev-parse', '--is-shallow-repository').strip() != b'false':
             raise ValueError('incomplete shallow Git history')
         commits = self.git('rev-list', '--all').decode('ascii').splitlines()

@@ -45,10 +45,10 @@ class PublicAuditTests(unittest.TestCase):
     def inventory(self, names):
         (self.root / "PUBLIC_FILES.txt").write_bytes(("\n".join(sorted(names)) + "\n").encode())
 
-    def audit(self, *arguments):
+    def audit(self, *arguments, env=None):
         result = subprocess.run(
             [sys.executable, str(SCRIPT), "--root", str(self.root), *map(str, arguments)],
-            stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=60,
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=60, env=env,
         )
         try:
             payload = json.loads(result.stdout)
@@ -84,6 +84,39 @@ class PublicAuditTests(unittest.TestCase):
         self.commit()
         result, _ = self.rejected()
         self.assertNotIn(value, result.stdout + result.stderr)
+
+    def test_legacy_graft_cannot_hide_deleted_historical_content(self):
+        value = ("gh" + "p_" + "G" * 36).encode()
+        (self.root / "README.md").write_bytes(value)
+        self.commit()
+        (self.root / "README.md").write_bytes(b"Synthetic restored engineering fixture.\n")
+        self.commit()
+        self.rejected()
+        head = self.git("rev-parse", "HEAD").strip()
+        graft = self.root / ".git/info/grafts"
+        graft.write_bytes(head + b"\n")
+        try:
+            self.assertEqual(self.git("rev-parse", "--is-shallow-repository").strip(), b"false")
+            self.assertEqual(len(self.git("rev-list", "--all").splitlines()), 1)
+            result, payload = self.rejected()
+            self.assertFalse(payload["history"]["complete"])
+            self.assertNotIn(value, result.stdout + result.stderr)
+        finally:
+            graft.unlink()
+        self.rejected()
+
+    def test_graft_environment_override_fails_closed(self):
+        graft = Path(self.temporary.name) / "synthetic-graft"
+        graft.write_bytes(self.git("rev-parse", "HEAD").strip() + b"\n")
+        environment = os.environ.copy()
+        environment["GIT_GRAFT_FILE"] = str(graft)
+        result, payload = self.audit(env=environment)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertEqual(payload["status"], "FAIL")
+        self.assertFalse(payload["history"]["complete"])
+        result, payload = self.audit()
+        self.assertEqual(result.returncode, 0)
+        self.assertEqual(payload["status"], "PASS")
 
     def test_nested_annotated_tag_message_is_scanned(self):
         value = ("gh" + "p_" + "A" * 36).encode()
