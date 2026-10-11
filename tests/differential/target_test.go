@@ -88,6 +88,7 @@ func TestDifferentialActualTargetHistories(t *testing.T) {
 	}
 	counts := census{}
 	var targetEvents, targetChoices uint64
+	var rejectedOnlyRequests int
 	check := func(label string, s scenario.Scenario, want history.Verdict) scenario.Trace {
 		t.Helper()
 		trace, err := scenario.Run(context.Background(), s, scenario.Options{Identity: identity})
@@ -109,8 +110,47 @@ func TestDifferentialActualTargetHistories(t *testing.T) {
 	}
 	for seed := uint64(0); seed < 32; seed++ {
 		trace := check(fmt.Sprintf("target-safe-seed-%d", seed), generatedTargetScenario(seed), history.Valid)
-		if len(trace.History.Operations) != 6 {
-			t.Fatalf("actual target seed%d lost a logical request: %d operations", seed, len(trace.History.Operations))
+		// There are six configured logical requests. The collector excludes a
+		// request only when every attempt is affirmatively rejected before
+		// admission. Prove each exclusion from its actual causal records; an
+		// admitted or uncertain missing request is still a test failure.
+		observed := map[string]bool{}
+		for _, op := range trace.History.Operations {
+			observed[op.ID] = true
+		}
+		requests := map[string]bool{}
+		for _, action := range trace.Scenario.Actions {
+			if action.RequestID == nil {
+				continue
+			}
+			requests[*action.RequestID] = true
+			if observed[*action.RequestID] {
+				continue
+			}
+			var actionID, stepID uint64
+			rejected := false
+			for _, event := range trace.Events {
+				if event.Kind == "action" && event.Detail == action.ID+":"+action.Kind {
+					actionID = event.ID
+				}
+				if actionID != 0 && event.Parent == actionID && (event.Kind == "invoke-write" || event.Kind == "invoke-read") {
+					stepID = event.ID
+				}
+				if stepID != 0 && event.Kind == "rejected" && event.Parent == stepID && event.Detail == "not-leader-before-admission" {
+					rejected = true
+				}
+			}
+			if !rejected {
+				t.Fatalf("seed%d silently lost possibly admitted request %s action %s", seed, *action.RequestID, action.ID)
+			}
+		}
+		if len(requests) != 6 {
+			t.Fatal("workload no longer covers its six configured logical requests")
+		}
+		for id := range requests {
+			if !observed[id] {
+				rejectedOnlyRequests++
+			}
 		}
 		completed := 0
 		for _, op := range trace.History.Operations {
@@ -142,5 +182,5 @@ func TestDifferentialActualTargetHistories(t *testing.T) {
 	}
 	counts.log(t, "actual Raft histories: safe seeds0..31 four fault patterns plus safe/unsafe minority-read controls")
 	counts.requireComplete(t, 34)
-	t.Logf("AC-016 actual-target events=%d entropy-choices=%d source=%s module=%s patch=%s", targetEvents, targetChoices, identity.SourceTreeSHA, identity.ModuleLockSHA, identity.PatchSHA)
+	t.Logf("AC-016 actual-target events=%d entropy-choices=%d rejected-only-logical-requests=%d source=%s module=%s patch=%s", targetEvents, targetChoices, rejectedOnlyRequests, identity.SourceTreeSHA, identity.ModuleLockSHA, identity.PatchSHA)
 }

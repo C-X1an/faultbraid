@@ -25,3 +25,12 @@ func (o *processOwner) Kill() error {
 	return err
 }
 func (o *processOwner) Close() error { return nil }
+
+func ownedKillExit(command *exec.Cmd, waitErr error) bool {
+	var exitErr *exec.ExitError
+	if !errors.As(waitErr, &exitErr) || command.ProcessState == nil {
+		return false
+	}
+	status, ok := command.ProcessState.Sys().(syscall.WaitStatus)
+	return ok && status.Signaled() && status.Signal() == syscall.SIGKILL
+}

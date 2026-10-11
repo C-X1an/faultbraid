@@ -10,11 +10,12 @@ import (
 	"github.com/C-X1an/faultbraid/internal/history"
 	"github.com/C-X1an/faultbraid/internal/report"
 	"github.com/C-X1an/faultbraid/internal/sim"
-	"github.com/C-X1an/faultbraid/internal/strictjson"
 	"io"
 	"os"
 	"path/filepath"
 	"time"
+
+	"github.com/C-X1an/faultbraid/internal/labreal"
 )
 
 func main() { os.Exit(run(os.Args[1:], os.Stdin, os.Stdout, os.Stderr)) }
@@ -24,9 +25,18 @@ func fail(w io.Writer, code, message string) int {
 }
 func run(args []string, stdin io.Reader, stdout, stderr io.Writer) int {
 	if len(args) == 0 {
-		return fail(stderr, "INVALID_INPUT", "expected check, minimize, replay, report or demo")
+		return fail(stderr, "INVALID_INPUT", "expected check, minimize, replay, report, demo, simulate, shrink-scenario, campaign or lab-real")
 	}
 	sub := args[0]
+	if sub == "lab-node" {
+		return labreal.NodeMain(args[1:], stdout, stderr)
+	}
+	if sub == "lab-real" {
+		return runReal(args[1:], stdin, stdout, stderr)
+	}
+	if sub == "simulate" || sub == "shrink-scenario" || sub == "campaign" {
+		return runTarget(args, stdin, stdout, stderr)
+	}
 	fs := flag.NewFlagSet(sub, flag.ContinueOnError)
 	fs.SetOutput(io.Discard)
 	in := fs.String("in", "-", "input file or - for stdin")
@@ -75,20 +85,7 @@ func run(args []string, stdin io.Reader, stdout, stderr io.Writer) int {
 		reader = f
 	}
 	if sub == "replay" {
-		var t sim.Trace
-		if err := strictjson.Decode(reader, &t); err != nil {
-			return fail(stderr, "INVALID_INPUT", err.Error())
-		}
-		if err := sim.Replay(t); err != nil {
-			if errors.Is(err, sim.ErrUnsupportedVersion) {
-				return fail(stderr, "UNSUPPORTED_VERSION", err.Error())
-			}
-			return fail(stderr, "REPLAY_MISMATCH", err.Error())
-		}
-		if err := json.NewEncoder(stdout).Encode(map[string]string{"status": "PASS", "digest": t.Digest, "scope": t.Model}); err != nil {
-			return 2
-		}
-		return 0
+		return replayInput(ctx, reader, stdout, stderr)
 	}
 	h, err := history.Decode(reader)
 	if err != nil {
@@ -148,7 +145,7 @@ func run(args []string, stdin io.Reader, stdout, stderr io.Writer) int {
 }
 func ret(n int64) *int64 { return &n }
 func demo(ctx context.Context, dir string) error {
-	if err := os.Mkdir(dir, 0700); err != nil {
+	if err := report.NewDirectory(dir); err != nil {
 		return err
 	}
 	histories := map[string]history.History{
@@ -210,7 +207,7 @@ func demo(ctx context.Context, dir string) error {
 	if err := report.WriteExclusive(filepath.Join(dir, "reduced.json"), append(b, '\n')); err != nil {
 		return err
 	}
-	summary := bytes.NewBufferString("FaultBraid local kernel demo\n\nVALID overlap; INVALID stale read; VALID pending write.\nModeled crash reads: 0 then 9. Full distributed target: NOT IMPLEMENTED.\n")
+	summary := bytes.NewBufferString("FaultBraid local kernel demo\n\nVALID overlap; INVALID stale read; VALID pending write.\nModeled crash reads: 0 then 9. Use simulate for the instrumented three-voter Raft target. This kernel demo covers the separate disk-register model.\n")
 	if _, err := fmt.Fprintf(summary, "Trace digest: %s\n", trace.Digest); err != nil {
 		return err
 	}

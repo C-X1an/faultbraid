@@ -308,6 +308,27 @@ class FullGateTests(unittest.TestCase):
         self.fixture.change_run(self.fixture.go, unrelated)
         self.blocked('AC-001: no successful evidence executes')
 
+    def test_selected_subtest_parent_pass_is_not_other_acceptance_evidence(self):
+        # Reproduce the observed attribution error: AC005 and its parent pass,
+        # while the required AC001 subtest never executes. These are synthetic
+        # validator inputs; the independent review retained the real Go run.
+        def selected(record):
+            record['command'] = ['go', 'test', '-json', '-count=1', '-run', '^TestFixture/AC005$', './...']
+            events = [
+                {'Action': 'pass', 'Package': 'faultbraid/tests/acceptance_locked', 'Test': 'TestFixture/AC005'},
+                {'Action': 'pass', 'Package': 'faultbraid/tests/acceptance_locked', 'Test': 'TestFixture'},
+                {'Action': 'pass', 'Package': 'faultbraid/tests/acceptance_locked'},
+            ]
+            data = ('\n'.join(json.dumps(event) for event in events) + '\n').encode()
+            (self.fixture.root / record['stdout']['path']).write_bytes(data)
+            record['stdout'].update(bytes=len(data), sha256=digest(data))
+        self.fixture.change_run(self.fixture.go, selected)
+        self.blocked('AC-001: no successful evidence executes')
+
+    def test_skip_selection_cannot_be_credited_as_complete_package(self):
+        self.fixture.change_run(self.fixture.go, lambda record: record.update(command=['go', 'test', '-json', '-skip=AC001', './...']))
+        self.blocked('AC-001: no successful evidence executes')
+
     def test_benchmark_output_without_benchmark_execution_is_rejected(self):
         self.fixture.change_run(self.fixture.go, lambda record: record.update(command=['go', 'test', '-json', './...']))
         self.blocked('AC-022: no successful evidence executes')

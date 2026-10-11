@@ -9,3 +9,6 @@ func openExclusive(path string) (*os.File, error) {
 }
 
 func protectFile(*os.File) error { return nil }
+
+func protectDirectory(string) error     { return nil }
+func outputAlias(info os.FileInfo) bool { return info.Mode()&os.ModeSymlink != 0 }

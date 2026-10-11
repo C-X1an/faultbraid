@@ -353,7 +353,12 @@ class Gate:
                         benchmark_names.update(re.findall(r'(?m)^func\s+(Benchmark\w+)\s*\(', self._read(test_path).decode('utf-8')))
                 measured = set(re.findall(r'(?m)^(Benchmark\w+)(?:/[^\s]+)?(?:-\d+)?\s+[^\n]*\bns/op\b', ''.join(logical_output)))
                 return benchmark_command and package_pass and bool(measured & benchmark_names)
-            restricted = any(arg in {'-run', '-json'} or arg.startswith(('-run=', '-json=')) for arg in command)
+            # A parent PASS does not show that every acceptance subtest ran.
+            # Complete package execution is required until a separately
+            # reviewed criterion-to-subtest mapping can establish selection.
+            if is_go_test and any(arg in {'-run', '-skip', '-args', '-test.run', '-test.skip'} or arg.startswith(('-run=', '-skip=', '-test.run=', '-test.skip=')) for arg in command[2:]):
+                return False
+            restricted = any(arg == '-json' or arg.startswith('-json=') for arg in command)
             return package_pass and bool(test_names) and (test_pass or not restricted)
         if path == 'scripts/test_evidence.py':
             selected = _evidence_unittest(command) or any(target in {'test', 'verify-seed', 'verify'} for target in make_targets)

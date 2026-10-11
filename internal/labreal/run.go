@@ -124,7 +124,9 @@ func (w *childOutput) Write(data []byte) (int, error) {
 		select {
 		case w.events <- observation{child: w.child, wire: &record}:
 		case <-w.ctx.Done():
-			return n, w.ctx.Err()
+			// Shutdown stops live observation delivery, but must keep draining
+			// the bounded pipe until the owned kill and Wait. Closing this pipe
+			// early can make the child's next protocol write fail on its own.
 		}
 		data = data[end+1:]
 	}
@@ -657,36 +659,39 @@ func (l *lab) deliver(frame frameTask) frameOutcome {
 	return frameOutcome{delivered: true}
 }
 func (l *lab) clientResult(outcome clientOutcome) error {
-	if outcome.err != nil {
-		return outcome.err
-	}
 	input := outcome.task.action
 	id := *input.RequestID
 	r := l.requests[id]
 	if r == nil {
-		return errors.New("real lab: response without a collected invocation")
+		return errors.Join(outcome.err, errors.New("real lab: response without a collected invocation"))
 	}
-	response := outcome.response
+	reply := outcome.response
+	if outcome.err != nil {
+		// A malformed or interrupted response cannot establish pre-admission
+		// rejection. Retain the invocation and an explicit uncertain attempt
+		// before propagating the protocol error to the run's INCONCLUSIVE path.
+		reply = response{ID: id, Status: "pending", Admission: "unknown", Value: r.operation.Value, Code: "PROPOSAL_PROTOCOL_ERROR"}
+	}
 	l.ordinal++
 	pid := 0
 	if outcome.task.child != nil {
 		pid = outcome.task.child.command.Process.Pid
 	}
 	l.result.Attempts = append(l.result.Attempts, Attempt{Ordinal: l.ordinal, Action: input.ID, RequestID: id, Node: *input.Node, PID: pid,
-		Kind: r.operation.Kind, Phase: response.Status, Admission: response.Admission, Value: response.Value, Code: response.Code})
-	if response.Admission != "rejected-before-admission" {
+		Kind: r.operation.Kind, Phase: reply.Status, Admission: reply.Admission, Value: reply.Value, Code: reply.Code})
+	if reply.Admission != "rejected-before-admission" {
 		r.possible = true
 	}
-	if response.Status == "complete" && r.operation.Return == nil {
-		if r.operation.Kind == "write" && response.Value != r.operation.Value {
+	if reply.Status == "complete" && r.operation.Return == nil {
+		if r.operation.Kind == "write" && reply.Value != r.operation.Value {
 			return errors.New("real lab: write result disagrees with replicated payload")
 		}
 		r.operation.Return = new(l.ordinal)
 		if r.operation.Kind == "read" {
-			r.operation.Value = response.Value
+			r.operation.Value = reply.Value
 		}
 	}
-	return nil
+	return outcome.err
 }
 func (l *lab) collectHistory() {
 	l.result.History.Operations = []history.Operation{}
@@ -724,6 +729,15 @@ func (l *lab) stop(c *child, reason string) error {
 		return nil
 	}
 	record.Stop = reason
+	// A failed child may have exited before its observation reaches the parent.
+	// Waiting for an already dead process is cleanup, not a successful kill.
+	var waitFailure error
+	select {
+	case <-c.waited:
+		record.Stop = "unexpected-exit"
+		waitFailure = errors.Join(errors.New("real lab: child exited before an owned stop"), c.waitErr)
+	default:
+	}
 	killErr := c.owner.Kill()
 	timer := time.NewTimer(3 * time.Second)
 	defer timer.Stop()
@@ -731,6 +745,10 @@ func (l *lab) stop(c *child, reason string) error {
 	case <-c.waited:
 		record.Waited = true
 		record.ExitCode = c.command.ProcessState.ExitCode()
+		if waitFailure == nil && !ownedKillExit(c.command, c.waitErr) {
+			record.Stop = "unexpected-exit"
+			waitFailure = errors.Join(errors.New("real lab: child exit did not match the owned kill"), c.waitErr)
+		}
 	case <-timer.C:
 		return errors.Join(killErr, errors.New("real lab: child did not exit after kill"))
 	}
@@ -746,9 +764,9 @@ func (l *lab) stop(c *child, reason string) error {
 		}
 	}
 	if !record.SocketClosed {
-		return errors.Join(killErr, closeErr, stdoutErr, stderrErr, protocolErr, errors.New("real lab: stopped socket closure was not established"))
+		return errors.Join(waitFailure, killErr, closeErr, stdoutErr, stderrErr, protocolErr, errors.New("real lab: stopped socket closure was not established"))
 	}
-	return errors.Join(killErr, closeErr, stdoutErr, stderrErr, protocolErr)
+	return errors.Join(waitFailure, killErr, closeErr, stdoutErr, stderrErr, protocolErr)
 }
 
 // Re-read the retained bounded stdout after Wait, so buffered observations at

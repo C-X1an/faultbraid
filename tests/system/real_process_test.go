@@ -5,6 +5,7 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"net"
 	"os"
@@ -254,12 +255,82 @@ func TestRealProcessCancellationKeepsUnknownAndCleansOwnedChildren(t *testing.T)
 		{ID: "kill-one", At: 30, Kind: "crash", Node: scenario.Node(1)},
 		{ID: "kill-three", At: 31, Kind: "crash", Node: scenario.Node(3)},
 		{ID: "uncertain-write", At: 32, Kind: "invoke_write", Node: scenario.Node(2), RequestID: scenario.Text("uncertain"), Value: scenario.Value(7)},
-		{ID: "dead-retry", At: 33, Kind: "invoke_write", Node: scenario.Node(1), RequestID: scenario.Text("uncertain"), Value: scenario.Value(7)}}
+		{ID: "dead-retry", At: 33, Kind: "invoke_write", Node: scenario.Node(1), RequestID: scenario.Text("uncertain"), Value: scenario.Value(7)},
+		{ID: "kill-survivor", At: 34, Kind: "crash", Node: scenario.Node(2)}}
 	s.EndTime = scenario.Node(100)
-	ctx, cancel := context.WithTimeout(context.Background(), 1700*time.Millisecond)
+	bounded, stopDeadline := context.WithTimeout(context.Background(), 20*time.Second)
+	defer stopDeadline()
+	ctx, cancel := context.WithCancel(bounded)
 	defer cancel()
+	// Actual ready records and socket closure establish that all three scheduled
+	// crashes, including the one after both request intents, have been reached.
+	// Cancellation timing must not depend on child startup taking less than 900ms.
+	observed := make(chan bool, 1)
+	go func() {
+		ticker := time.NewTicker(10 * time.Millisecond)
+		defer ticker.Stop()
+		addresses := make([]string, 3)
+		pids := make(map[int]bool)
+		for {
+			for i := range addresses {
+				if addresses[i] != "" {
+					continue
+				}
+				data, err := os.ReadFile(filepath.Join(directory, fmt.Sprintf("node-%d-incarnation-1.stdout.ndjson", i+1)))
+				if err != nil {
+					continue
+				}
+				for _, line := range strings.Split(string(data), "\n") {
+					var ready struct {
+						Type        string `json:"type"`
+						Node        uint64 `json:"node_id"`
+						Incarnation uint64 `json:"incarnation"`
+						PID         int    `json:"pid"`
+						Address     string `json:"address"`
+					}
+					if json.Unmarshal([]byte(line), &ready) != nil || ready.Type != "ready" || ready.Node != uint64(i+1) || ready.Incarnation != 1 || ready.PID <= 0 || pids[ready.PID] {
+						continue
+					}
+					host, _, err := net.SplitHostPort(ready.Address)
+					if err == nil && host == "127.0.0.1" {
+						addresses[i], pids[ready.PID] = ready.Address, true
+						break
+					}
+				}
+			}
+			closed := len(pids) == 3
+			seenAddresses := make(map[string]bool)
+			for _, address := range addresses {
+				if address == "" || seenAddresses[address] {
+					closed = false
+					continue
+				}
+				seenAddresses[address] = true
+				connection, err := net.DialTimeout("tcp4", address, 50*time.Millisecond)
+				if err == nil {
+					_ = connection.Close()
+					closed = false
+				}
+			}
+			if closed {
+				observed <- true
+				cancel()
+				return
+			}
+			select {
+			case <-ctx.Done():
+				observed <- false
+				return
+			case <-ticker.C:
+			}
+		}
+	}()
 	result, runErr := labreal.Run(ctx, s, labreal.Options{Executable: executable, Directory: directory, Identity: buildinfo.Current(), Concurrency: 4})
+	cancel()
 	retainNativeResult(t, directory, result)
+	if !<-observed || !errors.Is(runErr, context.Canceled) {
+		t.Fatalf("cancellation did not follow actual owned socket closure: %v", runErr)
+	}
 	if runErr == nil || result.Check.Status != history.Inconclusive || !result.CleanupComplete || len(result.Processes) != 3 {
 		t.Fatalf("cancelled run invented success or leaked children: err=%v result=%+v cleanup=%v", runErr, result.Check, result.CleanupComplete)
 	}
@@ -268,7 +339,7 @@ func TestRealProcessCancellationKeepsUnknownAndCleansOwnedChildren(t *testing.T)
 		t.Fatal("cancelled minority write was reported completed")
 	}
 	for _, process := range result.Processes {
-		if !process.Waited || !process.SocketClosed {
+		if process.Stop != "scenario-kill" || !process.Waited || !process.SocketClosed {
 			t.Fatal("cancellation did not complete owned cleanup")
 		}
 	}

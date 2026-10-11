@@ -14,26 +14,37 @@ import (
 const MaxBytes = 1 << 20
 const MaxDepth = 8
 
-// Decode accepts one bounded JSON value, with no duplicate or unknown keys.
-// The destination must be a non-nil pointer suitable for encoding/json.
-func Decode(r io.Reader, dst any) error {
+// ReadValue returns one bounded, syntactically valid JSON value. It rejects
+// invalid UTF-8, duplicate keys, excessive nesting and trailing input. Callers
+// must still apply a typed schema before using the value as executable input.
+func ReadValue(r io.Reader) ([]byte, error) {
 	b, err := io.ReadAll(io.LimitReader(r, MaxBytes+1))
 	if err != nil {
-		return errors.New("cannot read input")
+		return nil, errors.New("cannot read input")
 	}
 	if len(b) > MaxBytes {
-		return errors.New("input exceeds byte limit")
+		return nil, errors.New("input exceeds byte limit")
 	}
 	if !utf8.Valid(b) {
-		return errors.New("input is not valid UTF-8")
+		return nil, errors.New("input is not valid UTF-8")
 	}
 	d := json.NewDecoder(bytes.NewReader(b))
 	d.UseNumber()
 	if err := walk(d, 0); err != nil {
-		return err
+		return nil, err
 	}
 	if _, err := d.Token(); err != io.EOF {
-		return errors.New("trailing JSON or invalid suffix")
+		return nil, errors.New("trailing JSON or invalid suffix")
+	}
+	return b, nil
+}
+
+// Decode accepts one bounded JSON value, with no duplicate or unknown keys.
+// The destination must be a non-nil pointer suitable for encoding/json.
+func Decode(r io.Reader, dst any) error {
+	b, err := ReadValue(r)
+	if err != nil {
+		return err
 	}
 	shapeDecoder := json.NewDecoder(bytes.NewReader(b))
 	shapeDecoder.UseNumber()
@@ -48,7 +59,7 @@ func Decode(r io.Reader, dst any) error {
 	if err := shape(value, typ.Elem()); err != nil {
 		return err
 	}
-	d = json.NewDecoder(bytes.NewReader(b))
+	d := json.NewDecoder(bytes.NewReader(b))
 	d.DisallowUnknownFields()
 	if err := d.Decode(dst); err != nil {
 		return errors.New("input does not match schema")

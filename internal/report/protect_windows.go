@@ -3,8 +3,10 @@
 package report
 
 import (
+	"fmt"
 	"os"
 	"runtime"
+	"syscall"
 
 	"golang.org/x/sys/windows"
 )
@@ -63,4 +65,34 @@ func protectFile(f *os.File) error {
 		acl,
 		nil,
 	)
+}
+
+func outputAlias(info os.FileInfo) bool {
+	attributes, ok := info.Sys().(*syscall.Win32FileAttributeData)
+	return info.Mode()&os.ModeSymlink != 0 || ok && attributes.FileAttributes&windows.FILE_ATTRIBUTE_REPARSE_POINT != 0
+}
+
+func protectDirectory(path string) error {
+	name, err := windows.UTF16PtrFromString(path)
+	if err != nil {
+		return err
+	}
+	handle, err := windows.CreateFile(name, windows.WRITE_DAC|windows.READ_CONTROL, windows.FILE_SHARE_READ|windows.FILE_SHARE_WRITE|windows.FILE_SHARE_DELETE, nil, windows.OPEN_EXISTING, windows.FILE_FLAG_BACKUP_SEMANTICS|windows.FILE_FLAG_OPEN_REPARSE_POINT, 0)
+	if err != nil {
+		return fmt.Errorf("open directory security handle: %w", err)
+	}
+	f := os.NewFile(uintptr(handle), path)
+	if f == nil {
+		_ = windows.CloseHandle(handle)
+		return os.ErrInvalid
+	}
+	err = protectFile(f)
+	closeErr := f.Close()
+	if err != nil {
+		return fmt.Errorf("set directory DACL: %w", err)
+	}
+	if closeErr != nil {
+		return fmt.Errorf("close directory security handle: %w", closeErr)
+	}
+	return nil
 }

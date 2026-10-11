@@ -1,5 +1,5 @@
 # Security policy
-FaultBraid is experimental verification tooling, not a sandbox, production datastore or audited security boundary. Do not give it confidential histories or untrusted native executables. The initial seed opens no network service and executes only built-in models.
+FaultBraid is experimental verification tooling, not a sandbox, production datastore or audited security boundary. Do not give it confidential histories or untrusted native executables. Ordinary checker/simulation/report commands are offline; explicit native lab mode opens bounded loopback HTTP listeners and executes only the current identified built-in target. Loopback is not authentication, and the lab must not be exposed as an Internet service.
 
 See THREAT_MODEL.md and LIMITATIONS.md. Input/output limits, escaped reports and explicit unknown results are intended controls, not a blanket guarantee. Local hashes cannot defeat a privileged actor who rewrites source and evidence together.
 

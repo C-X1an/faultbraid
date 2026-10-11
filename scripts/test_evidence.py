@@ -48,8 +48,11 @@ class EvidenceTests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as d:
    root=Path(d);pid_path=root/'child.pid';ready_path=root/'child.ready'
    child='import pathlib,time;pathlib.Path('+repr(str(ready_path))+').write_bytes(b"ready");time.sleep(30)'
-   parent='import pathlib,subprocess,sys,time\nchild=subprocess.Popen([sys.executable,"-c",'+repr(child)+'])\npathlib.Path('+repr(str(pid_path))+').write_bytes((str(child.pid)+"\\n").encode())\ndeadline=time.monotonic()+3\nwhile not pathlib.Path('+repr(str(ready_path))+').exists() and time.monotonic()<deadline:time.sleep(.01)\nif not pathlib.Path('+repr(str(ready_path))+').exists():raise RuntimeError("descendant did not start")\n'+('sys.exit(0)' if parent_exits else 'time.sleep(30)')
-   r=execute([sys.executable,'-c',parent],root,root/'.local-runs',timeout=4)
+   # Startup is not the behavior under test. The child readiness handshake has
+   # a bounded 10s allowance; the runner's 15s deadline still has to kill the
+   # live descendant, with identical timeout/exit/cleanup assertions below.
+   parent='import pathlib,subprocess,sys,time\nchild=subprocess.Popen([sys.executable,"-c",'+repr(child)+'])\npathlib.Path('+repr(str(pid_path))+').write_bytes((str(child.pid)+"\\n").encode())\ndeadline=time.monotonic()+10\nwhile not pathlib.Path('+repr(str(ready_path))+').exists() and time.monotonic()<deadline:time.sleep(.01)\nif not pathlib.Path('+repr(str(ready_path))+').exists():raise RuntimeError("descendant did not start")\n'+('sys.exit(0)' if parent_exits else 'time.sleep(30)')
+   r=execute([sys.executable,'-c',parent],root,root/'.local-runs',timeout=15)
    self.assertEqual(r['status'],'PASS' if parent_exits else 'FAIL')
    self.assertEqual(r['reason'],'completed' if parent_exits else 'timeout')
    child_pid=int(pid_path.read_bytes().strip())

@@ -1,128 +1,103 @@
 # Architecture
-Status: full design contract. The source delivered initially is a tested kernel, not the whole target laboratory. See LIMITATIONS.md for the implementation boundary.
 
-## Context and components
-```mermaid
+FaultBraid implements one fixed-three-voter integer-register target, one bounded checker and one offline inspector. It uses instrumented etcd/raft v3.7.0 for consensus and owns the surrounding entropy, storage, transport, collection and evidence boundaries. Implementation is present; final release approval remains separately gated by source-matched verification and independent review.
+
+## Components and ownership
+
+~~~mermaid
 flowchart LR
- E[Engineer] --> CLI[CLI / strict bounded input]
- CLI --> H[History checker and diagnostic reducer]
- CLI --> S[Deterministic scenario runner]
- S --> T[Instrumented etcd/raft register adapter]
- T --> N[Virtual network]
- T --> D[Virtual durable store]
- S --> R[Logical trace and replay]
- R --> H
- R --> X[Scenario reducer]
- X --> S
- H --> V[Offline escaped HTML inspector]
- R --> V
-```
+    I[Strict history or scenario JSON] --> C[CLI]
+    C --> H[Register checker and diagnostic reducer]
+    C --> S[Virtual scenario runner]
+    S --> T[Instrumented Raft target]
+    T --> D[Stage and flush store]
+    T --> N[Virtual directed transport]
+    S --> R[Logical trace and two-pass replay]
+    R --> H
+    R --> X[Executable scenario reducer]
+    X --> S
+    R --> V[Static escaped inspector]
+    H --> V
+    C --> L[Explicit native process lab]
+    L --> T
+    L --> F[Loopback HTTP and FileStore journals]
+~~~
 
-One Go executable owns the trusted harness. There is no database service, queue service, web backend or model provider in the core. Pure modules: history schema/checker, diagnostic reducer, event queue, fault model, entropy source, target integration, trace codec and report generator. The real-process conformance adapter is a separate explicit lab mode, not a default daemon.
+The simulation has a single scheduler owner. Each target owns one serialized `RawNode` and its state machine; callers do not mutate it concurrently. The native adapter serializes target transitions through one actor per child while its parent collects asynchronous transport/client observations. There is no runtime plugin loader, service database, web backend or model provider.
 
-## Checker and data semantics
-The register specification is a small independently written transition function: write(v) changes the state to v; a completed read(v) is legal only if current state equals v. Histories record invocation and return ordinals, not unsynchronized machine clocks. Strictly earlier returns constrain later invocations. Ties are overlapping. Each operation appears once by ID; retries of a logical request must be reconciled at collection, not guessed by the oracle.
+`internal/history` owns the history specification and bounded search; `internal/sim` contains the separate queue/disk-register kernel. `internal/scenario` combines the target with virtual time and faults; `internal/campaign` generates workloads and reduces executable scenarios. `internal/labreal` shares the target and adds actual process/HTTP/FileStore adapters. `internal/report` produces bounded static HTML.
 
-Use depth-first search over `(linearized_operations_bitset, register_value)` with a failed-state memo table and precomputed predecessor masks. Eligible operations have all required completed predecessors already placed. All completed operations must be placed; a pending write may be included or omitted; a pending read can be omitted without observed state change. Stop as VALID only with a constructive witness. The finite bounded model is complete if search exhausts without reaching the state budget; budget or cancellation yields INCONCLUSIVE. This is neither a proof of the target nor a multi-key transactional checker.
+## Checker and uncertain operations
 
-## Deterministic execution boundary
-The scheduler has one owner and a stable `(virtual_time, insertion_sequence)` heap. No goroutine races, wall time, map iteration order or unrecorded entropy may influence a logical simulation trace. Simulation iteration over node IDs, links, state maps and failures uses explicit sorted order. Event payloads are copied at admission. Logical clocks are unsigned integers with overflow checks; work and queue limits are explicit.
+A write changes the int64 register; a completed read is legal only if its observed value equals the current state. Histories use central invocation/return ordinals. A return strictly before another invocation creates precedence; timestamp ties overlap.
 
-Use a versioned per-node PRNG (SplitMix64-v1 with published golden vectors) for target election randomness and a separate stream for fault/workload choices. Every choice records stream ID, sequence, bound and value; replay validates rather than resamples it. PRNG is for tests, NEVER keys/tokens.
+The checker explores `(selected-operation mask, register value)` using predecessor masks and a failed-state cache. It caches only fully explored failed subtrees. Every completed operation is required; pending writes are optional effects and pending reads may be omitted. VALID needs a constructive witness. Exhausting every admissible order yields INVALID. A state limit or cancellation yields INCONCLUSIVE.
 
-**Important researched integration issue:** etcd/raft v3.7.0 uses a private global random source for election timeout choices; the inspected Config has no injection hook. Merely seeding the harness does not control that choice. The chosen solution is a minimal audited source patch adding `Config.ElectionRandom func(n int) int`, stored per raft instance and used only at election-timeout selection. Nil retains upstream behavior. The adapter supplies a record/replay decorator. Keep the upstream version, source digest, patch and test diff in the dependency record; label the target **instrumented etcd/raft**, not unmodified etcd. If a later upstream release offers an equivalent supported hook, prefer it with an ADR/deviation and conformance tests. Do not override process-wide crypto/rand or call unsafe/linkname.
+The collector records one semantic operation per logical request and retains all causal attempts. A response timeout, unavailable node or uncertain transport leaves possible admission pending. Only affirmative rejection before admission can exclude a rejected-only request. Possible admission is monotone: a subsequent rejected retry cannot erase earlier uncertainty.
 
-The core distribution must contain the small patch and a reproducible fetch/apply/check script, not an undocumented fork. Fetch only the locked upstream module; preserve its license/NOTICE. Validate callback outputs in range. Compile both simulation and real-process adapters from the same instrumented target code. Upstream tests plus repeat-trace experiments are required before a determinism claim.
+Independent differential tests express the register separately for Porcupine and a tiny exhaustive subset/permutation oracle. Their finite domain and representability/time budgets are explicit. Porcupine UNKNOWN stays unknown; it cannot become a definitive disagreement or successful proof. These checks challenge the checker and actual target histories, not every possible distributed execution.
 
-## Target and persistence contract
-Fixed IDs1,2,3; fixed membership; integer register initially0. etcd/raft owns consensus; FaultBraid owns the integration boundary. Defaults: election tick10, heartbeat tick1, PreVote=true, CheckQuorum=true, ReadOnlySafe, DisableProposalForwarding=true, max message64KiB, max uncommitted1MiB, max inflight64. Use synchronous Ready/Advance mode initially, not AsyncStorageWrites.
+## Deterministic simulation and entropy
 
-At each node transition, drain Ready in one serialized loop: encode immutable message bytes; atomically append Entries/HardState/Snapshot to the staged store; complete the modeled durable barrier; update the readable Storage view; release outbound messages; apply committed entries in order; satisfy writes only after application; satisfy ReadIndex reads only after the returned index has been applied; then Advance. This deliberately conservative order sacrifices some parallel IO to make the correctness boundary legible. Do not substitute MemoryStorage for modeled durability across restart.
+The virtual heap orders events by `(virtual_time, insertion_sequence)`. Payload bytes are copied when admitted. Nodes and effects use explicit stable iteration order. Crashed nodes do not tick or consume target messages. Clock/sequence arithmetic, work, queue and trace growth are bounded.
 
-The register command contains request ID and value. Replicated state includes deduplication `(request_id,payload_hash,result)`; reusing the ID with another payload is rejected. A timeout is pending/unknown and a later retry uses the same identity. Reads use unique ReadIndex contexts; no lease-only reads. Stop mutation on uncertain persistence errors; restart from a validated durable prefix. Snapshot compaction is excluded from the first target campaign to keep the core finite, but the interface must reject unsupported snapshot input rather than ignore it. The log budget terminates a run INCONCLUSIVE before unbounded growth.
+Election randomness is injected through a small checked-in source patch adding `Config.ElectionRandom func(n int) int`. Nil retains upstream behavior; FaultBraid always supplies the explicit hook. This is **instrumented etcd/raft**, not unmodified upstream. The patch and reproducible prepare script validate the locked module checksums, archive SHA, patch SHA and prepared source-tree digest. Upstream licenses and notices remain intact.
 
-```mermaid
-sequenceDiagram
- participant C as Workload collector
- participant S as Scheduler
- participant A as Target adapter
- participant D as Durable-store model
- participant P as Peers
- C->>S: invoke write(id, value)
- S->>A: Propose
- A->>D: stage Ready state and entries
- D-->>S: named flush boundary
- S->>D: complete flush or inject crash
- D-->>A: durable success
- A->>P: release copied messages
- P-->>A: quorum replication responses
- A->>D: persist next Ready batch
- A->>A: apply committed command
- A-->>C: return success with event ordinal
-```
+Each virtual node owns a SplitMix64-v1 generator, seeded from the scenario seed and node ID. The simulator retains that generator and sequence across target restarts. Every successful draw records node, stream, sequence, bound and value. A fallible decorator captures entropy errors immediately after the upstream callback. Out-of-range, missing, reordered or leftover replay choices fail.
 
-## Network and failure model
-Directed links can delay, drop or duplicate complete protobuf messages; partitions are pairs of directed policies. Corruption is outside Raft's non-Byzantine model: malformed frames are parser tests, not a tolerated consensus fault. Crashed nodes do not tick or consume messages. Pre-crash queued deliveries carry node incarnation and are dropped on mismatch after restart. Disk fault schedule chooses before-write, after-stage-before-flush, after-flush-before-send, after-apply-before-response. Only completed durable barriers survive. Crash/restart increments incarnation; request identities and applied state are recovered from durable data.
+Workload generation has its own recorded stream, `splitmix64-v1/fault-workload-v2`, separate from election entropy. This deterministic PRNG is only for experiments, never secrets or keys. Actual native process lifetimes use separately derived, recorded seeds; OS scheduling still controls when elections occur.
 
-## Trace and reduction
-Record header identity (schema, source tree digest, dependency lock/patch digest, scheduler/PRNG version, target model, initial state), scenario, ordered choices, logical events and output-history digest. Trace hashes establish consistency, not authenticity against the maintainer rewriting all files. Atomic exclusive file creation prevents overwriting original evidence.
+## Raft integration and durability
 
-`minimize-history` removes operation records and rechecks INVALID. It is a diagnostic projection, not an executable reproducer and not a unique root-cause explanation. `shrink-scenario` removes workload/fault actions, reruns the SAME target with the original seed/configuration, and accepts only a candidate that still violates the same requirement/variant/failure-kind fingerprint. It stores the candidate's newly generated trace and replays that trace before acceptance. Invalid causality or a missing prerequisite is a rejected candidate, not an invariant failure. Final deletion pass establishes only 1-minimality under the declared transform; budgets/unknowns clear the minimality flag. Never call the result globally smallest.
+Membership is fixed to voters 1, 2 and 3, with initial register 0. Configuration uses election tick 10, heartbeat tick 1, PreVote, CheckQuorum, ReadOnlySafe, disabled proposal forwarding and at most 64 in-flight messages. Serialized frames are at most 64 KiB; the upstream message/committed-batch size settings leave encoding headroom below that ceiling. The default log budget is 1 MiB, independently enforced by the target and store. Async storage writes, snapshots, compaction and dynamic membership are unsupported.
 
-```mermaid
-stateDiagram-v2
- [*] --> Validating
- Validating --> InputError: malformed or unsupported
- Validating --> Exploring
- Exploring --> Valid: constructive complete witness
- Exploring --> Invalid: exhausted bounded model
- Exploring --> Inconclusive: budget or cancellation
- Invalid --> Reducing
- Reducing --> Invalid: definitive failing candidate
- Reducing --> PartialReduction: budget or unknown candidate
- Valid --> [*]
- Inconclusive --> [*]
- InputError --> [*]
-```
+For each Ready batch, the adapter:
 
-## Trust and deployment
-```mermaid
-flowchart TB
- subgraph Untrusted
- J[History / trace bytes]
- PR[Pull request changes]
- end
- subgraph LocalTrusted[Local trusted harness]
- B[Bounded decoder] --> M[Checker / instrumented target]
- M --> O[Escaped report and raw JSON]
- end
- J --> B
- PR --> CI[Unprivileged read-only CI job]
- CI -.no secrets.-> M
- subgraph OptionalLab[Disposable local process lab]
- C[Parent collector] --> N1[Node1 loopback]
- C --> N2[Node2 loopback]
- C --> N3[Node3 loopback]
- end
- M -.explicit lab invocation.-> C
- O --> Static[Optional reviewed static hosting]
-```
+1. Encodes copied deterministic protobuf send effects.
+2. Validates and stages the entries/HardState batch.
+3. Completes `Store.Flush` before exposing the flushed storage view or any dependent send effect.
+4. Releases send effects in order, then applies committed entries sequentially.
+5. Replies to writes only after their replicated command is applied; replies to safe reads only after their quorum ReadIndex is applied.
+6. Advances the RawNode after processing the Ready batch.
 
-No untrusted plugin dynamic loading. The process lab launches only the built-in node subcommand from a verified build; loopback only, no remote authentication claim. The parent owns child PIDs, temporary directories and cleanup. Process mode shares integration transitions, but sockets, kernel scheduling and actual filesystem behavior are not bitwise replayable. Its purpose is conformance and detecting model omissions, not certifying physical power loss.
+This is deliberately conservative. A send effect's position is an integration ordering boundary; actual native socket delivery occurs asynchronously afterward. A target failure retains already released effects while stopping subsequent mutation. Interrupted persistence does not invent a successful response.
 
-## Operations and removal test
-| Component | Requirement | Simpler alternative | Decision and property lost on removal |
-|---|---|---|---|
-| Strict schema | FR-001,SEC-002 | permissive decode | Reject ambiguity and resource bombs; removal changes interpretation |
-| Bounded checker | FR-002..004 | assert final value | Concurrency needs possible legal orders; final value misses stale reads |
-| Independent Porcupine tests | AC-016 | self-tests only | Detect shared fixture blind spots; not a production runtime dependency |
-| Event scheduler | FR-006,REL-003 | goroutines + sleep | Deterministic ordering/replay would be lost |
-| Virtual store | FR-007,REL-002 | in-memory map | Durability boundaries and crash experiments would be lost |
-| Mature Raft target | FR-009 | toy counter only | Removes real integration depth and invalidates selection rationale |
-| Election entropy hook | REL-003 | seed harness only | Upstream hidden entropy would invalidate reproducibility |
-| Scenario reducer | FR-011 | long failing logs | Loses small executable counterexamples |
-| Real process lab | FR-013 | simulation only | Loses a check against IO/model divergence |
-| Offline HTML | FR-012 | JSON only | A thin inspector materially improves reviewer comprehension; no frontend framework needed |
-| Microservices/cloud/DB | none | one process/files | Removed: no required property is gained |
+The six injectable boundaries are `before-append`, `after-stage-before-flush`, `after-flush-before-send`, `after-send-before-apply`, `after-apply-before-response` and `after-response`. Crash occurrence counters apply only after arming. A conditional barrier might never be reached; a scenario cannot assume that arming it killed the node.
 
-Startup validates schema/limits/dependency identity before work. Shutdown cancels searches, waits for owned children, closes files and writes a non-success partial-run record. No background daemon, automatic network call, secret store, live API or migration service is needed. Schema changes are explicit new versions with converters retaining originals; incompatible traces fail closed. Logs are bounded and synthetic by default; metrics are run-local counts/durations, not an always-on monitoring stack.
+`MemoryStore` models staged and flushed durable state; recovery discards staging and validates the committed bootstrap prefix. Its lifetime outlives the recreated target. It is an explicit durability model, not `raft.MemoryStorage` treated as physical persistence.
+
+`FileStore` uses the same validated state representation with an actual append journal. A nonempty batch is written with length, inverse length and SHA-256 framing, then `File.Sync` must succeed before the in-memory durable view changes. Empty Ready batches do not append records. Recovery accepts the complete validated prefix and truncates/syncs an incomplete EOF record. A complete malformed length, checksum, protobuf or state transition is corruption and fails closed. Journal growth is capped independently, at no more than 64 MiB.
+
+Successful File.Sync counters are diagnostic observations per open handle and reset on reopen. Neither a successful call nor process kill proves physical power-loss survival or persistence of parent-directory creation.
+
+## Request identity and safe reads
+
+Replicated write commands encode version, kind, bounded request ID and int64 value; their hash covers the whole command. Applying an already seen ID with the same payload leaves the register unchanged and returns its original result. A conflicting payload is rejected or treated as corrupt replicated state. The target reconstructs deduplication by applying the durable committed prefix on restart.
+
+Deduplication is bounded to 4,096 write IDs per target, without eviction. Repeating an old write(7) after write(9) cannot reset the register to 7. Reads use unique node/term/sequence ReadIndex contexts; safe reads wait for application through the returned index. Read results are not persisted in a deduplication cache. A follower rejects a new client proposal before admission; an already admitted request remains pending if that target later loses leadership.
+
+`unsafe-local-read` deliberately substitutes a leader's local value for quorum confirmation. Its trace and invariant fingerprint identify it explicitly. It is a diagnostic wrapper defect, not a new consensus algorithm or an upstream-vulnerability claim.
+
+## Network faults and causal trace
+
+Directed links support delay, drop-next, duplicate-next, partition and heal. Policies affect complete protobuf frames. Partitions need both directions when isolating a voter. Crash stops the node and recovery discards only staged data; restart increments incarnation. A queued frame is dropped if the recipient is down or either endpoint incarnation no longer matches. Previously released traffic is not retroactively unsent.
+
+The trace contains source/module/patch identities, scheduler/entropy versions, scenario, choices, causal events, collected history, checker result and optional invariant fingerprint. Transition payload hashes cover typed input, ordered effects and resulting status. Logical event IDs are monotone and refer only to earlier causal parents.
+
+The digest uses the fixed typed [codec](docs/trace-codec.md), not general JSON canonicalization. Replay requires matching build identity, validates the digest, executes with recorded choices, then executes from the seed. Both full envelopes must equal the saved trace. Rehashing edited outputs alone cannot bypass execution. Hashes remain consistency checks under a trusted maintainer, not authentication or remote attestation.
+
+`minimize` removes history records for diagnosis. `shrink-scenario` removes actual workload/fault actions while preserving source, locks, seed, limits, target variant and resolved horizon. It replays the baseline and every accepted candidate, and accepts only the same invariant fingerprint. Causal-invalid candidates are rejected, not counted as failing systems. A complete final deletion pass proves 1-minimality under that transform; budgets, cancellation and any unknown candidate clear the claim. No globally smallest or unique-root-cause claim follows.
+
+Campaign indexing counts every attempt and every unrun seed. Execution errors are retained and independent seeds continue; artifact failure stops with explicit remaining-unrun accounting. Coverage counts observed effects rather than merely configured fault actions.
+
+## Native lab and trust boundary
+
+Native mode launches three actual children, with additional lifetimes on restart, from the parent's current identified executable only. Each child owns a loopback listener and FileStore journal and runs the same `Target.Step` code. Parent collection measures real HTTP/frame outcomes, PID/address identity, entropy choices, journal hashes, successful syncs, concurrency and cleanup.
+
+The supported native actions are invoke_read, invoke_write, crash and restart. Virtual partitions, delay/drop/duplication and named-barrier fault injection are rejected before launch. Wall-clock action ticks and process scheduling cannot be replayed bitwise. Conformance can reveal integration/model omissions but is not a guarantee for all operating systems, hardware or failures.
+
+Windows directory creation uses a protected owner-only inheritable DACL before lab bytes are written. Children start suspended and enter a kill-on-close job before resuming. Non-Windows children use owned process groups. All work has bounded queues, requests, output and lifetimes; cleanup kills/waits for children, closes files and checks socket closure, retaining partial evidence on interruption. An already exited child or an exit that does not match the owned termination is an execution error. Cancellation stops live observation delivery while continuing bounded pipe draining until kill/Wait, so cleanup does not close a child's output prematurely.
+
+The local operator and filesystem namespace are trusted. Path checks reject existing aliases, but do not defeat a privileged concurrent path replacement. Loopback is not authentication or a tenant boundary. No TLS, Internet service, arbitrary executable or hostile-code sandbox is provided.
+
+Reports use `html/template`, static CSS/CSP, semantic headings/captions and focusable bounded scroll regions. They display saved data, not a live cluster; rendering does not itself validate replay. Publication requires deliberate content review, an exact public inventory/history/archive audit and independent release verification.

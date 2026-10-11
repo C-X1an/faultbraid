@@ -76,6 +76,12 @@ func startOwned(command *exec.Cmd) (*processOwner, error) {
 	return fail(errors.New("owned child: suspended primary thread was not found"))
 }
 func (o *processOwner) Kill() error { return windows.TerminateJobObject(o.job, 1) }
+
+func ownedKillExit(command *exec.Cmd, waitErr error) bool {
+	var exitErr *exec.ExitError
+	return errors.As(waitErr, &exitErr) && command.ProcessState != nil && command.ProcessState.ExitCode() == 1
+}
+
 func (o *processOwner) Close() error {
 	if o.job == 0 {
 		return nil

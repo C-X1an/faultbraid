@@ -1,49 +1,166 @@
 # CLI, history and trace contracts
-Version1. JSON only; no implicit coercion, comments, trailing values, duplicate object keys, unknown fields, NaN, floats or unbounded strings. Input <=1MiB, nesting<=8. Output errors go to stderr as JSON; user data is not echoed wholesale.
 
-## Seed executable commands
-```
+Version 1 preserves the locked behavior in [ACCEPTANCE_SPEC.md](ACCEPTANCE_SPEC.md). Product verdicts VALID, INVALID and INCONCLUSIVE are distinct from command/evidence statuses such as PASS, FAIL and NOT RUN.
+
+## Input, output and exit codes
+
+Inputs are one UTF-8 JSON value of at most **1 MiB**, with nesting at most **8**. Duplicate or unknown keys, case variants of field names, trailing values, numeric null coercion, floats/exponents in integer fields and missing required fields are rejected before execution. Integer overflow is an input error. Pointer fields may be omitted or null where the schema permits; null arrays and null required scalar fields are rejected.
+
+`-in -`, `-scenario -` and `-trace -` read stdin. File/stdin readers are operator-controlled local inputs, not a network slow-reader boundary. Flags irrelevant to a command and positional leftovers are errors. Input JSON never selects an executable, output path or arbitrary function.
+
+Outputs are structured JSON on stdout. Error envelopes go to stderr:
+
+~~~json
+{"error":{"code":"INVALID_INPUT","message":"bounded explanation"}}
+~~~
+
+Codes include `INVALID_INPUT`, `UNSUPPORTED_VERSION`, `IO_ERROR`, `REPLAY_MISMATCH` and `LIMIT_EXCEEDED`. Raw inputs and stack traces are not echoed. Existing output leaves and directories are refused. Parents must already exist and must be trusted regular directories without symlink/reparse aliases. A failed multi-artifact write may leave an inspectable partial directory; there is no silent overwrite or all-files transaction.
+
+| Command outcome | Exit |
+|---|---:|
+| `check`: VALID / INVALID / INCONCLUSIVE | 0 / 1 / 3 |
+| Finished `minimize` or `shrink-scenario`: reduction status INVALID | 0 |
+| Finished `simulate`, `report` or `lab-real`: definitive VALID or INVALID | 0 |
+| Successful `replay` matching the saved trace, including an INVALID or INCONCLUSIVE target trace | 0 |
+| Completed `campaign` with no inconclusive/error/unrun outcomes | 0 |
+| Semantic budget, deadline or cancellation classified INCONCLUSIVE | 3 |
+| Input, unsupported version, replay mismatch, I/O or protocol failure | 2 |
+
+A successful campaign can contain INVALID histories: its outcome index records them. A replay PASS establishes trace agreement, including agreement with a saved INCONCLUSIVE result; it does not establish a definitive register verdict. Some I/O/protocol failures retain an INCONCLUSIVE history but exit 2 because the command itself failed. Parse the result and command status separately.
+
+History, report, replay, simulate and reduction commands use a 10-second execution context; campaign uses 5 minutes; `lab-real` has a 60-second outer deadline plus its bounded adapter schedule. Resource exhaustion never establishes VALID or INVALID.
+
+## History commands
+
+~~~sh
 faultbraid check -in history.json -max-states 100000
 faultbraid minimize -in history.json -max-states 100000 -max-checks 1000
+faultbraid report -in history.json -max-states 100000 -out report.html
 faultbraid replay -in trace.json
-faultbraid report -in history.json -out report.html
 faultbraid demo -outdir new-directory
-```
-`-in -` means stdin. `check` exit0=VALID,1=INVALID,2=input/IO/usage error,3=INCONCLUSIVE. Other successful commands return0; minimization success does not mean the underlying history is valid. Semantic search deadlines default10seconds; exhausted semantic search returns3. Local file/stdin reads are operator-controlled and are not a network slow-reader timeout boundary. Output files/directories must not exist: no silent overwrite. No input JSON contains an executable or output filesystem path.
+~~~
 
-## Register history-v1
-```json
+`check`, `minimize` and `report` default to stdin and 100,000 search states; the allowed state budget is 1 through 1,000,000. History minimization permits 1 through 100,000 checks, default 1,000. The direct `demo` subcommand creates the separate kernel demo; `make demo` additionally executes and inspects the instrumented Raft target.
+
+### Register history-v1
+
+~~~json
 {"version":1,"initial":0,"operations":[
- {"id":"w1","kind":"write","value":7,"call":1,"return":2},
- {"id":"r1","kind":"read","value":7,"call":3,"return":4}
+  {"id":"w1","kind":"write","value":7,"call":1,"return":2},
+  {"id":"r1","kind":"read","value":7,"call":3,"return":4}
 ]}
-```
-`version` exactly1. `initial` int64. Operations at most24. `id` unique 1..64 bytes in `[A-Za-z0-9._:-]`. `kind` read or write. `value` int64 is write input or completed read result. `call` nonnegative int64. `return` either an int64 strictly greater than call or null/omitted for pending. Pending reads may be omitted by the oracle; their value is unobserved and ignored. All non-pointer fields are required; return may be null/omitted. Field names are case-sensitive, null cannot coerce to numeric zero, and input must be valid UTF-8. All normal emitted histories include every field. No float timestamp conversion. Time ties across operations count as overlapping. The collector assigns ordered events centrally.
+~~~
 
-Result: `{ "status":"VALID|INVALID|INCONCLUSIVE", "witness":["id"], "states":17, "reason":"bounded text" }`. The witness contains every completed operation and selected pending writes in a legal order; it may omit pending reads and unused pending writes. Invalid histories have no witness; no minimal-counterexample claim is implied.
+`version` is exactly 1, `initial` and `value` are int64. There are at most 24 operations. An ID is unique, 1–64 ASCII bytes from `[A-Za-z0-9._:-]`. A kind is `write` or `read`. `value` is the write input or completed read result. `call` is a nonnegative int64; `return` is either an int64 strictly greater than call, or null/omitted for pending.
 
-Reduction result: `{ "history":{...}, "checks":12, "one_minimal":true, "inconclusive_candidates":0, "classification":"diagnostic_only" }`. `one_minimal` is false if budget/unknown prevents a complete definitive final pass.
+For two different operations, a return **strictly before** another call creates precedence; equal timestamps overlap. A pending write may be selected or omitted from a legal completion. A pending read has no observed result and may be omitted. Histories contain logical requests once; retries must be reconciled by their collector.
 
-## Seed disk trace-v1
-A separate model, not Raft or a real disk. Shape: `version:1`, `model:"disk-register-v1"`, `events:[{at,kind,value}]`, `steps:[{at,sequence,kind,volatile,durable,observed}]`, `digest:<hex SHA256>`.
-Event kinds: write, sync, crash, read. Sequence is insertion order starting0. Times are nonnegative uint64. `observed` is present only for read. Events are run by `(at,sequence)`. Digest is SHA256 of Go encoding/json serialization of the fixed-order Trace struct with `digest` set to the empty string and no trailing newline. This is a project codec, NOT general JSON canonicalization. Replayer reconstructs steps from events and compares the entire expected trace. Unknown versions/models and altered steps/digests are errors. Hashes are not signatures or tamper-proof evidence.
+Result fields are `status`, `witness`, `states` and `reason`. A VALID witness includes every completed operation and any selected pending writes in a legal order. INVALID has no witness. A bounded incomplete search is INCONCLUSIVE.
 
-## Full target commands (required, not implemented by the seed)
-```
+`minimize` deletes operation records and independently rechecks candidates. Its result contains `history`, `checks`, `one_minimal`, `inconclusive_candidates`, `classification:"diagnostic_only"`, `status` and `reason`. Budget or cancellation may return INCONCLUSIVE while retaining a previously proven INVALID history. `one_minimal` requires a definitive final delete-one pass. It is a diagnostic projection, not an executable target scenario.
+
+### Separate disk-register-v1 trace
+
+The disk model has `version:1`, `model:"disk-register-v1"`, `events:[{at,kind,value}]`, `steps:[{at,sequence,kind,volatile,durable,observed}]` and `digest`. Kinds are write, sync, crash and read; observations occur only on read. Time is nonnegative uint64, and insertion sequence breaks ties.
+
+The digest hashes the fixed-order Go Trace struct with an empty digest field, encoded by `encoding/json` without indentation or a trailing newline. Replay reconstructs all steps from events and compares the complete trace. This model is not Raft, a physical filesystem or a native fsync experiment.
+
+## Virtual target commands
+
+~~~sh
 faultbraid simulate -scenario scenario.json -outdir new-run
-faultbraid shrink-scenario -trace run/trace.json -outdir smaller-run
-faultbraid campaign -seed-start 0 -count 1000 -outdir campaign
-faultbraid lab-real -scenario scenario.json -outdir local-lab
-```
-Full trace format is `raft-trace-v1`, deliberately distinct from disk-register-v1. Header includes `source_tree_sha256`, `module_lock_sha256`, `patch_sha256`, `scheduler_version`, `entropy_version`, `seed`, `target_variant` and initial state. Ordered records have `event_id`, `parent_event_id`, `node_id`, `incarnation`, `virtual_time`, `kind`, payload digest and choices. Canonical byte encoding is specified in a checked-in codec schema and golden fixtures before implementation; use struct field order, sorted maps as arrays, decimal integers and standard escaped UTF-8. Digest the codec bytes, not loosely equivalent JSON.
+faultbraid shrink-scenario -trace run/trace.json -strategy ddmin -max-checks 1000 -outdir smaller-run
+faultbraid campaign -seed-start 0 -count 1000 -outdir new-campaign
+~~~
 
-Scenario: version1, target `raft-register-v1`, seed uint64, voters[1,2,3], event_limit100000, queue_limit100000, log_limit_bytes1048576, checker_state_limit100000, and an ordered action array. Actions: invoke_write(request_id,node,value), invoke_read(request_id,node), partition(from,to), heal(from,to), crash(node), restart(node), delay_link(from,to,ticks), drop_next(from,to,count), duplicate_next(from,to,count), and crash_at(node,boundary,occurrence). Every action has nonnegative virtual_time and stable action_id. No arbitrary function names or filesystem paths. Invocation timeout records pending; retries use request identity and identical payload.
+These commands require an identified build produced by `make build`. For these commands and `lab-real`, `FAULTBRAID_RUN_DIR` supplies `-outdir` only when the flag is absent. It must still name a new trusted directory.
 
-## In-process target contract
-`Target.Step(Event) ([]Effect,error)` advances exactly one event. Effects are Persist(batch), Send(to,bytes), Reply(requestID,value), Schedule(kind,delay) or Fail(code). `Store.Stage(batch)`, `Store.Flush()`, `Store.Recover()` expose explicit durability. `Entropy.Draw(stream,bound)` returns a recorded bounded choice. Workloads/targets never call wall time, network or disk directly in simulation. A typed enum defines events/effects; unsupported events are errors, not ignored.
+`simulate` writes `scenario.json`, `trace.json`, `history.json`, `result.json`, `summary.json` and `report.html`. `shrink-scenario` writes the reduced equivalents plus `reduction.json`. Scenario, trace, history and ordinary summary/result JSON are bounded to 1 MiB; HTML, campaign index and reduction JSON are bounded to 8 MiB.
 
-## Real-process local protocol
-Child nodes expose an explicitly loopback-bound HTTP server chosen by parent on port0. `POST /v1/propose` JSON `{request_id,kind,value}`; `POST /v1/message` carries a length-bounded serialized raftpb.Message (Content-Type application/octet-stream, <=64KiB); `GET /healthz` exposes process readiness only. Parent records every invoke/return event with a global monotonic ordinal. Client timeouts are unknown; HTTP failures before admission can be recorded as definitely rejected only with explicit admission evidence. Request retry identity is replicated. No public Internet binding, TLS claim, bearer token or service discovery is part of this lab.
+### Scenario-v1
 
-## Error envelope and compatibility
-`{"error":{"code":"INVALID_INPUT|UNSUPPORTED_VERSION|IO_ERROR|REPLAY_MISMATCH|LIMIT_EXCEEDED","message":"bounded explanation"}}`. Avoid embedding raw input or stack traces. No automatic retries for replay mismatch/corruption. Unsupported major schemas require explicit conversion in a new output file retaining original provenance. `FAULTBRAID_RUN_DIR` affects trusted CLI output location only; no secrets or credentials are needed. The full CLI may add stricter limits but not reinterpret version1 histories.
+Required fields:
+
+~~~json
+{"version":1,"target":"raft-register-v1","seed":0,"voters":[1,2,3],
+ "event_limit":100000,"queue_limit":100000,"log_limit_bytes":1048576,
+ "checker_state_limit":100000,"actions":[],"end_time":60,
+ "target_variant":"raft-register-v1"}
+~~~
+
+`end_time` and `target_variant` are optional. The safe variant is `raft-register-v1`; `unsafe-local-read` is a labelled negative control. The register starts at 0. Voters are exactly `[1,2,3]` in that order.
+
+| Limit | Range |
+|---|---|
+| `event_limit`, `queue_limit` | 1–100,000 |
+| `log_limit_bytes` | 256 bytes–64 MiB |
+| `checker_state_limit` | 1–1,000,000 |
+| Actions / distinct logical request IDs | At most 1,024 / 24 |
+| Action time and resolved end time | 0–10,000 virtual ticks |
+| Link delay | 0–10,000 ticks, with overflow checks |
+| Fault count / barrier occurrence | 1–100,000 |
+
+Each action has a unique `action_id`, nondecreasing `virtual_time` and one kind from the following table. Node/link endpoints are integer voters 1–3; from and to must differ. IDs use the same bounded grammar as history IDs. Unrelated fields are rejected.
+
+| Kind | Additional fields |
+|---|---|
+| `invoke_write` | `node`, `request_id`, `value` |
+| `invoke_read` | `node`, `request_id` |
+| `crash`, `restart` | `node` |
+| `partition`, `heal` | `from`, `to` |
+| `delay_link` | `from`, `to`, `ticks` |
+| `drop_next`, `duplicate_next` | `from`, `to`, `count` |
+| `crash_at` | `node`, `boundary`, `occurrence` |
+
+A partition is directed; isolate both directions explicitly. Link policies apply to complete protobuf messages, not individual bytes. Delays replace the link delay, initially one tick. Crash/restart and partition/heal prerequisites must be executable in the current state; invalid causality is an execution/input error, not a counterexample.
+
+An omitted end time resolves to the last action time plus 200 ticks, or 200 for an empty action list, within the 10,000-tick ceiling. Reduction retains that resolved horizon. Deleting an action that would change an implicit horizon is outside its deletion domain.
+
+Barrier names are `before-append`, `after-stage-before-flush`, `after-flush-before-send`, `after-send-before-apply`, `after-apply-before-response` and `after-response`. `occurrence` counts matching barriers reached after the crash is armed; arming a barrier does not prove it will be reached.
+
+Retries keep the same request ID, operation kind and write payload. Replicated write deduplication holds at most 4,096 IDs per target and reconstructs them from committed journal entries on restart. It does not evict old IDs. A retried old write returns its original result without reverting a later register value. Read results are not a durable deduplication cache.
+
+### Raft trace and replay
+
+`raft-trace-v1` contains `version`, `model`, `header`, `scenario`, `choices`, `events`, `history`, `result`, `failure` and `digest`. The [codec contract](docs/trace-codec.md) fixes field order, integer encoding and hashing; loosely equivalent input JSON is not itself the digest format.
+
+Headers record measured source-tree, module-lock and patch digests, scheduler/entropy versions, seed, target variant and initial value. Choices record node, stream, sequence, bound and value. Events record causal parent ID, node/incarnation, virtual time, kind, payload digest and detail. Pre-crash frames with stale sender or recipient incarnation are dropped after restart.
+
+Replay first requires the current build identity and envelope digest to match. It executes the actual target with exact recorded entropy, then independently regenerates choices from the declared seed and executes again. Both complete traces must match the saved envelope. A hash is a consistency check, not a signature.
+
+A definitive INVALID target history receives a failure fingerprint of requirement, variant and invariant kind. `shrink-scenario` supports `ddmin` or `greedy` action deletion, 1–100,000 candidate evaluations, default 1,000. It replays the baseline, executes each eligible candidate with unchanged identities/seed/limits/variant/horizon, preserves the same fingerprint, and replays every accepted candidate.
+
+Reduction accounting distinguishes candidate checks, actual executions, replay checks, causal/fingerprint rejections and unknown candidates. INCONCLUSIVE results retain the last verified failing trace but clear `one_minimal`. A completed final deletion pass proves only 1-minimality under `fixed-horizon-action-deletion-v1`, never a global minimum.
+
+### Campaign index
+
+Campaign count is 1–1,000 and the entire sequential seed range must fit uint64. `index.json` records requested, attempted, unrun, VALID, INVALID, INCONCLUSIVE, execution-error and callback-error totals, plus ordered per-seed entries, observed coverage and separate workload choices/version. Each seed streams a trace/history to its own directory. Execution errors retain partial traces and independent seeds continue; artifact-callback failure stops and counts the remaining seeds as unrun.
+
+The CLI campaign generates the safe target workload. `make campaign` additionally executes the labelled unsafe scenario and performs ten actual replay commands for each selected INVALID trace. Missing outcomes and unknowns are never discarded from the index.
+
+## Native process conformance
+
+~~~sh
+faultbraid lab-real -scenario scenario.json -concurrency 4 -outdir new-lab
+~~~
+
+`-concurrency` is 1–16, default 4. Native mode accepts only read/write invocation, crash and restart actions, a horizon at most 1,000 ticks and at most 64 process lifetimes. Unsupported faults and invalid crash/restart causality are rejected before output creation or launch. Each tick means **25 ms of native elapsed scheduling**, not a deterministic virtual event.
+
+The parent launches only its own current executable's internal `lab-node` command. The scenario cannot choose a binary or path. Children must match the parent build and actual executable SHA before workload admission. Output contains `native.json`, `history.json`, `result.json`, `history.html`, per-node journals, bounded protocol/stdout/stderr records and ownership metadata. `history.html` displays the collected history; `native.json` carries native process evidence.
+
+Each child binds to `127.0.0.1:0`:
+
+| Endpoint | Behavior |
+|---|---|
+| `GET /healthz` | Readiness only, not quorum or correctness |
+| `POST /v1/propose` | Exact JSON `{request_id,kind,value}`, Content-Type `application/json`, at most 1,024 bytes |
+| `POST /v1/message` | A serialized raftpb.Message, Content-Type `application/octet-stream`, 1–65,536 bytes |
+| `GET /v1/diagnostics` | Bounded current target/FileStore counters |
+
+Proposal responses carry `request_id`, `status`, `admission`, `value` and `code`. Complete/admitted responses establish completion; affirmative `rejected-before-admission` responses exclude rejected-only calls. Timeouts, unavailable nodes and uncertain transport outcomes remain pending. Malformed responses preserve the uncertain attempt and interrupt the run. Parent collection uses global integer ordinals rather than child wall-clock timestamps.
+
+The child actor queue is bounded to 128, connections to 64, headers to 8 KiB, wire lines to 128 KiB, and each output file to 16 MiB with a 64 MiB aggregate output budget. HTTP parsing and requests have deadlines; proxying and redirects are disabled. Journal growth is independently bounded. The parent kills and waits for owned children and verifies socket closure. Windows children are assigned to kill-on-close jobs while suspended before resuming; non-Windows children use owned process groups.
+
+Native records have `mode:"native-loopback-conformance-v1"`, actual PIDs/addresses, source/binary identities, per-lifetime entropy choices, successful File.Sync counters, journal byte hashes, transport outcomes, declared/observed concurrency and cleanup state. `target_status` diagnostics currently retain the exported Go field names such as `Value` and `Commit`.
+
+Native execution is **not accepted by `replay`**. Process kill and successful File.Sync calls do not certify loss-of-power behavior, parent-directory persistence or hardware write ordering. Loopback is not authentication, and this lab is not an Internet service.
