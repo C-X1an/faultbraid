@@ -1,0 +1,6 @@
+=== RUN   TestIndependentUnexpectedExitedChildMustNotBecomeSuccessfulOwnedStop
+    independent_lifecycle_test.go:125: unexpected real child exit 2 was silently converted to a successful owned stop; waitErr=exit status 2
+--- FAIL: TestIndependentUnexpectedExitedChildMustNotBecomeSuccessfulOwnedStop (0.18s)
+FAIL
+FAIL	github.com/C-X1an/faultbraid/internal/labreal	4.895s
+FAIL

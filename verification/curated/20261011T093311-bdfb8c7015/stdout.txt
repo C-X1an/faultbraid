@@ -1,0 +1,6 @@
+=== RUN   TestIndependentInterruptedProposalBodyRetainsPendingWrite
+    independent_uncertain_test.go:58: accepted proposal with incomplete response disappeared from pending history: {Version:0 Initial:0 Operations:[]}
+--- FAIL: TestIndependentInterruptedProposalBodyRetainsPendingWrite (0.00s)
+FAIL
+FAIL	github.com/C-X1an/faultbraid/internal/labreal	4.661s
+FAIL

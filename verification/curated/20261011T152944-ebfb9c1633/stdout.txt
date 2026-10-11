@@ -1,0 +1,4 @@
+=== RUN   TestIndependentUnexpectedExitedChildMustNotBecomeSuccessfulOwnedStop
+--- PASS: TestIndependentUnexpectedExitedChildMustNotBecomeSuccessfulOwnedStop (0.17s)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/labreal	5.418s

@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "kind": "author-browser-observation",
+  "status": "PASS",
+  "scope": "Targeted generated unsafe Raft inspector on actual in-app Chromium; not independent approval, cross-browser or assistive-technology certification",
+  "observed_utc": "2026-10-11T15:44:33.105320+00:00",
+  "source_tree_sha256": "7a33621006358b800303eda6efb57e8f0bddc17b7b3e51e2731e6aa1126d1f32",
+  "report_sha256": "45ac2442e959469cac01d278c4cce801297b52c8a4ea79a9e7dc487f8cd736e5",
+  "report_bytes": 94022,
+  "template_sha256": "b30e040b4e420a1bc81d0ab744efb0b94709ae915345fc46ba84a3909d2a48e3",
+  "phone": {
+    "viewport": [
+      360,
+      800
+    ],
+    "document_client_width": 345,
+    "document_scroll_width": 345,
+    "history_region": [
+      313,
+      704,
+      239,
+      239
+    ],
+    "action_region": [
+      298,
+      896,
+      505,
+      631
+    ],
+    "causal_region": [
+      298,
+      1280,
+      505,
+      32513
+    ],
+    "headers_white_space": "nowrap",
+    "keyboard_focus": "Causal record table",
+    "focus_outline": "solid",
+    "arrow_scroll_top": 40,
+    "arrow_scroll_left": 40
+  },
+  "desktop": {
+    "viewport": [
+      1280,
+      900
+    ],
+    "document_client_width": 1265,
+    "document_scroll_width": 1265,
+    "history_region": [
+      1201,
+      1201,
+      239,
+      239
+    ],
+    "action_region": [
+      1186,
+      1186,
+      585,
+      631
+    ],
+    "causal_region": [
+      1186,
+      1280,
+      570,
+      32513
+    ],
+    "section_links": [
+      "identity",
+      "history",
+      "actions",
+      "events"
+    ]
+  },
+  "keyboard_sequence": "Causal link Enter changed fragment; Tab reached History, then Tab History to Action to Causal; Down and Right moved the focused causal region",
+  "authored_script_and_external_resource_count": 0,
+  "browser_injected_extension_script_count": 3,
+  "screenshots": "Actual phone/desktop screenshots observed inline; no screenshot file exported",
+  "temporary_viewport_reset_called": true,
+  "temporary_tab_closed": true,
+  "prior_mobile_failure": "Original full-page narrow causal table unreadable; original observation preserved in private review before CSS fixes",
+  "authored_script_count": 0,
+  "authored_external_resource_count": 0,
+  "temporary_server_exited": true,
+  "temporary_server_exit_code": 1,
+  "temporary_server_exit_reason": "owned Ctrl-C keyboard interrupt",
+  "temporary_socket_closed": true
+}

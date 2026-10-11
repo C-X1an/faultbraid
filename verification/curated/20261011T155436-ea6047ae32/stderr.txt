@@ -1,0 +1,11 @@
+internal\target\api.go:9:2: go.etcd.io/raft/v3@v3.7.0: replacement directory ./.local-runs/raft does not exist
+internal\target\api.go:10:2: go.etcd.io/raft/v3@v3.7.0: replacement directory ./.local-runs/raft does not exist
+Traceback (most recent call last):
+  File "[recorded-working-root]\scripts\build.py", line 18, in <module>
+    subprocess.run(command,cwd=root,check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[python-runtime-root]\Lib\subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['go', 'build', '-trimpath', '-ldflags', '-X github.com/C-X1an/faultbraid/internal/buildinfo.SourceTreeSHA=b659df55ace5beb63e40b650d49753c7cfe19ec293a64a397992596e61e0a591 -X github.com/C-X1an/faultbraid/internal/buildinfo.ModuleLockSHA=c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432 -X github.com/C-X1an/faultbraid/internal/buildinfo.PatchSHA=01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647', '-o', '[recorded-working-root]\\bin\\faultbraid.exe', './cmd/faultbraid']' returned non-zero exit status 1.
+make: *** [Makefile:13: build] Error 1

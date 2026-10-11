@@ -1,0 +1,12 @@
+=== RUN   TestIndependentUnexpectedExitedChildMustNotBecomeSuccessfulOwnedStop
+    security_review_test.go:125: unexpected real child exit 2 was silently converted to a successful owned stop; waitErr=exit status 2
+--- FAIL: TestIndependentUnexpectedExitedChildMustNotBecomeSuccessfulOwnedStop (0.15s)
+=== RUN   TestIndependentHTTPInvalidProposalNeverEnqueues
+--- PASS: TestIndependentHTTPInvalidProposalNeverEnqueues (0.00s)
+=== RUN   TestIndependentHTTPInvalidFrameNeverEnqueues
+--- PASS: TestIndependentHTTPInvalidFrameNeverEnqueues (0.00s)
+=== RUN   TestIndependentListenerCloseReleasesWaitingAccept
+--- PASS: TestIndependentListenerCloseReleasesWaitingAccept (0.00s)
+FAIL
+FAIL	github.com/C-X1an/faultbraid/internal/labreal	4.823s
+FAIL

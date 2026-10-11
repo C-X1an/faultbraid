@@ -1,0 +1,5 @@
+--- FAIL: TestCrashDurability (0.00s)
+    sim_test.go:50: unflushed write survived
+FAIL
+FAIL	github.com/C-X1an/faultbraid/internal/sim	1.416s
+FAIL

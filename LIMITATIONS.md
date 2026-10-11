@@ -4,7 +4,7 @@
 
 Implemented components include the bounded register checker and diagnostic history reducer; queue/disk-model kernel; pinned instrumented three-voter Raft target; explicit election entropy; staged/flushed stores and named crash barriers; virtual faults, causal traces and two-pass replay; executable ddmin/greedy scenario reduction; independent Porcupine/finite-oracle differential checks; bounded seed campaigns; static inspectors; and the same-target native loopback/FileStore process lab.
 
-Final source-matched clean verification, independent review of all 24 acceptance criteria, actual hosted Linux runtime CI, exact final public-content audit and repository publication remain pending. Scoped results and earlier runs cannot replace those gates. Read [VERIFICATION_REPORT.md](VERIFICATION_REPORT.md), [TEST_MATRIX.md](TEST_MATRIX.md) and [CLAIMS_EVIDENCE.md](CLAIMS_EVIDENCE.md) for source-bound status rather than inferring release readiness from implementation presence.
+Applicable local acceptance and exact committed clean verification passed on the supported Windows toolchain. Independent final review of all 24 acceptance criteria, hosted Linux runtime CI, the final curated public-content audit and repository publication remain pending. Scoped results and earlier runs cannot replace those gates. Read [VERIFICATION_REPORT.md](VERIFICATION_REPORT.md), [TEST_MATRIX.md](TEST_MATRIX.md) and [CLAIMS_EVIDENCE.md](CLAIMS_EVIDENCE.md) for source-bound status rather than inferring release readiness from implementation presence.
 
 ## Finite correctness and workload scope
 

@@ -1,0 +1,168 @@
+=== RUN   TestWindowsLabDirectoryAndJournalOnlyGrantCurrentUser
+--- PASS: TestWindowsLabDirectoryAndJournalOnlyGrantCurrentUser (0.00s)
+=== RUN   TestWindowsLabRejectsReparseDirectoryAndJournal
+--- PASS: TestWindowsLabRejectsReparseDirectoryAndJournal (0.05s)
+=== RUN   TestIndependentUnexpectedExitedChildMustNotBecomeSuccessfulOwnedStop
+--- PASS: TestIndependentUnexpectedExitedChildMustNotBecomeSuccessfulOwnedStop (0.43s)
+=== RUN   TestIndependentHTTPInvalidProposalNeverEnqueues
+--- PASS: TestIndependentHTTPInvalidProposalNeverEnqueues (0.00s)
+=== RUN   TestIndependentHTTPInvalidFrameNeverEnqueues
+--- PASS: TestIndependentHTTPInvalidFrameNeverEnqueues (0.00s)
+=== RUN   TestIndependentListenerCloseReleasesWaitingAccept
+--- PASS: TestIndependentListenerCloseReleasesWaitingAccept (0.00s)
+=== RUN   TestIndependentInterruptedProposalBodyRetainsPendingWrite
+--- PASS: TestIndependentInterruptedProposalBodyRetainsPendingWrite (0.00s)
+=== RUN   TestCollectorPreservesEarlierUncertainAdmissionAfterRejectedRetry
+--- PASS: TestCollectorPreservesEarlierUncertainAdmissionAfterRejectedRetry (0.00s)
+=== RUN   TestChildOutputEnforcesLineAndTotalBounds
+--- PASS: TestChildOutputEnforcesLineAndTotalBounds (0.00s)
+=== RUN   TestOwnedDirectoryExclusiveCreation
+--- PASS: TestOwnedDirectoryExclusiveCreation (0.00s)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/labreal	6.110s
+=== RUN   TestAC012DefinitelyRejectedWriteCannotMaskActualStaleRead
+--- PASS: TestAC012DefinitelyRejectedWriteCannotMaskActualStaleRead (0.48s)
+=== RUN   TestAC012AdmittedPendingWriteSurvivesRejectedRetry
+--- PASS: TestAC012AdmittedPendingWriteSurvivesRejectedRetry (0.19s)
+=== RUN   TestCampaignDoesNotPresumeArmedResponseCrashFired
+    campaign_regression_test.go:37: regression seed365 actual events652 digestc54ec95c7ce0457af9d0dfb2e9f2a303d34fb42c3257b0499efe072b8509778a
+    campaign_regression_test.go:37: regression seed854 actual events628 digeste64158a19d2adc46a53b29e744a3314d700aacaddd02ef10f189096235cd4278
+--- PASS: TestCampaignDoesNotPresumeArmedResponseCrashFired (0.39s)
+=== RUN   TestAC024CampaignCountCoverageAndSeedReplay
+    campaign_test.go:43: AC-024 bounded author smoke campaign requested=32 attempted=32 valid=32 invalid=0 inconclusive=0 errors=0 observed-events=20230 completed-writes=64 completed-reads=92 barrier-crashes=16; full1000 campaign is a separate measured run
+--- PASS: TestAC024CampaignCountCoverageAndSeedReplay (3.99s)
+=== RUN   TestCampaignCancellationCallbackErrorAndBounds
+--- PASS: TestCampaignCancellationCallbackErrorAndBounds (0.09s)
+=== RUN   TestAC013NamedBarrierCrashRecoveryMatrix
+=== RUN   TestAC013NamedBarrierCrashRecoveryMatrix/before-append
+    persistence_test.go:125: AC-013 model crash matrix {"barrier":"before-append","crash":{"event_id":210,"parent_event_id":209,"node_id":2,"incarnation":1,"virtual_time":35,"kind":"crash","payload_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","detail":"barrier"},"module":"c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432","patch":"01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647","prefix_digest":"2d147229e414dd5d068ace0b80b08523b0e9fea78b443d8d6b06d3f52686c42a","prefix_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":null},{"id":"down-read","kind":"read","value":0,"call":4,"return":null}]},"recovered_digest":"165a8b1446e57238aafec306b7afd850561430dbe868c48bf1057a7068f2cc78","recovered_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered","kind":"read","value":7,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final","kind":"read","value":11,"call":10,"return":11}]},"source":"17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79"}
+=== RUN   TestAC013NamedBarrierCrashRecoveryMatrix/after-stage-before-flush
+    persistence_test.go:125: AC-013 model crash matrix {"barrier":"after-stage-before-flush","crash":{"event_id":210,"parent_event_id":209,"node_id":2,"incarnation":1,"virtual_time":35,"kind":"crash","payload_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","detail":"barrier"},"module":"c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432","patch":"01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647","prefix_digest":"3775cee80fcc03e2952d36f4b2d7090c132cd1a18061a61bc7421b206f602ff4","prefix_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":null},{"id":"down-read","kind":"read","value":0,"call":4,"return":null}]},"recovered_digest":"cad9cd75ddbd955362a3959684b020be1df05afe0f8478e9910479b20d1b364e","recovered_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered","kind":"read","value":7,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final","kind":"read","value":11,"call":10,"return":11}]},"source":"17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79"}
+=== RUN   TestAC013NamedBarrierCrashRecoveryMatrix/after-flush-before-send
+    persistence_test.go:125: AC-013 model crash matrix {"barrier":"after-flush-before-send","crash":{"event_id":210,"parent_event_id":209,"node_id":2,"incarnation":1,"virtual_time":35,"kind":"crash","payload_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","detail":"barrier"},"module":"c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432","patch":"01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647","prefix_digest":"d13b5fecc9d2edbe7e37c17beee440f1c39c3cebb3fa61c905c54e2ce1b2e702","prefix_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":null},{"id":"down-read","kind":"read","value":0,"call":4,"return":null}]},"recovered_digest":"00474d175336e96ea400d9d0eda741d716ddda889267961480e86b3a7bbab8fa","recovered_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered","kind":"read","value":7,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final","kind":"read","value":11,"call":10,"return":11}]},"source":"17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79"}
+=== RUN   TestAC013NamedBarrierCrashRecoveryMatrix/after-send-before-apply
+    persistence_test.go:125: AC-013 model crash matrix {"barrier":"after-send-before-apply","crash":{"event_id":210,"parent_event_id":209,"node_id":2,"incarnation":1,"virtual_time":35,"kind":"crash","payload_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","detail":"barrier"},"module":"c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432","patch":"01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647","prefix_digest":"b79f212fe04f05008aff9420ec647d2baa4c8ad48901b38f1d1c8db86fcab418","prefix_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":null},{"id":"down-read","kind":"read","value":0,"call":4,"return":null}]},"recovered_digest":"1c4eb287587ff886565d7408c29f2f30fe66aec708b75276a78cb6a7f6eb0772","recovered_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered","kind":"read","value":9,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final","kind":"read","value":11,"call":10,"return":11}]},"source":"17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79"}
+=== RUN   TestAC013NamedBarrierCrashRecoveryMatrix/after-apply-before-response
+    persistence_test.go:125: AC-013 model crash matrix {"barrier":"after-apply-before-response","crash":{"event_id":231,"parent_event_id":230,"node_id":2,"incarnation":1,"virtual_time":37,"kind":"crash","payload_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","detail":"barrier"},"module":"c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432","patch":"01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647","prefix_digest":"a5dce18c54721169e4d67cf0d994ad0be0169e8e92189677813c4474c4793323","prefix_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":null},{"id":"down-read","kind":"read","value":0,"call":4,"return":null}]},"recovered_digest":"a9085774b658125d4c54cb019cf09b79f740d2beb893e4237d70df46e1259f0d","recovered_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered","kind":"read","value":9,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final","kind":"read","value":11,"call":10,"return":11}]},"source":"17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79"}
+=== RUN   TestAC013NamedBarrierCrashRecoveryMatrix/after-response
+    persistence_test.go:125: AC-013 model crash matrix {"barrier":"after-response","crash":{"event_id":232,"parent_event_id":230,"node_id":2,"incarnation":1,"virtual_time":37,"kind":"crash","payload_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","detail":"barrier"},"module":"c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432","patch":"01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647","prefix_digest":"7bfa204e1632fd46740fce1384c4a60666a87feee791420dd6fc1bd92afc646d","prefix_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":4},{"id":"down-read","kind":"read","value":0,"call":5,"return":null}]},"recovered_digest":"3bdf8968b0ae960de72805b6d54a1c218494ac6760da23d3fd3f8b19f2f7c720","recovered_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":4},{"id":"down-read","kind":"read","value":0,"call":5,"return":null},{"id":"recovered","kind":"read","value":9,"call":6,"return":7},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final","kind":"read","value":11,"call":10,"return":11}]},"source":"17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79"}
+--- PASS: TestAC013NamedBarrierCrashRecoveryMatrix (2.76s)
+    --- PASS: TestAC013NamedBarrierCrashRecoveryMatrix/before-append (0.46s)
+    --- PASS: TestAC013NamedBarrierCrashRecoveryMatrix/after-stage-before-flush (0.47s)
+    --- PASS: TestAC013NamedBarrierCrashRecoveryMatrix/after-flush-before-send (0.47s)
+    --- PASS: TestAC013NamedBarrierCrashRecoveryMatrix/after-send-before-apply (0.45s)
+    --- PASS: TestAC013NamedBarrierCrashRecoveryMatrix/after-apply-before-response (0.46s)
+    --- PASS: TestAC013NamedBarrierCrashRecoveryMatrix/after-response (0.46s)
+=== RUN   TestAC013FlushBeforeSendAndResponse
+    persistence_test.go:422: AC-013 Flush ordering positive control completed real three-voter write/read; history={"version":1,"initial":0,"operations":[{"id":"flush-order-write","kind":"write","value":7,"call":1,"return":2},{"id":"flush-order-read","kind":"read","value":7,"call":3,"return":4}]}
+--- PASS: TestAC013FlushBeforeSendAndResponse (0.00s)
+=== RUN   TestAC013FileJournalCrashRecoveryMatrix
+=== RUN   TestAC013FileJournalCrashRecoveryMatrix/before-append
+    persistence_test.go:500: AC-013 file boundary=before-append node=1 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:500: AC-013 file boundary=before-append node=2 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:500: AC-013 file boundary=before-append node=3 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:530: AC-013 actual file reopen history={"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered9","kind":"read","value":9,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final11","kind":"read","value":11,"call":10,"return":11}]} source=17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79 patch=01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647; journal Flush calls execute File.Sync, no physical power-loss claim
+=== RUN   TestAC013FileJournalCrashRecoveryMatrix/after-stage-before-flush
+    persistence_test.go:500: AC-013 file boundary=after-stage-before-flush node=1 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:500: AC-013 file boundary=after-stage-before-flush node=2 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:500: AC-013 file boundary=after-stage-before-flush node=3 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:530: AC-013 actual file reopen history={"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered9","kind":"read","value":9,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final11","kind":"read","value":11,"call":10,"return":11}]} source=17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79 patch=01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647; journal Flush calls execute File.Sync, no physical power-loss claim
+=== RUN   TestAC013FileJournalCrashRecoveryMatrix/after-flush-before-send
+    persistence_test.go:500: AC-013 file boundary=after-flush-before-send node=1 incarnation=2 journal_bytes=613 journal_sha256=406d85896b8283b8673cfaded55ce47ca534da704158322a97a2808b3de4470a recovered_commit=6 recovered_value=9
+    persistence_test.go:500: AC-013 file boundary=after-flush-before-send node=2 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:500: AC-013 file boundary=after-flush-before-send node=3 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:530: AC-013 actual file reopen history={"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered9","kind":"read","value":9,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final11","kind":"read","value":11,"call":10,"return":11}]} source=17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79 patch=01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647; journal Flush calls execute File.Sync, no physical power-loss claim
+=== RUN   TestAC013FileJournalCrashRecoveryMatrix/after-send-before-apply
+    persistence_test.go:500: AC-013 file boundary=after-send-before-apply node=1 incarnation=2 journal_bytes=613 journal_sha256=406d85896b8283b8673cfaded55ce47ca534da704158322a97a2808b3de4470a recovered_commit=6 recovered_value=9
+    persistence_test.go:500: AC-013 file boundary=after-send-before-apply node=2 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:500: AC-013 file boundary=after-send-before-apply node=3 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:530: AC-013 actual file reopen history={"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered9","kind":"read","value":9,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final11","kind":"read","value":11,"call":10,"return":11}]} source=17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79 patch=01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647; journal Flush calls execute File.Sync, no physical power-loss claim
+=== RUN   TestAC013FileJournalCrashRecoveryMatrix/after-apply-before-response
+    persistence_test.go:500: AC-013 file boundary=after-apply-before-response node=1 incarnation=2 journal_bytes=613 journal_sha256=406d85896b8283b8673cfaded55ce47ca534da704158322a97a2808b3de4470a recovered_commit=6 recovered_value=9
+    persistence_test.go:500: AC-013 file boundary=after-apply-before-response node=2 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:500: AC-013 file boundary=after-apply-before-response node=3 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:530: AC-013 actual file reopen history={"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered9","kind":"read","value":9,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final11","kind":"read","value":11,"call":10,"return":11}]} source=17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79 patch=01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647; journal Flush calls execute File.Sync, no physical power-loss claim
+=== RUN   TestAC013FileJournalCrashRecoveryMatrix/after-response
+    persistence_test.go:500: AC-013 file boundary=after-response node=1 incarnation=2 journal_bytes=613 journal_sha256=406d85896b8283b8673cfaded55ce47ca534da704158322a97a2808b3de4470a recovered_commit=6 recovered_value=9
+    persistence_test.go:500: AC-013 file boundary=after-response node=2 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:500: AC-013 file boundary=after-response node=3 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:530: AC-013 actual file reopen history={"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":4},{"id":"down-read","kind":"read","value":0,"call":5,"return":null},{"id":"recovered9","kind":"read","value":9,"call":6,"return":7},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final11","kind":"read","value":11,"call":10,"return":11}]} source=17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79 patch=01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647; journal Flush calls execute File.Sync, no physical power-loss claim
+--- PASS: TestAC013FileJournalCrashRecoveryMatrix (0.25s)
+    --- PASS: TestAC013FileJournalCrashRecoveryMatrix/before-append (0.04s)
+    --- PASS: TestAC013FileJournalCrashRecoveryMatrix/after-stage-before-flush (0.04s)
+    --- PASS: TestAC013FileJournalCrashRecoveryMatrix/after-flush-before-send (0.04s)
+    --- PASS: TestAC013FileJournalCrashRecoveryMatrix/after-send-before-apply (0.04s)
+    --- PASS: TestAC013FileJournalCrashRecoveryMatrix/after-apply-before-response (0.04s)
+    --- PASS: TestAC013FileJournalCrashRecoveryMatrix/after-response (0.04s)
+=== RUN   TestAC012MinorityReadPendingThenHealProgress
+--- PASS: TestAC012MinorityReadPendingThenHealProgress (0.11s)
+=== RUN   TestSameTargetUnsafeLocalReadIsDetected
+    raft_test.go:35: actual unsafe control fingerprint=64e06e80501d3cf46c394fbe31d22107804b6ae4f3f670af654c4b72bd6a7b4b digest=9b75081375b34052a72d1e5609e5f8cd5cde5d58c659ac0b3e86d429095d7fa7
+--- PASS: TestSameTargetUnsafeLocalReadIsDetected (0.04s)
+=== RUN   TestAC011RealPinnedRaftMajorityWriteAndRead
+    raft_test.go:55: AC-011 actual source=17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79 patch=01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647 choices=10 events=403 digest=9a86e1eca02315180eb04f70e217227c773ec84b291bbc835587b5b38aa84079
+--- PASS: TestAC011RealPinnedRaftMajorityWriteAndRead (0.04s)
+=== RUN   TestVirtualTargetLimitsStayInconclusive
+--- PASS: TestVirtualTargetLimitsStayInconclusive (0.53s)
+=== RUN   TestAC019ThreeRealProcessesJournalKillRestartAndCleanup
+=== RUN   TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-1
+    real_process_test.go:123: retained actual native fixture=.local-runs/real-process-tests/actual-3413622881/lab/native-result.json
+    real_process_test.go:197: AC-019 actual same-test-binary processes=4 distinct-pids=4 socket-closure=true http-posts=823 journal-bytes=2328 configured-concurrency=1 observed-peak=1 duration-ms=6716 source=17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79 binary=ecec4e3edcc46791322164f06412d310ad97b4217fe7c4ecbd7cdda684dd0cde
+=== RUN   TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-4
+    real_process_test.go:123: retained actual native fixture=.local-runs/real-process-tests/actual-3555096961/lab/native-result.json
+    real_process_test.go:125: native conformance error=real lab: child exited before an owned stop
+        exit status 2 result={Status:INCONCLUSIVE Witness:[] States:0 Reason:native run was interrupted; inspect attempts and cleanup} cleanup=false reason=native scheduling is not replayable; run did not finish
+=== RUN   TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-16
+    real_process_test.go:123: retained actual native fixture=.local-runs/real-process-tests/actual-269241601/lab/native-result.json
+    real_process_test.go:197: AC-019 actual same-test-binary processes=4 distinct-pids=4 socket-closure=true http-posts=853 journal-bytes=4092 configured-concurrency=16 observed-peak=16 duration-ms=6714 source=17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79 binary=ecec4e3edcc46791322164f06412d310ad97b4217fe7c4ecbd7cdda684dd0cde
+--- FAIL: TestAC019ThreeRealProcessesJournalKillRestartAndCleanup (20.17s)
+    --- PASS: TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-1 (6.75s)
+    --- FAIL: TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-4 (6.68s)
+    --- PASS: TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-16 (6.75s)
+=== RUN   TestRealProcessRejectsUnsupportedFaultAndExternalExecutableBeforeLaunch
+--- PASS: TestRealProcessRejectsUnsupportedFaultAndExternalExecutableBeforeLaunch (0.03s)
+=== RUN   TestRealProcessCancellationKeepsUnknownAndCleansOwnedChildren
+    real_process_test.go:330: retained actual native fixture=.local-runs/real-process-tests/actual-1549734414/lab/native-result.json
+    real_process_test.go:346: cancelled real run status=INCONCLUSIVE pending=1 waited-processes=3 cleanup=true
+--- PASS: TestRealProcessCancellationKeepsUnknownAndCleansOwnedChildren (1.50s)
+=== RUN   TestIndependentReducerFixedImplicitHorizon
+    reducer_review_test.go:57: independent implicit horizon=258 actions=12->6 causal/domain rejections=5
+--- PASS: TestIndependentReducerFixedImplicitHorizon (6.52s)
+=== RUN   TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint
+=== RUN   TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/source
+=== RUN   TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/seed
+=== RUN   TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/scheduler
+=== RUN   TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/fingerprint
+=== RUN   TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/unknown-with-failure
+--- PASS: TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint (0.23s)
+    --- PASS: TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/source (0.01s)
+    --- PASS: TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/seed (0.12s)
+    --- PASS: TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/scheduler (0.01s)
+    --- PASS: TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/fingerprint (0.02s)
+    --- PASS: TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/unknown-with-failure (0.02s)
+=== RUN   TestIndependentCampaignSummaryOwnershipAndCancellation
+--- PASS: TestIndependentCampaignSummaryOwnershipAndCancellation (0.07s)
+=== RUN   TestIndependentReducerActualUnknownCandidate
+    reducer_review_test.go:130: actual target unknown-candidate fixture checker-budget=3 baseline-states=3 unknown-candidates=2 retained-actions=5 minimal=false
+--- PASS: TestIndependentReducerActualUnknownCandidate (2.65s)
+=== RUN   TestAC015ExecutableCausalReductionAndReplay
+=== RUN   TestAC015ExecutableCausalReductionAndReplay/ddmin
+    reducer_test.go:73: AC-015 strategy=ddmin actions=12->5 candidate-checks=32 executed=32 replays=6 accepted=5 causal-rejections=0 final-pass=5 digest=1ce7afb6336c5705cebcf8ed3a7c825e65c4874a5ca6586c96166a2d3ce174d2 fingerprint=64e06e80501d3cf46c394fbe31d22107804b6ae4f3f670af654c4b72bd6a7b4b
+=== RUN   TestAC015ExecutableCausalReductionAndReplay/greedy
+    reducer_test.go:73: AC-015 strategy=greedy actions=12->5 candidate-checks=24 executed=24 replays=8 accepted=7 causal-rejections=0 final-pass=5 digest=1ce7afb6336c5705cebcf8ed3a7c825e65c4874a5ca6586c96166a2d3ce174d2 fingerprint=64e06e80501d3cf46c394fbe31d22107804b6ae4f3f670af654c4b72bd6a7b4b
+--- PASS: TestAC015ExecutableCausalReductionAndReplay (4.25s)
+    --- PASS: TestAC015ExecutableCausalReductionAndReplay/ddmin (2.14s)
+    --- PASS: TestAC015ExecutableCausalReductionAndReplay/greedy (2.05s)
+=== RUN   TestScenarioReductionUncertaintyAndBaselineValidation
+--- PASS: TestScenarioReductionUncertaintyAndBaselineValidation (0.38s)
+=== RUN   TestAC014TenIdenticalTargetRunsAndActualReplay
+    replay_test.go:48: 10/10 identical actual variant=raft-register-v1 digest=9a86e1eca02315180eb04f70e217227c773ec84b291bbc835587b5b38aa84079 source=17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79
+    replay_test.go:48: 10/10 identical actual variant=unsafe-local-read digest=9b75081375b34052a72d1e5609e5f8cd5cde5d58c659ac0b3e86d429095d7fa7 source=17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79
+--- PASS: TestAC014TenIdenticalTargetRunsAndActualReplay (4.07s)
+=== RUN   TestTargetReplayRejectsTamperingEvenAfterRehash
+--- PASS: TestTargetReplayRejectsTamperingEvenAfterRehash (0.80s)
+=== RUN   TestIncarnationDropsOldFramesAfterRestart
+--- PASS: TestIncarnationDropsOldFramesAfterRestart (0.37s)
+FAIL
+FAIL	github.com/C-X1an/faultbraid/tests/system	54.681s
+FAIL

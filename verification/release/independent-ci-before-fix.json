@@ -1,0 +1,23 @@
+{
+  "candidate_commit": "856ac7e8beddde2167b8258e7643ffd231471241",
+  "cold_checkout_shallow": "true",
+  "controls": [
+    {
+      "name": "kernel-shallow-audit",
+      "wrapper_exit": 1,
+      "run_path": "private\\runtime\\final-independent-ci-controls\\kernel-shallow-audit\\20261011T155435-26491db2e4\\run.json",
+      "run_sha256": "837dc7ebd4c73057ba994305116cbe6877fb810cd5964f7be3a1c33e826a0eca",
+      "command_status": "FAIL",
+      "command_exit": 1
+    },
+    {
+      "name": "codeql-unprepared-build",
+      "wrapper_exit": 2,
+      "run_path": "private\\runtime\\final-independent-ci-controls\\codeql-unprepared-build\\20261011T155436-ea6047ae32\\run.json",
+      "run_sha256": "f49b79fc38ff2d94793d4d6276e7efdf3b0527a8ac95dfbfe28d24f5ef597468",
+      "command_status": "FAIL",
+      "command_exit": 2
+    }
+  ],
+  "scope": "Actual committed workflow recipes on Windows cold checkout; not Linux CI execution"
+}

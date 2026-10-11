@@ -1,0 +1,89 @@
+{
+  "scope": "Actual synthetic Git fixture; no real credential or user profile was accessed",
+  "candidate_commit": "856ac7e8beddde2167b8258e7643ffd231471241",
+  "old_commit": "9ef8a22b24d7d65dcadb96d8ac3e9e0b3f7a012a",
+  "new_commit": "f0e56835b39591c90226952d6d6c8531cfcd2264",
+  "synthetic_graft_sha256": "e704cc0499209a7fa9336f1a7f2aa01443623aef734b683bf7f226320fd0de57",
+  "graft_restored_absent": true,
+  "results": [
+    {
+      "label": "ordinary-history",
+      "run_id": "20261011T160303-e3e1f26c3c",
+      "status": "FAIL",
+      "exit_code": 1,
+      "audit": {
+        "schema_version": 1,
+        "status": "FAIL",
+        "files": 2,
+        "inventory_sha256": "f16ff71c91eb8ecf79ea519b7636702496502c6be4760c1b1c96d4e33eb9bde1",
+        "history": {
+          "commits": 2,
+          "blobs": 3,
+          "tags": 0,
+          "ref_objects": 1,
+          "index_entries": 2,
+          "complete": false
+        },
+        "errors": [
+          {
+            "code": "sensitive_content_pattern",
+            "location_sha256": "c487bda354fdfbca"
+          }
+        ],
+        "scope": "exact reviewed working/index files, complete reachable refs and exact ZIP bytes; heuristic detection is not exhaustive; manual content review required"
+      },
+      "run_sha256": "000b1eee6762f874b35573895fbf4599b4f5acdbae25b428de839b381c3ccc63"
+    },
+    {
+      "label": "grafted-history",
+      "run_id": "20261011T160304-cc43381c8d",
+      "status": "PASS",
+      "exit_code": 0,
+      "audit": {
+        "schema_version": 1,
+        "status": "PASS",
+        "files": 2,
+        "inventory_sha256": "f16ff71c91eb8ecf79ea519b7636702496502c6be4760c1b1c96d4e33eb9bde1",
+        "history": {
+          "commits": 1,
+          "blobs": 2,
+          "tags": 0,
+          "ref_objects": 1,
+          "index_entries": 2,
+          "complete": true
+        },
+        "errors": [],
+        "scope": "exact reviewed working/index files, complete reachable refs and exact ZIP bytes; heuristic detection is not exhaustive; manual content review required"
+      },
+      "run_sha256": "e83380da712c49dd3789fdcd8bc0729bcc65e19325fb5f347f80f88f164983c4"
+    },
+    {
+      "label": "restored-history",
+      "run_id": "20261011T160305-e560156b7a",
+      "status": "FAIL",
+      "exit_code": 1,
+      "audit": {
+        "schema_version": 1,
+        "status": "FAIL",
+        "files": 2,
+        "inventory_sha256": "f16ff71c91eb8ecf79ea519b7636702496502c6be4760c1b1c96d4e33eb9bde1",
+        "history": {
+          "commits": 2,
+          "blobs": 3,
+          "tags": 0,
+          "ref_objects": 1,
+          "index_entries": 2,
+          "complete": false
+        },
+        "errors": [
+          {
+            "code": "sensitive_content_pattern",
+            "location_sha256": "c487bda354fdfbca"
+          }
+        ],
+        "scope": "exact reviewed working/index files, complete reachable refs and exact ZIP bytes; heuristic detection is not exhaustive; manual content review required"
+      },
+      "run_sha256": "6dfc4fbbfb07037394cc85dce686a95552baa7af88d870e8148c0f61ab1255ba"
+    }
+  ]
+}

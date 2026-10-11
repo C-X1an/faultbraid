@@ -1,0 +1,482 @@
+=== RUN   TestNativeCLIRejectsInvalidFlagsBeforeLaunching
+    lab_test.go:22: native CLI did not dispatch strict schema validation: code=2
+--- FAIL: TestNativeCLIRejectsInvalidFlagsBeforeLaunching (0.00s)
+=== RUN   TestStdinAndErrorEnvelope
+--- PASS: TestStdinAndErrorEnvelope (0.00s)
+=== RUN   TestUnsupportedSchemaClassification
+--- PASS: TestUnsupportedSchemaClassification (0.00s)
+=== RUN   TestMinimizeUncertaintyIsExitThree
+--- PASS: TestMinimizeUncertaintyIsExitThree (0.00s)
+=== RUN   TestOutputFailureNotSuccess
+--- PASS: TestOutputFailureNotSuccess (0.00s)
+=== RUN   TestReplayRoutingDiagnosticsNeverEchoLargeInput
+=== RUN   TestReplayRoutingDiagnosticsNeverEchoLargeInput/version
+=== RUN   TestReplayRoutingDiagnosticsNeverEchoLargeInput/model
+=== RUN   TestReplayRoutingDiagnosticsNeverEchoLargeInput/model-object
+--- PASS: TestReplayRoutingDiagnosticsNeverEchoLargeInput (0.00s)
+    --- PASS: TestReplayRoutingDiagnosticsNeverEchoLargeInput/version (0.00s)
+    --- PASS: TestReplayRoutingDiagnosticsNeverEchoLargeInput/model (0.00s)
+    --- PASS: TestReplayRoutingDiagnosticsNeverEchoLargeInput/model-object (0.00s)
+FAIL
+FAIL	github.com/C-X1an/faultbraid/cmd/faultbraid	5.535s
+=== RUN   TestActualTreeMatchesEvidenceIdentity
+--- PASS: TestActualTreeMatchesEvidenceIdentity (1.68s)
+=== RUN   TestEvidenceIdentityBoundaryFilenames
+=== RUN   TestEvidenceIdentityBoundaryFilenames/delete-\x7f.dat
+=== RUN   TestEvidenceIdentityBoundaryFilenames/i0.dat
+=== RUN   TestEvidenceIdentityBoundaryFilenames/A.dat
+--- PASS: TestEvidenceIdentityBoundaryFilenames (0.57s)
+    --- PASS: TestEvidenceIdentityBoundaryFilenames/delete-\x7f.dat (0.22s)
+    --- PASS: TestEvidenceIdentityBoundaryFilenames/i0.dat (0.18s)
+    --- PASS: TestEvidenceIdentityBoundaryFilenames/A.dat (0.17s)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/buildinfo	4.906s
+?   	github.com/C-X1an/faultbraid/internal/campaign	[no test files]
+=== RUN   TestCommonHistoryTarget
+    checker_test.go:26: AC-022 common sequential12: duration=0s states=13; host-specific target, not universal bound
+--- PASS: TestCommonHistoryTarget (0.00s)
+=== RUN   TestSequentialViolation
+--- PASS: TestSequentialViolation (0.00s)
+=== RUN   TestOverlap
+--- PASS: TestOverlap (0.00s)
+=== RUN   TestPendingWrite
+--- PASS: TestPendingWrite (0.00s)
+=== RUN   TestBudget
+--- PASS: TestBudget (0.00s)
+=== RUN   TestReadTimeTiesAndLimits
+--- PASS: TestReadTimeTiesAndLimits (0.00s)
+=== RUN   TestMinimize
+--- PASS: TestMinimize (0.00s)
+=== RUN   TestFiniteIndependentOracle
+    history_test.go:251: Enumerated 9724 histories, <=3 operations, 2 values, 3 interval templates, including pending reads/writes. Not an unbounded proof or Porcupine integration.
+--- PASS: TestFiniteIndependentOracle (0.07s)
+=== RUN   TestDecodeAdversarial
+--- PASS: TestDecodeAdversarial (0.00s)
+=== RUN   TestReductionPreservesUnknown
+--- PASS: TestReductionPreservesUnknown (0.00s)
+=== RUN   FuzzHistory
+=== RUN   FuzzHistory/seed#0
+=== RUN   FuzzHistory/seed#1
+--- PASS: FuzzHistory (0.00s)
+    --- PASS: FuzzHistory/seed#0 (0.00s)
+    --- PASS: FuzzHistory/seed#1 (0.00s)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/history	2.834s
+=== RUN   TestWindowsLabDirectoryAndJournalOnlyGrantCurrentUser
+--- PASS: TestWindowsLabDirectoryAndJournalOnlyGrantCurrentUser (0.01s)
+=== RUN   TestWindowsLabRejectsReparseDirectoryAndJournal
+--- PASS: TestWindowsLabRejectsReparseDirectoryAndJournal (0.05s)
+=== RUN   TestCollectorPreservesEarlierUncertainAdmissionAfterRejectedRetry
+--- PASS: TestCollectorPreservesEarlierUncertainAdmissionAfterRejectedRetry (0.00s)
+=== RUN   TestChildOutputEnforcesLineAndTotalBounds
+--- PASS: TestChildOutputEnforcesLineAndTotalBounds (0.00s)
+=== RUN   TestOwnedDirectoryExclusiveCreation
+--- PASS: TestOwnedDirectoryExclusiveCreation (0.00s)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/labreal	3.741s
+=== RUN   TestSplitMix64Golden
+--- PASS: TestSplitMix64Golden (0.00s)
+=== RUN   TestRecorderReplayAndRange
+--- PASS: TestRecorderReplayAndRange (0.00s)
+=== RUN   TestReplayerRejectsChoiceDrift
+=== RUN   TestReplayerRejectsChoiceDrift/missing
+=== RUN   TestReplayerRejectsChoiceDrift/node
+=== RUN   TestReplayerRejectsChoiceDrift/stream
+=== RUN   TestReplayerRejectsChoiceDrift/bound
+=== RUN   TestReplayerRejectsChoiceDrift/sequence
+=== RUN   TestReplayerRejectsChoiceDrift/negative
+=== RUN   TestReplayerRejectsChoiceDrift/too-large
+--- PASS: TestReplayerRejectsChoiceDrift (0.00s)
+    --- PASS: TestReplayerRejectsChoiceDrift/missing (0.00s)
+    --- PASS: TestReplayerRejectsChoiceDrift/node (0.00s)
+    --- PASS: TestReplayerRejectsChoiceDrift/stream (0.00s)
+    --- PASS: TestReplayerRejectsChoiceDrift/bound (0.00s)
+    --- PASS: TestReplayerRejectsChoiceDrift/sequence (0.00s)
+    --- PASS: TestReplayerRejectsChoiceDrift/negative (0.00s)
+    --- PASS: TestReplayerRejectsChoiceDrift/too-large (0.00s)
+=== RUN   TestReplayerRejectsExtraAndReorderedChoices
+--- PASS: TestReplayerRejectsExtraAndReorderedChoices (0.00s)
+=== RUN   TestElectionRandomPreservesReplayError
+--- PASS: TestElectionRandomPreservesReplayError (0.00s)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/raftadapter	2.343s
+=== RUN   TestEscapesAndExclusiveOutput
+--- PASS: TestEscapesAndExclusiveOutput (0.14s)
+=== RUN   TestReportBounds
+--- PASS: TestReportBounds (0.00s)
+=== RUN   TestTargetInspectorEscapesAndHasOfflineSemanticNavigation
+--- PASS: TestTargetInspectorEscapesAndHasOfflineSemanticNavigation (0.00s)
+=== RUN   TestTargetInspectorStopsBeforeUnboundedGrowth
+--- PASS: TestTargetInspectorStopsBeforeUnboundedGrowth (0.86s)
+=== RUN   TestExclusiveOwnedDirectoryAndAliasParents
+--- PASS: TestExclusiveOwnedDirectoryAndAliasParents (0.05s)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/report	4.486s
+=== RUN   TestCodecGoldenPredatesImplementation
+--- PASS: TestCodecGoldenPredatesImplementation (0.00s)
+=== RUN   TestStrictScenarioActionsAndBounds
+--- PASS: TestStrictScenarioActionsAndBounds (0.00s)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/scenario	3.264s
+=== RUN   TestQueueOrderingAndBounds
+--- PASS: TestQueueOrderingAndBounds (0.00s)
+=== RUN   TestCrashDurability
+--- PASS: TestCrashDurability (0.00s)
+=== RUN   TestReplayReexecutes
+--- PASS: TestReplayReexecutes (0.00s)
+=== RUN   TestRNGGolden
+--- PASS: TestRNGGolden (0.00s)
+=== RUN   TestModel10000Target
+    sim_test.go:141: AC-023 model10000: duration=92.5102ms; no Raft/process throughput claim
+--- PASS: TestModel10000Target (0.09s)
+=== RUN   FuzzReplay
+=== RUN   FuzzReplay/seed#0
+=== RUN   FuzzReplay/seed#1
+--- PASS: FuzzReplay (0.00s)
+    --- PASS: FuzzReplay/seed#0 (0.00s)
+    --- PASS: FuzzReplay/seed#1 (0.00s)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/sim	2.849s
+=== RUN   TestStrictShape
+--- PASS: TestStrictShape (0.01s)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/strictjson	2.589s
+=== RUN   TestReviewerFollowerHonorsConfiguredLogLimit
+--- PASS: TestReviewerFollowerHonorsConfiguredLogLimit (0.01s)
+=== RUN   TestFileStoreRealJournalTargetRecovery
+--- PASS: TestFileStoreRealJournalTargetRecovery (0.05s)
+=== RUN   TestFileStoreCountsOnlySuccessfulActualSync
+--- PASS: TestFileStoreCountsOnlySuccessfulActualSync (0.00s)
+=== RUN   TestFileStoreEveryInterruptedTailRetainsCompletePrefix
+--- PASS: TestFileStoreEveryInterruptedTailRetainsCompletePrefix (1.48s)
+=== RUN   TestFileStoreCorruptionFailsClosed
+=== RUN   TestFileStoreCorruptionFailsClosed/A
+=== RUN   TestFileStoreCorruptionFailsClosed/I
+=== RUN   TestFileStoreCorruptionFailsClosed/P
+=== RUN   TestFileStoreCorruptionFailsClosed/Q
+=== RUN   TestFileStoreCorruptionFailsClosed/X
+=== RUN   TestFileStoreCorruptionFailsClosed/Y
+=== RUN   TestFileStoreCorruptionFailsClosed/x
+=== RUN   TestFileStoreCorruptionFailsClosed/y
+=== RUN   TestFileStoreCorruptionFailsClosed/À
+=== RUN   TestFileStoreCorruptionFailsClosed/Ç
+=== RUN   TestFileStoreCorruptionFailsClosed/È
+=== RUN   TestFileStoreCorruptionFailsClosed/Ð
+=== RUN   TestFileStoreCorruptionFailsClosed/þ
+--- PASS: TestFileStoreCorruptionFailsClosed (0.20s)
+    --- PASS: TestFileStoreCorruptionFailsClosed/A (0.02s)
+    --- PASS: TestFileStoreCorruptionFailsClosed/I (0.00s)
+    --- PASS: TestFileStoreCorruptionFailsClosed/P (0.02s)
+    --- PASS: TestFileStoreCorruptionFailsClosed/Q (0.02s)
+    --- PASS: TestFileStoreCorruptionFailsClosed/X (0.00s)
+    --- PASS: TestFileStoreCorruptionFailsClosed/Y (0.01s)
+    --- PASS: TestFileStoreCorruptionFailsClosed/x (0.01s)
+    --- PASS: TestFileStoreCorruptionFailsClosed/y (0.02s)
+    --- PASS: TestFileStoreCorruptionFailsClosed/À (0.02s)
+    --- PASS: TestFileStoreCorruptionFailsClosed/Ç (0.01s)
+    --- PASS: TestFileStoreCorruptionFailsClosed/È (0.02s)
+    --- PASS: TestFileStoreCorruptionFailsClosed/Ð (0.02s)
+    --- PASS: TestFileStoreCorruptionFailsClosed/þ (0.02s)
+=== RUN   TestFileStoreStageDiscardAndUncertainIOStopsMutation
+--- PASS: TestFileStoreStageDiscardAndUncertainIOStopsMutation (0.05s)
+=== RUN   TestFileStoreBoundsAndChecksummedSemanticCorruption
+--- PASS: TestFileStoreBoundsAndChecksummedSemanticCorruption (0.03s)
+=== RUN   TestReadyDurableBeforeMessagesApplyAndReply
+--- PASS: TestReadyDurableBeforeMessagesApplyAndReply (0.00s)
+=== RUN   TestAdversarialFramesRejectPanicShapes
+--- PASS: TestAdversarialFramesRejectPanicShapes (0.00s)
+=== RUN   TestEntropyChoicesAndEffectTraceRepeatExactly
+--- PASS: TestEntropyChoicesAndEffectTraceRepeatExactly (0.04s)
+=== RUN   TestMajorityWriteReadAndRecoveredDedup
+--- PASS: TestMajorityWriteReadAndRecoveredDedup (0.01s)
+=== RUN   TestIsolatedLeaderHasNoAcknowledgementAndSafeReadBlocks
+--- PASS: TestIsolatedLeaderHasNoAcknowledgementAndSafeReadBlocks (0.02s)
+=== RUN   TestUnsafeLocalReadSameTargetNegativeControl
+=== RUN   TestUnsafeLocalReadSameTargetNegativeControl/raft-register-v1
+=== RUN   TestUnsafeLocalReadSameTargetNegativeControl/unsafe-local-read
+--- PASS: TestUnsafeLocalReadSameTargetNegativeControl (0.01s)
+    --- PASS: TestUnsafeLocalReadSameTargetNegativeControl/raft-register-v1 (0.00s)
+    --- PASS: TestUnsafeLocalReadSameTargetNegativeControl/unsafe-local-read (0.00s)
+=== RUN   TestReadContextsAreUniqueAndAppliedGate
+--- PASS: TestReadContextsAreUniqueAndAppliedGate (0.01s)
+=== RUN   TestCrashBarrierReleasedPrefixAndDurableRecovery
+=== RUN   TestCrashBarrierReleasedPrefixAndDurableRecovery/before-append
+=== RUN   TestCrashBarrierReleasedPrefixAndDurableRecovery/after-stage-before-flush
+=== RUN   TestCrashBarrierReleasedPrefixAndDurableRecovery/after-flush-before-send
+=== RUN   TestCrashBarrierReleasedPrefixAndDurableRecovery/after-send-before-apply
+=== RUN   TestCrashBarrierReleasedPrefixAndDurableRecovery/after-apply-before-response
+=== RUN   TestCrashBarrierReleasedPrefixAndDurableRecovery/after-response
+--- PASS: TestCrashBarrierReleasedPrefixAndDurableRecovery (0.03s)
+    --- PASS: TestCrashBarrierReleasedPrefixAndDurableRecovery/before-append (0.00s)
+    --- PASS: TestCrashBarrierReleasedPrefixAndDurableRecovery/after-stage-before-flush (0.00s)
+    --- PASS: TestCrashBarrierReleasedPrefixAndDurableRecovery/after-flush-before-send (0.00s)
+    --- PASS: TestCrashBarrierReleasedPrefixAndDurableRecovery/after-send-before-apply (0.00s)
+    --- PASS: TestCrashBarrierReleasedPrefixAndDurableRecovery/after-apply-before-response (0.00s)
+    --- PASS: TestCrashBarrierReleasedPrefixAndDurableRecovery/after-response (0.00s)
+=== RUN   TestAdversarialInputLimitsAndStoppedOnEntropy
+--- PASS: TestAdversarialInputLimitsAndStoppedOnEntropy (0.00s)
+=== RUN   TestMemoryStoreStagingAndOwnership
+--- PASS: TestMemoryStoreStagingAndOwnership (0.00s)
+=== RUN   TestReplicatedCommandCodec
+--- PASS: TestReplicatedCommandCodec (0.00s)
+=== RUN   TestPendingRetriesReproposeAndRenewQuorumContext
+--- PASS: TestPendingRetriesReproposeAndRenewQuorumContext (0.00s)
+=== RUN   TestCrashBeforeProposalFlushHasNoDurableTail
+=== RUN   TestCrashBeforeProposalFlushHasNoDurableTail/before-append
+=== RUN   TestCrashBeforeProposalFlushHasNoDurableTail/after-stage-before-flush
+--- PASS: TestCrashBeforeProposalFlushHasNoDurableTail (0.01s)
+    --- PASS: TestCrashBeforeProposalFlushHasNoDurableTail/before-append (0.00s)
+    --- PASS: TestCrashBeforeProposalFlushHasNoDurableTail/after-stage-before-flush (0.00s)
+=== RUN   TestAdmissionBoundsAndBarrierErrorStopsTarget
+--- PASS: TestAdmissionBoundsAndBarrierErrorStopsTarget (0.01s)
+=== RUN   TestTermOverflowStopsBeforeRaftIncrement
+--- PASS: TestTermOverflowStopsBeforeRaftIncrement (0.00s)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/target	5.324s
+=== RUN   TestLockedKernelAcceptance
+=== RUN   TestLockedKernelAcceptance/AC001
+=== RUN   TestLockedKernelAcceptance/AC002
+=== RUN   TestLockedKernelAcceptance/AC003
+=== RUN   TestLockedKernelAcceptance/AC004Include
+=== RUN   TestLockedKernelAcceptance/AC004Omit
+=== RUN   TestLockedKernelAcceptance/AC005
+=== RUN   TestLockedKernelAcceptance/AC006
+=== RUN   TestLockedKernelAcceptance/AC008
+--- PASS: TestLockedKernelAcceptance (0.00s)
+    --- PASS: TestLockedKernelAcceptance/AC001 (0.00s)
+    --- PASS: TestLockedKernelAcceptance/AC002 (0.00s)
+    --- PASS: TestLockedKernelAcceptance/AC003 (0.00s)
+    --- PASS: TestLockedKernelAcceptance/AC004Include (0.00s)
+    --- PASS: TestLockedKernelAcceptance/AC004Omit (0.00s)
+    --- PASS: TestLockedKernelAcceptance/AC005 (0.00s)
+    --- PASS: TestLockedKernelAcceptance/AC006 (0.00s)
+    --- PASS: TestLockedKernelAcceptance/AC008 (0.00s)
+PASS
+ok  	github.com/C-X1an/faultbraid/tests/acceptance_locked	2.573s
+=== RUN   TestDifferentialFiniteCensus
+    checker_test.go:210: AC-016 finite initial0 n0..3 values[0,7] calls[0,1,2] returns[pending,1,2,3] with return>call: {"cases":47989,"core":{"valid":36745,"invalid":11244,"unknown":0},"tiny":{"valid":36745,"invalid":11244,"unknown":0},"porcupine":{"valid":36745,"invalid":11244,"unknown":0},"definitive_three_way_cases":47989,"witnesses_checked":36745,"core_states":155768,"tiny_complete_permutations":110763,"tiny_projections":53842,"porcupine_checked_projections":53842,"porcupine_unknown_projections":0}
+--- PASS: TestDifferentialFiniteCensus (1.82s)
+=== RUN   TestDifferentialGeneratedHistories
+    checker_test.go:240: AC-016 PCG seeds0..1023 n0..7 initial0 values[minInt64,-7,0,7,maxInt64] calls0..11 returns[pending,call+1..5]: {"cases":1024,"core":{"valid":488,"invalid":536,"unknown":0},"tiny":{"valid":488,"invalid":536,"unknown":0},"porcupine":{"valid":488,"invalid":536,"unknown":0},"definitive_three_way_cases":1024,"witnesses_checked":488,"core_states":4451,"tiny_complete_permutations":385242,"tiny_projections":1390,"porcupine_checked_projections":1390,"porcupine_unknown_projections":0}
+--- PASS: TestDifferentialGeneratedHistories (0.19s)
+=== RUN   TestDifferentialSemanticControls
+=== RUN   TestDifferentialSemanticControls/strict-after-write
+=== RUN   TestDifferentialSemanticControls/overlap
+=== RUN   TestDifferentialSemanticControls/return-call-tie
+=== RUN   TestDifferentialSemanticControls/pending-write-observed
+=== RUN   TestDifferentialSemanticControls/pending-write-omitted
+=== RUN   TestDifferentialSemanticControls/pending-read-unobserved
+=== RUN   TestDifferentialSemanticControls/pending-write-too-late
+=== RUN   TestDifferentialSemanticControls/two-pending-effects
+=== RUN   TestDifferentialSemanticControls/negative-boundary
+=== NAME  TestDifferentialSemanticControls
+    checker_test.go:271: AC-016 named semantic positive and known-bad controls: {"cases":9,"core":{"valid":7,"invalid":2,"unknown":0},"tiny":{"valid":7,"invalid":2,"unknown":0},"porcupine":{"valid":7,"invalid":2,"unknown":0},"definitive_three_way_cases":9,"witnesses_checked":7,"core_states":28,"tiny_complete_permutations":45,"tiny_projections":14,"porcupine_checked_projections":14,"porcupine_unknown_projections":0}
+--- PASS: TestDifferentialSemanticControls (0.00s)
+    --- PASS: TestDifferentialSemanticControls/strict-after-write (0.00s)
+    --- PASS: TestDifferentialSemanticControls/overlap (0.00s)
+    --- PASS: TestDifferentialSemanticControls/return-call-tie (0.00s)
+    --- PASS: TestDifferentialSemanticControls/pending-write-observed (0.00s)
+    --- PASS: TestDifferentialSemanticControls/pending-write-omitted (0.00s)
+    --- PASS: TestDifferentialSemanticControls/pending-read-unobserved (0.00s)
+    --- PASS: TestDifferentialSemanticControls/pending-write-too-late (0.00s)
+    --- PASS: TestDifferentialSemanticControls/two-pending-effects (0.00s)
+    --- PASS: TestDifferentialSemanticControls/negative-boundary (0.00s)
+=== RUN   TestDifferentialUnknownControls
+=== RUN   TestDifferentialUnknownControls/capacity-operations
+=== RUN   TestDifferentialUnknownControls/capacity-pending
+=== RUN   TestDifferentialUnknownControls/capacity-time
+=== NAME  TestDifferentialUnknownControls
+    checker_test.go:338: AC-016 unknown controls: core-state-budget=UNKNOWN references-capacity=UNKNOWN cancelled-all=UNKNOWN actual-Porcupine-timeout=Unknown elapsed=1.6983ms
+--- PASS: TestDifferentialUnknownControls (0.00s)
+    --- PASS: TestDifferentialUnknownControls/capacity-operations (0.00s)
+    --- PASS: TestDifferentialUnknownControls/capacity-pending (0.00s)
+    --- PASS: TestDifferentialUnknownControls/capacity-time (0.00s)
+=== RUN   TestDifferentialProjectionTimestampCapacity
+    checker_test.go:365: AC-016 timestamp-capacity controls with one explicit Porcupine UNKNOWN: {"cases":2,"core":{"valid":2,"invalid":0,"unknown":0},"tiny":{"valid":2,"invalid":0,"unknown":0},"porcupine":{"valid":1,"invalid":0,"unknown":1},"definitive_three_way_cases":1,"witnesses_checked":2,"core_states":6,"tiny_complete_permutations":4,"tiny_projections":3,"porcupine_checked_projections":2,"porcupine_unknown_projections":1}
+--- PASS: TestDifferentialProjectionTimestampCapacity (0.00s)
+=== RUN   TestDifferentialLockedDependencyIdentity
+    checker_test.go:414: linked Porcupine: github.com/anishathalye/porcupine v1.3.1 h1:fBZ4/NGNPnIDdd6xNtrNk9/GiEQ0L4FO5+scINN+t0E=
+    checker_test.go:418: AC-016 dependency fixture: github.com/anishathalye/porcupine v1.3.1 h1:fBZ4/NGNPnIDdd6xNtrNk9/GiEQ0L4FO5+scINN+t0E=; Go=go1.27.2; runtime build metadata may omit test-binary dependencies
+--- PASS: TestDifferentialLockedDependencyIdentity (0.00s)
+=== RUN   TestDifferentialActualTargetHistories
+    target_test.go:183: AC-016 actual Raft histories: safe seeds0..31 four fault patterns plus safe/unsafe minority-read controls: {"cases":34,"core":{"valid":33,"invalid":1,"unknown":0},"tiny":{"valid":33,"invalid":1,"unknown":0},"porcupine":{"valid":33,"invalid":1,"unknown":0},"definitive_three_way_cases":34,"witnesses_checked":33,"core_states":209,"tiny_complete_permutations":39,"tiny_projections":34,"porcupine_checked_projections":34,"porcupine_unknown_projections":0}
+    target_test.go:185: AC-016 actual-target events=21721 entropy-choices=403 rejected-only-logical-requests=10 source=965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297 module=c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432 patch=01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647
+--- PASS: TestDifferentialActualTargetHistories (3.70s)
+PASS
+ok  	github.com/C-X1an/faultbraid/tests/differential	9.079s
+=== RUN   TestRealCLI
+--- PASS: TestRealCLI (5.88s)
+=== RUN   TestIdentifiedTargetCLIArtifactsAndReplay
+    target_cli_test.go:230: actual identified CLI: safe completed2 operations; unsafe replay10/10; ddmin/greedy executable reductions; budgets exit3; campaign attempted3/unrun0; source=965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297
+--- PASS: TestIdentifiedTargetCLIArtifactsAndReplay (11.28s)
+PASS
+ok  	github.com/C-X1an/faultbraid/tests/integration	20.447s
+=== RUN   TestResourceLimits
+--- PASS: TestResourceLimits (0.02s)
+=== RUN   FuzzScenarioSchema
+=== RUN   FuzzScenarioSchema/seed#0
+=== RUN   FuzzScenarioSchema/seed#1
+=== RUN   FuzzScenarioSchema/seed#2
+=== RUN   FuzzScenarioSchema/seed#3
+--- PASS: FuzzScenarioSchema (0.00s)
+    --- PASS: FuzzScenarioSchema/seed#0 (0.00s)
+    --- PASS: FuzzScenarioSchema/seed#1 (0.00s)
+    --- PASS: FuzzScenarioSchema/seed#2 (0.00s)
+    --- PASS: FuzzScenarioSchema/seed#3 (0.00s)
+=== RUN   FuzzTargetTraceReplay
+=== RUN   FuzzTargetTraceReplay/seed#0
+=== RUN   FuzzTargetTraceReplay/seed#1
+=== RUN   FuzzTargetTraceReplay/seed#2
+=== RUN   FuzzTargetTraceReplay/seed#3
+--- PASS: FuzzTargetTraceReplay (0.82s)
+    --- PASS: FuzzTargetTraceReplay/seed#0 (0.28s)
+    --- PASS: FuzzTargetTraceReplay/seed#1 (0.00s)
+    --- PASS: FuzzTargetTraceReplay/seed#2 (0.00s)
+    --- PASS: FuzzTargetTraceReplay/seed#3 (0.00s)
+PASS
+ok  	github.com/C-X1an/faultbraid/tests/security	4.188s
+=== RUN   TestAC012DefinitelyRejectedWriteCannotMaskActualStaleRead
+--- PASS: TestAC012DefinitelyRejectedWriteCannotMaskActualStaleRead (0.50s)
+=== RUN   TestAC012AdmittedPendingWriteSurvivesRejectedRetry
+--- PASS: TestAC012AdmittedPendingWriteSurvivesRejectedRetry (0.21s)
+=== RUN   TestCampaignDoesNotPresumeArmedResponseCrashFired
+    campaign_regression_test.go:37: regression seed365 actual events652 digest4a72ab7a6e29e8b1485a4be9853280d5b0fa095ca59821e1a199086a9d3bc8cb
+    campaign_regression_test.go:37: regression seed854 actual events628 digest33324cb78b279af38917d3843e965c1aaef0e578c4306503bef6fb117e638b4c
+--- PASS: TestCampaignDoesNotPresumeArmedResponseCrashFired (0.50s)
+=== RUN   TestAC024CampaignCountCoverageAndSeedReplay
+    campaign_test.go:43: AC-024 bounded author smoke campaign requested=32 attempted=32 valid=32 invalid=0 inconclusive=0 errors=0 observed-events=20230 completed-writes=64 completed-reads=92 barrier-crashes=16; full1000 campaign is a separate measured run
+--- PASS: TestAC024CampaignCountCoverageAndSeedReplay (4.32s)
+=== RUN   TestCampaignCancellationCallbackErrorAndBounds
+--- PASS: TestCampaignCancellationCallbackErrorAndBounds (0.08s)
+=== RUN   TestAC013NamedBarrierCrashRecoveryMatrix
+=== RUN   TestAC013NamedBarrierCrashRecoveryMatrix/before-append
+    persistence_test.go:125: AC-013 model crash matrix {"barrier":"before-append","crash":{"event_id":210,"parent_event_id":209,"node_id":2,"incarnation":1,"virtual_time":35,"kind":"crash","payload_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","detail":"barrier"},"module":"c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432","patch":"01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647","prefix_digest":"2ed88a24bd0215cf94137fb38eb35d469d4208bbdf618046471bce7a97fa88fa","prefix_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":null},{"id":"down-read","kind":"read","value":0,"call":4,"return":null}]},"recovered_digest":"8742f2724fbc1af3814450329aad454566746a42bb27a4f8542eaf862a2bb30c","recovered_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered","kind":"read","value":7,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final","kind":"read","value":11,"call":10,"return":11}]},"source":"965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297"}
+=== RUN   TestAC013NamedBarrierCrashRecoveryMatrix/after-stage-before-flush
+    persistence_test.go:125: AC-013 model crash matrix {"barrier":"after-stage-before-flush","crash":{"event_id":210,"parent_event_id":209,"node_id":2,"incarnation":1,"virtual_time":35,"kind":"crash","payload_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","detail":"barrier"},"module":"c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432","patch":"01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647","prefix_digest":"09f7377a178bb658eee0cb059c54968f57b1cb19db7bab923a29c547cfae5097","prefix_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":null},{"id":"down-read","kind":"read","value":0,"call":4,"return":null}]},"recovered_digest":"6efd25d8cd667f56b2ec46ea06735ffc25ebf45bcabd45df00058c5725d74123","recovered_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered","kind":"read","value":7,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final","kind":"read","value":11,"call":10,"return":11}]},"source":"965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297"}
+=== RUN   TestAC013NamedBarrierCrashRecoveryMatrix/after-flush-before-send
+    persistence_test.go:125: AC-013 model crash matrix {"barrier":"after-flush-before-send","crash":{"event_id":210,"parent_event_id":209,"node_id":2,"incarnation":1,"virtual_time":35,"kind":"crash","payload_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","detail":"barrier"},"module":"c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432","patch":"01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647","prefix_digest":"526b5663345e98758abf415032def6d2bd7a6b5bb18aff25b40de06c779ec173","prefix_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":null},{"id":"down-read","kind":"read","value":0,"call":4,"return":null}]},"recovered_digest":"178b7256c4c57da44fedf8de44222cccf281c44dc47630a9e90935e647dcf639","recovered_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered","kind":"read","value":7,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final","kind":"read","value":11,"call":10,"return":11}]},"source":"965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297"}
+=== RUN   TestAC013NamedBarrierCrashRecoveryMatrix/after-send-before-apply
+    persistence_test.go:125: AC-013 model crash matrix {"barrier":"after-send-before-apply","crash":{"event_id":210,"parent_event_id":209,"node_id":2,"incarnation":1,"virtual_time":35,"kind":"crash","payload_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","detail":"barrier"},"module":"c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432","patch":"01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647","prefix_digest":"61949cdb021be6c2205b85f12e929a1dc0154723f209827f17e935505297b774","prefix_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":null},{"id":"down-read","kind":"read","value":0,"call":4,"return":null}]},"recovered_digest":"df34a338cf3bcdce6efb7164a68f769c1aa29a2db999340d2c84a8501f143796","recovered_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered","kind":"read","value":9,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final","kind":"read","value":11,"call":10,"return":11}]},"source":"965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297"}
+=== RUN   TestAC013NamedBarrierCrashRecoveryMatrix/after-apply-before-response
+    persistence_test.go:125: AC-013 model crash matrix {"barrier":"after-apply-before-response","crash":{"event_id":231,"parent_event_id":230,"node_id":2,"incarnation":1,"virtual_time":37,"kind":"crash","payload_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","detail":"barrier"},"module":"c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432","patch":"01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647","prefix_digest":"c8c89b0b9c0da4bb69bcb52e0c05b8008f4879bb808c7880fe6d8eff3d55f33a","prefix_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":null},{"id":"down-read","kind":"read","value":0,"call":4,"return":null}]},"recovered_digest":"65ad359f741e2c6615dd73f4bbbe1b1446c1f9900240572791b0e18344d00a2c","recovered_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered","kind":"read","value":9,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final","kind":"read","value":11,"call":10,"return":11}]},"source":"965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297"}
+=== RUN   TestAC013NamedBarrierCrashRecoveryMatrix/after-response
+    persistence_test.go:125: AC-013 model crash matrix {"barrier":"after-response","crash":{"event_id":232,"parent_event_id":230,"node_id":2,"incarnation":1,"virtual_time":37,"kind":"crash","payload_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","detail":"barrier"},"module":"c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432","patch":"01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647","prefix_digest":"051fcaddf0307e2b580456984855ddc4498536f650dca24ca21d7d851febca5f","prefix_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":4},{"id":"down-read","kind":"read","value":0,"call":5,"return":null}]},"recovered_digest":"9e56a02bb3934188b5d0bd89ded829f169616bb446e16e0649726f3ec2fd7840","recovered_history":{"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":4},{"id":"down-read","kind":"read","value":0,"call":5,"return":null},{"id":"recovered","kind":"read","value":9,"call":6,"return":7},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final","kind":"read","value":11,"call":10,"return":11}]},"source":"965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297"}
+--- PASS: TestAC013NamedBarrierCrashRecoveryMatrix (2.97s)
+    --- PASS: TestAC013NamedBarrierCrashRecoveryMatrix/before-append (0.50s)
+    --- PASS: TestAC013NamedBarrierCrashRecoveryMatrix/after-stage-before-flush (0.61s)
+    --- PASS: TestAC013NamedBarrierCrashRecoveryMatrix/after-flush-before-send (0.46s)
+    --- PASS: TestAC013NamedBarrierCrashRecoveryMatrix/after-send-before-apply (0.44s)
+    --- PASS: TestAC013NamedBarrierCrashRecoveryMatrix/after-apply-before-response (0.49s)
+    --- PASS: TestAC013NamedBarrierCrashRecoveryMatrix/after-response (0.48s)
+=== RUN   TestAC013FlushBeforeSendAndResponse
+    persistence_test.go:422: AC-013 Flush ordering positive control completed real three-voter write/read; history={"version":1,"initial":0,"operations":[{"id":"flush-order-write","kind":"write","value":7,"call":1,"return":2},{"id":"flush-order-read","kind":"read","value":7,"call":3,"return":4}]}
+--- PASS: TestAC013FlushBeforeSendAndResponse (0.00s)
+=== RUN   TestAC013FileJournalCrashRecoveryMatrix
+=== RUN   TestAC013FileJournalCrashRecoveryMatrix/before-append
+    persistence_test.go:500: AC-013 file boundary=before-append node=1 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:500: AC-013 file boundary=before-append node=2 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:500: AC-013 file boundary=before-append node=3 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:530: AC-013 actual file reopen history={"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered9","kind":"read","value":9,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final11","kind":"read","value":11,"call":10,"return":11}]} source=965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297 patch=01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647; journal Flush calls execute File.Sync, no physical power-loss claim
+=== RUN   TestAC013FileJournalCrashRecoveryMatrix/after-stage-before-flush
+    persistence_test.go:500: AC-013 file boundary=after-stage-before-flush node=1 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:500: AC-013 file boundary=after-stage-before-flush node=2 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:500: AC-013 file boundary=after-stage-before-flush node=3 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:530: AC-013 actual file reopen history={"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered9","kind":"read","value":9,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final11","kind":"read","value":11,"call":10,"return":11}]} source=965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297 patch=01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647; journal Flush calls execute File.Sync, no physical power-loss claim
+=== RUN   TestAC013FileJournalCrashRecoveryMatrix/after-flush-before-send
+    persistence_test.go:500: AC-013 file boundary=after-flush-before-send node=1 incarnation=2 journal_bytes=613 journal_sha256=406d85896b8283b8673cfaded55ce47ca534da704158322a97a2808b3de4470a recovered_commit=6 recovered_value=9
+    persistence_test.go:500: AC-013 file boundary=after-flush-before-send node=2 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:500: AC-013 file boundary=after-flush-before-send node=3 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:530: AC-013 actual file reopen history={"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered9","kind":"read","value":9,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final11","kind":"read","value":11,"call":10,"return":11}]} source=965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297 patch=01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647; journal Flush calls execute File.Sync, no physical power-loss claim
+=== RUN   TestAC013FileJournalCrashRecoveryMatrix/after-send-before-apply
+    persistence_test.go:500: AC-013 file boundary=after-send-before-apply node=1 incarnation=2 journal_bytes=613 journal_sha256=406d85896b8283b8673cfaded55ce47ca534da704158322a97a2808b3de4470a recovered_commit=6 recovered_value=9
+    persistence_test.go:500: AC-013 file boundary=after-send-before-apply node=2 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:500: AC-013 file boundary=after-send-before-apply node=3 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:530: AC-013 actual file reopen history={"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered9","kind":"read","value":9,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final11","kind":"read","value":11,"call":10,"return":11}]} source=965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297 patch=01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647; journal Flush calls execute File.Sync, no physical power-loss claim
+=== RUN   TestAC013FileJournalCrashRecoveryMatrix/after-apply-before-response
+    persistence_test.go:500: AC-013 file boundary=after-apply-before-response node=1 incarnation=2 journal_bytes=613 journal_sha256=406d85896b8283b8673cfaded55ce47ca534da704158322a97a2808b3de4470a recovered_commit=6 recovered_value=9
+    persistence_test.go:500: AC-013 file boundary=after-apply-before-response node=2 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:500: AC-013 file boundary=after-apply-before-response node=3 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:530: AC-013 actual file reopen history={"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":7},{"id":"down-read","kind":"read","value":0,"call":4,"return":null},{"id":"recovered9","kind":"read","value":9,"call":5,"return":6},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final11","kind":"read","value":11,"call":10,"return":11}]} source=965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297 patch=01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647; journal Flush calls execute File.Sync, no physical power-loss claim
+=== RUN   TestAC013FileJournalCrashRecoveryMatrix/after-response
+    persistence_test.go:500: AC-013 file boundary=after-response node=1 incarnation=2 journal_bytes=613 journal_sha256=406d85896b8283b8673cfaded55ce47ca534da704158322a97a2808b3de4470a recovered_commit=6 recovered_value=9
+    persistence_test.go:500: AC-013 file boundary=after-response node=2 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:500: AC-013 file boundary=after-response node=3 incarnation=2 journal_bytes=550 journal_sha256=ef0ec113d8b1ae3b0d13c1c51f5f08aaaaa4e08cf7d77ab73bebfc937ad532f4 recovered_commit=5 recovered_value=7
+    persistence_test.go:530: AC-013 actual file reopen history={"version":1,"initial":0,"operations":[{"id":"previous7","kind":"write","value":7,"call":1,"return":2},{"id":"interrupted9","kind":"write","value":9,"call":3,"return":4},{"id":"down-read","kind":"read","value":0,"call":5,"return":null},{"id":"recovered9","kind":"read","value":9,"call":6,"return":7},{"id":"later11","kind":"write","value":11,"call":8,"return":9},{"id":"final11","kind":"read","value":11,"call":10,"return":11}]} source=965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297 patch=01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647; journal Flush calls execute File.Sync, no physical power-loss claim
+--- PASS: TestAC013FileJournalCrashRecoveryMatrix (0.32s)
+    --- PASS: TestAC013FileJournalCrashRecoveryMatrix/before-append (0.06s)
+    --- PASS: TestAC013FileJournalCrashRecoveryMatrix/after-stage-before-flush (0.06s)
+    --- PASS: TestAC013FileJournalCrashRecoveryMatrix/after-flush-before-send (0.07s)
+    --- PASS: TestAC013FileJournalCrashRecoveryMatrix/after-send-before-apply (0.06s)
+    --- PASS: TestAC013FileJournalCrashRecoveryMatrix/after-apply-before-response (0.04s)
+    --- PASS: TestAC013FileJournalCrashRecoveryMatrix/after-response (0.04s)
+=== RUN   TestAC012MinorityReadPendingThenHealProgress
+--- PASS: TestAC012MinorityReadPendingThenHealProgress (0.11s)
+=== RUN   TestSameTargetUnsafeLocalReadIsDetected
+    raft_test.go:35: actual unsafe control fingerprint=64e06e80501d3cf46c394fbe31d22107804b6ae4f3f670af654c4b72bd6a7b4b digest=5b6a0cf8b78cfa69f640eaee81f971a0cc635a1e617f1c2316d8941a42981f65
+--- PASS: TestSameTargetUnsafeLocalReadIsDetected (0.04s)
+=== RUN   TestAC011RealPinnedRaftMajorityWriteAndRead
+    raft_test.go:55: AC-011 actual source=965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297 patch=01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647 choices=10 events=403 digest=9dd3de5045b1b4d82a22c7a7c08f6766c2257544fabb5db135dda924969a4698
+--- PASS: TestAC011RealPinnedRaftMajorityWriteAndRead (0.04s)
+=== RUN   TestVirtualTargetLimitsStayInconclusive
+--- PASS: TestVirtualTargetLimitsStayInconclusive (0.51s)
+=== RUN   TestAC019ThreeRealProcessesJournalKillRestartAndCleanup
+=== RUN   TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-1
+    real_process_test.go:122: retained actual native fixture=.local-runs/real-process-tests/actual-3893744073/lab/native-result.json
+    real_process_test.go:196: AC-019 actual same-test-binary processes=4 distinct-pids=4 socket-closure=true http-posts=825 journal-bytes=2328 configured-concurrency=1 observed-peak=1 duration-ms=6652 source=965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297 binary=fe52f14a720ac6a93fce9a186abc2c443ff5fc816e5c89bf61c10167b7a39e0a
+=== RUN   TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-4
+    real_process_test.go:122: retained actual native fixture=.local-runs/real-process-tests/actual-394039558/lab/native-result.json
+    real_process_test.go:196: AC-019 actual same-test-binary processes=4 distinct-pids=4 socket-closure=true http-posts=862 journal-bytes=3651 configured-concurrency=4 observed-peak=4 duration-ms=6721 source=965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297 binary=fe52f14a720ac6a93fce9a186abc2c443ff5fc816e5c89bf61c10167b7a39e0a
+=== RUN   TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-16
+    real_process_test.go:122: retained actual native fixture=.local-runs/real-process-tests/actual-3909214186/lab/native-result.json
+    real_process_test.go:196: AC-019 actual same-test-binary processes=4 distinct-pids=4 socket-closure=true http-posts=862 journal-bytes=4092 configured-concurrency=16 observed-peak=16 duration-ms=6598 source=965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297 binary=fe52f14a720ac6a93fce9a186abc2c443ff5fc816e5c89bf61c10167b7a39e0a
+--- PASS: TestAC019ThreeRealProcessesJournalKillRestartAndCleanup (20.06s)
+    --- PASS: TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-1 (6.68s)
+    --- PASS: TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-4 (6.75s)
+    --- PASS: TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-16 (6.63s)
+=== RUN   TestRealProcessRejectsUnsupportedFaultAndExternalExecutableBeforeLaunch
+--- PASS: TestRealProcessRejectsUnsupportedFaultAndExternalExecutableBeforeLaunch (0.04s)
+=== RUN   TestRealProcessCancellationKeepsUnknownAndCleansOwnedChildren
+    real_process_test.go:262: retained actual native fixture=.local-runs/real-process-tests/actual-3271611018/lab/native-result.json
+    real_process_test.go:275: cancelled real run status=INCONCLUSIVE pending=1 waited-processes=3 cleanup=true
+--- PASS: TestRealProcessCancellationKeepsUnknownAndCleansOwnedChildren (1.76s)
+=== RUN   TestIndependentReducerFixedImplicitHorizon
+    reducer_review_test.go:57: independent implicit horizon=258 actions=12->6 causal/domain rejections=5
+--- PASS: TestIndependentReducerFixedImplicitHorizon (6.50s)
+=== RUN   TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint
+=== RUN   TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/source
+=== RUN   TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/seed
+=== RUN   TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/scheduler
+=== RUN   TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/fingerprint
+=== RUN   TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/unknown-with-failure
+--- PASS: TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint (0.22s)
+    --- PASS: TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/source (0.01s)
+    --- PASS: TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/seed (0.12s)
+    --- PASS: TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/scheduler (0.01s)
+    --- PASS: TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/fingerprint (0.02s)
+    --- PASS: TestIndependentReducerRejectsRehashedIdentityHeaderFingerprint/unknown-with-failure (0.02s)
+=== RUN   TestIndependentCampaignSummaryOwnershipAndCancellation
+--- PASS: TestIndependentCampaignSummaryOwnershipAndCancellation (0.07s)
+=== RUN   TestIndependentReducerActualUnknownCandidate
+    reducer_review_test.go:130: actual target unknown-candidate fixture checker-budget=3 baseline-states=3 unknown-candidates=2 retained-actions=5 minimal=false
+--- PASS: TestIndependentReducerActualUnknownCandidate (2.50s)
+=== RUN   TestAC015ExecutableCausalReductionAndReplay
+=== RUN   TestAC015ExecutableCausalReductionAndReplay/ddmin
+    reducer_test.go:73: AC-015 strategy=ddmin actions=12->5 candidate-checks=32 executed=32 replays=6 accepted=5 causal-rejections=0 final-pass=5 digest=5fbabc4a4d850080dc323714ee9177791f7657a8b5accf94bc753c3562995c82 fingerprint=64e06e80501d3cf46c394fbe31d22107804b6ae4f3f670af654c4b72bd6a7b4b
+=== RUN   TestAC015ExecutableCausalReductionAndReplay/greedy
+    reducer_test.go:73: AC-015 strategy=greedy actions=12->5 candidate-checks=24 executed=24 replays=8 accepted=7 causal-rejections=0 final-pass=5 digest=5fbabc4a4d850080dc323714ee9177791f7657a8b5accf94bc753c3562995c82 fingerprint=64e06e80501d3cf46c394fbe31d22107804b6ae4f3f670af654c4b72bd6a7b4b
+--- PASS: TestAC015ExecutableCausalReductionAndReplay (4.23s)
+    --- PASS: TestAC015ExecutableCausalReductionAndReplay/ddmin (2.14s)
+    --- PASS: TestAC015ExecutableCausalReductionAndReplay/greedy (2.03s)
+=== RUN   TestScenarioReductionUncertaintyAndBaselineValidation
+--- PASS: TestScenarioReductionUncertaintyAndBaselineValidation (0.38s)
+=== RUN   TestAC014TenIdenticalTargetRunsAndActualReplay
+    replay_test.go:48: 10/10 identical actual variant=raft-register-v1 digest=9dd3de5045b1b4d82a22c7a7c08f6766c2257544fabb5db135dda924969a4698 source=965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297
+    replay_test.go:48: 10/10 identical actual variant=unsafe-local-read digest=5b6a0cf8b78cfa69f640eaee81f971a0cc635a1e617f1c2316d8941a42981f65 source=965ed3dfc110cb4866dd3d84e4f5a4e7220fa2a41b38a16c6d39714059422297
+--- PASS: TestAC014TenIdenticalTargetRunsAndActualReplay (3.21s)
+=== RUN   TestTargetReplayRejectsTamperingEvenAfterRehash
+--- PASS: TestTargetReplayRejectsTamperingEvenAfterRehash (0.46s)
+=== RUN   TestIncarnationDropsOldFramesAfterRestart
+--- PASS: TestIncarnationDropsOldFramesAfterRestart (0.15s)
+PASS
+ok  	github.com/C-X1an/faultbraid/tests/system	55.991s
+FAIL

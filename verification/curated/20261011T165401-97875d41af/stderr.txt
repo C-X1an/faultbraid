@@ -1,0 +1,28 @@
+test_archive_traversal_duplicates_aliases_and_content (scripts.test_public_audit.PublicAuditTests.test_archive_traversal_duplicates_aliases_and_content) ... [python-runtime-root]\Lib\zipfile\__init__.py:1661: UserWarning: Duplicate name: 'PUBLIC_FILES.txt'
+  return self._open_to_write(zinfo, force_zip64=force_zip64)
+ok
+test_clean_real_git_history_and_inventory (scripts.test_public_audit.PublicAuditTests.test_clean_real_git_history_and_inventory) ... ok
+test_current_content_corpus_is_rejected_without_echo (scripts.test_public_audit.PublicAuditTests.test_current_content_corpus_is_rejected_without_echo) ... ok
+test_deleted_historical_private_path_is_rejected (scripts.test_public_audit.PublicAuditTests.test_deleted_historical_private_path_is_rejected) ... ok
+test_deleted_historical_secret_is_rejected (scripts.test_public_audit.PublicAuditTests.test_deleted_historical_secret_is_rejected) ... ok
+test_deterministic_reviewed_export_and_exact_archive_audit (scripts.test_public_audit.PublicAuditTests.test_deterministic_reviewed_export_and_exact_archive_audit) ... ok
+test_environment_file_case_spellings_rejected_current_and_history (scripts.test_public_audit.PublicAuditTests.test_environment_file_case_spellings_rejected_current_and_history) ... ok
+test_exact_environment_example_exception_is_safe (scripts.test_public_audit.PublicAuditTests.test_exact_environment_example_exception_is_safe) ... ok
+test_git_symlink_mode_rejected_even_without_os_symlink (scripts.test_public_audit.PublicAuditTests.test_git_symlink_mode_rejected_even_without_os_symlink) ... ok
+test_graft_environment_override_fails_closed (scripts.test_public_audit.PublicAuditTests.test_graft_environment_override_fails_closed) ... ok
+test_invalid_allowlist_spellings_and_duplicates (scripts.test_public_audit.PublicAuditTests.test_invalid_allowlist_spellings_and_duplicates) ... ok
+test_invalid_utf8_and_bounded_size (scripts.test_public_audit.PublicAuditTests.test_invalid_utf8_and_bounded_size) ... ok
+test_legacy_graft_cannot_hide_deleted_historical_content (scripts.test_public_audit.PublicAuditTests.test_legacy_graft_cannot_hide_deleted_historical_content) ... ok
+test_nested_annotated_tag_message_is_scanned (scripts.test_public_audit.PublicAuditTests.test_nested_annotated_tag_message_is_scanned) ... ok
+test_non_repository_and_shallow_history_fail_closed (scripts.test_public_audit.PublicAuditTests.test_non_repository_and_shallow_history_fail_closed) ... ok
+test_ordinary_privacy_documentation_is_allowed (scripts.test_public_audit.PublicAuditTests.test_ordinary_privacy_documentation_is_allowed) ... ok
+test_private_names_cannot_be_allowlisted (scripts.test_public_audit.PublicAuditTests.test_private_names_cannot_be_allowlisted) ... ok
+test_regular_file_hardlink_rejected (scripts.test_public_audit.PublicAuditTests.test_regular_file_hardlink_rejected) ... ok
+test_tagged_and_direct_ref_blobs_are_scanned (scripts.test_public_audit.PublicAuditTests.test_tagged_and_direct_ref_blobs_are_scanned) ... ok
+test_tree_ref_is_rejected_without_claiming_complete_history (scripts.test_public_audit.PublicAuditTests.test_tree_ref_is_rejected_without_claiming_complete_history) ... ok
+test_unapproved_and_missing_files (scripts.test_public_audit.PublicAuditTests.test_unapproved_and_missing_files) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 57.580s
+
+OK

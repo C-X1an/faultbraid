@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "mutations": [
+    {
+      "mutation": "ignore_real_time",
+      "test": "TestSequentialViolation",
+      "killed_by_semantic_assertion": true,
+      "baseline_run": "20261011T165712-1551a2e693",
+      "mutant_run": "20261011T165715-f9d13b8686",
+      "restored_run": "20261011T165717-5350a5d417",
+      "original_sha256": "9711c04ac3d6b8310d4b335e9e2906bd4bc037672efb6aaef913a653ca6b4c06",
+      "mutant_sha256": "0367343a8e375792fecb211c05557e7283ece9bdae61a360770d31712044ba93"
+    },
+    {
+      "mutation": "drop_pending_effect",
+      "test": "TestPendingWrite",
+      "killed_by_semantic_assertion": true,
+      "baseline_run": "20261011T165723-84b5ef3eca",
+      "mutant_run": "20261011T165726-ea8514683e",
+      "restored_run": "20261011T165729-7f9f4f1c96",
+      "original_sha256": "9711c04ac3d6b8310d4b335e9e2906bd4bc037672efb6aaef913a653ca6b4c06",
+      "mutant_sha256": "5249e4942ae2b38e5e925c9037d2a68be1a76b2af22853818aa4bdf96446f208"
+    },
+    {
+      "mutation": "budget_as_valid",
+      "test": "TestBudget",
+      "killed_by_semantic_assertion": true,
+      "baseline_run": "20261011T165735-a0f7600f46",
+      "mutant_run": "20261011T165738-f2f0275939",
+      "restored_run": "20261011T165742-f543aa392d",
+      "original_sha256": "9711c04ac3d6b8310d4b335e9e2906bd4bc037672efb6aaef913a653ca6b4c06",
+      "mutant_sha256": "728f5b56d73db6713bc7c4f3ef7b5e60851084621da6b66311af26c46ce1c157"
+    },
+    {
+      "mutation": "crash_keeps_volatile",
+      "test": "TestCrashDurability",
+      "killed_by_semantic_assertion": true,
+      "baseline_run": "20261011T165748-3b92379973",
+      "mutant_run": "20261011T165752-cca9f9cab2",
+      "restored_run": "20261011T165755-80df907093",
+      "original_sha256": "9e6adcf34507acc1097210bafbf45720db9c7f09562cbb3208dbde56c194a266",
+      "mutant_sha256": "83462dc9c192534657cfc6ad1cc24f05388e79b3947a224fe2ad70e97621f13a"
+    },
+    {
+      "mutation": "trust_recorded_output",
+      "test": "TestReplayReexecutes",
+      "killed_by_semantic_assertion": true,
+      "baseline_run": "20261011T165801-372483c851",
+      "mutant_run": "20261011T165805-1201e06726",
+      "restored_run": "20261011T165809-23c2315dec",
+      "original_sha256": "9e6adcf34507acc1097210bafbf45720db9c7f09562cbb3208dbde56c194a266",
+      "mutant_sha256": "34a4755d4e47495df97c2b993fec81510296dcfc1d843400f41491071b7c62b1"
+    }
+  ],
+  "original_source_unchanged": true,
+  "scope": "five selected semantic mutations; not overall mutation coverage"
+}

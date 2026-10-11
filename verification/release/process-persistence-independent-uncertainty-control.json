@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "scope": "PP-R2 collector protocol-error retention only; actual HTTP unit fixture, no Raft conformance claim",
+  "original_site_sha256": "e9e6f7471506c2477a5f8d0c78bae37c9da3465cac4bd16be4532f7a9aba8467",
+  "mutant_site_sha256": "f04aaf203e7d61af13214c7571ad6a42da88bbca52a9cae36039983209d0530a",
+  "driver_sha256": "f511475464005b561ebc198433157f1d16a58f6557ecd46a885cc270457fb51e",
+  "status": "PASS",
+  "killed_by_semantic_assertion": true,
+  "source_after_sha256": "224386c0c8a8f2f3fe6cadf6d4b40bd92ff1bd530a1710391097e303ba506ec9",
+  "exact_source_restored": true,
+  "source_before": {
+    "git_commit": "16b176d55bcf8e1905b32720a56061897948bf64",
+    "git_dirty": false,
+    "source_tree_sha256": "224386c0c8a8f2f3fe6cadf6d4b40bd92ff1bd530a1710391097e303ba506ec9"
+  },
+  "raw_summary_sha256": "99b0b18e74b88ec7c6ee16b95c6a399b2285174bcbbaace8d407f9ddf5f923a3",
+  "runs": [
+    {
+      "run_id": "20261011T093258-8a91a3a1e3",
+      "category": "independent-response-retention-baseline",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261011T093311-bdfb8c7015",
+      "category": "independent-response-retention-negative-control",
+      "status": "FAIL",
+      "exit_code": 1
+    },
+    {
+      "run_id": "20261011T093322-ee03913e72",
+      "category": "independent-response-retention-restored",
+      "status": "PASS",
+      "exit_code": 0
+    }
+  ]
+}

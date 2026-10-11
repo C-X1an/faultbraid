@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "scope": "Integrator PASS / original semantic defect FAIL / restored PASS using separately authored real exiting-child lifecycle fixture; not independent full approval or Raft conformance",
+  "original_site_sha256": "d8b6ffb693eae076855b11f800852ba8714c055509d27a695c5b50ae70d8be1d",
+  "mutant_site_sha256": "e9e6f7471506c2477a5f8d0c78bae37c9da3465cac4bd16be4532f7a9aba8467",
+  "driver_sha256": "1b227a6710393561915ea53722bc1cc85093ae64102bd3a59a69922ad80d41b1",
+  "killed_by_semantic_assertion": true,
+  "source_after_sha256": "17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79",
+  "exact_source_restored": true,
+  "source_before": {
+    "git_commit": "451630d8475adf435e690054e013c140c470a744",
+    "git_dirty": false,
+    "source_tree_sha256": "17faf2787046d6fa80cf01a3bce562ffce1932a8c2266a2e0174dd823452bc79"
+  },
+  "raw_summary_sha256": "0adf1701115ef0d91549bac9be08809584e7c47b15d643cdf0a2eac7e15b8f94",
+  "runs": [
+    {
+      "run_id": "20261011T152914-5e5bece167",
+      "category": "lifecycle-preparation",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261011T152919-90690bb788",
+      "category": "lifecycle-baseline",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261011T152932-442dcba2ab",
+      "category": "lifecycle-original-defect",
+      "status": "FAIL",
+      "exit_code": 1
+    },
+    {
+      "run_id": "20261011T152944-ebfb9c1633",
+      "category": "lifecycle-restored",
+      "status": "PASS",
+      "exit_code": 0
+    }
+  ]
+}

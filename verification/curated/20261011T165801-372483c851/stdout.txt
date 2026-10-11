@@ -1,0 +1,1 @@
+ok  	github.com/C-X1an/faultbraid/internal/sim	1.889s

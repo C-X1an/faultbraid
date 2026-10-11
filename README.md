@@ -4,7 +4,7 @@ Make a distributed-state failure small enough to understand.
 
 FaultBraid is an experimental correctness workbench for a single integer register built on **instrumented etcd/raft v3.7.0**. It runs three fixed voters under explicit virtual faults, checks the collected history, re-executes saved traces, and reduces a failing scenario into a smaller executable reproducer. A separate native lab exercises the same integration code in real loopback child processes with checksummed disk journals.
 
-**Implementation and release acceptance are separate.** The target, entropy hook, fault runner, scenario reducer, independent differential checks and native lab are implemented. Final source-matched clean verification, an independent review of all 24 acceptance criteria, hosted Linux runtime CI and publication remain pending. Consult [VERIFICATION_REPORT.md](VERIFICATION_REPORT.md) and [TEST_MATRIX.md](TEST_MATRIX.md) for actual outcomes and source identities; earlier kernel-only records remain historical evidence.
+**Implementation and release acceptance are separate.** The target, entropy hook, fault runner, scenario reducer, independent differential checks and native lab are implemented. Applicable source-matched local acceptance and clean verification passed on Go1.27.2 Windows. Independent final review of all24 criteria, hosted Linux runtime CI and publication remain pending. Consult [VERIFICATION_REPORT.md](VERIFICATION_REPORT.md) and [TEST_MATRIX.md](TEST_MATRIX.md) for actual outcomes and source identities; earlier kernel-only records remain historical evidence.
 
 ## Run locally
 

@@ -1,0 +1,4 @@
+=== RUN   TestIndependentInterruptedProposalBodyRetainsPendingWrite
+--- PASS: TestIndependentInterruptedProposalBodyRetainsPendingWrite (0.00s)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/labreal	5.475s

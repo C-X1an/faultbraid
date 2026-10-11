@@ -1,210 +1,233 @@
 {
-  "scope": "Kernel subset; full release remains blocked",
+  "scope": "Current applicable local acceptance; independent full-project assessment and hosted CI are separate gates",
   "criteria": [
     {
       "id": "AC-001",
       "requirement": "FR-001",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+        "verification/curated/20261011T170119-6f3f0950e8/run.json"
       ],
-      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-002",
       "requirement": "FR-002",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+        "verification/curated/20261011T170119-6f3f0950e8/run.json"
       ],
-      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-003",
       "requirement": "FR-002",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+        "verification/curated/20261011T170119-6f3f0950e8/run.json"
       ],
-      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-004",
       "requirement": "FR-003",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+        "verification/curated/20261011T170119-6f3f0950e8/run.json"
       ],
-      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-005",
       "requirement": "FR-004",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+        "verification/curated/20261011T170119-6f3f0950e8/run.json"
       ],
-      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-006",
       "requirement": "FR-005",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+        "verification/curated/20261011T170119-6f3f0950e8/run.json"
       ],
-      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-007",
       "requirement": "FR-006",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+        "verification/curated/20261011T170119-6f3f0950e8/run.json"
       ],
-      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-008",
       "requirement": "FR-007",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+        "verification/curated/20261011T170119-6f3f0950e8/run.json"
       ],
-      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-009",
       "requirement": "FR-008",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+        "verification/curated/20261011T170119-6f3f0950e8/run.json"
       ],
-      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-010",
       "requirement": "FR-012",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261009T183455-ec6edb2cb7/run.json"
+        "verification/curated/20261011T170119-6f3f0950e8/run.json"
       ],
-      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-011",
       "requirement": "FR-009",
-      "status": "NOT RUN",
-      "evidence": [],
-      "note": "Required full-target behavior has not been executed."
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+      ],
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-012",
       "requirement": "FR-010",
-      "status": "NOT RUN",
-      "evidence": [],
-      "note": "Required full-target behavior has not been executed."
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+      ],
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-013",
       "requirement": "REL-002",
-      "status": "NOT RUN",
-      "evidence": [],
-      "note": "Required full-target behavior has not been executed."
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+      ],
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-014",
       "requirement": "REL-003",
-      "status": "NOT RUN",
-      "evidence": [],
-      "note": "Required full-target behavior has not been executed."
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261011T170119-6f3f0950e8/run.json",
+        "verification/curated/20261011T170547-4066dd239e/run.json"
+      ],
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-015",
       "requirement": "FR-011",
-      "status": "NOT RUN",
-      "evidence": [],
-      "note": "Required full-target behavior has not been executed."
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261011T170119-6f3f0950e8/run.json",
+        "verification/curated/20261011T170547-4066dd239e/run.json"
+      ],
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-016",
       "requirement": "FR-002",
-      "status": "NOT RUN",
-      "evidence": [],
-      "note": "9,724-case local oracle passed, but required Porcupine integration remains NOT RUN; criterion is not passed."
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261011T170119-6f3f0950e8/run.json"
+      ],
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-017",
       "requirement": "SEC-002",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261009T183457-ceed810e39/run.json"
+        "verification/curated/20261011T170119-6f3f0950e8/run.json"
       ],
-      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-018",
       "requirement": "NFR-003",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261009T183437-2fd67af1c6/run.json"
+        "verification/curated/20261011T170233-b5771def95/run.json"
       ],
-      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-019",
       "requirement": "FR-013",
-      "status": "NOT RUN",
-      "evidence": [],
-      "note": "Required full-target behavior has not been executed."
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261011T170119-6f3f0950e8/run.json",
+        "verification/curated/20261011T170516-2d33cec802/run.json"
+      ],
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-020",
       "requirement": "NFR-004",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261009T183735-e527918963/run.json"
+        "verification/curated/20261011T165127-3ea1dec7ce/run.json"
       ],
-      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-021",
       "requirement": "SEC-003",
       "status": "PASS",
       "evidence": [
-        "verification/public-inventory-audit.json"
+        "verification/curated/20261011T170348-a68d9c0feb/run.json"
       ],
-      "note": "Exact public source inventory, original Git historical paths, known-private-marker scan and unapproved-export negative control passed. Final ZIP checked against this list. Heuristic scan is not a comprehensive online secret audit."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-022",
       "requirement": "PERF-001",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261009T183516-11cad33b9f/run.json"
+        "verification/curated/20261011T170421-048ed5cb2f/run.json"
       ],
-      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-023",
       "requirement": "PERF-002",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261009T183516-11cad33b9f/run.json"
+        "verification/curated/20261011T170421-048ed5cb2f/run.json"
       ],
-      "note": "Recorded kernel scope only; supported-release runtime separately unverified."
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release/."
     },
     {
       "id": "AC-024",
       "requirement": "PERF-003",
-      "status": "NOT RUN",
-      "evidence": [],
-      "note": "Required full-target behavior has not been executed."
+      "status": "PASS",
+      "evidence": [
+        "verification/curated/20261011T170119-6f3f0950e8/run.json",
+        "verification/curated/20261011T170441-46975730ac/run.json"
+      ],
+      "note": "Complete package smoke32 checks plus separately measured1000 attempted seeds, all outcome histories/results/hash accounting and ten replays of the separately labelled unsafe variant; finite workload only."
     }
   ],
   "independent_review": {
     "status": "NOT RUN",
-    "reason": "No separate read-only verifier was executed"
+    "reason": "Separate final assessment pending completed evidence/export packet"
   },
-  "supported_toolchain_verified": false
+  "supported_toolchain_verified": true,
+  "supported_toolchain_evidence": [
+    "verification/curated/20261011T170345-f9cecc1fdf/run.json"
+  ]
 }
