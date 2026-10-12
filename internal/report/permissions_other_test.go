@@ -9,9 +9,23 @@ import (
 
 func assertProtectedOutput(t *testing.T, path string) {
 	t.Helper()
-	st, e := os.Stat(path)
-	if e != nil || st.Mode().Perm() != 0600 {
-		t.Fatal("output permissions")
+	st, e := os.Lstat(path)
+	if e != nil {
+		t.Fatal(e)
+	}
+	if outputAlias(st) || !st.Mode().IsRegular() || st.Mode().Perm() != 0600 {
+		t.Fatalf("regular report file: type=%v permissions=%#o, want regular 0600", st.Mode().Type(), st.Mode().Perm())
+	}
+}
+
+func assertProtectedDirectory(t *testing.T, path string) {
+	t.Helper()
+	st, e := os.Lstat(path)
+	if e != nil {
+		t.Fatal(e)
+	}
+	if outputAlias(st) || !st.IsDir() || st.Mode().Perm() != 0700 {
+		t.Fatalf("report directory: type=%v permissions=%#o, want directory 0700", st.Mode().Type(), st.Mode().Perm())
 	}
 }
 

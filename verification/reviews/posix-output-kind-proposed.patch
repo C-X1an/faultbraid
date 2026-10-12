@@ -1,0 +1,79 @@
+diff --git a/internal/report/permissions_other_test.go b/internal/report/permissions_other_test.go
+index 284e983..1bfe1b3 100644
+--- a/internal/report/permissions_other_test.go
++++ b/internal/report/permissions_other_test.go
+@@ -9,9 +9,23 @@ import (
+ 
+ func assertProtectedOutput(t *testing.T, path string) {
+ 	t.Helper()
+-	st, e := os.Stat(path)
+-	if e != nil || st.Mode().Perm() != 0600 {
+-		t.Fatal("output permissions")
++	st, e := os.Lstat(path)
++	if e != nil {
++		t.Fatal(e)
++	}
++	if outputAlias(st) || !st.Mode().IsRegular() || st.Mode().Perm() != 0600 {
++		t.Fatalf("regular report file: type=%v permissions=%#o, want regular 0600", st.Mode().Type(), st.Mode().Perm())
++	}
++}
++
++func assertProtectedDirectory(t *testing.T, path string) {
++	t.Helper()
++	st, e := os.Lstat(path)
++	if e != nil {
++		t.Fatal(e)
++	}
++	if outputAlias(st) || !st.IsDir() || st.Mode().Perm() != 0700 {
++		t.Fatalf("report directory: type=%v permissions=%#o, want directory 0700", st.Mode().Type(), st.Mode().Perm())
+ 	}
+ }
+ 
+diff --git a/internal/report/permissions_windows_test.go b/internal/report/permissions_windows_test.go
+index 3dd769c..6e66777 100644
+--- a/internal/report/permissions_windows_test.go
++++ b/internal/report/permissions_windows_test.go
+@@ -13,6 +13,30 @@ import (
+ )
+ 
+ func assertProtectedOutput(t *testing.T, path string) {
++	t.Helper()
++	st, err := os.Lstat(path)
++	if err != nil {
++		t.Fatal(err)
++	}
++	if outputAlias(st) || !st.Mode().IsRegular() {
++		t.Fatalf("report output is not a regular non-aliased file: %v", st.Mode())
++	}
++	assertProtectedDACL(t, path)
++}
++
++func assertProtectedDirectory(t *testing.T, path string) {
++	t.Helper()
++	st, err := os.Lstat(path)
++	if err != nil {
++		t.Fatal(err)
++	}
++	if outputAlias(st) || !st.IsDir() {
++		t.Fatalf("report output is not a non-aliased directory: %v", st.Mode())
++	}
++	assertProtectedDACL(t, path)
++}
++
++func assertProtectedDACL(t *testing.T, path string) {
+ 	t.Helper()
+ 	f, err := os.Open(path)
+ 	if err != nil {
+diff --git a/internal/report/target_test.go b/internal/report/target_test.go
+index 2affc0b..45837ce 100644
+--- a/internal/report/target_test.go
++++ b/internal/report/target_test.go
+@@ -57,7 +57,7 @@ func TestExclusiveOwnedDirectoryAndAliasParents(t *testing.T) {
+ 	if err := NewDirectory(dir); err == nil {
+ 		t.Fatal("reused pre-existing output directory")
+ 	}
+-	assertProtectedOutput(t, dir)
++	assertProtectedDirectory(t, dir)
+ 	alias := filepath.Join(root, "alias")
+ 	makeParentAlias(t, dir, alias)
+ 	if err := NewDirectory(filepath.Join(alias, "outside")); err == nil {

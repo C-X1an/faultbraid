@@ -57,7 +57,7 @@ func TestExclusiveOwnedDirectoryAndAliasParents(t *testing.T) {
 	if err := NewDirectory(dir); err == nil {
 		t.Fatal("reused pre-existing output directory")
 	}
-	assertProtectedOutput(t, dir)
+	assertProtectedDirectory(t, dir)
 	alias := filepath.Join(root, "alias")
 	makeParentAlias(t, dir, alias)
 	if err := NewDirectory(filepath.Join(alias, "outside")); err == nil {

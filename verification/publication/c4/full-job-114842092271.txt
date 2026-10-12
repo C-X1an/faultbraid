@@ -1,0 +1,265 @@
+﻿2026-10-12T13:48:53.7342649Z Current runner version: '2.337.0'
+2026-10-12T13:48:53.7367548Z ##[group]Runner Image Provisioner
+2026-10-12T13:48:53.7368512Z Hosted Compute Agent
+2026-10-12T13:48:53.7369108Z Version: 20261002.596
+2026-10-12T13:48:53.7369807Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-12T13:48:53.7370554Z Build Date: 2026-10-02T22:28:27Z
+2026-10-12T13:48:53.7371261Z Worker ID: {e79bfe52-b33d-40a8-8262-a0b389512f3f}
+2026-10-12T13:48:53.7372032Z Region: westus3
+2026-10-12T13:48:53.7372576Z Cloud: Azure
+2026-10-12T13:48:53.7373176Z ##[endgroup]
+2026-10-12T13:48:53.7375344Z ##[group]Operating System
+2026-10-12T13:48:53.7375992Z Ubuntu
+2026-10-12T13:48:53.7376599Z 24.04.5
+2026-10-12T13:48:53.7377133Z LTS
+2026-10-12T13:48:53.7377621Z ##[endgroup]
+2026-10-12T13:48:53.7378241Z ##[group]Runner Image
+2026-10-12T13:48:53.7378879Z Image: ubuntu-24.04
+2026-10-12T13:48:53.7379499Z Version: 20261004.327.1
+2026-10-12T13:48:53.7380822Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-12T13:48:53.7382446Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-12T13:48:53.7383606Z ##[endgroup]
+2026-10-12T13:48:53.7384764Z ##[group]GITHUB_TOKEN Permissions
+2026-10-12T13:48:53.7386920Z Contents: read
+2026-10-12T13:48:53.7387613Z Metadata: read
+2026-10-12T13:48:53.7388174Z ##[endgroup]
+2026-10-12T13:48:53.7390220Z Secret source: Actions
+2026-10-12T13:48:53.7391327Z Cache mode: write
+2026-10-12T13:48:53.7391999Z Prepare workflow directory
+2026-10-12T13:48:53.7731882Z Prepare all required actions
+2026-10-12T13:48:53.7780726Z Getting action download info
+2026-10-12T13:48:54.1097695Z Download action repository 'actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09' (SHA:fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09)
+2026-10-12T13:48:54.4700977Z Download action repository 'actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16' (SHA:924ae3a1cded613372ab5595356fb5720e22ba16)
+2026-10-12T13:48:55.3822855Z Complete job name: full
+2026-10-12T13:48:55.4635978Z ##[group]Run actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+2026-10-12T13:48:55.4637169Z with:
+2026-10-12T13:48:55.4637640Z   fetch-depth: 0
+2026-10-12T13:48:55.4638138Z   persist-credentials: false
+2026-10-12T13:48:55.4638707Z   repository: C-X1an/faultbraid
+2026-10-12T13:48:55.4642565Z   token: ***
+2026-10-12T13:48:55.4643051Z   ssh-strict: true
+2026-10-12T13:48:55.4643750Z   ssh-user: git
+2026-10-12T13:48:55.4644220Z   clean: true
+2026-10-12T13:48:55.4644703Z   sparse-checkout-cone-mode: true
+2026-10-12T13:48:55.4645277Z   fetch-tags: false
+2026-10-12T13:48:55.4645758Z   show-progress: true
+2026-10-12T13:48:55.4646256Z   lfs: false
+2026-10-12T13:48:55.4646713Z   submodules: false
+2026-10-12T13:48:55.4647223Z   set-safe-directory: true
+2026-10-12T13:48:55.4647783Z   allow-unsafe-pr-checkout: false
+2026-10-12T13:48:55.4648635Z ##[endgroup]
+2026-10-12T13:48:55.5658334Z Syncing repository: C-X1an/faultbraid
+2026-10-12T13:48:55.5660574Z ##[group]Getting Git version info
+2026-10-12T13:48:55.5661510Z Working directory is '/home/runner/work/faultbraid/faultbraid'
+2026-10-12T13:48:55.5662661Z [command]/usr/bin/git version
+2026-10-12T13:48:55.6709011Z git version 2.55.0
+2026-10-12T13:48:55.6731517Z ##[endgroup]
+2026-10-12T13:48:55.6746761Z Temporarily overriding HOME='/home/runner/work/_temp/8fc44689-f023-4d6d-85cb-ccebde108880' before making global git config changes
+2026-10-12T13:48:55.6749139Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-12T13:48:55.6752558Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/faultbraid/faultbraid
+2026-10-12T13:48:55.6947275Z Deleting the contents of '/home/runner/work/faultbraid/faultbraid'
+2026-10-12T13:48:55.6951470Z ##[group]Initializing the repository
+2026-10-12T13:48:55.6956007Z [command]/usr/bin/git init /home/runner/work/faultbraid/faultbraid
+2026-10-12T13:48:55.7370252Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-12T13:48:55.7372794Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-12T13:48:55.7374655Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-12T13:48:55.7376205Z hint: call:
+2026-10-12T13:48:55.7377188Z hint:
+2026-10-12T13:48:55.7378331Z hint: 	git config --global init.defaultBranch <name>
+2026-10-12T13:48:55.7379151Z hint:
+2026-10-12T13:48:55.7379784Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-12T13:48:55.7380786Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-12T13:48:55.7381579Z hint:
+2026-10-12T13:48:55.7382056Z hint: 	git branch -m <name>
+2026-10-12T13:48:55.7382867Z hint:
+2026-10-12T13:48:55.7384282Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-12T13:48:55.7386025Z Initialized empty Git repository in /home/runner/work/faultbraid/faultbraid/.git/
+2026-10-12T13:48:55.7387879Z [command]/usr/bin/git remote add origin https://github.com/C-X1an/faultbraid
+2026-10-12T13:48:55.7610471Z ##[endgroup]
+2026-10-12T13:48:55.7611916Z ##[group]Disabling automatic garbage collection
+2026-10-12T13:48:55.7614054Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-12T13:48:55.7649871Z ##[endgroup]
+2026-10-12T13:48:55.7651226Z ##[group]Setting up auth
+2026-10-12T13:48:55.7656789Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-12T13:48:55.7690826Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-12T13:48:55.9351017Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-12T13:48:55.9387645Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-12T13:48:55.9616002Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-12T13:48:55.9654882Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-12T13:48:55.9885585Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-12T13:48:55.9929284Z ##[endgroup]
+2026-10-12T13:48:55.9930319Z ##[group]Fetching the repository
+2026-10-12T13:48:55.9940316Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2026-10-12T13:48:57.4710791Z From https://github.com/C-X1an/faultbraid
+2026-10-12T13:48:57.4714586Z  * [new branch]      dependabot/github_actions/actions/checkout-7.0.1 -> origin/dependabot/github_actions/actions/checkout-7.0.1
+2026-10-12T13:48:57.4718777Z  * [new branch]      dependabot/github_actions/actions/setup-go-7.0.0 -> origin/dependabot/github_actions/actions/setup-go-7.0.0
+2026-10-12T13:48:57.4723857Z  * [new branch]      dependabot/github_actions/github/codeql-action/analyze-4.38.3 -> origin/dependabot/github_actions/github/codeql-action/analyze-4.38.3
+2026-10-12T13:48:57.4729651Z  * [new branch]      dependabot/github_actions/github/codeql-action/init-4.38.3 -> origin/dependabot/github_actions/github/codeql-action/init-4.38.3
+2026-10-12T13:48:57.4733159Z  * [new branch]      main       -> origin/main
+2026-10-12T13:48:57.4737309Z [command]/usr/bin/git branch --list --remote origin/main
+2026-10-12T13:48:57.4757465Z   origin/main
+2026-10-12T13:48:57.4768381Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2026-10-12T13:48:57.4794878Z 748ba503af3d9b219005c0a1677f4d13b0938c1a
+2026-10-12T13:48:57.4800009Z ##[endgroup]
+2026-10-12T13:48:57.4801586Z ##[group]Determining the checkout info
+2026-10-12T13:48:57.4803713Z ##[endgroup]
+2026-10-12T13:48:57.4806945Z [command]/usr/bin/git sparse-checkout disable
+2026-10-12T13:48:57.4964288Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-12T13:48:57.4997560Z ##[group]Checking out the ref
+2026-10-12T13:48:57.5000655Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-12T13:48:57.6479842Z Switched to a new branch 'main'
+2026-10-12T13:48:57.6485030Z branch 'main' set up to track 'origin/main'.
+2026-10-12T13:48:57.6512343Z ##[endgroup]
+2026-10-12T13:48:57.6558667Z [command]/usr/bin/git log -1 --format=%H
+2026-10-12T13:48:57.6587723Z 748ba503af3d9b219005c0a1677f4d13b0938c1a
+2026-10-12T13:48:57.6597573Z ##[group]Removing auth
+2026-10-12T13:48:57.6601431Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-12T13:48:57.6634676Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-12T13:48:57.6859924Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-12T13:48:57.6888913Z http.https://github.com/.extraheader
+2026-10-12T13:48:57.6899263Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-12T13:48:57.6940845Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-12T13:48:57.7167260Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-12T13:48:57.7202774Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-12T13:48:57.7424742Z ##[endgroup]
+2026-10-12T13:48:57.7769241Z ##[group]Run actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16
+2026-10-12T13:48:57.7770889Z with:
+2026-10-12T13:48:57.7771770Z   go-version-file: .go-version
+2026-10-12T13:48:57.7772861Z   cache: false
+2026-10-12T13:48:57.7773949Z   check-latest: false
+2026-10-12T13:48:57.7783324Z   token: ***
+2026-10-12T13:48:57.7784415Z ##[endgroup]
+2026-10-12T13:48:57.9070802Z Setup go version spec 1.27.2
+2026-10-12T13:48:57.9084521Z Attempting to download 1.27.2...
+2026-10-12T13:48:58.8103839Z matching 1.27.2...
+2026-10-12T13:48:58.8130126Z Acquiring 1.27.2 from https://github.com/actions/go-versions/releases/download/1.27.2-37875086547/go-1.27.2-linux-x64.tar.gz
+2026-10-12T13:48:59.4168734Z Extracting Go...
+2026-10-12T13:48:59.4278750Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/8604dca0-49dc-4c9e-b440-bc5edf97310a -f /home/runner/work/_temp/ea103153-84d1-4b5c-a664-d63f43f01764
+2026-10-12T13:49:01.1821537Z Successfully extracted go to /home/runner/work/_temp/8604dca0-49dc-4c9e-b440-bc5edf97310a
+2026-10-12T13:49:01.1822439Z Adding to the cache ...
+2026-10-12T13:49:08.5475085Z Successfully cached go to /opt/hostedtoolcache/go/1.27.2/x64
+2026-10-12T13:49:08.5478355Z Added go to the path
+2026-10-12T13:49:08.5481176Z Successfully set up Go version 1.27.2
+2026-10-12T13:49:08.5685833Z go version go1.27.2 linux/amd64
+2026-10-12T13:49:08.5686044Z 
+2026-10-12T13:49:08.5686338Z ##[group]go env
+2026-10-12T13:49:09.1685597Z AR='ar'
+2026-10-12T13:49:09.1686004Z CC='gcc'
+2026-10-12T13:49:09.1686379Z CGO_CFLAGS='-O2 -g'
+2026-10-12T13:49:09.1686748Z CGO_CPPFLAGS=''
+2026-10-12T13:49:09.1687117Z CGO_CXXFLAGS='-O2 -g'
+2026-10-12T13:49:09.1687470Z CGO_ENABLED='1'
+2026-10-12T13:49:09.1687806Z CGO_FFLAGS='-O2 -g'
+2026-10-12T13:49:09.1688138Z CGO_LDFLAGS='-O2 -g'
+2026-10-12T13:49:09.1688470Z CXX='g++'
+2026-10-12T13:49:09.1688773Z GCCGO='gccgo'
+2026-10-12T13:49:09.1689070Z GO111MODULE=''
+2026-10-12T13:49:09.1689375Z GOAMD64='v1'
+2026-10-12T13:49:09.1689794Z GOARCH='amd64'
+2026-10-12T13:49:09.1690141Z GOAUTH='netrc'
+2026-10-12T13:49:09.1690510Z GOBIN='/home/runner/go/bin'
+2026-10-12T13:49:09.1691034Z GOCACHE='/home/runner/.cache/go-build'
+2026-10-12T13:49:09.1691529Z GOCACHEPROG=''
+2026-10-12T13:49:09.1692235Z GODEBUG=''
+2026-10-12T13:49:09.1692609Z GOENV='/home/runner/.config/go/env'
+2026-10-12T13:49:09.1693068Z GOEXE=''
+2026-10-12T13:49:09.1693719Z GOEXPERIMENT=''
+2026-10-12T13:49:09.1694085Z GOFIPS140='off'
+2026-10-12T13:49:09.1694439Z GOFLAGS=''
+2026-10-12T13:49:09.1695667Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build307674769=/tmp/go-build -gno-record-gcc-switches'
+2026-10-12T13:49:09.1696940Z GOHOSTARCH='amd64'
+2026-10-12T13:49:09.1697322Z GOHOSTOS='linux'
+2026-10-12T13:49:09.1697688Z GOINSECURE=''
+2026-10-12T13:49:09.1698180Z GOMOD='/home/runner/work/faultbraid/faultbraid/go.mod'
+2026-10-12T13:49:09.1698827Z GOMODCACHE='/home/runner/go/pkg/mod'
+2026-10-12T13:49:09.1699261Z GONOPROXY=''
+2026-10-12T13:49:09.1699617Z GONOSUMDB=''
+2026-10-12T13:49:09.1699956Z GOOS='linux'
+2026-10-12T13:49:09.1770935Z GOPACKAGESDRIVER=''
+2026-10-12T13:49:09.1771783Z GOPATH='/home/runner/go'
+2026-10-12T13:49:09.1772255Z GOPRIVATE=''
+2026-10-12T13:49:09.1772713Z GOPROXY='https://proxy.golang.org,direct'
+2026-10-12T13:49:09.1773626Z GOROOT='/opt/hostedtoolcache/go/1.27.2/x64'
+2026-10-12T13:49:09.1774291Z GOSUMDB='sum.golang.org'
+2026-10-12T13:49:09.1774809Z GOTELEMETRY='local'
+2026-10-12T13:49:09.1775331Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+2026-10-12T13:49:09.1775847Z GOTMPDIR=''
+2026-10-12T13:49:09.1776185Z GOTOOLCHAIN='local'
+2026-10-12T13:49:09.1776755Z GOTOOLDIR='/opt/hostedtoolcache/go/1.27.2/x64/pkg/tool/linux_amd64'
+2026-10-12T13:49:09.1777466Z GOVCS=''
+2026-10-12T13:49:09.1777809Z GOVERSION='go1.27.2'
+2026-10-12T13:49:09.1778182Z GOWORK=''
+2026-10-12T13:49:09.1778537Z PKG_CONFIG='pkg-config'
+2026-10-12T13:49:09.1778799Z 
+2026-10-12T13:49:09.1779336Z ##[endgroup]
+2026-10-12T13:49:09.1894123Z ##[group]Run make verify
+2026-10-12T13:49:09.1894456Z [36;1mmake verify[0m
+2026-10-12T13:49:09.3008849Z shell: /usr/bin/bash -e {0}
+2026-10-12T13:49:09.3009179Z env:
+2026-10-12T13:49:09.3009414Z   GOTOOLCHAIN: local
+2026-10-12T13:49:09.3009698Z ##[endgroup]
+2026-10-12T13:49:09.3296622Z python3 scripts/bootstrap.py
+2026-10-12T13:49:09.6259419Z prepared instrumented raft v3.7.0 at .local-runs/raft
+2026-10-12T13:49:09.6357861Z {"status": "PASS", "go": "go version go1.27.2 linux/amd64", "release_pin": "1.27.2", "release_toolchain_matches": true, "note": "A seed source-compatibility run is not supported-toolchain release verification."}
+2026-10-12T13:49:09.6410169Z python3 scripts/check_integrity.py
+2026-10-12T13:49:09.6865304Z {"status": "PASS", "criteria": 24, "acceptance_sha256": "db3c2f565c170a2511e8abd28aad13cf62f3d1c557c7dc2d8f311a007310d9e6", "scope": "lock and narrow static hazards; not proof that all tests are adequate"}
+2026-10-12T13:49:09.7150658Z python3 scripts/build.py
+2026-10-12T13:49:10.3882926Z go: downloading google.golang.org/protobuf v1.36.11
+2026-10-12T13:49:25.3327815Z {"status": "PASS", "source_tree_sha256": "5ab5285ed8018292f0769a0fd20442ce5cc497897b52b3bff9f34c95cf87d60c", "binary_sha256": "d3042b82cd4c712439c62e0932d979f5e641a04e61fcb81096bd29f1ba148172"}
+2026-10-12T13:49:25.3399509Z go vet ./...
+2026-10-12T13:49:25.3897712Z go: downloading github.com/anishathalye/porcupine v1.3.1
+2026-10-12T13:49:42.0906555Z python3 -m compileall -q scripts
+2026-10-12T13:49:42.1717583Z go test -run '^$' ./...
+2026-10-12T13:49:46.4665114Z ok  	github.com/C-X1an/faultbraid/cmd/faultbraid	0.010s [no tests to run]
+2026-10-12T13:49:46.4777434Z ok  	github.com/C-X1an/faultbraid/internal/buildinfo	0.012s [no tests to run]
+2026-10-12T13:49:46.4793436Z ?   	github.com/C-X1an/faultbraid/internal/campaign	[no test files]
+2026-10-12T13:49:46.4850586Z ok  	github.com/C-X1an/faultbraid/internal/history	0.005s [no tests to run]
+2026-10-12T13:49:46.6585328Z ok  	github.com/C-X1an/faultbraid/internal/labreal	0.155s [no tests to run]
+2026-10-12T13:49:46.6605442Z ok  	github.com/C-X1an/faultbraid/internal/raftadapter	0.003s [no tests to run]
+2026-10-12T13:49:46.6609100Z ok  	github.com/C-X1an/faultbraid/internal/report	0.004s [no tests to run]
+2026-10-12T13:49:46.6610831Z ok  	github.com/C-X1an/faultbraid/internal/scenario	0.006s [no tests to run]
+2026-10-12T13:49:46.6612139Z ok  	github.com/C-X1an/faultbraid/internal/sim	0.003s [no tests to run]
+2026-10-12T13:49:46.7188154Z ok  	github.com/C-X1an/faultbraid/internal/strictjson	0.003s [no tests to run]
+2026-10-12T13:49:46.8945900Z ok  	github.com/C-X1an/faultbraid/internal/target	0.014s [no tests to run]
+2026-10-12T13:49:46.8978050Z ok  	github.com/C-X1an/faultbraid/tests/acceptance_locked	0.004s [no tests to run]
+2026-10-12T13:49:47.0475664Z ok  	github.com/C-X1an/faultbraid/tests/differential	0.003s [no tests to run]
+2026-10-12T13:49:47.2891583Z ok  	github.com/C-X1an/faultbraid/tests/integration	0.003s [no tests to run]
+2026-10-12T13:49:47.2892644Z ok  	github.com/C-X1an/faultbraid/tests/security	0.003s [no tests to run]
+2026-10-12T13:49:47.6061442Z ok  	github.com/C-X1an/faultbraid/tests/system	0.092s [no tests to run]
+2026-10-12T13:49:47.6335381Z go test -count=1 ./...
+2026-10-12T13:49:48.2615183Z ok  	github.com/C-X1an/faultbraid/cmd/faultbraid	0.008s
+2026-10-12T13:49:49.2642380Z ok  	github.com/C-X1an/faultbraid/internal/buildinfo	1.002s
+2026-10-12T13:49:49.2684202Z ?   	github.com/C-X1an/faultbraid/internal/campaign	[no test files]
+2026-10-12T13:49:49.2724507Z ok  	github.com/C-X1an/faultbraid/internal/history	0.031s
+2026-10-12T13:49:49.2775801Z ok  	github.com/C-X1an/faultbraid/internal/labreal	0.383s
+2026-10-12T13:49:49.2785073Z ok  	github.com/C-X1an/faultbraid/internal/raftadapter	0.007s
+2026-10-12T13:49:49.2786099Z --- FAIL: TestExclusiveOwnedDirectoryAndAliasParents (0.00s)
+2026-10-12T13:49:49.2787325Z     target_test.go:60: output permissions
+2026-10-12T13:49:49.2803233Z FAIL
+2026-10-12T13:49:49.2854761Z FAIL	github.com/C-X1an/faultbraid/internal/report	0.227s
+2026-10-12T13:49:49.2884929Z ok  	github.com/C-X1an/faultbraid/internal/scenario	0.004s
+2026-10-12T13:49:49.2888166Z ok  	github.com/C-X1an/faultbraid/internal/sim	0.056s
+2026-10-12T13:49:49.2888913Z ok  	github.com/C-X1an/faultbraid/internal/strictjson	0.004s
+2026-10-12T13:49:49.2924432Z ok  	github.com/C-X1an/faultbraid/internal/target	0.229s
+2026-10-12T13:49:49.2925212Z ok  	github.com/C-X1an/faultbraid/tests/acceptance_locked	0.005s
+2026-10-12T13:49:50.6985186Z ok  	github.com/C-X1an/faultbraid/tests/differential	1.773s
+2026-10-12T13:49:52.3274441Z ok  	github.com/C-X1an/faultbraid/tests/integration	3.308s
+2026-10-12T13:49:52.3274926Z ok  	github.com/C-X1an/faultbraid/tests/security	0.267s
+2026-10-12T13:50:12.7197723Z ok  	github.com/C-X1an/faultbraid/tests/system	22.972s
+2026-10-12T13:50:12.7198326Z FAIL
+2026-10-12T13:50:12.7314132Z make: *** [Makefile:34: test] Error 1
+2026-10-12T13:50:12.7333136Z ##[error]Process completed with exit code 2.
+2026-10-12T13:50:12.7471908Z Post job cleanup.
+2026-10-12T13:50:12.8343162Z [command]/usr/bin/git version
+2026-10-12T13:50:12.8387154Z git version 2.55.0
+2026-10-12T13:50:12.8426672Z Temporarily overriding HOME='/home/runner/work/_temp/d05723fc-4d4e-4416-a90e-6a6320226a18' before making global git config changes
+2026-10-12T13:50:12.8428158Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-12T13:50:12.8433084Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/faultbraid/faultbraid
+2026-10-12T13:50:12.8473080Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-12T13:50:12.8508798Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-12T13:50:12.8755367Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-12T13:50:12.8791658Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-12T13:50:12.9061957Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-12T13:50:12.9101143Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-12T13:50:12.9514108Z Cleaning up orphan processes
+

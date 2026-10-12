@@ -1,0 +1,1 @@
+{"status": "PASS", "exception_decision": "PENDING_CONCRETE_PROPOSAL", "source_commit": "748ba503af3d9b219005c0a1677f4d13b0938c1a", "actual_original_hosted_failures": 2, "actual_current_codeql": "PASS", "diagnosis_sha256": "18c1db183f4974405fe1cd7bca1a135b6a5900ed7e2a986b155614acdcf7e6e7"}

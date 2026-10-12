@@ -19,3 +19,6 @@ No production users, scale, cloud deployment, universal correctness or security/
 
 
 The [independent current all24 assessment](verification/reviews/final-c3-assessment.json) is a separate read-only review of all24 locked criteria, complete current packet and exact C3 export. Original C1/C2 and rejected B1 results remain historical with unchanged source identities. Actual live full verification, final integrated export and repaired hosted execution are separate pending gates.
+
+
+Current candidate corrects a supplemental output-kind predicate under the [independently reviewed exception](TEST_SPEC_EXCEPTION_AC-010_OUTPUT_KIND.md). Production and locked acceptance bytes are unchanged. Fresh corrected-source acceptance, all24 review and hosted runtime are pending; historical full approvals cover previous test inputs. Actual C4 Windows verification, publication/anonymous contents and CodeQL passed, while Linux kernel/full failed at the original predicate. [Original C4 observations](verification/publication/c4/index.json) retain those outcomes.

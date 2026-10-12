@@ -1,0 +1,12 @@
+=== RUN   TestEscapesAndExclusiveOutput
+--- PASS: TestEscapesAndExclusiveOutput (0.08s)
+=== RUN   TestReportBounds
+--- PASS: TestReportBounds (0.00s)
+=== RUN   TestTargetInspectorEscapesAndHasOfflineSemanticNavigation
+--- PASS: TestTargetInspectorEscapesAndHasOfflineSemanticNavigation (0.00s)
+=== RUN   TestTargetInspectorStopsBeforeUnboundedGrowth
+--- PASS: TestTargetInspectorStopsBeforeUnboundedGrowth (0.08s)
+=== RUN   TestExclusiveOwnedDirectoryAndAliasParents
+--- PASS: TestExclusiveOwnedDirectoryAndAliasParents (0.04s)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/report	2.139s

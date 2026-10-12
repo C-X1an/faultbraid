@@ -14,6 +14,30 @@ import (
 
 func assertProtectedOutput(t *testing.T, path string) {
 	t.Helper()
+	st, err := os.Lstat(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if outputAlias(st) || !st.Mode().IsRegular() {
+		t.Fatalf("report output is not a regular non-aliased file: %v", st.Mode())
+	}
+	assertProtectedDACL(t, path)
+}
+
+func assertProtectedDirectory(t *testing.T, path string) {
+	t.Helper()
+	st, err := os.Lstat(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if outputAlias(st) || !st.IsDir() {
+		t.Fatalf("report output is not a non-aliased directory: %v", st.Mode())
+	}
+	assertProtectedDACL(t, path)
+}
+
+func assertProtectedDACL(t *testing.T, path string) {
+	t.Helper()
 	f, err := os.Open(path)
 	if err != nil {
 		t.Fatal(err)
