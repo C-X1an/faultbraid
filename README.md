@@ -4,11 +4,11 @@ Make a distributed-state failure small enough to understand.
 
 FaultBraid is an experimental correctness workbench for a single integer register built on **instrumented etcd/raft v3.7.0**. It runs three fixed voters under explicit virtual faults, checks the collected history, re-executes saved traces, and reduces a failing scenario into a smaller executable reproducer. A separate native lab exercises the same integration code in real loopback child processes with checksummed disk journals.
 
-**Implementation and release acceptance are separate.** The target, entropy hook, fault runner, scenario reducer, independent differential checks and native lab are implemented. Applicable source-matched local acceptance and clean verification passed on Go1.27.2 Windows. Independent review of all24 passed on historical C1; independent all24 approval of the portable-bootstrap repair passed on C3. Initial C2 publication and anonymous exact remote verification passed. Initial hosted Linux runs failed before tests; corrected-source reruns remain pending. Consult [VERIFICATION_REPORT.md](VERIFICATION_REPORT.md) and [TEST_MATRIX.md](TEST_MATRIX.md) for actual outcomes and source identities; earlier kernel-only records remain historical evidence.
+**Implementation and release acceptance are separate.** Source-matched A6 local acceptance and clean reproduction passed on Go1.27.2 Windows. Historical C3 full all24 approval and C4 bounded closure covered previous test inputs; new A6 all24 approval remains pending. C4 publication and anonymous exact1376-file verification passed. Actual C4 Linux bootstrap and CodeQL succeeded, but kernel/full runtime failed at the supplemental directory permissions predicate. The exact reviewed correction preserves file0600/directory0700 and every locked criterion; corrected-source hosted runtime remains pending. See [VERIFICATION_REPORT](VERIFICATION_REPORT.md) and the [reviewed test exception](TEST_SPEC_EXCEPTION_AC-010_OUTPUT_KIND.md).
 
 ## Run locally
 
-Use the release toolchain pinned in [.go-version](.go-version): **Go 1.27.2**, Python 3.11+, Git, Make and GCC for race detection. The current development execution uses Windows; the initial hosted Linux bootstrap failed before tests; corrected-source Linux runtime CI is pending. A compile check or an older Go 1.23.2 kernel run does not establish current Linux conformance.
+Use the release toolchain pinned in [.go-version](.go-version): **Go 1.27.2**, Python 3.11+, Git, Make and GCC for race detection. Current local release execution uses Windows. Actual C4 Linux bootstrap and CodeQL succeeded; kernel/full runtime failed at the supplemental output-kind predicate, and corrected-source runtime CI remains pending. A compile check or an older Go 1.23.2 kernel run does not establish current Linux conformance.
 
 From the repository root:
 
@@ -96,12 +96,3 @@ make verify            # includes the separately gated release evidence
 FaultBraid is a finite experiment, not a production database, new consensus algorithm, hostile-code sandbox or complete formal proof. Snapshots, compaction and dynamic membership are unsupported. Read [LIMITATIONS.md](LIMITATIONS.md), [THREAT_MODEL.md](THREAT_MODEL.md) and [SECURITY.md](SECURITY.md) before extending the trust boundary.
 
 Start contributions with [CONTRIBUTING.md](CONTRIBUTING.md) and the [locked acceptance contract](ACCEPTANCE_SPEC.md). Original source is [MIT-licensed](LICENSE); dependencies and the instrumented Raft patch retain their upstream licenses and notices in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
-
-
-Portable-bootstrap repair A5 local evidence is in [VERIFICATION_REPORT](VERIFICATION_REPORT.md). Original B1 final review rejected mutation byte receipts; corrected controls and fresh committed reproduction ran. The [C1 independent assessment](verification/reviews/final-c1-assessment.json) and C2 closure are historical: FV-01–04 were resolved before initial publication. Independent current all24 approval of the repair passed on frozen C3. Initial C2 publication and anonymous exact remote proof passed, while all three initial hosted workflows failed before tests; repaired-source reruns are pending. Historical receipts retain their original source identities.
-
-
-The [independent current all24 assessment](verification/reviews/final-c3-assessment.json) is a separate read-only review of all24 locked criteria, complete current packet and exact C3 export. Original C1/C2 and rejected B1 results remain historical with unchanged source identities. Actual live full verification, final integrated export and repaired hosted execution are separate pending gates.
-
-
-Current candidate corrects a supplemental output-kind predicate under the [independently reviewed exception](TEST_SPEC_EXCEPTION_AC-010_OUTPUT_KIND.md). Production and locked acceptance bytes are unchanged. Fresh corrected-source acceptance, all24 review and hosted runtime are pending; historical full approvals cover previous test inputs. Actual C4 Windows verification, publication/anonymous contents and CodeQL passed, while Linux kernel/full failed at the original predicate. [Original C4 observations](verification/publication/c4/index.json) retain those outcomes.

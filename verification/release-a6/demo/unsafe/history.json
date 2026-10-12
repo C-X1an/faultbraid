@@ -1,0 +1,1 @@
+{"version":1,"initial":0,"operations":[{"id":"write7","kind":"write","value":7,"call":1,"return":2},{"id":"write9","kind":"write","value":9,"call":3,"return":4},{"id":"stale-read","kind":"read","value":7,"call":5,"return":6}]}

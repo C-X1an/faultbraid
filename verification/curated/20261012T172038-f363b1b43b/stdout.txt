@@ -1,0 +1,6 @@
+=== RUN   TestPendingWrite
+    history_test.go:36: pending write inclusion/omission v=7: {Status:INVALID Witness:[] States:2 Reason:all admissible orders exhausted}
+--- FAIL: TestPendingWrite (0.00s)
+FAIL
+FAIL	github.com/C-X1an/faultbraid/internal/history	2.085s
+FAIL

@@ -1,0 +1,4 @@
+=== RUN   TestPendingWrite
+--- PASS: TestPendingWrite (0.00s)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/history	1.537s

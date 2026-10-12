@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "run_id": "20261012T173406-6e96970fb7",
+  "source_tree_sha256": "89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39",
+  "raw_stdout_sha256": "99c8b7e2c74978a951333b8699a9469e02f215032f9a9d6275659b2912ce43c2",
+  "passed_test_records": 201,
+  "passed_top_level_records": 108,
+  "passed_packages": [
+    "github.com/C-X1an/faultbraid/cmd/faultbraid",
+    "github.com/C-X1an/faultbraid/internal/buildinfo",
+    "github.com/C-X1an/faultbraid/internal/history",
+    "github.com/C-X1an/faultbraid/internal/labreal",
+    "github.com/C-X1an/faultbraid/internal/raftadapter",
+    "github.com/C-X1an/faultbraid/internal/report",
+    "github.com/C-X1an/faultbraid/internal/scenario",
+    "github.com/C-X1an/faultbraid/internal/sim",
+    "github.com/C-X1an/faultbraid/internal/strictjson",
+    "github.com/C-X1an/faultbraid/internal/target",
+    "github.com/C-X1an/faultbraid/tests/acceptance_locked",
+    "github.com/C-X1an/faultbraid/tests/differential",
+    "github.com/C-X1an/faultbraid/tests/integration",
+    "github.com/C-X1an/faultbraid/tests/security",
+    "github.com/C-X1an/faultbraid/tests/system"
+  ],
+  "skip_records": [
+    {
+      "Time": "2026-10-13T01:34:19.3494116+08:00",
+      "Action": "skip",
+      "Package": "github.com/C-X1an/faultbraid/internal/campaign",
+      "Elapsed": 0
+    }
+  ],
+  "fail_records": [],
+  "differential_observations": [
+    "checker_test.go:210: AC-016 finite initial0 n0..3 values[0,7] calls[0,1,2] returns[pending,1,2,3] with return>call: {\"cases\":47989,\"core\":{\"valid\":36745,\"invalid\":11244,\"unknown\":0},\"tiny\":{\"valid\":36745,\"invalid\":11244,\"unknown\":0},\"porcupine\":{\"valid\":36745,\"invalid\":11244,\"unknown\":0},\"definitive_three_way_cases\":47989,\"witnesses_checked\":36745,\"core_states\":155768,\"tiny_complete_permutations\":110763,\"tiny_projections\":53842,\"porcupine_checked_projections\":53842,\"porcupine_unknown_projections\":0}",
+    "checker_test.go:240: AC-016 PCG seeds0..1023 n0..7 initial0 values[minInt64,-7,0,7,maxInt64] calls0..11 returns[pending,call+1..5]: {\"cases\":1024,\"core\":{\"valid\":488,\"invalid\":536,\"unknown\":0},\"tiny\":{\"valid\":488,\"invalid\":536,\"unknown\":0},\"porcupine\":{\"valid\":488,\"invalid\":536,\"unknown\":0},\"definitive_three_way_cases\":1024,\"witnesses_checked\":488,\"core_states\":4451,\"tiny_complete_permutations\":385242,\"tiny_projections\":1390,\"porcupine_checked_projections\":1390,\"porcupine_unknown_projections\":0}",
+    "checker_test.go:271: AC-016 named semantic positive and known-bad controls: {\"cases\":9,\"core\":{\"valid\":7,\"invalid\":2,\"unknown\":0},\"tiny\":{\"valid\":7,\"invalid\":2,\"unknown\":0},\"porcupine\":{\"valid\":7,\"invalid\":2,\"unknown\":0},\"definitive_three_way_cases\":9,\"witnesses_checked\":7,\"core_states\":28,\"tiny_complete_permutations\":45,\"tiny_projections\":14,\"porcupine_checked_projections\":14,\"porcupine_unknown_projections\":0}",
+    "checker_test.go:338: AC-016 unknown controls: core-state-budget=UNKNOWN references-capacity=UNKNOWN cancelled-all=UNKNOWN actual-Porcupine-timeout=Unknown elapsed=1.5541ms",
+    "checker_test.go:365: AC-016 timestamp-capacity controls with one explicit Porcupine UNKNOWN: {\"cases\":2,\"core\":{\"valid\":2,\"invalid\":0,\"unknown\":0},\"tiny\":{\"valid\":2,\"invalid\":0,\"unknown\":0},\"porcupine\":{\"valid\":1,\"invalid\":0,\"unknown\":1},\"definitive_three_way_cases\":1,\"witnesses_checked\":2,\"core_states\":6,\"tiny_complete_permutations\":4,\"tiny_projections\":3,\"porcupine_checked_projections\":2,\"porcupine_unknown_projections\":1}",
+    "checker_test.go:414: linked Porcupine: github.com/anishathalye/porcupine v1.3.1 h1:fBZ4/NGNPnIDdd6xNtrNk9/GiEQ0L4FO5+scINN+t0E=",
+    "checker_test.go:418: AC-016 dependency fixture: github.com/anishathalye/porcupine v1.3.1 h1:fBZ4/NGNPnIDdd6xNtrNk9/GiEQ0L4FO5+scINN+t0E=; Go=go1.27.2; runtime build metadata may omit test-binary dependencies",
+    "target_test.go:183: AC-016 actual Raft histories: safe seeds0..31 four fault patterns plus safe/unsafe minority-read controls: {\"cases\":34,\"core\":{\"valid\":33,\"invalid\":1,\"unknown\":0},\"tiny\":{\"valid\":33,\"invalid\":1,\"unknown\":0},\"porcupine\":{\"valid\":33,\"invalid\":1,\"unknown\":0},\"definitive_three_way_cases\":34,\"witnesses_checked\":33,\"core_states\":209,\"tiny_complete_permutations\":39,\"tiny_projections\":34,\"porcupine_checked_projections\":34,\"porcupine_unknown_projections\":0}",
+    "target_test.go:185: AC-016 actual-target events=21721 entropy-choices=403 rejected-only-logical-requests=10 source=89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39 module=c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432 patch=01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647"
+  ],
+  "scope": "actual go test JSON, includes subtests/fuzz seed tests; not timed fuzz execution counts"
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "commit": "65d10e1c83950f97d0857b3145ba9f91fe848e2f",
+  "clean_checkout": true,
+  "fresh_build_cache": true,
+  "exact_committed_source_bytes": true,
+  "same_host_and_toolchain": true,
+  "shared_verified_module_cache": true,
+  "fresh_virtual_machine": false,
+  "fresh_checkout_retained": true,
+  "implemented_checks_passed": true,
+  "full_product_verified": false,
+  "independent_release_review": "separate gate",
+  "steps": [
+    {
+      "step": "clone",
+      "run_id": "20261012T170915-a1c7ca22ae",
+      "status": "PASS"
+    },
+    {
+      "step": "verify-seed",
+      "run_id": "20261012T171002-f55450e73f",
+      "status": "PASS"
+    },
+    {
+      "step": "fuzz",
+      "run_id": "20261012T171840-9f315ad8c2",
+      "status": "PASS"
+    },
+    {
+      "step": "mutation",
+      "run_id": "20261012T171937-ab024c68ff",
+      "status": "PASS"
+    },
+    {
+      "step": "benchmark",
+      "run_id": "20261012T172416-8322e126b6",
+      "status": "PASS"
+    },
+    {
+      "step": "security-online",
+      "run_id": "20261012T172444-63e00446d0",
+      "status": "PASS"
+    },
+    {
+      "step": "campaign",
+      "run_id": "20261012T172553-e884a4eb9c",
+      "status": "PASS"
+    },
+    {
+      "step": "real-lab",
+      "run_id": "20261012T172921-b0cb427cbb",
+      "status": "PASS"
+    },
+    {
+      "step": "demo",
+      "run_id": "20261012T173029-b5367aac74",
+      "status": "PASS"
+    },
+    {
+      "step": "teardown",
+      "run_id": "20261012T173335-e193be2620",
+      "status": "PASS"
+    }
+  ]
+}

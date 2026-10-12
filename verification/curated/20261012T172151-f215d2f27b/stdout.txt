@@ -1,0 +1,6 @@
+=== RUN   TestCrashDurability
+    sim_test.go:50: unflushed write survived
+--- FAIL: TestCrashDurability (0.00s)
+FAIL
+FAIL	github.com/C-X1an/faultbraid/internal/sim	1.444s
+FAIL

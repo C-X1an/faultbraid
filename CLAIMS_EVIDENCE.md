@@ -1,24 +1,18 @@
 # Claims and evidence
 
-Executed commit `9bdbf63ae0236b7cc8649f2867293d1e2109efc6`, complete source SHA256 `8dbf60c32285bcadea6429cc5b5a06f03fbab8a78ab82e24011574bf730a7155` (963 files). Later prose/evidence curation preserves original identities; the gate compares every execution input.
+Executed commit `65d10e1c83950f97d0857b3145ba9f91fe848e2f`, complete source SHA256 `89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39` (1512 files). Later prose/evidence curation preserves original identities; the gate compares every execution input.
 
 | Claim | Actual evidence | Scope |
 |---|---|---|
-| Pending-write register checking and explicit uncertainty | [20261011T194819-2cfbc732da](verification/curated/20261011T194819-2cfbc732da/run.json) | Bounded constructive/exhaustive search only |
-| Explicit entropy and conservative Ready/Store durability in real Raft | [20261011T194819-2cfbc732da](verification/curated/20261011T194819-2cfbc732da/run.json); [patch lock](third_party/raft-patch/lock.json) | Instrumented etcd/raft v3.7.0, three fixed voters |
-| Virtual faults, target replay and causal reduction | [20261011T195531-5258857361](verification/curated/20261011T195531-5258857361/run.json) | Finite input-bound execution; bounded1-minimal, no global minimum |
-| Independent oracle / linked Porcupine comparison | [observations](verification/release-a5/test-summary.json) | Finite comparisons with UNKNOWN retained |
-| 1,000 outcomes / ten selected unsafe matching replays | [20261011T195324-b9af34a98f](verification/curated/20261011T195324-b9af34a98f/run.json) | Complete finite campaign accounting; deliberately unsafe variant distinct |
-| Same target in real owned loopback processes and journals | [20261011T195425-81550f3722](verification/curated/20261011T195425-81550f3722/run.json) | Observed concurrency1/4/16; no physical crash or native replay proof |
-| Supported toolchain and clean reproduction | [20261011T193327-e0f119c876](verification/curated/20261011T193327-e0f119c876/run.json); [20261011T195056-652385607d](verification/curated/20261011T195056-652385607d/run.json) | Exact committed clone and fresh cache; same host/module cache |
-| Actual byte-preserving semantic mutation controls | [controls](verification/release-a5/kernel-mutations.json) | Five selected controls, not an overall mutation score |
+| Pending-write register checking and explicit uncertainty | [20261012T173406-6e96970fb7](verification/curated/20261012T173406-6e96970fb7/run.json) | Bounded constructive/exhaustive search only |
+| Explicit entropy and conservative Ready/Store durability in real Raft | [20261012T173406-6e96970fb7](verification/curated/20261012T173406-6e96970fb7/run.json); [patch lock](third_party/raft-patch/lock.json) | Instrumented etcd/raft v3.7.0, three fixed voters |
+| Virtual faults, target replay and causal reduction | [20261012T175252-97054b8391](verification/curated/20261012T175252-97054b8391/run.json) | Finite input-bound execution; bounded1-minimal, no global minimum |
+| Independent oracle / linked Porcupine comparison | [observations](verification/release-a6/test-summary.json) | Finite comparisons with UNKNOWN retained |
+| 1,000 outcomes / ten selected unsafe matching replays | [20261012T174559-dbbc24c104](verification/curated/20261012T174559-dbbc24c104/run.json) | Complete finite campaign accounting; deliberately unsafe variant distinct |
+| Same target in real owned loopback processes and journals | [20261012T175046-f884daa970](verification/curated/20261012T175046-f884daa970/run.json) | Observed concurrency1/4/16; no physical crash or native replay proof |
+| Supported toolchain and clean reproduction | [20261012T170911-acbca9c7a0](verification/curated/20261012T170911-acbca9c7a0/run.json); [20261012T173919-435d881ee0](verification/curated/20261012T173919-435d881ee0/run.json) | Exact committed clone and fresh cache; same host/module cache |
+| Actual byte-preserving semantic mutation controls | [controls](verification/release-a6/kernel-mutations.json) | Five selected controls, not an overall mutation score |
 | Measured checker/model/target/reduction costs | [BENCHMARKS](BENCHMARKS.md) | All91 calibrated samples; uncertainty and spread retained |
-| Separate current final review / hosted CI / publication | PASS on C3 / initial C2 FAIL before tests; repair rerun pending / PASS on C2 | Local commands do not imply these gates; anonymous initial exact remote verification passed |
+| Separate current final review / hosted CI / publication | A6 approval pending / C4 bootstrap and CodeQL PASS, kernel/full FAIL; A6 retests pending / C4 published PASS | Local commands do not imply these gates; anonymous initial exact remote verification passed |
 
 No production users, scale, cloud deployment, universal correctness or security/physical crash certification is claimed. Original A3/B1 receipts and rejected byte evidence remain historical.
-
-
-The [independent current all24 assessment](verification/reviews/final-c3-assessment.json) is a separate read-only review of all24 locked criteria, complete current packet and exact C3 export. Original C1/C2 and rejected B1 results remain historical with unchanged source identities. Actual live full verification, final integrated export and repaired hosted execution are separate pending gates.
-
-
-Current candidate corrects a supplemental output-kind predicate under the [independently reviewed exception](TEST_SPEC_EXCEPTION_AC-010_OUTPUT_KIND.md). Production and locked acceptance bytes are unchanged. Fresh corrected-source acceptance, all24 review and hosted runtime are pending; historical full approvals cover previous test inputs. Actual C4 Windows verification, publication/anonymous contents and CodeQL passed, while Linux kernel/full failed at the original predicate. [Original C4 observations](verification/publication/c4/index.json) retain those outcomes.

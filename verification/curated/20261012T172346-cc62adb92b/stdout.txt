@@ -1,0 +1,6 @@
+=== RUN   TestAC013FlushBeforeSendAndResponse
+    persistence_test.go:404: node 1 event target.Start: durability invariant: after-flush barrier preceded successful Store.Flush
+--- FAIL: TestAC013FlushBeforeSendAndResponse (0.00s)
+FAIL
+FAIL	github.com/C-X1an/faultbraid/tests/system	2.858s
+FAIL

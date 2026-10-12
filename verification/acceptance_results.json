@@ -1,233 +1,233 @@
 {
-  "scope": "Changed supplemental test inputs awaiting fresh current-source acceptance; old full approvals and original measured records remain historical",
+  "scope": "Current applicable local acceptance; independent full-project assessment and hosted CI are separate gates",
   "criteria": [
     {
       "id": "AC-001",
       "requirement": "FR-001",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-002",
       "requirement": "FR-002",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-003",
       "requirement": "FR-002",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-004",
       "requirement": "FR-003",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-005",
       "requirement": "FR-004",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-006",
       "requirement": "FR-005",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-007",
       "requirement": "FR-006",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-008",
       "requirement": "FR-007",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-009",
       "requirement": "FR-008",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-010",
       "requirement": "FR-012",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-011",
       "requirement": "FR-009",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-012",
       "requirement": "FR-010",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-013",
       "requirement": "REL-002",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-014",
       "requirement": "REL-003",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json",
-        "verification/curated/20261011T195531-5258857361/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json",
+        "verification/curated/20261012T175252-97054b8391/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-015",
       "requirement": "FR-011",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json",
-        "verification/curated/20261011T195531-5258857361/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json",
+        "verification/curated/20261012T175252-97054b8391/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-016",
       "requirement": "FR-002",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-017",
       "requirement": "SEC-002",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-018",
       "requirement": "NFR-003",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194939-a7a9d9997e/run.json"
+        "verification/curated/20261012T173653-5e5eaec209/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-019",
       "requirement": "FR-013",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json",
-        "verification/curated/20261011T195425-81550f3722/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json",
+        "verification/curated/20261012T175046-f884daa970/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-020",
       "requirement": "NFR-004",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T193327-e0f119c876/run.json"
+        "verification/curated/20261012T170911-acbca9c7a0/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-021",
       "requirement": "SEC-003",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T195101-ab1310ba29/run.json"
+        "verification/curated/20261012T174000-2fc097e0ec/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-022",
       "requirement": "PERF-001",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T195258-68f9d1928b/run.json"
+        "verification/curated/20261012T174444-800c31eb52/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-023",
       "requirement": "PERF-002",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T195258-68f9d1928b/run.json"
+        "verification/curated/20261012T174444-800c31eb52/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
     },
     {
       "id": "AC-024",
       "requirement": "PERF-003",
-      "status": "NOT RUN",
+      "status": "PASS",
       "evidence": [
-        "verification/curated/20261011T194819-2cfbc732da/run.json",
-        "verification/curated/20261011T195324-b9af34a98f/run.json"
+        "verification/curated/20261012T173406-6e96970fb7/run.json",
+        "verification/curated/20261012T174559-dbbc24c104/run.json"
       ],
-      "note": "Current corrected-source complete command pending; retained prior referenced records have their original source identity and do not approve changed test inputs"
+      "note": "Complete package smoke32 checks plus separately measured1000 attempted seeds, all outcome histories/results/hash accounting and ten replays of the separately labelled unsafe variant; finite workload only."
     }
   ],
   "independent_review": {
     "status": "NOT RUN",
-    "reason": "Fresh separate full all24 review required after this prospective scoped exception and current-source verification"
+    "reason": "Separate final assessment pending completed evidence/export packet"
   },
-  "supported_toolchain_verified": false,
+  "supported_toolchain_verified": true,
   "supported_toolchain_evidence": [
-    "verification/curated/20261011T195056-652385607d/run.json"
+    "verification/curated/20261012T173919-435d881ee0/run.json"
   ]
 }

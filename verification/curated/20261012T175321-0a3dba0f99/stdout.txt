@@ -1,0 +1,1 @@
+{"status":"PASS","verdict":"VALID","digest":"68b07a4173e319a9d8d67c889e4f064120f896cba10b6c71797f7a3a443c9340","scope":"raft-trace-v1","directory":".local-runs\\target-demo-20261012T175258-474da2\\safe"}

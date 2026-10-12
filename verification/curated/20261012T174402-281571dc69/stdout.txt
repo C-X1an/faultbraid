@@ -1,0 +1,31 @@
+goos: windows
+goarch: amd64
+pkg: github.com/C-X1an/faultbraid/internal/history
+cpu: 13th Gen Intel(R) Core(TM) i9-13900H
+BenchmarkCheck12-4              	  156159	       722.1 ns/op	        13.00 states/op	     936 B/op	       6 allocs/op
+BenchmarkSearchBudgetCurve/operations-4-4         	  179826	       674.4 ns/op	         0 inconclusive/op	         1.000 invalid/op	        16.00 states/op	     520 B/op	       4 allocs/op
+BenchmarkSearchBudgetCurve/operations-8-4         	    2116	     58756 ns/op	         0 inconclusive/op	         1.000 invalid/op	      1352 states/op	   54090 B/op	      17 allocs/op
+BenchmarkSearchBudgetCurve/operations-12-4        	     768	    155604 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  109248 B/op	      25 allocs/op
+BenchmarkSearchBudgetCurve/operations-16-4        	     732	    162185 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  110272 B/op	      27 allocs/op
+BenchmarkSearchBudgetCurve/operations-24-4        	     703	    174445 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  110465 B/op	      27 allocs/op
+BenchmarkOracleSequential12-4                     	   99654	      1209 ns/op	     616 B/op	       6 allocs/op
+BenchmarkCheckOverlap12-4                         	    1040	    115772 ns/op	      1911 states/op	  109440 B/op	      26 allocs/op
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/history	2.357s
+goos: windows
+goarch: amd64
+pkg: github.com/C-X1an/faultbraid/internal/sim
+cpu: 13th Gen Intel(R) Core(TM) i9-13900H
+BenchmarkModel10000-4   	      16	   6617625 ns/op	12748918 B/op	   22581 allocs/op
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/sim	1.009s
+goos: windows
+goarch: amd64
+pkg: github.com/C-X1an/faultbraid/tests/system
+cpu: 13th Gen Intel(R) Core(TM) i9-13900H
+BenchmarkTargetHealthy-4       	      46	   2633815 ns/op	       403.0 events/op	         3.000 states/op	 2832093 B/op	   33695 allocs/op
+BenchmarkScenarioReduction/baseline-run-4         	      45	   2822713 ns/op	        12.00 actions/result	 2792929 B/op	   33582 allocs/op
+BenchmarkScenarioReduction/greedy-4               	       1	 105730500 ns/op	         5.000 actions/result	        24.00 candidate-checks/op	         8.000 replays/op	        24.00 target-executions/op	99695064 B/op	 1161818 allocs/op
+BenchmarkScenarioReduction/ddmin-4                	       1	 105913900 ns/op	         5.000 actions/result	        32.00 candidate-checks/op	         6.000 replays/op	        32.00 target-executions/op	105751344 B/op	 1237355 allocs/op
+PASS
+ok  	github.com/C-X1an/faultbraid/tests/system	2.840s

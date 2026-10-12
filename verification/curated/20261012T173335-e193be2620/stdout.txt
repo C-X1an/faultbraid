@@ -1,0 +1,4 @@
+make[1]: Entering directory '[recorded-working-root]'
+python3 scripts/teardown.py
+{"status": "PASS", "removed_synthetic_demos": 1, "preserved_evidence": true}
+make[1]: Leaving directory '[recorded-working-root]'

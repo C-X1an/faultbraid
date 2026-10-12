@@ -1,0 +1,4 @@
+make[1]: Entering directory '[recorded-working-root]'
+python3 scripts/security_online.py
+go version go1.27.2 windows/amd64
+make[1]: Leaving directory '[recorded-working-root]'

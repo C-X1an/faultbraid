@@ -1,0 +1,1 @@
+{"directory":".local-runs\\demo-20261012T175258-474da2","scope":"local kernel, not distributed target","status":"PASS"}

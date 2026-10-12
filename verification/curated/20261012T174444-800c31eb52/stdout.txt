@@ -1,0 +1,110 @@
+go test ./internal/history ./internal/sim ./tests/system -run '^$' -bench . -benchmem -benchtime=100ms -cpu=4 -count=7
+goos: windows
+goarch: amd64
+pkg: github.com/C-X1an/faultbraid/internal/history
+cpu: 13th Gen Intel(R) Core(TM) i9-13900H
+BenchmarkCheck12-4              	  151566	       713.2 ns/op	        13.00 states/op	     936 B/op	       6 allocs/op
+BenchmarkCheck12-4              	  171518	       738.9 ns/op	        13.00 states/op	     936 B/op	       6 allocs/op
+BenchmarkCheck12-4              	  161209	       833.5 ns/op	        13.00 states/op	     936 B/op	       6 allocs/op
+BenchmarkCheck12-4              	  173239	       769.1 ns/op	        13.00 states/op	     936 B/op	       6 allocs/op
+BenchmarkCheck12-4              	  169256	       812.2 ns/op	        13.00 states/op	     936 B/op	       6 allocs/op
+BenchmarkCheck12-4              	  157839	       755.1 ns/op	        13.00 states/op	     936 B/op	       6 allocs/op
+BenchmarkCheck12-4              	  162255	       789.9 ns/op	        13.00 states/op	     936 B/op	       6 allocs/op
+BenchmarkSearchBudgetCurve/operations-4-4         	  168987	       683.7 ns/op	         0 inconclusive/op	         1.000 invalid/op	        16.00 states/op	     520 B/op	       4 allocs/op
+BenchmarkSearchBudgetCurve/operations-4-4         	  186729	       669.9 ns/op	         0 inconclusive/op	         1.000 invalid/op	        16.00 states/op	     520 B/op	       4 allocs/op
+BenchmarkSearchBudgetCurve/operations-4-4         	  179830	       695.7 ns/op	         0 inconclusive/op	         1.000 invalid/op	        16.00 states/op	     520 B/op	       4 allocs/op
+BenchmarkSearchBudgetCurve/operations-4-4         	  171912	       698.6 ns/op	         0 inconclusive/op	         1.000 invalid/op	        16.00 states/op	     520 B/op	       4 allocs/op
+BenchmarkSearchBudgetCurve/operations-4-4         	  173751	       685.0 ns/op	         0 inconclusive/op	         1.000 invalid/op	        16.00 states/op	     520 B/op	       4 allocs/op
+BenchmarkSearchBudgetCurve/operations-4-4         	  178962	       685.9 ns/op	         0 inconclusive/op	         1.000 invalid/op	        16.00 states/op	     520 B/op	       4 allocs/op
+BenchmarkSearchBudgetCurve/operations-4-4         	  173412	       683.0 ns/op	         0 inconclusive/op	         1.000 invalid/op	        16.00 states/op	     520 B/op	       4 allocs/op
+BenchmarkSearchBudgetCurve/operations-8-4         	    2180	     57680 ns/op	         0 inconclusive/op	         1.000 invalid/op	      1352 states/op	   54088 B/op	      17 allocs/op
+BenchmarkSearchBudgetCurve/operations-8-4         	    2114	     56473 ns/op	         0 inconclusive/op	         1.000 invalid/op	      1352 states/op	   54088 B/op	      17 allocs/op
+BenchmarkSearchBudgetCurve/operations-8-4         	    2085	     59224 ns/op	         0 inconclusive/op	         1.000 invalid/op	      1352 states/op	   54088 B/op	      17 allocs/op
+BenchmarkSearchBudgetCurve/operations-8-4         	    2073	     61672 ns/op	         0 inconclusive/op	         1.000 invalid/op	      1352 states/op	   54088 B/op	      17 allocs/op
+BenchmarkSearchBudgetCurve/operations-8-4         	    2013	     60952 ns/op	         0 inconclusive/op	         1.000 invalid/op	      1352 states/op	   54088 B/op	      17 allocs/op
+BenchmarkSearchBudgetCurve/operations-8-4         	    2085	     56016 ns/op	         0 inconclusive/op	         1.000 invalid/op	      1352 states/op	   54088 B/op	      17 allocs/op
+BenchmarkSearchBudgetCurve/operations-8-4         	    2113	     58579 ns/op	         0 inconclusive/op	         1.000 invalid/op	      1352 states/op	   54088 B/op	      17 allocs/op
+BenchmarkSearchBudgetCurve/operations-12-4        	     753	    162941 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  109248 B/op	      25 allocs/op
+BenchmarkSearchBudgetCurve/operations-12-4        	     752	    431252 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  109248 B/op	      25 allocs/op
+BenchmarkSearchBudgetCurve/operations-12-4        	     168	    641146 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  109248 B/op	      25 allocs/op
+BenchmarkSearchBudgetCurve/operations-12-4        	     177	    901436 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  109248 B/op	      25 allocs/op
+BenchmarkSearchBudgetCurve/operations-12-4        	     122	   2320889 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  109248 B/op	      25 allocs/op
+BenchmarkSearchBudgetCurve/operations-12-4        	     228	   1129748 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  109249 B/op	      25 allocs/op
+BenchmarkSearchBudgetCurve/operations-12-4        	      56	   2068373 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  109248 B/op	      25 allocs/op
+BenchmarkSearchBudgetCurve/operations-16-4        	     100	   2197384 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  110272 B/op	      27 allocs/op
+BenchmarkSearchBudgetCurve/operations-16-4        	     100	   2012231 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  110272 B/op	      27 allocs/op
+BenchmarkSearchBudgetCurve/operations-16-4        	     150	   1883570 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  110272 B/op	      27 allocs/op
+BenchmarkSearchBudgetCurve/operations-16-4        	     198	    732965 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  110272 B/op	      27 allocs/op
+BenchmarkSearchBudgetCurve/operations-16-4        	     159	    770648 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  110274 B/op	      27 allocs/op
+BenchmarkSearchBudgetCurve/operations-16-4        	     206	    844302 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  110272 B/op	      27 allocs/op
+BenchmarkSearchBudgetCurve/operations-16-4        	     100	   2380987 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  110272 B/op	      27 allocs/op
+BenchmarkSearchBudgetCurve/operations-24-4        	     135	   1204699 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  110464 B/op	      27 allocs/op
+BenchmarkSearchBudgetCurve/operations-24-4        	     165	   1170282 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  110464 B/op	      27 allocs/op
+BenchmarkSearchBudgetCurve/operations-24-4        	     187	   1088018 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  110466 B/op	      27 allocs/op
+BenchmarkSearchBudgetCurve/operations-24-4        	     123	   1111342 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  110464 B/op	      27 allocs/op
+BenchmarkSearchBudgetCurve/operations-24-4        	     158	   2243851 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  110464 B/op	      27 allocs/op
+BenchmarkSearchBudgetCurve/operations-24-4        	     158	    647832 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  110464 B/op	      27 allocs/op
+BenchmarkSearchBudgetCurve/operations-24-4        	     188	   1633567 ns/op	         1.000 inconclusive/op	         0 invalid/op	      4096 states/op	  110464 B/op	      27 allocs/op
+BenchmarkOracleSequential12-4                     	   21478	      7852 ns/op	     616 B/op	       6 allocs/op
+BenchmarkOracleSequential12-4                     	   22848	      5660 ns/op	     616 B/op	       6 allocs/op
+BenchmarkOracleSequential12-4                     	   30838	      5516 ns/op	     616 B/op	       6 allocs/op
+BenchmarkOracleSequential12-4                     	   10000	     12116 ns/op	     616 B/op	       6 allocs/op
+BenchmarkOracleSequential12-4                     	   11254	     13333 ns/op	     616 B/op	       6 allocs/op
+BenchmarkOracleSequential12-4                     	    6466	     24434 ns/op	     616 B/op	       6 allocs/op
+BenchmarkOracleSequential12-4                     	   10000	     14116 ns/op	     616 B/op	       6 allocs/op
+BenchmarkCheckOverlap12-4                         	     234	    545927 ns/op	      1911 states/op	  109441 B/op	      26 allocs/op
+BenchmarkCheckOverlap12-4                         	     278	    640691 ns/op	      1911 states/op	  109441 B/op	      26 allocs/op
+BenchmarkCheckOverlap12-4                         	     200	    609386 ns/op	      1911 states/op	  109441 B/op	      26 allocs/op
+BenchmarkCheckOverlap12-4                         	     100	   1072601 ns/op	      1911 states/op	  109442 B/op	      26 allocs/op
+BenchmarkCheckOverlap12-4                         	     100	   1039683 ns/op	      1911 states/op	  109440 B/op	      26 allocs/op
+BenchmarkCheckOverlap12-4                         	     210	    621980 ns/op	      1911 states/op	  109441 B/op	      26 allocs/op
+BenchmarkCheckOverlap12-4                         	     250	    483582 ns/op	      1911 states/op	  109440 B/op	      26 allocs/op
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/history	12.995s
+goos: windows
+goarch: amd64
+pkg: github.com/C-X1an/faultbraid/internal/sim
+cpu: 13th Gen Intel(R) Core(TM) i9-13900H
+BenchmarkModel10000-4   	      16	   6264788 ns/op	11918490 B/op	   22576 allocs/op
+BenchmarkModel10000-4   	      16	   6468200 ns/op	13164087 B/op	   22583 allocs/op
+BenchmarkModel10000-4   	      15	   7230667 ns/op	13136410 B/op	   22583 allocs/op
+BenchmarkModel10000-4   	      16	   6578962 ns/op	13579273 B/op	   22586 allocs/op
+BenchmarkModel10000-4   	      15	   6781047 ns/op	13136398 B/op	   22583 allocs/op
+BenchmarkModel10000-4   	      16	   6700988 ns/op	13579250 B/op	   22586 allocs/op
+BenchmarkModel10000-4   	      16	   6701219 ns/op	13579279 B/op	   22586 allocs/op
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/sim	1.765s
+goos: windows
+goarch: amd64
+pkg: github.com/C-X1an/faultbraid/tests/system
+cpu: 13th Gen Intel(R) Core(TM) i9-13900H
+BenchmarkTargetHealthy-4       	      38	   2696134 ns/op	       403.0 events/op	         3.000 states/op	 2811969 B/op	   33693 allocs/op
+BenchmarkTargetHealthy-4       	      46	   3209993 ns/op	       403.0 events/op	         3.000 states/op	 2809533 B/op	   33692 allocs/op
+BenchmarkTargetHealthy-4       	      46	   2753522 ns/op	       403.0 events/op	         3.000 states/op	 2821000 B/op	   33694 allocs/op
+BenchmarkTargetHealthy-4       	      45	   2540738 ns/op	       403.0 events/op	         3.000 states/op	 2821282 B/op	   33692 allocs/op
+BenchmarkTargetHealthy-4       	      45	   2643529 ns/op	       403.0 events/op	         3.000 states/op	 2798179 B/op	   33691 allocs/op
+BenchmarkTargetHealthy-4       	      45	   2604029 ns/op	       403.0 events/op	         3.000 states/op	 2798920 B/op	   33695 allocs/op
+BenchmarkTargetHealthy-4       	      46	   2915750 ns/op	       403.0 events/op	         3.000 states/op	 2810051 B/op	   33694 allocs/op
+BenchmarkScenarioReduction/baseline-run-4         	      48	   2689052 ns/op	        12.00 actions/result	 2835926 B/op	   33587 allocs/op
+BenchmarkScenarioReduction/baseline-run-4         	      48	   2595056 ns/op	        12.00 actions/result	 2792407 B/op	   33583 allocs/op
+BenchmarkScenarioReduction/baseline-run-4         	      44	   2631625 ns/op	        12.00 actions/result	 2793141 B/op	   33582 allocs/op
+BenchmarkScenarioReduction/baseline-run-4         	      38	   2671726 ns/op	        12.00 actions/result	 2796370 B/op	   33587 allocs/op
+BenchmarkScenarioReduction/baseline-run-4         	      45	   3125162 ns/op	        12.00 actions/result	 2781401 B/op	   33582 allocs/op
+BenchmarkScenarioReduction/baseline-run-4         	      45	   2611958 ns/op	        12.00 actions/result	 2805106 B/op	   33586 allocs/op
+BenchmarkScenarioReduction/baseline-run-4         	      46	   2573146 ns/op	        12.00 actions/result	 2792901 B/op	   33583 allocs/op
+BenchmarkScenarioReduction/greedy-4               	       2	  97148050 ns/op	         5.000 actions/result	        24.00 candidate-checks/op	         8.000 replays/op	        24.00 target-executions/op	99726560 B/op	 1161911 allocs/op
+BenchmarkScenarioReduction/greedy-4               	       2	  98865050 ns/op	         5.000 actions/result	        24.00 candidate-checks/op	         8.000 replays/op	        24.00 target-executions/op	99833328 B/op	 1161873 allocs/op
+BenchmarkScenarioReduction/greedy-4               	       2	 193569850 ns/op	         5.000 actions/result	        24.00 candidate-checks/op	         8.000 replays/op	        24.00 target-executions/op	99588160 B/op	 1161918 allocs/op
+BenchmarkScenarioReduction/greedy-4               	       1	 382195500 ns/op	         5.000 actions/result	        24.00 candidate-checks/op	         8.000 replays/op	        24.00 target-executions/op	99982200 B/op	 1161977 allocs/op
+BenchmarkScenarioReduction/greedy-4               	       1	 377030800 ns/op	         5.000 actions/result	        24.00 candidate-checks/op	         8.000 replays/op	        24.00 target-executions/op	99576880 B/op	 1161878 allocs/op
+BenchmarkScenarioReduction/greedy-4               	       1	 380989600 ns/op	         5.000 actions/result	        24.00 candidate-checks/op	         8.000 replays/op	        24.00 target-executions/op	99208056 B/op	 1161926 allocs/op
+BenchmarkScenarioReduction/greedy-4               	       1	 369271600 ns/op	         5.000 actions/result	        24.00 candidate-checks/op	         8.000 replays/op	        24.00 target-executions/op	99211976 B/op	 1161894 allocs/op
+BenchmarkScenarioReduction/ddmin-4                	       1	 403033400 ns/op	         5.000 actions/result	        32.00 candidate-checks/op	         6.000 replays/op	        32.00 target-executions/op	105752128 B/op	 1237395 allocs/op
+BenchmarkScenarioReduction/ddmin-4                	       1	 441932900 ns/op	         5.000 actions/result	        32.00 candidate-checks/op	         6.000 replays/op	        32.00 target-executions/op	106536144 B/op	 1237507 allocs/op
+BenchmarkScenarioReduction/ddmin-4                	       1	 415367400 ns/op	         5.000 actions/result	        32.00 candidate-checks/op	         6.000 replays/op	        32.00 target-executions/op	106126120 B/op	 1237374 allocs/op
+BenchmarkScenarioReduction/ddmin-4                	       1	 420833600 ns/op	         5.000 actions/result	        32.00 candidate-checks/op	         6.000 replays/op	        32.00 target-executions/op	106123424 B/op	 1237334 allocs/op
+BenchmarkScenarioReduction/ddmin-4                	       1	 391828500 ns/op	         5.000 actions/result	        32.00 candidate-checks/op	         6.000 replays/op	        32.00 target-executions/op	105763824 B/op	 1237421 allocs/op
+BenchmarkScenarioReduction/ddmin-4                	       1	 370878800 ns/op	         5.000 actions/result	        32.00 candidate-checks/op	         6.000 replays/op	        32.00 target-executions/op	105401056 B/op	 1237466 allocs/op
+BenchmarkScenarioReduction/ddmin-4                	       1	 392176200 ns/op	         5.000 actions/result	        32.00 candidate-checks/op	         6.000 replays/op	        32.00 target-executions/op	105754016 B/op	 1237358 allocs/op
+PASS
+ok  	github.com/C-X1an/faultbraid/tests/system	9.957s
