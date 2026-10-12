@@ -1,0 +1,1 @@
+{"status":"PASS","verdict":"VALID","digest":"e75ebc0c240ff4e3cbff07ae24d91be65ef8f87e7c8921b18c1594152d32c70d","scope":"raft-trace-v1","directory":"[recorded-working-root]\\.local-runs\\independent-c5-live-b851c1080a\\candidate-3"}

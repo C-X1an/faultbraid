@@ -13,6 +13,9 @@ Executed commit `65d10e1c83950f97d0857b3145ba9f91fe848e2f`, complete source SHA2
 | Supported toolchain and clean reproduction | [20261012T170911-acbca9c7a0](verification/curated/20261012T170911-acbca9c7a0/run.json); [20261012T173919-435d881ee0](verification/curated/20261012T173919-435d881ee0/run.json) | Exact committed clone and fresh cache; same host/module cache |
 | Actual byte-preserving semantic mutation controls | [controls](verification/release-a6/kernel-mutations.json) | Five selected controls, not an overall mutation score |
 | Measured checker/model/target/reduction costs | [BENCHMARKS](BENCHMARKS.md) | All91 calibrated samples; uncertainty and spread retained |
-| Separate current final review / hosted CI / publication | A6 approval pending / C4 bootstrap and CodeQL PASS, kernel/full FAIL; A6 retests pending / C4 published PASS | Local commands do not imply these gates; anonymous initial exact remote verification passed |
+| Separate current final review / hosted CI / publication | C5 all24 approval PASS / C4 bootstrap and CodeQL PASS, kernel/full FAIL; corrected-source retests pending / C4 published PASS | Local commands do not imply these gates; anonymous initial exact remote verification passed |
 
 No production users, scale, cloud deployment, universal correctness or security/physical crash certification is claimed. Original A3/B1 receipts and rejected byte evidence remain historical.
+
+
+The [independent current all24 assessment](verification/reviews/final-c5-assessment.json) is a separate read-only review of all24 locked criteria, complete current packet and exact C5 export. Original C1/C2 and rejected B1 results remain historical with unchanged source identities. Actual live full verification, final integrated export and repaired hosted execution are separate pending gates.

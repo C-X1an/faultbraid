@@ -1,6 +1,6 @@
 # Requirement and test matrix
 
-All24 applicable local rows use actual corrected-source A6 commands. Current independent final assessment and hosted CI are separate gates. Executed commit `65d10e1c83950f97d0857b3145ba9f91fe848e2f`, complete source SHA256 `89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39` (1512 files). Later prose/evidence curation preserves original identities; the gate compares every execution input.
+All24 applicable local rows use actual corrected-source A6 commands. Independent current all24 assessment passed on C5; repaired hosted CI remains a separate pending gate. Executed commit `65d10e1c83950f97d0857b3145ba9f91fe848e2f`, complete source SHA256 `89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39` (1512 files). Later prose/evidence curation preserves original identities; the gate compares every execution input.
 
 | Acceptance | Requirement | Locked contract | Local result | Evidence |
 |---|---|---|---|---|
@@ -30,3 +30,6 @@ All24 applicable local rows use actual corrected-source A6 commands. Current ind
 | AC-024 | PERF-003 | `tests/system/campaign_test.go` | PASS | [20261012T173406-6e96970fb7](verification/curated/20261012T173406-6e96970fb7/run.json), [20261012T174559-dbbc24c104](verification/curated/20261012T174559-dbbc24c104/run.json) |
 
 AC-024 includes the actual1,000-seed campaign and32-seed package smoke test. AC-016 retains genuine UNKNOWN controls. AC-019 runs production native processes and File.Sync. AC-020 is a fresh committed clone/cache on the same host. AC-021 requires the final public export audit separately. Five corrected byte-exact kernel controls and the Store.Flush control are linked in [VERIFICATION_REPORT](VERIFICATION_REPORT.md). Original A3 kernel byte-hash/restoration defects remain labelled historical. No locked assertion is weakened or skipped.
+
+
+The [independent current all24 assessment](verification/reviews/final-c5-assessment.json) is a separate read-only review of all24 locked criteria, complete current packet and exact C5 export. Original C1/C2 and rejected B1 results remain historical with unchanged source identities. Actual live full verification, final integrated export and repaired hosted execution are separate pending gates.

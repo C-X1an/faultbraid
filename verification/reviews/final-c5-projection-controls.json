@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "full_project_assessment": "IN_PROGRESS",
+  "scope": "21 explicit independent private projection/rejection fixtures; actual final raw-stream projections remain to be inspected",
+  "fixtures": [
+    {
+      "fixture": "loopback-http",
+      "expected": "ACCEPT",
+      "observed": "ACCEPT",
+      "input_sha256": "13d06d744dbdd09d603382e85d9a4a571229b95ec3709a523c60fc07f3d58fec",
+      "output_sha256": "13d06d744dbdd09d603382e85d9a4a571229b95ec3709a523c60fc07f3d58fec",
+      "declared_transforms": []
+    },
+    {
+      "fixture": "public-https",
+      "expected": "ACCEPT",
+      "observed": "ACCEPT",
+      "input_sha256": "f40e3d6b741270d9951e3c4360ad3acb718234d905475cf007c415e7beda1a64",
+      "output_sha256": "f40e3d6b741270d9951e3c4360ad3acb718234d905475cf007c415e7beda1a64",
+      "declared_transforms": []
+    },
+    {
+      "fixture": "newlines",
+      "expected": "ACCEPT",
+      "observed": "ACCEPT",
+      "input_sha256": "f8e0f1568dd9254c3262d199d5dcfc9ff6d4855e18ec53a7176f9eab948ed93e",
+      "output_sha256": "dbea9325179efe46ea2add94f7b6b745ca983fabb208dc6d34aa064623d7ee23",
+      "declared_transforms": [
+        {
+          "kind": "CRLF-to-LF-text-normalization",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "fixture": "exact-privacy-expression",
+      "expected": "ACCEPT",
+      "observed": "ACCEPT",
+      "input_sha256": "f04a55fe51588cd354e87e760dd04ce621162c4954fbbb4cf69b2f4535e65592",
+      "output_sha256": "a0ada0e01293f89808a2d38c2a1587ced62d4232d105cf64268cdbdcd676ba4b",
+      "declared_transforms": [
+        {
+          "kind": "exact-review-harness-privacy-pattern",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "fixture": "json-escaped-exact-expression",
+      "expected": "ACCEPT",
+      "observed": "ACCEPT",
+      "input_sha256": "cce5983e3d8fbea34226f36e5b23966d7675610a2b149dd31c76ff7f04dea236",
+      "output_sha256": "a0ada0e01293f89808a2d38c2a1587ced62d4232d105cf64268cdbdcd676ba4b",
+      "declared_transforms": [
+        {
+          "kind": "exact-review-harness-privacy-pattern",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "fixture": "owned-recorded-path",
+      "expected": "ACCEPT",
+      "observed": "ACCEPT",
+      "input_sha256": "8f3f671b67307b14888cf7bf98935230fa9e0885f062d3d5716b55d6ec760747",
+      "output_sha256": "2a112c7469bd5121031e8def093902ff06e3a177d14ceb96450cd5d44a865a93",
+      "declared_transforms": [
+        {
+          "kind": "operator-path-prefix",
+          "replacement": "[recorded-working-root]",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "fixture": "owned-workspace-relative-private",
+      "expected": "ACCEPT",
+      "observed": "ACCEPT",
+      "input_sha256": "ae2949371685d4202fe7b80dd8d232efab262aa90e63b8120829091484d5a69e",
+      "output_sha256": "d19aca09acd50e3e6db34be2efa12628f39beb9f1cee639bcd0960f0a95f7584",
+      "declared_transforms": [
+        {
+          "kind": "operator-path-prefix",
+          "replacement": "[local-evidence-root]",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "fixture": "unknown-absolute-windows-drive",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "input_sha256": "7be08ab047f4861fb540f5d48116ed40e549cf7c17c6dcc97b66c38477a5d237",
+      "output_sha256": null,
+      "declared_transforms": null
+    },
+    {
+      "fixture": "unknown-drive-after-url",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "input_sha256": "5d0059c4a4bcc896c26d330307ccf60d932003f6de9d0830520e0e37515a9a9e",
+      "output_sha256": null,
+      "declared_transforms": null
+    },
+    {
+      "fixture": "unknown-absolute-windows-backslash",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "input_sha256": "ad69ffe91e1d5b83687eb63e677cb6944f6c3614887f89a45764c1548d353c70",
+      "output_sha256": null,
+      "declared_transforms": null
+    },
+    {
+      "fixture": "similar-but-not-exact-source-expression",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "input_sha256": "735c700e2d1f5995dddfaafc25749f6eab7787c69bc34aa1a7a2e824bf403386",
+      "output_sha256": null,
+      "declared_transforms": null
+    },
+    {
+      "fixture": "exact-expression-plus-unreviewed-token",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "input_sha256": "906c51f782590da37d64bb8dc3669a1f57c45ab95d230f180d7f651a76855f55",
+      "output_sha256": null,
+      "declared_transforms": null
+    },
+    {
+      "fixture": "unapproved-private-prefix",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "input_sha256": "7e82f402f78b6f3663c2761dec53963fb15744ea4492ae9aff8b6ee03fa4ad3e",
+      "output_sha256": null,
+      "declared_transforms": null
+    },
+    {
+      "fixture": "long-https-prose",
+      "expected": "ACCEPT",
+      "observed": "ACCEPT",
+      "input_sha256": "a3373cc991b26a245543d5d2976d339106b0a8fcfd89b1881c7b02b96806bf73",
+      "output_sha256": "a3373cc991b26a245543d5d2976d339106b0a8fcfd89b1881c7b02b96806bf73",
+      "declared_transforms": []
+    },
+    {
+      "fixture": "https-owned-name-is-still-url",
+      "expected": "ACCEPT",
+      "observed": "ACCEPT",
+      "input_sha256": "c0f2aa77a3aaf30ed828ec22bc97ac9d5e969223693b268222c845bb17dee4b8",
+      "output_sha256": "c0f2aa77a3aaf30ed828ec22bc97ac9d5e969223693b268222c845bb17dee4b8",
+      "declared_transforms": []
+    },
+    {
+      "fixture": "owned-fresh-windows-forward",
+      "expected": "ACCEPT",
+      "observed": "ACCEPT",
+      "input_sha256": "bda2bbbc7345259a44ba009f573913d032f6f7af7ed74edb04e80bb84d7c3d50",
+      "output_sha256": "d03ec56e89117d4b6e8482307ce94d60e77b157537ee3a5498a39fdd15d7752e",
+      "declared_transforms": [
+        {
+          "kind": "owned-fresh-checkout-prefix",
+          "replacement": "[fresh-checkout-root]",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "fixture": "owned-fresh-windows-backslash",
+      "expected": "ACCEPT",
+      "observed": "ACCEPT",
+      "input_sha256": "c55854e9a7f323a0e21d1eaeab4815324bbd26e7b639041df8b187dd3a584841",
+      "output_sha256": "d03ec56e89117d4b6e8482307ce94d60e77b157537ee3a5498a39fdd15d7752e",
+      "declared_transforms": [
+        {
+          "kind": "owned-fresh-checkout-prefix",
+          "replacement": "[fresh-checkout-root]",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "fixture": "unbound-failed-relative-helper",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "input_sha256": "07b89f3e24bc8b4ea90ee3f6cc1576748ef3781f5afee21bae18328a5d9503f8",
+      "output_sha256": null,
+      "declared_transforms": null
+    },
+    {
+      "fixture": "bound-exact-failed-relative-helper",
+      "expected": "ACCEPT",
+      "observed": "ACCEPT",
+      "input_sha256": "07b89f3e24bc8b4ea90ee3f6cc1576748ef3781f5afee21bae18328a5d9503f8",
+      "output_sha256": "bb1313c092c2efc9f35bfaf0ea348b661ebc02dbc6e94d2793f6e9f9300c2845",
+      "declared_transforms": [
+        {
+          "kind": "exact-reviewed-failed-relative-intake-helper-path",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "fixture": "bound-relative-helper-suffix-extra",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "input_sha256": "1a94610926efb3cbe54249c03dfe2104eb7f7570476763b9dc0064d53a3e9f3d",
+      "output_sha256": null,
+      "declared_transforms": null
+    },
+    {
+      "fixture": "bound-unknown-helper",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "input_sha256": "788a0526ea3ecbf61a955b97a29496e2a3f3b1723120267c80887851c1e72a69",
+      "output_sha256": null,
+      "declared_transforms": null
+    }
+  ],
+  "independent_helper_sha256": "493546f4a3f7cc5e287445b720f48f979a5b9b4f74311c5a97de4f8edcdb0082",
+  "reviewed_curator_sha256": "7f1d301b587ab4b53954c51ea12a4171f46a20a63ed838c5465a84af3727d9d0",
+  "new_rules_tested": [
+    "HTTP scheme and long prose preserved; owned-fresh prefix guarded while unknown absolute Windows drives remain rejected",
+    "Only exact retained privacy-guard source expression is redacted; similar expressions or leftover operator token rejected",
+    "Only exact recorded-workspace/private relative prefix is redacted",
+    "Only bound packaging FAIL165111 eligibility permits its exact relative helper literal; near-match and unknown helper still reject"
+  ],
+  "no_public_writes": true,
+  "limitations": [
+    "Explicit fixtures are not a full secret-free proof.",
+    "Eligibility for the bound literal remains guarded by exact run-ID/raw-SHA at the separately inspected packet/integrator call site.",
+    "Current frozen final packet/export and all24 approval remain pending."
+  ]
+}

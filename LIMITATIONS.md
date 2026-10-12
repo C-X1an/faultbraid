@@ -4,7 +4,7 @@
 
 Implemented components include the bounded register checker and diagnostic history reducer; queue/disk-model kernel; pinned instrumented three-voter Raft target; explicit election entropy; staged/flushed stores and named crash barriers; virtual faults, causal traces and two-pass replay; executable ddmin/greedy scenario reduction; independent Porcupine/finite-oracle differential checks; bounded seed campaigns; static inspectors; and the same-target native loopback/FileStore process lab.
 
-Source-matched A6 local acceptance and clean reproduction passed on Go1.27.2 Windows. Historical C3 full all24 approval and C4 bounded closure covered previous test inputs; new A6 all24 approval remains pending. C4 publication and anonymous exact1376-file verification passed. Actual C4 Linux bootstrap and CodeQL succeeded, but kernel/full runtime failed at the supplemental directory permissions predicate. The exact reviewed correction preserves file0600/directory0700 and every locked criterion; corrected-source hosted runtime remains pending. See [VERIFICATION_REPORT](VERIFICATION_REPORT.md) and the [reviewed test exception](TEST_SPEC_EXCEPTION_AC-010_OUTPUT_KIND.md).
+Source-matched A6 local acceptance and clean reproduction passed on Go1.27.2 Windows. Historical C3 full approval and C4 bounded closure remain distinct. A fresh independent all24 assessment of the corrected test inputs passed on frozen C5. C4 publication and anonymous exact1376-file verification passed. Actual C4 Linux bootstrap and CodeQL succeeded, but kernel/full runtime failed at the supplemental directory permissions predicate. The exact reviewed correction preserves file0600/directory0700 and every locked criterion; corrected-source hosted runtime remains pending. See [VERIFICATION_REPORT](VERIFICATION_REPORT.md) and the [reviewed test exception](TEST_SPEC_EXCEPTION_AC-010_OUTPUT_KIND.md).
 
 ## Finite correctness and workload scope
 
@@ -47,3 +47,6 @@ Fresh-checkout verification uses a new committed clone and build cache on the sa
 The reviewed public inventory, staged tree, reachable Git history and deterministic export are audited for known private paths/content and malformed archives. Detection is heuristic and requires manual review; neither an allowlist nor a secret scanner proves approved content safe. Unreachable Git objects and external artifacts are outside a reachable-history audit. Raw runs and confidential/operator material must remain local and excluded.
 
 No production scale, tenant isolation, live monitoring, TLS service, cloud deployment, complete formal proof or hardware power-loss certification is established. Repository publication and actual CI are separate deliverables; no badge represents an unexecuted job or substitutes for acceptance evidence.
+
+
+The [independent current all24 assessment](verification/reviews/final-c5-assessment.json) is a separate read-only review of all24 locked criteria, complete current packet and exact C5 export. Original C1/C2 and rejected B1 results remain historical with unchanged source identities. Actual live full verification, final integrated export and repaired hosted execution are separate pending gates.

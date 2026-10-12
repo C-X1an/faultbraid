@@ -4,7 +4,7 @@ Make a distributed-state failure small enough to understand.
 
 FaultBraid is an experimental correctness workbench for a single integer register built on **instrumented etcd/raft v3.7.0**. It runs three fixed voters under explicit virtual faults, checks the collected history, re-executes saved traces, and reduces a failing scenario into a smaller executable reproducer. A separate native lab exercises the same integration code in real loopback child processes with checksummed disk journals.
 
-**Implementation and release acceptance are separate.** Source-matched A6 local acceptance and clean reproduction passed on Go1.27.2 Windows. Historical C3 full all24 approval and C4 bounded closure covered previous test inputs; new A6 all24 approval remains pending. C4 publication and anonymous exact1376-file verification passed. Actual C4 Linux bootstrap and CodeQL succeeded, but kernel/full runtime failed at the supplemental directory permissions predicate. The exact reviewed correction preserves file0600/directory0700 and every locked criterion; corrected-source hosted runtime remains pending. See [VERIFICATION_REPORT](VERIFICATION_REPORT.md) and the [reviewed test exception](TEST_SPEC_EXCEPTION_AC-010_OUTPUT_KIND.md).
+**Implementation and release acceptance are separate.** Source-matched A6 local acceptance and clean reproduction passed on Go1.27.2 Windows. Historical C3 full approval and C4 bounded closure remain distinct. A fresh independent all24 assessment of the corrected test inputs passed on frozen C5. C4 publication and anonymous exact1376-file verification passed. Actual C4 Linux bootstrap and CodeQL succeeded, but kernel/full runtime failed at the supplemental directory permissions predicate. The exact reviewed correction preserves file0600/directory0700 and every locked criterion; corrected-source hosted runtime remains pending. See [VERIFICATION_REPORT](VERIFICATION_REPORT.md) and the [reviewed test exception](TEST_SPEC_EXCEPTION_AC-010_OUTPUT_KIND.md).
 
 ## Run locally
 
@@ -96,3 +96,6 @@ make verify            # includes the separately gated release evidence
 FaultBraid is a finite experiment, not a production database, new consensus algorithm, hostile-code sandbox or complete formal proof. Snapshots, compaction and dynamic membership are unsupported. Read [LIMITATIONS.md](LIMITATIONS.md), [THREAT_MODEL.md](THREAT_MODEL.md) and [SECURITY.md](SECURITY.md) before extending the trust boundary.
 
 Start contributions with [CONTRIBUTING.md](CONTRIBUTING.md) and the [locked acceptance contract](ACCEPTANCE_SPEC.md). Original source is [MIT-licensed](LICENSE); dependencies and the instrumented Raft patch retain their upstream licenses and notices in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+
+The [independent current all24 assessment](verification/reviews/final-c5-assessment.json) is a separate read-only review of all24 locked criteria, complete current packet and exact C5 export. Original C1/C2 and rejected B1 results remain historical with unchanged source identities. Actual live full verification, final integrated export and repaired hosted execution are separate pending gates.

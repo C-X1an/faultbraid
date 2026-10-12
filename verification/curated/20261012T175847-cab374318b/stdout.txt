@@ -1,0 +1,1 @@
+{"status": "PASS", "source": "65d10e1c83950f97d0857b3145ba9f91fe848e2f", "criteria_intake": 24, "passed_test_records": 135, "top_level_tests": 70, "packages": 6, "fail": 0, "skip": 0, "preflight_sha256": "c0557fa137c4082b1d85c8e571426f8cf932c19217d6e0a9dca9dd5cf7401d86", "full_project_assessment": "IN_PROGRESS"}
