@@ -1,6 +1,6 @@
 # Verification report
 
-The portable-bootstrap repair passed the applicable local commands on pinned Go1.27.2 Windows. Current-source independent all24 assessment and the live full gate remain pending. Initial C2 publication and anonymous exact963-file remote verification passed; all three initial hosted workflows failed at bootstrap before tests or analysis. Corrected-source hosted Linux/CodeQL reruns are pending. The original B1 assessment rejected mutation byte evidence; it is retained as a failure.
+The portable-bootstrap repair passed the applicable local commands on pinned Go1.27.2 Windows. The independent current all24 assessment passed on frozen C3. The live full gate remains pending. Initial C2 publication and anonymous exact963-file remote verification passed; all three initial hosted workflows failed at bootstrap before tests or analysis. Corrected-source hosted Linux/CodeQL reruns are pending. The original B1 assessment rejected mutation byte evidence; it is retained as a failure.
 
 Executed commit `9bdbf63ae0236b7cc8649f2867293d1e2109efc6`, complete source SHA256 `8dbf60c32285bcadea6429cc5b5a06f03fbab8a78ab82e24011574bf730a7155` (963 files). Later prose/evidence curation preserves original identities; the gate compares every execution input.
 
@@ -33,7 +33,7 @@ Native conformance lasted6059/6059/6157ms and observed847/878/883 successful HTT
 
 ## Preserved failures and corrections
 
-FV-04: the original A3 five kernel controls ran real PASS / semantic FAIL / PASS, but Windows text conversion made their reported mutant hashes inaccurate and disposable restored bytes different from baseline. [Original controls](verification/release/kernel-mutations.json) remain unchanged with this limitation. The corrected A4 runner reads/writes/hashes actual bytes and checks both the declared site change and full isolated source restoration. The separate C1 assessment resolved this defect; fresh A5 controls are above, and current all24 reassessment remains pending. Root also preserved an attempted correction run that failed its copy identity guard because the report was edited during execution; it is not credited as a pass.
+FV-04: the original A3 five kernel controls ran real PASS / semantic FAIL / PASS, but Windows text conversion made their reported mutant hashes inaccurate and disposable restored bytes different from baseline. [Original controls](verification/release/kernel-mutations.json) remain unchanged with this limitation. The corrected A4 runner reads/writes/hashes actual bytes and checks both the declared site change and full isolated source restoration. The separate C1 assessment resolved this defect; fresh A5 controls are above, and the separate current C3 all24 reassessment passed. Root also preserved an attempted correction run that failed its copy identity guard because the report was edited during execution; it is not credited as a pass.
 
 | Observed failure/control | Resolution and evidence |
 |---|---|
@@ -51,8 +51,11 @@ The initial C2 Linux failure was caused by native Path component sorting, not di
 
 ## NOT RUN and limits
 
-Current-source independent final approval, live full release verification, final exact curated export audit and hosted Linux native/CodeQL reruns are pending. Initial C2 publication was completed. Native seven-repeat CPU/RSS/request p50/p95/p99, production scale/users, cloud deployment and physical crash certification are NOT RUN. Snapshots, compaction and dynamic membership are unsupported. Finite fuzz, mutation and seed campaigns do not prove universal correctness or security.
+Independent current all24 approval and exact C3 packet/export audits passed. Live full release verification, the final integrated export audit and repaired hosted Linux/CodeQL reruns remain pending. Initial C2 publication was completed. Native seven-repeat CPU/RSS/request p50/p95/p99, production scale/users, cloud deployment and physical crash certification are NOT RUN. Snapshots, compaction and dynamic membership are unsupported. Finite fuzz, mutation and seed campaigns do not prove universal correctness or security.
 
 ## Evidence provenance
 
 [Current index](verification/release-a5/index.json) contains actual command records, including expected negative controls. All original statuses, timing, source tables and raw hashes remain intact. Declared operator-path redactions and CRLF-to-LF text normalization have their own curated hashes. [Artifact provenance](verification/release-a5/artifact-provenance.json) records product artifact transformations. Previous versioned receipts remain inspectable; private research, profiles, prompts and agent session/chat logs are excluded. SHA256 supplies integrity, not external organizational attestation. Legacy kernel evidence is unchanged in [SEED_RESULTS](verification/SEED_RESULTS.md).
+
+
+The [independent current all24 assessment](verification/reviews/final-c3-assessment.json) is a separate read-only review of all24 locked criteria, complete current packet and exact C3 export. Original C1/C2 and rejected B1 results remain historical with unchanged source identities. Actual live full verification, final integrated export and repaired hosted execution are separate pending gates.

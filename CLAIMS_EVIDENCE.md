@@ -13,6 +13,9 @@ Executed commit `9bdbf63ae0236b7cc8649f2867293d1e2109efc6`, complete source SHA2
 | Supported toolchain and clean reproduction | [20261011T193327-e0f119c876](verification/curated/20261011T193327-e0f119c876/run.json); [20261011T195056-652385607d](verification/curated/20261011T195056-652385607d/run.json) | Exact committed clone and fresh cache; same host/module cache |
 | Actual byte-preserving semantic mutation controls | [controls](verification/release-a5/kernel-mutations.json) | Five selected controls, not an overall mutation score |
 | Measured checker/model/target/reduction costs | [BENCHMARKS](BENCHMARKS.md) | All91 calibrated samples; uncertainty and spread retained |
-| Separate current final review / hosted CI / publication | Pending / initial C2 FAIL before tests; repair rerun pending / PASS on C2 | Local commands do not imply these gates; anonymous initial exact remote verification passed |
+| Separate current final review / hosted CI / publication | PASS on C3 / initial C2 FAIL before tests; repair rerun pending / PASS on C2 | Local commands do not imply these gates; anonymous initial exact remote verification passed |
 
 No production users, scale, cloud deployment, universal correctness or security/physical crash certification is claimed. Original A3/B1 receipts and rejected byte evidence remain historical.
+
+
+The [independent current all24 assessment](verification/reviews/final-c3-assessment.json) is a separate read-only review of all24 locked criteria, complete current packet and exact C3 export. Original C1/C2 and rejected B1 results remain historical with unchanged source identities. Actual live full verification, final integrated export and repaired hosted execution are separate pending gates.

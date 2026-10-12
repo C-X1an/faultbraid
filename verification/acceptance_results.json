@@ -223,8 +223,32 @@
     }
   ],
   "independent_review": {
-    "status": "NOT RUN",
-    "reason": "Separate final assessment pending completed evidence/export packet"
+    "status": "PASS",
+    "assessment": {
+      "path": "verification/reviews/final-c3-assessment.json",
+      "sha256": "46c66c6c823c5b8d52c6f09421e2dfde919f7086b39a7124d4dbfed837974378"
+    },
+    "evidence": [
+      "verification/curated/20261012T130152-08909eff95/run.json",
+      "verification/curated/20261012T124541-1f9e2b4c53/run.json",
+      "verification/curated/20261011T195502-774dea9cec/run.json",
+      "verification/curated/20261011T195801-9376bdc058/run.json",
+      "verification/curated/20261012T125058-788e6855b2/run.json",
+      "verification/curated/20261012T125059-2c4bfb7a64/run.json",
+      "verification/curated/20261012T125102-52f64bc5ee/run.json",
+      "verification/curated/20261012T125104-67c40379b2/run.json",
+      "verification/curated/20261012T125108-c266e2846f/run.json",
+      "verification/curated/20261012T125110-e4364bd2d9/run.json",
+      "verification/curated/20261012T125111-27e192a631/run.json",
+      "verification/curated/20261012T125114-213be830cf/run.json",
+      "verification/curated/20261012T125116-c292d7e183/run.json",
+      "verification/curated/20261012T125117-398c10d6b4/run.json",
+      "verification/curated/20261012T124945-56c2f60bf4/run.json",
+      "verification/curated/20261011T195159-6e093ef6e7/run.json",
+      "verification/curated/20261011T195622-99a62e89d0/run.json",
+      "verification/curated/20261012T125032-aac2fff67f/run.json"
+    ],
+    "scope": "Actual separate read-only all24 review of frozen C3; original complete source and raw hashes preserved. Later reviewed result/prose integration changes no execution inputs; hosted repaired-source results remain separate."
   },
   "supported_toolchain_verified": true,
   "supported_toolchain_evidence": [

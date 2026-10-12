@@ -21,4 +21,7 @@ Mutation tooling now hashes actual bytes, restores original bytes and verifies t
 
 The [independent all 24 assessment](verification/reviews/final-c1-assessment.json) is a separate read-only review, scoped to all 24 locked criteria and the exact C1 packet/export. FV-01–04 are resolved; original rejected assessments and failures remain inspectable. Live full verification and hosted/publication results must be recorded separately.
 
-Reran all applicable local commands on committed A5 after the portable prepared-tree ordering repair, retaining unchanged dependency and acceptance pins. Current independent final review/live gates and hosted reruns remain pending. Initial C2 publication and anonymous exact remote proof passed.
+Reran all applicable local commands on committed A5 after the portable prepared-tree ordering repair, retaining unchanged dependency and acceptance pins. Independent current all24 review passed on C3; live gates and repaired hosted reruns remain pending. Initial C2 publication and anonymous exact remote proof passed.
+
+
+The [independent current all24 assessment](verification/reviews/final-c3-assessment.json) is a separate read-only review of all24 locked criteria, complete current packet and exact C3 export. Original C1/C2 and rejected B1 results remain historical with unchanged source identities. Actual live full verification, final integrated export and repaired hosted execution are separate pending gates.
