@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-11T19:34:48.793Z",
+  "repository": "https://github.com/C-X1an/faultbraid",
+  "repository_id": 1414695170,
+  "commit": "c7ddd0180982e53f861001202350e62722a0c4d0",
+  "status": "FAIL",
+  "scope": "Actual GitHub workflow collection; individual job evidence is separate",
+  "runs": [
+    {
+      "id": 38168106413,
+      "name": "Full acceptance (explicitly gated)",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/C-X1an/faultbraid/actions/runs/38168106413",
+      "head_sha": "c7ddd0180982e53f861001202350e62722a0c4d0",
+      "event": "workflow_dispatch",
+      "path": ".github/workflows/full-release-check.yml"
+    },
+    {
+      "id": 38167793372,
+      "name": "go_modules in /. - Update #1621674438",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/C-X1an/faultbraid/actions/runs/38167793372",
+      "head_sha": "c7ddd0180982e53f861001202350e62722a0c4d0",
+      "event": "dynamic",
+      "path": "dynamic/dependabot/dependabot-updates"
+    },
+    {
+      "id": 38167793245,
+      "name": "github_actions in /. - Update #1621674411",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/C-X1an/faultbraid/actions/runs/38167793245",
+      "head_sha": "c7ddd0180982e53f861001202350e62722a0c4d0",
+      "event": "dynamic",
+      "path": "dynamic/dependabot/dependabot-updates"
+    },
+    {
+      "id": 38167785157,
+      "name": "Kernel verification (not full release)",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/C-X1an/faultbraid/actions/runs/38167785157",
+      "head_sha": "c7ddd0180982e53f861001202350e62722a0c4d0",
+      "event": "push",
+      "path": ".github/workflows/kernel.yml"
+    },
+    {
+      "id": 38167785136,
+      "name": "CodeQL",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/C-X1an/faultbraid/actions/runs/38167785136",
+      "head_sha": "c7ddd0180982e53f861001202350e62722a0c4d0",
+      "event": "push",
+      "path": ".github/workflows/codeql.yml"
+    }
+  ]
+}

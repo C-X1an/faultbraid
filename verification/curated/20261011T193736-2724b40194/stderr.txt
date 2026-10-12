@@ -1,0 +1,14 @@
+test_aliases_are_rejected_even_when_bytes_match (test_prepare.PrepareTests.test_aliases_are_rejected_even_when_bytes_match) ... ok
+test_archive_fixture_ignores_inherited_autocrlf (test_prepare.PrepareTests.test_archive_fixture_ignores_inherited_autocrlf)
+Real Git application in a non-Git source copy; upstream is a fixture. ... ok
+test_exact_regular_fixture_is_accepted (test_prepare.PrepareTests.test_exact_regular_fixture_is_accepted) ... ok
+test_outside_workspace_is_rejected (test_prepare.PrepareTests.test_outside_workspace_is_rejected) ... ok
+test_tree_digest_preserves_pinned_component_order_and_bytes (test_prepare.PrepareTests.test_tree_digest_preserves_pinned_component_order_and_bytes)
+The aggregate hashes exact names/bytes in the portable pin order. ... ok
+test_tree_order_is_independent_of_path_flavor (test_prepare.PrepareTests.test_tree_order_is_independent_of_path_flavor)
+Mixed case, directory prefixes and case ties have a fixed order. ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.330s
+
+OK

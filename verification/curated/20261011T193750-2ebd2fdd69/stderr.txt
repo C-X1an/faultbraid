@@ -1,0 +1,65 @@
+test_aliases_are_rejected_even_when_bytes_match (test_prepare.PrepareTests.test_aliases_are_rejected_even_when_bytes_match) ... ok
+test_archive_fixture_ignores_inherited_autocrlf (test_prepare.PrepareTests.test_archive_fixture_ignores_inherited_autocrlf)
+Real Git application in a non-Git source copy; upstream is a fixture. ... ok
+test_exact_regular_fixture_is_accepted (test_prepare.PrepareTests.test_exact_regular_fixture_is_accepted) ... ok
+test_outside_workspace_is_rejected (test_prepare.PrepareTests.test_outside_workspace_is_rejected) ... ok
+test_tree_digest_preserves_pinned_component_order_and_bytes (test_prepare.PrepareTests.test_tree_digest_preserves_pinned_component_order_and_bytes)
+The aggregate hashes exact names/bytes in the portable pin order. ... FAIL
+test_tree_order_is_independent_of_path_flavor (test_prepare.PrepareTests.test_tree_order_is_independent_of_path_flavor)
+Mixed case, directory prefixes and case ties have a fixed order. ... 
+  test_tree_order_is_independent_of_path_flavor (test_prepare.PrepareTests.test_tree_order_is_independent_of_path_flavor) (flavor='PurePosixPath')
+Mixed case, directory prefixes and case ties have a fixed order. ... FAIL
+  test_tree_order_is_independent_of_path_flavor (test_prepare.PrepareTests.test_tree_order_is_independent_of_path_flavor) (flavor='PureWindowsPath')
+Mixed case, directory prefixes and case ties have a fixed order. ... FAIL
+
+======================================================================
+FAIL: test_tree_digest_preserves_pinned_component_order_and_bytes (test_prepare.PrepareTests.test_tree_digest_preserves_pinned_component_order_and_bytes)
+The aggregate hashes exact names/bytes in the portable pin order.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[recorded-working-root]\scripts\test_prepare.py", line 52, in test_tree_digest_preserves_pinned_component_order_and_bytes
+    self.assertEqual(prepare.tree_digest(root), hashlib.sha256(expected_bytes).hexdigest())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'f926271bd127f196580f1af2100aaaf51705aa4b4526a87d9dbfd5b08266b4db' != 'e5eaa08bf216e495e30b7dcee273ee62f66593adc2302c8b7fa18a6564db2d77'
+- f926271bd127f196580f1af2100aaaf51705aa4b4526a87d9dbfd5b08266b4db
++ e5eaa08bf216e495e30b7dcee273ee62f66593adc2302c8b7fa18a6564db2d77
+
+
+======================================================================
+FAIL: test_tree_order_is_independent_of_path_flavor (test_prepare.PrepareTests.test_tree_order_is_independent_of_path_flavor) (flavor='PurePosixPath')
+Mixed case, directory prefixes and case ties have a fixed order.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[recorded-working-root]\scripts\test_prepare.py", line 38, in test_tree_order_is_independent_of_path_flavor
+    self.assertEqual([path.relative_to(root).as_posix() for path in ordered], expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['A.go', 'B/go.mod', 'LICENSE', 'a.go', 'b.go', 'z.go'] != ['A.go', 'a.go', 'B/go.mod', 'b.go', 'LICENSE', 'z.go']
+
+First differing element 1:
+'B/go.mod'
+'a.go'
+
+- ['A.go', 'B/go.mod', 'LICENSE', 'a.go', 'b.go', 'z.go']
++ ['A.go', 'a.go', 'B/go.mod', 'b.go', 'LICENSE', 'z.go']
+
+======================================================================
+FAIL: test_tree_order_is_independent_of_path_flavor (test_prepare.PrepareTests.test_tree_order_is_independent_of_path_flavor) (flavor='PureWindowsPath')
+Mixed case, directory prefixes and case ties have a fixed order.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[recorded-working-root]\scripts\test_prepare.py", line 38, in test_tree_order_is_independent_of_path_flavor
+    self.assertEqual([path.relative_to(root).as_posix() for path in ordered], expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['A.go', 'B/go.mod', 'LICENSE', 'a.go', 'b.go', 'z.go'] != ['A.go', 'a.go', 'B/go.mod', 'b.go', 'LICENSE', 'z.go']
+
+First differing element 1:
+'B/go.mod'
+'a.go'
+
+- ['A.go', 'B/go.mod', 'LICENSE', 'a.go', 'b.go', 'z.go']
++ ['A.go', 'a.go', 'B/go.mod', 'b.go', 'LICENSE', 'z.go']
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.376s
+
+FAILED (failures=3)

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "reviewer_mode": "separate-read-only-verifier",
+  "scope": "bounded independent repair review and six preparation tests with real PASS/intentional semantic FAIL/restored PASS; not a new all-24 or Linux execution approval",
+  "source_commit": "9bdbf63ae0236b7cc8649f2867293d1e2109efc6",
+  "source_tree_sha256": "8dbf60c32285bcadea6429cc5b5a06f03fbab8a78ab82e24011574bf730a7155",
+  "source_files": 963,
+  "baseline_commit": "c7ddd0180982e53f861001202350e62722a0c4d0",
+  "source_changes": [
+    "CHANGELOG.md",
+    "scripts/test_prepare.py",
+    "third_party/raft-patch/PROVENANCE.md",
+    "third_party/raft-patch/prepare.py"
+  ],
+  "preserved_byte_pins": {
+    "ACCEPTANCE_SPEC.md": "4abd743e0dbd1bbb781d154474dd5317bc05feab41859d80d4b6275b85e6a90a",
+    "API_SPEC.md": "d8f891f46eab80048a998c98bc002def71ec32fae8a031fc971ab1869183e412",
+    "dependency.lock.json": "e1e96c54b9fb1ea57d1aa0c47d498cb9c0f985b83c2f82f1ad16d24b7cb54a9e",
+    "go.mod": "8160d662b21652c1f566fa4052c8988540fd245822c041b891ba7957d939d3f5",
+    "go.sum": "2ff5125e338109b3850bce4a65e352215819518895b3053c5488fcf201cc08b0",
+    "third_party/raft-patch/lock.json": "ab52275711d953cc691b043a1eef27827fe66c8017de7cd6dfbdddba66618979",
+    "third_party/raft-patch/election-random.patch": "01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647",
+    "scripts/check_integrity.py": "467885ae3bc14a5128381b5472f03892e3d39eb81602de04635270d0ed54c6d2"
+  },
+  "tests_sha256": "88c6f3069ae27d72ddd9eb2ac1f43c71bba1bd5c922689fa036c63e50e49829c",
+  "actual_fixed_digest_of_independently_cold_prepared_tree": "759d80ebc875f015ae01d96d516cb8362f706a453ec18b4d1f9695c5c939444c",
+  "mutation": {
+    "file": "third_party/raft-patch/prepare.py",
+    "original_site": "return tuple(part.casefold() for part in parts), parts",
+    "mutant_site": "return parts, parts",
+    "original_site_sha256": "e7923b273dea3db213b6bee6f2b640c4ef21a04d90e37bf429443214d9d0b26c",
+    "mutant_site_sha256": "e8f2839372a595f4ec2ac9ba5858bd382e934bc1d72a6fda98e633011c98f43a",
+    "original_file_sha256": "ae985c1541566679a9d0e985d8061d6900d34f25421bddc34ec8f3f6a4bac0d6",
+    "mutant_file_sha256": "f5dbfd68797124a861d5a3522abb9d2bb6ffdc0a38f4b8c9ce6b235dbbc2c3f2",
+    "mutant_tree_sha256": "d4a7495fc2ef0e233e4fdc36af7ab71ba300a5ade1b9e36ba0d475d54b87a231",
+    "only_one_source_file_changed": true
+  },
+  "original_and_restored_entire_file_table_equal": true,
+  "original_and_restored_git_state_equal": true,
+  "command_records": [
+    {
+      "label": "positive",
+      "run_id": "20261011T193736-2724b40194",
+      "status": "PASS",
+      "exit_code": 0,
+      "record": "[local-evidence-root]\\reviews\\final-independent-linux-bootstrap-control-evidence\\positive\\20261011T193736-2724b40194\\run.json",
+      "source_tree_sha256": "8dbf60c32285bcadea6429cc5b5a06f03fbab8a78ab82e24011574bf730a7155",
+      "stdout_sha256": "a71baed30a70266ab8f7f5af81d50f229099f9cc9d2e0ec570f688e3d6690ccd",
+      "stderr_sha256": "71a226ff147c8c58af6ce0880ea66167a4b56def6a18737c2fc95f2bdcadfa12"
+    },
+    {
+      "label": "intentional-order-defect",
+      "run_id": "20261011T193750-2ebd2fdd69",
+      "status": "FAIL",
+      "exit_code": 1,
+      "record": "[local-evidence-root]\\reviews\\final-independent-linux-bootstrap-control-evidence\\intentional-order-defect\\20261011T193750-2ebd2fdd69\\run.json",
+      "source_tree_sha256": "d4a7495fc2ef0e233e4fdc36af7ab71ba300a5ade1b9e36ba0d475d54b87a231",
+      "stdout_sha256": "a71baed30a70266ab8f7f5af81d50f229099f9cc9d2e0ec570f688e3d6690ccd",
+      "stderr_sha256": "f0b6b6a360c06f3489bc1333060e2b191e1a3389d2e61af5fa5c29f337758b85"
+    },
+    {
+      "label": "restored",
+      "run_id": "20261011T193755-4fbf3aefbc",
+      "status": "PASS",
+      "exit_code": 0,
+      "record": "[local-evidence-root]\\reviews\\final-independent-linux-bootstrap-control-evidence\\restored\\20261011T193755-4fbf3aefbc\\run.json",
+      "source_tree_sha256": "8dbf60c32285bcadea6429cc5b5a06f03fbab8a78ab82e24011574bf730a7155",
+      "stdout_sha256": "a71baed30a70266ab8f7f5af81d50f229099f9cc9d2e0ec570f688e3d6690ccd",
+      "stderr_sha256": "dbb46614965b9ea4f6578937d1be78b2e9da889abecff29c1964b0fb67ac4847"
+    }
+  ],
+  "observations": [
+    "Both added semantic tests reject a case-sensitive component ordering mutation with assertion failures, not setup/import errors.",
+    "Original module/ZIP/patch/prepared pins and public acceptance/API/integrity assertion bytes remain unchanged.",
+    "Filename and file contents are hashed verbatim; explicit comparison order and deterministic tie-breaking are the only preparation behavior change."
+  ],
+  "limitations": [
+    "Actual commands ran on Windows only.",
+    "Original hosted Linux kernel and CodeQL failed before tests.",
+    "Fresh full pipeline, final packet/curation review and real hosted reruns remain separate pending gates."
+  ]
+}
