@@ -13,7 +13,7 @@ Executed commit `65d10e1c83950f97d0857b3145ba9f91fe848e2f`, complete source SHA2
 | Supported toolchain and clean reproduction | [20261012T170911-acbca9c7a0](verification/curated/20261012T170911-acbca9c7a0/run.json); [20261012T173919-435d881ee0](verification/curated/20261012T173919-435d881ee0/run.json) | Exact committed clone and fresh cache; same host/module cache |
 | Actual byte-preserving semantic mutation controls | [controls](verification/release-a6/kernel-mutations.json) | Five selected controls, not an overall mutation score |
 | Measured checker/model/target/reduction costs | [BENCHMARKS](BENCHMARKS.md) | All91 calibrated samples; uncertainty and spread retained |
-| Separate current final review / hosted CI / publication | C5 all24 PASS / recorded pre-cleanup C7 all3 workflows PASS / recorded pre-cleanup C7 public and anonymous exact contents PASS | [last verified pre-cleanup jobs](verification/publication/last-verified-ci.json); finite scopes and original failures retained; later-head checks are separate |
+| Separate final review / recorded hosted CI | [C5 all24 PASS](verification/reviews/final-c5-assessment.json) / recorded pre-cleanup C7 all3 workflows PASS | [last verified pre-cleanup jobs](verification/publication/last-verified-ci.json); finite scopes and original failures retained; later-head checks are separate |
 
 No production users, scale, cloud deployment, universal correctness or security/physical crash certification is claimed. Selected material failures and rejected mutation receipts remain public; redundant operational archives remain off-repository.
 
