@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "[local-evidence-root]\reviews\final-independent-20261012-b1-rejection-check.py", line 71, in <module>
+    mutations.append(command_triplet([item[x] for x in ('baseline_run','mutant_run','restored_run')],item['mutation'],site,item['original_sha256'],item['mutant_sha256'],item['test']))
+                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[local-evidence-root]\reviews\final-independent-20261012-b1-rejection-check.py", line 64, in command_triplet
+    assert hashes[0][site] == hashes[2][site] == original_sha and hashes[1][site] == mutant_sha,label
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ignore_real_time

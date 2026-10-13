@@ -4,11 +4,11 @@ Make a distributed-state failure small enough to understand.
 
 FaultBraid is an experimental correctness workbench for a single integer register built on **instrumented etcd/raft v3.7.0**. It runs three fixed voters under explicit virtual faults, checks the collected history, re-executes saved traces, and reduces a failing scenario into a smaller executable reproducer. A separate native lab exercises the same integration code in real loopback child processes with checksummed disk journals.
 
-**Implementation and release acceptance are separate.** Source-matched A6 local acceptance and fresh committed reproduction passed on Go1.27.2 Windows. A fresh separate all24 assessment passed on C5. Live full Windows verification, normal owned publication, anonymous exact 1908-file/tree/archive verification and all three Linux workflows passed on recorded C6 `7bfd99ed862a084765526d6b5cec67e13efcaba6`. Actual current CodeQL analysis returned zero results and no open alerts in its configured scope. See [observed C6 release evidence](verification/publication/c6/index.json) and [VERIFICATION_REPORT](VERIFICATION_REPORT.md). The original C2 bootstrap and C4 runtime failures remain inspectable. This later prose/evidence update leaves every execution input unchanged; final metadata-head checks remain separate.
+Source, tests, reproducible tooling and the essential engineering evidence are public. The [verification report](VERIFICATION_REPORT.md) records all 24 acceptance criteria, a genuinely separate full-project assessment, measured fault campaigns and retained failure controls. All three Linux workflows passed on the [last verified pre-cleanup source](verification/publication/last-verified-ci.json). See [GitHub Actions](https://github.com/C-X1an/faultbraid/actions) for executions on later commits.
 
 ## Run locally
 
-Use the release toolchain pinned in [.go-version](.go-version): **Go 1.27.2**, Python 3.11+, Git, Make and GCC for race detection. Both the Windows development host and the recorded C6 hosted Linux runtime executed the supported toolchain and real target. Older Go1.23.2 kernel-only runs remain historical compatibility evidence.
+Use the release toolchain pinned in [.go-version](.go-version): **Go 1.27.2**, Python 3.11+, Git, Make and GCC for race detection. Both the Windows development host and the recorded Linux runtime executed the supported toolchain and real target.
 
 From the repository root:
 
@@ -98,4 +98,4 @@ FaultBraid is a finite experiment, not a production database, new consensus algo
 Start contributions with [CONTRIBUTING.md](CONTRIBUTING.md) and the [locked acceptance contract](ACCEPTANCE_SPEC.md). Original source is [MIT-licensed](LICENSE); dependencies and the instrumented Raft patch retain their upstream licenses and notices in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 
-The [independent current all24 assessment](verification/reviews/final-c5-assessment.json) is a separate read-only review of all24 locked criteria, complete current packet and exact C5 export. Original C1/C2 and rejected B1 results remain historical with unchanged source identities. Actual live full verification, exact integrated C6 export and repaired hosted execution subsequently passed on recorded C6; final metadata-head verification remains separate.
+The [independent all24 assessment](verification/reviews/final-c5-assessment.json) retains its original source and judgment. Historical receipts and saved traces are inspection evidence for their recorded source; generate fresh traces with `make demo` for replay on this checkout. Repository cleanup removes duplicate packets and operational captures without changing executable inputs or relaxing trace identity checks. [Evidence contents and provenance](verification/README.md) explain the retained files.

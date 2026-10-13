@@ -1,5 +1,5 @@
 # Contributing
-Start with AGENTS.md and the locked acceptance contract. Use a supported Go toolchain (the release pin is in .go-version), Python3.11+, Git, Make and a C compiler. The core needs no service account or API key.
+Start with [ACCEPTANCE_SPEC.md](ACCEPTANCE_SPEC.md), [ARCHITECTURE.md](ARCHITECTURE.md), [API_SPEC.md](API_SPEC.md) and [THREAT_MODEL.md](THREAT_MODEL.md). Use a supported Go toolchain (the release pin is in .go-version), Python3.11+, Git, Make and a C compiler. The core needs no service account or API key.
 
 Run `make verify-seed`, then `make fuzz mutation`. For performance changes run `make benchmark` and retain every repetition. Commit reviewed changes before `make clean-verify`. Full distributed changes must also pass system/differential/campaign/security checks through `make verify`.
 

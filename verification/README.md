@@ -1,0 +1,15 @@
+# Inspectable engineering evidence
+
+The public repository retains one measured release packet, the genuine final independent assessment, its substantive checks, the necessary test-spec exception and selected material failure controls. It excludes duplicated older packets, intermediate publication/curation bookkeeping, private helper setup captures and top-level agent workflow instructions. Two tiny technical source/test invariant notes remain part of the protected input contract. Complete operational archives are retained outside the public repository.
+
+- [Acceptance results](acceptance_results.json) bind all 24 locked criteria to actual captured commands. The release gate validates source inputs, statuses, test/measurement coverage and stream hashes; it is unchanged by cleanup.
+- [A6 evidence index](release-a6/index.json) contains original acceptance, clean reproduction, fuzzing, mutation, benchmark, campaign, native and demo records. [Artifact provenance](release-a6/artifact-provenance.json) declares path and line-ending transformations. The benchmark retains all 91 samples and the campaign retains all 1,000 outcome histories.
+- [Independent full-project assessment](reviews/final-c5-assessment.json) preserves the authored judgment and all original findings. Its source/provenance, live replay/reduction, rejection and reference checks remain inspectable. Three copy/syntax-only command bodies were omitted because the original assessor explicitly gave them no acceptance credit; their original occurrence inside the assessment is unchanged.
+- [Prospective output-kind exception](../TEST_SPEC_EXCEPTION_AC-010_OUTPUT_KIND.md) retains the original approved patch, independent PASS/semantic-FAIL/restored-PASS checks and actual failed Linux job logs.
+- [Last verified pre-cleanup Linux jobs](publication/last-verified-ci.json) and [CodeQL observation](publication/last-verified-codeql.json) retain their actual original head and observation date. [Live GitHub Actions](https://github.com/C-X1an/faultbraid/actions) supplies later-head execution results.
+
+FAIL and INCONCLUSIVE are meaningful results. Intentional semantic mutants and the deliberately unsafe local-read variant are explicitly labelled; their failures do not establish an upstream Raft vulnerability. Source, statuses, dates and hashes in retained raw records are not rewritten to manufacture a new execution or independent approval.
+
+Historical traces bind the entire original source tree, including metadata. Removed files and rewritten old commit identifiers make those complete historical trees unavailable from this public checkout. Inspect saved evidence as historical observations, then use `make demo` to generate and replay fresh traces with the current identified binary. Replay identity checks remain strict. A source match of executable inputs supports reuse of unchanged behavior evidence; it does not make an old trace a current-build trace.
+
+The inventory and audit are finite privacy checks, not exhaustive secret detection or external attestation. Production scale, native repeated CPU/RSS/request tails and physical power-loss certification remain unmeasured.

@@ -1,0 +1,319 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-13T16:11:11.960536+00:00",
+  "repository": "https://github.com/C-X1an/faultbraid",
+  "repository_id": 1414695170,
+  "visibility": "public",
+  "commit": "aba5038d3068d6070a0b1aba909c199207676835",
+  "required_workflow_names": [
+    "CodeQL",
+    "Full acceptance (explicitly gated)",
+    "Kernel verification (not full release)"
+  ],
+  "status": "PASS",
+  "runs": [
+    {
+      "id": 38427559477,
+      "name": "Full acceptance (explicitly gated)",
+      "path": ".github/workflows/full-release-check.yml",
+      "event": "workflow_dispatch",
+      "head_sha": "aba5038d3068d6070a0b1aba909c199207676835",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/C-X1an/faultbraid/actions/runs/38427559477",
+      "created_at": "2026-10-13T16:05:04Z",
+      "updated_at": "2026-10-13T16:10:34Z",
+      "run_attempt": 1,
+      "jobs": [
+        {
+          "id": 115400849189,
+          "name": "full",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-13T16:05:09Z",
+          "completed_at": "2026-10-13T16:10:33Z",
+          "html_url": "https://github.com/C-X1an/faultbraid/actions/runs/38427559477/job/115400849189",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-13T16:05:10Z",
+              "completed_at": "2026-10-13T16:05:11Z"
+            },
+            {
+              "name": "Run actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-13T16:05:11Z",
+              "completed_at": "2026-10-13T16:05:13Z"
+            },
+            {
+              "name": "Run actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-13T16:05:13Z",
+              "completed_at": "2026-10-13T16:05:22Z"
+            },
+            {
+              "name": "Run make verify",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4,
+              "started_at": "2026-10-13T16:05:22Z",
+              "completed_at": "2026-10-13T16:10:29Z"
+            },
+            {
+              "name": "Post Run actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7,
+              "started_at": "2026-10-13T16:10:29Z",
+              "completed_at": "2026-10-13T16:10:29Z"
+            },
+            {
+              "name": "Post Run actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8,
+              "started_at": "2026-10-13T16:10:29Z",
+              "completed_at": "2026-10-13T16:10:29Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9,
+              "started_at": "2026-10-13T16:10:29Z",
+              "completed_at": "2026-10-13T16:10:29Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 38298178040,
+      "name": "CodeQL",
+      "path": ".github/workflows/codeql.yml",
+      "event": "push",
+      "head_sha": "aba5038d3068d6070a0b1aba909c199207676835",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/C-X1an/faultbraid/actions/runs/38298178040",
+      "created_at": "2026-10-12T19:31:06Z",
+      "updated_at": "2026-10-12T19:32:48Z",
+      "run_attempt": 1,
+      "jobs": [
+        {
+          "id": 114974262592,
+          "name": "analyze",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-12T19:31:10Z",
+          "completed_at": "2026-10-12T19:32:48Z",
+          "html_url": "https://github.com/C-X1an/faultbraid/actions/runs/38298178040/job/114974262592",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-12T19:31:11Z",
+              "completed_at": "2026-10-12T19:31:13Z"
+            },
+            {
+              "name": "Run actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-12T19:31:13Z",
+              "completed_at": "2026-10-12T19:31:15Z"
+            },
+            {
+              "name": "Run actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-12T19:31:15Z",
+              "completed_at": "2026-10-12T19:31:25Z"
+            },
+            {
+              "name": "Run github/codeql-action/init@9f759ee644a3e7c15c1390abf49868036c00067b",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4,
+              "started_at": "2026-10-12T19:31:25Z",
+              "completed_at": "2026-10-12T19:31:42Z"
+            },
+            {
+              "name": "Run make bootstrap build",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5,
+              "started_at": "2026-10-12T19:31:42Z",
+              "completed_at": "2026-10-12T19:32:02Z"
+            },
+            {
+              "name": "Run github/codeql-action/analyze@9f759ee644a3e7c15c1390abf49868036c00067b",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6,
+              "started_at": "2026-10-12T19:32:02Z",
+              "completed_at": "2026-10-12T19:32:42Z"
+            },
+            {
+              "name": "Post Run github/codeql-action/analyze@9f759ee644a3e7c15c1390abf49868036c00067b",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9,
+              "started_at": "2026-10-12T19:32:42Z",
+              "completed_at": "2026-10-12T19:32:43Z"
+            },
+            {
+              "name": "Post Run github/codeql-action/init@9f759ee644a3e7c15c1390abf49868036c00067b",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10,
+              "started_at": "2026-10-12T19:32:43Z",
+              "completed_at": "2026-10-12T19:32:44Z"
+            },
+            {
+              "name": "Post Run actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11,
+              "started_at": "2026-10-12T19:32:44Z",
+              "completed_at": "2026-10-12T19:32:44Z"
+            },
+            {
+              "name": "Post Run actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12,
+              "started_at": "2026-10-12T19:32:44Z",
+              "completed_at": "2026-10-12T19:32:44Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13,
+              "started_at": "2026-10-12T19:32:44Z",
+              "completed_at": "2026-10-12T19:32:44Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 38298178117,
+      "name": "Kernel verification (not full release)",
+      "path": ".github/workflows/kernel.yml",
+      "event": "push",
+      "head_sha": "aba5038d3068d6070a0b1aba909c199207676835",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/C-X1an/faultbraid/actions/runs/38298178117",
+      "created_at": "2026-10-12T19:31:06Z",
+      "updated_at": "2026-10-12T19:35:37Z",
+      "run_attempt": 1,
+      "jobs": [
+        {
+          "id": 114974263473,
+          "name": "kernel",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-12T19:31:10Z",
+          "completed_at": "2026-10-12T19:35:37Z",
+          "html_url": "https://github.com/C-X1an/faultbraid/actions/runs/38298178117/job/114974263473",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-12T19:31:10Z",
+              "completed_at": "2026-10-12T19:31:12Z"
+            },
+            {
+              "name": "Run actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-12T19:31:12Z",
+              "completed_at": "2026-10-12T19:31:14Z"
+            },
+            {
+              "name": "Run actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-12T19:31:14Z",
+              "completed_at": "2026-10-12T19:31:25Z"
+            },
+            {
+              "name": "Run go version",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4,
+              "started_at": "2026-10-12T19:31:25Z",
+              "completed_at": "2026-10-12T19:31:25Z"
+            },
+            {
+              "name": "Run make verify-seed",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5,
+              "started_at": "2026-10-12T19:31:25Z",
+              "completed_at": "2026-10-12T19:34:36Z"
+            },
+            {
+              "name": "Run make fuzz mutation",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6,
+              "started_at": "2026-10-12T19:34:36Z",
+              "completed_at": "2026-10-12T19:35:26Z"
+            },
+            {
+              "name": "Run make security-online",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7,
+              "started_at": "2026-10-12T19:35:26Z",
+              "completed_at": "2026-10-12T19:35:33Z"
+            },
+            {
+              "name": "Post Run actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13,
+              "started_at": "2026-10-12T19:35:33Z",
+              "completed_at": "2026-10-12T19:35:33Z"
+            },
+            {
+              "name": "Post Run actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 14,
+              "started_at": "2026-10-12T19:35:33Z",
+              "completed_at": "2026-10-12T19:35:33Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 15,
+              "started_at": "2026-10-12T19:35:33Z",
+              "completed_at": "2026-10-12T19:35:33Z"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": "actual GitHub API workflow/job/step observations; no inferred runtime or billing action"
+}

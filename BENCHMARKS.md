@@ -26,17 +26,4 @@ The complete1,000-seed command took22.253s; outer campaign 250.493s including bu
 
 Targets: common12-operation checking<1s;10,000 model events<2s; ten matching replay digests and1,000 outcomes. These are finite named targets, not statistical correctness confidence.
 
-Historical measurements below retain their original toolchain and workload; legacy Model10000 uses sequential writes and is not comparable to the current crash/durability workload.
-
-## Observed local-kernel results - 2026-10-10 Singapore
-
-[20261009T183516-11cad33b9f](verification/curated/20261009T183516-11cad33b9f/run.json). Executed source commit `1ff0c7e093fee8f552c889cb8cf9c9ac59f4efcf`; Go1.23.2 linux/amd64, AMD EPYC 9V74 host, shared container. Seven repetitions, Go benchmark calibration, 100 ms requested benchmark interval per repetition. The `-5` suffix records the runtime processor setting; host model name is not an exclusive 80-core allocation.
-
-| Synthetic workload | Median per operation | Min-max across repetitions | Median B/op | Median allocations/op |
-|---|---:|---:|---:|---:|
-| Check12 | 1.310 us | 1.286-1.362 us | 823 | 4 |
-| OracleSequential12 | 2.782 us | 2.723-2.996 us | 661 | 7 |
-| CheckOverlap12 | 221.976 us | 215.419-230.028 us | 98,464 | 71 |
-| Model10000 | 12059.463 us | 10089.965-14460.769 us | 9,828,701 | 20062 |
-
-`Model10000` means one 10,000-event local-model run, not one event or distributed transaction. The 12-operation examples are deliberately small and cannot characterize worst-case exponential search. The independent oracle is a correctness reference, not an optimized competing product. These are medians of benchmark summaries, not latency p50/p95/p99. No request-throughput, real-user scale or distributed-target claim follows. That historical run used Go1.23.2; current supported-toolchain measurements are above. Full samples and environment are in [benchmark-summary.json](verification/curated/benchmark-summary.json).
+These are original A6 measurements; cleanup does not retag them as executions on a later commit. Repeat `make benchmark` to measure the current complete checkout. Removed legacy kernel-only packets used a different workload and are not comparison data for this distributed target.

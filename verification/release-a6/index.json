@@ -1,43 +1,7 @@
 {
   "schema_version": 1,
-  "scope": "selected real engineering records; includes historical failures and expected negative controls; no agent sessions or research",
+  "scope": "Essential original measured acceptance, semantic failures, reproduction and product-command evidence. Operational staging/private-helper captures are archived off-repository. Original execution identities, statuses, hashes and all measured outcomes remain unchanged.",
   "runs": [
-    {
-      "id": "20261012T165951-ff41b6a050",
-      "category": "independent-bound-posix-intake-failure-projection-controls",
-      "status": "PASS",
-      "exit_code": 0,
-      "source_tree_sha256": "5ab5285ed8018292f0769a0fd20442ce5cc497897b52b3bff9f34c95cf87d60c",
-      "record": "verification/curated/20261012T165951-ff41b6a050/run.json",
-      "raw_record_sha256": "dcb6270a8845fffec98bdcec1c296cbafc4fe72ed15413e9887c2f3ea9d9df02"
-    },
-    {
-      "id": "20261012T170658-c7fd0e0299",
-      "category": "independent-private-curator-uri-fix-and-rejection-controls",
-      "status": "PASS",
-      "exit_code": 0,
-      "source_tree_sha256": "5ab5285ed8018292f0769a0fd20442ce5cc497897b52b3bff9f34c95cf87d60c",
-      "record": "verification/curated/20261012T170658-c7fd0e0299/run.json",
-      "raw_record_sha256": "776956770575c5f85b372fa0eee602a8ccc9b3a289360ad9078e83cf8b768baf"
-    },
-    {
-      "id": "20261012T170700-430f80fa81",
-      "category": "independent-private-curator-original-uri-backtracking-timeout-control",
-      "status": "FAIL",
-      "exit_code": 1,
-      "source_tree_sha256": "5ab5285ed8018292f0769a0fd20442ce5cc497897b52b3bff9f34c95cf87d60c",
-      "record": "verification/curated/20261012T170700-430f80fa81/run.json",
-      "raw_record_sha256": "e842e7062aa2446114e6d92f79d8ccfcfd163e14ca99437753feabef1d48737b"
-    },
-    {
-      "id": "20261012T170752-08f55affcd",
-      "category": "finish-exact-reviewed-staged-assertion-transaction",
-      "status": "PASS",
-      "exit_code": 0,
-      "source_tree_sha256": "616f7f491da85440198af7d1bb3eb602e10a5a51b919b2f5b833398dd73cf683",
-      "record": "verification/curated/20261012T170752-08f55affcd/run.json",
-      "raw_record_sha256": "78376849d5616a8b7bd8ffc0d3fd3967324692cff15ae7ee9b938641a0a36db6"
-    },
     {
       "id": "20261012T170911-acbca9c7a0",
       "category": "release-a6-clean",
@@ -66,60 +30,6 @@
       "raw_record_sha256": "d6b0cd1c354975c04cc34477184484783e427fb60e7cc3ed9affc3d3dd5a21ee"
     },
     {
-      "id": "20261012T171014-9cd069a79d",
-      "category": "independent-current-a6-full-history-no-hardlink-copy",
-      "status": "PASS",
-      "exit_code": 0,
-      "source_tree_sha256": "5ab5285ed8018292f0769a0fd20442ce5cc497897b52b3bff9f34c95cf87d60c",
-      "record": "verification/curated/20261012T171014-9cd069a79d/run.json",
-      "raw_record_sha256": "6d80eaa45a8c60776733fffea7cfc63339cc846b0c80ee581b503f10c3789800"
-    },
-    {
-      "id": "20261012T171023-be0372dd67",
-      "category": "approved-correction-locked-plan-integrity",
-      "status": "PASS",
-      "exit_code": 0,
-      "source_tree_sha256": "89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39",
-      "record": "verification/curated/20261012T171023-be0372dd67/run.json",
-      "raw_record_sha256": "85ff011a0dcfc49bf676c90760a7d06b97e77fa2fb5fbbe70c2a6b7a3f72c6f5"
-    },
-    {
-      "id": "20261012T171431-16f4bfb32b",
-      "category": "independent-frozen-a6-prospective-exception-delta-and-original-projections",
-      "status": "PASS",
-      "exit_code": 0,
-      "source_tree_sha256": "89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39",
-      "record": "verification/curated/20261012T171431-16f4bfb32b/run.json",
-      "raw_record_sha256": "b637e68b5e0845cafc7d4542b221df61a0aab777a286f6cfe50689e772e855e6"
-    },
-    {
-      "id": "20261012T171539-62987d5eda",
-      "category": "independent-frozen-a6-isolated-cold-build-copy",
-      "status": "PASS",
-      "exit_code": 0,
-      "source_tree_sha256": "89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39",
-      "record": "verification/curated/20261012T171539-62987d5eda/run.json",
-      "raw_record_sha256": "010944766fe0b738c6d07d81514c9aac42dc6e4af6db8f096400721e6b851fbe"
-    },
-    {
-      "id": "20261012T171539-704c1df97e",
-      "category": "independent-bounded-frozen-a6-complete-owned-history-and-exact-export",
-      "status": "PASS",
-      "exit_code": 0,
-      "source_tree_sha256": "89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39",
-      "record": "verification/curated/20261012T171539-704c1df97e/run.json",
-      "raw_record_sha256": "5cf34a76bec1dc3463ca2ef20b98602b4ee022ae83bb4fd8a32221a6976ff0cb"
-    },
-    {
-      "id": "20261012T171621-55c815a40c",
-      "category": "independent-frozen-a6-empty-cache-bootstrap-and-production-build",
-      "status": "FAIL",
-      "exit_code": 2,
-      "source_tree_sha256": "89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39",
-      "record": "verification/curated/20261012T171621-55c815a40c/run.json",
-      "raw_record_sha256": "913de3fe5a48cec7b3471bdf99735f497771ce42effcbe9dc5926444cf6862a2"
-    },
-    {
       "id": "20261012T171840-9f315ad8c2",
       "category": "clean-fuzz",
       "status": "PASS",
@@ -127,15 +37,6 @@
       "source_tree_sha256": "89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39",
       "record": "verification/curated/20261012T171840-9f315ad8c2/run.json",
       "raw_record_sha256": "1ac10686efcf60b97df0d5c84201384c38fa153a468d6531ae4d0d1d841c986a"
-    },
-    {
-      "id": "20261012T171909-737f25c413",
-      "category": "independent-frozen-a6-short-owned-copy-for-disabled-long-path-host",
-      "status": "PASS",
-      "exit_code": 0,
-      "source_tree_sha256": "89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39",
-      "record": "verification/curated/20261012T171909-737f25c413/run.json",
-      "raw_record_sha256": "8f3571e546ce10346c5481e8fa961f9aeda30080af7dab308ee61d8014e13d6e"
     },
     {
       "id": "20261012T171937-ab024c68ff",
@@ -172,15 +73,6 @@
       "source_tree_sha256": "89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39",
       "record": "verification/curated/20261012T172009-6140f66b4c/run.json",
       "raw_record_sha256": "9ce6be0f745d74f80ba22076cca08219e88381c958867f2076a6ebca035e3633"
-    },
-    {
-      "id": "20261012T172019-a57e7a0975",
-      "category": "independent-frozen-a6-short-copy-empty-cache-bootstrap-and-production-build",
-      "status": "PASS",
-      "exit_code": 0,
-      "source_tree_sha256": "89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39",
-      "record": "verification/curated/20261012T172019-a57e7a0975/run.json",
-      "raw_record_sha256": "a71f881aa6a2d234d957689a582371eb3eac8133424a9cb289eade5393b5b3f3"
     },
     {
       "id": "20261012T172033-91c1e52a53",
@@ -262,15 +154,6 @@
       "source_tree_sha256": "89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39",
       "record": "verification/curated/20261012T172200-84a6016be1/run.json",
       "raw_record_sha256": "3181069382a0b92f73acb56d70cf6b2f3c0c4d35fbaef320b4bf7efcb7dcc7cc"
-    },
-    {
-      "id": "20261012T172207-3fd4299d40",
-      "category": "independent-current-frozen-a6-actual-windows-report-tests",
-      "status": "PASS",
-      "exit_code": 0,
-      "source_tree_sha256": "89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39",
-      "record": "verification/curated/20261012T172207-3fd4299d40/run.json",
-      "raw_record_sha256": "ffa854a21c8ca1e4c95b3910d1bb6db58bf215f3bf5fab0a705308094e58eda4"
     },
     {
       "id": "20261012T172233-5f61130e40",
@@ -370,15 +253,6 @@
       "source_tree_sha256": "89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39",
       "record": "verification/curated/20261012T172553-e884a4eb9c/run.json",
       "raw_record_sha256": "8d80d31808432343d0468eb2e5a1347e96f3e32202d1031594fd41cd4fc8645d"
-    },
-    {
-      "id": "20261012T172709-9aac314db6",
-      "category": "independent-frozen-a6-bounded-closure-and-actual-long-path-diagnosis",
-      "status": "PASS",
-      "exit_code": 0,
-      "source_tree_sha256": "89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39",
-      "record": "verification/curated/20261012T172709-9aac314db6/run.json",
-      "raw_record_sha256": "890fbff042ecb279d0cbb01928a45b8172239992bdec1eeae26c845cd999a271"
     },
     {
       "id": "20261012T172921-b0cb427cbb",

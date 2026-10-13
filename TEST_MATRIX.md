@@ -1,6 +1,6 @@
 # Requirement and test matrix
 
-All24 applicable local rows retain actual corrected-source A6 commands. Independent all24 assessment passed on C5; recorded C6 live full Windows verification, actual Linux kernel/full/CodeQL workflows, exact publication and anonymous contents passed. See [observed C6 release evidence](verification/publication/c6/index.json). Later metadata changes no execution inputs; source-bound rows below are not retagged.
+All24 applicable local rows retain actual corrected-source A6 commands. Independent all24 assessment passed on C5; recorded pre-cleanup C7 live full Windows verification, actual Linux kernel/full/CodeQL workflows, exact publication and anonymous contents passed. See [last verified pre-cleanup jobs](verification/publication/last-verified-ci.json). Later metadata changes no execution inputs; source-bound rows below are not retagged.
 
 Executed commit `65d10e1c83950f97d0857b3145ba9f91fe848e2f`, complete source SHA256 `89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39` (1512 files). Later prose/evidence curation preserves original identities; the gate compares every execution input.
 
@@ -33,5 +33,4 @@ Executed commit `65d10e1c83950f97d0857b3145ba9f91fe848e2f`, complete source SHA2
 
 AC-024 includes the actual1,000-seed campaign and32-seed package smoke test. AC-016 retains genuine UNKNOWN controls. AC-019 runs production native processes and File.Sync. AC-020 is a fresh committed clone/cache on the same host. AC-021 requires the final public export audit separately. Five corrected byte-exact kernel controls and the Store.Flush control are linked in [VERIFICATION_REPORT](VERIFICATION_REPORT.md). Original A3 kernel byte-hash/restoration defects remain labelled historical. No locked assertion is weakened or skipped.
 
-
-The [independent current all24 assessment](verification/reviews/final-c5-assessment.json) is a separate read-only review of all24 locked criteria, complete current packet and exact C5 export. Original C1/C2 and rejected B1 results remain historical with unchanged source identities. Actual live full verification, exact integrated C6 export and repaired hosted execution subsequently passed on recorded C6; final metadata-head verification remains separate.
+Original source-bound results remain historical after authorized metadata/history cleanup. Executable inputs and locked assertions are unchanged. Generate fresh same-source traces with `make demo`; old recorded commit hashes are not checkout instructions. See [evidence contents](verification/README.md).

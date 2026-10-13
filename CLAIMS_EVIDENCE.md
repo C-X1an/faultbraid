@@ -13,9 +13,8 @@ Executed commit `65d10e1c83950f97d0857b3145ba9f91fe848e2f`, complete source SHA2
 | Supported toolchain and clean reproduction | [20261012T170911-acbca9c7a0](verification/curated/20261012T170911-acbca9c7a0/run.json); [20261012T173919-435d881ee0](verification/curated/20261012T173919-435d881ee0/run.json) | Exact committed clone and fresh cache; same host/module cache |
 | Actual byte-preserving semantic mutation controls | [controls](verification/release-a6/kernel-mutations.json) | Five selected controls, not an overall mutation score |
 | Measured checker/model/target/reduction costs | [BENCHMARKS](BENCHMARKS.md) | All91 calibrated samples; uncertainty and spread retained |
-| Separate current final review / hosted CI / publication | C5 all24 PASS / recorded C6 all3 workflows PASS / recorded C6 public and anonymous exact contents PASS | [observed C6 release evidence](verification/publication/c6/index.json); finite scopes and original failures retained; final metadata-head checks are separate |
+| Separate current final review / hosted CI / publication | C5 all24 PASS / recorded pre-cleanup C7 all3 workflows PASS / recorded pre-cleanup C7 public and anonymous exact contents PASS | [last verified pre-cleanup jobs](verification/publication/last-verified-ci.json); finite scopes and original failures retained; later-head checks are separate |
 
-No production users, scale, cloud deployment, universal correctness or security/physical crash certification is claimed. Original A3/B1 receipts and rejected byte evidence remain historical.
+No production users, scale, cloud deployment, universal correctness or security/physical crash certification is claimed. Selected material failures and rejected mutation receipts remain public; redundant operational archives remain off-repository.
 
-
-The [independent current all24 assessment](verification/reviews/final-c5-assessment.json) is a separate read-only review of all24 locked criteria, complete current packet and exact C5 export. Original C1/C2 and rejected B1 results remain historical with unchanged source identities. Actual live full verification, exact integrated C6 export and repaired hosted execution subsequently passed on recorded C6; final metadata-head verification remains separate.
+Original source-bound results remain historical after authorized metadata/history cleanup. Executable inputs and locked assertions are unchanged. Generate fresh same-source traces with `make demo`; old recorded commit hashes are not checkout instructions. See [evidence contents](verification/README.md).

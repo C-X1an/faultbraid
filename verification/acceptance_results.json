@@ -231,9 +231,7 @@
     "evidence": [
       "verification/curated/20261012T184404-f7dcd7b9c6/run.json",
       "verification/curated/20261012T181747-eac375da92/run.json",
-      "verification/curated/20261012T181340-6c0ca6262a/run.json",
       "verification/curated/20261012T174723-ad1b50bd30/run.json",
-      "verification/curated/20261012T175604-075d2e68c6/run.json",
       "verification/curated/20261012T182124-5e89b652c6/run.json",
       "verification/curated/20261012T182125-057b0d57da/run.json",
       "verification/curated/20261012T182127-d007d96b9a/run.json",
@@ -247,11 +245,10 @@
       "verification/curated/20261012T182123-bbdde9128c/run.json",
       "verification/curated/20261012T180032-780f3f9333/run.json",
       "verification/curated/20261012T182726-29c05a5b6b/run.json",
-      "verification/curated/20261012T181341-89a2deff69/run.json",
       "verification/curated/20261012T182135-6968799535/run.json",
       "verification/curated/20261012T175847-cab374318b/run.json"
     ],
-    "scope": "Actual separate read-only all24 review of frozen C5; original complete source and raw hashes preserved. Later reviewed result/prose integration changes no execution inputs; hosted repaired-source results remain separate."
+    "scope": "Actual separate read-only all24 review of frozen C5; original complete source and raw hashes preserved. Later reviewed result/prose integration changes no execution inputs; hosted repaired-source results remain separate. Public minimization retains every credited independent behavioral command and archives three explicitly uncredited copy/syntax-only captures off-repository; the original authored judgment is unchanged."
   },
   "supported_toolchain_verified": true,
   "supported_toolchain_evidence": [
