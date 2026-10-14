@@ -30,11 +30,12 @@ integrity:
 	$(PYTHON) scripts/check_integrity.py
 public-audit:
 	$(PYTHON) scripts/public_audit.py
+# Serialize package builds and tests; in-package concurrency remains unchanged.
 test:
-	$(GO) test -count=1 ./...
+	$(GO) test -p 1 -count=1 ./...
 	$(PYTHON) -m unittest discover -s scripts -p 'test_*.py' -v
 race:
-	$(GO) test -race -count=1 ./...
+	$(GO) test -race -p 1 -count=1 ./...
 verify-seed: bootstrap integrity fmt-check build lint typecheck test race public-audit
 	@echo 'Implemented source checks passed. Full release evidence and independent review are a separate gate.'
 verify: verify-seed
