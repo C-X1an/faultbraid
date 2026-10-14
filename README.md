@@ -7,8 +7,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/C-X1an/faultbraid/actions/workflows/kernel.yml"><img alt="Kernel verification workflow" src="https://github.com/C-X1an/faultbraid/actions/workflows/kernel.yml/badge.svg?branch=main"></a>
-  <a href="https://github.com/C-X1an/faultbraid/actions/workflows/codeql.yml"><img alt="CodeQL analysis workflow" src="https://github.com/C-X1an/faultbraid/actions/workflows/codeql.yml/badge.svg?branch=main"></a>
+  <a href="https://github.com/C-X1an/faultbraid/actions/workflows/kernel.yml"><img alt="Latest main kernel verification" src="https://github.com/C-X1an/faultbraid/actions/workflows/kernel.yml/badge.svg?branch=main&amp;event=push"></a>
+  <a href="https://github.com/C-X1an/faultbraid/actions/workflows/codeql.yml"><img alt="Latest main CodeQL scan conclusion" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FC-X1an%2Ffaultbraid%2Factions%2Fworkflows%2Fcodeql.yml%2Fruns%3Fbranch%3Dmain%26event%3Dpush%26per_page%3D1&amp;query=%24.workflow_runs%5B0%5D.conclusion&amp;label=CodeQL%20analysis&amp;prefix=scan%3A%20&amp;style=flat-square&amp;color=526784"></a>
   <a href=".go-version"><img alt="Go 1.27.2" src="https://img.shields.io/badge/Go-1.27.2-00ADD8?style=flat-square&amp;logo=go&amp;logoColor=white"></a>
   <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-526784?style=flat-square"></a>
   <img alt="Project maturity: experimental" src="https://img.shields.io/badge/status-experimental-D88363?style=flat-square">
