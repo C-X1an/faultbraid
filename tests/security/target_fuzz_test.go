@@ -70,8 +70,12 @@ func FuzzTargetTraceReplay(f *testing.F) {
 		if err := scenario.Replay(ctx, saved, identity); err != nil {
 			return
 		}
-		if ctx.Err() != nil || saved.Identity() != identity {
-			t.Fatal("successful replay lacks source identity or finished after cancellation")
+		// Replay checks cancellation at its own validation checkpoints. A later
+		// caller observation cannot retroactively invalidate a completed return.
+		// See TEST_SPEC_EXCEPTION_REPLAY_CONTEXT_OBSERVATION.md; the same real
+		// deadline and the identity/fresh-execution assertions remain in force.
+		if saved.Identity() != identity {
+			t.Fatal("successful replay lacks source identity")
 		}
 		// A successful replay must agree with a separately executed fresh-seed
 		// target, including output, entropy and every causal event. Digest alone

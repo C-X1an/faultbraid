@@ -637,3 +637,6 @@ verification/reviews/posix-output-kind-exception-assessment.json
 verification/reviews/posix-output-kind-original-proposal.md
 verification/reviews/posix-output-kind-proposed.patch
 verification/schema.json
+TEST_SPEC_EXCEPTION_REPLAY_CONTEXT_OBSERVATION.md
+internal/buildinfo/files_metadata_test.go
+tests/security/cancellation_test.go

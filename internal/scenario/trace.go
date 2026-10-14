@@ -96,6 +96,9 @@ func (t Trace) Identity() buildinfo.Identity {
 // Replay executes the actual target using exact recorded entropy, then executes
 // it with the declared seed. Benign entropy edits plus a recomputed hash also fail.
 func Replay(ctx context.Context, saved Trace, identity buildinfo.Identity) error {
+	if err := ctx.Err(); err != nil {
+		return err
+	}
 	if saved.Version != 1 || saved.Model != "raft-trace-v1" {
 		return ErrUnsupportedVersion
 	}
@@ -103,10 +106,16 @@ func Replay(ctx context.Context, saved Trace, identity buildinfo.Identity) error
 		return errors.New("replay source, module or patch identity mismatch")
 	}
 	want, err := digest(saved)
+	if cancelled := ctx.Err(); cancelled != nil {
+		return cancelled
+	}
 	if err != nil || want != saved.Digest {
 		return errors.New("replay trace digest mismatch")
 	}
 	actual, err := run(ctx, saved.Scenario, Options{Identity: identity, choices: saved.Choices, replay: true})
+	if cancelled := ctx.Err(); cancelled != nil {
+		return cancelled
+	}
 	if err != nil {
 		return err
 	}
@@ -114,11 +123,14 @@ func Replay(ctx context.Context, saved Trace, identity buildinfo.Identity) error
 		return errors.New("replay target execution mismatch")
 	}
 	fresh, err := Run(ctx, saved.Scenario, Options{Identity: identity})
+	if cancelled := ctx.Err(); cancelled != nil {
+		return cancelled
+	}
 	if err != nil {
 		return err
 	}
 	if !reflect.DeepEqual(fresh, saved) {
 		return errors.New("replay seed entropy mismatch")
 	}
-	return nil
+	return ctx.Err()
 }

@@ -244,16 +244,35 @@ func run(ctx context.Context, s Scenario, opts Options) (Trace, error) {
 	if x.trace.Result.Witness == nil {
 		x.trace.Result.Witness = []string{}
 	}
+	if err := x.sealTrace(); err != nil {
+		return x.trace, err
+	}
+	// Final validation and encoding belong to the execution's budget too.
+	// Cancellation preserves an unknown trace and is not an input error.
+	if ctx.Err() != nil {
+		x.trace.Result = history.Result{Status: history.Inconclusive, Witness: []string{}, States: x.trace.Result.States, Reason: "cancelled execution"}
+		x.trace.Failure = nil
+		if err := x.sealTrace(); err != nil {
+			return x.trace, err
+		}
+	}
+	return x.trace, nil
+}
+
+func (x *execution) sealTrace() error {
 	d, err := digest(x.trace)
+	if err != nil {
+		return err
+	}
 	x.trace.Digest = d
 	data, encodeErr := json.Marshal(x.trace)
 	if encodeErr != nil {
-		return x.trace, encodeErr
+		return encodeErr
 	}
 	if len(data)+1 > MaxTraceBytes {
-		return x.trace, errors.New("trace encoding exceeds byte limit")
+		return errors.New("trace encoding exceeds byte limit")
 	}
-	return x.trace, err
+	return nil
 }
 
 func (x *execution) admit(e queued) {

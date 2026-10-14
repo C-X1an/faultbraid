@@ -5,6 +5,7 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io/fs"
 	"os"
@@ -17,6 +18,12 @@ import (
 // FromFiles identifies a trusted local source directory. Production binaries
 // use Current's build-injected identity; tests can identify their actual tree.
 func FromFiles(root string) (Identity, error) {
+	return fromFilesWithWalker(root, filepath.WalkDir)
+}
+
+// The walker is injectable only inside this package for deterministic filesystem
+// error tests. The exported entry point always traverses the actual source tree.
+func fromFilesWithWalker(root string, walkDir func(string, fs.WalkDirFunc) error) (Identity, error) {
 	root, err := filepath.Abs(root)
 	if err != nil {
 		return Identity{}, err
@@ -26,26 +33,36 @@ func FromFiles(root string) (Identity, error) {
 		SHA  string `json:"sha256"`
 	}
 	files := []sourceFile{}
-	err = filepath.WalkDir(root, func(path string, entry fs.DirEntry, walkErr error) error {
+	err = walkDir(root, func(path string, entry fs.DirEntry, walkErr error) error {
+		rel, err := filepath.Rel(root, path)
+		if err != nil {
+			return err
+		}
+		ignored := false
+		for _, part := range strings.Split(filepath.ToSlash(rel), "/") {
+			switch part {
+			case ".git", ".local-runs", "bin", "__pycache__", ".pytest_cache":
+				ignored = true
+			}
+		}
 		if walkErr != nil {
+			if ignored && errors.Is(walkErr, fs.ErrNotExist) {
+				return nil
+			}
 			return walkErr
 		}
 		info, err := entry.Info()
 		if err != nil {
+			if ignored && errors.Is(err, fs.ErrNotExist) {
+				return nil
+			}
 			return err
 		}
 		if sourceAlias(info) {
 			return fmt.Errorf("source identity: symbolic link or reparse point")
 		}
-		rel, err := filepath.Rel(root, path)
-		if err != nil {
-			return err
-		}
-		for _, part := range strings.Split(filepath.ToSlash(rel), "/") {
-			switch part {
-			case ".git", ".local-runs", "bin", "__pycache__", ".pytest_cache":
-				return nil // Walk aliases in ignored paths too, but never hash their data.
-			}
+		if ignored {
+			return nil // Walk aliases in ignored paths too, but never hash their data.
 		}
 		if !info.Mode().IsRegular() {
 			return nil
