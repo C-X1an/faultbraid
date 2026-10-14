@@ -16,6 +16,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"sort"
 	"strconv"
 	"sync"
 	"sync/atomic"
@@ -51,6 +52,7 @@ type frameTask struct {
 	data                []byte
 }
 type clientOutcome struct {
+	ordinal  int64
 	task     clientTask
 	response response
 	err      error
@@ -443,14 +445,14 @@ func (l *lab) action(action scenario.Action) error {
 		}
 		return l.health(l.active[node])
 	case "invoke_write", "invoke_read":
-		l.ordinal++
+		ordinal := atomic.AddInt64(&l.ordinal, 1)
 		id := *action.RequestID
 		if l.requests[id] == nil {
 			kind, value := "read", int64(0)
 			if action.Kind == "invoke_write" {
 				kind, value = "write", *action.Value
 			}
-			l.requests[id] = &logicalRequest{operation: history.Operation{ID: id, Kind: kind, Value: value, Call: l.ordinal}}
+			l.requests[id] = &logicalRequest{operation: history.Operation{ID: id, Kind: kind, Value: value, Call: ordinal}}
 			l.requestOrder = append(l.requestOrder, id)
 		}
 		c := l.active[node]
@@ -458,7 +460,7 @@ func (l *lab) action(action scenario.Action) error {
 		if c != nil {
 			pid = c.command.Process.Pid
 		}
-		l.result.Attempts = append(l.result.Attempts, Attempt{Ordinal: l.ordinal, Action: action.ID, RequestID: id, Node: node, PID: pid,
+		l.result.Attempts = append(l.result.Attempts, Attempt{Ordinal: ordinal, Action: action.ID, RequestID: id, Node: node, PID: pid,
 			Kind: l.requests[id].operation.Kind, Value: l.requests[id].operation.Value, Phase: "invoke", Admission: "awaiting-response"})
 		task := clientTask{action: action, child: c}
 		select {
@@ -604,7 +606,7 @@ func (l *lab) propose(task clientTask) clientOutcome {
 	outcome.response = response{ID: id, Status: "pending", Admission: "unknown", Code: "TRANSPORT_OUTCOME_UNKNOWN"}
 	if task.child == nil {
 		outcome.response.Code = "NODE_UNAVAILABLE"
-		return outcome
+		return l.stampClientOutcome(outcome)
 	}
 	input := proposal{ID: id, Kind: "read"}
 	if task.action.Kind == "invoke_write" {
@@ -616,27 +618,36 @@ func (l *lab) propose(task clientTask) clientOutcome {
 	request, err := http.NewRequestWithContext(ctx, http.MethodPost, "http://"+task.child.address+"/v1/propose", bytes.NewReader(data))
 	if err != nil {
 		outcome.err = err
-		return outcome
+		return l.stampClientOutcome(outcome)
 	}
 	request.Header.Set("Content-Type", "application/json")
 	result, err := l.http.Do(request)
 	if err != nil {
-		return outcome
+		return l.stampClientOutcome(outcome)
 	}
 	defer result.Body.Close()
 	var response response
 	if err := strictjson.Decode(io.LimitReader(result.Body, 2049), &response); err != nil || response.ID != id || len(response.Code) > 128 {
 		outcome.err = errors.New("real lab: invalid proposal response")
-		return outcome
+		return l.stampClientOutcome(outcome)
 	}
 	valid := response.Status == "complete" && response.Admission == "admitted" && result.StatusCode == http.StatusOK ||
 		response.Status == "rejected" && response.Admission == "rejected-before-admission" && result.StatusCode >= 400 && result.StatusCode < 600 ||
 		response.Status == "pending" && response.Admission == "unknown" && result.StatusCode >= 400 && result.StatusCode < 600
 	if !valid {
 		outcome.err = errors.New("real lab: response admission classification mismatch")
-		return outcome
+		return l.stampClientOutcome(outcome)
 	}
 	outcome.response = response
+	return l.stampClientOutcome(outcome)
+}
+
+// Stamp the decoded/classified response or transport error at the parent
+// client boundary, before closing its body or queueing it for collection.
+// Calls share this clock; unfinished calls still overlap and workers run
+// concurrently even when a ready timer advances the action scheduler.
+func (l *lab) stampClientOutcome(outcome clientOutcome) clientOutcome {
+	outcome.ordinal = atomic.AddInt64(&l.ordinal, 1)
 	return outcome
 }
 func (l *lab) deliver(frame frameTask) frameOutcome {
@@ -672,21 +683,25 @@ func (l *lab) clientResult(outcome clientOutcome) error {
 		// before propagating the protocol error to the run's INCONCLUSIVE path.
 		reply = response{ID: id, Status: "pending", Admission: "unknown", Value: r.operation.Value, Code: "PROPOSAL_PROTOCOL_ERROR"}
 	}
-	l.ordinal++
+	ordinal := outcome.ordinal
+	if ordinal == 0 {
+		// An undispatched intent receives its uncertain outcome during cleanup.
+		ordinal = atomic.AddInt64(&l.ordinal, 1)
+	}
 	pid := 0
 	if outcome.task.child != nil {
 		pid = outcome.task.child.command.Process.Pid
 	}
-	l.result.Attempts = append(l.result.Attempts, Attempt{Ordinal: l.ordinal, Action: input.ID, RequestID: id, Node: *input.Node, PID: pid,
+	l.result.Attempts = append(l.result.Attempts, Attempt{Ordinal: ordinal, Action: input.ID, RequestID: id, Node: *input.Node, PID: pid,
 		Kind: r.operation.Kind, Phase: reply.Status, Admission: reply.Admission, Value: reply.Value, Code: reply.Code})
 	if reply.Admission != "rejected-before-admission" {
 		r.possible = true
 	}
-	if reply.Status == "complete" && r.operation.Return == nil {
-		if r.operation.Kind == "write" && reply.Value != r.operation.Value {
-			return errors.New("real lab: write result disagrees with replicated payload")
-		}
-		r.operation.Return = new(l.ordinal)
+	if reply.Status == "complete" && r.operation.Kind == "write" && reply.Value != r.operation.Value {
+		return errors.New("real lab: write result disagrees with replicated payload")
+	}
+	if reply.Status == "complete" && (r.operation.Return == nil || ordinal < *r.operation.Return) {
+		r.operation.Return = new(ordinal)
 		if r.operation.Kind == "read" {
 			r.operation.Value = reply.Value
 		}
@@ -694,6 +709,8 @@ func (l *lab) clientResult(outcome clientOutcome) error {
 	return outcome.err
 }
 func (l *lab) collectHistory() {
+	// Worker receipt order can differ from observation delivery order.
+	sort.Slice(l.result.Attempts, func(i, j int) bool { return l.result.Attempts[i].Ordinal < l.result.Attempts[j].Ordinal })
 	l.result.History.Operations = []history.Operation{}
 	for _, id := range l.requestOrder {
 		r := l.requests[id]

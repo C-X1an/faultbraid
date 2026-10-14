@@ -640,3 +640,5 @@ verification/schema.json
 TEST_SPEC_EXCEPTION_REPLAY_CONTEXT_OBSERVATION.md
 internal/buildinfo/files_metadata_test.go
 tests/security/cancellation_test.go
+internal/labreal/receipt_scheduler_test.go
+internal/labreal/reply_validation_test.go
