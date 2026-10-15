@@ -182,13 +182,25 @@ def sha(path:Path)->str:
   for b in iter(lambda:f.read(65536),b''):h.update(b)
  return h.hexdigest()
 def source_identity(root:Path)->dict:
- files=[]
- for p in sorted(root.rglob('*'),key=lambda path:path.relative_to(root).as_posix().encode('utf-8')):
-  rel=p.relative_to(root)
-  if p.is_symlink() or (hasattr(p,'is_junction') and p.is_junction()):raise ValueError('source tree contains symlink or junction: '+rel.as_posix())
-  if any(x in IGNORE for x in rel.parts):continue
-  if not p.is_file():continue
-  files.append({'path':rel.as_posix(),'sha256':sha(p)})
+ # Inspect cached directory-entry metadata without sorting/materializing the
+ # ignored output tree. Ignored descendants are still visited to reject aliases.
+ included=[];pending=[(root,False)]
+ while pending:
+  directory,ignored=pending.pop()
+  try:entries=os.scandir(directory)
+  except FileNotFoundError:
+   if ignored:continue # Ephemeral excluded output disappeared before enumeration.
+   raise
+  with entries:
+   for entry in entries:
+    junction=getattr(entry,'is_junction',None)
+    if entry.is_symlink() or (junction() if junction is not None else (hasattr(Path,'is_junction') and Path(entry.path).is_junction())):
+     raise ValueError('source tree contains symlink or junction: '+Path(entry.path).relative_to(root).as_posix())
+    excluded=ignored or entry.name in IGNORE
+    if entry.is_dir(follow_symlinks=False):pending.append((Path(entry.path),excluded))
+    elif not excluded and entry.is_file():included.append(Path(entry.path))
+ files=[{'path':p.relative_to(root).as_posix(),'sha256':sha(p)}
+        for p in sorted(included,key=lambda path:path.relative_to(root).as_posix().encode('utf-8'))]
  tree=hashlib.sha256(json.dumps(files,sort_keys=True,separators=(',',':')).encode()).hexdigest()
  def git(*args):
   try:

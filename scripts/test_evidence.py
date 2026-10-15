@@ -40,6 +40,21 @@ class EvidenceTests(unittest.TestCase):
     target=root/'input.txt';target.write_bytes(b'fixture');(root/'alias.txt').symlink_to(target)
    with self.assertRaisesRegex(ValueError,'source tree contains symlink or junction'):
     execute([sys.executable,'-c','pass'],root,root/'.local-runs',timeout=10)
+ def test_source_ignored_outputs_do_not_change_identity(self):
+  with tempfile.TemporaryDirectory() as d:
+   root=Path(d);(root/'input.txt').write_bytes(b'actual included fixture')
+   before=run_evidence.source_identity(root)
+   for name in ('.local-runs/volatile/result.json','bin/tool.exe','nested/__pycache__/cache.pyc','.pytest_cache/output'):
+    path=root/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(b'excluded output')
+   self.assertEqual(run_evidence.source_identity(root),before)
+ def test_source_alias_inside_ignored_outputs_is_rejected(self):
+  with tempfile.TemporaryDirectory() as d:
+   root=Path(d);target=root/'target';target.mkdir();(target/'payload.txt').write_bytes(b'actual alias fixture')
+   parent=root/'.local-runs'/'deep';parent.mkdir(parents=True);alias=parent/'alias'
+   if os.name=='nt':subprocess.run(['cmd','/c','mklink','/J',str(alias),str(target)],check=True,capture_output=True)
+   else:alias.symlink_to(target,target_is_directory=True)
+   with self.assertRaisesRegex(ValueError,'source tree contains symlink or junction'):
+    run_evidence.source_identity(root)
  def test_timeout_cleans_descendant_process(self):
   self._check_descendant_cleanup(parent_exits=False)
  def test_normal_success_cleans_descendant_process(self):
