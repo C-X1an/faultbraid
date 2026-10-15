@@ -35,6 +35,9 @@ test:
 	$(GO) test -p 1 -count=1 ./...
 	$(PYTHON) -m unittest discover -s scripts -p 'test_*.py' -v
 race:
+	# Build/startup warmup runs TestMain/init and selects no named tests.
+	$(GO) test -race -run '^$$' ./...
+	# Every test still runs uncached in the serial race suite.
 	$(GO) test -race -p 1 -count=1 ./...
 verify-seed: bootstrap integrity fmt-check build lint typecheck test race public-audit
 	@echo 'Implemented source checks passed. Full release evidence and independent review are a separate gate.'
