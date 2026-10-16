@@ -1,257 +1,244 @@
 {
-  "scope": "Current applicable local acceptance; independent full-project assessment and hosted CI are separate gates",
+  "scope": "Current measured local A7 acceptance. Current independent all24 review and hosted checks remain separate.",
   "criteria": [
     {
       "id": "AC-001",
       "requirement": "FR-001",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-002",
       "requirement": "FR-002",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-003",
       "requirement": "FR-002",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-004",
       "requirement": "FR-003",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-005",
       "requirement": "FR-004",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-006",
       "requirement": "FR-005",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-007",
       "requirement": "FR-006",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-008",
       "requirement": "FR-007",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-009",
       "requirement": "FR-008",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-010",
       "requirement": "FR-012",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-011",
       "requirement": "FR-009",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-012",
       "requirement": "FR-010",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-013",
       "requirement": "REL-002",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-014",
       "requirement": "REL-003",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json",
-        "verification/curated/20261012T175252-97054b8391/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json",
+        "verification/curated/20261016T182523-10e1a1222e/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-015",
       "requirement": "FR-011",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json",
-        "verification/curated/20261012T175252-97054b8391/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json",
+        "verification/curated/20261016T182523-10e1a1222e/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-016",
       "requirement": "FR-002",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-017",
       "requirement": "SEC-002",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-018",
       "requirement": "NFR-003",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173653-5e5eaec209/run.json"
+        "verification/curated/20261016T182056-c17f4ab54e/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-019",
       "requirement": "FR-013",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json",
-        "verification/curated/20261012T175046-f884daa970/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json",
+        "verification/curated/20261016T182451-e8778722a5/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-020",
       "requirement": "NFR-004",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T170911-acbca9c7a0/run.json"
+        "verification/curated/20261016T175805-90b24ad832/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-021",
       "requirement": "SEC-003",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T174000-2fc097e0ec/run.json"
+        "verification/curated/20261016T182226-bb87975bda/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-022",
       "requirement": "PERF-001",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T174444-800c31eb52/run.json"
+        "verification/curated/20261016T182349-83694c9ee6/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-023",
       "requirement": "PERF-002",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T174444-800c31eb52/run.json"
+        "verification/curated/20261016T182349-83694c9ee6/run.json"
       ],
-      "note": "Actual complete selected command on pinned Windows toolchain; source/input hashes preserved. Detailed scope and supplemental artifacts in verification/release-a6/."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     },
     {
       "id": "AC-024",
       "requirement": "PERF-003",
       "status": "PASS",
       "evidence": [
-        "verification/curated/20261012T173406-6e96970fb7/run.json",
-        "verification/curated/20261012T174559-dbbc24c104/run.json"
+        "verification/curated/20261016T181606-97d8beedd0/run.json",
+        "verification/curated/20261016T182412-74fb29dc33/run.json"
       ],
-      "note": "Complete package smoke32 checks plus separately measured1000 attempted seeds, all outcome histories/results/hash accounting and ten replays of the separately labelled unsafe variant; finite workload only."
+      "note": "Derived from completed exact-input A7 execution and unchanged full_gate coverage. Finite scope; separate current independent assessment still pending."
     }
   ],
   "independent_review": {
     "status": "PASS",
     "assessment": {
-      "path": "verification/reviews/final-c5-assessment.json",
-      "sha256": "fd7f05af079e95235f657e3f9b2185621b3c668166502ea526ed6baa63e71b6a"
+      "path": "verification/reviews/final-a7-assessment.json",
+      "sha256": "72f50954787416fe1569fb61f1f1c44d72bd8968e8f979679b499e169c376f8a"
     },
     "evidence": [
-      "verification/curated/20261012T184404-f7dcd7b9c6/run.json",
-      "verification/curated/20261012T181747-eac375da92/run.json",
-      "verification/curated/20261012T174723-ad1b50bd30/run.json",
-      "verification/curated/20261012T182124-5e89b652c6/run.json",
-      "verification/curated/20261012T182125-057b0d57da/run.json",
-      "verification/curated/20261012T182127-d007d96b9a/run.json",
-      "verification/curated/20261012T182129-2228ab9e37/run.json",
-      "verification/curated/20261012T182133-e4c143e79b/run.json",
-      "verification/curated/20261012T182135-4820cbae76/run.json",
-      "verification/curated/20261012T182136-3aeaa79a90/run.json",
-      "verification/curated/20261012T182138-8a31bd1aad/run.json",
-      "verification/curated/20261012T182140-694a583f53/run.json",
-      "verification/curated/20261012T182142-1b51d33aeb/run.json",
-      "verification/curated/20261012T182123-bbdde9128c/run.json",
-      "verification/curated/20261012T180032-780f3f9333/run.json",
-      "verification/curated/20261012T182726-29c05a5b6b/run.json",
-      "verification/curated/20261012T182135-6968799535/run.json",
-      "verification/curated/20261012T175847-cab374318b/run.json"
+      "verification/curated/20261016T200906-5c26a322d0/run.json",
+      "verification/curated/20261016T200906-6f13a749e7/run.json",
+      "verification/curated/20261016T200906-59a9270591/run.json",
+      "verification/curated/20261016T201145-1bd6db6e5b/run.json",
+      "verification/curated/20261016T201404-7ca82c9646/run.json"
     ],
-    "scope": "Actual separate read-only all24 review of frozen C5; original complete source and raw hashes preserved. Later reviewed result/prose integration changes no execution inputs; hosted repaired-source results remain separate. Public minimization retains every credited independent behavioral command and archives three explicitly uncredited copy/syntax-only captures off-repository; the original authored judgment is unchanged."
+    "scope": "Actual separate current all24 assessment; original source fields, execution identities and raw hashes preserved. No historical A6/C5 judgment was retagged."
   },
   "supported_toolchain_verified": true,
   "supported_toolchain_evidence": [
-    "verification/curated/20261012T173919-435d881ee0/run.json"
+    "verification/curated/20261016T182223-edc06727d9/run.json"
   ]
 }

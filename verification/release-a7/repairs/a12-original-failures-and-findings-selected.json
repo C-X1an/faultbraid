@@ -1,0 +1,400 @@
+{
+  "schema_version": 1,
+  "kind": "declared-field-selection-of-original-A12-engineering-evidence",
+  "status": "FIELD_SELECTION_ONLY",
+  "selection_author": "supplement preparer; not an independent reviewer",
+  "scope": "Original negative findings and two actual180s FAIL/timeout records remain failures. Timeout metadata and raw stream hashes are selected rather than manufactured curated runs; incomplete child earns no completed result. These are not claims of a sole historical timing cause.",
+  "value_hash_encoding": "SHA256 of UTF-8 json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=False), before declared text projection",
+  "reports": [
+    {
+      "original_document": "reviews/rv-a9-a11-full-pipeline-native-finding-before-fix.json",
+      "original_report_sha256": "d90bbb53c88bf967f6aa992d636273752530bdbb24eb9036313af33595e1261d",
+      "original_report_bytes": 76830,
+      "not_the_complete_original_report": true,
+      "selected_original_fields": [
+        {
+          "field": "/kind",
+          "original_value_sha256": "393b1f44cc2f061f898c8c8f7c9df67663c96b0a827396e8d076ee32925c6d66",
+          "value": "independent-current-full-pipeline-native-finding-before-fix",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/status",
+          "original_value_sha256": "8dda96cc06ec8a54f6d789a9f4e5c22e8af9eb9c60a8f7046473c57163e079ff",
+          "value": "FAIL",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/created_utc",
+          "original_value_sha256": "5601f4c407bbd4fcd9c88d72060e6497a794e9b33729a22b08766a1eeb43f4c1",
+          "value": "2026-10-16T07:04:09.412671+00:00",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/source/git_commit",
+          "original_value_sha256": "aa90de643963e5f9ec28da7fca2867cc0c1842829e16da4b61a5405f5d220ca1",
+          "value": "32a72e0484d4f36c70f1e935f5168ce540a8570f",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/source/source_tree_sha256",
+          "original_value_sha256": "bd7cdf30971383ec4be8b340df8532ecc71b45e652b07918442359753101db4c",
+          "value": "fced11f2c14e4281d7f11b823c498deb302b3adae96db2d1f6428be7800117b4",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/source/git_dirty",
+          "original_value_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+          "value": false,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/findings",
+          "original_value_sha256": "dd04c5102f650a8a8e2246c01a2c9d246e9a589391412f44bf8f02cc0cc5e85a",
+          "value": [
+            {
+              "actual": "write9 call41/return58; read9 call47/return57/value7. Current production checker and a separate complete-permutation raw-history oracle both return VALID with read9 before write9. C1/C4 establish ack-before-read and pass.",
+              "cause_limit": "Receipt ordinals prove the overlap. Raw records do not establish the sole wall-clock, scheduling, startup, transport or target-delay cause; do not infer one from this classification.",
+              "classification": "Actual full command and AC019 native test FAIL; legal overlapping operations in this particular retained history. No established stale-after-completed-ack, replicated-ID reversion or consensus safety defect.",
+              "file": "tests/system/real_process_test.go",
+              "id": "RV-A11-NATIVE-01",
+              "line": 190,
+              "priority": "P1",
+              "required_next": "Preserve this failure and exact source/assertions/deadlines/ordinals; diagnose workload scheduling/admission against actual observations. Any remedy requires a concrete separately reviewed candidate and fresh actual verification; no blind retry, test weakening or retagging old FAIL.",
+              "status": "OPEN",
+              "title": "Current full verification failed because concurrency16 native schedule did not establish the required acknowledged-write-before-read premise"
+            }
+          ],
+          "declared_text_projection": []
+        },
+        {
+          "field": "/go_json_race",
+          "original_value_sha256": "9068ae0832b8a1fd73a40f879559047be54148d98646fba6ead07700fc4754a6",
+          "value": {
+            "duration_seconds": 250.31299999999464,
+            "exit_code": 1,
+            "failed_package": "github.com/C-X1an/faultbraid/tests/system",
+            "lifecycle_current_named_PASS": {
+              "TestIndependentOwnedHelperCleanupJoinsWaitAndClosesStreams": 1.46,
+              "TestIndependentUnexpectedExitedChildMustNotBecomeSuccessfulOwnedStop": 1.27
+            },
+            "named_failed_tests": [
+              "TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-16",
+              "TestAC019ThreeRealProcessesJournalKillRestartAndCleanup"
+            ],
+            "path": "[local-evidence-root]\\runtime\\release-a11-streaming-runtime\\go-json-race\\20261016T065507-4108f5c10a\\run.json",
+            "reason": "completed",
+            "sha256": "d1cb09b7c53425cc1238ad824a72865b41d1c70e20c40882d6c06db36c08e43d",
+            "status": "FAIL"
+          },
+          "declared_text_projection": [
+            {
+              "kind": "operator-path-prefix",
+              "replacement": "[local-evidence-root]",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "field": "/current_all24",
+          "original_value_sha256": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+          "value": "NOT RUN",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/full_release",
+          "original_value_sha256": "3cd55e8ba78ae40eadbdac8c7c8fc42ffd14fc6a786a72685184b56ff1682256",
+          "value": "FAIL at current full command; remaining8 pipeline steps NOT RUN",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/publication",
+          "original_value_sha256": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+          "value": "NOT RUN",
+          "declared_text_projection": []
+        }
+      ]
+    },
+    {
+      "original_document": "reviews/rv-a9-a12-cli-nonrequest-finding-before-fix.json",
+      "original_report_sha256": "e1a04fa0dd0c2f8b2f57791481ecd0dcd27d7c01965fc34af3c7724aa4227900",
+      "original_report_bytes": 5296,
+      "not_the_complete_original_report": true,
+      "selected_original_fields": [
+        {
+          "field": "/kind",
+          "original_value_sha256": "c4777fab6c57757fcafe01eba8f9a90e9a3c0752c96d63bffb0a555c6af31af5",
+          "value": "independent-exact-cli-production-completion-plan-finding-before-fix",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/status",
+          "original_value_sha256": "c4cd27d641aa45a7b4357f729540045ef1a83ba52c3f4bdd8791a0887403c632",
+          "value": "REJECTED",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/proposal/sha256",
+          "original_value_sha256": "3d2b98ccef47987d09c1971b553a814cae3570015db2d32fdc04c9c534f95cd5",
+          "value": "33bdf3875e0e8748dbfcf48d5223223fc936ad7def670b4e31e21b26fda4a499",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/findings",
+          "original_value_sha256": "17838f1ac3bab6373db19bd4ea9f76eec2fc244a1e8f499a77a14acbd549a924",
+          "value": [
+            {
+              "actual_counterexample": "Own synthetic fixture uses the exact 13-dependency/terminal-read9 public plan and original scenario action IDs, preserves genuine request-only Attempt shape, and satisfies every request dependency/receipt order. It is rejected only because kill-node2 has no client invocation. Removing only the crash dependency in a separately labeled request-only synthetic control passes. No target execution or Raft credit is claimed.",
+              "current_native_implementation_limit": "Phase1 source is static interface evidence, not approval of a final frozen native-core candidate; a future core change must be reviewed and bound explicitly.",
+              "end_line": 60,
+              "expected_fix": "Use truthful evidence/validation for non-request action release or dispatch rather than requiring or inventing a client invocation for a crash. Retain all original recipe assertions and all actual request receipt/attempt-filter/order guards; add a meaningful non-request plan control and later execute the combined production recipe.",
+              "file": "scripts/native_completion.py",
+              "id": "RV-A12-CLI-01",
+              "observation": "The exact example plan includes ActionID kill-node2 awaiting logical read7. completion_problems() requires every nonempty dependent action to appear in attempts with phase invoke. Native action(crash) records no client Attempt; only invoke_read/invoke_write create phase-invoke records. The current phase1 core contract adds acknowledgment-only CompletionBarrier rows and retains that producer behavior. Therefore an honestly satisfied crash barrier still fails the production recipe validator.",
+              "priority": "P1",
+              "start_line": 57,
+              "status": "OPEN",
+              "title": "Production validator rejects the declared crash-action completion dependency"
+            }
+          ],
+          "declared_text_projection": []
+        },
+        {
+          "field": "/not_run",
+          "original_value_sha256": "a6cdfc87e6cfb6beff9a11bb0fef2fe1125c9900b7a1a9009c2f526b7e11bd23",
+          "value": [
+            "Go compilation or CLI Go tests",
+            "actual combined native production conformance at1/4/16",
+            "final native-core implementation review",
+            "full release/all24/publication"
+          ],
+          "declared_text_projection": []
+        },
+        {
+          "field": "/current_acceptance_credit",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+          "value": "NONE",
+          "declared_text_projection": []
+        }
+      ]
+    },
+    {
+      "original_document": "proposals/a12-native-causality/defect-controls-recovery.json",
+      "original_report_sha256": "1788fea2a281a082a2ad54424018565a4e8008e435761789f57b9a82df1bfa66",
+      "original_report_bytes": 14265,
+      "not_the_complete_original_report": true,
+      "selected_original_fields": [
+        {
+          "field": "/scope",
+          "original_value_sha256": "99c3fe8cfa8eabbdb4545da9089c8c846e892dd9e47526f2841444b317c0025f",
+          "value": "engineering controls only; no acceptance credit",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/original_wrapper",
+          "original_value_sha256": "d89e12af83ec837e8670a6b14e1b31a424e2d053b303f615a7fbf509e76f9ac7",
+          "value": {
+            "command": [
+              "[python-runtime-root]\\Scripts\\python.exe",
+              "[local-evidence-root]\\proposals\\a12-native-causality\\run_defect_controls.py"
+            ],
+            "duration_seconds": 180.04699999999139,
+            "exit_code": 1,
+            "label": "defect-control-driver",
+            "outer_source": "fced11f2c14e4281d7f11b823c498deb302b3adae96db2d1f6428be7800117b4",
+            "path": "[local-evidence-root]\\runtime\\a12-native-defect-control-driver\\20261016T084646-4387adef44\\run.json",
+            "reason": "timeout",
+            "requirements": [],
+            "sha256": "edcf4e1cdc724b79e62426a8da6b0fee0d14532cbab40b16b1038b75866d2f77",
+            "status": "FAIL",
+            "stderr": {
+              "bytes": 0,
+              "path": "[local-evidence-root]\\runtime\\a12-native-defect-control-driver\\20261016T084646-4387adef44\\stderr.txt",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "stdout": {
+              "bytes": 1551,
+              "path": "[local-evidence-root]\\runtime\\a12-native-defect-control-driver\\20261016T084646-4387adef44\\stdout.txt",
+              "sha256": "6d73af55336b6ea187a5619ea3b6904a2911e6106ae0acf2735e45e44b27e776"
+            }
+          },
+          "declared_text_projection": [
+            {
+              "kind": "operator-path-prefix",
+              "replacement": "[local-evidence-root]",
+              "count": 4
+            },
+            {
+              "kind": "operator-path-prefix",
+              "replacement": "[python-runtime-root]",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "field": "/incomplete_original_terminal_child/path",
+          "original_value_sha256": "ef5896834b4e1aae9fc0e22a98191adf71d82214dc18f2b2568b6df39dd6d59d",
+          "value": "[local-evidence-root]\\runtime\\a12-native-restored-terminal-cancellation\\20261016T084934-6b87f5854f",
+          "declared_text_projection": [
+            {
+              "kind": "operator-path-prefix",
+              "replacement": "[local-evidence-root]",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "field": "/incomplete_original_terminal_child/status",
+          "original_value_sha256": "25e1e5463182b1844d9f8ef2902e5d7235c39972467fca8012356328d24711b5",
+          "value": "INCOMPLETE; no run.json; no completed result credited",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/restored_source",
+          "original_value_sha256": "56adfb052a3bccee8de545e4bf96d8cc640e27c45a5170b18265deedb058ec44",
+          "value": "d4ded839c441e6a24181d3ca79ee74855f7596f2ce8c7894190f0e44b5d9a518",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/restored_exactly",
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+          "value": true,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/interpretation",
+          "original_value_sha256": "d919bfdd6fba73f8f31265c768c4d993759ddedcb92d447ff62499620c9440d2",
+          "value": "Four intentional defects each failed an actual assertion; exact restored library and separately captured terminal cancellation passed. The cumulative outer wrapper timed out at its existing180s limit. Its incomplete terminal child has no finalized record and receives no completed-result credit.",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/current_acceptance_credit",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+          "value": "NONE",
+          "declared_text_projection": []
+        }
+      ]
+    },
+    {
+      "original_document": "runtime/a12-recovered-cli-race/20261016T164946-6c3727be12/run.json",
+      "original_report_sha256": "21a07400a62186541e208d17dfab5b46ac623a63508fe1834744211fa54daec8",
+      "original_report_bytes": 115868,
+      "not_the_complete_original_report": true,
+      "selected_original_fields": [
+        {
+          "field": "/run_id",
+          "original_value_sha256": "a19d6f8e7b6a2a1279aa0c39943fd6c6f9f31c1b25422a95be18dea11a3e0acd",
+          "value": "20261016T164946-6c3727be12",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/category",
+          "original_value_sha256": "0a2dc8a76bf728ce7bacf5cf77ebe8e0562b2be933cb36810d480cebb64a6563",
+          "value": "private-combined-cli-race",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/requirements",
+          "original_value_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "value": [],
+          "declared_text_projection": []
+        },
+        {
+          "field": "/command",
+          "original_value_sha256": "a5f403c14f88103e0506a03d22107ad43999ffcbd9d7613cad8dbfcda3b14e78",
+          "value": [
+            "go",
+            "test",
+            "-race",
+            "-p",
+            "1",
+            "-count=1",
+            "-v",
+            "./cmd/faultbraid"
+          ],
+          "declared_text_projection": []
+        },
+        {
+          "field": "/started_utc",
+          "original_value_sha256": "b4169a045bf11ec98266251bd327c301588489624bbb9bbb019eb7e41e7dc372",
+          "value": "2026-10-16T16:49:46.322080+00:00",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/ended_utc",
+          "original_value_sha256": "430499540d23f85a3f42e6df4e64d89d632413b3c2a333dc1ecdeabdd513125f",
+          "value": "2026-10-16T16:52:46.357979+00:00",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/duration_seconds",
+          "original_value_sha256": "083918c0d33c2c21936303c02bf90b823c9cf227fe8d6f25b78fe5f66fb459fb",
+          "value": 180.03099999998813,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/status",
+          "original_value_sha256": "8dda96cc06ec8a54f6d789a9f4e5c22e8af9eb9c60a8f7046473c57163e079ff",
+          "value": "FAIL",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/reason",
+          "original_value_sha256": "492bd0204b74443b7d8d36be9d38f139bd23776b1b1762051c15b89705768595",
+          "value": "timeout",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/exit_code",
+          "original_value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          "value": 1,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/source/git_commit",
+          "original_value_sha256": "aa90de643963e5f9ec28da7fca2867cc0c1842829e16da4b61a5405f5d220ca1",
+          "value": "32a72e0484d4f36c70f1e935f5168ce540a8570f",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/source/git_dirty",
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+          "value": true,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/source/source_tree_sha256",
+          "original_value_sha256": "fa4bf2022809e4944c69b8168749b75fe75a7d01afdd9201dbe4b67bf7a87c2f",
+          "value": "44ce91f43df84d9f41d17498be35b70069695b9b497cdbf8592f29c976adfa87",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/stdout/sha256",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/stdout/bytes",
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "value": 0,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/stderr/sha256",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/stderr/bytes",
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "value": 0,
+          "declared_text_projection": []
+        }
+      ]
+    }
+  ],
+  "current_acceptance_credit": "NONE",
+  "combined_supplement_independent_review": "NOT RUN"
+}

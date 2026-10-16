@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "kind": "declared-field-selection-of-original-A12-engineering-evidence",
+  "status": "FIELD_SELECTION_ONLY",
+  "selection_author": "supplement preparer; not an independent reviewer",
+  "scope": "Actual recovered44ce candidate identity/binary and production c1/c4/c16 observations. Original pending-review status is historical. Exact native inventory bytes are included as three separate original artifacts.",
+  "value_hash_encoding": "SHA256 of UTF-8 json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=False), before declared text projection",
+  "reports": [
+    {
+      "original_document": "proposals/a12-combined-recovery/native-checks.json",
+      "original_report_sha256": "770e8e0208a4b9d8ce9a9a1ae49cc9e43e09b9bdb56acb837abe188a465d7dfb",
+      "original_report_bytes": 123134,
+      "not_the_complete_original_report": true,
+      "selected_original_fields": [
+        {
+          "field": "/kind",
+          "original_value_sha256": "02295a9de9d94903d316a0ee99677105d2ab579488bb5c9d45e6747c94a479e9",
+          "value": "actual-private-combined-cli-and-production-native-checks",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/status",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f",
+          "value": "PASS",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/proposal_sha256",
+          "original_value_sha256": "8855cec954b91690c4e9eb0ebb3b30341b72c7925882c689bcb77211db30f678",
+          "value": "2c1700dbd587cd102bec272f70a400dfa79777e4c52e97089fec28f1293792f9",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/candidate_source/git_commit",
+          "original_value_sha256": "aa90de643963e5f9ec28da7fca2867cc0c1842829e16da4b61a5405f5d220ca1",
+          "value": "32a72e0484d4f36c70f1e935f5168ce540a8570f",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/candidate_source/git_dirty",
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+          "value": true,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/candidate_source/source_tree_sha256",
+          "original_value_sha256": "fa4bf2022809e4944c69b8168749b75fe75a7d01afdd9201dbe4b67bf7a87c2f",
+          "value": "44ce91f43df84d9f41d17498be35b70069695b9b497cdbf8592f29c976adfa87",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/binary_sha256",
+          "original_value_sha256": "ff122836f0f4284322351df81218bd9640dac23e6a3cbf07816c6a9943a96877",
+          "value": "8f78a944a146246ab3786d81b1399e19f06158891df13770e546f4585ac02d3f",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/native_summary/sha256",
+          "original_value_sha256": "098c93756783eaf3ace9bfd3e28e87dcc0519a3d700511ca08a27228e96f4f18",
+          "value": "bbca1e6b57536905a192183af2ecc424566320b9ac4b3e304be9665bb9835fca",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/native_runs",
+          "original_value_sha256": "3c9b0f8240e5921cbc9398f2fbc4b293e369375c7009d568dd94dcc7453b1947",
+          "value": [
+            {
+              "acknowledgment_ordinal": 37,
+              "artifact": "[operator-profile]\\AppData\\Local\\FaultBraid\\c12-20261016T164702-62d286\\src\\.local-runs\\real-lab-20261016T165849-a32791\\concurrency-1\\native.json",
+              "barriers": 14,
+              "cleanup_complete": true,
+              "concurrency": 1,
+              "dispatch": {
+                "action_id": "kill-node2",
+                "kind": "crash",
+                "observed_ordinal": 38
+              },
+              "duration_milliseconds": 6143,
+              "processes": 4,
+              "sha256": "487cc26aa2ebdb9cd7666b77da5225e6f023a53ffaa61bb1caa4bdf903cc1379"
+            },
+            {
+              "acknowledgment_ordinal": 38,
+              "artifact": "[operator-profile]\\AppData\\Local\\FaultBraid\\c12-20261016T164702-62d286\\src\\.local-runs\\real-lab-20261016T165849-a32791\\concurrency-4\\native.json",
+              "barriers": 14,
+              "cleanup_complete": true,
+              "concurrency": 4,
+              "dispatch": {
+                "action_id": "kill-node2",
+                "kind": "crash",
+                "observed_ordinal": 38
+              },
+              "duration_milliseconds": 6615,
+              "processes": 4,
+              "sha256": "0b45ec036345a0c06c53ebb7f6a1831249d3820cc2be11a5873def3d50a595c9"
+            },
+            {
+              "acknowledgment_ordinal": 38,
+              "artifact": "[operator-profile]\\AppData\\Local\\FaultBraid\\c12-20261016T164702-62d286\\src\\.local-runs\\real-lab-20261016T165849-a32791\\concurrency-16\\native.json",
+              "barriers": 14,
+              "cleanup_complete": true,
+              "concurrency": 16,
+              "dispatch": {
+                "action_id": "kill-node2",
+                "kind": "crash",
+                "observed_ordinal": 38
+              },
+              "duration_milliseconds": 6171,
+              "processes": 4,
+              "sha256": "0f7fdbe540c3034315ccc5879c04472e8fe6d5f8927c8f1ac6458fc9f84570f7"
+            }
+          ],
+          "declared_text_projection": [
+            {
+              "kind": "operator-path-prefix",
+              "replacement": "[operator-profile]",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "field": "/prelaunch_controls",
+          "original_value_sha256": "742640c0037353d5177e5186b546d96624317a7d2e01bd20d13bafba2cb84b46",
+          "value": [
+            {
+              "case": "unknown-action",
+              "outdir_absent": true,
+              "plan_bytes": 115,
+              "plan_sha256": "afa472deba4eca8549978c21105507dba28cbbd5f37ef973bd281cda6380df57"
+            },
+            {
+              "case": "future-request",
+              "outdir_absent": true,
+              "plan_bytes": 117,
+              "plan_sha256": "951230050091887def477f7fda20ea098fcf548cf510270e42be7aaa8de35f83"
+            },
+            {
+              "case": "wrong-request-filter",
+              "outdir_absent": true,
+              "plan_bytes": 148,
+              "plan_sha256": "9662542c1e2f2a9f42fdd3d639e004a6df97d2f4f743ac3afd2043f1753d8c93"
+            },
+            {
+              "case": "cardinality",
+              "outdir_absent": true,
+              "plan_bytes": 48244,
+              "plan_sha256": "0b938c0fea7df968466a391acaad1245dd5e7f7db3c06e8a45d947e0c083d71e"
+            },
+            {
+              "case": "unknown-field",
+              "outdir_absent": true,
+              "plan_bytes": 85,
+              "plan_sha256": "f1d6810637d092cfa1d28e6cdf0ed257331f24d36b81c38d1c08cccfbbbb76af"
+            },
+            {
+              "case": "null-field",
+              "outdir_absent": true,
+              "plan_bytes": 72,
+              "plan_sha256": "1d5ab5b9175bf3e14dd6ed652abeab9fb39a294b79a4eae720d67aaafaae4369"
+            }
+          ],
+          "declared_text_projection": []
+        },
+        {
+          "field": "/attribution",
+          "original_value_sha256": "53a5cf42331bd1ef54533fa298748a55334ee50d26eb3ffacf86e28516d8d285",
+          "value": "Every fresh child capture runs with actual recovered44ce candidate cwd and exact source identity. Prior old-path, missing-checkout, and timeout records remain unchanged; no old run is adopted as a recovered-path execution.",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/independent_review",
+          "original_value_sha256": "f7dc3a3fe3924617920feb00de4b9dab5121d4813dfdbdb216ac26297a542ef4",
+          "value": "PENDING; RV-A12-CLI-01 and narrow static harness issue RV-A12-HARNESS-01 await exact independent closure",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/not_run",
+          "original_value_sha256": "cde7f333eecfcea58a161c99fd3744f35289fa404cab7f9320e007983ccfaded",
+          "value": [
+            "Current committed clean/full/all24 verification",
+            "publication and hosted same-head CI"
+          ],
+          "declared_text_projection": []
+        },
+        {
+          "field": "/public_writes",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+          "value": "NONE",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/0/sha256",
+          "original_value_sha256": "a716983d75686ee5986061036c9d607354116b6f719fe5dff06fb466add06ce2",
+          "value": "1ef0b591721397ae2ce88dbec0bcc3d0166703739b5b1c95bdaf9ae06f26ca56",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/0/status",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f",
+          "value": "PASS",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/9/sha256",
+          "original_value_sha256": "7642d26cf50a001a50e7f7a1fa85cf727a39cbdaa9a4c65f236edba4e869c24d",
+          "value": "8fc0e18b85d45427de785bc0eae7680c46b5d8ce6dbd604ba7bb7c921a596ef5",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/9/status",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f",
+          "value": "PASS",
+          "declared_text_projection": []
+        }
+      ]
+    }
+  ],
+  "current_acceptance_credit": "NONE",
+  "combined_supplement_independent_review": "NOT RUN"
+}

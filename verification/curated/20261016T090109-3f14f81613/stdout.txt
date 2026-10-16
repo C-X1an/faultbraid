@@ -1,0 +1,54 @@
+=== RUN   TestNativeCompletionValidationRejectsBeforeOutputOrChildren
+=== RUN   TestNativeCompletionValidationRejectsBeforeOutputOrChildren/unknown-action
+=== RUN   TestNativeCompletionValidationRejectsBeforeOutputOrChildren/unknown-request
+=== RUN   TestNativeCompletionValidationRejectsBeforeOutputOrChildren/future-or-cycle
+=== RUN   TestNativeCompletionValidationRejectsBeforeOutputOrChildren/unknown-filter
+=== RUN   TestNativeCompletionValidationRejectsBeforeOutputOrChildren/future-filter
+=== RUN   TestNativeCompletionValidationRejectsBeforeOutputOrChildren/same-action-filter
+=== RUN   TestNativeCompletionValidationRejectsBeforeOutputOrChildren/wrong-request-filter
+=== RUN   TestNativeCompletionValidationRejectsBeforeOutputOrChildren/duplicate-filter
+=== RUN   TestNativeCompletionValidationRejectsBeforeOutputOrChildren/duplicate-dependency
+=== RUN   TestNativeCompletionValidationRejectsBeforeOutputOrChildren/unknown-terminal
+=== RUN   TestNativeCompletionValidationRejectsBeforeOutputOrChildren/duplicate-terminal
+--- PASS: TestNativeCompletionValidationRejectsBeforeOutputOrChildren (0.02s)
+    --- PASS: TestNativeCompletionValidationRejectsBeforeOutputOrChildren/unknown-action (0.00s)
+    --- PASS: TestNativeCompletionValidationRejectsBeforeOutputOrChildren/unknown-request (0.00s)
+    --- PASS: TestNativeCompletionValidationRejectsBeforeOutputOrChildren/future-or-cycle (0.00s)
+    --- PASS: TestNativeCompletionValidationRejectsBeforeOutputOrChildren/unknown-filter (0.00s)
+    --- PASS: TestNativeCompletionValidationRejectsBeforeOutputOrChildren/future-filter (0.00s)
+    --- PASS: TestNativeCompletionValidationRejectsBeforeOutputOrChildren/same-action-filter (0.00s)
+    --- PASS: TestNativeCompletionValidationRejectsBeforeOutputOrChildren/wrong-request-filter (0.00s)
+    --- PASS: TestNativeCompletionValidationRejectsBeforeOutputOrChildren/duplicate-filter (0.00s)
+    --- PASS: TestNativeCompletionValidationRejectsBeforeOutputOrChildren/duplicate-dependency (0.00s)
+    --- PASS: TestNativeCompletionValidationRejectsBeforeOutputOrChildren/unknown-terminal (0.00s)
+    --- PASS: TestNativeCompletionValidationRejectsBeforeOutputOrChildren/duplicate-terminal (0.00s)
+=== RUN   TestNativeCompletionOptionsCopyNestedFilters
+--- PASS: TestNativeCompletionOptionsCopyNestedFilters (0.00s)
+=== RUN   TestNativeCompletionFilteredWaitNeedsActualAdmittedRetry
+--- PASS: TestNativeCompletionFilteredWaitNeedsActualAdmittedRetry (0.02s)
+=== RUN   TestNativeCompletionUnfilteredWaitRejectsPendingAndRejection
+--- PASS: TestNativeCompletionUnfilteredWaitRejectsPendingAndRejection (0.00s)
+=== RUN   TestNativeCompletionWaitCancellationAndObservationError
+--- PASS: TestNativeCompletionWaitCancellationAndObservationError (0.00s)
+=== RUN   TestNativeCompletionActionGateActuallyWaits
+--- PASS: TestNativeCompletionActionGateActuallyWaits (0.02s)
+=== RUN   TestNativeCompletionPlanLimitsHaveInvalidPlanAndResourceClassification
+--- PASS: TestNativeCompletionPlanLimitsHaveInvalidPlanAndResourceClassification (0.00s)
+=== RUN   TestNativeNonRequestDispatchRecordsCommonCounterFloorOnce
+--- PASS: TestNativeNonRequestDispatchRecordsCommonCounterFloorOnce (0.00s)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/labreal	4.543s
+=== RUN   TestNativeCompletionBarrierCancellationRetainsOwnedCleanup
+    native_causality_test.go:66: retained actual native fixture=.local-runs/real-process-tests/actual-3294684553/lab/native-result.json
+--- PASS: TestNativeCompletionBarrierCancellationRetainsOwnedCleanup (3.50s)
+=== RUN   TestNativeCompletionTerminalCancellationRetainsOwnedCleanup
+    native_causality_test.go:104: retained actual native fixture=.local-runs/real-process-tests/actual-3442600924/lab/native-result.json
+--- PASS: TestNativeCompletionTerminalCancellationRetainsOwnedCleanup (3.49s)
+=== RUN   TestAC019ThreeRealProcessesJournalKillRestartAndCleanup
+=== RUN   TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-16
+    real_process_test.go:123: retained actual native fixture=.local-runs/real-process-tests/actual-2455561432/lab/native-result.json
+    real_process_test.go:198: AC-019 actual same-test-binary processes=4 distinct-pids=4 socket-closure=true http-posts=911 journal-bytes=4017 configured-concurrency=16 observed-peak=16 duration-ms=7974 source=7cb7e5eeb36378b1c3e3fae8e9f4b9f2cd2647cf74f5b9ca085e37a6f4fffc46 binary=a971e6a710ae1dec467fc6ac63092a0682c5b5c4095a326a301e661dedb65225
+--- PASS: TestAC019ThreeRealProcessesJournalKillRestartAndCleanup (8.12s)
+    --- PASS: TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-16 (8.12s)
+PASS
+ok  	github.com/C-X1an/faultbraid/tests/system	20.688s

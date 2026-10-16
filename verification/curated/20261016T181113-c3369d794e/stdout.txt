@@ -1,0 +1,6 @@
+=== RUN   TestBudget
+    history_test.go:49: budget is not unknown: {Status:VALID Witness:[] States:1 Reason:state budget exhausted} <nil>
+--- FAIL: TestBudget (0.00s)
+FAIL
+FAIL	github.com/C-X1an/faultbraid/internal/history	2.101s
+FAIL

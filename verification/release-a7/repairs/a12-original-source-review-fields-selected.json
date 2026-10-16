@@ -1,0 +1,339 @@
+{
+  "schema_version": 1,
+  "kind": "declared-field-selection-of-original-A12-engineering-evidence",
+  "status": "FIELD_SELECTION_ONLY",
+  "selection_author": "supplement preparer; not an independent reviewer",
+  "scope": "Minimal field selection from the genuine exact15-path source approval. It approves its historical source scope only. The approval explicitly excludes future source revisions/evidence curation; this combined supplement has not been independently reviewed.",
+  "value_hash_encoding": "SHA256 of UTF-8 json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=False), before declared text projection",
+  "reports": [
+    {
+      "original_document": "reviews/a12-exact-readonly-verifier-20261017/exact-scoped-assessment.json",
+      "original_report_sha256": "75749a685bde11748c18a8b9c59ff2d5921b8d205966a36923b09bbff0aea51f",
+      "original_report_bytes": 22142,
+      "not_the_complete_original_report": true,
+      "selected_original_fields": [
+        {
+          "field": "/schema_version",
+          "original_value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          "value": 1,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/kind",
+          "original_value_sha256": "1529523f3e4da3b3e79b96639dab614c5280999de3426707884a3bdab8ba3c03",
+          "value": "independent-exact-A12-core-CLI-inventory-scoped-assessment",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/status",
+          "original_value_sha256": "17c83d42a1bff91ecab51657c0110b672f17bce32133ea1f5d6e9a3c2a7141a9",
+          "value": "PASS_SCOPED_FOR_SERIALIZED_INTEGRATION",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/created_utc",
+          "original_value_sha256": "6aedcc8702d46cf3e23020a405e26dd1f138c04eb1ec8f0dbfecb02c2f57c80c",
+          "value": "2026-10-16T17:06:03.614225+00:00",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/reviewer",
+          "original_value_sha256": "578a2672f0652fa0086e57ec0254f376c4dcfb2dd53e3ca5ac8cab13c0b2330c",
+          "value": {
+            "execution": "Reviewer launched Python/read-only controls only; Go/build/native executions are root-owned and were independently inspected",
+            "id": "/root/a12_exact_readonly_verifier",
+            "independent_from_implementation": true,
+            "method": "Own contract/source/filesystem/static inspection, independent Python fixtures and finite oracle, exact retained and current raw-record verification, independent socket checks",
+            "model_override": "NONE; no Astra, purchases, billing changes or usage reset"
+          },
+          "declared_text_projection": []
+        },
+        {
+          "field": "/approved_scope/purpose",
+          "original_value_sha256": "83304ff86eef412fea10562f80de1876bb4c5660be1073ff6094f408e08505c1",
+          "value": "Exact private native causality core, CLI/recipe/API change and append-eight inventory may be installed by serialized integrator after comparing exact hashes. This is not full project, current all24, release or publication approval.",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/approved_scope/core_proposal_sha256",
+          "original_value_sha256": "c13ef1072f0366d09675673f20e1fca527f7e02740539ed7ba69ac354e8040b7",
+          "value": "eef725fda48a69b25128bea63dfb181d151c99085e69ca43db004721c0085ff5",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/approved_scope/CLI_proposal_sha256",
+          "original_value_sha256": "19c4a6f4dc7f5dcc8b731fe895faa8a1481c9cea22e784b3a87ce871a00d9faf",
+          "value": "ebde34b5e30fcd651874934622d00b62949e83ed3bf1eccf3e038484c6b32653",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/approved_scope/core_packet_sha256",
+          "original_value_sha256": "ed5dce6fd721a513ad7d4859237e3c1e9631c1d82c5c46362f1f3f33f5f1e5c9",
+          "value": "1a04951a4542550a2332e3f60ffc59e888cb51b29906dc8c37bd36bbde77958c",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/approved_scope/source_tree_sha256",
+          "original_value_sha256": "fa4bf2022809e4944c69b8168749b75fe75a7d01afdd9201dbe4b67bf7a87c2f",
+          "value": "44ce91f43df84d9f41d17498be35b70069695b9b497cdbf8592f29c976adfa87",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/approved_scope/file_count",
+          "original_value_sha256": "9f6cb78c09b22a1a10564f6be4a1784327a42ff11a10a31d355435db59f44710",
+          "value": 655,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/approved_scope/base_git_commit",
+          "original_value_sha256": "aa90de643963e5f9ec28da7fca2867cc0c1842829e16da4b61a5405f5d220ca1",
+          "value": "32a72e0484d4f36c70f1e935f5168ce540a8570f",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/approved_scope/candidate_git_dirty",
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+          "value": true,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/approved_scope/paths",
+          "original_value_sha256": "6c051004319bea9e3df0dc5a2ebd1fe56819087cf6438808554532cea98451c5",
+          "value": {
+            "API_SPEC.md": "dcc2026ee4c87ccfa0b145ff2c45e4ce007df4aebc3d4ea091711b176e6d82fc",
+            "PUBLIC_FILES.txt": "715bf61b8cce2716889f0dace36babbc8b41ca51b29fa7fe9991990537b8c076",
+            "cmd/faultbraid/completion_plan.go": "6dd27e4b40247afdf39a184ab2dc82683b261411f14247474794f7a54c9066d9",
+            "cmd/faultbraid/completion_plan_test.go": "f996ecb0d5dfac8a60c731b9006733c9d7043e9b4da22f8709b9630c6921397a",
+            "cmd/faultbraid/lab.go": "7c41c80b002ae4754889a18296643bcfff4d05ebbd49c804f7cf20861843a5a9",
+            "examples/raft-real-completions.json": "6a24149c16fd8ae4529b0e0318b036e2244b6408790dae94c939adf350a0befe",
+            "internal/labreal/api.go": "ee33f4e8cc050d549703196cf379f20c7c0bd1aa339af0fd26c9dc2c7f68dede",
+            "internal/labreal/completion.go": "c91109d1a0ef101dd2018298cc499ae3ba835826eac70826c6b541687273f283",
+            "internal/labreal/completion_test.go": "f5f768ccef251f0e4425fc64732ef6ca4b3422b3e45d4d1685f865c9189a5386",
+            "internal/labreal/run.go": "f6e1e024c97474387cfe733d913998b346ef49600b31480537d6dad989bbf9f8",
+            "scripts/native_completion.py": "4138178b57c1efeec0cbd0ba9600766cbd461166c9c8b8c446902b06de9fa8cc",
+            "scripts/real_lab.py": "592674d1784bd4332f0ca8028a63c02fa46558504c34e2fb0fab54739948f887",
+            "scripts/test_native_completion.py": "3774a2b4246ffa95023c2ecb25a182bed8473e898dfd5789dc4106e2b9b75c38",
+            "tests/system/native_causality_test.go": "ed17c40ccbd6310527975072c0b8df7326de1acaf8c5ef18d32f3df890b053cc",
+            "tests/system/real_process_test.go": "5f56ba4263244969ab01aa03376b792f35c126fad70f292dddddca295cce50d9"
+          },
+          "declared_text_projection": []
+        },
+        {
+          "field": "/approved_scope/path_count",
+          "original_value_sha256": "e629fa6598d732768f7c726b4b621285f9c3b85303900aa912017db7617d8bdb",
+          "value": 15,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/approved_scope/excluded",
+          "original_value_sha256": "1cf3d9ab2b407a209f6815c810306236aad4948ac80b5b537dfa20990077239c",
+          "value": "Separate documentation-binding writer derivative and any future source revisions or evidence curation are outside this exact 15-path approval.",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/findings",
+          "original_value_sha256": "fbc4b7a9bd8467b3f730b346a8eccffd332e4fa257112bf46fcc970c05baf402",
+          "value": [
+            {
+              "before_fix_sha256": "e1a04fa0dd0c2f8b2f57791481ecd0dcd27d7c01965fc34af3c7724aa4227900",
+              "history": "Old rejected proposals33bdf387/b06d4054 and before-fix finding remain unchanged and rejected in their original scopes; no original file edited.",
+              "id": "RV-A12-CLI-01",
+              "reason": "Producer records one genuine configured non-request action-entry common-counter snapshot after waits and before side effects; validator binds scenario ID/kind and requires floor>=actual complete/admitted receipt. Request ack<invoke and actual retry filter stay strict. All20 own synthetic controls,11 supplied Python tests, actual production c1/c4/c16 and fresh affected race passed. Actual production equality cases c4/c16 were observed.",
+              "status": "RESOLVED_WITHIN_EXACT_PRIVATE_CANDIDATE"
+            },
+            {
+              "before_fix_sha256": "306188ccec032d043a566d46433eb9ea88b4c307066838e6f8973600e185d72f",
+              "id": "RV-A12-HARNESS-01",
+              "reason": "New semantic fixtures include both required arrays and actual completed commands emitted INVALID_INPUT invalid native completion dependency, exit2, stdout empty, no output directory. Malformed schema controls retain their distinct parser diagnostic. Original old driver remains byte-identical74ae7a0 and was never executed beyond its missing-path guard.",
+              "scope": "Private verification harness only; no production-source defect.",
+              "status": "RESOLVED_IN_NEW_RECOVERY_CONTROL_DRIVER"
+            }
+          ],
+          "declared_text_projection": []
+        },
+        {
+          "field": "/new_material_candidate_findings",
+          "original_value_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "value": [],
+          "declared_text_projection": []
+        },
+        {
+          "field": "/preserved_original_native_finding",
+          "original_value_sha256": "0700f8f1106c6f18795eea5e481a3f23ec7b7285bfd0b9d3fd465a81a1f5fe41",
+          "value": {
+            "disposition": "Historical full250.313s command remains FAIL on public32a/fced. Own raw-history oracle confirms legal overlap; no timing cause or safety defect inferred. Exact A12 proposal supplies the missing causal premises and passes current scoped native controls. Fresh integrated clean/full/all24 still required.",
+            "finding_sha256": "d90bbb53c88bf967f6aa992d636273752530bdbb24eb9036313af33595e1261d",
+            "id": "RV-A11-NATIVE-01"
+          },
+          "declared_text_projection": []
+        },
+        {
+          "field": "/measured_current_checks/native",
+          "original_value_sha256": "7b970fd53d1a4dfaf1473daf1d779733dfa06c90bfd75163ecbbd3adaf174933",
+          "value": [
+            {
+              "barriers": 14,
+              "cleanup_complete": true,
+              "concurrency": 1,
+              "crash_acknowledgment": {
+                "acknowledgment_action_id": "read7-n2",
+                "acknowledgment_ordinal": 37,
+                "action_id": "kill-node2",
+                "request_id": "read7"
+              },
+              "dispatch": {
+                "action_id": "kill-node2",
+                "kind": "crash",
+                "observed_ordinal": 38
+              },
+              "duration_milliseconds": 6143,
+              "sha256": "487cc26aa2ebdb9cd7666b77da5225e6f023a53ffaa61bb1caa4bdf903cc1379"
+            },
+            {
+              "barriers": 14,
+              "cleanup_complete": true,
+              "concurrency": 4,
+              "crash_acknowledgment": {
+                "acknowledgment_action_id": "read7-n2",
+                "acknowledgment_ordinal": 38,
+                "action_id": "kill-node2",
+                "request_id": "read7"
+              },
+              "dispatch": {
+                "action_id": "kill-node2",
+                "kind": "crash",
+                "observed_ordinal": 38
+              },
+              "duration_milliseconds": 6615,
+              "sha256": "0b45ec036345a0c06c53ebb7f6a1831249d3820cc2be11a5873def3d50a595c9"
+            },
+            {
+              "barriers": 14,
+              "cleanup_complete": true,
+              "concurrency": 16,
+              "crash_acknowledgment": {
+                "acknowledgment_action_id": "read7-n2",
+                "acknowledgment_ordinal": 38,
+                "action_id": "kill-node2",
+                "request_id": "read7"
+              },
+              "dispatch": {
+                "action_id": "kill-node2",
+                "kind": "crash",
+                "observed_ordinal": 38
+              },
+              "duration_milliseconds": 6171,
+              "sha256": "0f7fdbe540c3034315ccc5879c04472e8fe6d5f8927c8f1ac6458fc9f84570f7"
+            }
+          ],
+          "declared_text_projection": []
+        },
+        {
+          "field": "/measured_current_checks/prelaunch_controls",
+          "original_value_sha256": "7bb2e9ebe338e053bf6b1e4613add2897d0f0a85ef6b75eee1323b9cec0eaf89",
+          "value": [
+            {
+              "case": "unknown-action",
+              "diagnostic": {
+                "code": "INVALID_INPUT",
+                "message": "invalid native completion dependency"
+              },
+              "exit_code": 2,
+              "output_absent": true,
+              "plan_bytes": 115,
+              "plan_sha256": "afa472deba4eca8549978c21105507dba28cbbd5f37ef973bd281cda6380df57",
+              "reached_semantic_guard": true
+            },
+            {
+              "case": "future-request",
+              "diagnostic": {
+                "code": "INVALID_INPUT",
+                "message": "invalid native completion dependency"
+              },
+              "exit_code": 2,
+              "output_absent": true,
+              "plan_bytes": 117,
+              "plan_sha256": "951230050091887def477f7fda20ea098fcf548cf510270e42be7aaa8de35f83",
+              "reached_semantic_guard": true
+            },
+            {
+              "case": "wrong-request-filter",
+              "diagnostic": {
+                "code": "INVALID_INPUT",
+                "message": "invalid native completion dependency"
+              },
+              "exit_code": 2,
+              "output_absent": true,
+              "plan_bytes": 148,
+              "plan_sha256": "9662542c1e2f2a9f42fdd3d639e004a6df97d2f4f743ac3afd2043f1753d8c93",
+              "reached_semantic_guard": true
+            },
+            {
+              "case": "cardinality",
+              "diagnostic": {
+                "code": "INVALID_INPUT",
+                "message": "invalid native completion dependency"
+              },
+              "exit_code": 2,
+              "output_absent": true,
+              "plan_bytes": 48244,
+              "plan_sha256": "0b938c0fea7df968466a391acaad1245dd5e7f7db3c06e8a45d947e0c083d71e",
+              "reached_semantic_guard": true
+            },
+            {
+              "case": "unknown-field",
+              "diagnostic": {
+                "code": "INVALID_INPUT",
+                "message": "invalid native completion plan"
+              },
+              "exit_code": 2,
+              "output_absent": true,
+              "plan_bytes": 85,
+              "plan_sha256": "f1d6810637d092cfa1d28e6cdf0ed257331f24d36b81c38d1c08cccfbbbb76af",
+              "reached_semantic_guard": false
+            },
+            {
+              "case": "null-field",
+              "diagnostic": {
+                "code": "INVALID_INPUT",
+                "message": "invalid native completion plan"
+              },
+              "exit_code": 2,
+              "output_absent": true,
+              "plan_bytes": 72,
+              "plan_sha256": "1d5ab5b9175bf3e14dd6ed652abeab9fb39a294b79a4eae720d67aaafaae4369",
+              "reached_semantic_guard": false
+            }
+          ],
+          "declared_text_projection": []
+        },
+        {
+          "field": "/measured_current_checks/Python_controls",
+          "original_value_sha256": "1f4060abd52df77f70fdd6485424e7c7ca83c9eec0e559172389077a6bb9efea",
+          "value": "20 own synthetic cases and11 supplied exact recovered tests passed; no Raft credit assigned to synthetic tests",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/historical_evidence_scope",
+          "original_value_sha256": "d654ecdf69a950a3780003a7b4373a9dabf1db63a77f8651ad7c3784762336b3",
+          "value": "26 historical finalized commands and3 retained V3 actual native inventories were verified. V2d4, V3core7cb7, delayed2500ms overlay, old outerpublic32a/fced and newcombined44ce retain distinct identities. Four genuine mutants FAIL/restoredPASS and180s wrapper timeout/incomplete child remain preserved; no old evidence was retagged.",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/not_approved_or_not_run",
+          "original_value_sha256": "b5e52bde0d57329692fe4da0731a7c2dc747f7d39f1a1fa63f87cb742cba55d0",
+          "value": [
+            "Integration into public and new normal commit/freeze",
+            "Fresh committed clean/full release pipeline and current all24 independent acceptance assessment",
+            "Any separate documentation-binding derivative or later source revision",
+            "Publication, public export/history privacy release gate, or same-head hosted CI",
+            "OS deterministic replay, physical power-loss certification, exhaustive correctness, or universal timing guarantees"
+          ],
+          "declared_text_projection": []
+        }
+      ]
+    }
+  ],
+  "current_acceptance_credit": "NONE",
+  "combined_supplement_independent_review": "NOT RUN"
+}

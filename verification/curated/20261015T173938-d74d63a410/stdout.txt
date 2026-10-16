@@ -1,0 +1,1 @@
+{"probe": "[local-evidence-root]\\proposals\\a11-go-source-walk\\clone\\.local-runs\\walk-probe", "original_files_sha256": "d6c763bb7e27707a4742d16d5956a68215a2aa1edaeae88706639926d97e17d9", "copied": 4}

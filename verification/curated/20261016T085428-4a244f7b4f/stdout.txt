@@ -1,0 +1,5 @@
+=== RUN   TestNativeCompletionTerminalCancellationRetainsOwnedCleanup
+    native_causality_test.go:103: retained actual native fixture=.local-runs/real-process-tests/actual-285762123/lab/native-result.json
+--- PASS: TestNativeCompletionTerminalCancellationRetainsOwnedCleanup (3.54s)
+PASS
+ok  	github.com/C-X1an/faultbraid/tests/system	9.246s

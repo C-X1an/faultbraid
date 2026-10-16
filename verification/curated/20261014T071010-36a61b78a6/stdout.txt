@@ -1,0 +1,8 @@
+=== RUN   TestReplayRejectsCancellationBeforeAndDuringValidation
+=== RUN   TestReplayRejectsCancellationBeforeAndDuringValidation/576
+    cancellation_test.go:73: cancelled replay returned a semantic answer: <nil>
+--- FAIL: TestReplayRejectsCancellationBeforeAndDuringValidation (0.29s)
+    --- FAIL: TestReplayRejectsCancellationBeforeAndDuringValidation/576 (0.10s)
+FAIL
+FAIL	github.com/C-X1an/faultbraid/tests/security	2.769s
+FAIL

@@ -1,0 +1,676 @@
+{
+  "schema_version": 1,
+  "kind": "integrator-selected-original-runtime-engineering-judgments",
+  "status": "FIELD_SELECTION_ONLY",
+  "reviews": [
+    {
+      "name": "runner-failure-before-fix",
+      "original_report_sha256": "605cdccf5c726ff553c85db5f62df37aa34e5fc9127ab9faefbbb16525bef2fe",
+      "original_status": "OPEN",
+      "selected_original_fields": [
+        {
+          "field": "/kind",
+          "value": "independent-runner-finding-before-fix",
+          "original_value_sha256": "570c97f6024dced13868cb70631eba993dbc34ae7d859bc9f74558d173a7c748"
+        },
+        {
+          "field": "/status",
+          "value": "OPEN",
+          "original_value_sha256": "be0a10fd97364a8fcdbc5bee5360b8ef41f3693ffcef3804485a3b96c2b2ab65"
+        },
+        {
+          "field": "/reviewer",
+          "value": {
+            "id": "/root/native_full_release_verifier",
+            "method": "separate-read-only-verifier"
+          },
+          "original_value_sha256": "806c0586f9369726e3bfb582f0f59cee0a29d7254de5bf1e3d498ca8cab130c5"
+        },
+        {
+          "field": "/created_utc",
+          "value": "2026-10-15T06:57:32.356173+00:00",
+          "original_value_sha256": "f9411a3d31b2de38fc475f6aac89d5bc326f5c2d3361627e2bab8a220f058adb"
+        },
+        {
+          "field": "/source/git_commit",
+          "value": "9f1d19c9e43bb91cf36441c78ba89a61bff106be",
+          "original_value_sha256": "9f84d0fd8b276f6cf88cac86999ca6a49fc51a7fb9c70d1614fdfc8464043b51"
+        },
+        {
+          "field": "/source/source_tree_sha256",
+          "value": "969a1747dd0b8c0bc8dc0880ee038e9a34dd21ce82aa9a4388a7fe3cb17a3c05",
+          "original_value_sha256": "3ddc665f127371682c01d974cc40068a79f4bfee39cbfcbbc07dfc4f9ed71db1"
+        },
+        {
+          "field": "/findings",
+          "value": [
+            {
+              "cause": "NOT ESTABLISHED. A runner/Windows process-containment or execution-environment issue is demonstrated by the actual post-timeout chronology and stream mutation; WindowsApps alias-broker escape is a hypothesis requiring controlled reproduction.",
+              "file_sha256": "c9770fe2715f17b9d2cae7f30374586596addebdf0069b28321665ba50985d32",
+              "id": "NF-A8-RUN-01",
+              "implication": "A timed-out command may continue work and mutate supposedly sealed output after the caller proceeds. This contradicts command ownership/cleanup and evidence immutability expectations. The FAIL status remains FAIL even though nested campaign summaries later report PASS.",
+              "observed_outer_status": {
+                "command": [
+                  "make",
+                  "campaign"
+                ],
+                "duration_seconds": 360.010973299999,
+                "ended_utc": "2026-10-14T17:09:11.692180+00:00",
+                "exit_code": 1,
+                "reason": "timeout",
+                "run_id": "20261014T170311-1ceffd16ab",
+                "started_utc": "2026-10-14T17:03:11.678426+00:00",
+                "status": "FAIL"
+              },
+              "path": "public/scripts/run_evidence.py",
+              "required_before_closure": "Preserve original bytes/statuses, independently validate the controlled make/shell/Python3 process path, repair exact runner/environment behavior and meaningful cleanup assertions as warranted, demonstrate no post-return descendants/stream mutations under timeout, and run a fresh source-bound full pipeline. No all24/current release approval until those actual gates pass.",
+              "severity": "P1",
+              "status": "OPEN",
+              "summary": "Actual make campaign timeout finalized a FAIL record while an inherited stdout handle remained live: stdout grew from250 bytes/rawSHA66ac6b15... to541 bytes/rawSHA0134f167..., and seven nested replay command captures began after the outer command ended. The finalized stream descriptor is invalid; this capture cannot be curated, credited or reused as a successful pipeline step."
+            }
+          ],
+          "original_value_sha256": "49a4f026675227ae9c8165a22394c63974280e8af75b3cef399175b114f0ca90"
+        },
+        {
+          "field": "/interpretation",
+          "value": {
+            "current_all24": "NOT RUN",
+            "full_pipeline": "FAIL",
+            "inner_commands_started_after_outer_end": 7,
+            "inner_commands_total": 12,
+            "latest_inner_end_utc": "2026-10-14T17:13:38.954182+00:00",
+            "native_and_demo_pipeline_steps": "NOT RUN",
+            "nested_pass_cannot_replace_outer_fail": true,
+            "original_outer_fail_unchanged": true,
+            "publication": "NOT RUN",
+            "sole_cause_inference": "NONE"
+          },
+          "original_value_sha256": "04c82f2bc8b674a71359a6f28ae99a44f5b73a170cb3ddf78eeeeabd0f614a0c"
+        },
+        {
+          "field": "/originals/outer/sha256",
+          "value": "064b74c82cad4d38bb026058e0ccd285138cc5ca1f9ac1dfe06034f087b34ad1",
+          "original_value_sha256": "972d221132ca4525cbd94d330cc88f3e34e2ddec2b6b5afb90f329bfa9a7ec40"
+        },
+        {
+          "field": "/originals/streams/stdout/matches_recorded_descriptor",
+          "value": false,
+          "original_value_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "field": "/originals/streams/stdout/recorded_at_outer_completion/sha256",
+          "value": "66ac6b15a4eeef9b8f5f39abbcf0b2bfce15a49db2442968057a535d45c429ea",
+          "original_value_sha256": "8033f7283516d54114514d78160c33afb97723c66c761402f690328ddf78c0f1"
+        },
+        {
+          "field": "/originals/streams/stdout/recorded_at_outer_completion/bytes",
+          "value": 250,
+          "original_value_sha256": "1e472b39b105d349bcd069c4a711b44a2fffb8e274714bb07ecfff69a9a7f67b"
+        },
+        {
+          "field": "/originals/streams/stdout/observed_after_timeout/sha256",
+          "value": "0134f1673f6d523b3e3b5dc15946d131b8da5ab675bd8f8e93796218fc37656b",
+          "original_value_sha256": "32c19ecdf3aa6b0892e838285b305aec7336fc358085dc485378bb35b98abeda"
+        },
+        {
+          "field": "/originals/streams/stdout/observed_after_timeout/bytes",
+          "value": 541,
+          "original_value_sha256": "5de664ef205f95d4a68b69b148eecb04f110ac95ef77f4e5158ae315a76ddd8a"
+        },
+        {
+          "field": "/originals/streams/stdout/observed_file_mtime_utc",
+          "value": "2026-10-14T17:13:39.064311+00:00",
+          "original_value_sha256": "67b11d690aed2fc5b83ed71757a653c38394b7dc03a160afe90ac650556a35f2"
+        }
+      ],
+      "original_top_level_field_hashes": {
+        "created_utc": "f9411a3d31b2de38fc475f6aac89d5bc326f5c2d3361627e2bab8a220f058adb",
+        "findings": "49a4f026675227ae9c8165a22394c63974280e8af75b3cef399175b114f0ca90",
+        "interpretation": "04c82f2bc8b674a71359a6f28ae99a44f5b73a170cb3ddf78eeeeabd0f614a0c",
+        "kind": "570c97f6024dced13868cb70631eba993dbc34ae7d859bc9f74558d173a7c748",
+        "originals": "57bb7398aee1acc12f093d1d91edf4df08f4e0f8782edc5969e5d4f8ea5aa6c0",
+        "reviewer": "806c0586f9369726e3bfb582f0f59cee0a29d7254de5bf1e3d498ca8cab130c5",
+        "schema_version": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "source": "7cf5e4d193d41805e3162cc2ce5b89275d97654fa996c7c9f103b307a7f584fb",
+        "status": "be0a10fd97364a8fcdbc5bee5360b8ef41f3693ffcef3804485a3b96c2b2ab65"
+      },
+      "selection_limit": "Explicit original fields only. Other original content includes local archive/command/fixture location metadata and duplicate source maps; its value hashes are retained. This is not the complete original report or a new independent judgment."
+    },
+    {
+      "name": "native-interpreter-timeout-control",
+      "original_report_sha256": "cab9ffc566dcad53f11ad886dd4ca5ed3eef4491afb814400229714dc8514c94",
+      "original_status": "PASS",
+      "selected_original_fields": [
+        {
+          "field": "/kind",
+          "value": "independent-enforced-native-interpreter-timeout-control",
+          "original_value_sha256": "95df39a29c80f013f7dcce4b792b189ff5ec6fb468f4340b1b1d101b7abce5ff"
+        },
+        {
+          "field": "/status",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/reviewer",
+          "value": {
+            "id": "/root/native_full_release_verifier",
+            "method": "separate-read-only-verifier"
+          },
+          "original_value_sha256": "806c0586f9369726e3bfb582f0f59cee0a29d7254de5bf1e3d498ca8cab130c5"
+        },
+        {
+          "field": "/actual_record/sha256",
+          "value": "1372c4d481923e491ac4a9217214f8370b0edfb33a2c705e6d025a67dcf01337",
+          "original_value_sha256": "eb543db5bb0084f4bc6482a7d6afd11d586cbb3f939d742c2491613416f8d27d"
+        },
+        {
+          "field": "/actual_record/record/status",
+          "value": "FAIL",
+          "original_value_sha256": "8dda96cc06ec8a54f6d789a9f4e5c22e8af9eb9c60a8f7046473c57163e079ff"
+        },
+        {
+          "field": "/actual_record/record/reason",
+          "value": "timeout",
+          "original_value_sha256": "492bd0204b74443b7d8d36be9d38f139bd23776b1b1762051c15b89705768595"
+        },
+        {
+          "field": "/actual_record/record/run_id",
+          "value": "20261015T070906-19a6798a59",
+          "original_value_sha256": "7c2a56af0fca6c9742db624b03918c1177d87b6def0baef91f577abae5097903"
+        },
+        {
+          "field": "/actual_record/record/command",
+          "value": [
+            "make",
+            "control"
+          ],
+          "original_value_sha256": "7addae54f1aaeac4aacf0abe0c83c85c02d66e253f421bbc10ca1a6921775572"
+        },
+        {
+          "field": "/actual_record/record/duration_seconds",
+          "value": 2.014999999999418,
+          "original_value_sha256": "a58fbd9ccc9ba199397c2782c4ae52e52c3388f61976e042f148020dc494e185"
+        },
+        {
+          "field": "/actual_record/record/source",
+          "value": {
+            "files": [
+              {
+                "path": "Makefile",
+                "sha256": "111ccd991e104ec1958e9d473b2d770fe093a14c691f55fa226b77f70b1961e9"
+              },
+              {
+                "path": "child.py",
+                "sha256": "2933fbcea7190b79469d38cc0adc97a05d5cc33291d6e25b565061b76c6ad0b5"
+              }
+            ],
+            "git_commit": null,
+            "git_dirty": true,
+            "source_tree_sha256": "eda83a4dda98416dac08c5a03d3ed9c5063df89218447829a8b25a2889a1b39f"
+          },
+          "original_value_sha256": "987b5d1912eb47ec3f853c11889d6e10f1892badc80885f04161a81818e60990"
+        },
+        {
+          "field": "/actual_record/record/environment",
+          "value": {
+            "architecture": "AMD64",
+            "container_limits": "not inferred from host totals",
+            "cpu": "13th Gen Intel(R) Core(TM) i9-13900H",
+            "go": "go version go1.27.2 windows/amd64",
+            "host_memory": "34048978944 bytes",
+            "logical_cpus": 20,
+            "os": "Windows",
+            "python": "3.12.14",
+            "release": "11"
+          },
+          "original_value_sha256": "d373ab51fc5ffb76cb15783bdb609b6472e8dd980d6705df3c0f298b3968bd0e"
+        },
+        {
+          "field": "/child_alive_after_deadline",
+          "value": false,
+          "original_value_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "field": "/child_alive_immediately_after_cleanup",
+          "value": false,
+          "original_value_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "field": "/executed_child/entry_sha256",
+          "value": "82264b3fe4248d1ff3564a0296cbb4a266ef968799bd85902ab5eaaf3e17eb62",
+          "original_value_sha256": "d7dc7ef97ff1368554a54ceeddedc158c291d8193e843f9b92760cfc84a4f7d3"
+        },
+        {
+          "field": "/executed_child/pid",
+          "value": 11800,
+          "original_value_sha256": "ae2f4d68fe9dae010a3f161f5224280c2d3baf83588e45294b48134b0de0e7db"
+        },
+        {
+          "field": "/executed_child/version",
+          "value": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+          "original_value_sha256": "7c2fc0d243144243bd6a1bfb9edee2de5d92a43eac791f44172e76b54e9aa79a"
+        },
+        {
+          "field": "/finalized_streams_stable",
+          "value": true,
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "field": "/late_marker_exists",
+          "value": false,
+          "original_value_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "field": "/job_membership_inference",
+          "value": "NONE: actual child exit and stable output were observed; membership in some Job is not treated as membership in the runner-specific Job.",
+          "original_value_sha256": "ad940804402dc24642d25d225d795a7d23aa950a0c4e6601c62717a1c4e820e7"
+        },
+        {
+          "field": "/original_campaign_cause",
+          "value": "NOT ESTABLISHED",
+          "original_value_sha256": "03f962da408a47105b2786b61efe300093e845074619be43f3665a86e00ffe1f"
+        },
+        {
+          "field": "/post_cleanup_wait_seconds",
+          "value": 4.5,
+          "original_value_sha256": "32209ccbf8a8e509b9027698cc173343a2695e8ecdbe899bf5335a3100c956fc"
+        },
+        {
+          "field": "/current_all24",
+          "value": "NOT RUN",
+          "original_value_sha256": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4"
+        }
+      ],
+      "original_top_level_field_hashes": {
+        "actual_record": "fc9d35e241b77ed89504abac76770df8cf7615fcd8d966187857402e0b3db993",
+        "child_alive_after_deadline": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "child_alive_immediately_after_cleanup": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "current_all24": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "environment_script_sha256": "c7fde81cf122114e4f099994d1372f654bf6dd738776980e46c96427a55f89ce",
+        "executed_child": "b51886216bbd196f32397f79b7d7a5cce6e5d7a5b4fb873d02951d01df361534",
+        "finalized_streams_stable": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+        "helper_sha256": "ccda13d3d94a4e58ad7bc13bec93015c5feeb44085826c3318e310976f58b93a",
+        "job_membership_inference": "ad940804402dc24642d25d225d795a7d23aa950a0c4e6601c62717a1c4e820e7",
+        "kind": "95df39a29c80f013f7dcce4b792b189ff5ec6fb468f4340b1b1d101b7abce5ff",
+        "late_marker_exists": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "original_campaign_cause": "03f962da408a47105b2786b61efe300093e845074619be43f3665a86e00ffe1f",
+        "post_cleanup_wait_seconds": "32209ccbf8a8e509b9027698cc173343a2695e8ecdbe899bf5335a3100c956fc",
+        "publication": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "reviewer": "806c0586f9369726e3bfb582f0f59cee0a29d7254de5bf1e3d498ca8cab130c5",
+        "runner_sha256": "8fc2be6736ac070d7f39646553a05d48bd9f796a43cc8c6fe05af27a7154ebbe",
+        "schema_version": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "scope": "82d561ca2ccec009ac5e11d8193db13fbe130d520e9dc4ef8bc5ee29f592b598",
+        "status": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f",
+        "wrapper_executable": "77267604145f09cf8e59d1270b5334d367a9977df950011a911254b39582ac40",
+        "wrapper_version": "7c2fc0d243144243bd6a1bfb9edee2de5d92a43eac791f44172e76b54e9aa79a"
+      },
+      "selection_limit": "Explicit original fields only. Other original content includes local archive/command/fixture location metadata and duplicate source maps; its value hashes are retained. This is not the complete original report or a new independent judgment."
+    },
+    {
+      "name": "source-scan-v2-scoped-approval",
+      "original_report_sha256": "e3cd058349eb97b2363642725a13769871d27644947c80e080ea3b4ac4be4ecc",
+      "original_status": "PASS",
+      "selected_original_fields": [
+        {
+          "field": "/kind",
+          "value": "independent-scoped-source-traversal-and-additive-tests-review",
+          "original_value_sha256": "077e12c89650e7aa6169d39b510bbbb820499885eadd3a564eeeb31b7d0247e4"
+        },
+        {
+          "field": "/status",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/decision",
+          "value": "APPROVE_EXACT_TWO_V2_PAYLOADS_WITHIN_SCOPED_REVIEW. Integrator may serialize the exact two-file installation and normal commit/freeze. Current repaired-core clean/full pipeline/all24 acceptance remain required and unexecuted.",
+          "original_value_sha256": "959de6b7ef804826906527c0e63494483aacbdfbe61e8556d49351438d622076"
+        },
+        {
+          "field": "/reviewer",
+          "value": {
+            "id": "/root/native_full_release_verifier",
+            "method": "separate-read-only-verifier"
+          },
+          "original_value_sha256": "806c0586f9369726e3bfb582f0f59cee0a29d7254de5bf1e3d498ca8cab130c5"
+        },
+        {
+          "field": "/scope",
+          "value": "Only exact proposed scripts/run_evidence.py source_identity traversal and two additive scripts/test_evidence.py tests. Process containment, command deadlines, hashing/Git fields, acceptance spec/locked assertions and product target behavior are outside the changed bytes.",
+          "original_value_sha256": "d0df37815a21b12d7a42af4c4a0f6040acfa0aaa729605279f19c5f15f7e11e7"
+        },
+        {
+          "field": "/observations",
+          "value": [
+            "The final V2 uses cached DirEntry metadata for symlink/junction checks and still visits every ignored descendant. It does not treat arbitrary cloud reparse entries as junctions or prune ignored trees before alias inspection.",
+            "Exclusion propagation is equivalent to any IGNORE relative-path component. Included files retain exact UTF8 byte ordering, SHA256 bytes, canonical map digest and unchanged Git commit/dirty calls.",
+            "All original failure modes remain rejected; missing included directories and permission errors fail closed. Only FileNotFound while enumerating an already excluded directory is tolerated. Own controlled exceptions validate that explicit boundary; those injections earn file-walker unit credit only.",
+            "Original/candidate finite maps match on actual included Unicode/untracked files and ignored outputs. Independent real included and deeply ignored junctions are rejected by both implementations.",
+            "Root actual global-alias and ignored-only-alias mutants produce genuine FAILs at their intended guards, and both restored controls pass. All six raw records and stdout/stderr bytes/hashes were independently verified; ten complete evidence tests pass with original assertions unchanged.",
+            "Both root and independent actual scans produce the complete exact original frozen9f/969a/644 file map and Git fields. Root observed3.391s and own observed14.547s are separate bounded observations; the original instrumented180s timeout gives no completed baseline or exact speedup ratio.",
+            "This source traversal repair addresses metadata cost. It does not alter or independently repair the WindowsApps alias Job boundary. The enforced ordinary native CPython environment and its own real timeout/termination/stream controls remain separate requirements.",
+            "No public file was edited by this reviewer. OriginalV1/source/test hashes and the reviewer fixture mistake remain preserved. Integration changes executable inputs and therefore requires new committed source identity, current source-bound clean/full evidence and a fresh formal all24 assessment."
+          ],
+          "original_value_sha256": "d634c717d143042cb3a48d2bdb67c4f7063caeadde045f10b20cc993319f229d"
+        },
+        {
+          "field": "/findings",
+          "value": [],
+          "original_value_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "field": "/all24_review",
+          "value": "NOT RUN",
+          "original_value_sha256": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4"
+        }
+      ],
+      "original_top_level_field_hashes": {
+        "all24_review": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "created_utc": "786b2544d16f7f2df6a0ae254a4e6176a6e443a466fc5f890a5b7777dbddc0fb",
+        "decision": "959de6b7ef804826906527c0e63494483aacbdfbe61e8556d49351438d622076",
+        "findings": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "independent_actual_control": "cca6880cafb2c756a13c0bf404254c5bf58f0cc45afe10a85d94c3ef09d67733",
+        "kind": "077e12c89650e7aa6169d39b510bbbb820499885eadd3a564eeeb31b7d0247e4",
+        "new_source_clean_full_pipeline": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "observations": "d634c717d143042cb3a48d2bdb67c4f7063caeadde045f10b20cc993319f229d",
+        "open_findings_outside_changed_scope": "cd083e8ec9e44f2c29aa11e2f57401187fdfd0b82b84c92a536faf9b31d56e7b",
+        "pending_own_review_commands": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+        "proposal": "3d10fe840f97e5b66c25485c5984adebec106bbe42a2fa38d0c0ec32fea8cbd4",
+        "public_writes": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+        "publication": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "retained_original_controls": "cd2937ce3be45f58960709558ce82cc9bbeae7453361acc2d52d42c3b3f0071c",
+        "reviewer": "806c0586f9369726e3bfb582f0f59cee0a29d7254de5bf1e3d498ca8cab130c5",
+        "reviewer_fixture_error_preserved": "9df46344cd81d714988de24fb362a70ffbbded7eadefdae7fc2b57479fd7edb3",
+        "root_complete_identity_observation": "7b6e6f8d0773a9612970e4bb85e76392c13d0a848ed731d1495982db449df4fe",
+        "schema_version": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "scope": "d0df37815a21b12d7a42af4c4a0f6040acfa0aaa729605279f19c5f15f7e11e7",
+        "static_scope": "6f375f61c536857576961df8ed1efb29a45450330a2e5d4479a95c69261096ad",
+        "status": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+      },
+      "selection_limit": "Explicit original fields only. Other original content includes local archive/command/fixture location metadata and duplicate source maps; its value hashes are retained. This is not the complete original report or a new independent judgment."
+    },
+    {
+      "name": "original-clean-failure-before-fix",
+      "original_report_sha256": "5e9c668c1a4c64585dceb65a7b46394521fde0f739fdfeeaa485242c3b19881f",
+      "original_status": "OPEN",
+      "selected_original_fields": [
+        {
+          "field": "/kind",
+          "value": "independent-clean-failure-and-evidence-integrity-review-before-fix",
+          "original_value_sha256": "6c1a1efa2f584f202363119d46334dbf68ecbf3adccead066235351b344df574"
+        },
+        {
+          "field": "/status",
+          "value": "OPEN",
+          "original_value_sha256": "be0a10fd97364a8fcdbc5bee5360b8ef41f3693ffcef3804485a3b96c2b2ab65"
+        },
+        {
+          "field": "/reviewer",
+          "value": {
+            "id": "/root/release_readonly_verifier",
+            "method": "separate-read-only-verifier"
+          },
+          "original_value_sha256": "098fc6cb2d34ce1b106e02651bf479850780bd4ed9a745f0bc1dc6d19158bc82"
+        },
+        {
+          "field": "/scope",
+          "value": "Original A9 clean failure only; no Go/test/native/full commands launched by this reviewer; no all24 or release approval.",
+          "original_value_sha256": "6aa14ae5c6e1a544c0eeb2dd609bf6bff661fa52c64d1da6883faac488189c3b"
+        },
+        {
+          "field": "/source/git_commit",
+          "value": "5bca1945b45f1e035e5ee3422b0f3c055be5e941",
+          "original_value_sha256": "5a3dbdc3c9ccaed8f72d322fa03c368ed700347791f110cc61f4a4ddfb1afb47"
+        },
+        {
+          "field": "/source/source_tree_sha256",
+          "value": "3ba58aadca0c5555ba6033d2101f137d2605e1deb0107f9e6f516e678dcacba2",
+          "original_value_sha256": "8fff01ae8275f8c41b7a5cd144c6156aa46e6e4e026a5986553e866ffea170ee"
+        },
+        {
+          "field": "/findings",
+          "value": [
+            {
+              "id": "RV-A9-CLEAN-01",
+              "required_resolution": "Diagnose actual stage cost; preserve original FAIL and all NOT RUN outcomes; complete an independently reviewable remediation and a new exact-source fresh clean run with every required check executed. Do not credit isolated passes or a retained-cache rerun as the original fresh clean PASS.",
+              "severity": "P1",
+              "status": "OPEN",
+              "summary": "Current-source clean verification failed at the1200s verify-seed orchestration deadline before the final race package/public audit completed."
+            }
+          ],
+          "original_value_sha256": "2baf283f82169bba7030639ad50a619d7f80afadd446a57e2843346e18b67d32"
+        },
+        {
+          "field": "/observations",
+          "value": [
+            "Fresh clone PASS; exact committed source matched644 files and135 protected inputs.",
+            "Normal serialized Go suite completed all listed packages including system; captured Python suite reports85 tests/OK.",
+            "Race suite output completed through tests/security but contains no terminal tests/system outcome.",
+            "No failing Go assertion or race detector finding is established by this captured output; incomplete final package and the orchestration timeout are established.",
+            "Original native Python3.12.14 raw output hashes match finalized records and remained stable at both observations."
+          ],
+          "original_value_sha256": "a2a20945fd498475aa5e25b95845c82807cfccda0754a4983a474a5a406ea51f"
+        },
+        {
+          "field": "/not_run_clean_steps",
+          "value": [
+            "fuzz",
+            "mutation",
+            "benchmark",
+            "security-online",
+            "campaign",
+            "real-lab",
+            "demo",
+            "teardown"
+          ],
+          "original_value_sha256": "665108d78fdfd4fe46595a8a289b6f9936d36ee183f3681d829266d6e5aebe45"
+        },
+        {
+          "field": "/originals_stable_over_seconds",
+          "value": 5,
+          "original_value_sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d"
+        },
+        {
+          "field": "/process_observation_limit",
+          "value": "Driver is absent; any current clone-matching processes were created after the original outer record ended and belong to later root-owned diagnosis. Original record contains no complete descendant PID ledger, so these snapshots do not prove retrospective identity of every already-orphaned process.",
+          "original_value_sha256": "a71dee22b8bb8d6c8f76600a5881a449f947139d83d019499644ae21855d5033"
+        },
+        {
+          "field": "/current_all24",
+          "value": "NOT RUN",
+          "original_value_sha256": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4"
+        }
+      ],
+      "original_top_level_field_hashes": {
+        "created_utc": "f1b6f565845266e6663f0b6a6470c8554a01b5612bc22f04d0c8bc2f4a5746eb",
+        "current_all24": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "findings": "2baf283f82169bba7030639ad50a619d7f80afadd446a57e2843346e18b67d32",
+        "kind": "6c1a1efa2f584f202363119d46334dbf68ecbf3adccead066235351b344df574",
+        "not_run_clean_steps": "665108d78fdfd4fe46595a8a289b6f9936d36ee183f3681d829266d6e5aebe45",
+        "observations": "a2a20945fd498475aa5e25b95845c82807cfccda0754a4983a474a5a406ea51f",
+        "originals_stable_over_seconds": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+        "preserved_originals": "bdff52687b2b42d4659469a0639af102da5b1e053ef9d71bafbb5ba9a03deeb7",
+        "process_observation_limit": "a71dee22b8bb8d6c8f76600a5881a449f947139d83d019499644ae21855d5033",
+        "process_observations": "e8ada0a4aae3c810517908220f3ea460e7bbb72765d136fc3456e15bf10f24ba",
+        "public_writes": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+        "publication": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "records": "76839dc314e82fa71347a32cea1f0225e0863aeb4d201a796cf896cc29294e96",
+        "retained_clone": "b739701a411b466cff94e1e0d88a06c7cdc83debe8d8acb1dbb2191d50aad0d3",
+        "reviewer": "098fc6cb2d34ce1b106e02651bf479850780bd4ed9a745f0bc1dc6d19158bc82",
+        "reviewer_harness_correction": "3c5dfdbe77677b29475981236bd39ea4698df30e0407d9c93d988afa98e50748",
+        "schema_version": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "scope": "6aa14ae5c6e1a544c0eeb2dd609bf6bff661fa52c64d1da6883faac488189c3b",
+        "source": "bc643f38bb528f647df362b0cfbd3308f138bf07e19534b93ee38bc748fe12b8",
+        "stability_after": "4ee3642617b2b8a4b269e2421d899cd802bc546b28ed452206b5e4de7cd775f2",
+        "stability_before": "4ee3642617b2b8a4b269e2421d899cd802bc546b28ed452206b5e4de7cd775f2",
+        "status": "be0a10fd97364a8fcdbc5bee5360b8ef41f3693ffcef3804485a3b96c2b2ab65"
+      },
+      "selection_limit": "Explicit original fields only. Other original content includes local archive/command/fixture location metadata and duplicate source maps; its value hashes are retained. This is not the complete original report or a new independent judgment."
+    },
+    {
+      "name": "race-warmup-exact-scoped-approval",
+      "original_report_sha256": "78cf6968d7fb74c4b05c88133fc1a4baaf9c759332beb7817cff960b1868afa8",
+      "original_status": "PASS",
+      "selected_original_fields": [
+        {
+          "field": "/kind",
+          "value": "independent-scoped-makefile-race-warmup-review",
+          "original_value_sha256": "44ae9c7399156e53d1a8b208fe89c8bc974c5cf9ba0253932dc325be4db2d8b0"
+        },
+        {
+          "field": "/status",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/reviewer",
+          "value": {
+            "id": "/root/release_readonly_verifier",
+            "method": "separate-read-only-verifier"
+          },
+          "original_value_sha256": "098fc6cb2d34ce1b106e02651bf479850780bd4ed9a745f0bc1dc6d19158bc82"
+        },
+        {
+          "field": "/decision",
+          "value": "APPROVE_EXACT_CANDIDATE_MAKEFILE_FOR_INTEGRATION",
+          "original_value_sha256": "5cc32ee64d269fc5f8fc6f3ae7168ecb71ce715c47dfa211e97d79ce3e87e71b"
+        },
+        {
+          "field": "/scope",
+          "value": "Exact one-existing-Makefile additive warmup candidate only, with completed actual fresh-cache diagnostic and existing synthetic attribution guards. This authorizes scoped integration, not completed remediation/current-source clean/all24/publication.",
+          "original_value_sha256": "1724318da8e69fc0703a27c3a683e2c01266eab1fb1a75c1752928d7caf27b64"
+        },
+        {
+          "field": "/source/git_commit",
+          "value": "5bca1945b45f1e035e5ee3422b0f3c055be5e941",
+          "original_value_sha256": "5a3dbdc3c9ccaed8f72d322fa03c368ed700347791f110cc61f4a4ddfb1afb47"
+        },
+        {
+          "field": "/source/source_tree_sha256",
+          "value": "3ba58aadca0c5555ba6033d2101f137d2605e1deb0107f9e6f516e678dcacba2",
+          "original_value_sha256": "8fff01ae8275f8c41b7a5cd144c6156aa46e6e4e026a5986553e866ffea170ee"
+        },
+        {
+          "field": "/candidate",
+          "value": {
+            "candidate_makefile_sha256": "86a4070387e8f800f6ced2183e776a3bba741f22ff4bebd807368ff2a620e7dd",
+            "original_makefile_sha256": "033dd7c1725f007c8a4d701fc9e1f7fb310de85b1400d3af80ba445bee839670",
+            "patch_sha256": "9a9c34e261a1e5ae1e2d091c86dba389789aab162cb32cef81981dff95c86542",
+            "paths_changed_if_installed": [
+              "Makefile"
+            ],
+            "proposal_sha256": "c78d87ba7d5ad9992d90a998a8beb68cf59854c1719af1cd8ae4689c3275dcd1",
+            "public_installed": false
+          },
+          "original_value_sha256": "bb4160f58b944023d3844b9eacf7334e9fe5373f7ef0acb772feb124f72c9850"
+        },
+        {
+          "field": "/findings",
+          "value": [],
+          "original_value_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "field": "/observations",
+          "value": [
+            "Exact candidate adds three lines only in race target: two comments and the preceding -race -run ^$ warmup. Original full -race -p1 -count=1 command is byte-identical; all other Makefile bytes and all644 current source files unchanged.",
+            "Actual make dryrun expands Make $$ correctly and prints warmup followed by original complete serial assertion command. Neither recipe ignores errors and no existing prerequisite/check is removed.",
+            "Warmup can execute test-binary initialization/TestMain; it selects no named tests and receives zero acceptance credit. Cached warmup success is harmless to acceptance because the subsequent full suite is mandatory and uncached.",
+            "Exact captured profile helper checked absence of its fresh build-cache path before bootstrap/warmup, and the fresh clone remains physically equal to original frozen5b source. Module-download cache is shared; this is not a fresh VM or whole clean-verify run.",
+            "Actual warmup75.625s was followed by actual complete full Go JSON race215.906s; all15 tested packages passed, no named test skip/fail occurred, and native1/4/16 subtests passed. The only package-level skip is internal/campaign, which has no test files.",
+            "Top-level named-test execution sets exactly match the separate previous complete unfiltered retained-source diagnostic. This checks omission against same-source runtime evidence; it is not an independent correctness oracle for every assertion.",
+            "Existing independent synthetic Gate controls reject filtered/no-named-test/package-only/skip evidence. They are validator fixtures, never target/native/acceptance execution credit.",
+            "No target,18s native,300ms fuzz-replay, clean1200s, runner1800s, semantic-budget, cancellation, campaign1000/10 or locked criterion changes are introduced by the exact Makefile delta.",
+            "No exact serial-cold speedup ratio, Linux performance result, final clean completion or general scheduling guarantee follows from this diagnostic."
+          ],
+          "original_value_sha256": "fef31efa898d860384660c985c1517f6344ec0b4d09da1eda641f30aa30313ad"
+        },
+        {
+          "field": "/diagnostic/init_label_correction",
+          "value": "Original raw helper/summary compile-only labels are preserved. Independent interpretation explicitly states build/startup/TestMain execution and zero selected named tests/acceptance credit.",
+          "original_value_sha256": "b9512c0e8be7c7fcea847e0e7d09da1fe69b0fc89d2eaa81f662db156335f586"
+        },
+        {
+          "field": "/diagnostic/named_skips",
+          "value": [],
+          "original_value_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "field": "/diagnostic/named_top_level_run_pass_count",
+          "value": 121,
+          "original_value_sha256": "89aa1e580023722db67646e8149eb246c748e180e34a1cf679ab0b41a416d904"
+        },
+        {
+          "field": "/diagnostic/native_subtest_pass_events",
+          "value": [
+            {
+              "Action": "pass",
+              "Elapsed": 6.65,
+              "Package": "github.com/C-X1an/faultbraid/tests/system",
+              "Test": "TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-1",
+              "Time": "2026-10-15T16:53:24.185233+08:00"
+            },
+            {
+              "Action": "pass",
+              "Elapsed": 6.59,
+              "Package": "github.com/C-X1an/faultbraid/tests/system",
+              "Test": "TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-4",
+              "Time": "2026-10-15T16:53:30.7719198+08:00"
+            },
+            {
+              "Action": "pass",
+              "Elapsed": 6.57,
+              "Package": "github.com/C-X1an/faultbraid/tests/system",
+              "Test": "TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-16",
+              "Time": "2026-10-15T16:53:37.345389+08:00"
+            }
+          ],
+          "original_value_sha256": "30f96df1900bd9757ff3ace489d92f9567f0ff3c80c697f948f5dde94f1d6522"
+        },
+        {
+          "field": "/required_followup",
+          "value": [
+            "Install only exact candidate Makefile; normal commit and new full source/protected-input freeze.",
+            "Rebind private tooling/current evidence/docs to the actual new source; retain all old source/status identities.",
+            "Execute a genuinely new fresh clean verification with all required checks and unchanged deadlines, then the full pipeline/final separate all24 and hosted CI."
+          ],
+          "original_value_sha256": "89faecc12e3e554c6e8aa69669c04ece881a7fcc8de1bb5bf09ae7d9b2489e83"
+        },
+        {
+          "field": "/current_full_all24",
+          "value": "NOT RUN",
+          "original_value_sha256": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4"
+        }
+      ],
+      "original_top_level_field_hashes": {
+        "candidate": "bb4160f58b944023d3844b9eacf7334e9fe5373f7ef0acb772feb124f72c9850",
+        "created_utc": "5915b7af20a67a4d7cd872753e852f9db7370bf22d7134aae75fddde06f9e167",
+        "current_full_all24": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "current_source_clean_after_candidate": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "decision": "5cc32ee64d269fc5f8fc6f3ae7168ecb71ce715c47dfa211e97d79ce3e87e71b",
+        "diagnostic": "08f5adc095396469d2ce1bfbef02f8dbeb7b5ae946458dc19249b0de6456d088",
+        "dryrun": "c5766b5d5e95cdffe76027ffdc9ee35738cffda209b23fed6e2988714a4812ab",
+        "external_open_finding": "a710617892bd58615c1c86db3860b3e76b507262a72ad8a2aa3728d2acdf9edf",
+        "findings": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "kind": "44ae9c7399156e53d1a8b208fe89c8bc974c5cf9ba0253932dc325be4db2d8b0",
+        "observations": "fef31efa898d860384660c985c1517f6344ec0b4d09da1eda641f30aa30313ad",
+        "official_sources": "280f6058c25820d9b564f4c3aead971b8ce882ffb36ba12fd7b73f1dc8730cb9",
+        "own_actual_synthetic_controls": "e9fc5a7b786bb0771a478a0bb116d6dfb8fe4984da794f3667ccceab9e384b70",
+        "prior_scoped_semantics_report_sha256": "7f6a9cf15b70b16b9052fe242ba51a1758f2e832bc31cf5a85914c261fb8756d",
+        "public_writes": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+        "publication": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "required_followup": "89faecc12e3e554c6e8aa69669c04ece881a7fcc8de1bb5bf09ae7d9b2489e83",
+        "reviewer": "098fc6cb2d34ce1b106e02651bf479850780bd4ed9a745f0bc1dc6d19158bc82",
+        "reviewer_go_native_execution": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "root_actual_synthetic_control": "fe7870408bc144b542051f67ce14a219b9ae905e48084d2b574a495f3739a4f3",
+        "schema_version": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "scope": "1724318da8e69fc0703a27c3a683e2c01266eab1fb1a75c1752928d7caf27b64",
+        "source": "6ad1281bd0663be5158306659957e4f29c2717a344a070fb2dc905e313a7ec08",
+        "status": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+      },
+      "selection_limit": "Explicit original fields only. Other original content includes local archive/command/fixture location metadata and duplicate source maps; its value hashes are retained. This is not the complete original report or a new independent judgment."
+    }
+  ],
+  "current_acceptance_credit": "NONE",
+  "scope": "Selected fields are copied exactly, with original report and per-value SHA256. Original failure, OPEN findings, approval scopes, limits, actual source IDs and negative outcomes remain unchanged. No conversation, prompt, personal document or secret is an input. Invalid late-mutated campaign output is not curated as a valid command triplet."
+}

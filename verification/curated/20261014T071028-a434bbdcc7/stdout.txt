@@ -1,0 +1,68 @@
+=== RUN   TestReplayRejectsCancellationBeforeAndDuringValidation
+=== RUN   TestReplayRejectsCancellationBeforeAndDuringValidation/200
+=== RUN   TestReplayRejectsCancellationBeforeAndDuringValidation/570
+=== RUN   TestReplayRejectsCancellationBeforeAndDuringValidation/576
+--- PASS: TestReplayRejectsCancellationBeforeAndDuringValidation (0.39s)
+    --- PASS: TestReplayRejectsCancellationBeforeAndDuringValidation/200 (0.03s)
+    --- PASS: TestReplayRejectsCancellationBeforeAndDuringValidation/570 (0.10s)
+    --- PASS: TestReplayRejectsCancellationBeforeAndDuringValidation/576 (0.09s)
+=== RUN   TestRunTerminalCancellationPreservesUnknownTraceAndDigest
+--- PASS: TestRunTerminalCancellationPreservesUnknownTraceAndDigest (0.25s)
+=== RUN   TestCancellationAfterReplayReturnDoesNotInvalidateCompletedWork
+--- PASS: TestCancellationAfterReplayReturnDoesNotInvalidateCompletedWork (0.28s)
+=== RUN   TestResourceLimits
+--- PASS: TestResourceLimits (0.01s)
+=== RUN   FuzzScenarioSchema
+=== RUN   FuzzScenarioSchema/seed#0
+=== RUN   FuzzScenarioSchema/seed#1
+=== RUN   FuzzScenarioSchema/seed#2
+=== RUN   FuzzScenarioSchema/seed#3
+--- PASS: FuzzScenarioSchema (0.00s)
+    --- PASS: FuzzScenarioSchema/seed#0 (0.00s)
+    --- PASS: FuzzScenarioSchema/seed#1 (0.00s)
+    --- PASS: FuzzScenarioSchema/seed#2 (0.00s)
+    --- PASS: FuzzScenarioSchema/seed#3 (0.00s)
+=== RUN   FuzzTargetTraceReplay
+=== RUN   FuzzTargetTraceReplay/seed#0
+=== RUN   FuzzTargetTraceReplay/seed#1
+=== RUN   FuzzTargetTraceReplay/seed#2
+=== RUN   FuzzTargetTraceReplay/seed#3
+--- PASS: FuzzTargetTraceReplay (0.42s)
+    --- PASS: FuzzTargetTraceReplay/seed#0 (0.21s)
+    --- PASS: FuzzTargetTraceReplay/seed#1 (0.00s)
+    --- PASS: FuzzTargetTraceReplay/seed#2 (0.00s)
+    --- PASS: FuzzTargetTraceReplay/seed#3 (0.00s)
+PASS
+ok  	github.com/C-X1an/faultbraid/tests/security	5.681s
+=== RUN   TestCodecGoldenPredatesImplementation
+--- PASS: TestCodecGoldenPredatesImplementation (0.00s)
+=== RUN   TestStrictScenarioActionsAndBounds
+--- PASS: TestStrictScenarioActionsAndBounds (0.01s)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/scenario	4.143s
+=== RUN   TestNativeCLIRejectsInvalidFlagsBeforeLaunching
+=== RUN   TestNativeCLIRejectsInvalidFlagsBeforeLaunching/complete-unsupported
+=== RUN   TestNativeCLIRejectsInvalidFlagsBeforeLaunching/incomplete-supported
+=== RUN   TestNativeCLIRejectsInvalidFlagsBeforeLaunching/incomplete-unsupported
+--- PASS: TestNativeCLIRejectsInvalidFlagsBeforeLaunching (0.00s)
+    --- PASS: TestNativeCLIRejectsInvalidFlagsBeforeLaunching/complete-unsupported (0.00s)
+    --- PASS: TestNativeCLIRejectsInvalidFlagsBeforeLaunching/incomplete-supported (0.00s)
+    --- PASS: TestNativeCLIRejectsInvalidFlagsBeforeLaunching/incomplete-unsupported (0.00s)
+=== RUN   TestStdinAndErrorEnvelope
+--- PASS: TestStdinAndErrorEnvelope (0.00s)
+=== RUN   TestUnsupportedSchemaClassification
+--- PASS: TestUnsupportedSchemaClassification (0.00s)
+=== RUN   TestMinimizeUncertaintyIsExitThree
+--- PASS: TestMinimizeUncertaintyIsExitThree (0.00s)
+=== RUN   TestOutputFailureNotSuccess
+--- PASS: TestOutputFailureNotSuccess (0.00s)
+=== RUN   TestReplayRoutingDiagnosticsNeverEchoLargeInput
+=== RUN   TestReplayRoutingDiagnosticsNeverEchoLargeInput/model
+=== RUN   TestReplayRoutingDiagnosticsNeverEchoLargeInput/model-object
+=== RUN   TestReplayRoutingDiagnosticsNeverEchoLargeInput/version
+--- PASS: TestReplayRoutingDiagnosticsNeverEchoLargeInput (0.00s)
+    --- PASS: TestReplayRoutingDiagnosticsNeverEchoLargeInput/model (0.00s)
+    --- PASS: TestReplayRoutingDiagnosticsNeverEchoLargeInput/model-object (0.00s)
+    --- PASS: TestReplayRoutingDiagnosticsNeverEchoLargeInput/version (0.00s)
+PASS
+ok  	github.com/C-X1an/faultbraid/cmd/faultbraid	5.294s

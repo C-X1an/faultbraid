@@ -1,0 +1,9 @@
+{"Time":"2026-10-16T01:59:40.8147033+08:00","Action":"start","Package":"github.com/C-X1an/faultbraid/internal/labreal"}
+{"Time":"2026-10-16T01:59:45.3977835+08:00","Action":"run","Package":"github.com/C-X1an/faultbraid/internal/labreal","Test":"TestIndependentOwnedHelperCleanupJoinsWaitAndClosesStreams"}
+{"Time":"2026-10-16T01:59:45.3981517+08:00","Action":"output","Package":"github.com/C-X1an/faultbraid/internal/labreal","Test":"TestIndependentOwnedHelperCleanupJoinsWaitAndClosesStreams","Output":"=== RUN   TestIndependentOwnedHelperCleanupJoinsWaitAndClosesStreams\n","OutputType":"frame"}
+{"Time":"2026-10-16T01:59:45.6151764+08:00","Action":"output","Package":"github.com/C-X1an/faultbraid/internal/labreal","Test":"TestIndependentOwnedHelperCleanupJoinsWaitAndClosesStreams","Output":"    independent_lifecycle_cleanup_test.go:137: cleanup returned before joining Wait handoff: \u003cnil\u003e\n","OutputType":"error"}
+{"Time":"2026-10-16T01:59:45.6173822+08:00","Action":"output","Package":"github.com/C-X1an/faultbraid/internal/labreal","Test":"TestIndependentOwnedHelperCleanupJoinsWaitAndClosesStreams","Output":"--- FAIL: TestIndependentOwnedHelperCleanupJoinsWaitAndClosesStreams (0.22s)\n","OutputType":"frame"}
+{"Time":"2026-10-16T01:59:45.6173822+08:00","Action":"fail","Package":"github.com/C-X1an/faultbraid/internal/labreal","Test":"TestIndependentOwnedHelperCleanupJoinsWaitAndClosesStreams","Elapsed":0.22}
+{"Time":"2026-10-16T01:59:45.6173822+08:00","Action":"output","Package":"github.com/C-X1an/faultbraid/internal/labreal","Output":"FAIL\n","OutputType":"frame"}
+{"Time":"2026-10-16T01:59:45.6225932+08:00","Action":"output","Package":"github.com/C-X1an/faultbraid/internal/labreal","Output":"FAIL\tgithub.com/C-X1an/faultbraid/internal/labreal\t4.808s\n","OutputType":"frame"}
+{"Time":"2026-10-16T01:59:45.6225932+08:00","Action":"fail","Package":"github.com/C-X1an/faultbraid/internal/labreal","Elapsed":4.808}

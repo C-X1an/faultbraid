@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "kind": "independent-release-a7-native-package-profile-diagnosis",
+  "status": "PASS",
+  "decision": "EXPLICIT_SERIAL_PACKAGE_PROFILE_CONTRACT_COMPATIBLE_ACTUAL_CONTROL_AND_PATCH_PENDING",
+  "scope": "Read-only actual failed-record/native-history validation, independent24-order fixture check and supported Go/source contract diagnosis; no target rerun or all24 approval",
+  "reviewer": {
+    "id": "/root/release_verifier_resume",
+    "method": "separate-read-only-verifier",
+    "model_diversity_claim": false
+  },
+  "source": {
+    "git_commit": "2ff0a61b050e5a93c3d7a3b79af7fcb5599aacac",
+    "git_dirty": false,
+    "source_tree_sha256": "fd5dc4abe80de1cd52d762c779cd5127871829a356b44a3c03ab6834da34f54d"
+  },
+  "actual_originals": [
+    {
+      "path": "[local-evidence-root]/runtime/release-a7-clean-start/20261014T080555-3d193a03d2/run.json",
+      "raw_sha256": "2717ad0b275262e3a0b98086c0eeb3b58d670ccf18e0b9a1391805eb6a9c4c8d",
+      "bytes": 113668,
+      "run_id": "20261014T080555-3d193a03d2",
+      "status": "PASS",
+      "reason": "completed",
+      "exit_code": 0,
+      "command": [
+        "make",
+        "clean-verify"
+      ],
+      "duration_seconds": 1160.5770066999976,
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/release-a7-clean-start/20261014T080555-3d193a03d2/stdout.txt",
+        "sha256": "9ca8a8414911bdd45a2c0409ccc451488ed2ea9ca8f056aa21d5b039543bde11",
+        "bytes": 1278
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/release-a7-clean-start/20261014T080555-3d193a03d2/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    },
+    {
+      "path": "[local-evidence-root]/runtime/release-a7/go-json-race/20261014T082933-b6f7991e4a/run.json",
+      "raw_sha256": "01752bf935e947bf2df299080cda1b39d19d33427ca23f536c279513b34bdaff",
+      "bytes": 114000,
+      "run_id": "20261014T082933-b6f7991e4a",
+      "status": "FAIL",
+      "reason": "completed",
+      "exit_code": 1,
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-json",
+        "./..."
+      ],
+      "duration_seconds": 155.82196320000367,
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/release-a7/go-json-race/20261014T082933-b6f7991e4a/stdout.txt",
+        "sha256": "393da5dbede42e67c4485da24fcda616cd8ab7c47cbdb098ab95ab89d8d74e74",
+        "bytes": 355169
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/release-a7/go-json-race/20261014T082933-b6f7991e4a/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    }
+  ],
+  "actual_clean_summary": {
+    "schema_version": 1,
+    "status": "PASS",
+    "commit": "2ff0a61b050e5a93c3d7a3b79af7fcb5599aacac",
+    "clean_checkout": true,
+    "fresh_build_cache": true,
+    "exact_committed_source_bytes": true,
+    "same_host_and_toolchain": true,
+    "shared_verified_module_cache": true,
+    "fresh_virtual_machine": false,
+    "fresh_checkout_retained": true,
+    "implemented_checks_passed": true,
+    "full_product_verified": false,
+    "independent_release_review": "separate gate",
+    "steps": [
+      {
+        "step": "clone",
+        "run_id": "20261014T080606-9d7ed51bad",
+        "status": "PASS"
+      },
+      {
+        "step": "verify-seed",
+        "run_id": "20261014T080626-9891d3bcc4",
+        "status": "PASS"
+      },
+      {
+        "step": "fuzz",
+        "run_id": "20261014T081404-5e0e7689ed",
+        "status": "PASS"
+      },
+      {
+        "step": "mutation",
+        "run_id": "20261014T081507-a666affbdf",
+        "status": "PASS"
+      },
+      {
+        "step": "benchmark",
+        "run_id": "20261014T081824-b04adc4d77",
+        "status": "PASS"
+      },
+      {
+        "step": "security-online",
+        "run_id": "20261014T081851-99bbfd2bd6",
+        "status": "PASS"
+      },
+      {
+        "step": "campaign",
+        "run_id": "20261014T082007-73fd47d1f9",
+        "status": "PASS"
+      },
+      {
+        "step": "real-lab",
+        "run_id": "20261014T082223-6889d47144",
+        "status": "PASS"
+      },
+      {
+        "step": "demo",
+        "run_id": "20261014T082315-f989aa9bf8",
+        "status": "PASS"
+      },
+      {
+        "step": "teardown",
+        "run_id": "20261014T082516-3b871d5364",
+        "status": "PASS"
+      }
+    ]
+  },
+  "actual_native_artifact": {
+    "path": "public/.local-runs/real-process-tests/actual-1998673827/lab/native-result.json",
+    "raw_sha256": "31b7d1480b99b6dac4e540073add972deda3ca7a3335b958803d1c6a99470bbf",
+    "bytes": 32703
+  },
+  "journal_bytes_verified": [
+    {
+      "path": "public/.local-runs/real-process-tests/actual-1998673827/lab/node-1.journal",
+      "raw_sha256": "4c1a6c114c4451d20294e6bb7f9dd84c536fcdc69b47fc1431bbd7cc8dee1f7d",
+      "bytes": 898
+    },
+    {
+      "path": "public/.local-runs/real-process-tests/actual-1998673827/lab/node-2.journal",
+      "raw_sha256": "11c3d78b403640bf268a469cd64a81eaa4556d0be3d548b22274e9c9ea82c714",
+      "bytes": 898
+    },
+    {
+      "path": "public/.local-runs/real-process-tests/actual-1998673827/lab/node-3.journal",
+      "raw_sha256": "4c1a6c114c4451d20294e6bb7f9dd84c536fcdc69b47fc1431bbd7cc8dee1f7d",
+      "bytes": 898
+    }
+  ],
+  "native_observations": {
+    "status": "VALID",
+    "completed_operations": 4,
+    "orders_independently_enumerated": 24,
+    "legal_orders": [
+      [
+        "write7",
+        "read7",
+        "write9",
+        "read9"
+      ]
+    ],
+    "write9_interval": [
+      41,
+      57
+    ],
+    "read9_interval": [
+      47,
+      58
+    ],
+    "read9_value": 9,
+    "conformance_precedence_assertion_failed": true,
+    "configured_request_concurrency": 4,
+    "observed_peak_request_concurrency": 4,
+    "distinct_processes": 4,
+    "cleanup_complete": true,
+    "binary_sha256": "b9b31e0881a1a3fb5527bf4abe110f55045e3682da8498953f27a14956a7fc0a"
+  },
+  "diagnosis": {
+    "observed": "The same-source complete race command genuinely fails only the native concurrency4 supplemental completed-write-before-later-read-invocation predicate. Its overlapping returned9 history independently has one legal order, so this record alone is not a lost acknowledged write or stale-value counterexample.",
+    "source_supported_mechanism": "Native action times are fixed absolute elapsed deadlines. Restart waits for child readiness and child TestMain walks the actual entire source tree before helper dispatch; if execution falls behind, subsequent absolute deadlines may already have elapsed. Client actions enqueue asynchronous work, so invocation gaps can collapse while responses remain pending.",
+    "actual_failed_interleaving_or_sole_cause_proven": false,
+    "prior_heavy_audit_as_necessary_cause_rejected": "This later failure occurred without a concurrent heavy audit according to the root execution schedule; it does not identify a unique remaining cause."
+  },
+  "proposed_profile": {
+    "explicit_complete_race_command": [
+      "go",
+      "test",
+      "-p",
+      "1",
+      "-race",
+      "-count=1",
+      "-json",
+      "./..."
+    ],
+    "contract_conflict_found": false,
+    "why": "Go's -p controls concurrent build programs/test binaries across packages. No locked criterion requires simultaneous test-package execution. All package selection and internal process/request concurrency can remain unchanged.",
+    "mandatory_preservation": [
+      "-race and complete ./... selection",
+      "-count=1 and no retries until lucky PASS",
+      "Every existing assertion/test/seed and locked spec digest",
+      "Native three voters and request concurrency1/4/16",
+      "18-second test context,25ms ticks and existing timing schedule",
+      "In-package goroutines and race instrumentation",
+      "Original failed parallel-package capture and original clean PASS retained"
+    ],
+    "recording_requirement": "Use explicit command/Makefile flags, not an unrecorded GOFLAGS environment change. Any protected Makefile/pipeline command modification requires a new frozen source and fresh full/clean evidence; no A7 failed packet can be retagged.",
+    "performance_or_universal_flake_elimination_proven": false
+  },
+  "findings": [
+    {
+      "id": "FV-A7-NATIVE-PACKAGE-01",
+      "status": "OPEN_RETAINED_EXECUTION_FAILURE",
+      "summary": "A7 complete default-parallel-package race record fails native concurrency4 precedence despite a VALID fixture. Controlled unchanged-source serial-package execution and exact profile review are required; no assertion removal or deadline increase is approved."
+    }
+  ],
+  "NOT_RUN_OR_UNPROVEN": [
+    "Reviewer target/native execution",
+    "Root's still-pending serial-package control outcome",
+    "Exact proposed profile patch review",
+    "Fresh profile-source full/clean release evidence and all24 judgment",
+    "Actual repaired-head hosted CI"
+  ],
+  "supported_go_help_sha256": "0ee58285e7ff14a2cb62c1a0b926caa3af8fa46ff7ac9f3a7898ac8d11e50cb9",
+  "public_source_or_originals_mutated": false
+}

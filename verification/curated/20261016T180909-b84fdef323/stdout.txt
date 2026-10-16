@@ -1,0 +1,30 @@
+make[1]: Entering directory '[recorded-working-root]'
+GOMAXPROCS=2 go test ./internal/history -run '^$' -fuzz '^FuzzHistory$' -fuzztime=3s -parallel=2
+fuzz: elapsed: 0s, gathering baseline coverage: 0/2 completed
+fuzz: elapsed: 1s, gathering baseline coverage: 2/2 completed, now fuzzing with 2 workers
+fuzz: elapsed: 3s, execs: 45452 (15149/sec), new interesting: 57 (total: 59)
+fuzz: elapsed: 4s, execs: 45452 (0/sec), new interesting: 57 (total: 59)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/history	5.564s
+GOMAXPROCS=2 go test ./internal/sim -run '^$' -fuzz '^FuzzReplay$' -fuzztime=3s -parallel=2
+fuzz: elapsed: 0s, gathering baseline coverage: 0/2 completed
+fuzz: elapsed: 1s, gathering baseline coverage: 2/2 completed, now fuzzing with 2 workers
+fuzz: elapsed: 3s, execs: 103208 (34395/sec), new interesting: 42 (total: 44)
+fuzz: elapsed: 4s, execs: 103208 (0/sec), new interesting: 42 (total: 44)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/sim	5.861s
+GOMAXPROCS=2 go test ./tests/security -run '^$' -fuzz '^FuzzScenarioSchema$' -fuzztime=3s -parallel=2
+fuzz: elapsed: 0s, gathering baseline coverage: 0/4 completed
+fuzz: elapsed: 1s, gathering baseline coverage: 4/4 completed, now fuzzing with 2 workers
+fuzz: elapsed: 3s, execs: 1334 (445/sec), new interesting: 4 (total: 8)
+fuzz: elapsed: 4s, execs: 1334 (0/sec), new interesting: 4 (total: 8)
+PASS
+ok  	github.com/C-X1an/faultbraid/tests/security	6.790s
+GOMAXPROCS=2 go test ./tests/security -run '^$' -fuzz '^FuzzTargetTraceReplay$' -fuzztime=3s -parallel=2
+fuzz: elapsed: 0s, gathering baseline coverage: 0/4 completed
+fuzz: elapsed: 1s, gathering baseline coverage: 4/4 completed, now fuzzing with 2 workers
+fuzz: elapsed: 3s, execs: 488 (162/sec), new interesting: 3 (total: 7)
+fuzz: elapsed: 4s, execs: 488 (0/sec), new interesting: 3 (total: 7)
+PASS
+ok  	github.com/C-X1an/faultbraid/tests/security	7.349s
+make[1]: Leaving directory '[recorded-working-root]'

@@ -1,0 +1,8 @@
+=== RUN   TestAC019ThreeRealProcessesJournalKillRestartAndCleanup
+=== RUN   TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-16
+    real_process_test.go:124: retained actual native fixture=.local-runs/real-process-tests/actual-413312773/lab/native-result.json
+    real_process_test.go:199: AC-019 actual same-test-binary processes=4 distinct-pids=4 socket-closure=true http-posts=625 journal-bytes=4362 configured-concurrency=16 observed-peak=15 duration-ms=7440 source=0ebd3d3288d493d29a69e3fa147303b84954b31a784491d43149bbd460646f45 binary=1f9dd44471aacf464e0644e05d393decf0e11dfb781253cddf22f6059ed32a96
+--- PASS: TestAC019ThreeRealProcessesJournalKillRestartAndCleanup (7.56s)
+    --- PASS: TestAC019ThreeRealProcessesJournalKillRestartAndCleanup/concurrency-16 (7.56s)
+PASS
+ok  	github.com/C-X1an/faultbraid/tests/system	10.997s

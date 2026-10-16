@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "kind": "independent-exact-prospective-package-serial-profile-assessment",
+  "status": "PASS",
+  "decision": "APPROVE_EXACT_MAKEFILE_PATCH_AS_PROSPECTIVE_NORMAL_CONFIGURATION",
+  "reviewer": {
+    "id": "/root/profile_exact_verifier",
+    "method": "separate-read-only-review",
+    "model_diversity_claim": false
+  },
+  "scope": "Approve only the hashed private Makefile patch as an explicit normal execution configuration. Validate actual same-source serial/parallel controls and locked contract; no new source, installed-profile execution, full release, all24, remote or hosted credit.",
+  "assessed_utc": "2026-10-14T12:04:09.593270+00:00",
+  "source": {
+    "git_commit": "2ff0a61b050e5a93c3d7a3b79af7fcb5599aacac",
+    "git_dirty": false,
+    "source_tree_sha256": "fd5dc4abe80de1cd52d762c779cd5127871829a356b44a3c03ab6834da34f54d"
+  },
+  "source_file_count": 642,
+  "exact_patch": {
+    "path": "[local-evidence-root]/proposals/package-serial-profile/candidate.patch",
+    "sha256": "74f4cb4a90b4ea3ee77f4765b06aa034c973112697af94ba6e921597c44f80df",
+    "bytes": 683,
+    "public_paths": [
+      "Makefile"
+    ]
+  },
+  "exact_proposal": {
+    "path": "[local-evidence-root]/proposals/package-serial-profile/proposal.json",
+    "sha256": "841787705899f45c81721722253b3f98cbf77895d381e8673f9fb757147ccf55"
+  },
+  "before_makefile_sha256": "5c952c11300bf0289b2526df53ed915564636afd139e04d5b348fcaf680a0a15",
+  "proposed_makefile_sha256": "033dd7c1725f007c8a4d701fc9e1f7fb310de85b1400d3af80ba445bee839670",
+  "changes": "Add explicit -p 1 to test and race complete ./... recipes; add the exact visible package execution comment. All remaining bytes unchanged.",
+  "actual_independent_capture": {
+    "path": "[local-evidence-root]/reviews/final-independent-20261014-package-profile-exact-evidence/20261014T120016-d0954e58a5/run.json",
+    "raw_sha256": "6d14e066ba6c4c7d6a6bb6f0b3c49eb55c97a202fc3f8fe10cb57e645548334f",
+    "run_id": "20261014T120016-d0954e58a5",
+    "status": "PASS",
+    "reason": "completed",
+    "exit_code": 0,
+    "duration_seconds": 75.03990720000002,
+    "command": [
+      "python",
+      "[local-evidence-root]/reviews/final-independent-20261014-package-profile-exact-check.py"
+    ],
+    "cwd": "[public-root]",
+    "stdout": {
+      "path": "[local-evidence-root]/reviews/final-independent-20261014-package-profile-exact-evidence/20261014T120016-d0954e58a5/stdout.txt",
+      "sha256": "ba134bd4ecfa90f80e608fa8b176e7196a96707034fa9984c29b52d2e9ef7a3d",
+      "bytes": 476
+    },
+    "stderr": {
+      "path": "[local-evidence-root]/reviews/final-independent-20261014-package-profile-exact-evidence/20261014T120016-d0954e58a5/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "actual_capture_invocation": [
+    "python",
+    "public/scripts/run_evidence.py",
+    "--cwd",
+    "public",
+    "--out",
+    "[local-evidence-root]/reviews/final-independent-20261014-package-profile-exact-evidence",
+    "--category",
+    "independent-package-profile-exact-static-and-retained-evidence",
+    "--requirements",
+    "AC-019,AC-020",
+    "--timeout",
+    "180",
+    "--",
+    "python",
+    "[local-evidence-root]/reviews/final-independent-20261014-package-profile-exact-check.py"
+  ],
+  "capture_process_environment_set_for_this_invocation": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "GOTOOLCHAIN": "local",
+    "PATH_prefix": "[local-evidence-root]/tools/go1.27.2/go/bin"
+  },
+  "independent_checks": {
+    "path": "[local-evidence-root]/reviews/final-independent-20261014-package-profile-exact-checks.json",
+    "sha256": "8e07f872f44bae88b253b4a6d4df52b3fd23461f9f54ac86dbeeccb4312b5966",
+    "PASS_count": 427,
+    "direct_raw_input_binding_count": 131
+  },
+  "independent_helper": {
+    "path": "[local-evidence-root]/reviews/final-independent-20261014-package-profile-exact-check.py",
+    "sha256": "74f6411d251d3bdf20a438358e978d432f5e4cea3e5972e5f45a9f743a8d0ce5"
+  },
+  "actual_serial_control": {
+    "path": "[local-evidence-root]/runtime/release-a7-package-serial-control/20261014T083956-2d2a687e93/run.json",
+    "raw_sha256": "7877d04e3d1072b2b3c7a40b06edf4c80358be9f4b4de88fbeba9fb84b1e5ca2",
+    "command": [
+      "go",
+      "test",
+      "-race",
+      "-p",
+      "1",
+      "-count=1",
+      "-json",
+      "./..."
+    ],
+    "run_id": "20261014T083956-2d2a687e93",
+    "status": "PASS",
+    "exit_code": 0,
+    "duration_seconds": 331.81823109999823,
+    "test_run_count": 325,
+    "test_pass_count": 325,
+    "top_level_pass_count": 117,
+    "test_fail_count": 0,
+    "test_skip_count": 0,
+    "package_pass_count": 15,
+    "package_skip_no_test_files_count": 1,
+    "stdout": {
+      "path": "[local-evidence-root]/runtime/release-a7-package-serial-control/20261014T083956-2d2a687e93/stdout.txt",
+      "sha256": "3f6f65522a61f63e75fc12cefa8ea5a1cfd118adf5688d43a076be389766850a",
+      "bytes": 354990
+    },
+    "stderr": {
+      "path": "[local-evidence-root]/runtime/release-a7-package-serial-control/20261014T083956-2d2a687e93/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "retained_actual_parallel_failure": {
+    "path": "[local-evidence-root]/runtime/release-a7/go-json-race/20261014T082933-b6f7991e4a/run.json",
+    "raw_sha256": "01752bf935e947bf2df299080cda1b39d19d33427ca23f536c279513b34bdaff",
+    "command": [
+      "go",
+      "test",
+      "-race",
+      "-count=1",
+      "-json",
+      "./..."
+    ],
+    "run_id": "20261014T082933-b6f7991e4a",
+    "status": "FAIL",
+    "exit_code": 1,
+    "duration_seconds": 155.82196320000367,
+    "test_run_count": 325,
+    "test_pass_count": 323,
+    "top_level_pass_count": 116,
+    "test_fail_count": 2,
+    "test_skip_count": 0,
+    "package_pass_count": 14,
+    "package_skip_no_test_files_count": 1,
+    "stdout": {
+      "path": "[local-evidence-root]/runtime/release-a7/go-json-race/20261014T082933-b6f7991e4a/stdout.txt",
+      "sha256": "393da5dbede42e67c4485da24fcda616cd8ab7c47cbdb098ab95ab89d8d74e74",
+      "bytes": 355169
+    },
+    "stderr": {
+      "path": "[local-evidence-root]/runtime/release-a7/go-json-race/20261014T082933-b6f7991e4a/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "no_weakening_checks": {
+    "all_test_names_identical_325": true,
+    "all_top_tests_present_117": true,
+    "test_skip_count": 0,
+    "one_package_skip_reason": "internal/campaign adjacent [no test files]; no Test field",
+    "race_preserved": true,
+    "count_one_preserved": true,
+    "complete_package_selection_preserved": true,
+    "python_discovery_preserved": true,
+    "native_assertions_and_deadlines_unchanged": true,
+    "native_18_seconds_25_milliseconds_and_1_4_16_unchanged": true,
+    "other_recipes_unchanged": true,
+    "locked_spec_and_phase_hashes_unchanged": true,
+    "all_Go_Python_source_and_tests_unchanged": true,
+    "hidden_GOFLAGS_added": false
+  },
+  "approval_reason": "Installed supported Go help defines -p as concurrency among package build/test programs. No locked requirement mandates simultaneous execution of unrelated package test binaries. The exact patch retains all selected tests, native request concurrency, in-package concurrency, assertions and race detection; actual complete serial control corroborates prospective compatibility.",
+  "material_findings": [],
+  "limitations_and_required_followup": [
+    "Original compiled Go temporary executable bytes were not retained; no independent original-binary byte hash or rebuild is credited. Actual existing test self-hash, native parent/children/protocol records agree on b9b31e... and source/module/patch identities.",
+    "The prior parallel native assertion remains FAIL; its write9[41,57] and read9[47,58] returned9 history is VALID. Exact scheduling cause, sole causal effect of package contention and universal flake elimination are unproven.",
+    "One actual same-source complete serial race PASS supports this prospective explicit profile; it is not execution of an installed Makefile or a new-source full release.",
+    "Installing the protected Makefile patch requires a new committed source identity and fresh current full/clean release evidence and independent all24 judgment. Existing 2ff0a61 records must not be retagged.",
+    "Macro command timeout can accommodate the longer complete sequential package execution; locked native18s/25ms and all test/assertion/request concurrency budgets remain unchanged.",
+    "This review neither changes the frozen A7 pipeline nor approves any later pipeline/tooling/doc changes; no publication, hosted CI, purchases, quota resets, paid fallbacks or Astra invocations."
+  ],
+  "full_release_or_all24_approved": false,
+  "installed_patch_execution_credited": false,
+  "exact_previous_native_causal_schedule_proven": false,
+  "universal_native_stability_proven": false,
+  "old_source_records_can_be_retagged": false,
+  "fresh_committed_source_full_clean_and_all24_still_required": true,
+  "later_pipeline_configuration_changes_approved_here": false,
+  "public_source_mutated": false,
+  "original_raw_evidence_mutated": false,
+  "heavy_Go_or_audit_reruns": "NONE",
+  "publication": "NOT RUN",
+  "remote_inspection": "NOT RUN",
+  "hosted_CI": "NOT RUN",
+  "service_failure": "NONE - all tools needed for bounded check were available; ordinary shell Go lookup initially failed and installed absolute Go path was used",
+  "purchases": "NONE",
+  "quota_resets": "NONE",
+  "paid_fallbacks": "NONE",
+  "astra_invocations": "NONE",
+  "native_corroboration": {
+    "same_actual_self_hash": "b9b31e0881a1a3fb5527bf4abe110f55045e3682da8498953f27a14956a7fc0a",
+    "parent_child_protocol_identity_agreement": true,
+    "serial_request_concurrency": [
+      1,
+      4,
+      16
+    ],
+    "serial_observed_peaks": [
+      1,
+      4,
+      16
+    ],
+    "actual_journal_hashes_verified": true,
+    "serial_cleanup_complete": true,
+    "failed_parallel_history": "write9[41,57],read9[47,58] returns9; bounded independent24-order enumeration agrees VALID; supplemental native assertion stays FAIL",
+    "original_compiled_bytes": "UNAVAILABLE - no retained Go temporary executable; direct independent original-byte hash NOT RUN; no rebuild credited"
+  },
+  "findings_document": {
+    "path": "[local-evidence-root]/reviews/final-independent-20261014-package-profile-exact-findings.md",
+    "sha256": "63fbb24da38d6c680d7db4dd752229d5234379b190efbe1643b82a1e2dc21b1e"
+  }
+}

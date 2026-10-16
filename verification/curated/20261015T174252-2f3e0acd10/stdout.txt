@@ -1,0 +1,78 @@
+=== RUN   TestSourceTraversalDirectoryErrors
+=== RUN   TestSourceTraversalDirectoryErrors/source-dir/open/file_does_not_exist
+    source_walk_test.go:203: directory error accepted: got={SourceTreeSHA:2c561bc59708ec5f99251a469353879e57375d39d6b051e1163d26db7b344a2a ModuleLockSHA:0bae3bfb4673a6cde4c33a121aaba2e4e6e7f1eda295b2b3a8c834d2ecf9185e PatchSHA:cfb97f5adb3cfd763d8c5052223655f52accd4b2365a774f802dac63e36cfdf7} err=<nil>
+=== RUN   TestSourceTraversalDirectoryErrors/source-dir/open/permission_denied
+=== RUN   TestSourceTraversalDirectoryErrors/source-dir/open/controlled_directory_sharing_error
+=== RUN   TestSourceTraversalDirectoryErrors/source-dir/open/controlled_nonterminal_error:_EOF
+=== RUN   TestSourceTraversalDirectoryErrors/source-dir/read/file_does_not_exist
+    source_walk_test.go:203: directory error accepted: got={SourceTreeSHA:5e9a1e717b6d505a97031012a772d406e5d3ee24749407b1c751c98e358d36b2 ModuleLockSHA:0bae3bfb4673a6cde4c33a121aaba2e4e6e7f1eda295b2b3a8c834d2ecf9185e PatchSHA:cfb97f5adb3cfd763d8c5052223655f52accd4b2365a774f802dac63e36cfdf7} err=<nil>
+=== RUN   TestSourceTraversalDirectoryErrors/source-dir/read/permission_denied
+=== RUN   TestSourceTraversalDirectoryErrors/source-dir/read/controlled_directory_sharing_error
+=== RUN   TestSourceTraversalDirectoryErrors/source-dir/read/controlled_nonterminal_error:_EOF
+=== RUN   TestSourceTraversalDirectoryErrors/.local-runs/nested/open/file_does_not_exist
+=== RUN   TestSourceTraversalDirectoryErrors/.local-runs/nested/open/permission_denied
+=== RUN   TestSourceTraversalDirectoryErrors/.local-runs/nested/open/controlled_directory_sharing_error
+=== RUN   TestSourceTraversalDirectoryErrors/.local-runs/nested/open/controlled_nonterminal_error:_EOF
+=== RUN   TestSourceTraversalDirectoryErrors/.local-runs/nested/read/file_does_not_exist
+=== RUN   TestSourceTraversalDirectoryErrors/.local-runs/nested/read/permission_denied
+=== RUN   TestSourceTraversalDirectoryErrors/.local-runs/nested/read/controlled_directory_sharing_error
+=== RUN   TestSourceTraversalDirectoryErrors/.local-runs/nested/read/controlled_nonterminal_error:_EOF
+--- FAIL: TestSourceTraversalDirectoryErrors (0.30s)
+    --- FAIL: TestSourceTraversalDirectoryErrors/source-dir/open/file_does_not_exist (0.02s)
+    --- PASS: TestSourceTraversalDirectoryErrors/source-dir/open/permission_denied (0.01s)
+    --- PASS: TestSourceTraversalDirectoryErrors/source-dir/open/controlled_directory_sharing_error (0.01s)
+    --- PASS: TestSourceTraversalDirectoryErrors/source-dir/open/controlled_nonterminal_error:_EOF (0.01s)
+    --- FAIL: TestSourceTraversalDirectoryErrors/source-dir/read/file_does_not_exist (0.01s)
+    --- PASS: TestSourceTraversalDirectoryErrors/source-dir/read/permission_denied (0.01s)
+    --- PASS: TestSourceTraversalDirectoryErrors/source-dir/read/controlled_directory_sharing_error (0.01s)
+    --- PASS: TestSourceTraversalDirectoryErrors/source-dir/read/controlled_nonterminal_error:_EOF (0.01s)
+    --- PASS: TestSourceTraversalDirectoryErrors/.local-runs/nested/open/file_does_not_exist (0.01s)
+    --- PASS: TestSourceTraversalDirectoryErrors/.local-runs/nested/open/permission_denied (0.01s)
+    --- PASS: TestSourceTraversalDirectoryErrors/.local-runs/nested/open/controlled_directory_sharing_error (0.01s)
+    --- PASS: TestSourceTraversalDirectoryErrors/.local-runs/nested/open/controlled_nonterminal_error:_EOF (0.10s)
+    --- PASS: TestSourceTraversalDirectoryErrors/.local-runs/nested/read/file_does_not_exist (0.02s)
+    --- PASS: TestSourceTraversalDirectoryErrors/.local-runs/nested/read/permission_denied (0.01s)
+    --- PASS: TestSourceTraversalDirectoryErrors/.local-runs/nested/read/controlled_directory_sharing_error (0.01s)
+    --- PASS: TestSourceTraversalDirectoryErrors/.local-runs/nested/read/controlled_nonterminal_error:_EOF (0.01s)
+=== RUN   TestSourceTraversalMetadataErrors
+=== RUN   TestSourceTraversalMetadataErrors/source-dir/file_does_not_exist
+    source_walk_test.go:302: entry metadata failure accepted: got={SourceTreeSHA:2c561bc59708ec5f99251a469353879e57375d39d6b051e1163d26db7b344a2a ModuleLockSHA:0bae3bfb4673a6cde4c33a121aaba2e4e6e7f1eda295b2b3a8c834d2ecf9185e PatchSHA:cfb97f5adb3cfd763d8c5052223655f52accd4b2365a774f802dac63e36cfdf7} err=<nil>
+=== RUN   TestSourceTraversalMetadataErrors/source-dir/permission_denied
+=== RUN   TestSourceTraversalMetadataErrors/source-dir/controlled_entry_sharing_error
+=== RUN   TestSourceTraversalMetadataErrors/.git/file_does_not_exist
+=== RUN   TestSourceTraversalMetadataErrors/.git/permission_denied
+=== RUN   TestSourceTraversalMetadataErrors/.git/controlled_entry_sharing_error
+=== RUN   TestSourceTraversalMetadataErrors/.local-runs/file_does_not_exist
+=== RUN   TestSourceTraversalMetadataErrors/.local-runs/permission_denied
+=== RUN   TestSourceTraversalMetadataErrors/.local-runs/controlled_entry_sharing_error
+=== RUN   TestSourceTraversalMetadataErrors/bin/file_does_not_exist
+=== RUN   TestSourceTraversalMetadataErrors/bin/permission_denied
+=== RUN   TestSourceTraversalMetadataErrors/bin/controlled_entry_sharing_error
+=== RUN   TestSourceTraversalMetadataErrors/__pycache__/file_does_not_exist
+=== RUN   TestSourceTraversalMetadataErrors/__pycache__/permission_denied
+=== RUN   TestSourceTraversalMetadataErrors/__pycache__/controlled_entry_sharing_error
+=== RUN   TestSourceTraversalMetadataErrors/.pytest_cache/file_does_not_exist
+=== RUN   TestSourceTraversalMetadataErrors/.pytest_cache/permission_denied
+=== RUN   TestSourceTraversalMetadataErrors/.pytest_cache/controlled_entry_sharing_error
+--- FAIL: TestSourceTraversalMetadataErrors (0.46s)
+    --- FAIL: TestSourceTraversalMetadataErrors/source-dir/file_does_not_exist (0.06s)
+    --- PASS: TestSourceTraversalMetadataErrors/source-dir/permission_denied (0.03s)
+    --- PASS: TestSourceTraversalMetadataErrors/source-dir/controlled_entry_sharing_error (0.05s)
+    --- PASS: TestSourceTraversalMetadataErrors/.git/file_does_not_exist (0.03s)
+    --- PASS: TestSourceTraversalMetadataErrors/.git/permission_denied (0.01s)
+    --- PASS: TestSourceTraversalMetadataErrors/.git/controlled_entry_sharing_error (0.01s)
+    --- PASS: TestSourceTraversalMetadataErrors/.local-runs/file_does_not_exist (0.01s)
+    --- PASS: TestSourceTraversalMetadataErrors/.local-runs/permission_denied (0.07s)
+    --- PASS: TestSourceTraversalMetadataErrors/.local-runs/controlled_entry_sharing_error (0.02s)
+    --- PASS: TestSourceTraversalMetadataErrors/bin/file_does_not_exist (0.01s)
+    --- PASS: TestSourceTraversalMetadataErrors/bin/permission_denied (0.01s)
+    --- PASS: TestSourceTraversalMetadataErrors/bin/controlled_entry_sharing_error (0.01s)
+    --- PASS: TestSourceTraversalMetadataErrors/__pycache__/file_does_not_exist (0.01s)
+    --- PASS: TestSourceTraversalMetadataErrors/__pycache__/permission_denied (0.01s)
+    --- PASS: TestSourceTraversalMetadataErrors/__pycache__/controlled_entry_sharing_error (0.02s)
+    --- PASS: TestSourceTraversalMetadataErrors/.pytest_cache/file_does_not_exist (0.03s)
+    --- PASS: TestSourceTraversalMetadataErrors/.pytest_cache/permission_denied (0.02s)
+    --- PASS: TestSourceTraversalMetadataErrors/.pytest_cache/controlled_entry_sharing_error (0.02s)
+FAIL
+FAIL	github.com/C-X1an/faultbraid/internal/buildinfo	2.388s
+FAIL

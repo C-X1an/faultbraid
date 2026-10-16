@@ -1,0 +1,20 @@
+=== RUN   TestSourceTraversalAliasInIgnoredPartialRead
+=== RUN   TestSourceTraversalAliasInIgnoredPartialRead/.git
+    source_walk_test.go:236: partial ignored read concealed an alias: got={SourceTreeSHA:2c561bc59708ec5f99251a469353879e57375d39d6b051e1163d26db7b344a2a ModuleLockSHA:0bae3bfb4673a6cde4c33a121aaba2e4e6e7f1eda295b2b3a8c834d2ecf9185e PatchSHA:cfb97f5adb3cfd763d8c5052223655f52accd4b2365a774f802dac63e36cfdf7} err=<nil>
+=== RUN   TestSourceTraversalAliasInIgnoredPartialRead/.local-runs
+    source_walk_test.go:236: partial ignored read concealed an alias: got={SourceTreeSHA:2c561bc59708ec5f99251a469353879e57375d39d6b051e1163d26db7b344a2a ModuleLockSHA:0bae3bfb4673a6cde4c33a121aaba2e4e6e7f1eda295b2b3a8c834d2ecf9185e PatchSHA:cfb97f5adb3cfd763d8c5052223655f52accd4b2365a774f802dac63e36cfdf7} err=<nil>
+=== RUN   TestSourceTraversalAliasInIgnoredPartialRead/bin
+    source_walk_test.go:236: partial ignored read concealed an alias: got={SourceTreeSHA:2c561bc59708ec5f99251a469353879e57375d39d6b051e1163d26db7b344a2a ModuleLockSHA:0bae3bfb4673a6cde4c33a121aaba2e4e6e7f1eda295b2b3a8c834d2ecf9185e PatchSHA:cfb97f5adb3cfd763d8c5052223655f52accd4b2365a774f802dac63e36cfdf7} err=<nil>
+=== RUN   TestSourceTraversalAliasInIgnoredPartialRead/__pycache__
+    source_walk_test.go:236: partial ignored read concealed an alias: got={SourceTreeSHA:2c561bc59708ec5f99251a469353879e57375d39d6b051e1163d26db7b344a2a ModuleLockSHA:0bae3bfb4673a6cde4c33a121aaba2e4e6e7f1eda295b2b3a8c834d2ecf9185e PatchSHA:cfb97f5adb3cfd763d8c5052223655f52accd4b2365a774f802dac63e36cfdf7} err=<nil>
+=== RUN   TestSourceTraversalAliasInIgnoredPartialRead/.pytest_cache
+    source_walk_test.go:236: partial ignored read concealed an alias: got={SourceTreeSHA:2c561bc59708ec5f99251a469353879e57375d39d6b051e1163d26db7b344a2a ModuleLockSHA:0bae3bfb4673a6cde4c33a121aaba2e4e6e7f1eda295b2b3a8c834d2ecf9185e PatchSHA:cfb97f5adb3cfd763d8c5052223655f52accd4b2365a774f802dac63e36cfdf7} err=<nil>
+--- FAIL: TestSourceTraversalAliasInIgnoredPartialRead (0.07s)
+    --- FAIL: TestSourceTraversalAliasInIgnoredPartialRead/.git (0.02s)
+    --- FAIL: TestSourceTraversalAliasInIgnoredPartialRead/.local-runs (0.02s)
+    --- FAIL: TestSourceTraversalAliasInIgnoredPartialRead/bin (0.01s)
+    --- FAIL: TestSourceTraversalAliasInIgnoredPartialRead/__pycache__ (0.01s)
+    --- FAIL: TestSourceTraversalAliasInIgnoredPartialRead/.pytest_cache (0.01s)
+FAIL
+FAIL	github.com/C-X1an/faultbraid/internal/buildinfo	2.027s
+FAIL

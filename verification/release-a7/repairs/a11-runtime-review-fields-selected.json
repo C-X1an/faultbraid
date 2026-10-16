@@ -1,0 +1,2340 @@
+{
+  "schema_version": 1,
+  "kind": "integrator-selected-original-a11-runtime-engineering-fields",
+  "status": "FIELD_SELECTION_ONLY",
+  "selector_author": "/root",
+  "new_independent_review": "NONE; original reports retain their actual separate authors and scopes",
+  "original_documents": [
+    {
+      "name": "original372-full-failure-before-fix",
+      "original_report_path": "[local-evidence-root]/reviews/rv-a9-a10-full-pipeline-findings-before-fix.json",
+      "original_report_sha256": "db7afc952f137e2b9b0fe91e792ad715d7eff417d0106b8ae2c2533fbb265543",
+      "original_status": "OPEN",
+      "selected_original_fields": [
+        {
+          "field": "/kind",
+          "value": "independent-full-pipeline-failure-findings-before-fix",
+          "original_value_sha256": "4799b7c9e21a993583314f73da58e696b1378c49b181df78f214bfa60b743575"
+        },
+        {
+          "field": "/status",
+          "value": "OPEN",
+          "original_value_sha256": "be0a10fd97364a8fcdbc5bee5360b8ef41f3693ffcef3804485a3b96c2b2ab65"
+        },
+        {
+          "field": "/created_utc",
+          "value": "2026-10-15T17:28:22.4201382Z",
+          "original_value_sha256": "da627a1e5a1db95f5f797ddb448bc4cc6dbd0009294e711b974ebf0cb71fbccd"
+        },
+        {
+          "field": "/reviewer",
+          "value": {
+            "id": "/root/release_readonly_verifier",
+            "method": "separate-read-only-verifier"
+          },
+          "original_value_sha256": "098fc6cb2d34ce1b106e02651bf479850780bd4ed9a745f0bc1dc6d19158bc82"
+        },
+        {
+          "field": "/scope",
+          "value": "Original372 full-pipeline Go/lifecycle/native failures and environment guard only. No product commands launched and no source fixes, full/all24 or publication approval.",
+          "original_value_sha256": "e43a3961763c7325ffb8d4c32b5ec65d9aa21333f0d87e4ce1e489fdeae4ce44"
+        },
+        {
+          "field": "/source/git_commit",
+          "value": "372f6291d9d594f789aa34e4191f416edc09ccc0",
+          "original_value_sha256": "47f925c984762683535ae0cef51d379069479e4c50bd7c813abdde08b0f594c4"
+        },
+        {
+          "field": "/source/source_tree_sha256",
+          "value": "48d766c6a7b4ca1cd429607d08a8212331db3bc2850b7076b9db99cbdafacdf2",
+          "original_value_sha256": "fbb62e82724f55ad6e955d6d59c0f3c7be4911fcf2860eb7f62745b3fd3ffd81"
+        },
+        {
+          "field": "/findings",
+          "value": [
+            {
+              "id": "RV-A10-NATIVE-01",
+              "summary": "All three current full-race native conformance cases fail the required acknowledged-write-before-read relation; measured write9 completion overlaps the later read9 invocation.",
+              "evidence": "Concurrency1 write9.return50/read9.call47; concurrency4 return57/call47; concurrency16 return58/call47 with read9.return57/value7.",
+              "safety_interpretation": "No completed-write-before-stale-read counterexample is established here. All three histories are VALID; concurrency16 legally orders read9 before write9 and surviving final snapshots are9.",
+              "status": "OPEN",
+              "required_resolution": "Preserve failures. Diagnose actual workload/controller/resource ordering; repair within unchanged assertions/deadlines/concurrency and verify real independent regressions/new complete pipeline. No timing-sole-cause or target-safety conclusion from this evidence alone.",
+              "severity": "P1"
+            },
+            {
+              "id": "RV-A10-LIFECYCLE-01",
+              "summary": "Unexpected-exited-child negative control did not finish its intentional helper within5s and TempDir cleanup reported an open stderr file.",
+              "evidence": "Actual failed test event6.48s, independent_lifecycle_test.go104 and testing.go1619 retained file-lock error.",
+              "status": "OPEN",
+              "required_resolution": "Preserve exact failed output; determine where helper startup/exit/cleanup stalls, complete owned kill+Wait cleanup and original negative-control assertions without silently weakening the deadline or skipping the control.",
+              "severity": "P1"
+            },
+            {
+              "id": "RV-A10-ENV-01",
+              "summary": "Current env-native.ps1 line8 rejects the prepared interpreter executables as ReparsePoint entries; controlled evidence execution through that environment is currently unavailable.",
+              "evidence": "Actual initial tool invocation threw Native Python must be a regular executable. Executable metadata/hashes are recorded independently.",
+              "status": "OPEN",
+              "required_resolution": "Diagnose actual reparse tag/path type and use a legitimately verified supported native interpreter/environment. Do not disable the guard or falsely credit unexecuted controls.",
+              "severity": "P2"
+            }
+          ],
+          "original_value_sha256": "2239b16d9de8c1913b51c0a2ee5dd1297aab403f9133716362ece9fb6862c74f"
+        },
+        {
+          "field": "/original_clean_pass",
+          "value": "Preserved original372 clean PASS remains a separate result; detailed reviewer clean validation was not completed before this new full-pipeline failure.",
+          "original_value_sha256": "aef4efc3958f0975c1e7669e6eb4e8b300a33d9ba4d4b7d320f29b9e855f3c42"
+        },
+        {
+          "field": "/current_full_all24",
+          "value": "NOT RUN",
+          "original_value_sha256": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4"
+        },
+        {
+          "field": "/native_observations/0/concurrency",
+          "value": 1,
+          "original_value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        },
+        {
+          "field": "/native_observations/0/result/status",
+          "value": "VALID",
+          "original_value_sha256": "53e4338e059d9e17cbe7afa923f5f4b8d826ea0d20f3a366de6e07c421d62ef2"
+        },
+        {
+          "field": "/native_observations/0/write9_return",
+          "value": 50,
+          "original_value_sha256": "1a6562590ef19d1045d06c4055742d38288e9e6dcd71ccde5cee80f1d5a774eb"
+        },
+        {
+          "field": "/native_observations/0/read9_call",
+          "value": 47,
+          "original_value_sha256": "31489056e0916d59fe3add79e63f095af3ffb81604691f21cad442a85c7be617"
+        },
+        {
+          "field": "/native_observations/0/read9_return",
+          "value": 56,
+          "original_value_sha256": "7688b6ef52555962d008fff894223582c484517cea7da49ee67800adc7fc8866"
+        },
+        {
+          "field": "/native_observations/0/read9_value",
+          "value": 9,
+          "original_value_sha256": "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7"
+        },
+        {
+          "field": "/native_observations/0/acknowledged_before_read",
+          "value": false,
+          "original_value_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "field": "/native_observations/0/final_surviving_values",
+          "value": [
+            9,
+            9,
+            9
+          ],
+          "original_value_sha256": "9dab4287291dbcd9088293644588d4ec0ee841dced51d764ce859aad09ff95f6"
+        },
+        {
+          "field": "/native_observations/1/concurrency",
+          "value": 4,
+          "original_value_sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+        },
+        {
+          "field": "/native_observations/1/result/status",
+          "value": "VALID",
+          "original_value_sha256": "53e4338e059d9e17cbe7afa923f5f4b8d826ea0d20f3a366de6e07c421d62ef2"
+        },
+        {
+          "field": "/native_observations/1/write9_return",
+          "value": 57,
+          "original_value_sha256": "c837649cce43f2729138e72cc315207057ac82599a59be72765a477f22d14a54"
+        },
+        {
+          "field": "/native_observations/1/read9_call",
+          "value": 47,
+          "original_value_sha256": "31489056e0916d59fe3add79e63f095af3ffb81604691f21cad442a85c7be617"
+        },
+        {
+          "field": "/native_observations/1/read9_return",
+          "value": 58,
+          "original_value_sha256": "6208ef0f7750c111548cf90b6ea1d0d0a66f6bff40dbef07cb45ec436263c7d6"
+        },
+        {
+          "field": "/native_observations/1/read9_value",
+          "value": 9,
+          "original_value_sha256": "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7"
+        },
+        {
+          "field": "/native_observations/1/acknowledged_before_read",
+          "value": false,
+          "original_value_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "field": "/native_observations/1/final_surviving_values",
+          "value": [
+            9,
+            9,
+            9
+          ],
+          "original_value_sha256": "9dab4287291dbcd9088293644588d4ec0ee841dced51d764ce859aad09ff95f6"
+        },
+        {
+          "field": "/native_observations/2/concurrency",
+          "value": 16,
+          "original_value_sha256": "b17ef6d19c7a5b1ee83b907c595526dcb1eb06db8227d650d5dda0a9f4ce8cd9"
+        },
+        {
+          "field": "/native_observations/2/result/status",
+          "value": "VALID",
+          "original_value_sha256": "53e4338e059d9e17cbe7afa923f5f4b8d826ea0d20f3a366de6e07c421d62ef2"
+        },
+        {
+          "field": "/native_observations/2/write9_return",
+          "value": 58,
+          "original_value_sha256": "6208ef0f7750c111548cf90b6ea1d0d0a66f6bff40dbef07cb45ec436263c7d6"
+        },
+        {
+          "field": "/native_observations/2/read9_call",
+          "value": 47,
+          "original_value_sha256": "31489056e0916d59fe3add79e63f095af3ffb81604691f21cad442a85c7be617"
+        },
+        {
+          "field": "/native_observations/2/read9_return",
+          "value": 57,
+          "original_value_sha256": "c837649cce43f2729138e72cc315207057ac82599a59be72765a477f22d14a54"
+        },
+        {
+          "field": "/native_observations/2/read9_value",
+          "value": 7,
+          "original_value_sha256": "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451"
+        },
+        {
+          "field": "/native_observations/2/acknowledged_before_read",
+          "value": false,
+          "original_value_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "field": "/native_observations/2/final_surviving_values",
+          "value": [
+            9,
+            9,
+            9
+          ],
+          "original_value_sha256": "9dab4287291dbcd9088293644588d4ec0ee841dced51d764ce859aad09ff95f6"
+        }
+      ],
+      "privacy_rejected_original_leaf_hashes": [],
+      "original_top_level_field_hashes": {
+        "schema_version": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "kind": "4799b7c9e21a993583314f73da58e696b1378c49b181df78f214bfa60b743575",
+        "status": "be0a10fd97364a8fcdbc5bee5360b8ef41f3693ffcef3804485a3b96c2b2ab65",
+        "created_utc": "da627a1e5a1db95f5f797ddb448bc4cc6dbd0009294e711b974ebf0cb71fbccd",
+        "reviewer": "098fc6cb2d34ce1b106e02651bf479850780bd4ed9a745f0bc1dc6d19158bc82",
+        "scope": "e43a3961763c7325ffb8d4c32b5ec65d9aa21333f0d87e4ce1e489fdeae4ce44",
+        "capture_method": "00d64fa722814dbc9cb316d7c3d84b2cce6dc5198f097371c45bf802668ead4e",
+        "observer_correction": "8ec21968fcaf82cc8f27ad758a0e015dcaa380cfc90ad80cc1bb9a915ea74f91",
+        "source": "93ccf54215965367389a3ffb28259ffd973a8ef9d278f517c99a8e9ada78eb1f",
+        "failed_go_record": "9bc7738550cc8656c37d7a50298c3681b91187af1fa3c04d2d974b81d4e16a90",
+        "pipeline": "76fb310233a4d391c1b316755bc16acdc241216f9f7712129f400b496115da7e",
+        "actual_failed_test_events": "5efe9a01dc863c5de9990dea3c9d7bcb839a5b151b9d00448954cdd3b09d035d",
+        "native_observations": "707c691d3426bea231e2f025806a88d9610d35f5b1aa7aac2742f1246cf911a0",
+        "originals_stable_over_seconds": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+        "preserved_originals": "bd657c10e3c1d5c9366a4af505e29ba71b6559611086e588fa69112ebbd6f34c",
+        "original_driver_2304_current_processes": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "native_environment_executables": "3f2a0460669c8d80758cce275aa5459b306aa41c1f256e7aa8e81bb1a5b26778",
+        "findings": "2239b16d9de8c1913b51c0a2ee5dd1297aab403f9133716362ece9fb6862c74f",
+        "original_clean_pass": "aef4efc3958f0975c1e7669e6eb4e8b300a33d9ba4d4b7d320f29b9e855f3c42",
+        "current_full_all24": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "document_installation": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "publication": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "public_writes": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+      },
+      "selection_limit": "Explicit integrator-selected original values only, not the whole report or a new independent review. Omitted original fields remain represented by value hashes. Privacy-rejected leaves retain their original pointer/hash and rejection reason; no selected status or value is rewritten."
+    },
+    {
+      "name": "source-walker-original-scoped-review",
+      "original_report_path": "[local-evidence-root]/reviews/rv-a9-a11-source-walker-scoped-review.json",
+      "original_report_sha256": "207d6e9f95bdb25217616e0d151be400aa886ec87b727d8e2332c72ea740d941",
+      "original_status": "PASS",
+      "selected_original_fields": [
+        {
+          "field": "/kind",
+          "value": "independent-exact-source-walker-scoped-review",
+          "original_value_sha256": "83cf3f46806cccc404c7db40850cf37569636c6badb95a1c19fd326bf83da186"
+        },
+        {
+          "field": "/status",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/reviewer",
+          "value": {
+            "id": "/root/release_readonly_verifier",
+            "method": "separate-read-only-verifier"
+          },
+          "original_value_sha256": "098fc6cb2d34ce1b106e02651bf479850780bd4ed9a745f0bc1dc6d19158bc82"
+        },
+        {
+          "field": "/scope",
+          "value": "Exact three-file source-identity optimization and engineering controls only; not resolution of original native-history failures or full acceptance.",
+          "original_value_sha256": "7b1118cda1f5ec46e481c08c1eb4c9cd8541d64029bd7ca29b25dc228fe9f051"
+        },
+        {
+          "field": "/proposal/sha256",
+          "value": "12c3a4fe4f6033e5d62245aedadc52c622377922b40fb8213ea10246a1afb25a",
+          "original_value_sha256": "34d64bbd857c34a8cab71c62fcef775ef6e2b2437d0b1dda9f3d964b9a0519a0"
+        },
+        {
+          "field": "/static_observations",
+          "value": [
+            "Unsorted batched traversal carries relative/ignored state; final canonical included list, encoding, file/module/patch hashes unchanged.",
+            "All ignored descendants remain visited, including aliases returned with partial ignored missing reads. Only ignored ErrNotExist is tolerated; included/permission/other errors remain fatal.",
+            "Windows cached metadata and unchanged sourceAlias policy retained; no cloud-tag guard relaxation.",
+            "One directory reader at a time; defers Close on all exits, matching prior Close-error handling. Legacy injectable WalkDir adapter and every original test byte unchanged."
+          ],
+          "original_value_sha256": "08282f82b204a9c9ae084a7f604b13c709246678ec4c19b230cee36618849d6f"
+        },
+        {
+          "field": "/paired_race_measurements",
+          "value": [
+            {
+              "input": "[public-root]",
+              "implementation": "original-WalkDir",
+              "round": 0,
+              "duration_seconds": 2.4658771,
+              "identity": {
+                "source_tree_sha256": "48d766c6a7b4ca1cd429607d08a8212331db3bc2850b7076b9db99cbdafacdf2",
+                "module_lock_sha256": "c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432",
+                "patch_sha256": "01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647"
+              }
+            },
+            {
+              "input": "[public-root]",
+              "implementation": "candidate-batched",
+              "round": 0,
+              "duration_seconds": 1.5530296,
+              "identity": {
+                "source_tree_sha256": "48d766c6a7b4ca1cd429607d08a8212331db3bc2850b7076b9db99cbdafacdf2",
+                "module_lock_sha256": "c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432",
+                "patch_sha256": "01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647"
+              }
+            },
+            {
+              "input": "[public-root]",
+              "implementation": "candidate-batched",
+              "round": 1,
+              "duration_seconds": 1.4227621,
+              "identity": {
+                "source_tree_sha256": "48d766c6a7b4ca1cd429607d08a8212331db3bc2850b7076b9db99cbdafacdf2",
+                "module_lock_sha256": "c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432",
+                "patch_sha256": "01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647"
+              }
+            },
+            {
+              "input": "[public-root]",
+              "implementation": "original-WalkDir",
+              "round": 1,
+              "duration_seconds": 2.4790015,
+              "identity": {
+                "source_tree_sha256": "48d766c6a7b4ca1cd429607d08a8212331db3bc2850b7076b9db99cbdafacdf2",
+                "module_lock_sha256": "c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432",
+                "patch_sha256": "01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647"
+              }
+            },
+            {
+              "input": "[owned-temp-root]\\fb-clean-_8402tb8\\source",
+              "implementation": "original-WalkDir",
+              "round": 0,
+              "duration_seconds": 0.3633591,
+              "identity": {
+                "source_tree_sha256": "48d766c6a7b4ca1cd429607d08a8212331db3bc2850b7076b9db99cbdafacdf2",
+                "module_lock_sha256": "c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432",
+                "patch_sha256": "01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647"
+              }
+            },
+            {
+              "input": "[owned-temp-root]\\fb-clean-_8402tb8\\source",
+              "implementation": "candidate-batched",
+              "round": 0,
+              "duration_seconds": 0.2939168,
+              "identity": {
+                "source_tree_sha256": "48d766c6a7b4ca1cd429607d08a8212331db3bc2850b7076b9db99cbdafacdf2",
+                "module_lock_sha256": "c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432",
+                "patch_sha256": "01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647"
+              }
+            },
+            {
+              "input": "[owned-temp-root]\\fb-clean-_8402tb8\\source",
+              "implementation": "candidate-batched",
+              "round": 1,
+              "duration_seconds": 0.2975796,
+              "identity": {
+                "source_tree_sha256": "48d766c6a7b4ca1cd429607d08a8212331db3bc2850b7076b9db99cbdafacdf2",
+                "module_lock_sha256": "c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432",
+                "patch_sha256": "01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647"
+              }
+            },
+            {
+              "input": "[owned-temp-root]\\fb-clean-_8402tb8\\source",
+              "implementation": "original-WalkDir",
+              "round": 1,
+              "duration_seconds": 0.3984735,
+              "identity": {
+                "source_tree_sha256": "48d766c6a7b4ca1cd429607d08a8212331db3bc2850b7076b9db99cbdafacdf2",
+                "module_lock_sha256": "c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432",
+                "patch_sha256": "01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647"
+              }
+            }
+          ],
+          "original_value_sha256": "3d21d731fd6cacae7e75aa7aabf039510f0c1844ea184c3ecbe44e0c62bf9625"
+        },
+        {
+          "field": "/measurement_limits",
+          "value": "Two alternating rounds per tree show bounded cost reduction, not historical cause, guaranteed speedup, native schedule repair or acceptance credit.",
+          "original_value_sha256": "63bd116b5a8cdfa5216fddad3dfeebb5f0cdd0382735e14be9cd19ffbe878ae3"
+        },
+        {
+          "field": "/association_correction/sha256",
+          "value": "a9fec8fad7d6b0a0723f4b0df0b55d96702669877e932c485c70b84d1a83fbbd",
+          "original_value_sha256": "0e47d6d6210a98f5ada32f61617e973e96e864164e57a650c24370c31d506e1f"
+        },
+        {
+          "field": "/association_correction/disposition",
+          "value": "RV-A11-WALK-METADATA-01 RESOLVED by exact append-only correction; all15 original accidental AC-001 associations explicitly receive zero AC-001/current acceptance/target credit. Originals and statuses unchanged.",
+          "original_value_sha256": "78c6ecd04d4284391270ac908c8fc038e7ee12c77d6ea2c39b19fa8e0f83cafc"
+        },
+        {
+          "field": "/findings",
+          "value": [],
+          "original_value_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "field": "/inherited_native_finding",
+          "value": "RV-A10-NATIVE-01 OPEN until actual integrated conformance/new full pipeline; optimization alone does not resolve it.",
+          "original_value_sha256": "c3ea22c28123d8366f7622994dc1b7cb0c79fb4017781e51f1f772c5b2692d3e"
+        },
+        {
+          "field": "/profile_evidence/disposition",
+          "value": "RV-A11-FOCUSED-01 RESOLVED as diagnosed execution-profile limitation and corrected preparation; original FAIL remains FAIL. Both original/candidate Go agree; observed Python264-character path fails while230 succeeds. No universal path cutoff claim, OS setting, test, assertion, source or deadline change.",
+          "original_value_sha256": "1388229efbd08687f0438a13ddb2d9b8218989c9681c16e032112a3ea16c3cee"
+        },
+        {
+          "field": "/profile_evidence/diagnosis/0/candidate_identity",
+          "value": {
+            "source_tree_sha256": "d261b5b044974dd0fcc4a72decee59d800f36354fa0b061ce78e39f95c85e3d5",
+            "module_lock_sha256": "89ba22877bfbc60f283ebd5c6a7565b725013dde3c9fbcd6801eb11f59d0ce96",
+            "patch_sha256": "c88c94f3dd056ae2790c6e4086686c70f5f661ec9ff3a824a01ddb00fa92905e"
+          },
+          "original_value_sha256": "32fcbb6d30e3d05e6891553cc7027f129ef379067f60c5d3bb7f484fd051eab0"
+        },
+        {
+          "field": "/profile_evidence/diagnosis/0/legacy_identity",
+          "value": {
+            "source_tree_sha256": "d261b5b044974dd0fcc4a72decee59d800f36354fa0b061ce78e39f95c85e3d5",
+            "module_lock_sha256": "89ba22877bfbc60f283ebd5c6a7565b725013dde3c9fbcd6801eb11f59d0ce96",
+            "patch_sha256": "c88c94f3dd056ae2790c6e4086686c70f5f661ec9ff3a824a01ddb00fa92905e"
+          },
+          "original_value_sha256": "32fcbb6d30e3d05e6891553cc7027f129ef379067f60c5d3bb7f484fd051eab0"
+        },
+        {
+          "field": "/profile_evidence/diagnosis/0/max_path_characters",
+          "value": 264,
+          "original_value_sha256": "bba58959c32abe688d9cb5222b97de973002a67c412d6a8c8d2a79ac692f32b7"
+        },
+        {
+          "field": "/profile_evidence/diagnosis/0/python_exit_code",
+          "value": 1,
+          "original_value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        },
+        {
+          "field": "/profile_evidence/diagnosis/0/scope",
+          "value": "Equivalent retained filesystem fixture, no acceptance credit",
+          "original_value_sha256": "478d322a7a4cdd0bbe2a34bb6243521a6d9269f6f757f75c85460801f72e18e1"
+        },
+        {
+          "field": "/profile_evidence/diagnosis/1/candidate_identity",
+          "value": {
+            "source_tree_sha256": "d261b5b044974dd0fcc4a72decee59d800f36354fa0b061ce78e39f95c85e3d5",
+            "module_lock_sha256": "89ba22877bfbc60f283ebd5c6a7565b725013dde3c9fbcd6801eb11f59d0ce96",
+            "patch_sha256": "c88c94f3dd056ae2790c6e4086686c70f5f661ec9ff3a824a01ddb00fa92905e"
+          },
+          "original_value_sha256": "32fcbb6d30e3d05e6891553cc7027f129ef379067f60c5d3bb7f484fd051eab0"
+        },
+        {
+          "field": "/profile_evidence/diagnosis/1/legacy_identity",
+          "value": {
+            "source_tree_sha256": "d261b5b044974dd0fcc4a72decee59d800f36354fa0b061ce78e39f95c85e3d5",
+            "module_lock_sha256": "89ba22877bfbc60f283ebd5c6a7565b725013dde3c9fbcd6801eb11f59d0ce96",
+            "patch_sha256": "c88c94f3dd056ae2790c6e4086686c70f5f661ec9ff3a824a01ddb00fa92905e"
+          },
+          "original_value_sha256": "32fcbb6d30e3d05e6891553cc7027f129ef379067f60c5d3bb7f484fd051eab0"
+        },
+        {
+          "field": "/profile_evidence/diagnosis/1/max_path_characters",
+          "value": 230,
+          "original_value_sha256": "a0eaec5a55dc2f5b2ba523018adc485ff620b9d83509b9f37186a7716e438d21"
+        },
+        {
+          "field": "/profile_evidence/diagnosis/1/python_exit_code",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/profile_evidence/diagnosis/1/scope",
+          "value": "Equivalent retained filesystem fixture, no acceptance credit",
+          "original_value_sha256": "478d322a7a4cdd0bbe2a34bb6243521a6d9269f6f757f75c85460801f72e18e1"
+        },
+        {
+          "field": "/profile_evidence/supported_short_profile/new_temp_characters",
+          "value": 74,
+          "original_value_sha256": "eb624dbe56eb6620ae62080c10a273cab73ae8eca98ab17b731446a31c79393a"
+        },
+        {
+          "field": "/profile_evidence/supported_short_profile/owner_sha256",
+          "value": "0a1421437e68130b22eaacf9629c675423f284039a9550267bda2f8448de186a",
+          "original_value_sha256": "fa88f26993e5b205dd0ea7fab772b1cf826a3dffc04016888e76e70862b86765"
+        },
+        {
+          "field": "/profile_evidence/supported_short_profile/diagnostic_raw_sha256",
+          "value": "88e788ff4eaba4c739b434b6299643de7693917fc4603836a60a15d831064d3b",
+          "original_value_sha256": "ad35e7cd94d282c288062829772c402c36c435bd88ff16ee4fbac3c60b0d9e20"
+        },
+        {
+          "field": "/profile_evidence/supported_short_profile/original_failure_raw_sha256",
+          "value": "97dad97f782eeaabed7259ce64f48c179be385ee3b796aafc6caa0aa5a32c65f",
+          "original_value_sha256": "963aed4b09582a13258434f5f4cdd943ba592da275466eb690449496dedc003a"
+        },
+        {
+          "field": "/profile_evidence/supported_short_profile/os_settings_changed",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/profile_evidence/supported_short_profile/test_source_assertion_deadline_changes",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/profile_evidence/supported_short_profile/support_scope",
+          "value": "Current unchanged Go/Python boundary fixtures with owned short TEMP/TMP/GOTMPDIR; no general Windows long-path guarantee.",
+          "original_value_sha256": "6a792d5d3c7866da89e598859550275d31e23730e6e28ccbab232cc063f3d124"
+        }
+      ],
+      "privacy_rejected_original_leaf_hashes": [],
+      "original_top_level_field_hashes": {
+        "schema_version": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "status": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f",
+        "created_utc": "75a0a992a355ae37f8f9d3d10d1c09a70d1eae915da023ffba9747580dd63f07",
+        "reviewer": "098fc6cb2d34ce1b106e02651bf479850780bd4ed9a745f0bc1dc6d19158bc82",
+        "review_method": "f03f034194cf1c2db566effa4ce2252bab2a2dbfbe9f886c67c361982b302df0",
+        "public_writes": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+        "current_full_all24": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "publication": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "original_records_stable_over_seconds": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+        "observer_corrections": "93c7a3380a85517dc4ba804d7073109d16b6d58c18faaa7bd7a891f1a6ac4734",
+        "kind": "83cf3f46806cccc404c7db40850cf37569636c6badb95a1c19fd326bf83da186",
+        "scope": "7b1118cda1f5ec46e481c08c1eb4c9cd8541d64029bd7ca29b25dc228fe9f051",
+        "proposal": "800687bae97a380c0b0cfcda3c367c9f8bf9715a88a1f4d4c251e02be10067cc",
+        "candidate": "cc4359ac1315219c5580aad38461476a1aae0fb3a913d81489b5b89def933ad2",
+        "installation_verdict": "6c917618ff93b8df2f7e1e8e57a555bfb1944f7f2dee12a6ba0742101c648136",
+        "static_observations": "08282f82b204a9c9ae084a7f604b13c709246678ec4c19b230cee36618849d6f",
+        "existing_and_additive_top_level_test_names": "5b3f40fdb6c0cfa287b5b5f3e74d91ed624da1dfbff2b552e9f49834b81a1ae0",
+        "own_actual_command": "516da9ee6f3e9454ddf949195e2c60d99122cb47c85b8b29a278c5d093398815",
+        "writer_actual_commands": "6f9a6a88c419b07eee5b68d5718b38cb9027195d58b93c18acc2462bf2ca019d",
+        "paired_race_measurements": "3d21d731fd6cacae7e75aa7aabf039510f0c1844ea184c3ecbe44e0c62bf9625",
+        "measurement_limits": "63bd116b5a8cdfa5216fddad3dfeebb5f0cdd0382735e14be9cd19ffbe878ae3",
+        "association_correction": "91c4c6afb66b2f789bfb610478e240f27485a786a4a2a6f22354df39832810cc",
+        "profile_evidence": "f1424ae2c170794ab12b749fab077097a731ba555371cbcebcb139a32f76db5e",
+        "findings": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "inherited_native_finding": "c3ea22c28123d8366f7622994dc1b7cb0c79fb4017781e51f1f772c5b2692d3e"
+      },
+      "selection_limit": "Explicit integrator-selected original values only, not the whole report or a new independent review. Omitted original fields remain represented by value hashes. Privacy-rejected leaves retain their original pointer/hash and rejection reason; no selected status or value is rewritten."
+    },
+    {
+      "name": "lifecycle-original-scoped-review",
+      "original_report_path": "[local-evidence-root]/reviews/rv-a9-a11-lifecycle-cleanup-scoped-review.json",
+      "original_report_sha256": "e02828d2965b2aa1a6e733fc2ecd88125e0bbaff4b4be18b2313f88ab050f224",
+      "original_status": "PASS",
+      "selected_original_fields": [
+        {
+          "field": "/kind",
+          "value": "independent-exact-lifecycle-cleanup-scoped-review",
+          "original_value_sha256": "8b7aba23538bb061b4a776e70fca3d9c8cb40bfbac57ed5b98d72bf3ded3f366"
+        },
+        {
+          "field": "/status",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/reviewer",
+          "value": {
+            "id": "/root/release_readonly_verifier",
+            "method": "separate-read-only-verifier"
+          },
+          "original_value_sha256": "098fc6cb2d34ce1b106e02651bf479850780bd4ed9a745f0bc1dc6d19158bc82"
+        },
+        {
+          "field": "/scope",
+          "value": "Exact two test-helper files and additive real synthetic cleanup controls only; no production stop/target rewrite or native Raft conformance credit.",
+          "original_value_sha256": "26134a4dc87eec7fe7b2afdd7d3482a64f59477459e3d8db51a51d8eb1e04be8"
+        },
+        {
+          "field": "/proposal/sha256",
+          "value": "4a78c01dca7a053c35143194fee8170e21b86271e92c247dbe6992ea0270a7a1",
+          "original_value_sha256": "92663174c782dd71ebef8df29f0590b55b184046d9a16702aae7c0adbc52a338"
+        },
+        {
+          "field": "/static_observations",
+          "value": [
+            "Every original line is retained in order except prior owner-Close defer, replaced by registered kill/join/owner/stream cleanup; original5s, natural exit2 and unexpected-stop failure assertions remain exact.",
+            "Files register close cleanup immediately; child cleanup joins actual Wait before closing streams, preserving original wait result and l.stop classification.",
+            "New same-binary10s helper is explicitly synthetic. Controlled handoff occurs after actual Wait, so missing join is tested without replacing the real process/Wait.",
+            "Windows independent OS exit probe is obtained while child lives and observes actual PID/exit1 after cleanup; closed handles are tested by failed writes and successful rename, with bounded stream stability."
+          ],
+          "original_value_sha256": "d3cc9028c1213fff4d3b499ccaf3a9b67cbeb197006744aa32f33d56eaa8edba"
+        },
+        {
+          "field": "/negative_controls/kind",
+          "value": "real-synthetic-owned-helper-cleanup-controls",
+          "original_value_sha256": "66b905de628050350cb89f9f7920ced5e43898c689923905943ac3354f0084df"
+        },
+        {
+          "field": "/negative_controls/scope",
+          "value": "Engineering cleanup controls; no Raft or current acceptance credit",
+          "original_value_sha256": "4ca88968951353bd264e69777729826f78efd91596e16a016fb20446aa670e0d"
+        },
+        {
+          "field": "/negative_controls/candidate_file_sha256",
+          "value": "e107bf7d60d7117f58dbb3e452ac9eacd666fe88e92cafdfbb8edfed4ff5c4c4",
+          "original_value_sha256": "2c8fcb72c620e0881f12bf013a5d69fdf73cacd947f350c4d81e8c07cd2093bd"
+        },
+        {
+          "field": "/negative_controls/records/0/case",
+          "value": "missing-wait-join",
+          "original_value_sha256": "75ca249929f7b8631034340dcb8711ec6323be5b4c54e224436f1d2e5e2dc29f"
+        },
+        {
+          "field": "/negative_controls/records/0/raw_sha256",
+          "value": "0805686d6aae671df980d7b2abf801103e67bf07ade36741482dc448f762eb83",
+          "original_value_sha256": "687182a2dc57e5fd676e85d63bd66ad3e1c92520095dfce64c67c5d50dc12d96"
+        },
+        {
+          "field": "/negative_controls/records/0/status",
+          "value": "FAIL",
+          "original_value_sha256": "8dda96cc06ec8a54f6d789a9f4e5c22e8af9eb9c60a8f7046473c57163e079ff"
+        },
+        {
+          "field": "/negative_controls/records/0/reason",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/negative_controls/records/0/expected_failure",
+          "value": "cleanup returned before joining Wait handoff",
+          "original_value_sha256": "358ae68609b533bf7f90521cea7d9f51280a663da0f8f22a6f3bfe508a328bb8"
+        },
+        {
+          "field": "/negative_controls/records/0/mutated_file_sha256",
+          "value": "9d93eb3087a0436a8adca6e4b20a6651b6135a1b58154a87003f64a0d962a0fd",
+          "original_value_sha256": "8d6daee2097fd27f27056a3bc3aa4b88948c43309057c60758e5fa8d2d183741"
+        },
+        {
+          "field": "/negative_controls/records/1/case",
+          "value": "missing-stream-close",
+          "original_value_sha256": "441e826676343ec7b39cfdc9e3b3655924d3328109127e34434e4966a1691750"
+        },
+        {
+          "field": "/negative_controls/records/1/raw_sha256",
+          "value": "2aae939e09cdbd227049aa988a970cb23420f99f26f0ae4313ab361d33b530aa",
+          "original_value_sha256": "dee60482cc1fa6a99bce9b2ae9c77d6c3c9675d7026bff22c69d71ffe346179e"
+        },
+        {
+          "field": "/negative_controls/records/1/status",
+          "value": "FAIL",
+          "original_value_sha256": "8dda96cc06ec8a54f6d789a9f4e5c22e8af9eb9c60a8f7046473c57163e079ff"
+        },
+        {
+          "field": "/negative_controls/records/1/reason",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/negative_controls/records/1/expected_failure",
+          "value": "stream remained open",
+          "original_value_sha256": "613a8ab23cce6dd6a0f8e0fe4d4ec6198a30b46456a86181bf5b8f893d1b9acf"
+        },
+        {
+          "field": "/negative_controls/records/1/mutated_file_sha256",
+          "value": "95f00de5d97cfec4148ab79fb40ad5a7bc643656ab937dcc1e69ad341c336ba1",
+          "original_value_sha256": "3711366f45ad25f076d1098b97396162e73cc2158428482703c9754129e13f75"
+        },
+        {
+          "field": "/negative_controls/records/2/case",
+          "value": "restored-entire-labreal-package",
+          "original_value_sha256": "df2e354be57da7dc0902c4a716d30c41cae8b863234b342556485613bba05403"
+        },
+        {
+          "field": "/negative_controls/records/2/raw_sha256",
+          "value": "ded9b39d27ed7444f340f5daa254eada1fd5ad90316ff46ff6b5e8f0a4e206df",
+          "original_value_sha256": "c23e10c0d70b24e2341322fba98c8aea884747b2d9ad005dd12aab9fe7ee1333"
+        },
+        {
+          "field": "/negative_controls/records/2/status",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/negative_controls/records/2/reason",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/negative_controls/restored_exact_bytes",
+          "value": true,
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "field": "/preserved_new_oracle_failure",
+          "value": {
+            "setup": "First focused run failed because new clone lacked pinned prepared Raft; reproducible bootstrap then passed.",
+            "new_oracle_v1": "New unpublished regression wrongly expected Kill-after-Wait ErrProcessDone on Windows. Actual Go Wait uses statusReleased and Signal returns EINVAL; original lifecycle test passed. Failed source and raw result preserved.",
+            "preserved_v1": {
+              "path": "[local-evidence-root]/proposals/a11-lifecycle-cleanup/originals/independent_lifecycle_cleanup_test.v1.go",
+              "sha256": "9fda6b81ce551c21325633f04cb5162b8e0ca8f0c1862dcbe936c951016de680"
+            },
+            "actual_stdlib": {
+              "path": "[local-evidence-root]/tools/go1.27.2/go/src/os/exec_windows.go",
+              "sha256": "7a3c8f10605e5ea468538b1833b04ddf609bff84999b037839ef23d99afc50c4"
+            },
+            "correction": "No original assertion was relaxed. New OS exit oracle strengthened to separate retained real process handle, while actual original Wait ExitError remains required."
+          },
+          "original_value_sha256": "541b8cf3fff7c29089b6bfe00db929a13ec78ba6210bf9888d2aceaa0d0a3d3b"
+        },
+        {
+          "field": "/oracle_assessment",
+          "value": "New v1 Kill-after-Wait ErrProcessDone expectation was invalid for actual Go1.27.2 Windows statusReleased/EINVAL semantics. Preserved failure and exact source show a legitimate correction to a newly authored oracle, not weakened original/locked assertions. V2 strengthens OS exit evidence.",
+          "original_value_sha256": "cf92a19d34588a5581b50e001efef8574d37a364433de9b88f0256ebbdcc1ac0"
+        },
+        {
+          "field": "/findings",
+          "value": [],
+          "original_value_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "field": "/original_failure_disposition",
+          "value": "RV-A10-LIFECYCLE-01 cleanup aspect repaired and independently focused-PASS on exact candidate; actual original public FAIL remains historical FAIL and integrated full closure is still required.",
+          "original_value_sha256": "f5dd36d88881208901b1a327a224702a26d31db73d67f339d953ea35033939b9"
+        },
+        {
+          "field": "/current_full_all24",
+          "value": "NOT RUN",
+          "original_value_sha256": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4"
+        }
+      ],
+      "privacy_rejected_original_leaf_hashes": [
+        {
+          "field": "/negative_controls/records/0/run",
+          "original_value_sha256": "7dc232be2bac9694da2a1c24ffa55874dcb1113174dcc3f4915cb3142923d25f",
+          "reason": "private source location outside declared engineering location field"
+        },
+        {
+          "field": "/negative_controls/records/1/run",
+          "original_value_sha256": "ca37dc472d25ac418804b0f673cc3ce3e73a23c64e8c451d897a44ed31ec4770",
+          "reason": "private source location outside declared engineering location field"
+        },
+        {
+          "field": "/negative_controls/records/2/run",
+          "original_value_sha256": "9796516fde5e30e2d0e580c478013281fe1586c79f3de0c621f53cec41bc68b3",
+          "reason": "private source location outside declared engineering location field"
+        }
+      ],
+      "original_top_level_field_hashes": {
+        "schema_version": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "status": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f",
+        "created_utc": "75a0a992a355ae37f8f9d3d10d1c09a70d1eae915da023ffba9747580dd63f07",
+        "reviewer": "098fc6cb2d34ce1b106e02651bf479850780bd4ed9a745f0bc1dc6d19158bc82",
+        "review_method": "f03f034194cf1c2db566effa4ce2252bab2a2dbfbe9f886c67c361982b302df0",
+        "public_writes": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+        "current_full_all24": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "publication": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "original_records_stable_over_seconds": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+        "observer_corrections": "93c7a3380a85517dc4ba804d7073109d16b6d58c18faaa7bd7a891f1a6ac4734",
+        "kind": "8b7aba23538bb061b4a776e70fca3d9c8cb40bfbac57ed5b98d72bf3ded3f366",
+        "scope": "26134a4dc87eec7fe7b2afdd7d3482a64f59477459e3d8db51a51d8eb1e04be8",
+        "proposal": "c86c7cff3276149b7386b95f9d79b8b616106f9c89b46a6b577478a95f2067c8",
+        "candidate": "c7f3dc513a08dca6b0f1c5d29d309d2955df7ca429f777dcc0fed6a8a8979bb7",
+        "installation_verdict": "0556a6e33a27ddedacc3be191b99b5f39b359af79fdace3e8c225dccb3670fe5",
+        "static_observations": "d3cc9028c1213fff4d3b499ccaf3a9b67cbeb197006744aa32f33d56eaa8edba",
+        "own_actual_bootstrap": "3e1a881141e2e2585a9b92db448d59fa68a5ab716aec6663b7a4922eb1181ea5",
+        "own_actual_command": "8dc4abfeddf094537ca8efdfed7b5036c1414d4bbf79ae79a2b244ea25ea7f2a",
+        "writer_actual_commands": "bcf60a470a1a5c3b7b5db50a12ca7978fd099d4537f1c0f34e708a3ad6c21967",
+        "negative_controls": "3a14e903952bae41ac5f0a83407bea0e17586e947cdc6d7e9f22ef96bb266e67",
+        "preserved_new_oracle_failure": "541b8cf3fff7c29089b6bfe00db929a13ec78ba6210bf9888d2aceaa0d0a3d3b",
+        "oracle_assessment": "cf92a19d34588a5581b50e001efef8574d37a364433de9b88f0256ebbdcc1ac0",
+        "profile_evidence_reference": "860a3bac9c71fdff8256a3a6cd76a676f44796ffc9eb1d04d096088d52a95de5",
+        "findings": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "original_failure_disposition": "f5dd36d88881208901b1a327a224702a26d31db73d67f339d953ea35033939b9"
+      },
+      "selection_limit": "Explicit integrator-selected original values only, not the whole report or a new independent review. Omitted original fields remain represented by value hashes. Privacy-rejected leaves retain their original pointer/hash and rejection reason; no selected status or value is rewritten."
+    },
+    {
+      "name": "native-environment-original-scoped-review",
+      "original_report_path": "[local-evidence-root]/reviews/rv-a9-a11-native-environment-scoped-review.json",
+      "original_report_sha256": "4dc36fba9b4f18099e6d3e22c936fb3924a1c8bfa9a1c50c791576cdd5e2af50",
+      "original_status": "PASS",
+      "selected_original_fields": [
+        {
+          "field": "/kind",
+          "value": "independent-native-environment-scoped-review",
+          "original_value_sha256": "79ac5d6153e8ba3aae94ef7f45069bcaa599873940ab822e527dda3b9d346051"
+        },
+        {
+          "field": "/status",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/reviewer",
+          "value": {
+            "id": "/root/release_readonly_verifier",
+            "method": "separate-read-only-verifier"
+          },
+          "original_value_sha256": "098fc6cb2d34ce1b106e02651bf479850780bd4ed9a745f0bc1dc6d19158bc82"
+        },
+        {
+          "field": "/scope",
+          "value": "Exact private env-native path-selector recovery and its bounded real/synthetic controls only. No Go/native Raft/full pipeline execution by reviewer; no product/all24/release/publication approval.",
+          "original_value_sha256": "e6fb1d2c4b4aa070c98c9d346893517be0c900f13181aa7f5357a23513221585"
+        },
+        {
+          "field": "/exact_packet/sha256",
+          "value": "2b1ee20aa2af26cd8f6951707086f225e817e1cec5339da80011988e6c025e41",
+          "original_value_sha256": "c332c204959ee3bd25ce37fa5cf28eba7b2fb09cb59e9101e1b569620b82c914"
+        },
+        {
+          "field": "/exact_candidate/sha256",
+          "value": "c15ed13cbe4f51b0e9267d75c8a44c47a3c2e27e0fca71f266b6c50d80801145",
+          "original_value_sha256": "f24b79621cf3e2e82e5ef1ea5ef3e5184b650686b5e24f1d8983518a2f18ef5c"
+        },
+        {
+          "field": "/exact_candidate/all_original_guards_unchanged",
+          "value": true,
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "field": "/exact_candidate/only_runtime_selector_changed",
+          "value": true,
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "field": "/observations",
+          "value": [
+            "Reversing the one literal runtime-path selector reproduces original script bytes exactly; fixture candidate has the same hash.",
+            "Task-owned outside-OneDrive Python launchers are ordinary Attributes32 entries with unchanged82264 hash; baseb847, owner and pyvenv.cfg are pinned.",
+            "Actual bundled PowerShell7 candidate activation and restored activation PASS. Legacy/incorrect diagnostic FAILs remain FAIL.",
+            "Three selector-only strict guard controls actually reject missing, modified-hash and old-cloud paths; modified executable is never executed.",
+            "Plain public-runner timeout preserves actual innerFAIL/timeout; separate instrumentation observes actual owned Job membership while live and delegates all containment operations unchanged.",
+            "Both timeout controls observe child dead immediately and after4.5s, no delayed marker, stable finalized streams. Plain any-job flag receives no specific-owned-job credit.",
+            "Packet explicitly corrects incidental ignored public Python bytecode refresh; no tracked source/test/config/evidence edit is hidden.",
+            "Per-process Win32/Python-versus-PowerShell metadata discrepancy stays unexplained; no OS policy or sourceAlias change is justified by this packet."
+          ],
+          "original_value_sha256": "0765abb127aa9d4a1ac8a336e19515a8d0f5bb818903ee2068a4c74dffa10b77"
+        },
+        {
+          "field": "/native_runtime_entries",
+          "value": [
+            {
+              "path": "[python-runtime-root]\\Scripts\\python.exe",
+              "sha256": "82264b3fe4248d1ff3564a0296cbb4a266ef968799bd85902ab5eaaf3e17eb62",
+              "attributes": 32,
+              "bytes": 277808
+            },
+            {
+              "path": "[python-runtime-root]\\Scripts\\python3.exe",
+              "sha256": "82264b3fe4248d1ff3564a0296cbb4a266ef968799bd85902ab5eaaf3e17eb62",
+              "attributes": 32,
+              "bytes": 277808
+            }
+          ],
+          "original_value_sha256": "213e9e0257d9921fa00865a7db690168da9f1a42ca999d8bfb85be8e6c572dbc"
+        },
+        {
+          "field": "/guard_controls",
+          "value": [
+            {
+              "case": "missing",
+              "sha256": "d4b79d2f55b17b5ad9dae8294f3f26c9bdff3b35b972f7b9ff4edba9078c8fe6",
+              "guard_body_unchanged": true
+            },
+            {
+              "case": "changed-hash",
+              "sha256": "c71aa72c7d243205044dd193c51f73a722cdf157a9ea073e2ee03b372dfd1177",
+              "guard_body_unchanged": true
+            },
+            {
+              "case": "old-cloud-reparse",
+              "sha256": "c5fabf1663e83596dfdab7e7a941fc89a688a05fa3e8ab11652cfcf7c04c44b2",
+              "guard_body_unchanged": true
+            }
+          ],
+          "original_value_sha256": "4a1c776f11b148d80fd7a6d997a6cdb763f18539d26544ca7570506ee00aa386"
+        },
+        {
+          "field": "/findings",
+          "value": [],
+          "original_value_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "field": "/limitations",
+          "value": [
+            "Machine-local venv depends on the already-pinned bundled base runtime and is not a portable public distribution.",
+            "Strict guard remains identical to original, including its existing scope; no additional ancestor-path protections are claimed.",
+            "Synthetic make/Python fixtures establish their actual cleanup and stable streams, not Raft target or full-run acceptance.",
+            "Finalized streams were rechecked after4.5seconds beyond cleanup; no indefinite observation claim.",
+            "Do not use the older Windows powershell.exe activation result as a PASS; use the actual observed bundled PowerShell7.6.5 host for this profile."
+          ],
+          "original_value_sha256": "142e3117bf9b62d954d3a00ef1feb4a1175a3cf8094abe86227758b50b145a1c"
+        },
+        {
+          "field": "/target_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/current_full_all24",
+          "value": "NOT RUN",
+          "original_value_sha256": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4"
+        }
+      ],
+      "privacy_rejected_original_leaf_hashes": [],
+      "original_top_level_field_hashes": {
+        "schema_version": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "kind": "79ac5d6153e8ba3aae94ef7f45069bcaa599873940ab822e527dda3b9d346051",
+        "status": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f",
+        "created_utc": "85fcc1a7994b1cc801ffc6600c6d33203eaee96a69bb5b47983d77b48b5eabc2",
+        "reviewer": "098fc6cb2d34ce1b106e02651bf479850780bd4ed9a745f0bc1dc6d19158bc82",
+        "scope": "e6fb1d2c4b4aa070c98c9d346893517be0c900f13181aa7f5357a23513221585",
+        "exact_packet": "6d441884fefd84ef4adbef0e9c14e949231016de1486fe23cad640bf9bdb61cb",
+        "exact_candidate": "69fc48c193aa20bdc28afbf591ede72d769c7eb5594a4b45e7638ffe907d4a89",
+        "installation_verdict": "56b4083cf446a6fcffc94720f251177cca25b702157ff40e1f36a4a403a48f08",
+        "capture_method": "c53f07805d2db8d995784921cd2d3f47740383703ce8eb4cb074bdf0a26f2f97",
+        "observations": "0765abb127aa9d4a1ac8a336e19515a8d0f5bb818903ee2068a4c74dffa10b77",
+        "native_runtime_entries": "213e9e0257d9921fa00865a7db690168da9f1a42ca999d8bfb85be8e6c572dbc",
+        "guard_controls": "4a1c776f11b148d80fd7a6d997a6cdb763f18539d26544ca7570506ee00aa386",
+        "actual_commands": "2914c39ad621342a6f6c1b63a70f948f47e6dc531b873faa9f7c8754f7e88e44",
+        "actual_timeout_controls": "08a8ca1c8193a9311f32b761abe855dc88adc97a6ff4aedec704e4e15d100e7f",
+        "packet_artifacts": "91ad81acf43c97eb393092d684d70bc6f9a40d5907d222c9465ea7f941defd7a",
+        "originals_stable_over_seconds": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+        "findings": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "inherited_findings": "9b05c4858de7ebb75c0e5711f639e59624afae5d6fcdb9c62945e4fbef9244b3",
+        "active_before": "e0544373648a8ae2bc1bbffb96180893c1f7ba7b9e549ef05458c3e103f405d9",
+        "limitations": "142e3117bf9b62d954d3a00ef1feb4a1175a3cf8094abe86227758b50b145a1c",
+        "source_test_config_writes": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+        "reviewer_public_writes": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+        "target_credit": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+        "current_full_all24": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "publication": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4"
+      },
+      "selection_limit": "Explicit integrator-selected original values only, not the whole report or a new independent review. Omitted original fields remain represented by value hashes. Privacy-rejected leaves retain their original pointer/hash and rejection reason; no selected status or value is rewritten."
+    },
+    {
+      "name": "combined-original-static-composition-review",
+      "original_report_path": "[local-evidence-root]/reviews/rv-a9-a11-combined-inventory-scoped-review.json",
+      "original_report_sha256": "f06e8ab66bc4835be7c6918e18911d775fb0c60f1ecfea2d93cc33a75d8f4628",
+      "original_status": "PASS",
+      "selected_original_fields": [
+        {
+          "field": "/kind",
+          "value": "independent-exact-composition-inventory-scoped-review",
+          "original_value_sha256": "56309b451a0daddfacc14f0c33f26dce855043f12580be1d0314aeca9e95f63a"
+        },
+        {
+          "field": "/status",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/reviewer",
+          "value": {
+            "id": "/root/release_readonly_verifier",
+            "method": "separate-read-only-verifier"
+          },
+          "original_value_sha256": "098fc6cb2d34ce1b106e02651bf479850780bd4ed9a745f0bc1dc6d19158bc82"
+        },
+        {
+          "field": "/scope",
+          "value": "Static exact composition and inventory only; combined tree itself has not run integrated clean/full/native/all24 checks.",
+          "original_value_sha256": "0b554e61fe5aaeb8f4648fe377f1b8ecfb2ebd9964e818032fb18c3e81b491d3"
+        },
+        {
+          "field": "/proposal/sha256",
+          "value": "37a778cf2f9cbafeebf0a4988a04bcb66db61993b0581b758d4bd840b353d1f8",
+          "original_value_sha256": "708f94e6792a63f5531a3f4a9b00427e94677bf91d3fab031e77b7974cc32c0b"
+        },
+        {
+          "field": "/expected_after",
+          "value": {
+            "source_tree_sha256": "fced11f2c14e4281d7f11b823c498deb302b3adae96db2d1f6428be7800117b4",
+            "files": 647,
+            "execution_inputs": 138
+          },
+          "original_value_sha256": "3b338e3da0d84c2e9f07f546fe7f6c23e70bad865edd87574e7299d1eec45e99"
+        },
+        {
+          "field": "/observations",
+          "value": [
+            "Five payload paths exactly match two frozen reviewed candidates; their path sets do not overlap.",
+            "Only sixth change is PUBLIC_FILES; every original644 inventory line/byte prefix is retained and exactly three new source/test paths are appended, with no extra or duplicate paths.",
+            "Entire expected647 file map independently recomputed from frozen base plus six exact changes; protected138-input count follows unchanged gate classification.",
+            "All pre-existing tests, real-process assertions, Makefile, command limits, locked spec and P00-P07-related source bytes remain identical except the narrowly reviewed existing helper/source-walker files."
+          ],
+          "original_value_sha256": "6a688d922ab5b1b349c2cec6efc0493fc8a5e5ba57006e394f4e073313d87243"
+        },
+        {
+          "field": "/findings",
+          "value": [],
+          "original_value_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "field": "/criterion_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/current_full_all24",
+          "value": "NOT RUN",
+          "original_value_sha256": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4"
+        }
+      ],
+      "privacy_rejected_original_leaf_hashes": [],
+      "original_top_level_field_hashes": {
+        "schema_version": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "status": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f",
+        "created_utc": "75a0a992a355ae37f8f9d3d10d1c09a70d1eae915da023ffba9747580dd63f07",
+        "reviewer": "098fc6cb2d34ce1b106e02651bf479850780bd4ed9a745f0bc1dc6d19158bc82",
+        "review_method": "f03f034194cf1c2db566effa4ce2252bab2a2dbfbe9f886c67c361982b302df0",
+        "public_writes": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+        "current_full_all24": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "publication": "461c8b25bc839d3d75324ee5801bf43a0338100816085e1f22bf2fa3bb7abfb4",
+        "original_records_stable_over_seconds": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+        "observer_corrections": "93c7a3380a85517dc4ba804d7073109d16b6d58c18faaa7bd7a891f1a6ac4734",
+        "kind": "56309b451a0daddfacc14f0c33f26dce855043f12580be1d0314aeca9e95f63a",
+        "scope": "0b554e61fe5aaeb8f4648fe377f1b8ecfb2ebd9964e818032fb18c3e81b491d3",
+        "proposal": "24cf84183252c2454e88d7f48e64266a92cce6ce0a47023a5fbde45d4c0da614",
+        "installation_verdict": "fb2544825a86dfbea04ab5ab0e322fc870670282f211d3d895dfc60f63c4bb63",
+        "base": "3c210a38e70f514532c1662dbaa2292bc7cbddde072c17aa0406767b81ebe0ca",
+        "paths": "db76bb691e710e64f974f11fad4ab70684fe32cec06c18288513a173b4b71ebb",
+        "expected_after": "3b338e3da0d84c2e9f07f546fe7f6c23e70bad865edd87574e7299d1eec45e99",
+        "observations": "6a688d922ab5b1b349c2cec6efc0493fc8a5e5ba57006e394f4e073313d87243",
+        "findings": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "criterion_credit": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+      },
+      "selection_limit": "Explicit integrator-selected original values only, not the whole report or a new independent review. Omitted original fields remain represented by value hashes. Privacy-rejected leaves retain their original pointer/hash and rejection reason; no selected status or value is rewritten."
+    },
+    {
+      "name": "source-walk-original-zero-credit-attribution-correction",
+      "original_report_path": "[local-evidence-root]/proposals/a11-go-source-walk/evidence-association-correction.json",
+      "original_report_sha256": "a9fec8fad7d6b0a0723f4b0df0b55d96702669877e932c485c70b84d1a83fbbd",
+      "original_status": "NO STATUS FIELD; original kind/control scope retained",
+      "selected_original_fields": [
+        {
+          "field": "/schema_version",
+          "value": 1,
+          "original_value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        },
+        {
+          "field": "/scope",
+          "value": "append-only engineering evidence attribution correction",
+          "original_value_sha256": "c6385de5976d5c8a7d288aab165c9ac9526e079e0298dc18c638927fbf9cc136"
+        },
+        {
+          "field": "/error",
+          "value": "The original source-walk command metadata used AC-001, whose strict decoder acceptance assertions these filesystem/source-identity commands do not exercise. That association was incorrect.",
+          "original_value_sha256": "0be9d9b8ed9fdf295a464221b9d8c633f9f076e76f48fb21c8de5839ad567d94"
+        },
+        {
+          "field": "/corrected_scope",
+          "value": "Source traversal identity equivalence, alias/error handling, timing, and isolated engineering setup only. Synthetic filesystem and mutation controls have no distributed target credit. Actual junction rejection has no distributed target credit.",
+          "original_value_sha256": "819208b5707a81a73e6d9312a58d46814287da9740c566f3d1661e0252cfde8f"
+        },
+        {
+          "field": "/AC-001_credit",
+          "value": "NONE for every listed record",
+          "original_value_sha256": "ae493e2839cce533286acb160e9ef5cfa726a9cea82b2a2d3314baa189210937"
+        },
+        {
+          "field": "/current_acceptance_credit",
+          "value": "NONE for every listed record and this correction",
+          "original_value_sha256": "3fcd54fb35e03e7ae434aadc453a146931b49738766da71dd1553488fa7a11ba"
+        },
+        {
+          "field": "/evidence_policy",
+          "value": "Keep every original command, result, status, timing, source, requirement tag and raw stream unchanged. Read this correction with the immutable proposal; do not reinterpret or retag the old records as acceptance results.",
+          "original_value_sha256": "84bdaf83666ea396d1954c05b2fa35ef5fb40c87f0203dc4e44699f43746188e"
+        },
+        {
+          "field": "/original_record_count",
+          "value": 15,
+          "original_value_sha256": "e629fa6598d732768f7c726b4b621285f9c3b85303900aa912017db7617d8bdb"
+        },
+        {
+          "field": "/tests_rerun_for_attribution",
+          "value": false,
+          "original_value_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "field": "/public_source_changes",
+          "value": false,
+          "original_value_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "field": "/independent_correction_review",
+          "value": "NOT RUN; to be assessed with the frozen candidate proposal",
+          "original_value_sha256": "839c15db6e539c8f111815025ccc226e95dae422ab39924cb9dbc00193b35e73"
+        },
+        {
+          "field": "/records/0/sha256",
+          "value": "effb438e8ec0c83d163d86466c24052e002c6ccbb087d8f8ef74b895624c726a",
+          "original_value_sha256": "f79aa987f452020a41cd9280072671cfd2ae836fbd53baec5fa3742423c15586"
+        },
+        {
+          "field": "/records/0/run_id",
+          "value": "20261015T173308-6ebe765efc",
+          "original_value_sha256": "acef468a1dbf3db113954db027aa6b6ed0300eb2d3a807e0146a05175739273e"
+        },
+        {
+          "field": "/records/0/original_requirements_unchanged",
+          "value": [
+            "AC-001"
+          ],
+          "original_value_sha256": "a1557fcfe162c5ca92cb543b3703219d932e86a98fd3ef7e4d7722599eb526d0"
+        },
+        {
+          "field": "/records/0/actual_status_unchanged",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/records/0/actual_reason_unchanged",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/records/0/actual_exit_code_unchanged",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/0/AC-001_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/0/current_acceptance_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/0/streams/stdout/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/records/0/streams/stdout/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/0/streams/stderr/sha256",
+          "value": "b5cdab2fda2c6db83c05a44d8ebbb4b129b541111bea30caa036515c7f8223f4",
+          "original_value_sha256": "9e4039ee29fbdccab18df2f50b8505507ea76d339002b5995bf0b0380b22a9cc"
+        },
+        {
+          "field": "/records/0/streams/stderr/bytes",
+          "value": 81,
+          "original_value_sha256": "5316ca1c5ddca8e6ceccfce58f3b8540e540ee22f6180fb89492904051b3d531"
+        },
+        {
+          "field": "/records/1/sha256",
+          "value": "3d455d502584c40aa301700e58a51963b7a1388c541d40d2ee25a1360db6d0cd",
+          "original_value_sha256": "76917364fd009e54ccb9113403264fb5c99e41b9e0eb13fa16b300427c8e987b"
+        },
+        {
+          "field": "/records/1/run_id",
+          "value": "20261015T173300-0c4c26fb69",
+          "original_value_sha256": "5ca9bddd14e4aebf5d13bbbca7753ec0967df84a2e4fb53c9e442eb453af0079"
+        },
+        {
+          "field": "/records/1/original_requirements_unchanged",
+          "value": [
+            "AC-001"
+          ],
+          "original_value_sha256": "a1557fcfe162c5ca92cb543b3703219d932e86a98fd3ef7e4d7722599eb526d0"
+        },
+        {
+          "field": "/records/1/actual_status_unchanged",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/records/1/actual_reason_unchanged",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/records/1/actual_exit_code_unchanged",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/1/AC-001_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/1/current_acceptance_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/1/streams/stdout/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/records/1/streams/stdout/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/1/streams/stderr/sha256",
+          "value": "a19e600648a314e87ebb497c738d1c4662bec9c59422c9a20ff7e89692de4016",
+          "original_value_sha256": "fa74726091431c0705557a413b50ddc7bd95de64b3314b626813323442cf65e6"
+        },
+        {
+          "field": "/records/1/streams/stderr/bytes",
+          "value": 170,
+          "original_value_sha256": "734d0759cdb4e0d0a35e4fd73749aee287e4fdcc8648b71a8d6ed591b7d4cb3f"
+        },
+        {
+          "field": "/records/2/sha256",
+          "value": "40ee44e930f8d80de0935ab46b503a0c1a84ff6e8e2dc7fa3cfd918303cc8d4a",
+          "original_value_sha256": "050f3921cad665c1603bf06a150e3a954add8d572c907d135e454035000d2429"
+        },
+        {
+          "field": "/records/2/run_id",
+          "value": "20261015T173849-12ba97c588",
+          "original_value_sha256": "177372b81c2f8b8031f223c97b60eaf2521b6265dee289ab7816cb558f5d01e0"
+        },
+        {
+          "field": "/records/2/original_requirements_unchanged",
+          "value": [
+            "AC-001"
+          ],
+          "original_value_sha256": "a1557fcfe162c5ca92cb543b3703219d932e86a98fd3ef7e4d7722599eb526d0"
+        },
+        {
+          "field": "/records/2/actual_status_unchanged",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/records/2/actual_reason_unchanged",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/records/2/actual_exit_code_unchanged",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/2/AC-001_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/2/current_acceptance_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/2/streams/stdout/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/records/2/streams/stdout/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/2/streams/stderr/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/records/2/streams/stderr/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/3/sha256",
+          "value": "961bf979a552e96b9d4fd27b055589e16202ba174f7e76b094461c24aab42f04",
+          "original_value_sha256": "733bee63b796ba4545ef291964c79ee2509766168558d44c77c8be770580ad01"
+        },
+        {
+          "field": "/records/3/run_id",
+          "value": "20261015T173731-7cb44015d0",
+          "original_value_sha256": "fa64bcc5d31697726633fcdf78af371b64c32d1bf0c11b4a905b61f57de3d98e"
+        },
+        {
+          "field": "/records/3/original_requirements_unchanged",
+          "value": [
+            "AC-001"
+          ],
+          "original_value_sha256": "a1557fcfe162c5ca92cb543b3703219d932e86a98fd3ef7e4d7722599eb526d0"
+        },
+        {
+          "field": "/records/3/actual_status_unchanged",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/records/3/actual_reason_unchanged",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/records/3/actual_exit_code_unchanged",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/3/AC-001_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/3/current_acceptance_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/3/streams/stdout/sha256",
+          "value": "fbd31a74ea18bdb1c868f4dfeb8b269212416978aece686cd384d00904a7638c",
+          "original_value_sha256": "2bd30e8bdc59d426d8bc7df43943918b044310b088b80979f13bced2cb17ddc8"
+        },
+        {
+          "field": "/records/3/streams/stdout/bytes",
+          "value": 25949,
+          "original_value_sha256": "485472064dd3f74299240585ad155be137f5979c5cd86d01a06c8fc267a21e85"
+        },
+        {
+          "field": "/records/3/streams/stderr/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/records/3/streams/stderr/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/4/sha256",
+          "value": "1620a186933c71fbaa848dd60140aec21a3ce48ef689f17b1e552f3b1c267a18",
+          "original_value_sha256": "5c5c38d8bae583a5fbec1c598583a7f30638a56372416c4325e3d7864b155562"
+        },
+        {
+          "field": "/records/4/run_id",
+          "value": "20261015T174252-2f3e0acd10",
+          "original_value_sha256": "7cabda60c014c6a83ba0d1c2b0755d942efbcf31030ac2d8063c26dfb93bb60c"
+        },
+        {
+          "field": "/records/4/original_requirements_unchanged",
+          "value": [
+            "AC-001"
+          ],
+          "original_value_sha256": "a1557fcfe162c5ca92cb543b3703219d932e86a98fd3ef7e4d7722599eb526d0"
+        },
+        {
+          "field": "/records/4/actual_status_unchanged",
+          "value": "FAIL",
+          "original_value_sha256": "8dda96cc06ec8a54f6d789a9f4e5c22e8af9eb9c60a8f7046473c57163e079ff"
+        },
+        {
+          "field": "/records/4/actual_reason_unchanged",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/records/4/actual_exit_code_unchanged",
+          "value": 1,
+          "original_value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        },
+        {
+          "field": "/records/4/AC-001_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/4/current_acceptance_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/4/streams/stdout/sha256",
+          "value": "6a77564a857244f7a83b59f9862dbe86969ff562d18e10dc224ecd33bce7836f",
+          "original_value_sha256": "3522eb3e04afece3b4689f19a13298892be6dd018e61a61a3ba75753887cc731"
+        },
+        {
+          "field": "/records/4/streams/stdout/bytes",
+          "value": 7284,
+          "original_value_sha256": "ecdac8c096f7fb91ae3bcefb2f0cfaba82e07a674645c53e9f497c1afe73175e"
+        },
+        {
+          "field": "/records/4/streams/stderr/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/records/4/streams/stderr/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/5/sha256",
+          "value": "02b74489ceed5a782937b0541d07610add3fae4ddbb314d79d3dcacdd3cff2f3",
+          "original_value_sha256": "5a984352fa0b1ae3b02072c2123bf0232cbff56a1a43f732e571da24bf9199fa"
+        },
+        {
+          "field": "/records/5/run_id",
+          "value": "20261015T173715-e12ab50eda",
+          "original_value_sha256": "f8df44e4687eb58a2f93b4c2acfddf203ab684a49b8fe6f65b6899c71a15e175"
+        },
+        {
+          "field": "/records/5/original_requirements_unchanged",
+          "value": [
+            "AC-001"
+          ],
+          "original_value_sha256": "a1557fcfe162c5ca92cb543b3703219d932e86a98fd3ef7e4d7722599eb526d0"
+        },
+        {
+          "field": "/records/5/actual_status_unchanged",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/records/5/actual_reason_unchanged",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/records/5/actual_exit_code_unchanged",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/5/AC-001_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/5/current_acceptance_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/5/streams/stdout/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/records/5/streams/stdout/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/5/streams/stderr/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/records/5/streams/stderr/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/6/sha256",
+          "value": "1d8e3ca50f164c202377109a9782b3ee6c64892a2b3be85e4e38ddff08865810",
+          "original_value_sha256": "523c20dc310a23b9175f482500025edae96f351a5ce7ba4901670ccc05c6a867"
+        },
+        {
+          "field": "/records/6/run_id",
+          "value": "20261015T174246-f8dde0d380",
+          "original_value_sha256": "64931aaf4c0a24f83d0832dd3c509c7f45767971456def2ecf2d87292caea8d4"
+        },
+        {
+          "field": "/records/6/original_requirements_unchanged",
+          "value": [
+            "AC-001"
+          ],
+          "original_value_sha256": "a1557fcfe162c5ca92cb543b3703219d932e86a98fd3ef7e4d7722599eb526d0"
+        },
+        {
+          "field": "/records/6/actual_status_unchanged",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/records/6/actual_reason_unchanged",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/records/6/actual_exit_code_unchanged",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/6/AC-001_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/6/current_acceptance_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/6/streams/stdout/sha256",
+          "value": "811745228a2ffafe94effca53506bd37934d6f87f3d117eabe0b056aff0506d8",
+          "original_value_sha256": "5729d4c8cca20da26748e8ff9ef386a0a922ebe544bb3d2ad753f9e5ba7253e5"
+        },
+        {
+          "field": "/records/6/streams/stdout/bytes",
+          "value": 908,
+          "original_value_sha256": "5e61b431f3823da05836b2139f9a811c3cc078153ba1853b44519879b7d64af4"
+        },
+        {
+          "field": "/records/6/streams/stderr/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/records/6/streams/stderr/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/7/sha256",
+          "value": "88fd407bb0c12c8dc02f2a89890c56564f34d12e11e6fe1b6e4f1e7588635c51",
+          "original_value_sha256": "44c2084c18a69d8d38fcd5af2d2d32dfe7a0279e18c9b683745013c0f5ee4705"
+        },
+        {
+          "field": "/records/7/run_id",
+          "value": "20261015T173946-6d1b64fb35",
+          "original_value_sha256": "5b2a29517df5517da6a1e6f0805cac29482e40aaf3e4cbf4df1bf3e9a5525908"
+        },
+        {
+          "field": "/records/7/original_requirements_unchanged",
+          "value": [
+            "AC-001"
+          ],
+          "original_value_sha256": "a1557fcfe162c5ca92cb543b3703219d932e86a98fd3ef7e4d7722599eb526d0"
+        },
+        {
+          "field": "/records/7/actual_status_unchanged",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/records/7/actual_reason_unchanged",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/records/7/actual_exit_code_unchanged",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/7/AC-001_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/7/current_acceptance_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/7/streams/stdout/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/records/7/streams/stdout/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/7/streams/stderr/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/records/7/streams/stderr/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/8/sha256",
+          "value": "cd1cdb21073383a82df095d5e2349ef0bfe1ed31385ed99f4875c215af6f8574",
+          "original_value_sha256": "705b33b5b4c7b8cd190aa55b9e994f955cbbb3e3c0a24135dfb7e223016655db"
+        },
+        {
+          "field": "/records/8/run_id",
+          "value": "20261015T173938-d74d63a410",
+          "original_value_sha256": "7974558754016068e854caea119c253e35736cadd29fc36dcafcd1c42ccc1f15"
+        },
+        {
+          "field": "/records/8/original_requirements_unchanged",
+          "value": [
+            "AC-001"
+          ],
+          "original_value_sha256": "a1557fcfe162c5ca92cb543b3703219d932e86a98fd3ef7e4d7722599eb526d0"
+        },
+        {
+          "field": "/records/8/actual_status_unchanged",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/records/8/actual_reason_unchanged",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/records/8/actual_exit_code_unchanged",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/8/AC-001_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/8/current_acceptance_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/8/streams/stdout/sha256",
+          "value": "b85ea477854cb78491346fd3f17b7108ca0dd18829ef2d35061b3cbeafcf1993",
+          "original_value_sha256": "07561cf3351fbb95921f53d7bfffbaa64566775e183987eca7c03558f68bb744"
+        },
+        {
+          "field": "/records/8/streams/stdout/bytes",
+          "value": 301,
+          "original_value_sha256": "c3ea99f86b2f8a74ef4145bb245155ff5f91cd856f287523481c15a1959d5fd1"
+        },
+        {
+          "field": "/records/8/streams/stderr/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/records/8/streams/stderr/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/9/sha256",
+          "value": "63e29aad68b13b0dfe4559d8431f632f99e28743ca39fde1173e73bce75a47e3",
+          "original_value_sha256": "4497879b35e51bb94e22d1e95da0fbfabb07b9da9d788731db85bfa6c5f51d51"
+        },
+        {
+          "field": "/records/9/run_id",
+          "value": "20261015T175613-857e141489",
+          "original_value_sha256": "91f31a3bc003b74b2c6447a86ca8dc5a4220c0c45a207459133c374d6abda16a"
+        },
+        {
+          "field": "/records/9/original_requirements_unchanged",
+          "value": [
+            "AC-001"
+          ],
+          "original_value_sha256": "a1557fcfe162c5ca92cb543b3703219d932e86a98fd3ef7e4d7722599eb526d0"
+        },
+        {
+          "field": "/records/9/actual_status_unchanged",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/records/9/actual_reason_unchanged",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/records/9/actual_exit_code_unchanged",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/9/AC-001_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/9/current_acceptance_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/9/streams/stdout/sha256",
+          "value": "a2030dc7d08af09287f38a0cb6e826a87a01273be70fd60a8009cbf33b06eaa9",
+          "original_value_sha256": "d362906d2085724d5bb751b50b2d8ae3621c285a0416a809bb931d72cd4dee3d"
+        },
+        {
+          "field": "/records/9/streams/stdout/bytes",
+          "value": 565,
+          "original_value_sha256": "236b565af6b512826fd89dbbde2e88b94465f780985c134e58b62dea6ee258b2"
+        },
+        {
+          "field": "/records/9/streams/stderr/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/records/9/streams/stderr/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/10/sha256",
+          "value": "28265f04a7162d3e0264d611bf3dc8e2b9d5ef5937cdc31cf930ebe441afea0e",
+          "original_value_sha256": "8d78b96f747bfe61e0bd978c94c4ffa02f1ffa7977333cd57d611477196274f0"
+        },
+        {
+          "field": "/records/10/run_id",
+          "value": "20261015T174247-6e03dc89a6",
+          "original_value_sha256": "09c3982828b8b19014cddb418a749c17407acc598e1536133c612d09a0c22da8"
+        },
+        {
+          "field": "/records/10/original_requirements_unchanged",
+          "value": [
+            "AC-001"
+          ],
+          "original_value_sha256": "a1557fcfe162c5ca92cb543b3703219d932e86a98fd3ef7e4d7722599eb526d0"
+        },
+        {
+          "field": "/records/10/actual_status_unchanged",
+          "value": "FAIL",
+          "original_value_sha256": "8dda96cc06ec8a54f6d789a9f4e5c22e8af9eb9c60a8f7046473c57163e079ff"
+        },
+        {
+          "field": "/records/10/actual_reason_unchanged",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/records/10/actual_exit_code_unchanged",
+          "value": 1,
+          "original_value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        },
+        {
+          "field": "/records/10/AC-001_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/10/current_acceptance_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/10/streams/stdout/sha256",
+          "value": "042d0a992fd561b167d0afb20584b443d1c090ea446554b33ab0400b691a7454",
+          "original_value_sha256": "2c30709954599d8dc6f545cf0bbd58c125e83f9647ff9da802c2fde794f52af5"
+        },
+        {
+          "field": "/records/10/streams/stdout/bytes",
+          "value": 2482,
+          "original_value_sha256": "c13ed9078122113319066d8dd192e261ab3b2ad5af9b07cd69b2d9b7b4f53b2e"
+        },
+        {
+          "field": "/records/10/streams/stderr/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/records/10/streams/stderr/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/11/sha256",
+          "value": "022dc6789fdcbc86146a22131a0dc018a01748641a712a3d70b555d62e41c18c",
+          "original_value_sha256": "a6b7278ab102a1793def63ac81f1961c5e24b292e4a40004cd4ef0f91e5b87da"
+        },
+        {
+          "field": "/records/11/run_id",
+          "value": "20261015T173857-92a60441fc",
+          "original_value_sha256": "c49f1f1c96b7a454d08c0871090e53ba05ccf82324da0d7b21d98b4e7e88712e"
+        },
+        {
+          "field": "/records/11/original_requirements_unchanged",
+          "value": [
+            "AC-001"
+          ],
+          "original_value_sha256": "a1557fcfe162c5ca92cb543b3703219d932e86a98fd3ef7e4d7722599eb526d0"
+        },
+        {
+          "field": "/records/11/actual_status_unchanged",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/records/11/actual_reason_unchanged",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/records/11/actual_exit_code_unchanged",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/11/AC-001_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/11/current_acceptance_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/11/streams/stdout/sha256",
+          "value": "e6125e3bb4c9ef7c334da28e56e3fcb407c172c57f326d9db6b666c6c7f7f9d9",
+          "original_value_sha256": "b3e829a0c8d26f159af804df1e358e0198b20bdfbdfc519127bbecbe2e3eee34"
+        },
+        {
+          "field": "/records/11/streams/stdout/bytes",
+          "value": 29409,
+          "original_value_sha256": "3be120821eb2615c8bff7b76fdc97a1ea5ed1e4f778424636708648d64a8ee97"
+        },
+        {
+          "field": "/records/11/streams/stderr/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/records/11/streams/stderr/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/12/sha256",
+          "value": "57a6c1cc43e33c0549167174ed84d62aff71c563b087d7eecfee7d578276855c",
+          "original_value_sha256": "052ecb2f7760ea7948d93d4a4d39cb24dfff47b1bc5cde34b1c8776ff5758a42"
+        },
+        {
+          "field": "/records/12/run_id",
+          "value": "20261015T173959-1e606a240a",
+          "original_value_sha256": "243bbcbbfdfe01f2623d6389d477f9cc3f985e59e3561a94f2408d675c518b0b"
+        },
+        {
+          "field": "/records/12/original_requirements_unchanged",
+          "value": [
+            "AC-001"
+          ],
+          "original_value_sha256": "a1557fcfe162c5ca92cb543b3703219d932e86a98fd3ef7e4d7722599eb526d0"
+        },
+        {
+          "field": "/records/12/actual_status_unchanged",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/records/12/actual_reason_unchanged",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/records/12/actual_exit_code_unchanged",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/12/AC-001_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/12/current_acceptance_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/12/streams/stdout/sha256",
+          "value": "116a44e9cf5fd81f968090033051619e0b2e0b7c37bda0eb8edb648f5daa6f0c",
+          "original_value_sha256": "92e41c73f83cc7b40cc287bce59a9ee3b0b250e1179ac3ff6f1dc09c5cce76be"
+        },
+        {
+          "field": "/records/12/streams/stdout/bytes",
+          "value": 3612,
+          "original_value_sha256": "704c308726bba7728adb3b46c38660ce6c2554bb9979fe1841db1430b0985957"
+        },
+        {
+          "field": "/records/12/streams/stderr/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/records/12/streams/stderr/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/13/sha256",
+          "value": "ca599b809b874d2622a596960eece0e187bd886828dc5991433a61f9f5fd6ca2",
+          "original_value_sha256": "21ff13091f25f1991c9d7cc3e963be7f75586db71c0eccc623fc7a3ab2e5afd6"
+        },
+        {
+          "field": "/records/13/run_id",
+          "value": "20261015T174138-e3f83ffe20",
+          "original_value_sha256": "d5f6693f055f5d318affda3adf70e9418b6b1319a2234fc5dd1286cb49a76735"
+        },
+        {
+          "field": "/records/13/original_requirements_unchanged",
+          "value": [
+            "AC-001"
+          ],
+          "original_value_sha256": "a1557fcfe162c5ca92cb543b3703219d932e86a98fd3ef7e4d7722599eb526d0"
+        },
+        {
+          "field": "/records/13/actual_status_unchanged",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/records/13/actual_reason_unchanged",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/records/13/actual_exit_code_unchanged",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/13/AC-001_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/13/current_acceptance_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/13/streams/stdout/sha256",
+          "value": "956946d6367415663e5b2d975d72efa552435512726f82fc84bcf36a8159d555",
+          "original_value_sha256": "ded91d859b4045e0dfd93e4191c8f942b495bad33a1d7acbb80826dbe6d41860"
+        },
+        {
+          "field": "/records/13/streams/stdout/bytes",
+          "value": 17250,
+          "original_value_sha256": "2013ab5273846dabf837a48b8e2f300b0caad229c62190a5a60902bbde62236d"
+        },
+        {
+          "field": "/records/13/streams/stderr/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/records/13/streams/stderr/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/14/sha256",
+          "value": "a0b003198c31bd11d93c4b73be098ca3be26bb7f1a504afc020366a8fb49e324",
+          "original_value_sha256": "0fcb4af9eb0c528653e3f6597712da67112486addc095922493709d1467f9b26"
+        },
+        {
+          "field": "/records/14/run_id",
+          "value": "20261015T174258-fbf1967571",
+          "original_value_sha256": "3ee8042d294baa603036e78874e685fda9ae45741386f12aab676c4db47b0b67"
+        },
+        {
+          "field": "/records/14/original_requirements_unchanged",
+          "value": [
+            "AC-001"
+          ],
+          "original_value_sha256": "a1557fcfe162c5ca92cb543b3703219d932e86a98fd3ef7e4d7722599eb526d0"
+        },
+        {
+          "field": "/records/14/actual_status_unchanged",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/records/14/actual_reason_unchanged",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/records/14/actual_exit_code_unchanged",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/records/14/AC-001_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/14/current_acceptance_credit",
+          "value": "NONE",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+        },
+        {
+          "field": "/records/14/streams/stdout/sha256",
+          "value": "1072cbe288b16b46a015008fbf67756205d7c3bf90ebddc97ea4be73a4e0b1c7",
+          "original_value_sha256": "6877d328c4a315ddc6db15578efece0d3b4e7cbf2acb9d2ba1b9bedb1a339c9a"
+        },
+        {
+          "field": "/records/14/streams/stdout/bytes",
+          "value": 29409,
+          "original_value_sha256": "3be120821eb2615c8bff7b76fdc97a1ea5ed1e4f778424636708648d64a8ee97"
+        },
+        {
+          "field": "/records/14/streams/stderr/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/records/14/streams/stderr/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        }
+      ],
+      "privacy_rejected_original_leaf_hashes": [],
+      "original_top_level_field_hashes": {
+        "schema_version": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "scope": "c6385de5976d5c8a7d288aab165c9ac9526e079e0298dc18c638927fbf9cc136",
+        "originals_preserved_by_independent_verifier": "9b1d85fa3b9cbebba99d29b9d0d54647bb047c80917a5ab9b20e19b70b9b2906",
+        "frozen_candidate_proposal": "800687bae97a380c0b0cfcda3c367c9f8bf9715a88a1f4d4c251e02be10067cc",
+        "error": "0be9d9b8ed9fdf295a464221b9d8c633f9f076e76f48fb21c8de5839ad567d94",
+        "corrected_scope": "819208b5707a81a73e6d9312a58d46814287da9740c566f3d1661e0252cfde8f",
+        "AC-001_credit": "ae493e2839cce533286acb160e9ef5cfa726a9cea82b2a2d3314baa189210937",
+        "current_acceptance_credit": "3fcd54fb35e03e7ae434aadc453a146931b49738766da71dd1553488fa7a11ba",
+        "evidence_policy": "84bdaf83666ea396d1954c05b2fa35ef5fb40c87f0203dc4e44699f43746188e",
+        "original_files_unchanged": "9ff27604899daee3ba30059034bbc79c00238340caf13b18a51f1737796125b7",
+        "original_record_count": "e629fa6598d732768f7c726b4b621285f9c3b85303900aa912017db7617d8bdb",
+        "records": "7318921a7f86f36727d19e49d571454c19bf46e97bbbd7853eba53b18637c74b",
+        "tests_rerun_for_attribution": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "public_source_changes": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "independent_correction_review": "839c15db6e539c8f111815025ccc226e95dae422ab39924cb9dbc00193b35e73"
+      },
+      "selection_limit": "Explicit integrator-selected original values only, not the whole report or a new independent review. Omitted original fields remain represented by value hashes. Privacy-rejected leaves retain their original pointer/hash and rejection reason; no selected status or value is rewritten."
+    },
+    {
+      "name": "writer-original-plain-native-timeout-observation",
+      "original_report_path": "[local-evidence-root]/proposals/a11-native-environment/timeout-plain-observations.json",
+      "original_report_sha256": "30220878c55924f05a114dd74adb7ca0e6d21b2c3a480b9acee12f5b55cc7c6f",
+      "original_status": "NO STATUS FIELD; original kind/control scope retained",
+      "selected_original_fields": [
+        {
+          "field": "/kind",
+          "value": "actual-scoped-native-python-timeout-control",
+          "original_value_sha256": "abf278a9ae017debb1fe01627bc458bf17b250f4245afe7eb8d29f6056f0f0bb"
+        },
+        {
+          "field": "/scope",
+          "value": "Synthetic make/Python fixture; no real-process Raft, all24, acceptance, release, or publication credit",
+          "original_value_sha256": "456ed5509008f097e0b1fae7d46f416062e8fdea7e49ccc2ac5adce6f7f2ab8c"
+        },
+        {
+          "field": "/mode",
+          "value": "plain",
+          "original_value_sha256": "945603a8f587786b463c3f94fce115c0fae88fac2728cc96ddf5981cf7f61741"
+        },
+        {
+          "field": "/candidate_sha256",
+          "value": "c15ed13cbe4f51b0e9267d75c8a44c47a3c2e27e0fca71f266b6c50d80801145",
+          "original_value_sha256": "f24b79621cf3e2e82e5ef1ea5ef3e5184b650686b5e24f1d8983518a2f18ef5c"
+        },
+        {
+          "field": "/runner_sha256",
+          "value": "27365fc4c9a6cd9487bda6b4fa9f1f73982f357c6c8bc05497d59d70c5608a22",
+          "original_value_sha256": "032356ea9b3a9aa8e5496f67c81fea5af7cd359b8f5e523f107dae3b5c9b7b54"
+        },
+        {
+          "field": "/actual_record_sha256",
+          "value": "be8a2a86c15b60ff782db1d63d93271dee348082ba67ab219f60de8ba3ba7f26",
+          "original_value_sha256": "11281ddcf1da4f69f26e9c6061fda6a49deb10e868b3cfa495e0fda04de22906"
+        },
+        {
+          "field": "/actual_record_summary",
+          "value": {
+            "run_id": "20261015T173642-a5f2eca944",
+            "command": [
+              "make",
+              "control"
+            ],
+            "status": "FAIL",
+            "reason": "timeout",
+            "exit_code": 1,
+            "duration_seconds": 2.015999999974156
+          },
+          "original_value_sha256": "386f2dc9d652d0860510e176e7e68bdee546f410bb985c4a3445ba4346ce8dcc"
+        },
+        {
+          "field": "/executed_child/pid",
+          "value": 30752,
+          "original_value_sha256": "d20763515d99d4e872194780e4b8aee4c7600385938e3961000a80693f12cd34"
+        },
+        {
+          "field": "/executed_child/entry_sha256",
+          "value": "82264b3fe4248d1ff3564a0296cbb4a266ef968799bd85902ab5eaaf3e17eb62",
+          "original_value_sha256": "d7dc7ef97ff1368554a54ceeddedc158c291d8193e843f9b92760cfc84a4f7d3"
+        },
+        {
+          "field": "/executed_child/version",
+          "value": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+          "original_value_sha256": "7c2fc0d243144243bd6a1bfb9edee2de5d92a43eac791f44172e76b54e9aa79a"
+        },
+        {
+          "field": "/child_alive_immediately_after_cleanup",
+          "value": false,
+          "original_value_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "field": "/child_alive_after_fixture_deadline",
+          "value": false,
+          "original_value_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "field": "/late_marker_exists",
+          "value": false,
+          "original_value_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "field": "/recorded_stdout_sha256",
+          "value": "5e20a8178f925af0fba9a857778494a96cb7b5998255e1c3653563c9386496be",
+          "original_value_sha256": "331dbf1b0200fc865198fbadc4fb24109fa7503ebc38a265aa98eac7a7c0f006"
+        },
+        {
+          "field": "/stdout_sha256_after_deadline",
+          "value": "5e20a8178f925af0fba9a857778494a96cb7b5998255e1c3653563c9386496be",
+          "original_value_sha256": "331dbf1b0200fc865198fbadc4fb24109fa7503ebc38a265aa98eac7a7c0f006"
+        },
+        {
+          "field": "/recorded_stderr_sha256",
+          "value": "9175817d3dab621adf57c70541442adb1604d55d7b760d882914d7289134f6f5",
+          "original_value_sha256": "d9a85a01b0695f3c7670221c4ae493dec61da119160d8c25fde42bb28b4d2c1f"
+        },
+        {
+          "field": "/stderr_sha256_after_deadline",
+          "value": "9175817d3dab621adf57c70541442adb1604d55d7b760d882914d7289134f6f5",
+          "original_value_sha256": "d9a85a01b0695f3c7670221c4ae493dec61da119160d8c25fde42bb28b4d2c1f"
+        },
+        {
+          "field": "/finalized_stdout_stable",
+          "value": true,
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "field": "/finalized_stderr_stable",
+          "value": true,
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "field": "/post_cleanup_wait_seconds",
+          "value": 4.5,
+          "original_value_sha256": "32209ccbf8a8e509b9027698cc173343a2695e8ecdbe899bf5335a3100c956fc"
+        },
+        {
+          "field": "/membership_observation",
+          "value": {
+            "mode": "plain",
+            "owned_job_membership": "NOT OBSERVED"
+          },
+          "original_value_sha256": "ca5d45dc06e2eb49de7b4dd5621b946a673de609c49e0ac4daed47d050713f1a"
+        },
+        {
+          "field": "/in_any_job_inference",
+          "value": "NONE; only the observed-owned-job mode queries the runner's actual owned handle",
+          "original_value_sha256": "8941dab54a6e788cd8dcca04abc977e4f072cc2b62970b9d0523fc88609ec3df"
+        }
+      ],
+      "privacy_rejected_original_leaf_hashes": [],
+      "original_top_level_field_hashes": {
+        "kind": "abf278a9ae017debb1fe01627bc458bf17b250f4245afe7eb8d29f6056f0f0bb",
+        "scope": "456ed5509008f097e0b1fae7d46f416062e8fdea7e49ccc2ac5adce6f7f2ab8c",
+        "mode": "945603a8f587786b463c3f94fce115c0fae88fac2728cc96ddf5981cf7f61741",
+        "candidate_sha256": "f24b79621cf3e2e82e5ef1ea5ef3e5184b650686b5e24f1d8983518a2f18ef5c",
+        "runner_sha256": "032356ea9b3a9aa8e5496f67c81fea5af7cd359b8f5e523f107dae3b5c9b7b54",
+        "wrapper_executable": "dd03a6593a8e1bf0bcd1c31975fe4a66dd499e8a081abca655e61ee9b7ff275b",
+        "actual_record_path": "b4db4a7142348ec12e01230efe46cb8ebeb4bcdf79ce77f273406d100ef05ddd",
+        "actual_record_sha256": "11281ddcf1da4f69f26e9c6061fda6a49deb10e868b3cfa495e0fda04de22906",
+        "actual_record_summary": "386f2dc9d652d0860510e176e7e68bdee546f410bb985c4a3445ba4346ce8dcc",
+        "executed_child": "6bfda0e051ab50f3ef3b37876ae439b4d44fcd41ba09dede098a8dfcf9782ddf",
+        "child_alive_immediately_after_cleanup": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "child_alive_after_fixture_deadline": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "late_marker_exists": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "recorded_stdout_sha256": "331dbf1b0200fc865198fbadc4fb24109fa7503ebc38a265aa98eac7a7c0f006",
+        "stdout_sha256_immediately_after_cleanup": "331dbf1b0200fc865198fbadc4fb24109fa7503ebc38a265aa98eac7a7c0f006",
+        "stdout_sha256_after_deadline": "331dbf1b0200fc865198fbadc4fb24109fa7503ebc38a265aa98eac7a7c0f006",
+        "recorded_stderr_sha256": "d9a85a01b0695f3c7670221c4ae493dec61da119160d8c25fde42bb28b4d2c1f",
+        "stderr_sha256_immediately_after_cleanup": "d9a85a01b0695f3c7670221c4ae493dec61da119160d8c25fde42bb28b4d2c1f",
+        "stderr_sha256_after_deadline": "d9a85a01b0695f3c7670221c4ae493dec61da119160d8c25fde42bb28b4d2c1f",
+        "finalized_stdout_stable": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+        "finalized_stderr_stable": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+        "post_cleanup_wait_seconds": "32209ccbf8a8e509b9027698cc173343a2695e8ecdbe899bf5335a3100c956fc",
+        "membership_observation": "ca5d45dc06e2eb49de7b4dd5621b946a673de609c49e0ac4daed47d050713f1a",
+        "observer_errors": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "in_any_job_inference": "8941dab54a6e788cd8dcca04abc977e4f072cc2b62970b9d0523fc88609ec3df",
+        "public_writes": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9"
+      },
+      "selection_limit": "Explicit integrator-selected original values only, not the whole report or a new independent review. Omitted original fields remain represented by value hashes. Privacy-rejected leaves retain their original pointer/hash and rejection reason; no selected status or value is rewritten."
+    },
+    {
+      "name": "explicitly-private-uncuratable-raw-command-20261015T173223-05e12d94be",
+      "original_report_path": "[local-evidence-root]/runtime/a11-native-environment-old-guard/20261015T173223-05e12d94be/run.json",
+      "original_report_sha256": "a3eb8442d7ca56da1b78e63c5c5967c0af59b1a35be5147fe5e31f0353301052",
+      "original_status": "FAIL",
+      "selected_original_fields": [
+        {
+          "field": "/status",
+          "value": "FAIL",
+          "original_value_sha256": "8dda96cc06ec8a54f6d789a9f4e5c22e8af9eb9c60a8f7046473c57163e079ff"
+        },
+        {
+          "field": "/reason",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/exit_code",
+          "value": 1,
+          "original_value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        },
+        {
+          "field": "/duration_seconds",
+          "value": 0.40599999998812564,
+          "original_value_sha256": "0ecde39ca6211f051be9f1b1f139b2ae6c59b33e82705cebacac97e0b2aec747"
+        },
+        {
+          "field": "/requirements",
+          "value": [],
+          "original_value_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "field": "/started_utc",
+          "value": "2026-10-15T17:32:23.706532+00:00",
+          "original_value_sha256": "daf09417414042c79e5e664d8ef092da519c59c459ad85b915e3aad3564faf9c"
+        },
+        {
+          "field": "/ended_utc",
+          "value": "2026-10-15T17:32:24.121704+00:00",
+          "original_value_sha256": "06828a70e3b692396e8a02453c6ced90a80e48368c95461aba272bfe0483da5b"
+        },
+        {
+          "field": "/stdout/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/stdout/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/stderr/sha256",
+          "value": "aa44ca62502973605ce99e6330c0be38f5bc4fc6c448f5974339e9fcde6d503b",
+          "original_value_sha256": "ca65a564330fad84c6780f02c5b95f56addab331873da87c0566408722fa2138"
+        },
+        {
+          "field": "/stderr/bytes",
+          "value": 539,
+          "original_value_sha256": "5109a4e14cbbfda6b4512fc17ff13814ff9427f7b602694236f2c5be4d9875af"
+        }
+      ],
+      "selection_limit": "Raw triplet excluded because unchanged strict operator-path redaction rejected its output. These exact metadata values and output hashes are selected only; no stream was rewritten, no command retagged, no complete-public-raw-capture or new approval claimed."
+    },
+    {
+      "name": "explicitly-private-uncuratable-raw-command-20261015T180959-157359c1a4",
+      "original_report_path": "[local-evidence-root]/runtime/rv-a9-a11-focused-independent/evidence-diagnostic/20261015T180959-157359c1a4/run.json",
+      "original_report_sha256": "88e788ff4eaba4c739b434b6299643de7693917fc4603836a60a15d831064d3b",
+      "original_status": "PASS",
+      "selected_original_fields": [
+        {
+          "field": "/status",
+          "value": "PASS",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f"
+        },
+        {
+          "field": "/reason",
+          "value": "completed",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0"
+        },
+        {
+          "field": "/exit_code",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "field": "/duration_seconds",
+          "value": 4.625,
+          "original_value_sha256": "3f67e79db52784233fa9a8e162affeaa953b04510365177a331c78de98f60726"
+        },
+        {
+          "field": "/requirements",
+          "value": [],
+          "original_value_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "field": "/started_utc",
+          "value": "2026-10-15T18:09:59.831961+00:00",
+          "original_value_sha256": "abd86ccf800eaaf5feaef1e7340e8ebd6585d62dd114273cb85ee02deb52ba9e"
+        },
+        {
+          "field": "/ended_utc",
+          "value": "2026-10-15T18:10:04.462183+00:00",
+          "original_value_sha256": "fd4b20fd9d07371a56bf10c487a10a611abf90c707df81ead34e9142ff53b30f"
+        },
+        {
+          "field": "/stdout/sha256",
+          "value": "cf52ad006874136d508c3de2cc24bd75835a45bacc06541a0de28c823b2adc00",
+          "original_value_sha256": "2ce91919f2588a9835010d8f829ce31a71514df6ba86f2fa44c0a08debd179e5"
+        },
+        {
+          "field": "/stdout/bytes",
+          "value": 5368,
+          "original_value_sha256": "e1cbed0ecbee7325a4820b48e02453e8a4e5fe0a2f47fc493814497368b95784"
+        },
+        {
+          "field": "/stderr/sha256",
+          "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "original_value_sha256": "b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab"
+        },
+        {
+          "field": "/stderr/bytes",
+          "value": 0,
+          "original_value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        }
+      ],
+      "selection_limit": "Raw triplet excluded because unchanged strict operator-path redaction rejected its output. These exact metadata values and output hashes are selected only; no stream was rewritten, no command retagged, no complete-public-raw-capture or new approval claimed."
+    }
+  ],
+  "current_acceptance_credit": "NONE",
+  "scope": "Actual failure, limits, finite source-walk/cleanup/native-profile controls and explicit zero-credit association fields only. No prompts, sessions, personal documents or candidate research are inputs. No historical source/status/result/tag is retagged. The32a clean PASS and later full native-c16 legal-overlap FAIL remain separate original commands; no clean result replaces the later failure."
+}

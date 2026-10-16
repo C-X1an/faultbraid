@@ -1,0 +1,363 @@
+{
+  "schema_version": 1,
+  "kind": "field-selected-retained-independent-native-review-judgments",
+  "selection_author": "integrator",
+  "status": "HISTORICAL_SCOPED_JUDGMENTS_ONLY",
+  "scope": "Transparent field selection from the genuine original independent reports. Original statuses, candidate/source/patch hashes, findings, decisions, NR-001 resolution and limitations are copied without retagging. This selection is not a new independent review, target run, integrated-source all24 verdict or release approval.",
+  "reports": [
+    {
+      "original_report_sha256": "8c3b6fec55bfd53511618c6415b75bb7117ba3254095cb943e686c039e77e35d",
+      "engineering_fields": {
+        "schema_version": 1,
+        "kind": "separate-read-only-native-receipt-findings-before-fix",
+        "created_utc": "2026-10-14T14:06:07.2750089Z",
+        "candidate_manifest_sha256": "3ce1b5e420927b84c4d6e126304cc5cec3e3dc37d32864246275210659d1b57d",
+        "status": "STATIC_FINDING_REQUIRES_ACTUAL_CONTROL",
+        "findings": [
+          {
+            "id": "NR-001",
+            "priority": 2,
+            "title": "Later complete write mismatch bypasses protocol validation",
+            "start": 700,
+            "end": 703,
+            "observation": "The replicated write payload check is inside the earliest successful receipt selection branch. Once an earlier correct completion has been collected, a later complete/admitted reply with a different write value is retained as complete and returns nil. Reversed collection instead reports an error when the mismatched later reply is collected first.",
+            "inherited_from_original": true,
+            "source_status": "conditional verified in exact frozen source; no actual independent overlay runtime control yet",
+            "implication": "The collector may report a normal history while a retained write reply violates the API contract that retries return the original replicated result. This is an existing validation gap, not evidence that the frozen native runs exhibited a wrong value.",
+            "proposed_minimum": "Validate every complete write response against the request payload before selecting the earliest completion, while preserving attempts, uncertainty, and error propagation.",
+            "candidate_file": "internal/labreal/run.go",
+            "candidate": "candidate-02"
+          }
+        ],
+        "scope": "Original controls and prospective native collector patch only. No public write, all-24 judgment, full release, clean checkout, publication or hosted CI approval."
+      },
+      "selection_metadata": {
+        "not_the_complete_original_report": true,
+        "excluded_or_location_fields": [
+          {
+            "field": "/candidate",
+            "value_sha256": "8bee1d430df0a2722279634d06324ae0729ada8de73b96e3bc28e384110ad78a",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/run_go_sha256",
+            "value_sha256": "3669b0dfe8d737ff551352dd3c9164d795f7606f18ef1a653a6300e05e87d407",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/findings/0/file",
+            "value_sha256": "f70091a3054db6f5c9a334daa58c53fac509c6328a193ae1bb752856454b483c",
+            "reason": "Private checkout location omitted; exact candidate-relative source path and candidate identity retained."
+          }
+        ]
+      }
+    },
+    {
+      "original_report_sha256": "d4604da2af14fe8151b76d6056cc98318f69088d1dd0fbdfdbeb232bfe020e56",
+      "engineering_fields": {
+        "schema_version": 1,
+        "kind": "genuinely-separate-read-only-native-receipt-review",
+        "created_utc": "2026-10-14T14:13:31.873259+00:00",
+        "reviewer": "/root/native_receipt_verifier",
+        "status": "REJECT_CANDIDATE_02_PENDING_NR_001_REPAIR",
+        "scope": "Retained original/native controls and exact candidate-02 three-path patch only. Independently inspected source, protocol, atomic ordering, value pairing, cancellation/error retention, scope, and actual raw evidence. No public source edits were made.",
+        "reviewed_base_commit": "399b8baa1bd4cbc927c47ddf0be565818e332f03",
+        "reviewed_public_tree_sha256": "48a6065da2ee1b1f9c9e34edabef401210fdb4e5461967ee86a5c3b98618e87b",
+        "reviewed_public_file_count": 642,
+        "candidate_manifest_sha256": "3ce1b5e420927b84c4d6e126304cc5cec3e3dc37d32864246275210659d1b57d",
+        "candidate_patch_sha256": "2752a68f255b50256bc36f6111dd9f680775b3ba83c81e649c9592394b8a5b95",
+        "patch_files": [
+          {
+            "path": "API_SPEC.md",
+            "sha256": "a83aafac75437cafd499d0d6183806607516f907e0f3fcd8036763f53c6a7a7f"
+          },
+          {
+            "path": "internal/labreal/receipt_scheduler_test.go",
+            "sha256": "d77888e45f5a8a8d6a14ebbaff78523060a9eac0f1fb4d09b89326606dd20761"
+          },
+          {
+            "path": "internal/labreal/run.go",
+            "sha256": "fa393bc64b9de2187c65beeecc348de197a1083fc70f24c33d73e932d315e876"
+          }
+        ],
+        "material_findings": [
+          {
+            "id": "NR-001",
+            "priority": 2,
+            "title": "Later complete write mismatch bypasses protocol validation",
+            "start": 700,
+            "end": 703,
+            "observation": "The replicated write payload check is inside the earliest successful receipt selection branch. Once an earlier correct completion has been collected, a later complete/admitted reply with a different write value is retained as complete and returns nil. Reversed collection instead reports an error when the mismatched later reply is collected first.",
+            "inherited_from_original": true,
+            "source_status": "conditional verified in exact frozen source; no actual independent overlay runtime control yet",
+            "implication": "The collector may report a normal history while a retained write reply violates the API contract that retries return the original replicated result. This is an existing validation gap, not evidence that the frozen native runs exhibited a wrong value.",
+            "proposed_minimum": "Validate every complete write response against the request payload before selecting the earliest completion, while preserving attempts, uncertainty, and error propagation.",
+            "runtime_status": "DEMONSTRATED_WITH_ACTUAL_HTTP_COLLECTOR_OVERLAY",
+            "runtime_counterexample": {
+              "sha256": "797053c88bf2db87083311c00f596ac73d7b003a510c9fbfad6e15a7c0beae19",
+              "bytes": 114275,
+              "path": "verification/curated/20261014T141017-b339e1932d/run.json"
+            },
+            "runtime_test_outcomes": {
+              "TestIndependentReviewerEveryCompleteWriteChecksPayload/earlier-correct-then-later-conflicting": "FAIL",
+              "TestIndependentReviewerEveryCompleteWriteChecksPayload/later-conflicting-then-earlier-correct": "PASS",
+              "TestIndependentReviewerEveryCompleteWriteChecksPayload": "FAIL"
+            },
+            "runtime_assertion": "conflicting complete write value was accepted after an earlier correct completion",
+            "candidate_decision": "blocks candidate-02 approval until every complete write reply is validated independent of which receipt establishes logical completion",
+            "candidate_file": "internal/labreal/run.go",
+            "candidate": "candidate-02"
+          }
+        ],
+        "NOT_RUN_after_integration": [
+          "Complete ./... tests and race on integrated final bytes",
+          "All 24 acceptance judgment",
+          "Fresh clean release gates",
+          "Public inventory/history/privacy audit on integrated source",
+          "Publication or hosted CI"
+        ],
+        "decision": "Reject exact candidate-02 pending the independently captured NR-001 repair. The ordinal mechanism and retained controls are supported within scope. Any repaired candidate requires a new byte manifest, unchanged-control checks, and independent final-byte re-review; this report provides no candidate-03 or full-release approval."
+      },
+      "selection_metadata": {
+        "not_the_complete_original_report": true,
+        "excluded_or_location_fields": [
+          {
+            "field": "/reviewed_final_private_tree_sha256",
+            "value_sha256": "8c160d90da4b7b41524871e29d8abc7fdf9b6385fcb0070ce9270d86082537da",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/reviewed_final_private_file_count",
+            "value_sha256": "62e66f3e9936906923febd26f9d2536edf38936998c4e5d678b925d848aaa89d",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/findings_preserved_before_runtime_or_fix",
+            "value_sha256": "0566f789ffd882033c0a2bec8f3a11e14e9b9d1c8a1425cce3f7e049679ad69b",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/independent_runtime_capture",
+            "value_sha256": "80497157c46db0acbbe5910047e6167091148b0a6731d0e777a8ebef41dc6481",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/overlay_inputs_explicitly_bound",
+            "value_sha256": "44919f1dfab6db4930bfe21d32b39ec4e4ed3062adf1bf7326c0b2331d532c6a",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/independent_helper_inputs_explicitly_bound",
+            "value_sha256": "30441823fb11732db675bfa1700eab0238994fc21f021ef01996197ae9e3b503",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/independent_retained_control_check",
+            "value_sha256": "0c6e1286376cbf8628492a1b4102416aa63302e38451c9ca126c02f254e658c3",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/independent_retained_control_capture",
+            "value_sha256": "f9dd084bcb3482e62ad4a78218f22dd611b9f33511de5542cd463c75df162c7e",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/verified_control_summary",
+            "value_sha256": "d5a1c65e96e523d77d437a77e0799267895371099276531a044f1149f0a944c6",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/source_review",
+            "value_sha256": "bcd05f8d0c2672a78c1f1a1ab8593e7cf9aff348e58c56b7ce9a307b794e233c",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/rejected_false_claims",
+            "value_sha256": "921139039fbd373895b5dddbdc66c0249bb3762bcec9868a5fcfa7c664656a1d",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/material_findings/0/file",
+            "value_sha256": "f70091a3054db6f5c9a334daa58c53fac509c6328a193ae1bb752856454b483c",
+            "reason": "Private checkout location omitted; exact candidate-relative source path and candidate identity retained."
+          },
+          {
+            "field": "/material_findings/0/runtime_counterexample/path",
+            "value_sha256": "cddded70d620fb42d4ec27c04385318d8d0ec6385efa6f089eb35fd88d23d7bb",
+            "reason": "Original private capture location replaced with the actual curated record path; raw original hash and outcome retained."
+          }
+        ]
+      }
+    },
+    {
+      "original_report_sha256": "638feb16fdc3e2542fb3d089fcd1917255cb422fcbe8e1bf2999e6cbabc4dbca",
+      "engineering_fields": {
+        "schema_version": 1,
+        "kind": "genuinely-separate-read-only-native-receipt-candidate-03-review",
+        "created_utc": "2026-10-14T15:28:11.456754+00:00",
+        "reviewer": "/root/native_receipt_verifier",
+        "status": "APPROVE_EXACT_CANDIDATE_03_WITHIN_SCOPED_REVIEW",
+        "reviewed_base_commit": "399b8baa1bd4cbc927c47ddf0be565818e332f03",
+        "reviewed_public_tree_sha256": "48a6065da2ee1b1f9c9e34edabef401210fdb4e5461967ee86a5c3b98618e87b",
+        "reviewed_public_file_count": 642,
+        "reviewed_private_source_tree_sha256": "f8f21d91c7637d142d052058d28a4f63a78ab08280ffd97b5dbd44c628a026ae",
+        "reviewed_private_source_file_count": 644,
+        "candidate_manifest_sha256": "91634548c2b29b6bbbc78efb500e705ba27d71dbce2916a8c4288554127a0f8c",
+        "candidate_patch_sha256": "04af3194d0699de74fbfc2f81351f46fb8dc819ac09dd7c0e97ee1c40439d4ca",
+        "patch_files": [
+          {
+            "path": "API_SPEC.md",
+            "sha256": "a83aafac75437cafd499d0d6183806607516f907e0f3fcd8036763f53c6a7a7f"
+          },
+          {
+            "path": "internal/labreal/receipt_scheduler_test.go",
+            "sha256": "d77888e45f5a8a8d6a14ebbaff78523060a9eac0f1fb4d09b89326606dd20761"
+          },
+          {
+            "path": "internal/labreal/reply_validation_test.go",
+            "sha256": "487655d7c41897a362a7be91e57ef237e56311d22e2332da873d4a0786cfb62b"
+          },
+          {
+            "path": "internal/labreal/run.go",
+            "sha256": "61ea474ac08eea007206abbe671e114d8332d2e7f9a3670ca8ef8e41d1fac42f"
+          }
+        ],
+        "frozen_candidates_verified": [
+          {
+            "candidate": "candidate-01",
+            "manifest_sha256": "2a72aa737e08956c75dae77ebf9c7a7e21ecd887719d9ef171c6a1da0bedb1c8",
+            "patch_sha256": "d23d8936cd985ed27328546e69d56cb6e38329c9e68bba61421d6e7fd53c648a",
+            "all_files_verified": 7
+          },
+          {
+            "candidate": "candidate-02",
+            "manifest_sha256": "3ce1b5e420927b84c4d6e126304cc5cec3e3dc37d32864246275210659d1b57d",
+            "patch_sha256": "2752a68f255b50256bc36f6111dd9f680775b3ba83c81e649c9592394b8a5b95",
+            "all_files_verified": 7
+          },
+          {
+            "candidate": "candidate-03",
+            "manifest_sha256": "91634548c2b29b6bbbc78efb500e705ba27d71dbce2916a8c4288554127a0f8c",
+            "patch_sha256": "04af3194d0699de74fbfc2f81351f46fb8dc819ac09dd7c0e97ee1c40439d4ca",
+            "all_files_verified": 12
+          }
+        ],
+        "material_findings": [],
+        "NR_001_resolution": {
+          "status": "RESOLVED_ON_EXACT_CANDIDATE_03_BYTES",
+          "code": "Every complete write reply is compared with the logical request payload after its attempt and possible admission are retained, before any earliest-receipt selection. A conflicting completion returns the existing protocol error and cannot establish or replace logical completion.",
+          "runtime": "The same independent HTTP test and overlay bytes that previously failed now pass both collection orders. Physical-source added regression also passes both orders, explicitly checking conflicting attempt retention, unchanged previous completion/value, possible admission, and no invented completion when wrong response is collected first.",
+          "delta_from_candidate_02": "Exactly the existing write-value validation guard moved outside earliest-receipt selection; API and the three receipt scheduling controls remain byte-identical. One separate physical-source regression file was added.",
+          "retained_native_wrong_value_claim": "NONE; the conflicting reply control is an explicitly synthetic protocol peer sharing parent PID and earns no distributed-target credit."
+        },
+        "limits": [
+          "Original native failures do not contain response receipt timestamps, so the sole old causal interleaving remains unproven.",
+          "True unfinished calls still overlap; no waits, deadlines, tick rates or concurrency limits were altered to manufacture precedence.",
+          "A single actual native 1/4/16 positive does not establish universal timing guarantees or physical power-loss durability.",
+          "Candidate-01/02 outcomes retain their original source identities and are not retagged as candidate-03 positives.",
+          "This approval binds exact candidate-03 payload bytes and the specified controls only; later integration must freeze a new source/evidence version."
+        ],
+        "NOT_RUN_after_integration": [
+          "Complete ./... tests and race on integrated final bytes",
+          "All 24 acceptance judgment",
+          "Fresh clean release gates",
+          "Public inventory/history/privacy audit after integration",
+          "Publication or hosted CI"
+        ],
+        "decision": "Approve exact candidate-03 within this separate read-only scoped review. NR-001 is resolved and no further material finding was established. Public integration must include the two new test paths in PUBLIC_FILES.txt and undergo fresh full/clean/claim/privacy gates; this is no full-release, all-24, publication or hosted-CI approval."
+      },
+      "selection_metadata": {
+        "not_the_complete_original_report": true,
+        "excluded_or_location_fields": [
+          {
+            "field": "/prior_rejection_immutable",
+            "value_sha256": "23535f83b2ae59086272c2e50a8f2924de08015d47bcc746213019919dd272d4",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/prior_finding_immutable",
+            "value_sha256": "0566f789ffd882033c0a2bec8f3a11e14e9b9d1c8a1425cce3f7e049679ad69b",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/prior_independent_FAIL_immutable",
+            "value_sha256": "4d4b6d24a5dac819a13e4508841ffd6e209108083951e4d956d04a45bbee3814",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/prior_proposal_report_immutable",
+            "value_sha256": "ed02edd8b68afcc6fbef29ff9152e759c092f62482ae73bbb047dc801ff82d24",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/candidate_03_proposal_report_binding",
+            "value_sha256": "3e2e304f7658090ffcdd87fd46e9eb1e78563660c40fbf1f8ad3d93e469cc47d",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/candidate_03_writer_summary_capture",
+            "value_sha256": "4500aaffb443fa2243b42069a29895fb0baf50a7e0465dece2dadd536b39fc92",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/candidate_03_actual_native_manifest",
+            "value_sha256": "e8c52f9e831c3f11e3b50c63ba1febcb9fa90f40f827778b11ddc071f1ed9850",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/candidate_03_actual_native_files_verified",
+            "value_sha256": "1a6562590ef19d1045d06c4055742d38288e9e6dcd71ccde5cee80f1d5a774eb",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/preserved_original_failure_files_verified",
+            "value_sha256": "4523540f1504cd17100c4835e85b7eefd49911580f8efff0599a8f283be6b9e3",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/prior_actual_command_records_reverified",
+            "value_sha256": "6b51d431df5d7f141cbececcf79edf3dd861c3b4069f0b11661a3eefacbba918",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/independent_repaired_overlay_capture",
+            "value_sha256": "9e6d57372302375554330f1af28d8eac730f87b80ae2e34e68fdfd05389430e8",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/overlay_inputs_explicitly_bound",
+            "value_sha256": "0fe7ec1f31be178d899bdb9cf818a6ad83126b10106b8d4979f29b5a1d1bc6db",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/private_review_helpers_explicitly_bound",
+            "value_sha256": "bd4673ee5d899892a65a11c9bf8c349c7df9b68f3b6564ebcc9d00a55711cf91",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/actual_candidate_03_controls",
+            "value_sha256": "944e5d437beeb9d71286d37dd6f59e854d0ef234a37e06d6caec0b02a3df330b",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/actual_candidate_03_native_records",
+            "value_sha256": "6971b37031533b4838d89e67a24f40946f0a3c7249e5662a2bc48200878824e6",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/source_and_control_review",
+            "value_sha256": "fcc18242ae34d9b2e85caac86287e4eb536f5b7e57c0f10809468b15a4aea2d2",
+            "reason": "Original location/control-intake metadata excluded from this explicitly field-selected synopsis; selected actual command records are curated separately."
+          },
+          {
+            "field": "/scope",
+            "value_sha256": "b3b26a6b3975cd93086c8955690a352da50db815b97d57a7ce4cbc616f4b2016",
+            "reason": "Original scope prose embeds a private checkout location. Exact original hash is retained; the unchanged decision and candidate/source/patch identities retain the scoped approval limits."
+          }
+        ]
+      }
+    }
+  ],
+  "current_acceptance_credit": "NONE",
+  "publication": "NOT RUN"
+}

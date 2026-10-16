@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "run_id": "20261015T071519-916097ffc5",
+  "category": "tooling",
+  "requirements": [
+    "AC-018"
+  ],
+  "command": [
+    "python",
+    "run_candidate_evidence_tests.py"
+  ],
+  "cwd": "[recorded-working-root]",
+  "started_utc": "2026-10-15T07:15:19.481207+00:00",
+  "ended_utc": "2026-10-15T07:15:49.198630+00:00",
+  "duration_seconds": 29.718000000008033,
+  "status": "PASS",
+  "reason": "completed",
+  "exit_code": 0,
+  "environment": {
+    "os": "Windows",
+    "release": "11",
+    "architecture": "AMD64",
+    "python": "3.12.14",
+    "go": "go version go1.27.2 windows/amd64",
+    "cpu": "13th Gen Intel(R) Core(TM) i9-13900H",
+    "logical_cpus": 20,
+    "host_memory": "34048978944 bytes",
+    "container_limits": "not inferred from host totals"
+  },
+  "source": {
+    "git_commit": null,
+    "git_dirty": true,
+    "source_tree_sha256": "7e6600f49b162c861e2cdb8c33bd811c7dc6627f3fbc356f37bb845b0eb3156a",
+    "files": [
+      {
+        "path": "check_source_scan.py",
+        "sha256": "88694380bd847b3e803a65bf3cf44aca0432087ad9d045ec092118f30413d3f5"
+      },
+      {
+        "path": "original.py",
+        "sha256": "c9770fe2715f17b9d2cae7f30374586596addebdf0069b28321665ba50985d32"
+      },
+      {
+        "path": "proposal.json",
+        "sha256": "7c1ab156cdddc0981f97b4ad3d1cb68ad41601b2905966920fbe497aa4180bd7"
+      },
+      {
+        "path": "run_candidate_evidence_tests.py",
+        "sha256": "a6d93919e7a2fbb3c90ac3889821eae776ae8ae7d68edfde6a87ce48781a35d6"
+      },
+      {
+        "path": "run_evidence_candidate.py",
+        "sha256": "27365fc4c9a6cd9487bda6b4fa9f1f73982f357c6c8bc05497d59d70c5608a22"
+      },
+      {
+        "path": "run_evidence_candidate_v1.py",
+        "sha256": "05b566d3b4a6e302f88b5b3486adcde3d01cc4aa98b89d1725165d2d8b8582b5"
+      },
+      {
+        "path": "source_scan_mutant.py",
+        "sha256": "49a3d3dbfceac73ffb762aaba173bfc7137718443f51bbb52b8a476552910dd6"
+      },
+      {
+        "path": "test_evidence_candidate.py",
+        "sha256": "31e98c140cc2931d2a53a13e1382652ffa8b5bc4dc89995395cba73a77c3dc9a"
+      },
+      {
+        "path": "test_evidence_original.py",
+        "sha256": "74ab0f0ec2650ca1ebd2c2ee65da5df276709947cb408adc633d38352a2c1bd3"
+      }
+    ]
+  },
+  "stdout": {
+    "path": "verification/curated/20261015T071519-916097ffc5/stdout.txt",
+    "sha256": "1c0939bf996dee782b86ca27bcf4e7359075b36e91a801c8a6d6c899522e7a87",
+    "bytes": 550
+  },
+  "stderr": {
+    "path": "verification/curated/20261015T071519-916097ffc5/stderr.txt",
+    "sha256": "1da43f984f197010d45b4d04a63eceabd69a43155a3deb6a8eeac7b845f817e9",
+    "bytes": 1362
+  },
+  "curation": {
+    "schema_version": 1,
+    "raw_record_sha256": "3bdc9d6c571fdf25c29e363a34619d285752a2a5ee4ce075d5dec6409db950b2",
+    "scope": "selected real engineering command; excludes agent session/chat/prompt data",
+    "source_identity_status": "original fields and full file hashes unchanged",
+    "streams": {
+      "stdout": {
+        "raw_sha256": "38838705df383b33bb76d6b6e3386e265c3f0a7b48fd5a2965e0febab3f9e6b2",
+        "raw_bytes": 553,
+        "curated_sha256": "1c0939bf996dee782b86ca27bcf4e7359075b36e91a801c8a6d6c899522e7a87",
+        "curated_bytes": 550,
+        "redactions": [
+          {
+            "kind": "CRLF-to-LF-text-normalization",
+            "count": 3
+          }
+        ]
+      },
+      "stderr": {
+        "raw_sha256": "8f772d8c68b7cce808907cb445914dc507ff327b1dd7a9efdfad29f0f0b0a192",
+        "raw_bytes": 1377,
+        "curated_sha256": "1da43f984f197010d45b4d04a63eceabd69a43155a3deb6a8eeac7b845f817e9",
+        "curated_bytes": 1362,
+        "redactions": [
+          {
+            "kind": "CRLF-to-LF-text-normalization",
+            "count": 15
+          }
+        ]
+      }
+    },
+    "metadata_redactions": [
+      {
+        "kind": "operator-path-prefix",
+        "replacement": "[recorded-working-root]",
+        "count": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+{"label": "pruned-ignored-mutant", "path": "[local-evidence-root]\\runtime\\a11-source-walk-pruned-ignored-mutant\\20261015T174247-6e03dc89a6\\run.json", "status": "FAIL", "exit_code": 1, "reason": "completed"}
+{"label": "global-missing-mutant", "path": "[local-evidence-root]\\runtime\\a11-source-walk-global-missing-mutant\\20261015T174252-2f3e0acd10\\run.json", "status": "FAIL", "exit_code": 1, "reason": "completed"}
+{"label": "restored-race", "path": "[local-evidence-root]\\runtime\\a11-source-walk-restored-race\\20261015T174258-fbf1967571\\run.json", "status": "PASS", "exit_code": 0, "reason": "completed"}

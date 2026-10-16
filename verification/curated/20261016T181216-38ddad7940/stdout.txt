@@ -1,0 +1,5 @@
+=== RUN   TestAC013FlushBeforeSendAndResponse
+    persistence_test.go:422: AC-013 Flush ordering positive control completed real three-voter write/read; history={"version":1,"initial":0,"operations":[{"id":"flush-order-write","kind":"write","value":7,"call":1,"return":2},{"id":"flush-order-read","kind":"read","value":7,"call":3,"return":4}]}
+--- PASS: TestAC013FlushBeforeSendAndResponse (0.00s)
+PASS
+ok  	github.com/C-X1an/faultbraid/tests/system	4.591s

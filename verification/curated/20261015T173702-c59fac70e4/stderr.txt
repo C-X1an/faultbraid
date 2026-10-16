@@ -1,0 +1,5 @@
+Exception: [recorded-working-root]\guard-fixtures\missing\env-native.ps1:6
+Line |
+   6 |  .  -PathType Leaf)) { throw 'Prepared native Python runtime missing.' }
+     |                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Prepared native Python runtime missing.

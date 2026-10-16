@@ -1,0 +1,6 @@
+=== RUN   TestDiagnosticCallerPredicateRejectsCompletedReplay
+    replay_cancel_probe_test.go:86: intentional specification negative control: legacy caller predicate rejects authentic replay completed before cancellation
+--- FAIL: TestDiagnosticCallerPredicateRejectsCompletedReplay (0.33s)
+FAIL
+FAIL	github.com/C-X1an/faultbraid/tests/security	3.612s
+FAIL

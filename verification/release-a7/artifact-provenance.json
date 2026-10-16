@@ -1,0 +1,1445 @@
+{
+  "schema_version": 1,
+  "scope": "Exact raw hashes, declared operator-path redactions/text normalization and explicit field projections.",
+  "artifacts": [
+    {
+      "path": "verification/release-a7/clean-summary.json",
+      "raw_sha256": "93378b9e0c7bd43486297229557eec3892e3692cebf17eb3996b53e0d65be38e",
+      "raw_bytes": 1625,
+      "curated_sha256": "8d48776213e5d733705029bed8173bd3bcfde02b14baf19364f3030d10f33055",
+      "curated_bytes": 1558,
+      "redactions": [
+        {
+          "kind": "CRLF-to-LF-text-normalization",
+          "count": 67
+        }
+      ]
+    },
+    {
+      "path": "verification/release-a7/kernel-mutations.json",
+      "raw_sha256": "32bc33c04d1e8200cbae03d96fcc9684ff1628e37b34407bd065a31e46fff6a7",
+      "raw_bytes": 5643,
+      "curated_sha256": "32bc33c04d1e8200cbae03d96fcc9684ff1628e37b34407bd065a31e46fff6a7",
+      "curated_bytes": 5643,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/target-mutation.json",
+      "raw_sha256": "bdc42b015749838f2d41b08fb4435bac110d2904b7c073e7e4b53e9b97c4516b",
+      "raw_bytes": 747861,
+      "projection": "selected fields; never retagged"
+    },
+    {
+      "path": "verification/release-a7/campaign-summary.json",
+      "raw_sha256": "b93e195961fe3707c07caffcf54fcc9604e5b6ca7dc97b58c3fdfe899d733816",
+      "raw_bytes": 3243221,
+      "curated_sha256": "995015e9dcca923330654a3c7e430f5d84b932094cd71b61ad0513fcd739a968",
+      "curated_bytes": 3127452,
+      "redactions": [
+        {
+          "kind": "CRLF-to-LF-text-normalization",
+          "count": 115769
+        }
+      ]
+    },
+    {
+      "path": "verification/release-a7/campaign-selected-unsafe-trace.json",
+      "raw_sha256": "30d594db8ded2836d0e47f199b8eab08230759e81e5c0f21a9c5018274f80d1e",
+      "raw_bytes": 103328,
+      "curated_sha256": "30d594db8ded2836d0e47f199b8eab08230759e81e5c0f21a9c5018274f80d1e",
+      "curated_bytes": 103328,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/native/concurrency-1.json",
+      "raw_sha256": "0b213accf2ac7f1f81ce9e1214e753a050f84e1dfa2b1c5a7c254d74412ad1d2",
+      "raw_bytes": 23793,
+      "curated_sha256": "0b213accf2ac7f1f81ce9e1214e753a050f84e1dfa2b1c5a7c254d74412ad1d2",
+      "curated_bytes": 23793,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/native/concurrency-4.json",
+      "raw_sha256": "3471b0222741ffdf58d597d65a7222f5193441df1226f0529dcbffcaf6f06bf2",
+      "raw_bytes": 24352,
+      "curated_sha256": "3471b0222741ffdf58d597d65a7222f5193441df1226f0529dcbffcaf6f06bf2",
+      "curated_bytes": 24352,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/native/concurrency-16.json",
+      "raw_sha256": "16028a056fe199e0d45d5ab5d5edc81e4222822c5184ea0aa068f9dde0ad42f5",
+      "raw_bytes": 24352,
+      "curated_sha256": "16028a056fe199e0d45d5ab5d5edc81e4222822c5184ea0aa068f9dde0ad42f5",
+      "curated_bytes": 24352,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/native-summary.json",
+      "raw_sha256": "c994287f9769388b99484dc209c63a4161abfe42dfbf954935cd633f27f646c1",
+      "raw_bytes": 116197,
+      "curated_sha256": "3dd11e3518fa0dfeb4e0389d3c9449fed6c955fc21177ea803efeef95cb7bf1a",
+      "curated_bytes": 113519,
+      "redactions": [
+        {
+          "kind": "CRLF-to-LF-text-normalization",
+          "count": 2678
+        }
+      ]
+    },
+    {
+      "path": "verification/release-a7/demo/safe/trace.json",
+      "raw_sha256": "13a08a513d81e4e94ec55b389953ff619754b9246aa165359e12e81895e60d5b",
+      "raw_bytes": 99262,
+      "curated_sha256": "13a08a513d81e4e94ec55b389953ff619754b9246aa165359e12e81895e60d5b",
+      "curated_bytes": 99262,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/demo/safe/history.json",
+      "raw_sha256": "e07f939c75b59a9e7bb7295bd80ba6bbad4e42430c9db0b565d3ea1e0a039673",
+      "raw_bytes": 161,
+      "curated_sha256": "e07f939c75b59a9e7bb7295bd80ba6bbad4e42430c9db0b565d3ea1e0a039673",
+      "curated_bytes": 161,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/demo/safe/scenario.json",
+      "raw_sha256": "083611c71cfd4e2d34a174a988db2e1d6348fe824cf3de83850b8116a80876c3",
+      "raw_bytes": 788,
+      "curated_sha256": "083611c71cfd4e2d34a174a988db2e1d6348fe824cf3de83850b8116a80876c3",
+      "curated_bytes": 788,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/demo/safe/summary.json",
+      "raw_sha256": "1655b5f0944fcfc06b3b2a542377262b9f0af5b7daa369402b130c8f54c5c301",
+      "raw_bytes": 204,
+      "curated_sha256": "1655b5f0944fcfc06b3b2a542377262b9f0af5b7daa369402b130c8f54c5c301",
+      "curated_bytes": 204,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/demo/safe/report.html",
+      "raw_sha256": "4f21b320d4b80b3142754938f998ac2bf42bdb8d1d68cfd18e5132fd4106dfd1",
+      "raw_bytes": 90902,
+      "curated_sha256": "4f21b320d4b80b3142754938f998ac2bf42bdb8d1d68cfd18e5132fd4106dfd1",
+      "curated_bytes": 90902,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/demo/unsafe/trace.json",
+      "raw_sha256": "30d594db8ded2836d0e47f199b8eab08230759e81e5c0f21a9c5018274f80d1e",
+      "raw_bytes": 103328,
+      "curated_sha256": "30d594db8ded2836d0e47f199b8eab08230759e81e5c0f21a9c5018274f80d1e",
+      "curated_bytes": 103328,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/demo/unsafe/history.json",
+      "raw_sha256": "a45f53fead1cc438fcbdfafa3f8b4d21515f774b971adc243f473e16fa135774",
+      "raw_bytes": 227,
+      "curated_sha256": "a45f53fead1cc438fcbdfafa3f8b4d21515f774b971adc243f473e16fa135774",
+      "curated_bytes": 227,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/demo/unsafe/scenario.json",
+      "raw_sha256": "b3846ecb723c5556ede66470830e16c64c96cded38dc868fce842ab584fdf31e",
+      "raw_bytes": 1293,
+      "curated_sha256": "b3846ecb723c5556ede66470830e16c64c96cded38dc868fce842ab584fdf31e",
+      "curated_bytes": 1293,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/demo/unsafe/summary.json",
+      "raw_sha256": "b3ba94f4cac31f60daa331bd12f0190617457ea1afe4cb59f07379fe1a979c6f",
+      "raw_bytes": 208,
+      "curated_sha256": "b3ba94f4cac31f60daa331bd12f0190617457ea1afe4cb59f07379fe1a979c6f",
+      "curated_bytes": 208,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/demo/unsafe/report.html",
+      "raw_sha256": "cc3f6c86c9134e62a69568f0f68d6e0246e3ef028c203760c5871cd22163a9a3",
+      "raw_bytes": 94022,
+      "curated_sha256": "cc3f6c86c9134e62a69568f0f68d6e0246e3ef028c203760c5871cd22163a9a3",
+      "curated_bytes": 94022,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/demo/reduced/trace.json",
+      "raw_sha256": "fdabd2eee724d6f322c4eceb7d4efa61da15f5b7df7ed709a1c492d3d13f8e10",
+      "raw_bytes": 94242,
+      "curated_sha256": "fdabd2eee724d6f322c4eceb7d4efa61da15f5b7df7ed709a1c492d3d13f8e10",
+      "curated_bytes": 94242,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/demo/reduced/history.json",
+      "raw_sha256": "bc70bb8f7cfc428b54bf0b1efc50e4d2972ecab2d46f0eb2e4166b81956b752a",
+      "raw_bytes": 166,
+      "curated_sha256": "bc70bb8f7cfc428b54bf0b1efc50e4d2972ecab2d46f0eb2e4166b81956b752a",
+      "curated_bytes": 166,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/demo/reduced/scenario.json",
+      "raw_sha256": "99e7097a16a9ecc24ffa419c4c6da5fc5bc033cd594689f657b905e31d74f2d0",
+      "raw_bytes": 678,
+      "curated_sha256": "99e7097a16a9ecc24ffa419c4c6da5fc5bc033cd594689f657b905e31d74f2d0",
+      "curated_bytes": 678,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/demo/reduced/report.html",
+      "raw_sha256": "6ab4495c44ffe6306fccb658311fd858a711b248c2c71751c8933fda7ab1316d",
+      "raw_bytes": 85982,
+      "curated_sha256": "6ab4495c44ffe6306fccb658311fd858a711b248c2c71751c8933fda7ab1316d",
+      "curated_bytes": 85982,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/demo/reduced/reduction.json",
+      "raw_sha256": "e16d60bf4579374877a762a6a9f84d468f48148185bac2ba33f1c4a8d5eb5a24",
+      "raw_bytes": 95489,
+      "curated_sha256": "e16d60bf4579374877a762a6a9f84d468f48148185bac2ba33f1c4a8d5eb5a24",
+      "curated_bytes": 95489,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/repairs/original-2ff-parallel-native-valid-overlap.json",
+      "raw_sha256": "31b7d1480b99b6dac4e540073add972deda3ca7a3335b958803d1c6a99470bbf",
+      "raw_bytes": 32703,
+      "curated_sha256": "31b7d1480b99b6dac4e540073add972deda3ca7a3335b958803d1c6a99470bbf",
+      "curated_bytes": 32703,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/repairs/original-399-serial-native-valid-overlap.json",
+      "raw_sha256": "dc862503afb067a0f4a829d6ce701660c8c67b73ddddd08b85abd7305e5de64f",
+      "raw_bytes": 32559,
+      "curated_sha256": "dc862503afb067a0f4a829d6ce701660c8c67b73ddddd08b85abd7305e5de64f",
+      "curated_bytes": 32559,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/repairs/native-review-judgments-selected.json",
+      "raw_sha256": "f045934e7f22acda50c6e10ff259d9e49b4575dead9300e27e104d8381f8e12f",
+      "raw_bytes": 24654,
+      "curated_sha256": "f045934e7f22acda50c6e10ff259d9e49b4575dead9300e27e104d8381f8e12f",
+      "curated_bytes": 24654,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/repairs/original-372-clean-summary.json",
+      "raw_sha256": "5cb494eebb5610704f3ecb04603010468878025ce38a133791a0548a25fa9cf7",
+      "raw_bytes": 1625,
+      "curated_sha256": "ad18a4136a713a524913babb8529d28b33bc6262a3d297a1b9789cc2a677deb7",
+      "curated_bytes": 1558,
+      "redactions": [
+        {
+          "kind": "CRLF-to-LF-text-normalization",
+          "count": 67
+        }
+      ]
+    },
+    {
+      "path": "verification/release-a7/repairs/original-372-native-valid-overlap-1.json",
+      "raw_sha256": "ecb61735a167efe3e6464eb7d97759089e0de87825c6e2c4a9565b0b3f329c0f",
+      "raw_bytes": 32168,
+      "curated_sha256": "ecb61735a167efe3e6464eb7d97759089e0de87825c6e2c4a9565b0b3f329c0f",
+      "curated_bytes": 32168,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/repairs/original-372-native-valid-overlap-4.json",
+      "raw_sha256": "7bd29676ab03699d406cdf863868c6184de57616f49aea2043493c6931f93d98",
+      "raw_bytes": 32984,
+      "curated_sha256": "7bd29676ab03699d406cdf863868c6184de57616f49aea2043493c6931f93d98",
+      "curated_bytes": 32984,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/repairs/original-372-native-valid-overlap-16.json",
+      "raw_sha256": "1422ff71d9cc3a8170973873dd6b9e2e4e62703c39a1f2712d3b6bd88377d577",
+      "raw_bytes": 33174,
+      "curated_sha256": "1422ff71d9cc3a8170973873dd6b9e2e4e62703c39a1f2712d3b6bd88377d577",
+      "curated_bytes": 33174,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/repairs/original-32a-native-c16-valid-overlap.json",
+      "raw_sha256": "f44b5dda67cf492c5c0d4b223c6bfdd350e65e0fec790a8d35dfea0c9e929a12",
+      "raw_bytes": 33212,
+      "curated_sha256": "f44b5dda67cf492c5c0d4b223c6bfdd350e65e0fec790a8d35dfea0c9e929a12",
+      "curated_bytes": 33212,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/repairs/pre-fix-diagnosis.json",
+      "raw_sha256": "98b9667a53eeb0103c4e9bc8964b3537f1ee08a6af09570bfa436b0fd97b94d2",
+      "raw_bytes": 29240,
+      "curated_sha256": "e3334d86e45392f4c3d4d0265ee2c76008c0277a9882937ec380f3b25415b120",
+      "curated_bytes": 27485,
+      "projection": {
+        "kind": "declared-json-engineering-location-projection",
+        "location_fields": [
+          {
+            "field": "/unchanged_execution_inputs/baseline_path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "f3854244193bdaa8d7c98497a1f21ab04c85fa74e223a02f4bc354a90b68120d"
+          },
+          {
+            "field": "/observed_hosted_failure/log_path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "fd44c2e6f9e5b434cd2b8021fbc6b48b5cf85d6a47178ec1042582df9c4e253b"
+          },
+          {
+            "field": "/observed_hosted_failure/intake_command/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "0d217894543352a80cffd62739b26eecc994ed33c6b508038d7e5bb7fee4ddf2"
+          },
+          {
+            "field": "/observed_hosted_failure/intake_command/command/1",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "ab12738393bd424ca85e3f954384fba48be33acea6ecab45ece492fafb6f79af"
+          },
+          {
+            "field": "/observed_hosted_failure/intake_command/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "3c58b0781d0a7fc8698e1b3cd86c12ad784196348d10bd6e0c72a5a7e23b2e87"
+          },
+          {
+            "field": "/observed_hosted_failure/intake_command/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "6a0ca6a4fec2f53db0e50fabd80ff5aadd74274f5902912627258e4d8e314109"
+          },
+          {
+            "field": "/actual_prior_outcomes_preserved/current_local_full_make_verify/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "2de7ec1e69b13bd2712917ef893b8080fd2900c65a21e2917cbf8b4cda84ce5d"
+          },
+          {
+            "field": "/actual_prior_outcomes_preserved/current_local_full_make_verify/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "942621c9e30e4367beec0184f5f83053ba7b7bfe116e8e04a782699470c11199"
+          },
+          {
+            "field": "/actual_prior_outcomes_preserved/current_local_full_make_verify/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "30488eb5b5f99c527a4a365cd4020bcc8b9833b4b040aae6c5b6e686ad1e213c"
+          },
+          {
+            "field": "/actual_prior_outcomes_preserved/prior_same_source_full_native_failure/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "e2018b3c7ba7556532db233b80f74f37a761a75c1e3ea3bbfc0b2b8f37d18dfc"
+          },
+          {
+            "field": "/actual_prior_outcomes_preserved/prior_same_source_full_native_failure/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "dacaec737749be4a9073912c27e9e178bab6e1538f84242881b518eaa5e7a88b"
+          },
+          {
+            "field": "/actual_prior_outcomes_preserved/prior_same_source_full_native_failure/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "14e6d48719f79f480ba8772e40ff6d9870932de57289318160b69065ca189469"
+          },
+          {
+            "field": "/actual_prior_outcomes_preserved/old_distinct_kernel_fromfiles_failure/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "5c32d1c11af5f109f3904665904181239451c6e3ab5b86ebce28d3ab4fe29627"
+          },
+          {
+            "field": "/actual_prior_outcomes_preserved/prior_native_and_harness_supplement/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "964cc6151e771ee9a4c033206254acf95ba231746097fa66e950cbce7d8f33ad"
+          },
+          {
+            "field": "/primary_context_source/local_supported_sdk_path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "388b6473203a65c7ccf300a265289221b729382f0d9e0e5859a939d182a74346"
+          }
+        ],
+        "omitted_fields": [
+          {
+            "field": "/test_spec_exception/master_path",
+            "reason": "private prompt-derived policy metadata excluded from engineering projection",
+            "omitted_value_sha256": "3508529c22739fb58d2236c7069ae170e517ac8a51656c1db99d1ba7b04b92d6"
+          },
+          {
+            "field": "/test_spec_exception/master_raw_sha256",
+            "reason": "private prompt-derived policy metadata excluded from engineering projection",
+            "omitted_value_sha256": "4c4c8f78df717cccfc07ccae5f65428a29ddc304d77bd3217418932c3935489f"
+          },
+          {
+            "field": "/test_spec_exception/relevant_rule",
+            "reason": "private prompt-derived policy metadata excluded from engineering projection",
+            "omitted_value_sha256": "e1c6c0aad8ba96b5f87297f438cfa92a9f8e31933df47fd0bf6fbd8e8aea812b"
+          },
+          {
+            "field": "/test_spec_exception/reason",
+            "reason": "private prompt-derived policy metadata excluded from engineering projection",
+            "omitted_value_sha256": "dd7840dd17faa442c36a98443c6f69ad2012316abd6fb0308c52c2b3ab02f41a"
+          }
+        ],
+        "operator_path_redactions": [],
+        "scope": "Only declared private location/prompt-metadata fields changed. Original statuses, outcomes, source maps, test/patch hashes and failure observations are preserved."
+      }
+    },
+    {
+      "path": "verification/release-a7/repairs/original-controls-review.json",
+      "raw_sha256": "c920c045018394935f2b5ef94015447bcb25604a15c3ca8a7976f95c7f505aba",
+      "raw_bytes": 12912,
+      "curated_sha256": "39b918cd7d557eb0a0c5ac11ec6cf0c6628ab68ae816b58726a6342bae9da117",
+      "curated_bytes": 12438,
+      "projection": {
+        "kind": "declared-json-engineering-location-projection",
+        "location_fields": [
+          {
+            "field": "/original_diagnosis/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "d383e6f7595036386b9935bf61203ec282bd1743d4cf0a984a6ed3d0a782132f"
+          },
+          {
+            "field": "/records/0/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "57d8b5fe04ff736eccc02e5ee2eb5b56801ec718a1965f8a8fc63840364e57c9"
+          },
+          {
+            "field": "/records/0/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "d0554f014d45eb5f985b1341bb56544e177510b003d98fa224737a478607fb7d"
+          },
+          {
+            "field": "/records/0/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "fa33a09773c6af0431fbb757cb8c6ce2a6086b9cf1ac5cc8a745c64ce7d2e4e6"
+          },
+          {
+            "field": "/records/1/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "8ea468239594c786a9ae3518ef2ff566aa88d3ce269fd6f550cb7d93fd05da41"
+          },
+          {
+            "field": "/records/1/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "21d3adb2a0d8afa36a2e9c09b8b5629ba1dbf810a1f0ae318e98afe502043b0a"
+          },
+          {
+            "field": "/records/1/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "9eab986dd41a197e25b62883a6537dd523055f3411546841937e59f0d22ae409"
+          },
+          {
+            "field": "/records/2/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "700512b43fbea41262e6ed78fde0eb9bddd35d7cfa1be2231e9e0e74bd152b3c"
+          },
+          {
+            "field": "/records/2/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "48490af9326d79cb68548618e02a78fb9b3dd0739bdb502e86efd8fc905ae945"
+          },
+          {
+            "field": "/records/2/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "3794760cb1c6bda99d3850c76562dee91cc974f3fd237ebcb05ec5b456a053eb"
+          },
+          {
+            "field": "/actual_source_variants/preserved_source_snapshots/0/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "916385350c313eaf950f767a7aff5ed1f915c407743f3790a360549b359f3fb1"
+          },
+          {
+            "field": "/actual_source_variants/preserved_source_snapshots/1/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "99a8151330e7a2f3369aa5c686bb6e54109fa10f7179b99e032ea510b9c21db5"
+          },
+          {
+            "field": "/actual_source_variants/preserved_source_snapshots/2/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "aed631ce84658551cf2cd7322014327cf4401105a3ba4da6c952f2f358532df3"
+          },
+          {
+            "field": "/actual_source_variants/preserved_source_snapshots/3/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "c10b8e1ef52a48670b08503eb8b8f13a6b17dc17001b0df63db6ead19a4668a0"
+          },
+          {
+            "field": "/FAIL/2/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "2b08fea2597a667f9061cdd786fac838f0352ef41d018437becee1f13acbe7bb"
+          }
+        ],
+        "omitted_fields": [],
+        "operator_path_redactions": [],
+        "scope": "Only declared private location/prompt-metadata fields changed. Original statuses, outcomes, source maps, test/patch hashes and failure observations are preserved."
+      }
+    },
+    {
+      "path": "verification/release-a7/repairs/v1-rejection.json",
+      "raw_sha256": "aed835cef3dc1e111802e3530119507fa8fd813e8ee49b4b4633403bff1b9abf",
+      "raw_bytes": 8754,
+      "curated_sha256": "1f6d338b7a893a81f45ecb66e549978138f615c7aa576212a4c9c7e4ec72cbdf",
+      "curated_bytes": 8210,
+      "projection": {
+        "kind": "declared-json-engineering-location-projection",
+        "location_fields": [
+          {
+            "field": "/patch/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "4588233608749c07329d2ef9ba53d6185abb5c98dacee366fe7e79643ce3638a"
+          },
+          {
+            "field": "/actual_evidence/0/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "2abf70fd6cc2f363a257c23a84969879674ac1f3f5cdad726853314b4a7732a0"
+          },
+          {
+            "field": "/actual_evidence/0/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "d3bfd538fa004bf62a1a24f99a13827e6c848fdf54500162cd8bd50fdd1c06a9"
+          },
+          {
+            "field": "/actual_evidence/0/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "ea9d13d0b1d3d3bd545f635c8d88a144b64690b6e89c14812cc07488b0f1ab61"
+          },
+          {
+            "field": "/actual_evidence/1/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "1c2bf579926fe5a135dc3a015007505b2efb86e9f01b9d196ca83ed3774d23db"
+          },
+          {
+            "field": "/actual_evidence/1/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "dcbbfdf5fcdc3877a516c64fe5e5d356e725483f6c5b1c7597c07ffed7934af6"
+          },
+          {
+            "field": "/actual_evidence/1/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "bda1c9b3905addf7cad6237c3171c18730741bd125875b61910390fb573e1c48"
+          },
+          {
+            "field": "/actual_evidence/2/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "650cb1af639e130c2c3ae48f99310a15ac2e1419b68ac93fdd7d99e3e352138b"
+          },
+          {
+            "field": "/actual_evidence/2/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "c5401970d204421f4ddab747f1d576cb2c883fa8e144d0a885bbbd92c380a77b"
+          },
+          {
+            "field": "/actual_evidence/2/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "8bde696cb8ee90261140a0c878cf58663e673426eaf24a7909f5520c6e1e2cc9"
+          }
+        ],
+        "omitted_fields": [],
+        "operator_path_redactions": [],
+        "scope": "Only declared private location/prompt-metadata fields changed. Original statuses, outcomes, source maps, test/patch hashes and failure observations are preserved."
+      }
+    },
+    {
+      "path": "verification/release-a7/repairs/cancellation-v2-review.json",
+      "raw_sha256": "9c0ab154168c690d31a284330d2e0b1fcc39fc7c986f5447177fdf9329bb3ec7",
+      "raw_bytes": 32734,
+      "curated_sha256": "0fa48d3e7f761765b8c5b163efb645a025752d23f482780268c0d42090cf7ef0",
+      "curated_bytes": 31264,
+      "projection": {
+        "kind": "declared-json-engineering-location-projection",
+        "location_fields": [
+          {
+            "field": "/frozen_patch/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "9a7cd3978b6fe4128a910c7f005c2264bf83e24ca4177ab82d56e48d27e3f1c3"
+          },
+          {
+            "field": "/proposed_document/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "0b05a6f26b4d20f53b85e1d2472e46e028acebaa6dd714a33b5cf88164e8b34b"
+          },
+          {
+            "field": "/approved_document/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "6bebd4534f7a1fb22746cbc628bf76ca38c2ca8284b9f3cecb9f644c345c00a8"
+          },
+          {
+            "field": "/original_independent_reports_retained/0/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "d383e6f7595036386b9935bf61203ec282bd1743d4cf0a984a6ed3d0a782132f"
+          },
+          {
+            "field": "/original_independent_reports_retained/1/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "9a8f701998d0677e09343a64d1f52a5bc15913e9d565a1e1938cf957b504431e"
+          },
+          {
+            "field": "/original_independent_reports_retained/2/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "f17a0d4d3aa9dfdc52aeb083deb8a5caeb011f9dba6fca3856f920f22a99af81"
+          },
+          {
+            "field": "/review_helper_failures_retained/0/record/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "707e643a45c0a3257ceff75ef6f956646209f94293fa6892b2abbbde13ddba7a"
+          },
+          {
+            "field": "/review_helper_failures_retained/0/reader_snapshot/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "6739edfd33f1b3cc62e07609cb0e311f7e0b839e28106cc13519ed97acdd35ca"
+          },
+          {
+            "field": "/review_helper_failures_retained/1/record/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "4fab55dc074069cb13c99e23223859267a65c254e554cc028178f5df244c673f"
+          },
+          {
+            "field": "/review_helper_failures_retained/1/reader_snapshot/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "cc90ace63d7550763f20d6f1779cce8865557b8d71b57ba6ef05cf73afd96810"
+          },
+          {
+            "field": "/original_control_snapshots/0/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "916385350c313eaf950f767a7aff5ed1f915c407743f3790a360549b359f3fb1"
+          },
+          {
+            "field": "/original_control_snapshots/1/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "99a8151330e7a2f3369aa5c686bb6e54109fa10f7179b99e032ea510b9c21db5"
+          },
+          {
+            "field": "/original_control_snapshots/2/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "aed631ce84658551cf2cd7322014327cf4401105a3ba4da6c952f2f358532df3"
+          },
+          {
+            "field": "/original_control_snapshots/3/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "c10b8e1ef52a48670b08503eb8b8f13a6b17dc17001b0df63db6ead19a4668a0"
+          },
+          {
+            "field": "/originals_and_actual_controls/0/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "57d8b5fe04ff736eccc02e5ee2eb5b56801ec718a1965f8a8fc63840364e57c9"
+          },
+          {
+            "field": "/originals_and_actual_controls/0/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "d0554f014d45eb5f985b1341bb56544e177510b003d98fa224737a478607fb7d"
+          },
+          {
+            "field": "/originals_and_actual_controls/0/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "fa33a09773c6af0431fbb757cb8c6ce2a6086b9cf1ac5cc8a745c64ce7d2e4e6"
+          },
+          {
+            "field": "/originals_and_actual_controls/1/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "8ea468239594c786a9ae3518ef2ff566aa88d3ce269fd6f550cb7d93fd05da41"
+          },
+          {
+            "field": "/originals_and_actual_controls/1/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "21d3adb2a0d8afa36a2e9c09b8b5629ba1dbf810a1f0ae318e98afe502043b0a"
+          },
+          {
+            "field": "/originals_and_actual_controls/1/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "9eab986dd41a197e25b62883a6537dd523055f3411546841937e59f0d22ae409"
+          },
+          {
+            "field": "/originals_and_actual_controls/2/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "700512b43fbea41262e6ed78fde0eb9bddd35d7cfa1be2231e9e0e74bd152b3c"
+          },
+          {
+            "field": "/originals_and_actual_controls/2/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "48490af9326d79cb68548618e02a78fb9b3dd0739bdb502e86efd8fc905ae945"
+          },
+          {
+            "field": "/originals_and_actual_controls/2/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "3794760cb1c6bda99d3850c76562dee91cc974f3fd237ebcb05ec5b456a053eb"
+          },
+          {
+            "field": "/originals_and_actual_controls/3/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "2abf70fd6cc2f363a257c23a84969879674ac1f3f5cdad726853314b4a7732a0"
+          },
+          {
+            "field": "/originals_and_actual_controls/3/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "d3bfd538fa004bf62a1a24f99a13827e6c848fdf54500162cd8bd50fdd1c06a9"
+          },
+          {
+            "field": "/originals_and_actual_controls/3/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "ea9d13d0b1d3d3bd545f635c8d88a144b64690b6e89c14812cc07488b0f1ab61"
+          },
+          {
+            "field": "/originals_and_actual_controls/4/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "1c2bf579926fe5a135dc3a015007505b2efb86e9f01b9d196ca83ed3774d23db"
+          },
+          {
+            "field": "/originals_and_actual_controls/4/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "dcbbfdf5fcdc3877a516c64fe5e5d356e725483f6c5b1c7597c07ffed7934af6"
+          },
+          {
+            "field": "/originals_and_actual_controls/4/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "bda1c9b3905addf7cad6237c3171c18730741bd125875b61910390fb573e1c48"
+          },
+          {
+            "field": "/originals_and_actual_controls/5/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "ec5ddab8f91ac8deb7d4f3ea815006fa7e9f1aa1f4be0b3147100bd7f4a6d669"
+          },
+          {
+            "field": "/originals_and_actual_controls/5/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "924926f19e5a9ab55a5de05d863c64b968508facb212da2ae245deb0d316ade0"
+          },
+          {
+            "field": "/originals_and_actual_controls/5/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "779235aacd55731d5e26ba2d74c1aee4441d1613fb9b1528bcc3cd138bf9b11b"
+          },
+          {
+            "field": "/originals_and_actual_controls/6/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "2baa8b14949815a05b395fe06263ffc501d652358b30c6c137d79dba62f1f1dd"
+          },
+          {
+            "field": "/originals_and_actual_controls/6/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "7bc0cfa6b2de3959cf2ac77448f385f2241447267138b2b6cddd1d73188028bd"
+          },
+          {
+            "field": "/originals_and_actual_controls/6/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "46348baace75dcd45edc291fc09a8a184fa9354515005ffcc03b0f0941d64536"
+          },
+          {
+            "field": "/originals_and_actual_controls/7/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "1031c676c3277b5adeda3850843f6323c0d195ef6fd0c2d40c1ec713033a2d8c"
+          },
+          {
+            "field": "/originals_and_actual_controls/7/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "dfc208cb3c702a2321461f2b1e5d88120ebd6008bb800c36fe0550485bc6ec4e"
+          },
+          {
+            "field": "/originals_and_actual_controls/7/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "a795ab314cf2eac7cd9f6ad6296f03be58847f3d3329298af81e34ce9d7682ba"
+          },
+          {
+            "field": "/originals_and_actual_controls/8/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "f3e640cb746792eef30a1f161253707546b20e4924983db0ea13e33ebd19ff39"
+          },
+          {
+            "field": "/originals_and_actual_controls/8/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "049954aa4b97356a7bfe902fbcafb3d0b20ae9a063c58b6040f1098176c680c2"
+          },
+          {
+            "field": "/originals_and_actual_controls/8/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "06479470c84a53dda052e639fec75bac8e83952ff91cdd6bda889c34e6bcd4f8"
+          },
+          {
+            "field": "/original_hosted_failure/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "7113dbe72b729e318e7cbe8d30f8c6de60202ea56a38f7b5038d9cb3f8df6a79"
+          }
+        ],
+        "omitted_fields": [],
+        "operator_path_redactions": [],
+        "scope": "Only declared private location/prompt-metadata fields changed. Original statuses, outcomes, source maps, test/patch hashes and failure observations are preserved."
+      }
+    },
+    {
+      "path": "verification/release-a7/repairs/metadata-review.json",
+      "raw_sha256": "596bed5feaf48e665e2163049ed6d4bbbceb358296a86247c6073ea99df6681d",
+      "raw_bytes": 20931,
+      "curated_sha256": "312dc5efa2c0ba56ad39d0d682dc41f530ba164115f397ec5f8828e9986f977d",
+      "curated_bytes": 19099,
+      "projection": {
+        "kind": "declared-json-engineering-location-projection",
+        "location_fields": [
+          {
+            "field": "/proposal/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "3c3fc49f872b3821459d48e2ac76ae3166ec358e621ca1a6fa336182d65b7d8d"
+          },
+          {
+            "field": "/patch/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "84890b1cd0f33d8e183390c18a75564993e7794034368b868bcfd2e8317e198f"
+          },
+          {
+            "field": "/actual_evidence/0/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "4412821a8d0aa8c96c151a1fd30b171f98ea438174838bb662264892acfc0106"
+          },
+          {
+            "field": "/actual_evidence/0/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "bb1b3eb5505166d84f6fd16f71d6503a40a6e3ef11aef6705ef4c46569a82f8b"
+          },
+          {
+            "field": "/actual_evidence/0/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "5744b36ec2d624c72b5f4dfeb7aa669fa1572646979180d4f3c3396be373f34e"
+          },
+          {
+            "field": "/actual_evidence/1/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "b4585d525fe229a07075b944b976237c39b1b87dcb4158523a673673cdf75ece"
+          },
+          {
+            "field": "/actual_evidence/1/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "7d2ac44b47bfa6857a6680b4f6b40150e1accba3af8ede6f244485bbc38718f9"
+          },
+          {
+            "field": "/actual_evidence/1/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "17f510406adcdf9b97696f002061feb272ec419293bc075a107018a7b21f2c0d"
+          },
+          {
+            "field": "/actual_evidence/2/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "b6f5f3339cdc2e92971f569af0ca5814d748ee3873d306e85a24810c8876021b"
+          },
+          {
+            "field": "/actual_evidence/2/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "c8718ab19f976dec77e03bb244b0ca7e5850596d697a72b8a0dae8cbd0230c23"
+          },
+          {
+            "field": "/actual_evidence/2/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "3cccd76476278dc6a974787f2405000c364455d28e327415dd5fe9fca3cc812f"
+          },
+          {
+            "field": "/actual_evidence/3/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "d1f6e019b3bffebad43c97cafa31215077e017016dc5b7590c7b6d1235fbd6ae"
+          },
+          {
+            "field": "/actual_evidence/3/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "0a471d1587900772028bfc46dc352b74c76b93f5d40991f3e33188f50cb9a90b"
+          },
+          {
+            "field": "/actual_evidence/3/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "d031af5bebc24f6b1a22b38c9857ab50919cb259c96a6f4fb15689cac7ec91a3"
+          },
+          {
+            "field": "/actual_evidence/4/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "83deb95bc22946f3ef52ccafd02d7195809685407305fecacdc87f938690a785"
+          },
+          {
+            "field": "/actual_evidence/4/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "954f1d08299e30645f6f7d90210532dcd1c74157f9c655c57f12c1f315ed24ef"
+          },
+          {
+            "field": "/actual_evidence/4/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "04c94b24132984376687b9e71089b0bba13f3f3c0c61c0be8c2ccff6fa4f08ee"
+          },
+          {
+            "field": "/actual_evidence/5/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "ca3ad5a98da336aec1773744b01d508522877da29b9e0f006a16eb1ad1cf43e8"
+          },
+          {
+            "field": "/actual_evidence/5/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "6492e760feaa22dec686e27ed8ee24019f9131faf856502a4c00d3ce5f98e808"
+          },
+          {
+            "field": "/actual_evidence/5/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "114723c54e6dcad1ea36565dbf6561612e489793226d520b911c7da09f4e5842"
+          },
+          {
+            "field": "/actual_evidence/6/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "ad440274eba789ff25312651bb0191f33ca038470d7d03b4c04794f38ed06f3c"
+          },
+          {
+            "field": "/actual_evidence/6/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "22d1a6598eee545ea68ad4b89d7e79517e9bf8ff62d2a6f4d97d3b06dff515ff"
+          },
+          {
+            "field": "/actual_evidence/6/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "b573a2b5ce7edb765126fad57cacb245099971c69049bb7ef39d6c6b3887005d"
+          },
+          {
+            "field": "/actual_evidence/7/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "ac5a1ab2f833c15f40708629b2dd7ac6e38a2350dd989ac904c8ebb9fd04d467"
+          },
+          {
+            "field": "/actual_evidence/7/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "b678bcb0ff9dd3c174f5c55b0c00058504bc94613baa3ce5ea0ffa85019d371d"
+          },
+          {
+            "field": "/actual_evidence/7/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "d8eae0fe1bffa53af39604452235346794274465c09e9d59fdb172a428e00a3c"
+          },
+          {
+            "field": "/actual_evidence/8/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "778fb2b0d431a6dd6714cadb4dc226d6da1102431942d1b8af4722bb7de50d77"
+          },
+          {
+            "field": "/actual_evidence/8/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "25ba9925726a9ab7e8b79c591d63024fadb9e021420c0cb52ce1fd3fc6da39aa"
+          },
+          {
+            "field": "/actual_evidence/8/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "32ccba7f5c8049ac0d37e13f837e5e423d579f400f097d6efff21f1ea505f14e"
+          },
+          {
+            "field": "/actual_evidence/9/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "67e3da9dceda69b62c640bc91e1122ce2c0908c49f33f4623024ee48fd4e9bc4"
+          },
+          {
+            "field": "/actual_evidence/9/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "ef0d3e414bef2d87e6f61dd4567526961ebf779d8a771abcc373d1bccfc54c95"
+          },
+          {
+            "field": "/actual_evidence/9/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "c822518b43d0f9a8b03763a5c61a86f5ce4d11277e181106a1fb7a81c31d70a5"
+          }
+        ],
+        "omitted_fields": [],
+        "operator_path_redactions": [],
+        "scope": "Only declared private location/prompt-metadata fields changed. Original statuses, outcomes, source maps, test/patch hashes and failure observations are preserved."
+      }
+    },
+    {
+      "path": "verification/release-a7/repairs/native-profile-diagnosis.json",
+      "raw_sha256": "99ee90d85965ce8fe30ed91435eeb6a06e9b4fb3a754e8df29edaec509dd113e",
+      "raw_bytes": 9486,
+      "curated_sha256": "a378eaa0195c26e341fd704af0e5ba4eb74d56647bf0ab25242bd767e12b5b67",
+      "curated_bytes": 9112,
+      "projection": {
+        "kind": "declared-json-engineering-location-projection",
+        "location_fields": [
+          {
+            "field": "/actual_originals/0/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "588083869d88b5a01288864eb984ebfc81e27efe4e622d1d060ae8ddbb184839"
+          },
+          {
+            "field": "/actual_originals/0/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "f83e39431eeee6d82da37e3800ef3b7b811d3792a5625b819e9d45e8647abe37"
+          },
+          {
+            "field": "/actual_originals/0/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "9154e53e8ba61b08c475f2796455f1ab6f91fdbdfe97766d69bf5962dd69e99e"
+          },
+          {
+            "field": "/actual_originals/1/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "a745190b717cbf36eb86b3570e89397b6b12646e5f75ca26de93634d05b47b58"
+          },
+          {
+            "field": "/actual_originals/1/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "1ddbd0835fef32a97a66b93414824335347d64f2da210072f7ae4be358aa5069"
+          },
+          {
+            "field": "/actual_originals/1/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "ae4d49882126950165df4e9cafeb06301a14061b5d2bec6ce902a8056616368e"
+          }
+        ],
+        "omitted_fields": [],
+        "operator_path_redactions": [],
+        "scope": "Only declared private location/prompt-metadata fields changed. Original statuses, outcomes, source maps, test/patch hashes and failure observations are preserved."
+      }
+    },
+    {
+      "path": "verification/release-a7/repairs/package-profile-exact-assessment.json",
+      "raw_sha256": "88469fa7390f30a0d92e9e551c6f8fa98357723322a90a022266e04cc14513dd",
+      "raw_bytes": 11677,
+      "curated_sha256": "7cbdf23e04c76e48329e4205a0c1fdeb1cb0c1d08c85825a32808044881a99f7",
+      "curated_bytes": 10578,
+      "projection": {
+        "kind": "declared-json-engineering-location-projection",
+        "location_fields": [
+          {
+            "field": "/exact_patch/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "6b8fcba8016be756fd7563682c1e18ce419ae9dcf41f57125540cba2ab9b1485"
+          },
+          {
+            "field": "/exact_proposal/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "a39e4a55ece5eb0e5ef7ef145fddd84e0c8117e5c5cfe5414bf2018f002330e0"
+          },
+          {
+            "field": "/actual_independent_capture/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "3d7057e6b199a69259227fd54958748a6ab8d0e492d07013e053cd9b900144e0"
+          },
+          {
+            "field": "/actual_independent_capture/command/1",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "804cbb039abd4dd5962ef98dd3dae3c1983cca37ee6055e0e883e4e301000e9e"
+          },
+          {
+            "field": "/actual_independent_capture/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "2318b9b69395f8ac61e81c23fd95ee9c492db8176bb2b09b52faa9955d43ed26"
+          },
+          {
+            "field": "/actual_independent_capture/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "8d1a24e25735528dfdb40b8a97d79c7dfc994e696ecd3ad5f5015f95ba96a5f6"
+          },
+          {
+            "field": "/actual_capture_invocation/5",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "b1db790796a6f8bc8573a2557172e2d09ad58739458ebcbd195ca3d7601cef3e"
+          },
+          {
+            "field": "/actual_capture_invocation/14",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "804cbb039abd4dd5962ef98dd3dae3c1983cca37ee6055e0e883e4e301000e9e"
+          },
+          {
+            "field": "/capture_process_environment_set_for_this_invocation/PATH_prefix",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "95212c24a5d7e26e905ab6bab2bf96a0652dde7746c0872d9348f4777bf30e39"
+          },
+          {
+            "field": "/independent_checks/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "b8642f3322fc5531d45e69b305616760467c9155c52d9ccfe6f7801e49640b41"
+          },
+          {
+            "field": "/independent_helper/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "20a993c7b248f71cd98e63ca5aec906b9e070b8464e67448560999b578c4f760"
+          },
+          {
+            "field": "/actual_serial_control/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "68e76d57b15f5708946f5d39853cde5f841f27e4dd2035807763233a40d585b4"
+          },
+          {
+            "field": "/actual_serial_control/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "3614e4610e3bef8c9d3358e082adcc8110c85c21235a12173464a13da8bedb5f"
+          },
+          {
+            "field": "/actual_serial_control/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "d59ebb4f2b7f559eb921d2acea5a3df165d0933d3f3f0e2ec07a92ae93d2a85d"
+          },
+          {
+            "field": "/retained_actual_parallel_failure/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "a745190b717cbf36eb86b3570e89397b6b12646e5f75ca26de93634d05b47b58"
+          },
+          {
+            "field": "/retained_actual_parallel_failure/stdout/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "1ddbd0835fef32a97a66b93414824335347d64f2da210072f7ae4be358aa5069"
+          },
+          {
+            "field": "/retained_actual_parallel_failure/stderr/path",
+            "kind": "scoped-owned-absolute-engineering-location",
+            "count": 1,
+            "original_value_sha256": "ae4d49882126950165df4e9cafeb06301a14061b5d2bec6ce902a8056616368e"
+          },
+          {
+            "field": "/findings_document/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "e67dded6128134155e6edbd8881568fdf9675f34327739ef3315026287ba6461"
+          }
+        ],
+        "omitted_fields": [],
+        "operator_path_redactions": [
+          {
+            "kind": "operator-path-prefix",
+            "replacement": "[public-root]",
+            "count": 1
+          }
+        ],
+        "scope": "Only declared private location/prompt-metadata fields changed. Original statuses, outcomes, source maps, test/patch hashes and failure observations are preserved."
+      }
+    },
+    {
+      "path": "verification/release-a7/repairs/runtime-review-fields-selected.json",
+      "raw_sha256": "cfefc3df43e4d3e1500357ca4230cfd8a69a278d63780e1935c057b1b0d46dd2",
+      "raw_bytes": 41023,
+      "curated_sha256": "cfefc3df43e4d3e1500357ca4230cfd8a69a278d63780e1935c057b1b0d46dd2",
+      "curated_bytes": 41023,
+      "projection": {
+        "kind": "declared-json-engineering-location-projection",
+        "location_fields": [],
+        "omitted_fields": [],
+        "operator_path_redactions": [],
+        "scope": "Only declared private location/prompt-metadata fields changed. Original statuses, outcomes, source maps, test/patch hashes and failure observations are preserved."
+      }
+    },
+    {
+      "path": "verification/release-a7/repairs/a11-runtime-review-fields-selected.json",
+      "raw_sha256": "46c1fc50dfae199c51240ec5d3ec55115482296941d5a0f8607f3773333d0b78",
+      "raw_bytes": 120580,
+      "curated_sha256": "cdac1d20d06e1db45ae967a8eabec020638afddfaec0b6d8868c5ab3c95da709",
+      "curated_bytes": 120034,
+      "projection": {
+        "kind": "declared-json-engineering-location-projection",
+        "location_fields": [
+          {
+            "field": "/original_documents/0/original_report_path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "017b5f8e2aa0c185dc9a5da10592dfe314f4dace4d41123498dcad6b83027378"
+          },
+          {
+            "field": "/original_documents/1/original_report_path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "d12e109f7a7f04815758982b8ede52f423ee6dcaa318b04e4ccd063d43b4245d"
+          },
+          {
+            "field": "/original_documents/2/original_report_path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "694d39389dff1e16c3d1a4942261e461affe39a32b18f7495878df4635cf22fd"
+          },
+          {
+            "field": "/original_documents/2/selected_original_fields/26/value/preserved_v1/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "626cb0b2dc4ef5bd53cfd89ed5758f483eb42eba3fb2d28b117308b83ab7f13f"
+          },
+          {
+            "field": "/original_documents/2/selected_original_fields/26/value/actual_stdlib/path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "d98dec27ed2e30c823eab43ef7b7798e6e7cd6535231f2c976e76599cc5fb8cf"
+          },
+          {
+            "field": "/original_documents/3/original_report_path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "6acf07382529946f28c778f1d81eebb0016e288d0c329b1edf71fc0d7b6fc85b"
+          },
+          {
+            "field": "/original_documents/4/original_report_path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "fee5154baed21fa20557256c693cd9be136a177d2d92a1b2726a566d8871f04e"
+          },
+          {
+            "field": "/original_documents/5/original_report_path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "c9e79a1dbf3422828e0fa035d0a20bc7d26404718eeeb118ec6a1a7c995e6ae6"
+          },
+          {
+            "field": "/original_documents/6/original_report_path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "06ac380d7b962328ee2ebc4be3c4cf87cef6dcd70f8aae5b5d45955681d8a774"
+          },
+          {
+            "field": "/original_documents/7/original_report_path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "cf5669e47b3d3f0d20b8318bd3d667f3eadfc89da654c35814e43ecbf1a6772c"
+          },
+          {
+            "field": "/original_documents/8/original_report_path",
+            "kind": "scoped-relative-engineering-location",
+            "count": 1,
+            "original_value_sha256": "dd1158fe5b5ff54fb1ee10daf79dd80c538dcafab8aac2b79e85c6a1caa1d3c3"
+          }
+        ],
+        "omitted_fields": [],
+        "operator_path_redactions": [
+          {
+            "kind": "operator-path-prefix",
+            "replacement": "[python-runtime-root]",
+            "count": 2
+          },
+          {
+            "kind": "operator-path-prefix",
+            "replacement": "[public-root]",
+            "count": 4
+          },
+          {
+            "kind": "operator-path-prefix",
+            "replacement": "[owned-temp-root]",
+            "count": 4
+          }
+        ],
+        "scope": "Only declared private location/prompt-metadata fields changed. Original statuses, outcomes, source maps, test/patch hashes and failure observations are preserved."
+      }
+    },
+    {
+      "path": "verification/release-a7/repairs/a12-original-44ce-native-c1.json",
+      "raw_sha256": "487cc26aa2ebdb9cd7666b77da5225e6f023a53ffaa61bb1caa4bdf903cc1379",
+      "raw_bytes": 23800,
+      "curated_sha256": "487cc26aa2ebdb9cd7666b77da5225e6f023a53ffaa61bb1caa4bdf903cc1379",
+      "curated_bytes": 23800,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/repairs/a12-original-44ce-native-c4.json",
+      "raw_sha256": "0b45ec036345a0c06c53ebb7f6a1831249d3820cc2be11a5873def3d50a595c9",
+      "raw_bytes": 24336,
+      "curated_sha256": "0b45ec036345a0c06c53ebb7f6a1831249d3820cc2be11a5873def3d50a595c9",
+      "curated_bytes": 24336,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/repairs/a12-original-44ce-native-c16.json",
+      "raw_sha256": "0f7fdbe540c3034315ccc5879c04472e8fe6d5f8927c8f1ac6458fc9f84570f7",
+      "raw_bytes": 24359,
+      "curated_sha256": "0f7fdbe540c3034315ccc5879c04472e8fe6d5f8927c8f1ac6458fc9f84570f7",
+      "curated_bytes": 24359,
+      "redactions": []
+    },
+    {
+      "path": "verification/release-a7/repairs/a12-core-contract-and-scope-selected.json",
+      "raw_sha256": "e79819e0dcbac480529179118e08818dc1258874f1c4dbd61cb7b039adc229fa",
+      "raw_bytes": 22717,
+      "curated_sha256": "e79819e0dcbac480529179118e08818dc1258874f1c4dbd61cb7b039adc229fa",
+      "curated_bytes": 22717,
+      "projection": {
+        "kind": "declared-json-engineering-location-projection",
+        "location_fields": [],
+        "omitted_fields": [],
+        "operator_path_redactions": [],
+        "scope": "Only declared private location/prompt-metadata fields changed. Original statuses, outcomes, source maps, test/patch hashes and failure observations are preserved."
+      }
+    },
+    {
+      "path": "verification/release-a7/repairs/a12-original-failures-and-findings-selected.json",
+      "raw_sha256": "102adca5d0a6adb3b5761616aa355bb6ceeec970df2aa65d9e1c0963972607b1",
+      "raw_bytes": 19549,
+      "curated_sha256": "102adca5d0a6adb3b5761616aa355bb6ceeec970df2aa65d9e1c0963972607b1",
+      "curated_bytes": 19549,
+      "projection": {
+        "kind": "declared-json-engineering-location-projection",
+        "location_fields": [],
+        "omitted_fields": [],
+        "operator_path_redactions": [],
+        "scope": "Only declared private location/prompt-metadata fields changed. Original statuses, outcomes, source maps, test/patch hashes and failure observations are preserved."
+      }
+    },
+    {
+      "path": "verification/release-a7/repairs/a12-cli-contract-and-synthetic-controls-selected.json",
+      "raw_sha256": "2fbb715fc74a4bda9f9470524089a0829cda1660b1a1d77c06876c27595e1b9b",
+      "raw_bytes": 12498,
+      "curated_sha256": "2fbb715fc74a4bda9f9470524089a0829cda1660b1a1d77c06876c27595e1b9b",
+      "curated_bytes": 12498,
+      "projection": {
+        "kind": "declared-json-engineering-location-projection",
+        "location_fields": [],
+        "omitted_fields": [],
+        "operator_path_redactions": [],
+        "scope": "Only declared private location/prompt-metadata fields changed. Original statuses, outcomes, source maps, test/patch hashes and failure observations are preserved."
+      }
+    },
+    {
+      "path": "verification/release-a7/repairs/a12-combined-production-observations-selected.json",
+      "raw_sha256": "e7088e68aa3d967e6547ecc32e054327e34571d2b513ea16e05d1dec25aad128",
+      "raw_bytes": 9720,
+      "curated_sha256": "e7088e68aa3d967e6547ecc32e054327e34571d2b513ea16e05d1dec25aad128",
+      "curated_bytes": 9720,
+      "projection": {
+        "kind": "declared-json-engineering-location-projection",
+        "location_fields": [],
+        "omitted_fields": [],
+        "operator_path_redactions": [],
+        "scope": "Only declared private location/prompt-metadata fields changed. Original statuses, outcomes, source maps, test/patch hashes and failure observations are preserved."
+      }
+    },
+    {
+      "path": "verification/release-a7/repairs/a12-original-source-review-fields-selected.json",
+      "raw_sha256": "cacf433f782fe255d4016139807170823f48716ee24fa651677d7a06015c004b",
+      "raw_bytes": 17624,
+      "curated_sha256": "cacf433f782fe255d4016139807170823f48716ee24fa651677d7a06015c004b",
+      "curated_bytes": 17624,
+      "projection": {
+        "kind": "declared-json-engineering-location-projection",
+        "location_fields": [],
+        "omitted_fields": [],
+        "operator_path_redactions": [],
+        "scope": "Only declared private location/prompt-metadata fields changed. Original statuses, outcomes, source maps, test/patch hashes and failure observations are preserved."
+      }
+    }
+  ]
+}

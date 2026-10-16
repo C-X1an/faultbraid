@@ -1,0 +1,14 @@
+=== RUN   TestReplayRejectsCancellationBeforeAndDuringValidation
+=== RUN   TestReplayRejectsCancellationBeforeAndDuringValidation/200
+=== RUN   TestReplayRejectsCancellationBeforeAndDuringValidation/570
+=== RUN   TestReplayRejectsCancellationBeforeAndDuringValidation/576
+--- PASS: TestReplayRejectsCancellationBeforeAndDuringValidation (0.38s)
+    --- PASS: TestReplayRejectsCancellationBeforeAndDuringValidation/200 (0.03s)
+    --- PASS: TestReplayRejectsCancellationBeforeAndDuringValidation/570 (0.09s)
+    --- PASS: TestReplayRejectsCancellationBeforeAndDuringValidation/576 (0.09s)
+=== RUN   TestRunTerminalCancellationPreservesUnknownTraceAndDigest
+--- PASS: TestRunTerminalCancellationPreservesUnknownTraceAndDigest (0.26s)
+=== RUN   TestCancellationAfterReplayReturnDoesNotInvalidateCompletedWork
+--- PASS: TestCancellationAfterReplayReturnDoesNotInvalidateCompletedWork (0.28s)
+PASS
+ok  	github.com/C-X1an/faultbraid/tests/security	4.357s

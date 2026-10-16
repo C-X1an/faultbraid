@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "run_id": "20261015T173702-660a7e4fc8",
+  "category": "a11-native-environment-strict-guard-changed-hash",
+  "requirements": [],
+  "command": [
+    "[operator-profile]\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+    "-NoLogo",
+    "-NoProfile",
+    "-NonInteractive",
+    "-File",
+    "[recorded-working-root]\\guard-fixtures\\changed-hash\\env-native.ps1"
+  ],
+  "cwd": "[recorded-working-root]",
+  "started_utc": "2026-10-15T17:37:02.375788+00:00",
+  "ended_utc": "2026-10-15T17:37:03.035255+00:00",
+  "duration_seconds": 0.6720000000204891,
+  "status": "FAIL",
+  "reason": "completed",
+  "exit_code": 1,
+  "environment": {
+    "os": "Windows",
+    "release": "11",
+    "architecture": "AMD64",
+    "python": "3.12.14",
+    "go": "go version go1.27.2 windows/amd64",
+    "cpu": "13th Gen Intel(R) Core(TM) i9-13900H",
+    "logical_cpus": 20,
+    "host_memory": "34048978944 bytes",
+    "container_limits": "not inferred from host totals"
+  },
+  "source": {
+    "git_commit": null,
+    "git_dirty": true,
+    "source_tree_sha256": "0d755a1979fb6b7ca0d40d932932041e91c660b7d2c1f1d145b9abf10074c989",
+    "files": [
+      {
+        "path": "activation-fixture/env-native.ps1",
+        "sha256": "c15ed13cbe4f51b0e9267d75c8a44c47a3c2e27e0fca71f266b6c50d80801145"
+      },
+      {
+        "path": "activation-fixture/env.ps1",
+        "sha256": "76e663541dc6eee5dda3c23bb76931e91c3780ec31171a3e4fdae253224f70b5"
+      },
+      {
+        "path": "candidate_probe.ps1",
+        "sha256": "cf3a6252cfed9348b80416ac0f5a2c341f00124a967e796772dacc2bc2126d08"
+      },
+      {
+        "path": "candidate_probe_v2.ps1",
+        "sha256": "975e71166bf122ecd2b5582452007e4b91ef077065df0e411fb29eb7954f02be"
+      },
+      {
+        "path": "candidate_probe_v3.ps1",
+        "sha256": "717cde5333f424442505f997e97f4651cb037804abfc9807fa0ad93de4f47c10"
+      },
+      {
+        "path": "env-native.candidate.ps1",
+        "sha256": "c15ed13cbe4f51b0e9267d75c8a44c47a3c2e27e0fca71f266b6c50d80801145"
+      },
+      {
+        "path": "environment_probe.py",
+        "sha256": "ce789b2c98620146ed2fc58431466c9abdf3638bf6fdc61a44fc068eec6f98aa"
+      },
+      {
+        "path": "guard-controls.json",
+        "sha256": "a4d5533746092b3fc1087fa2ced2e00db8d7c1354cf53f8514303b7eb9707115"
+      },
+      {
+        "path": "guard-fixtures/changed-hash/env-native.ps1",
+        "sha256": "c71aa72c7d243205044dd193c51f73a722cdf157a9ea073e2ee03b372dfd1177"
+      },
+      {
+        "path": "guard-fixtures/changed-hash/env.ps1",
+        "sha256": "76e663541dc6eee5dda3c23bb76931e91c3780ec31171a3e4fdae253224f70b5"
+      },
+      {
+        "path": "guard-fixtures/missing/env-native.ps1",
+        "sha256": "d4b79d2f55b17b5ad9dae8294f3f26c9bdff3b35b972f7b9ff4edba9078c8fe6"
+      },
+      {
+        "path": "guard-fixtures/missing/env.ps1",
+        "sha256": "76e663541dc6eee5dda3c23bb76931e91c3780ec31171a3e4fdae253224f70b5"
+      },
+      {
+        "path": "guard-fixtures/old-cloud-reparse/env-native.ps1",
+        "sha256": "c5fabf1663e83596dfdab7e7a941fc89a688a05fa3e8ab11652cfcf7c04c44b2"
+      },
+      {
+        "path": "guard-fixtures/old-cloud-reparse/env.ps1",
+        "sha256": "76e663541dc6eee5dda3c23bb76931e91c3780ec31171a3e4fdae253224f70b5"
+      },
+      {
+        "path": "observe_metadata.ps1",
+        "sha256": "cd6eaf346765e77e2f77b294d169c07d7cc16ff8e3106a2cf54061611e392dd1"
+      },
+      {
+        "path": "old-environment-observation.json",
+        "sha256": "3f083e67a164a9dc4324b40d25582a7de6da882f6bcf1f1f5d7f00b70a49adce"
+      },
+      {
+        "path": "preparation.json",
+        "sha256": "92bf006ef102d0536f9fb78d4e9e37cfff5dee1eb38bb0a165dfb06b164dd444"
+      },
+      {
+        "path": "prepare_controls.py",
+        "sha256": "f832af180f9930c5731556a4f3d59e9b524c73ee1d04c9b83e02fd6a760b2a35"
+      },
+      {
+        "path": "prepare_environment.py",
+        "sha256": "b80f9ffa5efc1d45bce01057872709c8b8df3d7a92afd687065a9627b4f79bb6"
+      },
+      {
+        "path": "run_timeout_control.ps1",
+        "sha256": "e550120f8532e0ca4db9c25f99a7430e50a18e1a12acf6ff018caebf31f5b5ca"
+      },
+      {
+        "path": "timeout-plain-observations.json",
+        "sha256": "30220878c55924f05a114dd74adb7ca0e6d21b2c3a480b9acee12f5b55cc7c6f"
+      },
+      {
+        "path": "timeout_control.py",
+        "sha256": "a459eccdf4e98a2d7e6a725ef53cd6dd09d25b99eef19cf6b213214c9ad8cf01"
+      }
+    ]
+  },
+  "stdout": {
+    "path": "verification/curated/20261015T173702-660a7e4fc8/stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "stderr": {
+    "path": "verification/curated/20261015T173702-660a7e4fc8/stderr.txt",
+    "sha256": "6232215b64e824d8e67293bfdbf3214f722a4f8b7adbdb4eb336e90e0c766343",
+    "bytes": 295
+  },
+  "curation": {
+    "schema_version": 1,
+    "raw_record_sha256": "28c69bf3a792bcf67fd5fd171e9dad15bdbc8add33b58b0aa69349d220afc1e9",
+    "scope": "selected real engineering command; excludes agent session/chat/prompt data",
+    "source_identity_status": "original fields and full file hashes unchanged",
+    "streams": {
+      "stdout": {
+        "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_bytes": 0,
+        "curated_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "curated_bytes": 0,
+        "redactions": []
+      },
+      "stderr": {
+        "raw_sha256": "4ed1dc955aaf8040a5b9b31c1206498a1c9f66087870bbb22b6520c98807d269",
+        "raw_bytes": 420,
+        "curated_sha256": "6232215b64e824d8e67293bfdbf3214f722a4f8b7adbdb4eb336e90e0c766343",
+        "curated_bytes": 295,
+        "redactions": [
+          {
+            "kind": "CRLF-to-LF-text-normalization",
+            "count": 5
+          },
+          {
+            "kind": "operator-path-prefix",
+            "replacement": "[recorded-working-root]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    "metadata_redactions": [
+      {
+        "kind": "operator-path-prefix",
+        "replacement": "[operator-profile]",
+        "count": 1
+      },
+      {
+        "kind": "operator-path-prefix",
+        "replacement": "[recorded-working-root]",
+        "count": 1
+      },
+      {
+        "kind": "operator-path-prefix",
+        "replacement": "[recorded-working-root]",
+        "count": 1
+      }
+    ]
+  }
+}

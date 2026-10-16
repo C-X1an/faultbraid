@@ -1,0 +1,1338 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "input_sha256": "e3ee6ce8e7c3ba889276c9b9a1663bdf7af4e97c524119390e5c85f80b6a2201",
+  "input_bytes": 15459,
+  "expected_samples": 7,
+  "benchmarks": [
+    {
+      "package": "github.com/C-X1an/faultbraid/internal/history",
+      "name": "BenchmarkCheck12-4",
+      "sample_count": 7,
+      "samples": [
+        {
+          "iterations": 130147,
+          "ns/op": 1027.0,
+          "states/op": 13.0,
+          "B/op": 936.0,
+          "allocs/op": 6.0
+        },
+        {
+          "iterations": 94414,
+          "ns/op": 1186.0,
+          "states/op": 13.0,
+          "B/op": 936.0,
+          "allocs/op": 6.0
+        },
+        {
+          "iterations": 105326,
+          "ns/op": 1329.0,
+          "states/op": 13.0,
+          "B/op": 936.0,
+          "allocs/op": 6.0
+        },
+        {
+          "iterations": 109317,
+          "ns/op": 1096.0,
+          "states/op": 13.0,
+          "B/op": 936.0,
+          "allocs/op": 6.0
+        },
+        {
+          "iterations": 104136,
+          "ns/op": 1067.0,
+          "states/op": 13.0,
+          "B/op": 936.0,
+          "allocs/op": 6.0
+        },
+        {
+          "iterations": 122448,
+          "ns/op": 1036.0,
+          "states/op": 13.0,
+          "B/op": 936.0,
+          "allocs/op": 6.0
+        },
+        {
+          "iterations": 120558,
+          "ns/op": 955.5,
+          "states/op": 13.0,
+          "B/op": 936.0,
+          "allocs/op": 6.0
+        }
+      ],
+      "metrics": {
+        "B/op": {
+          "median": 936.0,
+          "min": 936.0,
+          "max": 936.0,
+          "q1": 936.0,
+          "q3": 936.0
+        },
+        "allocs/op": {
+          "median": 6.0,
+          "min": 6.0,
+          "max": 6.0,
+          "q1": 6.0,
+          "q3": 6.0
+        },
+        "ns/op": {
+          "median": 1067.0,
+          "min": 955.5,
+          "max": 1329.0,
+          "q1": 1031.5,
+          "q3": 1141.0
+        },
+        "states/op": {
+          "median": 13.0,
+          "min": 13.0,
+          "max": 13.0,
+          "q1": 13.0,
+          "q3": 13.0
+        }
+      }
+    },
+    {
+      "package": "github.com/C-X1an/faultbraid/internal/history",
+      "name": "BenchmarkCheckOverlap12-4",
+      "sample_count": 7,
+      "samples": [
+        {
+          "iterations": 778,
+          "ns/op": 158481.0,
+          "states/op": 1911.0,
+          "B/op": 109440.0,
+          "allocs/op": 26.0
+        },
+        {
+          "iterations": 828,
+          "ns/op": 144301.0,
+          "states/op": 1911.0,
+          "B/op": 109440.0,
+          "allocs/op": 26.0
+        },
+        {
+          "iterations": 778,
+          "ns/op": 148484.0,
+          "states/op": 1911.0,
+          "B/op": 109440.0,
+          "allocs/op": 26.0
+        },
+        {
+          "iterations": 793,
+          "ns/op": 159701.0,
+          "states/op": 1911.0,
+          "B/op": 109440.0,
+          "allocs/op": 26.0
+        },
+        {
+          "iterations": 621,
+          "ns/op": 190223.0,
+          "states/op": 1911.0,
+          "B/op": 109440.0,
+          "allocs/op": 26.0
+        },
+        {
+          "iterations": 678,
+          "ns/op": 182446.0,
+          "states/op": 1911.0,
+          "B/op": 109440.0,
+          "allocs/op": 26.0
+        },
+        {
+          "iterations": 722,
+          "ns/op": 163924.0,
+          "states/op": 1911.0,
+          "B/op": 109440.0,
+          "allocs/op": 26.0
+        }
+      ],
+      "metrics": {
+        "B/op": {
+          "median": 109440.0,
+          "min": 109440.0,
+          "max": 109440.0,
+          "q1": 109440.0,
+          "q3": 109440.0
+        },
+        "allocs/op": {
+          "median": 26.0,
+          "min": 26.0,
+          "max": 26.0,
+          "q1": 26.0,
+          "q3": 26.0
+        },
+        "ns/op": {
+          "median": 159701.0,
+          "min": 144301.0,
+          "max": 190223.0,
+          "q1": 153482.5,
+          "q3": 173185.0
+        },
+        "states/op": {
+          "median": 1911.0,
+          "min": 1911.0,
+          "max": 1911.0,
+          "q1": 1911.0,
+          "q3": 1911.0
+        }
+      }
+    },
+    {
+      "package": "github.com/C-X1an/faultbraid/internal/history",
+      "name": "BenchmarkOracleSequential12-4",
+      "sample_count": 7,
+      "samples": [
+        {
+          "iterations": 80166,
+          "ns/op": 1468.0,
+          "B/op": 616.0,
+          "allocs/op": 6.0
+        },
+        {
+          "iterations": 81572,
+          "ns/op": 1472.0,
+          "B/op": 616.0,
+          "allocs/op": 6.0
+        },
+        {
+          "iterations": 80899,
+          "ns/op": 1492.0,
+          "B/op": 616.0,
+          "allocs/op": 6.0
+        },
+        {
+          "iterations": 83074,
+          "ns/op": 1478.0,
+          "B/op": 616.0,
+          "allocs/op": 6.0
+        },
+        {
+          "iterations": 78630,
+          "ns/op": 1513.0,
+          "B/op": 616.0,
+          "allocs/op": 6.0
+        },
+        {
+          "iterations": 79336,
+          "ns/op": 1542.0,
+          "B/op": 616.0,
+          "allocs/op": 6.0
+        },
+        {
+          "iterations": 77546,
+          "ns/op": 1545.0,
+          "B/op": 616.0,
+          "allocs/op": 6.0
+        }
+      ],
+      "metrics": {
+        "B/op": {
+          "median": 616.0,
+          "min": 616.0,
+          "max": 616.0,
+          "q1": 616.0,
+          "q3": 616.0
+        },
+        "allocs/op": {
+          "median": 6.0,
+          "min": 6.0,
+          "max": 6.0,
+          "q1": 6.0,
+          "q3": 6.0
+        },
+        "ns/op": {
+          "median": 1492.0,
+          "min": 1468.0,
+          "max": 1545.0,
+          "q1": 1475.0,
+          "q3": 1527.5
+        }
+      }
+    },
+    {
+      "package": "github.com/C-X1an/faultbraid/internal/history",
+      "name": "BenchmarkSearchBudgetCurve/operations-12-4",
+      "sample_count": 7,
+      "samples": [
+        {
+          "iterations": 526,
+          "ns/op": 217780.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 109248.0,
+          "allocs/op": 25.0
+        },
+        {
+          "iterations": 556,
+          "ns/op": 210095.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 109248.0,
+          "allocs/op": 25.0
+        },
+        {
+          "iterations": 546,
+          "ns/op": 216155.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 109248.0,
+          "allocs/op": 25.0
+        },
+        {
+          "iterations": 542,
+          "ns/op": 230859.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 109248.0,
+          "allocs/op": 25.0
+        },
+        {
+          "iterations": 476,
+          "ns/op": 261807.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 109248.0,
+          "allocs/op": 25.0
+        },
+        {
+          "iterations": 462,
+          "ns/op": 262056.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 109248.0,
+          "allocs/op": 25.0
+        },
+        {
+          "iterations": 508,
+          "ns/op": 234568.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 109248.0,
+          "allocs/op": 25.0
+        }
+      ],
+      "metrics": {
+        "B/op": {
+          "median": 109248.0,
+          "min": 109248.0,
+          "max": 109248.0,
+          "q1": 109248.0,
+          "q3": 109248.0
+        },
+        "allocs/op": {
+          "median": 25.0,
+          "min": 25.0,
+          "max": 25.0,
+          "q1": 25.0,
+          "q3": 25.0
+        },
+        "inconclusive/op": {
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "q1": 1.0,
+          "q3": 1.0
+        },
+        "invalid/op": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "ns/op": {
+          "median": 230859.0,
+          "min": 210095.0,
+          "max": 262056.0,
+          "q1": 216967.5,
+          "q3": 248187.5
+        },
+        "states/op": {
+          "median": 4096.0,
+          "min": 4096.0,
+          "max": 4096.0,
+          "q1": 4096.0,
+          "q3": 4096.0
+        }
+      }
+    },
+    {
+      "package": "github.com/C-X1an/faultbraid/internal/history",
+      "name": "BenchmarkSearchBudgetCurve/operations-16-4",
+      "sample_count": 7,
+      "samples": [
+        {
+          "iterations": 507,
+          "ns/op": 260651.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 110272.0,
+          "allocs/op": 27.0
+        },
+        {
+          "iterations": 484,
+          "ns/op": 218756.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 110272.0,
+          "allocs/op": 27.0
+        },
+        {
+          "iterations": 531,
+          "ns/op": 213996.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 110272.0,
+          "allocs/op": 27.0
+        },
+        {
+          "iterations": 572,
+          "ns/op": 223699.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 110272.0,
+          "allocs/op": 27.0
+        },
+        {
+          "iterations": 458,
+          "ns/op": 253752.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 110272.0,
+          "allocs/op": 27.0
+        },
+        {
+          "iterations": 448,
+          "ns/op": 260352.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 110272.0,
+          "allocs/op": 27.0
+        },
+        {
+          "iterations": 481,
+          "ns/op": 246474.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 110272.0,
+          "allocs/op": 27.0
+        }
+      ],
+      "metrics": {
+        "B/op": {
+          "median": 110272.0,
+          "min": 110272.0,
+          "max": 110272.0,
+          "q1": 110272.0,
+          "q3": 110272.0
+        },
+        "allocs/op": {
+          "median": 27.0,
+          "min": 27.0,
+          "max": 27.0,
+          "q1": 27.0,
+          "q3": 27.0
+        },
+        "inconclusive/op": {
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "q1": 1.0,
+          "q3": 1.0
+        },
+        "invalid/op": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "ns/op": {
+          "median": 246474.0,
+          "min": 213996.0,
+          "max": 260651.0,
+          "q1": 221227.5,
+          "q3": 257052.0
+        },
+        "states/op": {
+          "median": 4096.0,
+          "min": 4096.0,
+          "max": 4096.0,
+          "q1": 4096.0,
+          "q3": 4096.0
+        }
+      }
+    },
+    {
+      "package": "github.com/C-X1an/faultbraid/internal/history",
+      "name": "BenchmarkSearchBudgetCurve/operations-24-4",
+      "sample_count": 7,
+      "samples": [
+        {
+          "iterations": 516,
+          "ns/op": 223953.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 110464.0,
+          "allocs/op": 27.0
+        },
+        {
+          "iterations": 550,
+          "ns/op": 212183.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 110464.0,
+          "allocs/op": 27.0
+        },
+        {
+          "iterations": 559,
+          "ns/op": 212799.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 110464.0,
+          "allocs/op": 27.0
+        },
+        {
+          "iterations": 561,
+          "ns/op": 219185.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 110464.0,
+          "allocs/op": 27.0
+        },
+        {
+          "iterations": 542,
+          "ns/op": 220324.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 110464.0,
+          "allocs/op": 27.0
+        },
+        {
+          "iterations": 568,
+          "ns/op": 209367.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 110464.0,
+          "allocs/op": 27.0
+        },
+        {
+          "iterations": 579,
+          "ns/op": 204395.0,
+          "inconclusive/op": 1.0,
+          "invalid/op": 0.0,
+          "states/op": 4096.0,
+          "B/op": 110464.0,
+          "allocs/op": 27.0
+        }
+      ],
+      "metrics": {
+        "B/op": {
+          "median": 110464.0,
+          "min": 110464.0,
+          "max": 110464.0,
+          "q1": 110464.0,
+          "q3": 110464.0
+        },
+        "allocs/op": {
+          "median": 27.0,
+          "min": 27.0,
+          "max": 27.0,
+          "q1": 27.0,
+          "q3": 27.0
+        },
+        "inconclusive/op": {
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "q1": 1.0,
+          "q3": 1.0
+        },
+        "invalid/op": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "ns/op": {
+          "median": 212799.0,
+          "min": 204395.0,
+          "max": 223953.0,
+          "q1": 210775.0,
+          "q3": 219754.5
+        },
+        "states/op": {
+          "median": 4096.0,
+          "min": 4096.0,
+          "max": 4096.0,
+          "q1": 4096.0,
+          "q3": 4096.0
+        }
+      }
+    },
+    {
+      "package": "github.com/C-X1an/faultbraid/internal/history",
+      "name": "BenchmarkSearchBudgetCurve/operations-4-4",
+      "sample_count": 7,
+      "samples": [
+        {
+          "iterations": 133654,
+          "ns/op": 867.2,
+          "inconclusive/op": 0.0,
+          "invalid/op": 1.0,
+          "states/op": 16.0,
+          "B/op": 520.0,
+          "allocs/op": 4.0
+        },
+        {
+          "iterations": 138490,
+          "ns/op": 991.8,
+          "inconclusive/op": 0.0,
+          "invalid/op": 1.0,
+          "states/op": 16.0,
+          "B/op": 520.0,
+          "allocs/op": 4.0
+        },
+        {
+          "iterations": 112651,
+          "ns/op": 1098.0,
+          "inconclusive/op": 0.0,
+          "invalid/op": 1.0,
+          "states/op": 16.0,
+          "B/op": 520.0,
+          "allocs/op": 4.0
+        },
+        {
+          "iterations": 113106,
+          "ns/op": 1035.0,
+          "inconclusive/op": 0.0,
+          "invalid/op": 1.0,
+          "states/op": 16.0,
+          "B/op": 520.0,
+          "allocs/op": 4.0
+        },
+        {
+          "iterations": 118557,
+          "ns/op": 1064.0,
+          "inconclusive/op": 0.0,
+          "invalid/op": 1.0,
+          "states/op": 16.0,
+          "B/op": 520.0,
+          "allocs/op": 4.0
+        },
+        {
+          "iterations": 114829,
+          "ns/op": 987.4,
+          "inconclusive/op": 0.0,
+          "invalid/op": 1.0,
+          "states/op": 16.0,
+          "B/op": 520.0,
+          "allocs/op": 4.0
+        },
+        {
+          "iterations": 136377,
+          "ns/op": 796.9,
+          "inconclusive/op": 0.0,
+          "invalid/op": 1.0,
+          "states/op": 16.0,
+          "B/op": 520.0,
+          "allocs/op": 4.0
+        }
+      ],
+      "metrics": {
+        "B/op": {
+          "median": 520.0,
+          "min": 520.0,
+          "max": 520.0,
+          "q1": 520.0,
+          "q3": 520.0
+        },
+        "allocs/op": {
+          "median": 4.0,
+          "min": 4.0,
+          "max": 4.0,
+          "q1": 4.0,
+          "q3": 4.0
+        },
+        "inconclusive/op": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "invalid/op": {
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "q1": 1.0,
+          "q3": 1.0
+        },
+        "ns/op": {
+          "median": 991.8,
+          "min": 796.9,
+          "max": 1098.0,
+          "q1": 927.3,
+          "q3": 1049.5
+        },
+        "states/op": {
+          "median": 16.0,
+          "min": 16.0,
+          "max": 16.0,
+          "q1": 16.0,
+          "q3": 16.0
+        }
+      }
+    },
+    {
+      "package": "github.com/C-X1an/faultbraid/internal/history",
+      "name": "BenchmarkSearchBudgetCurve/operations-8-4",
+      "sample_count": 7,
+      "samples": [
+        {
+          "iterations": 1736,
+          "ns/op": 71934.0,
+          "inconclusive/op": 0.0,
+          "invalid/op": 1.0,
+          "states/op": 1352.0,
+          "B/op": 54088.0,
+          "allocs/op": 17.0
+        },
+        {
+          "iterations": 1604,
+          "ns/op": 74613.0,
+          "inconclusive/op": 0.0,
+          "invalid/op": 1.0,
+          "states/op": 1352.0,
+          "B/op": 54088.0,
+          "allocs/op": 17.0
+        },
+        {
+          "iterations": 1698,
+          "ns/op": 76396.0,
+          "inconclusive/op": 0.0,
+          "invalid/op": 1.0,
+          "states/op": 1352.0,
+          "B/op": 54088.0,
+          "allocs/op": 17.0
+        },
+        {
+          "iterations": 1622,
+          "ns/op": 78523.0,
+          "inconclusive/op": 0.0,
+          "invalid/op": 1.0,
+          "states/op": 1352.0,
+          "B/op": 54088.0,
+          "allocs/op": 17.0
+        },
+        {
+          "iterations": 1476,
+          "ns/op": 90279.0,
+          "inconclusive/op": 0.0,
+          "invalid/op": 1.0,
+          "states/op": 1352.0,
+          "B/op": 54088.0,
+          "allocs/op": 17.0
+        },
+        {
+          "iterations": 1377,
+          "ns/op": 88654.0,
+          "inconclusive/op": 0.0,
+          "invalid/op": 1.0,
+          "states/op": 1352.0,
+          "B/op": 54088.0,
+          "allocs/op": 17.0
+        },
+        {
+          "iterations": 1290,
+          "ns/op": 88826.0,
+          "inconclusive/op": 0.0,
+          "invalid/op": 1.0,
+          "states/op": 1352.0,
+          "B/op": 54088.0,
+          "allocs/op": 17.0
+        }
+      ],
+      "metrics": {
+        "B/op": {
+          "median": 54088.0,
+          "min": 54088.0,
+          "max": 54088.0,
+          "q1": 54088.0,
+          "q3": 54088.0
+        },
+        "allocs/op": {
+          "median": 17.0,
+          "min": 17.0,
+          "max": 17.0,
+          "q1": 17.0,
+          "q3": 17.0
+        },
+        "inconclusive/op": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "invalid/op": {
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "q1": 1.0,
+          "q3": 1.0
+        },
+        "ns/op": {
+          "median": 78523.0,
+          "min": 71934.0,
+          "max": 90279.0,
+          "q1": 75504.5,
+          "q3": 88740.0
+        },
+        "states/op": {
+          "median": 1352.0,
+          "min": 1352.0,
+          "max": 1352.0,
+          "q1": 1352.0,
+          "q3": 1352.0
+        }
+      }
+    },
+    {
+      "package": "github.com/C-X1an/faultbraid/internal/sim",
+      "name": "BenchmarkModel10000-4",
+      "sample_count": 7,
+      "samples": [
+        {
+          "iterations": 15,
+          "ns/op": 7880593.0,
+          "B/op": 13579274.0,
+          "allocs/op": 22586.0
+        },
+        {
+          "iterations": 13,
+          "ns/op": 8223377.0,
+          "B/op": 13579264.0,
+          "allocs/op": 22586.0
+        },
+        {
+          "iterations": 13,
+          "ns/op": 8442592.0,
+          "B/op": 13068281.0,
+          "allocs/op": 22583.0
+        },
+        {
+          "iterations": 13,
+          "ns/op": 8399015.0,
+          "B/op": 13579287.0,
+          "allocs/op": 22586.0
+        },
+        {
+          "iterations": 13,
+          "ns/op": 8694008.0,
+          "B/op": 13579273.0,
+          "allocs/op": 22586.0
+        },
+        {
+          "iterations": 14,
+          "ns/op": 8179707.0,
+          "B/op": 13579253.0,
+          "allocs/op": 22586.0
+        },
+        {
+          "iterations": 13,
+          "ns/op": 8498169.0,
+          "B/op": 13579254.0,
+          "allocs/op": 22586.0
+        }
+      ],
+      "metrics": {
+        "B/op": {
+          "median": 13579264.0,
+          "min": 13068281.0,
+          "max": 13579287.0,
+          "q1": 13579253.5,
+          "q3": 13579273.5
+        },
+        "allocs/op": {
+          "median": 22586.0,
+          "min": 22583.0,
+          "max": 22586.0,
+          "q1": 22586.0,
+          "q3": 22586.0
+        },
+        "ns/op": {
+          "median": 8399015.0,
+          "min": 7880593.0,
+          "max": 8694008.0,
+          "q1": 8201542.0,
+          "q3": 8470380.5
+        }
+      }
+    },
+    {
+      "package": "github.com/C-X1an/faultbraid/tests/system",
+      "name": "BenchmarkScenarioReduction/baseline-run-4",
+      "sample_count": 7,
+      "samples": [
+        {
+          "iterations": 22,
+          "ns/op": 4969941.0,
+          "actions/result": 12.0,
+          "B/op": 2852840.0,
+          "allocs/op": 33590.0
+        },
+        {
+          "iterations": 28,
+          "ns/op": 4229782.0,
+          "actions/result": 12.0,
+          "B/op": 2837002.0,
+          "allocs/op": 33586.0
+        },
+        {
+          "iterations": 32,
+          "ns/op": 3919766.0,
+          "actions/result": 12.0,
+          "B/op": 2814072.0,
+          "allocs/op": 33585.0
+        },
+        {
+          "iterations": 30,
+          "ns/op": 3864727.0,
+          "actions/result": 12.0,
+          "B/op": 2798998.0,
+          "allocs/op": 33584.0
+        },
+        {
+          "iterations": 32,
+          "ns/op": 4031591.0,
+          "actions/result": 12.0,
+          "B/op": 2798179.0,
+          "allocs/op": 33584.0
+        },
+        {
+          "iterations": 34,
+          "ns/op": 4448085.0,
+          "actions/result": 12.0,
+          "B/op": 2797683.0,
+          "allocs/op": 33587.0
+        },
+        {
+          "iterations": 24,
+          "ns/op": 4746721.0,
+          "actions/result": 12.0,
+          "B/op": 2781492.0,
+          "allocs/op": 33581.0
+        }
+      ],
+      "metrics": {
+        "B/op": {
+          "median": 2798998.0,
+          "min": 2781492.0,
+          "max": 2852840.0,
+          "q1": 2797931.0,
+          "q3": 2825537.0
+        },
+        "actions/result": {
+          "median": 12.0,
+          "min": 12.0,
+          "max": 12.0,
+          "q1": 12.0,
+          "q3": 12.0
+        },
+        "allocs/op": {
+          "median": 33585.0,
+          "min": 33581.0,
+          "max": 33590.0,
+          "q1": 33584.0,
+          "q3": 33586.5
+        },
+        "ns/op": {
+          "median": 4229782.0,
+          "min": 3864727.0,
+          "max": 4969941.0,
+          "q1": 3975678.5,
+          "q3": 4597403.0
+        }
+      }
+    },
+    {
+      "package": "github.com/C-X1an/faultbraid/tests/system",
+      "name": "BenchmarkScenarioReduction/ddmin-4",
+      "sample_count": 7,
+      "samples": [
+        {
+          "iterations": 1,
+          "ns/op": 131668300.0,
+          "actions/result": 5.0,
+          "candidate-checks/op": 32.0,
+          "replays/op": 6.0,
+          "target-executions/op": 32.0,
+          "B/op": 106641912.0,
+          "allocs/op": 1237382.0
+        },
+        {
+          "iterations": 1,
+          "ns/op": 143446600.0,
+          "actions/result": 5.0,
+          "candidate-checks/op": 32.0,
+          "replays/op": 6.0,
+          "target-executions/op": 32.0,
+          "B/op": 106910248.0,
+          "allocs/op": 1237492.0
+        },
+        {
+          "iterations": 1,
+          "ns/op": 135700000.0,
+          "actions/result": 5.0,
+          "candidate-checks/op": 32.0,
+          "replays/op": 6.0,
+          "target-executions/op": 32.0,
+          "B/op": 106146656.0,
+          "allocs/op": 1237440.0
+        },
+        {
+          "iterations": 1,
+          "ns/op": 139134500.0,
+          "actions/result": 5.0,
+          "candidate-checks/op": 32.0,
+          "replays/op": 6.0,
+          "target-executions/op": 32.0,
+          "B/op": 107318888.0,
+          "allocs/op": 1237655.0
+        },
+        {
+          "iterations": 1,
+          "ns/op": 136240000.0,
+          "actions/result": 5.0,
+          "candidate-checks/op": 32.0,
+          "replays/op": 6.0,
+          "target-executions/op": 32.0,
+          "B/op": 106519944.0,
+          "allocs/op": 1237408.0
+        },
+        {
+          "iterations": 1,
+          "ns/op": 127489000.0,
+          "actions/result": 5.0,
+          "candidate-checks/op": 32.0,
+          "replays/op": 6.0,
+          "target-executions/op": 32.0,
+          "B/op": 106912848.0,
+          "allocs/op": 1237522.0
+        },
+        {
+          "iterations": 1,
+          "ns/op": 128940400.0,
+          "actions/result": 5.0,
+          "candidate-checks/op": 32.0,
+          "replays/op": 6.0,
+          "target-executions/op": 32.0,
+          "B/op": 105762432.0,
+          "allocs/op": 1237409.0
+        }
+      ],
+      "metrics": {
+        "B/op": {
+          "median": 106641912.0,
+          "min": 105762432.0,
+          "max": 107318888.0,
+          "q1": 106333300.0,
+          "q3": 106911548.0
+        },
+        "actions/result": {
+          "median": 5.0,
+          "min": 5.0,
+          "max": 5.0,
+          "q1": 5.0,
+          "q3": 5.0
+        },
+        "allocs/op": {
+          "median": 1237440.0,
+          "min": 1237382.0,
+          "max": 1237655.0,
+          "q1": 1237408.5,
+          "q3": 1237507.0
+        },
+        "candidate-checks/op": {
+          "median": 32.0,
+          "min": 32.0,
+          "max": 32.0,
+          "q1": 32.0,
+          "q3": 32.0
+        },
+        "ns/op": {
+          "median": 135700000.0,
+          "min": 127489000.0,
+          "max": 143446600.0,
+          "q1": 130304350.0,
+          "q3": 137687250.0
+        },
+        "replays/op": {
+          "median": 6.0,
+          "min": 6.0,
+          "max": 6.0,
+          "q1": 6.0,
+          "q3": 6.0
+        },
+        "target-executions/op": {
+          "median": 32.0,
+          "min": 32.0,
+          "max": 32.0,
+          "q1": 32.0,
+          "q3": 32.0
+        }
+      }
+    },
+    {
+      "package": "github.com/C-X1an/faultbraid/tests/system",
+      "name": "BenchmarkScenarioReduction/greedy-4",
+      "sample_count": 7,
+      "samples": [
+        {
+          "iterations": 1,
+          "ns/op": 184157700.0,
+          "actions/result": 5.0,
+          "candidate-checks/op": 24.0,
+          "replays/op": 8.0,
+          "target-executions/op": 24.0,
+          "B/op": 100487560.0,
+          "allocs/op": 1161976.0
+        },
+        {
+          "iterations": 1,
+          "ns/op": 177946600.0,
+          "actions/result": 5.0,
+          "candidate-checks/op": 24.0,
+          "replays/op": 8.0,
+          "target-executions/op": 24.0,
+          "B/op": 99223392.0,
+          "allocs/op": 1162002.0
+        },
+        {
+          "iterations": 1,
+          "ns/op": 148527400.0,
+          "actions/result": 5.0,
+          "candidate-checks/op": 24.0,
+          "replays/op": 8.0,
+          "target-executions/op": 24.0,
+          "B/op": 100867168.0,
+          "allocs/op": 1161972.0
+        },
+        {
+          "iterations": 1,
+          "ns/op": 128482200.0,
+          "actions/result": 5.0,
+          "candidate-checks/op": 24.0,
+          "replays/op": 8.0,
+          "target-executions/op": 24.0,
+          "B/op": 99559136.0,
+          "allocs/op": 1161784.0
+        },
+        {
+          "iterations": 1,
+          "ns/op": 141502600.0,
+          "actions/result": 5.0,
+          "candidate-checks/op": 24.0,
+          "replays/op": 8.0,
+          "target-executions/op": 24.0,
+          "B/op": 99601472.0,
+          "allocs/op": 1161981.0
+        },
+        {
+          "iterations": 1,
+          "ns/op": 128716300.0,
+          "actions/result": 5.0,
+          "candidate-checks/op": 24.0,
+          "replays/op": 8.0,
+          "target-executions/op": 24.0,
+          "B/op": 98852096.0,
+          "allocs/op": 1161929.0
+        },
+        {
+          "iterations": 1,
+          "ns/op": 131553400.0,
+          "actions/result": 5.0,
+          "candidate-checks/op": 24.0,
+          "replays/op": 8.0,
+          "target-executions/op": 24.0,
+          "B/op": 99606104.0,
+          "allocs/op": 1161984.0
+        }
+      ],
+      "metrics": {
+        "B/op": {
+          "median": 99601472.0,
+          "min": 98852096.0,
+          "max": 100867168.0,
+          "q1": 99391264.0,
+          "q3": 100046832.0
+        },
+        "actions/result": {
+          "median": 5.0,
+          "min": 5.0,
+          "max": 5.0,
+          "q1": 5.0,
+          "q3": 5.0
+        },
+        "allocs/op": {
+          "median": 1161976.0,
+          "min": 1161784.0,
+          "max": 1162002.0,
+          "q1": 1161950.5,
+          "q3": 1161982.5
+        },
+        "candidate-checks/op": {
+          "median": 24.0,
+          "min": 24.0,
+          "max": 24.0,
+          "q1": 24.0,
+          "q3": 24.0
+        },
+        "ns/op": {
+          "median": 141502600.0,
+          "min": 128482200.0,
+          "max": 184157700.0,
+          "q1": 130134850.0,
+          "q3": 163237000.0
+        },
+        "replays/op": {
+          "median": 8.0,
+          "min": 8.0,
+          "max": 8.0,
+          "q1": 8.0,
+          "q3": 8.0
+        },
+        "target-executions/op": {
+          "median": 24.0,
+          "min": 24.0,
+          "max": 24.0,
+          "q1": 24.0,
+          "q3": 24.0
+        }
+      }
+    },
+    {
+      "package": "github.com/C-X1an/faultbraid/tests/system",
+      "name": "BenchmarkTargetHealthy-4",
+      "sample_count": 7,
+      "samples": [
+        {
+          "iterations": 34,
+          "ns/op": 3655074.0,
+          "events/op": 403.0,
+          "states/op": 3.0,
+          "B/op": 2875202.0,
+          "allocs/op": 33702.0
+        },
+        {
+          "iterations": 31,
+          "ns/op": 4040565.0,
+          "events/op": 403.0,
+          "states/op": 3.0,
+          "B/op": 2815335.0,
+          "allocs/op": 33695.0
+        },
+        {
+          "iterations": 31,
+          "ns/op": 4076765.0,
+          "events/op": 403.0,
+          "states/op": 3.0,
+          "B/op": 2831925.0,
+          "allocs/op": 33695.0
+        },
+        {
+          "iterations": 30,
+          "ns/op": 3904820.0,
+          "events/op": 403.0,
+          "states/op": 3.0,
+          "B/op": 2815814.0,
+          "allocs/op": 33694.0
+        },
+        {
+          "iterations": 28,
+          "ns/op": 4005636.0,
+          "events/op": 403.0,
+          "states/op": 3.0,
+          "B/op": 2816873.0,
+          "allocs/op": 33693.0
+        },
+        {
+          "iterations": 22,
+          "ns/op": 5446509.0,
+          "events/op": 403.0,
+          "states/op": 3.0,
+          "B/op": 2822181.0,
+          "allocs/op": 33696.0
+        },
+        {
+          "iterations": 24,
+          "ns/op": 5065675.0,
+          "events/op": 403.0,
+          "states/op": 3.0,
+          "B/op": 2798381.0,
+          "allocs/op": 33693.0
+        }
+      ],
+      "metrics": {
+        "B/op": {
+          "median": 2816873.0,
+          "min": 2798381.0,
+          "max": 2875202.0,
+          "q1": 2815574.5,
+          "q3": 2827053.0
+        },
+        "allocs/op": {
+          "median": 33695.0,
+          "min": 33693.0,
+          "max": 33702.0,
+          "q1": 33693.5,
+          "q3": 33695.5
+        },
+        "events/op": {
+          "median": 403.0,
+          "min": 403.0,
+          "max": 403.0,
+          "q1": 403.0,
+          "q3": 403.0
+        },
+        "ns/op": {
+          "median": 4040565.0,
+          "min": 3655074.0,
+          "max": 5446509.0,
+          "q1": 3955228.0,
+          "q3": 4571220.0
+        },
+        "states/op": {
+          "median": 3.0,
+          "min": 3.0,
+          "max": 3.0,
+          "q1": 3.0,
+          "q3": 3.0
+        }
+      }
+    }
+  ],
+  "scope": "Go calibrated aggregate benchmark samples; inclusive quartiles; not individual request latency, p95/p99, native IO or production throughput"
+}

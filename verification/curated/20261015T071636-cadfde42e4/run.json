@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "run_id": "20261015T071636-cadfde42e4",
+  "category": "tooling",
+  "requirements": [
+    "AC-018"
+  ],
+  "command": [
+    "python",
+    "check_source_scan.py",
+    "--out",
+    "../sif/c6"
+  ],
+  "cwd": "[recorded-working-root]",
+  "started_utc": "2026-10-15T07:16:36.121686+00:00",
+  "ended_utc": "2026-10-15T07:16:37.376856+00:00",
+  "duration_seconds": 1.25,
+  "status": "PASS",
+  "reason": "completed",
+  "exit_code": 0,
+  "environment": {
+    "os": "Windows",
+    "release": "11",
+    "architecture": "AMD64",
+    "python": "3.12.14",
+    "go": "go version go1.27.2 windows/amd64",
+    "cpu": "13th Gen Intel(R) Core(TM) i9-13900H",
+    "logical_cpus": 20,
+    "host_memory": "34048978944 bytes",
+    "container_limits": "not inferred from host totals"
+  },
+  "source": {
+    "git_commit": null,
+    "git_dirty": true,
+    "source_tree_sha256": "b39dcf39b1327b50e8dec4b693d291aa8d71c6672bb66d5a05b287695015a2b7",
+    "files": [
+      {
+        "path": "check_source_scan.py",
+        "sha256": "88694380bd847b3e803a65bf3cf44aca0432087ad9d045ec092118f30413d3f5"
+      },
+      {
+        "path": "original.py",
+        "sha256": "c9770fe2715f17b9d2cae7f30374586596addebdf0069b28321665ba50985d32"
+      },
+      {
+        "path": "proposal.json",
+        "sha256": "7c1ab156cdddc0981f97b4ad3d1cb68ad41601b2905966920fbe497aa4180bd7"
+      },
+      {
+        "path": "run_candidate_evidence_tests.py",
+        "sha256": "a6d93919e7a2fbb3c90ac3889821eae776ae8ae7d68edfde6a87ce48781a35d6"
+      },
+      {
+        "path": "run_evidence_candidate.py",
+        "sha256": "27365fc4c9a6cd9487bda6b4fa9f1f73982f357c6c8bc05497d59d70c5608a22"
+      },
+      {
+        "path": "run_evidence_candidate_v1.py",
+        "sha256": "05b566d3b4a6e302f88b5b3486adcde3d01cc4aa98b89d1725165d2d8b8582b5"
+      },
+      {
+        "path": "source_scan_ignored_alias_mutant.py",
+        "sha256": "7216a64713e6bfa479bb968d9f19541a4085e87b4e54a14e1b4850b94796a927"
+      },
+      {
+        "path": "source_scan_mutant.py",
+        "sha256": "49a3d3dbfceac73ffb762aaba173bfc7137718443f51bbb52b8a476552910dd6"
+      },
+      {
+        "path": "test_evidence_candidate.py",
+        "sha256": "31e98c140cc2931d2a53a13e1382652ffa8b5bc4dc89995395cba73a77c3dc9a"
+      },
+      {
+        "path": "test_evidence_original.py",
+        "sha256": "74ab0f0ec2650ca1ebd2c2ee65da5df276709947cb408adc633d38352a2c1bd3"
+      }
+    ]
+  },
+  "stdout": {
+    "path": "verification/curated/20261015T071636-cadfde42e4/stdout.txt",
+    "sha256": "a6b6b04209f4d6cb60c23b3f6c21cc0db3ad55d1805041080d1cc81d7d416d6a",
+    "bytes": 584
+  },
+  "stderr": {
+    "path": "verification/curated/20261015T071636-cadfde42e4/stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "curation": {
+    "schema_version": 1,
+    "raw_record_sha256": "edc6a5275b6e6b1da2ef05a4cbfa0b831d0dea2fcd2c069cd0eee6d5397ce6aa",
+    "scope": "selected real engineering command; excludes agent session/chat/prompt data",
+    "source_identity_status": "original fields and full file hashes unchanged",
+    "streams": {
+      "stdout": {
+        "raw_sha256": "034910b8439f92fd2dde5b1e7efddef4e7e04de3d202beaa740e5d8a1bedb6ae",
+        "raw_bytes": 585,
+        "curated_sha256": "a6b6b04209f4d6cb60c23b3f6c21cc0db3ad55d1805041080d1cc81d7d416d6a",
+        "curated_bytes": 584,
+        "redactions": [
+          {
+            "kind": "CRLF-to-LF-text-normalization",
+            "count": 1
+          }
+        ]
+      },
+      "stderr": {
+        "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_bytes": 0,
+        "curated_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "curated_bytes": 0,
+        "redactions": []
+      }
+    },
+    "metadata_redactions": [
+      {
+        "kind": "operator-path-prefix",
+        "replacement": "[recorded-working-root]",
+        "count": 1
+      }
+    ]
+  }
+}

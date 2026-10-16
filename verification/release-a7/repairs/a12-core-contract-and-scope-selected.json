@@ -1,0 +1,460 @@
+{
+  "schema_version": 1,
+  "kind": "declared-field-selection-of-original-A12-engineering-evidence",
+  "status": "FIELD_SELECTION_ONLY",
+  "selection_author": "supplement preparer; not an independent reviewer",
+  "scope": "Exact original core contract, preserved assertions/caps, source distinctions and genuine mutant-source identities. Original proposed/not-run statuses remain historical.",
+  "value_hash_encoding": "SHA256 of UTF-8 json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=False), before declared text projection",
+  "reports": [
+    {
+      "original_document": "proposals/a12-native-causality/packet.json",
+      "original_report_sha256": "1a04951a4542550a2332e3f60ffc59e888cb51b29906dc8c37bd36bbde77958c",
+      "original_report_bytes": 29814,
+      "not_the_complete_original_report": true,
+      "selected_original_fields": [
+        {
+          "field": "/schema_version",
+          "original_value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          "value": 1,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/kind",
+          "original_value_sha256": "31f3840153621b0303c41ba4863b9d2e6827d2d6e3e284e8e9fe84a1c48590e9",
+          "value": "a12-native-causality-core-exact-review-packet",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/status",
+          "original_value_sha256": "ead3bba2918e421d52113140e5113ecea506e8adf0af83ebfcf93829f3eac6cd",
+          "value": "FROZEN_PROPOSED; independent exact implementation/combined review NOT RUN",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/source_attribution",
+          "original_value_sha256": "e1f12b60469a820254c95645257aaf32b04a7be075fcd462b200ec55f3a6df90",
+          "value": {
+            "actual_V2": "Go -C prototype, exact d4ded839 map and actual native identities/binary stdout; source-bound historical six-path V2 checks retained unchanged",
+            "actual_V2_slow": "separate overlay0ebd3d3288d493d29a69e3fa147303b84954b31a784491d43149bbd460646f45 on exact V2; explicit synthetic2500ms restarted child startup; instrumentation not canonical source",
+            "actual_V3": "Go -C prototype-v3, exact7cb7e5eeb36378b1c3e3fae8e9f4b9f2cd2647cf74f5b9ca085e37a6f4fffc46 map and actual native identity/binary; new source not substituted into old records",
+            "outer_capture": "Raw records correctly identify unchanged public32a/fced because mandatory capture --cwd public",
+            "retagging": "NONE; every old raw command, source map, observation and failure retained byte-identical"
+          },
+          "declared_text_projection": []
+        },
+        {
+          "field": "/before_fix/historical_limit",
+          "original_value_sha256": "01a7614d483910add9c12959f54a74733463c11f32788ad9d6e0a052195535ec",
+          "value": "Actual controlled diagnostics demonstrate an overdue-restart catch-up mechanism and missing causal fixture premise, not an identical or sole historical cause.",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/actual_outcomes",
+          "original_value_sha256": "d6f35afab8613fb72b83f4cf66e793c0c95738b8d58a88f45e288d3af848b28a",
+          "value": {
+            "V2_affected_packages_race": "PASS; original c1/c4/c16 plus real cancellation tests,88.188s; exactd4",
+            "V2_deliberate_defects": "four actual completed assertion FAILs (ignore gate/filter, pending-as-ack, ignore terminal); zero acceptance credit",
+            "V3_c1_c4_full_affected_suite": "NOT RUN on V3; older V2 runs retained as historical controls, not retagged",
+            "V3_focused_race": "PASS47.032s; library/newfloorcontrols, both actual never-ack cancellation tests, originalc16/full13plan and actual crash floor; exact7cb7",
+            "V3_slow_overlay": "NOT RUN; earlier V2 slow test exercises unchanged barrier core but is not relabeled V3 evidence",
+            "controlled_repaired_slow_restart": "PASS with real Raft processes and explicit synthetic startup delay; ready5.892438s>lastnominal5.050s, actualrun7.440s, genuine retry before read; instrumentedV2",
+            "outer_multi_control_wrapper": "FAIL/timeout180.047s preserved; original terminal child incomplete/no finalized result; no credit",
+            "restoration": "exactd4 restored; libraryPASS and new standalone terminalPASS"
+          },
+          "declared_text_projection": []
+        },
+        {
+          "field": "/current_acceptance_credit",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+          "value": "NONE",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/not_run",
+          "original_value_sha256": "2be17fb3eb0c317f1052bca1f309bc86694b3e7957c50c93ca93c8b5fb4ac619",
+          "value": [
+            "independent exact implementation/combined approval",
+            "combined CLI Go compilation and original production c1/c4/c16 recipe",
+            "fresh integrated clean/full gates and acceptance extraction",
+            "publication"
+          ],
+          "declared_text_projection": []
+        },
+        {
+          "field": "/limitations",
+          "original_value_sha256": "e07b5bfe3addf722d98191741aec23aab5c368060afc0ee85d238001e28f2c85",
+          "value": [
+            "delivered kernel/native conformance is not the full distributed workbench",
+            "synthetic collector controls and injected startup delay earn no acceptance credit",
+            "ActionDispatch floor is an observed existing common-counter value, never a separately assigned dispatch time",
+            "separate CLI validator and malformed/late-floor controls remain root-owned"
+          ],
+          "declared_text_projection": []
+        }
+      ]
+    },
+    {
+      "original_document": "proposals/a12-native-causality/proposal.json",
+      "original_report_sha256": "eef725fda48a69b25128bea63dfb181d151c99085e69ca43db004721c0085ff5",
+      "original_report_bytes": 5474,
+      "not_the_complete_original_report": true,
+      "selected_original_fields": [
+        {
+          "field": "/kind",
+          "original_value_sha256": "00d9cac13f5e38a6aeee1e69a5cc0994b3c326da7f73983549857fa591a70c08",
+          "value": "a12-native-explicit-acknowledgment-causality-core-proposal",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/status",
+          "original_value_sha256": "ba0b41f11bb1019bc66d46f0ac8cde148a7623cb4c6a9808088aa332417c4d6d",
+          "value": "FROZEN_PROPOSED; independent exact review NOT RUN; no public installation",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/base_commit",
+          "original_value_sha256": "aa90de643963e5f9ec28da7fca2867cc0c1842829e16da4b61a5405f5d220ca1",
+          "value": "32a72e0484d4f36c70f1e935f5168ce540a8570f",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/base_source_sha256",
+          "original_value_sha256": "bd7cdf30971383ec4be8b340df8532ecc71b45e652b07918442359753101db4c",
+          "value": "fced11f2c14e4281d7f11b823c498deb302b3adae96db2d1f6428be7800117b4",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/candidate_source_sha256",
+          "original_value_sha256": "dbe07bd89126351e4853e1b4ce594a46250e36b93cbe1fc1c595b8ce069aeb57",
+          "value": "7cb7e5eeb36378b1c3e3fae8e9f4b9f2cd2647cf74f5b9ca085e37a6f4fffc46",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/native_contract",
+          "original_value_sha256": "3ab2906c2115bd67073bc9a77cb9d72960ad6f49557dc4a230dbcf6edd0f03f9",
+          "value": {
+            "attempt_actions": "optional bounded prior-action filter, same logical RequestID; accepts genuine actual complete/admitted successful responses only",
+            "completion_dependencies": "explicit native Options only; validates/copies before output or child creation; actions keep fixed wallclock ticks as lower bounds",
+            "empty_configuration": "existing native wall-clock scheduling/concurrency defaults unchanged; no pause/rebase or replay claim",
+            "error": "ErrCompletionDependency; cardinality errors also ErrLimit, supporting precise prelaunch INVALID_INPUT classification",
+            "receipt_history": "existing atomic receipt/invocation stamps and earliest completion/paired read value remain unchanged",
+            "required_completions": "explicit terminal genuine request completion within existing context after unchanged nominal end",
+            "result": "records exact plan, actual matched action/receipt ordinal, and one common-counter floor for each configured non-request action entry"
+          },
+          "declared_text_projection": []
+        },
+        {
+          "field": "/fixture",
+          "original_value_sha256": "d4f7a3666618c83cdfcd6b34fb36727bc4a60a498288589781699b8fcafbbeb4",
+          "value": "unchanged original scenario/context/assertions; additive explicit13 dependencies+terminalread9 and actual retry-after-write9-ack-before-read assertion; actual crash dispatch floor assertion",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/current_acceptance_credit",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+          "value": "NONE",
+          "declared_text_projection": []
+        }
+      ]
+    },
+    {
+      "original_document": "proposals/a12-native-causality/scope-and-final-controls.json",
+      "original_report_sha256": "7fe76aa6186d463744f7e12a34a70d2d05c675f4e602134614cdd4fa6fca76e5",
+      "original_report_bytes": 18705,
+      "not_the_complete_original_report": true,
+      "selected_original_fields": [
+        {
+          "field": "/original_real_process_file_reconstructs_exactly_after_removing_only_added_plan_and_additive_assertion",
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+          "value": true,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/realScenario_actions_IDs_ticks_EndTime_unchanged",
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+          "value": true,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/original_context18s_and_cancellation300ms_lines_unchanged",
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+          "value": true,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/original_earliest_completion_paired_read_value_collectHistory_unchanged",
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+          "value": true,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/original_common_counter_AddInt64_lines_unchanged",
+          "original_value_sha256": "71c33b1bb5adbe58385ea6d7fa3062cf28c08dacca71e0ba0cdcfccdf1db10fa",
+          "value": [
+            "\t\tordinal := atomic.AddInt64(&l.ordinal, 1)",
+            "\toutcome.ordinal = atomic.AddInt64(&l.ordinal, 1)",
+            "\t\tordinal = atomic.AddInt64(&l.ordinal, 1)"
+          ],
+          "declared_text_projection": []
+        },
+        {
+          "field": "/fixed_epoch25ms_readiness5s_existing_internal_and_outer_caps_unchanged",
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+          "value": true,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/source_delta_exact_six_declared_paths",
+          "original_value_sha256": "6ac1c7b175c641b81227045569459ea8d3a4f01df6eebb4f51dad2e7f8139769",
+          "value": [
+            "internal/labreal/api.go",
+            "internal/labreal/completion.go",
+            "internal/labreal/completion_test.go",
+            "internal/labreal/run.go",
+            "tests/system/native_causality_test.go",
+            "tests/system/real_process_test.go"
+          ],
+          "declared_text_projection": []
+        },
+        {
+          "field": "/protected_unchanged_files",
+          "original_value_sha256": "890a58360c427b45a22aa3de9848a21b7f850a1a637b657706c96ab1742e7680",
+          "value": "every baseline source path outside the exact six-path map; locked acceptance/scenario schema/P00-P07 unchanged",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/observed_floor",
+          "original_value_sha256": "5ce2976ba538096de6348e1b5acb076a534d61ffe61aed31c376a0fd0e165725",
+          "value": "atomic.Load of existing invocation/response counter at configured non-request action entry, after awaits and before side effects; no new stamp or dispatch timestamp",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/synthetic_control_credit",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+          "value": "NONE",
+          "declared_text_projection": []
+        }
+      ]
+    },
+    {
+      "original_document": "proposals/a12-native-causality/defect-controls-observations.json",
+      "original_report_sha256": "8f47927a9c25a190bddb87cc6ec6390e93fcc1aecf0486ecff2b405e1334c1ab",
+      "original_report_bytes": 597537,
+      "not_the_complete_original_report": true,
+      "selected_original_fields": [
+        {
+          "field": "/scope",
+          "original_value_sha256": "fae0ae1704371df736cccb78d77fca2569754a4de1bbdbd340e76cf2cde392c4",
+          "value": "intentional defect controls; zero current acceptance credit",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/restored_source/source_tree_sha256",
+          "original_value_sha256": "56adfb052a3bccee8de545e4bf96d8cc640e27c45a5170b18265deedb058ec44",
+          "value": "d4ded839c441e6a24181d3ca79ee74855f7596f2ce8c7894190f0e44b5d9a518",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/restored_exactly",
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+          "value": true,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/0/label",
+          "original_value_sha256": "e27a5e7430fc2b65c62b98011c2cc40ba2262d2a25daaaa60f69ab9a1464a8d8",
+          "value": "ignore-action-gate-mutant",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/0/status",
+          "original_value_sha256": "8dda96cc06ec8a54f6d789a9f4e5c22e8af9eb9c60a8f7046473c57163e079ff",
+          "value": "FAIL",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/0/reason",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0",
+          "value": "completed",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/0/exit_code",
+          "original_value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          "value": 1,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/0/actual_test_source/git_commit",
+          "original_value_sha256": "aa90de643963e5f9ec28da7fca2867cc0c1842829e16da4b61a5405f5d220ca1",
+          "value": "32a72e0484d4f36c70f1e935f5168ce540a8570f",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/0/actual_test_source/git_dirty",
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+          "value": true,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/0/actual_test_source/source_tree_sha256",
+          "original_value_sha256": "a27b5da12c3f99ed5fde5959411956e3fba0ed5e7dc2876f560491191e01778f",
+          "value": "2ccb1c77cb6bd181f58b759750c9c845e4a4fa57eb02b79ea59d5235fbf9912e",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/0/control_credit",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+          "value": "NONE",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/1/label",
+          "original_value_sha256": "a6717409671853fe4540889fdabf73278c8c7c1b4cbb0c460c384d4fb5a8ebee",
+          "value": "ignore-attempt-filter-mutant",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/1/status",
+          "original_value_sha256": "8dda96cc06ec8a54f6d789a9f4e5c22e8af9eb9c60a8f7046473c57163e079ff",
+          "value": "FAIL",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/1/reason",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0",
+          "value": "completed",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/1/exit_code",
+          "original_value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          "value": 1,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/1/actual_test_source/git_commit",
+          "original_value_sha256": "aa90de643963e5f9ec28da7fca2867cc0c1842829e16da4b61a5405f5d220ca1",
+          "value": "32a72e0484d4f36c70f1e935f5168ce540a8570f",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/1/actual_test_source/git_dirty",
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+          "value": true,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/1/actual_test_source/source_tree_sha256",
+          "original_value_sha256": "d0aeef3634a6439d2d770bdb6b1c47994921bcddf559bd160624975e678f052e",
+          "value": "b4198af5dbfd43c8ac6967ac4523a39cc77fc031180f753618c239ee8cffd129",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/1/control_credit",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+          "value": "NONE",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/2/label",
+          "original_value_sha256": "06e69c7616ebbbadd4414967ba300b98b473b5e1998b27a3cf617d34724a29e7",
+          "value": "pending-as-ack-mutant",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/2/status",
+          "original_value_sha256": "8dda96cc06ec8a54f6d789a9f4e5c22e8af9eb9c60a8f7046473c57163e079ff",
+          "value": "FAIL",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/2/reason",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0",
+          "value": "completed",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/2/exit_code",
+          "original_value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          "value": 1,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/2/actual_test_source/git_commit",
+          "original_value_sha256": "aa90de643963e5f9ec28da7fca2867cc0c1842829e16da4b61a5405f5d220ca1",
+          "value": "32a72e0484d4f36c70f1e935f5168ce540a8570f",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/2/actual_test_source/git_dirty",
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+          "value": true,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/2/actual_test_source/source_tree_sha256",
+          "original_value_sha256": "f68186101cf9d2ff76525af59225fa7fd08c215009b7e30633d2bec5640b04b8",
+          "value": "89d9285ba5a0d0f2bdcde2768609a23e5e11792d44c4764b6267ff7d60aa61f2",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/2/control_credit",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+          "value": "NONE",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/3/label",
+          "original_value_sha256": "e981870a831d21dd262445611e4335222ab3254e93be890dd458934927aa72c6",
+          "value": "ignore-terminal-mutant",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/3/status",
+          "original_value_sha256": "8dda96cc06ec8a54f6d789a9f4e5c22e8af9eb9c60a8f7046473c57163e079ff",
+          "value": "FAIL",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/3/reason",
+          "original_value_sha256": "7093fda846e50b267da144f7b3683ee1dd8838506939f6052b7370dd01fa2ad0",
+          "value": "completed",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/3/exit_code",
+          "original_value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          "value": 1,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/3/actual_test_source/git_commit",
+          "original_value_sha256": "aa90de643963e5f9ec28da7fca2867cc0c1842829e16da4b61a5405f5d220ca1",
+          "value": "32a72e0484d4f36c70f1e935f5168ce540a8570f",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/3/actual_test_source/git_dirty",
+          "original_value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+          "value": true,
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/3/actual_test_source/source_tree_sha256",
+          "original_value_sha256": "9abe2eb4d0d04f700aa87b50c3c032fd99f7c7afc827940b5219cf43c89499f5",
+          "value": "737d459de1ddd81e848d4f4876b461c2b951965971185d00d1e42ea9eb39917a",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/records/3/control_credit",
+          "original_value_sha256": "c44e6dd700593104019ffce7eeda189212379ba13862b09d70cab34c513210d9",
+          "value": "NONE",
+          "declared_text_projection": []
+        }
+      ]
+    }
+  ],
+  "current_acceptance_credit": "NONE",
+  "combined_supplement_independent_review": "NOT RUN"
+}

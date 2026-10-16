@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "kind": "independent-initial-cancellation-proposal-rejection",
+  "status": "CHANGES_REQUIRED",
+  "exception_decision": "NOT_APPROVED_INITIAL_PATCH",
+  "reviewed_utc": "2026-10-14T07:09:52.419228+00:00",
+  "reviewer": {
+    "method": "separate-read-only-verifier",
+    "model_diversity_claim": false
+  },
+  "original_source": {
+    "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+    "git_dirty": false,
+    "source_tree_sha256": "05047573078ae775f06275e934bbf3081709c5d5169f92453f601d1860c9fdb1"
+  },
+  "patch": {
+    "path": "[local-evidence-root]/reviews/final-independent-20261014-cancellation-proposal-01.patch",
+    "raw_sha256": "9c7ab5cd67f64fa7c7680742a3155af387632857929436fa51f08eb8769bd8f1",
+    "bytes": 12829
+  },
+  "scope": "Prospective exact initial5-file cancellation patch/exception inspection and original run-evidence validation; no acceptance approval",
+  "actual_evidence": [
+    {
+      "run_id": "20261014T064819-7f97c4ae97",
+      "status": "FAIL",
+      "exit_code": 1,
+      "reason": "completed",
+      "duration_seconds": 6.617942899996706,
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-v",
+        "-run",
+        "^TestDiagnosticRunCancellationDuringFinalization$",
+        "./tests/security"
+      ],
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/badge-run-cancel-before/20261014T064819-7f97c4ae97/stdout.txt",
+        "sha256": "22b19b08c84673ba1d6b6ab5ba108d96ad917c38bdd42ab71f7cf6d65bf656db",
+        "bytes": 472
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/badge-run-cancel-before/20261014T064819-7f97c4ae97/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/badge-run-cancel-before/20261014T064819-7f97c4ae97/run.json",
+      "raw_record_sha256": "a53d3d8eb0c335ba8024c6794fade37e24c4743e86d97cecbef86a79e17cf528",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "f797454b0a797c2a576ea7d71ee4998d392c6c514bd728c381ba790ea171086d"
+      },
+      "scope": "Supporting original writer/root evidence, independently read and validated; not a new independent execution or full acceptance judgment",
+      "parsed_test_counts": {
+        "top_level_started": 1,
+        "subtests_started": 0,
+        "top_level_failed": 1,
+        "subtests_failed": 0
+      }
+    },
+    {
+      "run_id": "20261014T065115-219be55d67",
+      "status": "PASS",
+      "exit_code": 0,
+      "reason": "completed",
+      "duration_seconds": 8.533702699998685,
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-v",
+        "-run",
+        "^TestDiagnostic(CancellationDuringReplayFinalization|RunCancellationDuringFinalization)$",
+        "./tests/security"
+      ],
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/badge-combined-cancel-after/20261014T065115-219be55d67/stdout.txt",
+        "sha256": "24fc8bdd9f11f128386bf46e4c06a72fb1b741b7fb67e867358db87cbe0b9ad0",
+        "bytes": 612
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/badge-combined-cancel-after/20261014T065115-219be55d67/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/badge-combined-cancel-after/20261014T065115-219be55d67/run.json",
+      "raw_record_sha256": "a2c0314729bbf3e03071f6d2fb138c882b45fa0f9df8d97e0fa39bd0279e1fdb",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "cec8eec1c674c7bcd643569dd120e949bec1add27b4a4b00c7a5df4b9e47dbff"
+      },
+      "scope": "Supporting original writer/root evidence, independently read and validated; not a new independent execution or full acceptance judgment",
+      "parsed_test_counts": {
+        "top_level_started": 2,
+        "subtests_started": 0,
+        "top_level_failed": 0,
+        "subtests_failed": 0
+      }
+    },
+    {
+      "run_id": "20261014T065910-b138ae8b73",
+      "status": "PASS",
+      "exit_code": 0,
+      "reason": "completed",
+      "duration_seconds": 13.221588600001269,
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-v",
+        "./tests/security",
+        "./internal/scenario",
+        "./cmd/faultbraid"
+      ],
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/cancellation-proposal-affected/20261014T065910-b138ae8b73/stdout.txt",
+        "sha256": "c54554b74d9980f8b14f3d7502b0920fe2384cd7e497e868016f18726b5425f4",
+        "bytes": 3588
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/cancellation-proposal-affected/20261014T065910-b138ae8b73/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/cancellation-proposal-affected/20261014T065910-b138ae8b73/run.json",
+      "raw_record_sha256": "04f33bfcc78c242cc5a083fadd2e52f89a712e5e9d761747a86968886089a857",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "c2b9164b357c2e1599d81342741671df20e704a9d0827478e8f4dd3a3e039245"
+      },
+      "scope": "Supporting original writer/root evidence, independently read and validated; not a new independent execution or full acceptance judgment",
+      "parsed_test_counts": {
+        "top_level_started": 14,
+        "subtests_started": 16,
+        "top_level_failed": 0,
+        "subtests_failed": 0
+      }
+    }
+  ],
+  "findings": [
+    {
+      "id": "FV-REPLAY-PROPOSAL-STATE-01",
+      "status": "OPEN",
+      "severity": "material-evidence-accounting",
+      "observed": "The terminal cancellation branch replaces history.Result without States, resetting already observed checker work to0. The new terminal preservation test checks History/Events/Choices but omits States.",
+      "required_change": "Preserve States: x.trace.Result.States in the INCONCLUSIVE replacement and assert the terminal checkpoint trace.Result.States matches its fully observed baseline. Continue clearing definitive witness/Failure and resealing digest."
+    },
+    {
+      "id": "FV-REPLAY-PROPOSAL-MUTATION-02",
+      "status": "OPEN",
+      "severity": "critical-negative-coverage",
+      "observed": "New Replay guards and Run terminal polling shift legacy absolute570 earlier. Tests200/570 can be satisfied by earlier/after-run guards and do not alone demonstrate rejection of removal of the sole final return ctx.Err().",
+      "required_change": "Add an explicit candidate final-comparison control. The actual corrected uncanceled Replay has577 polls, so a separately verified pinned576 snapshot-cancel phase should catch removal of only the last return ctx.Err(). Require actual PASS / sole terminal guard intentional defect FAIL / exact restored PASS and retain200/570. If the current measured poll schedule differs, pin the actual pre-terminal site with honest source evidence instead of guessing."
+    }
+  ],
+  "otherwise_preserved": [
+    "300ms budget, identity assertion and uncancelled independent fresh-seed equality",
+    "Actual target recorded entropy and seed replay, all prior strict equality/tamper checks",
+    "Run INCONCLUSIVE/noFailure and canonical resealing design, subject to state-accounting correction"
+  ],
+  "proposal_actual_pass_limitation": "The existing affected race tests genuinely passed. Their missing state-count/sole terminal mutation assertions mean that PASS does not resolve these independent findings.",
+  "no_approved_exception_document_written": true,
+  "NOT_RUN_OR_UNPROVEN": [
+    "Reviewer has not rerun target tests or hypothetical mutations",
+    "Concrete corrected patch/document, original failure retention, exact mutation/restoration and fresh full/hosted/current all24 review remain pending"
+  ],
+  "public_or_root_status_writes_by_reviewer": false
+}

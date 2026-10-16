@@ -1,0 +1,7 @@
+=== RUN   TestDiagnosticRunCancellationDuringFinalization
+    replay_cancel_probe_test.go:112: diagnostic Run polls=285 fixed checkpoint=285 observed polls=285 status=INVALID failure=true err=<nil>
+    replay_cancel_probe_test.go:117: cancelled finalization must retain an INCONCLUSIVE trace without semantic failure or generic input error
+--- FAIL: TestDiagnosticRunCancellationDuringFinalization (0.21s)
+FAIL
+FAIL	github.com/C-X1an/faultbraid/tests/security	2.549s
+FAIL

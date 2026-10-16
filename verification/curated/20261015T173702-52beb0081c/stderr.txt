@@ -1,0 +1,5 @@
+Exception: [recorded-working-root]\guard-fixtures\old-cloud-reparse\env-native.ps1:8
+Line |
+   8 |  . ReparsePoint) { throw 'Native Python must be a regular executable.' }
+     |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Native Python must be a regular executable.

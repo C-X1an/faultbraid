@@ -1,0 +1,6 @@
+=== RUN   TestSequentialViolation
+    history_test.go:22: stale read accepted: {Status:VALID Witness:[r w] States:4 Reason:legal sequential witness}
+--- FAIL: TestSequentialViolation (0.00s)
+FAIL
+FAIL	github.com/C-X1an/faultbraid/internal/history	1.846s
+FAIL

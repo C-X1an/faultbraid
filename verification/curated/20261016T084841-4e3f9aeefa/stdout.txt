@@ -1,0 +1,6 @@
+=== RUN   TestNativeCompletionUnfilteredWaitRejectsPendingAndRejection
+    completion_test.go:124: non-admitted response established completion: [pending unknown]
+--- FAIL: TestNativeCompletionUnfilteredWaitRejectsPendingAndRejection (0.00s)
+FAIL
+FAIL	github.com/C-X1an/faultbraid/internal/labreal	4.396s
+FAIL

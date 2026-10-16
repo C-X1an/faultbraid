@@ -1,0 +1,1377 @@
+{
+  "version": 1,
+  "mode": "native-loopback-conformance-v1",
+  "identity": {
+    "source_tree_sha256": "48d766c6a7b4ca1cd429607d08a8212331db3bc2850b7076b9db99cbdafacdf2",
+    "module_lock_sha256": "c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432",
+    "patch_sha256": "01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647"
+  },
+  "binary_sha256": "76a9c4b2579aa55a8fd6e75e6718339017ca70c3a78c882f3d5eb7fcea22ce92",
+  "tick_milliseconds": 25,
+  "request_concurrency": 4,
+  "observed_peak_request_concurrency": 4,
+  "duration_milliseconds": 9785,
+  "entropy_version": "splitmix64-v1",
+  "scenario": {
+    "version": 1,
+    "target": "raft-register-v1",
+    "seed": 0,
+    "voters": [
+      1,
+      2,
+      3
+    ],
+    "event_limit": 100000,
+    "queue_limit": 100000,
+    "log_limit_bytes": 1048576,
+    "checker_state_limit": 100000,
+    "actions": [
+      {
+        "action_id": "write7-burst-0",
+        "virtual_time": 40,
+        "kind": "invoke_write",
+        "node": 1,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "write7-burst-1",
+        "virtual_time": 40,
+        "kind": "invoke_write",
+        "node": 2,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "write7-burst-2",
+        "virtual_time": 40,
+        "kind": "invoke_write",
+        "node": 3,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "write7-burst-3",
+        "virtual_time": 40,
+        "kind": "invoke_write",
+        "node": 1,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "write7-burst-4",
+        "virtual_time": 40,
+        "kind": "invoke_write",
+        "node": 2,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "write7-burst-5",
+        "virtual_time": 40,
+        "kind": "invoke_write",
+        "node": 3,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "write7-burst-6",
+        "virtual_time": 40,
+        "kind": "invoke_write",
+        "node": 1,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "write7-burst-7",
+        "virtual_time": 40,
+        "kind": "invoke_write",
+        "node": 2,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "write7-burst-8",
+        "virtual_time": 40,
+        "kind": "invoke_write",
+        "node": 3,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "write7-burst-9",
+        "virtual_time": 40,
+        "kind": "invoke_write",
+        "node": 1,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "write7-burst-10",
+        "virtual_time": 40,
+        "kind": "invoke_write",
+        "node": 2,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "write7-burst-11",
+        "virtual_time": 40,
+        "kind": "invoke_write",
+        "node": 3,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "write7-burst-12",
+        "virtual_time": 40,
+        "kind": "invoke_write",
+        "node": 1,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "write7-burst-13",
+        "virtual_time": 40,
+        "kind": "invoke_write",
+        "node": 2,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "write7-burst-14",
+        "virtual_time": 40,
+        "kind": "invoke_write",
+        "node": 3,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "write7-burst-15",
+        "virtual_time": 40,
+        "kind": "invoke_write",
+        "node": 1,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "read7:1",
+        "virtual_time": 70,
+        "kind": "invoke_read",
+        "node": 1,
+        "request_id": "read7"
+      },
+      {
+        "action_id": "read7:2",
+        "virtual_time": 71,
+        "kind": "invoke_read",
+        "node": 2,
+        "request_id": "read7"
+      },
+      {
+        "action_id": "read7:3",
+        "virtual_time": 72,
+        "kind": "invoke_read",
+        "node": 3,
+        "request_id": "read7"
+      },
+      {
+        "action_id": "kill-node2",
+        "virtual_time": 90,
+        "kind": "crash",
+        "node": 2
+      },
+      {
+        "action_id": "read-dead-node2",
+        "virtual_time": 95,
+        "kind": "invoke_read",
+        "node": 2,
+        "request_id": "dead-read"
+      },
+      {
+        "action_id": "restart-node2",
+        "virtual_time": 110,
+        "kind": "restart",
+        "node": 2
+      },
+      {
+        "action_id": "write9:1",
+        "virtual_time": 150,
+        "kind": "invoke_write",
+        "node": 1,
+        "request_id": "write9",
+        "value": 9
+      },
+      {
+        "action_id": "write9:2",
+        "virtual_time": 151,
+        "kind": "invoke_write",
+        "node": 2,
+        "request_id": "write9",
+        "value": 9
+      },
+      {
+        "action_id": "write9:3",
+        "virtual_time": 152,
+        "kind": "invoke_write",
+        "node": 3,
+        "request_id": "write9",
+        "value": 9
+      },
+      {
+        "action_id": "write7:1-retry",
+        "virtual_time": 170,
+        "kind": "invoke_write",
+        "node": 1,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "write7:2-retry",
+        "virtual_time": 171,
+        "kind": "invoke_write",
+        "node": 2,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "write7:3-retry",
+        "virtual_time": 172,
+        "kind": "invoke_write",
+        "node": 3,
+        "request_id": "write7",
+        "value": 7
+      },
+      {
+        "action_id": "read9:1",
+        "virtual_time": 200,
+        "kind": "invoke_read",
+        "node": 1,
+        "request_id": "read9"
+      },
+      {
+        "action_id": "read9:2",
+        "virtual_time": 201,
+        "kind": "invoke_read",
+        "node": 2,
+        "request_id": "read9"
+      },
+      {
+        "action_id": "read9:3",
+        "virtual_time": 202,
+        "kind": "invoke_read",
+        "node": 3,
+        "request_id": "read9"
+      }
+    ],
+    "end_time": 230
+  },
+  "history": {
+    "version": 1,
+    "initial": 0,
+    "operations": [
+      {
+        "id": "write7",
+        "kind": "write",
+        "value": 7,
+        "call": 1,
+        "return": 23
+      },
+      {
+        "id": "read7",
+        "kind": "read",
+        "value": 7,
+        "call": 33,
+        "return": 34
+      },
+      {
+        "id": "dead-read",
+        "kind": "read",
+        "value": 0,
+        "call": 39,
+        "return": null
+      },
+      {
+        "id": "write9",
+        "kind": "write",
+        "value": 9,
+        "call": 41,
+        "return": 57
+      },
+      {
+        "id": "read9",
+        "kind": "read",
+        "value": 9,
+        "call": 47,
+        "return": 58
+      }
+    ]
+  },
+  "result": {
+    "status": "VALID",
+    "witness": [
+      "write7",
+      "read7",
+      "write9",
+      "read9"
+    ],
+    "states": 5,
+    "reason": "legal sequential witness"
+  },
+  "attempts": [
+    {
+      "ordinal": 1,
+      "action_id": "write7-burst-0",
+      "request_id": "write7",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 2,
+      "action_id": "write7-burst-1",
+      "request_id": "write7",
+      "node_id": 2,
+      "pid": 41384,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 3,
+      "action_id": "write7-burst-2",
+      "request_id": "write7",
+      "node_id": 3,
+      "pid": 25768,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 4,
+      "action_id": "write7-burst-3",
+      "request_id": "write7",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 5,
+      "action_id": "write7-burst-4",
+      "request_id": "write7",
+      "node_id": 2,
+      "pid": 41384,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 6,
+      "action_id": "write7-burst-5",
+      "request_id": "write7",
+      "node_id": 3,
+      "pid": 25768,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 7,
+      "action_id": "write7-burst-6",
+      "request_id": "write7",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 8,
+      "action_id": "write7-burst-7",
+      "request_id": "write7",
+      "node_id": 2,
+      "pid": 41384,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 9,
+      "action_id": "write7-burst-8",
+      "request_id": "write7",
+      "node_id": 3,
+      "pid": 25768,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 10,
+      "action_id": "write7-burst-9",
+      "request_id": "write7",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 11,
+      "action_id": "write7-burst-10",
+      "request_id": "write7",
+      "node_id": 2,
+      "pid": 41384,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 12,
+      "action_id": "write7-burst-11",
+      "request_id": "write7",
+      "node_id": 3,
+      "pid": 25768,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 13,
+      "action_id": "write7-burst-12",
+      "request_id": "write7",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 14,
+      "action_id": "write7-burst-13",
+      "request_id": "write7",
+      "node_id": 2,
+      "pid": 41384,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 15,
+      "action_id": "write7-burst-14",
+      "request_id": "write7",
+      "node_id": 3,
+      "pid": 25768,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 16,
+      "action_id": "write7-burst-15",
+      "request_id": "write7",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 17,
+      "action_id": "write7-burst-2",
+      "request_id": "write7",
+      "node_id": 3,
+      "pid": 25768,
+      "kind": "write",
+      "phase": "rejected",
+      "admission": "rejected-before-admission",
+      "value": 0,
+      "code": "TARGET_REJECTED_BEFORE_ADMISSION"
+    },
+    {
+      "ordinal": 18,
+      "action_id": "write7-burst-1",
+      "request_id": "write7",
+      "node_id": 2,
+      "pid": 41384,
+      "kind": "write",
+      "phase": "rejected",
+      "admission": "rejected-before-admission",
+      "value": 0,
+      "code": "TARGET_REJECTED_BEFORE_ADMISSION"
+    },
+    {
+      "ordinal": 19,
+      "action_id": "write7-burst-4",
+      "request_id": "write7",
+      "node_id": 2,
+      "pid": 41384,
+      "kind": "write",
+      "phase": "rejected",
+      "admission": "rejected-before-admission",
+      "value": 0,
+      "code": "TARGET_REJECTED_BEFORE_ADMISSION"
+    },
+    {
+      "ordinal": 20,
+      "action_id": "write7-burst-5",
+      "request_id": "write7",
+      "node_id": 3,
+      "pid": 25768,
+      "kind": "write",
+      "phase": "rejected",
+      "admission": "rejected-before-admission",
+      "value": 0,
+      "code": "TARGET_REJECTED_BEFORE_ADMISSION"
+    },
+    {
+      "ordinal": 21,
+      "action_id": "write7-burst-7",
+      "request_id": "write7",
+      "node_id": 2,
+      "pid": 41384,
+      "kind": "write",
+      "phase": "rejected",
+      "admission": "rejected-before-admission",
+      "value": 0,
+      "code": "TARGET_REJECTED_BEFORE_ADMISSION"
+    },
+    {
+      "ordinal": 22,
+      "action_id": "write7-burst-8",
+      "request_id": "write7",
+      "node_id": 3,
+      "pid": 25768,
+      "kind": "write",
+      "phase": "rejected",
+      "admission": "rejected-before-admission",
+      "value": 0,
+      "code": "TARGET_REJECTED_BEFORE_ADMISSION"
+    },
+    {
+      "ordinal": 23,
+      "action_id": "write7-burst-9",
+      "request_id": "write7",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "write",
+      "phase": "complete",
+      "admission": "admitted",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 24,
+      "action_id": "write7-burst-6",
+      "request_id": "write7",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "write",
+      "phase": "complete",
+      "admission": "admitted",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 25,
+      "action_id": "write7-burst-3",
+      "request_id": "write7",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "write",
+      "phase": "complete",
+      "admission": "admitted",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 26,
+      "action_id": "write7-burst-0",
+      "request_id": "write7",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "write",
+      "phase": "complete",
+      "admission": "admitted",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 27,
+      "action_id": "write7-burst-10",
+      "request_id": "write7",
+      "node_id": 2,
+      "pid": 41384,
+      "kind": "write",
+      "phase": "rejected",
+      "admission": "rejected-before-admission",
+      "value": 0,
+      "code": "TARGET_REJECTED_BEFORE_ADMISSION"
+    },
+    {
+      "ordinal": 28,
+      "action_id": "write7-burst-11",
+      "request_id": "write7",
+      "node_id": 3,
+      "pid": 25768,
+      "kind": "write",
+      "phase": "rejected",
+      "admission": "rejected-before-admission",
+      "value": 0,
+      "code": "TARGET_REJECTED_BEFORE_ADMISSION"
+    },
+    {
+      "ordinal": 29,
+      "action_id": "write7-burst-13",
+      "request_id": "write7",
+      "node_id": 2,
+      "pid": 41384,
+      "kind": "write",
+      "phase": "rejected",
+      "admission": "rejected-before-admission",
+      "value": 0,
+      "code": "TARGET_REJECTED_BEFORE_ADMISSION"
+    },
+    {
+      "ordinal": 30,
+      "action_id": "write7-burst-14",
+      "request_id": "write7",
+      "node_id": 3,
+      "pid": 25768,
+      "kind": "write",
+      "phase": "rejected",
+      "admission": "rejected-before-admission",
+      "value": 0,
+      "code": "TARGET_REJECTED_BEFORE_ADMISSION"
+    },
+    {
+      "ordinal": 31,
+      "action_id": "write7-burst-12",
+      "request_id": "write7",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "write",
+      "phase": "complete",
+      "admission": "admitted",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 32,
+      "action_id": "write7-burst-15",
+      "request_id": "write7",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "write",
+      "phase": "complete",
+      "admission": "admitted",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 33,
+      "action_id": "read7:1",
+      "request_id": "read7",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "read",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 0,
+      "code": ""
+    },
+    {
+      "ordinal": 34,
+      "action_id": "read7:1",
+      "request_id": "read7",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "read",
+      "phase": "complete",
+      "admission": "admitted",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 35,
+      "action_id": "read7:2",
+      "request_id": "read7",
+      "node_id": 2,
+      "pid": 41384,
+      "kind": "read",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 36,
+      "action_id": "read7:2",
+      "request_id": "read7",
+      "node_id": 2,
+      "pid": 41384,
+      "kind": "read",
+      "phase": "rejected",
+      "admission": "rejected-before-admission",
+      "value": 0,
+      "code": "TARGET_REJECTED_BEFORE_ADMISSION"
+    },
+    {
+      "ordinal": 37,
+      "action_id": "read7:3",
+      "request_id": "read7",
+      "node_id": 3,
+      "pid": 25768,
+      "kind": "read",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 38,
+      "action_id": "read7:3",
+      "request_id": "read7",
+      "node_id": 3,
+      "pid": 25768,
+      "kind": "read",
+      "phase": "rejected",
+      "admission": "rejected-before-admission",
+      "value": 0,
+      "code": "TARGET_REJECTED_BEFORE_ADMISSION"
+    },
+    {
+      "ordinal": 39,
+      "action_id": "read-dead-node2",
+      "request_id": "dead-read",
+      "node_id": 2,
+      "pid": 0,
+      "kind": "read",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 0,
+      "code": ""
+    },
+    {
+      "ordinal": 40,
+      "action_id": "read-dead-node2",
+      "request_id": "dead-read",
+      "node_id": 2,
+      "pid": 0,
+      "kind": "read",
+      "phase": "pending",
+      "admission": "unknown",
+      "value": 0,
+      "code": "NODE_UNAVAILABLE"
+    },
+    {
+      "ordinal": 41,
+      "action_id": "write9:1",
+      "request_id": "write9",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 9,
+      "code": ""
+    },
+    {
+      "ordinal": 42,
+      "action_id": "write9:2",
+      "request_id": "write9",
+      "node_id": 2,
+      "pid": 38516,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 9,
+      "code": ""
+    },
+    {
+      "ordinal": 43,
+      "action_id": "write9:3",
+      "request_id": "write9",
+      "node_id": 3,
+      "pid": 25768,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 9,
+      "code": ""
+    },
+    {
+      "ordinal": 44,
+      "action_id": "write7:1-retry",
+      "request_id": "write7",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 45,
+      "action_id": "write7:2-retry",
+      "request_id": "write7",
+      "node_id": 2,
+      "pid": 38516,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 46,
+      "action_id": "write7:3-retry",
+      "request_id": "write7",
+      "node_id": 3,
+      "pid": 25768,
+      "kind": "write",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 47,
+      "action_id": "read9:1",
+      "request_id": "read9",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "read",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 0,
+      "code": ""
+    },
+    {
+      "ordinal": 48,
+      "action_id": "read9:2",
+      "request_id": "read9",
+      "node_id": 2,
+      "pid": 38516,
+      "kind": "read",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 0,
+      "code": ""
+    },
+    {
+      "ordinal": 49,
+      "action_id": "read9:3",
+      "request_id": "read9",
+      "node_id": 3,
+      "pid": 25768,
+      "kind": "read",
+      "phase": "invoke",
+      "admission": "awaiting-response",
+      "value": 0,
+      "code": ""
+    },
+    {
+      "ordinal": 50,
+      "action_id": "write9:2",
+      "request_id": "write9",
+      "node_id": 2,
+      "pid": 38516,
+      "kind": "write",
+      "phase": "rejected",
+      "admission": "rejected-before-admission",
+      "value": 0,
+      "code": "TARGET_REJECTED_BEFORE_ADMISSION"
+    },
+    {
+      "ordinal": 51,
+      "action_id": "write9:3",
+      "request_id": "write9",
+      "node_id": 3,
+      "pid": 25768,
+      "kind": "write",
+      "phase": "rejected",
+      "admission": "rejected-before-admission",
+      "value": 0,
+      "code": "TARGET_REJECTED_BEFORE_ADMISSION"
+    },
+    {
+      "ordinal": 52,
+      "action_id": "write7:1-retry",
+      "request_id": "write7",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "write",
+      "phase": "complete",
+      "admission": "admitted",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 53,
+      "action_id": "write7:3-retry",
+      "request_id": "write7",
+      "node_id": 3,
+      "pid": 25768,
+      "kind": "write",
+      "phase": "complete",
+      "admission": "admitted",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 54,
+      "action_id": "write7:2-retry",
+      "request_id": "write7",
+      "node_id": 2,
+      "pid": 38516,
+      "kind": "write",
+      "phase": "complete",
+      "admission": "admitted",
+      "value": 7,
+      "code": ""
+    },
+    {
+      "ordinal": 55,
+      "action_id": "read9:2",
+      "request_id": "read9",
+      "node_id": 2,
+      "pid": 38516,
+      "kind": "read",
+      "phase": "rejected",
+      "admission": "rejected-before-admission",
+      "value": 0,
+      "code": "TARGET_REJECTED_BEFORE_ADMISSION"
+    },
+    {
+      "ordinal": 56,
+      "action_id": "read9:3",
+      "request_id": "read9",
+      "node_id": 3,
+      "pid": 25768,
+      "kind": "read",
+      "phase": "rejected",
+      "admission": "rejected-before-admission",
+      "value": 0,
+      "code": "TARGET_REJECTED_BEFORE_ADMISSION"
+    },
+    {
+      "ordinal": 57,
+      "action_id": "write9:1",
+      "request_id": "write9",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "write",
+      "phase": "complete",
+      "admission": "admitted",
+      "value": 9,
+      "code": ""
+    },
+    {
+      "ordinal": 58,
+      "action_id": "read9:1",
+      "request_id": "read9",
+      "node_id": 1,
+      "pid": 6576,
+      "kind": "read",
+      "phase": "complete",
+      "admission": "admitted",
+      "value": 9,
+      "code": ""
+    }
+  ],
+  "processes": [
+    {
+      "node_id": 1,
+      "incarnation": 1,
+      "pid": 6576,
+      "loopback_address": "127.0.0.1:56009",
+      "identity": {
+        "source_tree_sha256": "48d766c6a7b4ca1cd429607d08a8212331db3bc2850b7076b9db99cbdafacdf2",
+        "module_lock_sha256": "c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432",
+        "patch_sha256": "01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647"
+      },
+      "binary_sha256": "76a9c4b2579aa55a8fd6e75e6718339017ca70c3a78c882f3d5eb7fcea22ce92",
+      "entropy_seed": 11400714819323198485,
+      "entropy_choices": [
+        {
+          "node": 1,
+          "stream": "raft-election",
+          "sequence": 0,
+          "bound": 10,
+          "value": 0
+        },
+        {
+          "node": 1,
+          "stream": "raft-election",
+          "sequence": 1,
+          "bound": 10,
+          "value": 9
+        },
+        {
+          "node": 1,
+          "stream": "raft-election",
+          "sequence": 2,
+          "bound": 10,
+          "value": 4
+        },
+        {
+          "node": 1,
+          "stream": "raft-election",
+          "sequence": 3,
+          "bound": 10,
+          "value": 7
+        },
+        {
+          "node": 1,
+          "stream": "raft-election",
+          "sequence": 4,
+          "bound": 10,
+          "value": 0
+        }
+      ],
+      "journal": "node-1.journal",
+      "stdout": "node-1-incarnation-1.stdout.ndjson",
+      "stderr": "node-1-incarnation-1.stderr.ndjson",
+      "ready_snapshot": {
+        "target_status": {
+          "ID": 1,
+          "Leader": 0,
+          "Term": 1,
+          "Commit": 3,
+          "Applied": 3,
+          "Value": 0,
+          "Started": true,
+          "Stopped": false,
+          "Variant": "raft-register-v1",
+          "Pending": 0
+        },
+        "successful_file_syncs": 2,
+        "journal_bytes": 119,
+        "entropy_choices": 2
+      },
+      "last_observed_snapshot": {
+        "target_status": {
+          "ID": 1,
+          "Leader": 1,
+          "Term": 3,
+          "Commit": 9,
+          "Applied": 9,
+          "Value": 9,
+          "Started": true,
+          "Stopped": false,
+          "Variant": "raft-register-v1",
+          "Pending": 0
+        },
+        "successful_file_syncs": 16,
+        "journal_bytes": 1108,
+        "entropy_choices": 5
+      },
+      "stop_reason": "run-cleanup",
+      "waited": true,
+      "exit_code": 1,
+      "socket_closed": true,
+      "protocol_trailing_bytes": 0
+    },
+    {
+      "node_id": 2,
+      "incarnation": 1,
+      "pid": 41384,
+      "loopback_address": "127.0.0.1:56010",
+      "identity": {
+        "source_tree_sha256": "48d766c6a7b4ca1cd429607d08a8212331db3bc2850b7076b9db99cbdafacdf2",
+        "module_lock_sha256": "c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432",
+        "patch_sha256": "01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647"
+      },
+      "binary_sha256": "76a9c4b2579aa55a8fd6e75e6718339017ca70c3a78c882f3d5eb7fcea22ce92",
+      "entropy_seed": 4354685564936845354,
+      "entropy_choices": [
+        {
+          "node": 2,
+          "stream": "raft-election",
+          "sequence": 0,
+          "bound": 10,
+          "value": 9
+        },
+        {
+          "node": 2,
+          "stream": "raft-election",
+          "sequence": 1,
+          "bound": 10,
+          "value": 4
+        },
+        {
+          "node": 2,
+          "stream": "raft-election",
+          "sequence": 2,
+          "bound": 10,
+          "value": 7
+        },
+        {
+          "node": 2,
+          "stream": "raft-election",
+          "sequence": 3,
+          "bound": 10,
+          "value": 0
+        }
+      ],
+      "journal": "node-2.journal",
+      "stdout": "node-2-incarnation-1.stdout.ndjson",
+      "stderr": "node-2-incarnation-1.stderr.ndjson",
+      "ready_snapshot": {
+        "target_status": {
+          "ID": 2,
+          "Leader": 0,
+          "Term": 1,
+          "Commit": 3,
+          "Applied": 3,
+          "Value": 0,
+          "Started": true,
+          "Stopped": false,
+          "Variant": "raft-register-v1",
+          "Pending": 0
+        },
+        "successful_file_syncs": 2,
+        "journal_bytes": 119,
+        "entropy_choices": 2
+      },
+      "last_observed_snapshot": {
+        "target_status": {
+          "ID": 2,
+          "Leader": 1,
+          "Term": 3,
+          "Commit": 8,
+          "Applied": 8,
+          "Value": 7,
+          "Started": true,
+          "Stopped": false,
+          "Variant": "raft-register-v1",
+          "Pending": 0
+        },
+        "successful_file_syncs": 14,
+        "journal_bytes": 961,
+        "entropy_choices": 4
+      },
+      "stop_reason": "scenario-kill",
+      "waited": true,
+      "exit_code": 1,
+      "socket_closed": true,
+      "protocol_trailing_bytes": 0
+    },
+    {
+      "node_id": 3,
+      "incarnation": 1,
+      "pid": 25768,
+      "loopback_address": "127.0.0.1:56019",
+      "identity": {
+        "source_tree_sha256": "48d766c6a7b4ca1cd429607d08a8212331db3bc2850b7076b9db99cbdafacdf2",
+        "module_lock_sha256": "c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432",
+        "patch_sha256": "01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647"
+      },
+      "binary_sha256": "76a9c4b2579aa55a8fd6e75e6718339017ca70c3a78c882f3d5eb7fcea22ce92",
+      "entropy_seed": 15755400384260043839,
+      "entropy_choices": [
+        {
+          "node": 3,
+          "stream": "raft-election",
+          "sequence": 0,
+          "bound": 10,
+          "value": 4
+        },
+        {
+          "node": 3,
+          "stream": "raft-election",
+          "sequence": 1,
+          "bound": 10,
+          "value": 7
+        },
+        {
+          "node": 3,
+          "stream": "raft-election",
+          "sequence": 2,
+          "bound": 10,
+          "value": 0
+        },
+        {
+          "node": 3,
+          "stream": "raft-election",
+          "sequence": 3,
+          "bound": 10,
+          "value": 3
+        }
+      ],
+      "journal": "node-3.journal",
+      "stdout": "node-3-incarnation-1.stdout.ndjson",
+      "stderr": "node-3-incarnation-1.stderr.ndjson",
+      "ready_snapshot": {
+        "target_status": {
+          "ID": 3,
+          "Leader": 0,
+          "Term": 1,
+          "Commit": 3,
+          "Applied": 3,
+          "Value": 0,
+          "Started": true,
+          "Stopped": false,
+          "Variant": "raft-register-v1",
+          "Pending": 0
+        },
+        "successful_file_syncs": 2,
+        "journal_bytes": 119,
+        "entropy_choices": 2
+      },
+      "last_observed_snapshot": {
+        "target_status": {
+          "ID": 3,
+          "Leader": 1,
+          "Term": 3,
+          "Commit": 9,
+          "Applied": 9,
+          "Value": 9,
+          "Started": true,
+          "Stopped": false,
+          "Variant": "raft-register-v1",
+          "Pending": 0
+        },
+        "successful_file_syncs": 15,
+        "journal_bytes": 1045,
+        "entropy_choices": 4
+      },
+      "stop_reason": "run-cleanup",
+      "waited": true,
+      "exit_code": 1,
+      "socket_closed": true,
+      "protocol_trailing_bytes": 0
+    },
+    {
+      "node_id": 2,
+      "incarnation": 2,
+      "pid": 38516,
+      "loopback_address": "127.0.0.1:54778",
+      "identity": {
+        "source_tree_sha256": "48d766c6a7b4ca1cd429607d08a8212331db3bc2850b7076b9db99cbdafacdf2",
+        "module_lock_sha256": "c3bbf7216350f3fa9e0355a329fac69c54aef7ddaedcc9fcbdca4a81f684c432",
+        "patch_sha256": "01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647"
+      },
+      "binary_sha256": "76a9c4b2579aa55a8fd6e75e6718339017ca70c3a78c882f3d5eb7fcea22ce92",
+      "entropy_seed": 9454942516746919315,
+      "entropy_choices": [
+        {
+          "node": 2,
+          "stream": "raft-election",
+          "sequence": 0,
+          "bound": 10,
+          "value": 8
+        }
+      ],
+      "journal": "node-2.journal",
+      "stdout": "node-2-incarnation-2.stdout.ndjson",
+      "stderr": "node-2-incarnation-2.stderr.ndjson",
+      "ready_snapshot": {
+        "target_status": {
+          "ID": 2,
+          "Leader": 0,
+          "Term": 3,
+          "Commit": 8,
+          "Applied": 8,
+          "Value": 7,
+          "Started": true,
+          "Stopped": false,
+          "Variant": "raft-register-v1",
+          "Pending": 0
+        },
+        "successful_file_syncs": 0,
+        "journal_bytes": 961,
+        "entropy_choices": 1
+      },
+      "last_observed_snapshot": {
+        "target_status": {
+          "ID": 2,
+          "Leader": 1,
+          "Term": 3,
+          "Commit": 9,
+          "Applied": 9,
+          "Value": 9,
+          "Started": true,
+          "Stopped": false,
+          "Variant": "raft-register-v1",
+          "Pending": 0
+        },
+        "successful_file_syncs": 2,
+        "journal_bytes": 1108,
+        "entropy_choices": 1
+      },
+      "stop_reason": "run-cleanup",
+      "waited": true,
+      "exit_code": 1,
+      "socket_closed": true,
+      "protocol_trailing_bytes": 0
+    }
+  ],
+  "journals": [
+    {
+      "node_id": 1,
+      "path": "node-1.journal",
+      "bytes": 1108,
+      "sha256": "347c77b98e9c794104eee860da08727c559ef8306f2145ef935572c9e61283d7"
+    },
+    {
+      "node_id": 2,
+      "path": "node-2.journal",
+      "bytes": 1108,
+      "sha256": "c4e61cb49451299bd1dd7185285babb013d65af4bd1f86829aa41db20dab63b1"
+    },
+    {
+      "node_id": 3,
+      "path": "node-3.journal",
+      "bytes": 1045,
+      "sha256": "53f809606cd0da52ab92868a1187ab09bdd728e37280937ed7105b5dff929037"
+    }
+  ],
+  "transport": {
+    "sent_frames": 845,
+    "successful_http_message_posts": 721,
+    "dropped_frames": 124,
+    "rejected_http_message_posts": 0,
+    "sent_frame_bytes": 8266,
+    "unresolved_frame_outcomes": 0
+  },
+  "cleanup_complete": true,
+  "reason": "native scheduling is not replayable; journals prove completed File.Sync calls, not physical power loss"
+}

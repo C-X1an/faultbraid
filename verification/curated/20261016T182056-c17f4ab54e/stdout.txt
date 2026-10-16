@@ -1,0 +1,5 @@
+{"fixture": "assignment_failure", "suspended_pid": 37500, "process_alive_after_cleanup": false, "command_executed": false, "run_status": "BLOCKED", "run_reason": "containment_error"}
+{"fixture": "descendant_cleanup", "parent_exits": true, "child_pid": 47760, "child_started": true, "child_alive_after_cleanup": false, "run_status": "PASS", "run_reason": "completed"}
+{"fixture": "descendant_cleanup", "parent_exits": false, "child_pid": 24992, "child_started": true, "child_alive_after_cleanup": false, "run_status": "FAIL", "run_reason": "timeout"}
+prepared instrumented raft v0.0.0 at .local-runs/raft
+instrumented raft already prepared: .local-runs/raft

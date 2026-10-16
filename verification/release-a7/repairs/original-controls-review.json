@@ -1,0 +1,274 @@
+{
+  "schema_version": 1,
+  "kind": "independent-bounded-original-replay-cancellation-controls-review",
+  "status": "PASS",
+  "exception_decision": "NARROW_EXCEPTION_SUPPORTED_CONCRETE_BYTES_NOT_YET_APPROVED",
+  "scope": "Read-only source/manifest/stream validation of three genuine private actual-target controls; no new target execution or public repair/acceptance credit",
+  "reviewed_utc": "2026-10-14T06:49:44.126333+00:00",
+  "reviewer": {
+    "method": "separate-read-only-verifier",
+    "model_diversity_claim": false
+  },
+  "public_source": {
+    "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+    "git_dirty": false,
+    "source_tree_sha256": "05047573078ae775f06275e934bbf3081709c5d5169f92453f601d1860c9fdb1"
+  },
+  "original_diagnosis": {
+    "path": "[local-evidence-root]/reviews/final-independent-20261014-replay-cancellation-diagnosis.json",
+    "raw_sha256": "98b9667a53eeb0103c4e9bc8964b3537f1ee08a6af09570bfa436b0fd97b94d2",
+    "bytes_unchanged": true
+  },
+  "records": [
+    {
+      "run_id": "20261014T063657-bb8f9ed821",
+      "status": "FAIL",
+      "reason": "completed",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-v",
+        "-run",
+        "^TestDiagnosticCancellationDuringReplayFinalization$",
+        "./tests/security"
+      ],
+      "exit_code": 1,
+      "duration_seconds": 8.544887400003063,
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/badge-replay-cancel-before/20261014T063657-bb8f9ed821/stdout.txt",
+        "sha256": "0c346db4dcdcd4ad91ff50ef79f8f46934e3566cde6344740b7d576760fdb55f",
+        "bytes": 478
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/badge-replay-cancel-before/20261014T063657-bb8f9ed821/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/badge-replay-cancel-before/20261014T063657-bb8f9ed821/run.json",
+      "raw_record_sha256": "bb045c33ee7973b406958d41167bb26c175cc8c89a5ca51655025f554ad82bde",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "40d3eda59b638ca2f4a9844faedfdf2a4bfa5608cb4482b0643f8febd786caaa"
+      },
+      "source_file_count": 640,
+      "new_release_acceptance_credit": false
+    },
+    {
+      "run_id": "20261014T063751-7aa12905dc",
+      "status": "FAIL",
+      "reason": "completed",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-v",
+        "-run",
+        "^TestDiagnosticCallerPredicateRejectsCompletedReplay$",
+        "./tests/security"
+      ],
+      "exit_code": 1,
+      "duration_seconds": 8.064010999998573,
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/badge-replay-caller-before/20261014T063751-7aa12905dc/stdout.txt",
+        "sha256": "44166f9c58b84004fa624a954a6bf4d33f039f6e862fd857fe0c06143023682e",
+        "bytes": 357
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/badge-replay-caller-before/20261014T063751-7aa12905dc/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/badge-replay-caller-before/20261014T063751-7aa12905dc/run.json",
+      "raw_record_sha256": "986aba552963e301c0ba7e4ea9f2f50c9ae2f28b3365e9197feacba80db5a11b",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "4d4627a16d660ec150d626f5a9b15dd9f4423336dd6eebbf989b7e3f46c020f5"
+      },
+      "source_file_count": 640,
+      "new_release_acceptance_credit": false
+    },
+    {
+      "run_id": "20261014T063906-9c3858721c",
+      "status": "PASS",
+      "reason": "completed",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-v",
+        "-run",
+        "^TestDiagnosticCancellationDuringReplayFinalization$",
+        "./tests/security"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 9.983240499997919,
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/badge-replay-cancel-after/20261014T063906-9c3858721c/stdout.txt",
+        "sha256": "fab4dd18331ff8a7bc1cadebe1eb8f9dfb29203ff2854a8b28771ef70816e398",
+        "bytes": 342
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/badge-replay-cancel-after/20261014T063906-9c3858721c/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/badge-replay-cancel-after/20261014T063906-9c3858721c/run.json",
+      "raw_record_sha256": "474b96108b55e240cd52dee67fe775ab1015aeee5b6014e347a8332b66e25196",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "5ee7f69b7108961043612a921ad98c2a45b6d12d672f27d6f2c920266ec76a84"
+      },
+      "source_file_count": 640,
+      "new_release_acceptance_credit": false
+    }
+  ],
+  "actual_source_variants": {
+    "accepted_to_initial_control": {
+      "added": [
+        "tests/security/replay_cancel_probe_test.go"
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "initial_to_caller_control_harness_delta": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "path": "tests/security/replay_cancel_probe_test.go",
+          "before_sha256": "e37c9634a7f8c77119df890ba9b6608fb24290ca8e88b82ee3c51275e6e3810f",
+          "after_sha256": "ebed73d79f843a22506ede01e581f217e87e3ef59fdeffd21cb6ddc3e4481d6d"
+        }
+      ]
+    },
+    "caller_to_terminal_guard_control": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "path": "internal/scenario/trace.go",
+          "before_sha256": "3ae2f8a3a887dd2d9a78c104367f13e484360a4b921c82e35a30b94a139871b0",
+          "after_sha256": "579bdefe61fa7f92b24ad39571def7b0359ded4f7c95af32d4c9c4ca9682683d"
+        }
+      ]
+    },
+    "immutable_reviewed_probe_sha256": "ebed73d79f843a22506ede01e581f217e87e3ef59fdeffd21cb6ddc3e4481d6d",
+    "immutable_reviewed_terminal_guard_sha256": "579bdefe61fa7f92b24ad39571def7b0359ded4f7c95af32d4c9c4ca9682683d",
+    "initial_probe_exact_bytes_reviewed": true,
+    "initial_probe_provenance": "Root reconstructed the initial probe by removing only the appended caller function and verified its bytes against the initial manifest before saving. This reviewer independently verifies the same prefix relationship and both manifest hashes. No byte-identical-whole-harness claim is made.",
+    "preserved_source_snapshots": [
+      {
+        "path": "[local-evidence-root]/reviews/replay-cancellation-probes/initial-probe.go",
+        "raw_sha256": "e37c9634a7f8c77119df890ba9b6608fb24290ca8e88b82ee3c51275e6e3810f",
+        "bytes": 2296
+      },
+      {
+        "path": "[local-evidence-root]/reviews/replay-cancellation-probes/expanded-probe.go",
+        "raw_sha256": "ebed73d79f843a22506ede01e581f217e87e3ef59fdeffd21cb6ddc3e4481d6d",
+        "bytes": 3243
+      },
+      {
+        "path": "[local-evidence-root]/reviews/replay-cancellation-probes/before-trace.go",
+        "raw_sha256": "3ae2f8a3a887dd2d9a78c104367f13e484360a4b921c82e35a30b94a139871b0",
+        "bytes": 3756
+      },
+      {
+        "path": "[local-evidence-root]/reviews/replay-cancellation-probes/after-trace.go",
+        "raw_sha256": "579bdefe61fa7f92b24ad39571def7b0359ded4f7c95af32d4c9c4ca9682683d",
+        "bytes": 3762
+      }
+    ]
+  },
+  "actual_results": {
+    "original_internal_cancellation": {
+      "status": "FAIL",
+      "baseline_polls": 570,
+      "fixed_checkpoint": 570,
+      "actual_target_events": 425,
+      "replay_error": null
+    },
+    "terminal_guard_correction": {
+      "status": "PASS",
+      "baseline_polls": 571,
+      "same_fixed_checkpoint": 570,
+      "actual_target_events": 425,
+      "change": "Only trace.go differs from the preceding caller-control source; text changes only terminal return nil to return ctx.Err()."
+    },
+    "ordinary_after_return_cancellation": {
+      "status": "FAIL",
+      "intentional_specification_negative": true,
+      "custom_context_used": false,
+      "meaning": "Actual replay completed under an uncanceled ordinary WithCancel, then cancellation was deliberately performed strictly after return. The exact old caller predicate rejected that valid completion."
+    }
+  },
+  "context_fixture_scope": {
+    "first_control_custom_context": "replayPollContext.Err snapshots the real delegated Context.Err then deliberately invokes its real cancellation function at a pinned observation count, returning that snapshot. Cancellation scheduling is intentionally injected; the real target, trace, entropy, checker and replay comparisons are not mocked.",
+    "natural_300ms_timeout_reproduction": false,
+    "opaque_hosted_interleaving_proven": false,
+    "public_linux_runtime_proof": false
+  },
+  "prospective_exception_allowed_replacement": {
+    "remove_only": "Caller requirement that ctx.Err must still be nil after scenario.Replay has successfully returned",
+    "retain": [
+      "300ms fuzz deadline and cancellation cleanup",
+      "saved.Identity equality",
+      "Replay source/digest validation and both actual recorded-entropy and fresh-seed executions",
+      "Strict full trace equality and tamper rejection",
+      "Independent fresh-seed equality in the fuzz harness when that extra experiment finishes before its deadline"
+    ],
+    "required_replacement_coverage": [
+      "Uncanceled actual replay and identity/tamper rejection still pass",
+      "Cancellation already present, during actual execution, and at a pinned pre-finalization checkpoint rejects affirmative Replay",
+      "Run cancellation retains INCONCLUSIVE, clears any failure fingerprint and definitive witness, and reseals the correct canonical digest without fabricating execution ERROR",
+      "Ordinary actual Replay success followed by cancellation is accepted as an earlier completed replay, without retroactively claiming deadline failure",
+      "Intentional terminal guard/normalization defects fail specific new tests; exact restored bytes pass"
+    ],
+    "disallowed": [
+      "Larger fuzz timeout as sole repair",
+      "Quarantine/skip/xfail",
+      "Removal of identity or fresh-seed comparisons",
+      "Retagging old source/hosted results",
+      "Treating the custom context as natural deadline evidence"
+    ],
+    "current_concrete_patch_or_exception_document_approval": false
+  },
+  "PASS": [
+    "All three original command records and both streams match their recorded hashes/source identities",
+    "Source tables prove actual e7ce production inputs in both negative controls and the exact scoped terminal guard change",
+    "Same original570 checkpoint produces genuine pre-fix failure and post-guard success",
+    "Ordinary cancellation strictly after a successful actual return proves the caller criterion is erroneous"
+  ],
+  "FAIL": [
+    {
+      "run_id": "20261014T063657-bb8f9ed821",
+      "status": "FAIL",
+      "meaning": "Actual private target cancellation rejection defect"
+    },
+    {
+      "run_id": "20261014T063751-7aa12905dc",
+      "status": "FAIL",
+      "meaning": "Intentional specification negative control, not failed target safety"
+    },
+    {
+      "run_id": "20261014T064818-2b8d65ec3b",
+      "status": "FAIL",
+      "meaning": "This reviewer first used a mutable control working file as a historical artifact; the reader rejected its hash mismatch. The corrected reader uses preserved source snapshots.",
+      "path": "[local-evidence-root]/runtime/final-independent-20261014-replay-cancellation-controls-review/20261014T064818-2b8d65ec3b/run.json",
+      "raw_record_sha256": "f4ecd1ffbb4dcf0f96705c260dc6bd052ec2418b1432a7cdd266c1697cce6f2c",
+      "before_helper_sha256": "3bd7942ca61d08e750e07f400102b0d4aaa2cf2d075ddea8ad02493426ca82cc",
+      "new_release_acceptance_credit": false
+    }
+  ],
+  "NOT_RUN_OR_PENDING": [
+    "Independent execution of the controls was not repeated",
+    "Concrete full replacement/exception document review, Run normalization controls, restored mutation cycle, fresh acceptance and hosted repair evidence remain pending"
+  ],
+  "public_or_root_status_writes_by_reviewer": false
+}

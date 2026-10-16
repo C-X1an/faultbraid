@@ -1,0 +1,6 @@
+=== RUN   TestNativeCompletionFilteredWaitNeedsActualAdmittedRetry
+    completion_test.go:95: non-acknowledgment released retry dependency: [pending unknown]
+--- FAIL: TestNativeCompletionFilteredWaitNeedsActualAdmittedRetry (0.00s)
+FAIL
+FAIL	github.com/C-X1an/faultbraid/internal/labreal	3.036s
+FAIL

@@ -1,0 +1,2 @@
+prepared instrumented raft v3.7.0 at .local-runs/raft
+{"status": "PASS", "go": "go version go1.27.2 windows/amd64", "release_pin": "1.27.2", "release_toolchain_matches": true, "note": "A seed source-compatibility run is not supported-toolchain release verification."}

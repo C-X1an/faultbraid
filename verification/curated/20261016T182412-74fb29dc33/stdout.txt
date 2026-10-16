@@ -1,0 +1,4 @@
+python3 scripts/build.py
+{"status": "PASS", "source_tree_sha256": "44ce91f43df84d9f41d17498be35b70069695b9b497cdbf8592f29c976adfa87", "binary_sha256": "cd2e7cada0b58e4f75cf2497bf2b297d4441c7146f25b5558992718c17575e40"}
+python3 scripts/campaign.py
+{"status": "PASS", "count": 1000, "attempted": 1000, "valid": 1000, "invalid": 0, "inconclusive": 0, "errors": 0, "selected_failures": 1, "replay_attempts": 10, "duration_seconds": 11.296999999991385, "artifact": ".local-runs\\campaign-20261016T182415-8db83d\\summary.json", "problems": []}

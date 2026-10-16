@@ -1,0 +1,5 @@
+=== RUN   TestDiagnosticCancellationDuringReplayFinalization
+    replay_cancel_probe_test.go:55: diagnostic fixture: observed baseline context polls=571 fixed cancellation checkpoint=570 actual target events=425
+--- PASS: TestDiagnosticCancellationDuringReplayFinalization (0.35s)
+PASS
+ok  	github.com/C-X1an/faultbraid/tests/security	5.807s

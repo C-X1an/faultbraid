@@ -1,0 +1,10 @@
+make[1]: Entering directory '[recorded-working-root]'
+python3 scripts/mutation.py
+ignore_real_time PASS/FAIL/PASS; exact byte restoration
+drop_pending_effect PASS/FAIL/PASS; exact byte restoration
+budget_as_valid PASS/FAIL/PASS; exact byte restoration
+crash_keeps_volatile PASS/FAIL/PASS; exact byte restoration
+trust_recorded_output PASS/FAIL/PASS; exact byte restoration
+python3 scripts/target_mutation.py
+{"control_id": "20261016T181201-26ebc4c53e", "status": "PASS", "killed_by_semantic_assertion": true, "source_original_unchanged": true, "isolated_copy_restored": true, "isolated_git_removed": true}
+make[1]: Leaving directory '[recorded-working-root]'

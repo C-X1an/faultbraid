@@ -1,0 +1,15 @@
+test_job_assignment_failure_cannot_execute_command (test_candidate_evidence.EvidenceTests.test_job_assignment_failure_cannot_execute_command) ... ok
+test_missing_command_is_blocked (test_candidate_evidence.EvidenceTests.test_missing_command_is_blocked) ... ok
+test_normal_success_cleans_descendant_process (test_candidate_evidence.EvidenceTests.test_normal_success_cleans_descendant_process) ... ok
+test_real_success_and_failure (test_candidate_evidence.EvidenceTests.test_real_success_and_failure) ... ok
+test_source_alias_inside_ignored_outputs_is_rejected (test_candidate_evidence.EvidenceTests.test_source_alias_inside_ignored_outputs_is_rejected) ... ok
+test_source_ignored_outputs_do_not_change_identity (test_candidate_evidence.EvidenceTests.test_source_ignored_outputs_do_not_change_identity) ... ok
+test_source_paths_use_utf8_byte_order (test_candidate_evidence.EvidenceTests.test_source_paths_use_utf8_byte_order) ... ok
+test_source_symlink_is_rejected (test_candidate_evidence.EvidenceTests.test_source_symlink_is_rejected) ... ok
+test_timeout_cleans_descendant_process (test_candidate_evidence.EvidenceTests.test_timeout_cleans_descendant_process) ... ok
+test_timeout_is_failure (test_candidate_evidence.EvidenceTests.test_timeout_is_failure) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 29.084s
+
+OK

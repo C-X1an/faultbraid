@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "run_id": "20261015T175422-166e66c621",
+  "category": "actual-reviewed-private-activation",
+  "requirements": [
+    "AC-018",
+    "AC-019"
+  ],
+  "command": [
+    "pwsh",
+    "-NoLogo",
+    "-NoProfile",
+    "-Command",
+    "$ErrorActionPreference=\"Stop\"; . \"[local-evidence-root]/scripts/env-native.ps1\"; $fbPython = Get-Command python3 -CommandType Application | Select-Object -First 1; if ((Get-FileHash -LiteralPath $fbPython.Source).Hash.ToLowerInvariant() -ne \"82264b3fe4248d1ff3564a0296cbb4a266ef968799bd85902ab5eaaf3e17eb62\") { throw \"Wrong native interpreter\" }; & python3 -c \"import sys,json;print(json.dumps(dict(executable=sys.executable,version=sys.version)))\"; if ($LASTEXITCODE -ne 0) { throw \"Actual native execution failed\" }"
+  ],
+  "cwd": "[recorded-working-root]",
+  "started_utc": "2026-10-15T17:54:22.330668+00:00",
+  "ended_utc": "2026-10-15T17:54:22.745043+00:00",
+  "duration_seconds": 0.40700000000651926,
+  "status": "PASS",
+  "reason": "completed",
+  "exit_code": 0,
+  "environment": {
+    "os": "Windows",
+    "release": "11",
+    "architecture": "AMD64",
+    "python": "3.12.14",
+    "go": "go version go1.27.2 windows/amd64",
+    "cpu": "13th Gen Intel(R) Core(TM) i9-13900H",
+    "logical_cpus": 20,
+    "host_memory": "34048978944 bytes",
+    "container_limits": "not inferred from host totals"
+  },
+  "source": {
+    "git_commit": null,
+    "git_dirty": true,
+    "source_tree_sha256": "47a07b7224b71f22671ace549cf6f046cdc27e8aa97f89919f022d45518bfd8d",
+    "files": [
+      {
+        "path": "checkpoint.py",
+        "sha256": "67fab95d1d9fce470e17d7d0cc30ec89672bdaec7de01fdcb8f5621c9b49f41d"
+      },
+      {
+        "path": "install_reviewed_native_environment.py",
+        "sha256": "5ec4c17f970e73fdc5ad6b0406d101f57c2bc7efd409b8df29fa67df26da6177"
+      },
+      {
+        "path": "observe_environment.py",
+        "sha256": "8d1d8bbff06a171e6b72fe5dc5e2a83151322c923afae4b0093b2859c454d5da"
+      },
+      {
+        "path": "observe_windows_metadata.py",
+        "sha256": "bb10738bd8f6e88a0081dd66394aff256d3d15f4fdc2d01193133d423ebb9244"
+      },
+      {
+        "path": "preserve_active_tooling.py",
+        "sha256": "80bfb1ca5233e7506c28696e0ea12014e5996007221cdf664b6a75e8c2f7ab16"
+      }
+    ]
+  },
+  "stdout": {
+    "path": "verification/curated/20261015T175422-166e66c621/stdout.txt",
+    "sha256": "db66d5bc5cd0cba39649c1ce1fb8b56878ff4eab892771ab247b9d5f3cc02692",
+    "bytes": 142
+  },
+  "stderr": {
+    "path": "verification/curated/20261015T175422-166e66c621/stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "curation": {
+    "schema_version": 1,
+    "raw_record_sha256": "eb9df6d836cc1b6f7ec27e7e227154166930df573ca3693b565675e15c3b2eb3",
+    "scope": "selected real engineering command; excludes agent session/chat/prompt data",
+    "source_identity_status": "original fields and full file hashes unchanged",
+    "streams": {
+      "stdout": {
+        "raw_sha256": "62b8b7ade00329726b1aafd63b585bc867acd9ed15c0fb518b0a3487e6a2ac53",
+        "raw_bytes": 239,
+        "curated_sha256": "db66d5bc5cd0cba39649c1ce1fb8b56878ff4eab892771ab247b9d5f3cc02692",
+        "curated_bytes": 142,
+        "redactions": [
+          {
+            "kind": "CRLF-to-LF-text-normalization",
+            "count": 1
+          },
+          {
+            "kind": "operator-path-prefix",
+            "replacement": "[python-runtime-root]",
+            "count": 1
+          }
+        ]
+      },
+      "stderr": {
+        "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_bytes": 0,
+        "curated_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "curated_bytes": 0,
+        "redactions": []
+      }
+    },
+    "metadata_redactions": [
+      {
+        "kind": "operator-path-prefix",
+        "replacement": "[local-evidence-root]",
+        "count": 1
+      },
+      {
+        "kind": "operator-path-prefix",
+        "replacement": "[recorded-working-root]",
+        "count": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,446 @@
+{
+  "schema_version": 1,
+  "kind": "independent-bounded-source-policy-proposal-review",
+  "status": "PASS",
+  "decision": "APPROVED_FOR_SCOPED_INTEGRATION_NOT_FULL_RELEASE_APPROVAL",
+  "reviewed_utc": "2026-10-14T07:09:52.419228+00:00",
+  "reviewer": {
+    "method": "separate-read-only-verifier",
+    "model_diversity_claim": false
+  },
+  "scope": "Exact frozen metadata identity error-policy change, source/patch bytes and original writer evidence; no new target execution, hosted cause attribution or full acceptance judgment",
+  "original_source": {
+    "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+    "git_dirty": false,
+    "source_tree_sha256": "05047573078ae775f06275e934bbf3081709c5d5169f92453f601d1860c9fdb1"
+  },
+  "candidate_source": {
+    "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+    "git_dirty": true,
+    "source_tree_sha256": "aff5c52e40889188b3f6e7ba69d97053dd998d3ace06eb1f3d90ad9af23d1e9f"
+  },
+  "candidate_file_count": 640,
+  "proposal": {
+    "path": "[local-evidence-root]/proposals/metadata-repair-writer/proposal.json",
+    "raw_sha256": "37cd4c2f31072051ffcf547e34a10655a6b8ace7a3c7a269ff4a4bc1e6beed7d"
+  },
+  "patch": {
+    "path": "[local-evidence-root]/proposals/metadata-repair-writer/candidate.patch",
+    "raw_sha256": "40b8f8b1468b80503fe3159e5fb84af344c8dae51d0a3668b9e6238f4fddf76e"
+  },
+  "source_delta": {
+    "added": [
+      "internal/buildinfo/files_metadata_test.go"
+    ],
+    "removed": [],
+    "changed": [
+      {
+        "path": "internal/buildinfo/files.go",
+        "before_sha256": "7011c775a1e5c1821edb677d86acb0a4c5d78598b76c1acd940798f3951e38f5",
+        "after_sha256": "d6c763bb7e27707a4742d16d5956a68215a2aa1edaeae88706639926d97e17d9"
+      }
+    ]
+  },
+  "negative_same_final_tests_source_delta": {
+    "added": [],
+    "removed": [],
+    "changed": [
+      {
+        "path": "internal/buildinfo/files.go",
+        "before_sha256": "f1b7b9e2d1e93aa2efa25788569914871db9dcbab395e2693466db2d7190de06",
+        "after_sha256": "d6c763bb7e27707a4742d16d5956a68215a2aa1edaeae88706639926d97e17d9"
+      }
+    ]
+  },
+  "actual_evidence": [
+    {
+      "run_id": "20261014T065121-ad29e5ac3d",
+      "status": "PASS",
+      "exit_code": 0,
+      "reason": "completed",
+      "duration_seconds": 2.0465618000016548,
+      "command": [
+        "python3",
+        "scripts/bootstrap.py"
+      ],
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-baseline-bootstrap/20261014T065121-ad29e5ac3d/stdout.txt",
+        "sha256": "d6c5b83918f047cb2c398695c8ad777334477816fdf8e84fd5240d18f8ac9f3e",
+        "bytes": 270
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-baseline-bootstrap/20261014T065121-ad29e5ac3d/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/metadata-repair-writer-baseline-bootstrap/20261014T065121-ad29e5ac3d/run.json",
+      "raw_record_sha256": "83d22ddd62cf2a1064102af599a1e824a70f156b904f69bbb415335fb7d096cb",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": false,
+        "source_tree_sha256": "05047573078ae775f06275e934bbf3081709c5d5169f92453f601d1860c9fdb1"
+      },
+      "scope": "Supporting original writer/root evidence, independently read and validated; not a new independent execution or full acceptance judgment",
+      "parsed_test_counts": {
+        "top_level_started": 0,
+        "subtests_started": 0,
+        "top_level_failed": 0,
+        "subtests_failed": 0
+      }
+    },
+    {
+      "run_id": "20261014T065159-6182ca0c53",
+      "status": "PASS",
+      "exit_code": 0,
+      "reason": "completed",
+      "duration_seconds": 3.1174375000009604,
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-v",
+        "./internal/buildinfo"
+      ],
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-baseline-buildinfo/20261014T065159-6182ca0c53/stdout.txt",
+        "sha256": "bf5cd12ee43a3374d259f54b4cde7b512558686978eb22aeba15f673fd3b3855",
+        "bytes": 655
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-baseline-buildinfo/20261014T065159-6182ca0c53/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/metadata-repair-writer-baseline-buildinfo/20261014T065159-6182ca0c53/run.json",
+      "raw_record_sha256": "4e0bedd5ee11d1de954c7a77ead7aaa8ab05376df1a338b8e95d768154cd7699",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": false,
+        "source_tree_sha256": "05047573078ae775f06275e934bbf3081709c5d5169f92453f601d1860c9fdb1"
+      },
+      "scope": "Supporting original writer/root evidence, independently read and validated; not a new independent execution or full acceptance judgment",
+      "parsed_test_counts": {
+        "top_level_started": 2,
+        "subtests_started": 3,
+        "top_level_failed": 0,
+        "subtests_failed": 0
+      }
+    },
+    {
+      "run_id": "20261014T065330-d2823a735e",
+      "status": "FAIL",
+      "exit_code": 1,
+      "reason": "completed",
+      "duration_seconds": 3.936868600001617,
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-v",
+        "./internal/buildinfo"
+      ],
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-regression-before/20261014T065330-d2823a735e/stdout.txt",
+        "sha256": "ef5bb84791db263d3e865217c0cc4e6edb58be927c967f56c74a33bc95e478c7",
+        "bytes": 43160
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-regression-before/20261014T065330-d2823a735e/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/metadata-repair-writer-regression-before/20261014T065330-d2823a735e/run.json",
+      "raw_record_sha256": "a3bb6b5bcaa016a4a7807347eae63af8dc9642d5c1e61af8268a9b2115b97cc5",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "b968690e9ac1ca08d509a809d4e7d5085e4adb4f213c9840bd821313fadd3615"
+      },
+      "scope": "Supporting original writer/root evidence, independently read and validated; not a new independent execution or full acceptance judgment",
+      "parsed_test_counts": {
+        "top_level_started": 7,
+        "subtests_started": 107,
+        "top_level_failed": 1,
+        "subtests_failed": 45
+      }
+    },
+    {
+      "run_id": "20261014T065435-a6a390532f",
+      "status": "PASS",
+      "exit_code": 0,
+      "reason": "completed",
+      "duration_seconds": 3.5017920000027516,
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-v",
+        "./internal/buildinfo"
+      ],
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-regression-after/20261014T065435-a6a390532f/stdout.txt",
+        "sha256": "38fb310e5927ca08b32960f5c6e1784d1888bce3339a279c46d793dc12f10e7e",
+        "bytes": 19047
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-regression-after/20261014T065435-a6a390532f/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/metadata-repair-writer-regression-after/20261014T065435-a6a390532f/run.json",
+      "raw_record_sha256": "f45d15c3e76d5e77109c61568d28d4a1272ec68b7793938c65471ded5e9862b7",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "dfc729cdf576f3133bd3209c8364bb0155079b8dd409c69200d93d95ed8c1bc7"
+      },
+      "scope": "Supporting original writer/root evidence, independently read and validated; not a new independent execution or full acceptance judgment",
+      "parsed_test_counts": {
+        "top_level_started": 7,
+        "subtests_started": 107,
+        "top_level_failed": 0,
+        "subtests_failed": 0
+      }
+    },
+    {
+      "run_id": "20261014T065555-29dc839b23",
+      "status": "PASS",
+      "exit_code": 0,
+      "reason": "completed",
+      "duration_seconds": 3.972016799998528,
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-v",
+        "./internal/buildinfo"
+      ],
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-regression-final/20261014T065555-29dc839b23/stdout.txt",
+        "sha256": "c041582bb8dd5f143afd891341824534403af92e614dce7d0af8eee2c1949a2b",
+        "bytes": 20267
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-regression-final/20261014T065555-29dc839b23/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/metadata-repair-writer-regression-final/20261014T065555-29dc839b23/run.json",
+      "raw_record_sha256": "8991f3b9b0e8d0813faf52a62344afb8bc1a90e8553f575520933df3e2f8151f",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "aff5c52e40889188b3f6e7ba69d97053dd998d3ace06eb1f3d90ad9af23d1e9f"
+      },
+      "scope": "Supporting original writer/root evidence, independently read and validated; not a new independent execution or full acceptance judgment",
+      "parsed_test_counts": {
+        "top_level_started": 8,
+        "subtests_started": 115,
+        "top_level_failed": 0,
+        "subtests_failed": 0
+      }
+    },
+    {
+      "run_id": "20261014T065641-1e22513acf",
+      "status": "FAIL",
+      "exit_code": 1,
+      "reason": "completed",
+      "duration_seconds": 3.539027700000588,
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-v",
+        "./internal/buildinfo"
+      ],
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-regression-restored-original/20261014T065641-1e22513acf/stdout.txt",
+        "sha256": "45a4f01e15c85216bcc265d6966e6654eee68c0c9471bc64dc5ae322fd4300e1",
+        "bytes": 47083
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-regression-restored-original/20261014T065641-1e22513acf/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/metadata-repair-writer-regression-restored-original/20261014T065641-1e22513acf/run.json",
+      "raw_record_sha256": "1da2301093931fe4eae6c2bc73aff64387753c086acf5f9cb9e430675ca07cde",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "3f0c4d03ae0ed0430ea0c9cfdda00f476eb8d8a2703e627f65d548e91c427d42"
+      },
+      "scope": "Supporting original writer/root evidence, independently read and validated; not a new independent execution or full acceptance judgment",
+      "parsed_test_counts": {
+        "top_level_started": 8,
+        "subtests_started": 115,
+        "top_level_failed": 2,
+        "subtests_failed": 50
+      }
+    },
+    {
+      "run_id": "20261014T065707-ef2b80398e",
+      "status": "PASS",
+      "exit_code": 0,
+      "reason": "completed",
+      "duration_seconds": 7.1650673000003735,
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-v",
+        "./internal/buildinfo"
+      ],
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-race/20261014T065707-ef2b80398e/stdout.txt",
+        "sha256": "23ff386a72075447a32da7233a5f3973d0ee8cdd4aa927e9410601cff942ebc1",
+        "bytes": 20267
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-race/20261014T065707-ef2b80398e/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/metadata-repair-writer-race/20261014T065707-ef2b80398e/run.json",
+      "raw_record_sha256": "3517eebabdd79adc4b810cbff9289a4506b6d3ce1e13469d38809ae5d1f2e4da",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "aff5c52e40889188b3f6e7ba69d97053dd998d3ace06eb1f3d90ad9af23d1e9f"
+      },
+      "scope": "Supporting original writer/root evidence, independently read and validated; not a new independent execution or full acceptance judgment",
+      "parsed_test_counts": {
+        "top_level_started": 8,
+        "subtests_started": 115,
+        "top_level_failed": 0,
+        "subtests_failed": 0
+      }
+    },
+    {
+      "run_id": "20261014T065707-4ebb2f3d58",
+      "status": "PASS",
+      "exit_code": 0,
+      "reason": "completed",
+      "duration_seconds": 0.23691420000250218,
+      "command": [
+        "go",
+        "vet",
+        "./internal/buildinfo"
+      ],
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-vet/20261014T065707-4ebb2f3d58/stdout.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-vet/20261014T065707-4ebb2f3d58/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/metadata-repair-writer-vet/20261014T065707-4ebb2f3d58/run.json",
+      "raw_record_sha256": "0e55f41e4881bfd8f3ffec684a10f07cdfb81e30e6f2abf54a2ce8812a4d9ec5",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "aff5c52e40889188b3f6e7ba69d97053dd998d3ace06eb1f3d90ad9af23d1e9f"
+      },
+      "scope": "Supporting original writer/root evidence, independently read and validated; not a new independent execution or full acceptance judgment",
+      "parsed_test_counts": {
+        "top_level_started": 0,
+        "subtests_started": 0,
+        "top_level_failed": 0,
+        "subtests_failed": 0
+      }
+    },
+    {
+      "run_id": "20261014T065757-fa6532d1a0",
+      "status": "PASS",
+      "exit_code": 0,
+      "reason": "completed",
+      "duration_seconds": 62.30608810000194,
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-v",
+        "./tests/system"
+      ],
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-system-race/20261014T065757-fa6532d1a0/stdout.txt",
+        "sha256": "492328d007ef7e9fd922bed40141d1ad9d5b8cdc8df43675efbcfa77f926ba61",
+        "bytes": 27628
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-system-race/20261014T065757-fa6532d1a0/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/metadata-repair-writer-system-race/20261014T065757-fa6532d1a0/run.json",
+      "raw_record_sha256": "e9f937bec51d348e4975c02fee9bf9727493453d46f8d41c2374a096a6a59c61",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "aff5c52e40889188b3f6e7ba69d97053dd998d3ace06eb1f3d90ad9af23d1e9f"
+      },
+      "scope": "Supporting original writer/root evidence, independently read and validated; not a new independent execution or full acceptance judgment",
+      "parsed_test_counts": {
+        "top_level_started": 24,
+        "subtests_started": 22,
+        "top_level_failed": 0,
+        "subtests_failed": 0
+      }
+    },
+    {
+      "run_id": "20261014T065851-ad6daeeaa9",
+      "status": "PASS",
+      "exit_code": 0,
+      "reason": "completed",
+      "duration_seconds": 0.0756502999975055,
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-diff-check/20261014T065851-ad6daeeaa9/stdout.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/metadata-repair-writer-diff-check/20261014T065851-ad6daeeaa9/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/metadata-repair-writer-diff-check/20261014T065851-ad6daeeaa9/run.json",
+      "raw_record_sha256": "896a5ecb76f6df7d631f242171e29f0cd2fc847ddcb9349ebe2dab3def8bf23e",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "aff5c52e40889188b3f6e7ba69d97053dd998d3ace06eb1f3d90ad9af23d1e9f"
+      },
+      "scope": "Supporting original writer/root evidence, independently read and validated; not a new independent execution or full acceptance judgment",
+      "parsed_test_counts": {
+        "top_level_started": 0,
+        "subtests_started": 0,
+        "top_level_failed": 0,
+        "subtests_failed": 0
+      }
+    }
+  ],
+  "policy_findings": [
+    "Both failure boundaries tolerate only errors.Is(fs.ErrNotExist) on exact excluded components.",
+    "Included source disappearance, permissions, generic sharing errors and hashing/module/patch reads remain fatal.",
+    "Excluded directory traversal and sourceAlias checks remain active; no SkipDir or public injected walker is introduced.",
+    "Canonical file ordering/encoding and final module/patch identity code are byte-text-identical after the changed traversal section.",
+    "Final same-tests original algorithm fails50 subtests; restored corrected race execution passes8 top-level tests and115 subtests; actual system race has24 top-level and22 subtests, with no failures."
+  ],
+  "mock_fixture_boundary": "Error/alias callback regressions are labelled controlled filesystem fixtures. The directory disappearance fixture performs actual WalkDir/os.Remove. System race is actual target execution; this reviewer independently validates its records and does not claim to have rerun it.",
+  "unresolved_findings": [],
+  "NOT_RUN_OR_UNPROVEN": [
+    "Old opaque hosted source identity failure exact cause remains unproven",
+    "New Linux execution, combined source full/clean verification, exact public inventory/audit and all24 independent review are still required after integration"
+  ],
+  "public_or_root_status_writes_by_reviewer": false
+}

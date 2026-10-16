@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "run_id": "20261015T070906-19a6798a59",
+  "category": "independent-real-make-native-python-timeout-control",
+  "requirements": [],
+  "command": [
+    "make",
+    "control"
+  ],
+  "cwd": "[recorded-working-root]",
+  "started_utc": "2026-10-15T07:09:06.064012+00:00",
+  "ended_utc": "2026-10-15T07:09:08.082251+00:00",
+  "duration_seconds": 2.014999999999418,
+  "status": "FAIL",
+  "reason": "timeout",
+  "exit_code": 1,
+  "environment": {
+    "os": "Windows",
+    "release": "11",
+    "architecture": "AMD64",
+    "python": "3.12.14",
+    "go": "go version go1.27.2 windows/amd64",
+    "cpu": "13th Gen Intel(R) Core(TM) i9-13900H",
+    "logical_cpus": 20,
+    "host_memory": "34048978944 bytes",
+    "container_limits": "not inferred from host totals"
+  },
+  "source": {
+    "git_commit": null,
+    "git_dirty": true,
+    "source_tree_sha256": "eda83a4dda98416dac08c5a03d3ed9c5063df89218447829a8b25a2889a1b39f",
+    "files": [
+      {
+        "path": "Makefile",
+        "sha256": "111ccd991e104ec1958e9d473b2d770fe093a14c691f55fa226b77f70b1961e9"
+      },
+      {
+        "path": "child.py",
+        "sha256": "2933fbcea7190b79469d38cc0adc97a05d5cc33291d6e25b565061b76c6ad0b5"
+      }
+    ]
+  },
+  "stdout": {
+    "path": "verification/curated/20261015T070906-19a6798a59/stdout.txt",
+    "sha256": "639672c63b08bb88d3e82716f0f445aadc12394a626039ce80965335700f5cb6",
+    "bytes": 45
+  },
+  "stderr": {
+    "path": "verification/curated/20261015T070906-19a6798a59/stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "curation": {
+    "schema_version": 1,
+    "raw_record_sha256": "1372c4d481923e491ac4a9217214f8370b0edfb33a2c705e6d025a67dcf01337",
+    "scope": "selected real engineering command; excludes agent session/chat/prompt data",
+    "source_identity_status": "original fields and full file hashes unchanged",
+    "streams": {
+      "stdout": {
+        "raw_sha256": "08ebc45fd95e5b9466bbd5b404f19267c99a95b79e252802b63c9a3fc502888d",
+        "raw_bytes": 47,
+        "curated_sha256": "639672c63b08bb88d3e82716f0f445aadc12394a626039ce80965335700f5cb6",
+        "curated_bytes": 45,
+        "redactions": [
+          {
+            "kind": "CRLF-to-LF-text-normalization",
+            "count": 2
+          }
+        ]
+      },
+      "stderr": {
+        "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_bytes": 0,
+        "curated_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "curated_bytes": 0,
+        "redactions": []
+      }
+    },
+    "metadata_redactions": [
+      {
+        "kind": "operator-path-prefix",
+        "replacement": "[recorded-working-root]",
+        "count": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "kind": "declared-field-selection-of-original-A12-engineering-evidence",
+  "status": "FIELD_SELECTION_ONLY",
+  "selection_author": "supplement preparer; not an independent reviewer",
+  "scope": "Original CLI contract, unchanged guards/caps, rejected candidate identity and actual synthetic validator observations. Synthetic tests receive no Raft/acceptance credit.",
+  "value_hash_encoding": "SHA256 of UTF-8 json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=False), before declared text projection",
+  "reports": [
+    {
+      "original_document": "proposals/a12-cli-completion-plan-v2/proposal.json",
+      "original_report_sha256": "ebde34b5e30fcd651874934622d00b62949e83ed3bf1eccf3e038484c6b32653",
+      "original_report_bytes": 124054,
+      "not_the_complete_original_report": true,
+      "selected_original_fields": [
+        {
+          "field": "/kind",
+          "original_value_sha256": "5407dee6dbbd9de4998ee93a6ae16b5d9497cde80990c46f1283abd7874de50a",
+          "value": "isolated-native-completion-plan-cli-and-production-recipe-revision",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/status",
+          "original_value_sha256": "aed26ce8185c07c9f5c9d5b6a6f8834c0c0dc0da19eb9703389be3cdcf79cba0",
+          "value": "FROZEN_PRIVATE_REVISION; COMBINED EXECUTION AND INDEPENDENT REVIEW PENDING",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/base_source/git_commit",
+          "original_value_sha256": "aa90de643963e5f9ec28da7fca2867cc0c1842829e16da4b61a5405f5d220ca1",
+          "value": "32a72e0484d4f36c70f1e935f5168ce540a8570f",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/base_source/source_tree_sha256",
+          "original_value_sha256": "bd7cdf30971383ec4be8b340df8532ecc71b45e652b07918442359753101db4c",
+          "value": "fced11f2c14e4281d7f11b823c498deb302b3adae96db2d1f6428be7800117b4",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/patch/sha256",
+          "original_value_sha256": "11d1a2784bcebdccb4d235ce14b5a0171c6293a614960397631692089516463a",
+          "value": "e8c8c4466cf52022bf7b8c9fd4c0607702bc35c3673b92a8fc86687ba3f8b42a",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/core_contract",
+          "original_value_sha256": "f2fd3e33e6c5fd9e087b74b4a4fab4f9513e421f7a312cf3ea3f94657f0783d4",
+          "value": "Prior completion dependencies/barriers plus Result.ActionDispatches[] with action_id,kind,observed_ordinal: actual action-entry common-counter snapshot after all awaits, before non-request side effects; atomic.Load only, no new counter increment or dispatch timestamp",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/preserved",
+          "original_value_sha256": "e31e3ba29d4468057cc8c62dc71655fac953c4085f8312e2c1fbdcc65f8bba3f",
+          "value": {
+            "CLI_caller_deadline_seconds": 60,
+            "Go_CLI_payloads": "Byte-identical to original scoped static review/gofmt inputs; compilation still NOT RUN",
+            "original_production_recipe_if_assert_nodes": 17,
+            "original_scenario_sha256": "232cac5e66981afe4ead1450b441610af4ead0ae3c7b2ace850e2292be6c7a38",
+            "production_command_deadline_seconds": 70,
+            "public_writes": "NONE",
+            "request_acknowledgement_and_filter_guards": "UNCHANGED; all original five tests and both semantic mutants retained"
+          },
+          "declared_text_projection": []
+        },
+        {
+          "field": "/new_bounds",
+          "original_value_sha256": "ff8b66bc4d99258696200ac6e86cf85dc369189d69aaa6159974577f00c303d7",
+          "value": {
+            "completion_plan_bytes": 65536,
+            "example_dependencies": 13,
+            "example_terminal_completions": 1
+          },
+          "declared_text_projection": []
+        },
+        {
+          "field": "/finding_before_fix/id",
+          "original_value_sha256": "2c5febf75bc305eed59d6c77f061d3f80bcdc79801faa7ad1153d1ba99d315c3",
+          "value": "RV-A12-CLI-01",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/finding_before_fix/sha256",
+          "original_value_sha256": "d8b856b53a12c652c58886493e825ebe69034d02d9061ff1964e123591204780",
+          "value": "e1a04fa0dd0c2f8b2f57791481ecd0dcd27d7c01965fc34af3c7724aa4227900",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/finding_before_fix/status",
+          "original_value_sha256": "f06bfb6af9941a6a2e600fc3da971d81ea4f07d0cdc482d1188eed608bcbf7dc",
+          "value": "OPEN; awaiting exact independent closure",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/finding_before_fix/rejected_proposal_sha256",
+          "original_value_sha256": "3d2b98ccef47987d09c1971b553a814cae3570015db2d32fdc04c9c534f95cd5",
+          "value": "33bdf3875e0e8748dbfcf48d5223223fc936ad7def670b4e31e21b26fda4a499",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/finding_before_fix/rejected_combined_sha256",
+          "original_value_sha256": "07901f617ba956dbb6f7f6c87303875fa484cc017df8a51d1325a864d6b85370",
+          "value": "b06d405462adc1b2785ce34d88b89a9d36258b659a044dcdd062234ccd43ea72",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/evidence_scope",
+          "original_value_sha256": "cd52a69d62c45e53a45c865a2ab4c6ae602e3a99dbae458538c6bf41bc5a372d",
+          "value": "Eleven synthetic tests include exact production plan/scenario inputs and non-request floor controls; no Raft target credit. Actual validator/test/plan hashes are bound separately from unchanged outer public cwd source. Prior original commands and rejected source remain unchanged.",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/not_run",
+          "original_value_sha256": "f5a463ae28a9919c6e0f6a46dd57a3cf41ba169a32356f99e5956f04cf5b8f09",
+          "value": [
+            "Go compilation and CLI tests against revised core",
+            "identified production native recipe at concurrency1/4/16",
+            "combined release verification",
+            "independent exact implementation review",
+            "current all24 and publication"
+          ],
+          "declared_text_projection": []
+        }
+      ]
+    },
+    {
+      "original_document": "proposals/a12-cli-completion-plan-v2/python-controls-result.json",
+      "original_report_sha256": "bb8709d72a90edcbd8ebdef234a1f255baf47bfac41c1c5f670cae3e514de2fb",
+      "original_report_bytes": 6354,
+      "not_the_complete_original_report": true,
+      "selected_original_fields": [
+        {
+          "field": "/kind",
+          "original_value_sha256": "db940c578d62e55a7a4577b1404f9da067cd7386d26f0c4074b2c42b6d301135",
+          "value": "actual-synthetic-completion-validator-revision-controls",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/status",
+          "original_value_sha256": "727e9bd17b077ba162e13ba877135cc6fbc6b30f83da0b34b3e20233f1cc885f",
+          "value": "PASS",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/scope",
+          "original_value_sha256": "330619364a3f666aa2add4bdb162ade2bea5e75a4d554256950b2bed62dc3176",
+          "value": "Eleven synthetic validator tests include the exact full13 production inputs; no native Raft/acceptance credit",
+          "declared_text_projection": []
+        },
+        {
+          "field": "/results",
+          "original_value_sha256": "864a93a186947ca02e7a41f8fe4f8f82523364fdc0b097cd20bbc8d097266eb0",
+          "value": [
+            {
+              "case": "baseline",
+              "duration_seconds": 0.3279999999795109,
+              "expected_exit_code": 0,
+              "named_failure": null,
+              "record": "[local-evidence-root]\\proposals\\a12-cli-completion-plan-v2\\python-controls\\baseline\\20261016T090046-e82e5bd75d\\run.json",
+              "status": "PASS",
+              "test_sha256": "3774a2b4246ffa95023c2ecb25a182bed8473e898dfd5789dc4106e2b9b75c38",
+              "validator_sha256": "4138178b57c1efeec0cbd0ba9600766cbd461166c9c8b8c446902b06de9fa8cc"
+            },
+            {
+              "case": "ignore-filter-defect",
+              "duration_seconds": 0.28200000000651926,
+              "expected_exit_code": 1,
+              "named_failure": "test_initial_logical_ack_cannot_stand_in_for_retry",
+              "record": "[local-evidence-root]\\proposals\\a12-cli-completion-plan-v2\\python-controls\\ignore-filter-defect\\20261016T090050-402b074fc8\\run.json",
+              "status": "FAIL",
+              "test_sha256": "3774a2b4246ffa95023c2ecb25a182bed8473e898dfd5789dc4106e2b9b75c38",
+              "validator_sha256": "4c0036d998fd81c35951c130a3b64fc187112183b1df95aa9c6c7552d7276b67"
+            },
+            {
+              "case": "ignore-filter-restored",
+              "duration_seconds": 0.28200000000651926,
+              "expected_exit_code": 0,
+              "named_failure": null,
+              "record": "[local-evidence-root]\\proposals\\a12-cli-completion-plan-v2\\python-controls\\ignore-filter-restored\\20261016T090056-69cc1c1aa4\\run.json",
+              "status": "PASS",
+              "test_sha256": "3774a2b4246ffa95023c2ecb25a182bed8473e898dfd5789dc4106e2b9b75c38",
+              "validator_sha256": "4138178b57c1efeec0cbd0ba9600766cbd461166c9c8b8c446902b06de9fa8cc"
+            },
+            {
+              "case": "ignore-causal-order-defect",
+              "duration_seconds": 0.28099999998812564,
+              "expected_exit_code": 1,
+              "named_failure": "test_read_invocation_must_follow_retry_receipt",
+              "record": "[local-evidence-root]\\proposals\\a12-cli-completion-plan-v2\\python-controls\\ignore-causal-order-defect\\20261016T090103-fd2994a8e7\\run.json",
+              "status": "FAIL",
+              "test_sha256": "3774a2b4246ffa95023c2ecb25a182bed8473e898dfd5789dc4106e2b9b75c38",
+              "validator_sha256": "5f0c9859d96491c896f2838f34d55af17f19431d16cf463882251954c16780e6"
+            },
+            {
+              "case": "ignore-causal-order-restored",
+              "duration_seconds": 0.28099999998812564,
+              "expected_exit_code": 0,
+              "named_failure": null,
+              "record": "[local-evidence-root]\\proposals\\a12-cli-completion-plan-v2\\python-controls\\ignore-causal-order-restored\\20261016T090109-d971110211\\run.json",
+              "status": "PASS",
+              "test_sha256": "3774a2b4246ffa95023c2ecb25a182bed8473e898dfd5789dc4106e2b9b75c38",
+              "validator_sha256": "4138178b57c1efeec0cbd0ba9600766cbd461166c9c8b8c446902b06de9fa8cc"
+            },
+            {
+              "case": "ignore-nonrequest-floor-defect",
+              "duration_seconds": 0.34399999998277053,
+              "expected_exit_code": 1,
+              "named_failure": "test_nonrequest_floor_cannot_precede_acknowledgement",
+              "record": "[local-evidence-root]\\proposals\\a12-cli-completion-plan-v2\\python-controls\\ignore-nonrequest-floor-defect\\20261016T090114-f04ada56fa\\run.json",
+              "status": "FAIL",
+              "test_sha256": "3774a2b4246ffa95023c2ecb25a182bed8473e898dfd5789dc4106e2b9b75c38",
+              "validator_sha256": "1def348ba80b1527711b7a2e3f5ed304aae954b15c4884c23c89798e585c17fe"
+            },
+            {
+              "case": "ignore-nonrequest-floor-restored",
+              "duration_seconds": 0.20300000000861473,
+              "expected_exit_code": 0,
+              "named_failure": null,
+              "record": "[local-evidence-root]\\proposals\\a12-cli-completion-plan-v2\\python-controls\\ignore-nonrequest-floor-restored\\20261016T090120-918783d777\\run.json",
+              "status": "PASS",
+              "test_sha256": "3774a2b4246ffa95023c2ecb25a182bed8473e898dfd5789dc4106e2b9b75c38",
+              "validator_sha256": "4138178b57c1efeec0cbd0ba9600766cbd461166c9c8b8c446902b06de9fa8cc"
+            }
+          ],
+          "declared_text_projection": [
+            {
+              "kind": "operator-path-prefix",
+              "replacement": "[local-evidence-root]",
+              "count": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "current_acceptance_credit": "NONE",
+  "combined_supplement_independent_review": "NOT RUN"
+}

@@ -1,0 +1,6 @@
+=== RUN   TestReplayReexecutes
+    sim_test.go:80: tampered output accepted
+--- FAIL: TestReplayReexecutes (0.00s)
+FAIL
+FAIL	github.com/C-X1an/faultbraid/internal/sim	1.873s
+FAIL

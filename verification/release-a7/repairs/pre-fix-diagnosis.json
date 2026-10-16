@@ -1,0 +1,389 @@
+{
+  "schema_version": 1,
+  "kind": "independent-read-only-pre-fix-source-replay-cancellation-diagnosis",
+  "status": "PASS",
+  "decision": "PRE_FIX_FINDINGS_PRESERVED_REPAIR_AND_EXCEPTION_APPROVAL_PENDING",
+  "scope": "Exact e7ce source inspection and original failed hosted log/intake validation; proposed cancellation controls are NOT RUN by this diagnosis",
+  "reviewed_utc": "2026-10-14T06:39:52.296810+00:00",
+  "reviewer": {
+    "method": "separate-read-only-verifier",
+    "model_diversity_claim": false
+  },
+  "source": {
+    "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+    "git_dirty": false,
+    "source_tree_sha256": "05047573078ae775f06275e934bbf3081709c5d5169f92453f601d1860c9fdb1"
+  },
+  "file_count": 639,
+  "unchanged_execution_inputs": {
+    "count": 131,
+    "hashes": {
+      ".gitattributes": "b26bcf3abb98248d1a2b11d159633c1835e5decdf756a83b3fedeaaf0a21de08",
+      ".github/dependabot.yml": "38718ce0a094a628e3ae97f8b40d2cdac16cb412da10c7ee2f75e8c7695c47d5",
+      ".github/workflows/codeql.yml": "ff7a3d48665e538fd89da175f51763a376a46d6671a6294d5a47db7054408439",
+      ".github/workflows/full-release-check.yml": "b4fa5a29751097d5d40ed32121384c4868ff87f7586ea0e14cf17ead74c2e83c",
+      ".github/workflows/kernel.yml": "8aa672fcce8c12f941d5094b70d7df1ea942c475a175557ef47023d245158b6c",
+      ".gitignore": "0a39f3037f76c4298c60003d85fc897fa5aed519981a53db0081a889f8335351",
+      ".go-version": "6c075150045fda9bac31bb93cf5a0a0bc91622a75c1f10fb2971e6f994c6d4d6",
+      "Makefile": "5c952c11300bf0289b2526df53ed915564636afd139e04d5b348fcaf680a0a15",
+      "cmd/faultbraid/lab.go": "eb60e35638d03aa5cce93779551698b452bd46a05772349f3948a483d5d9e706",
+      "cmd/faultbraid/lab_test.go": "259f3189319ad5949331f2b23801241e1be78ed9a3fdbe8815ac1a0a8b07533d",
+      "cmd/faultbraid/main.go": "d45940ce8781eb5be484db6fb261ef7d6af523074fce2ac28dd796b88c7fb640",
+      "cmd/faultbraid/main_test.go": "eafe5e7bbb6d86d357d7e50069b4bfccc6672e223aa91b30e9b9f3ce5f8f70a1",
+      "cmd/faultbraid/target.go": "b1a1fd02a97259e2980da40b4c56d3c22b1284f3c1dfea0607fc75cdc4c4b057",
+      "cmd/faultbraid/target_routing_test.go": "7a426862ab57cf78bc965c945673f8679b47c9a773c9ae9d2331e2ed1ea940a0",
+      "dependency.lock.json": "e1e96c54b9fb1ea57d1aa0c47d498cb9c0f985b83c2f82f1ad16d24b7cb54a9e",
+      "docs/codec/raft-trace-v1.golden.json": "e6879873c3faba22825527cd522e761beb08c1f1ae32b3cafd8a7cc67db5bccd",
+      "examples/disk-trace.json": "5dda435e2c4fc4d22a6bbc55ad08f609e81f56a11509a41fd177fe0280945186",
+      "examples/invalid.json": "42329113714d0037bd80b9cf813957a4ac4a7f20ab52dfb1cc6efa67dfc5769a",
+      "examples/pending.json": "4d44f4232985b39c2fd45b67731efebcd18645e4963a55ee6ed7e9c6ea210378",
+      "examples/raft-real.json": "232cac5e66981afe4ead1450b441610af4ead0ae3c7b2ace850e2292be6c7a38",
+      "examples/raft-safe.json": "083611c71cfd4e2d34a174a988db2e1d6348fe824cf3de83850b8116a80876c3",
+      "examples/raft-unsafe.json": "b3846ecb723c5556ede66470830e16c64c96cded38dc868fce842ab584fdf31e",
+      "examples/valid.json": "739d7b9d86abe8e83ba250eece01a0667c74e9c901afde291f39f9f8d11d6ffa",
+      "go.mod": "8160d662b21652c1f566fa4052c8988540fd245822c041b891ba7957d939d3f5",
+      "go.sum": "2ff5125e338109b3850bce4a65e352215819518895b3053c5488fcf201cc08b0",
+      "internal/buildinfo/alias_other.go": "67faf7e65d046e2ffdb371905ef42edf7a8f12f067dea2c29f8230d9fe610ffc",
+      "internal/buildinfo/alias_windows.go": "3b3cad51608c63ad9e61a65da51ebb2752d57c02aefbbb15b070d1637f8681ba",
+      "internal/buildinfo/files.go": "7011c775a1e5c1821edb677d86acb0a4c5d78598b76c1acd940798f3951e38f5",
+      "internal/buildinfo/files_test.go": "88855b295bcc9c6fc92582d76c1e9ceac68ab0bb8f0526400955be2bea2a88b2",
+      "internal/buildinfo/info.go": "d1b97f4451345028a8b2134a69cdfe34f2a3dbca60cc0f7b83bdb5a9e9975aa0",
+      "internal/campaign/reduce.go": "d49f513cec16846494d41ffd4591e4f8bfa63383302a9c322e83332c5beb07cc",
+      "internal/campaign/seeds.go": "2b2cdbb3143453ccd1b2512fb168491415ca61f4a7ad03232880ae0df1778940",
+      "internal/campaign/workload.go": "d6eb9523e19eb908328b2ddc28a921afa547ccd1bb545854e64ae90535071603",
+      "internal/history/AGENTS.md": "d504f24edd4b31961644be0fa962d1b860d9e770c547eacebcd1b09dd1f88d77",
+      "internal/history/benchmark_test.go": "dfa44baa2809259500c626c0eaa697e26e07ab18f64f57cd6f369829877ad53f",
+      "internal/history/check.go": "9711c04ac3d6b8310d4b335e9e2906bd4bc037672efb6aaef913a653ca6b4c06",
+      "internal/history/checker_test.go": "3b82088aca76777c26722a7f3e3f39af73face39182035808796fb525b19a084",
+      "internal/history/history_test.go": "f6c7f7c1e8a371ecddbc3280d4acc34a223db2b001beb18d3e859c37180785f3",
+      "internal/history/reduce.go": "469e7b28e094e109663c3635b2bdb04c3712e201e82f1ff10f70c8cb26381565",
+      "internal/history/types.go": "d793ce6083d8aaf52143ac2ee94fc4b096cdff4dc307a58a1497304c665dcaba",
+      "internal/labreal/api.go": "3fa02da01bec21ec62823851b72a51e739d5cba471997c1c307dd4a9afa45525",
+      "internal/labreal/directory_other.go": "d5cfa6733efd1933151b31766439d82e57ca38a75fc87ec3adde3fab958daf98",
+      "internal/labreal/directory_windows.go": "56d0bdc3592da6a2ea58dc1500c415cc3b9368ecc3a80c8f0f440b8d80195ccd",
+      "internal/labreal/directory_windows_test.go": "1223f32a3e867bae1fc9a03fb0315111c99739bb285f023c16892448a8dc6781",
+      "internal/labreal/independent_lifecycle_test.go": "8bda7704d72e560e757b64e799db0aaefcaf78b01608316bf0dda32fe9c51591",
+      "internal/labreal/independent_uncertain_test.go": "36d23b6ad4f279e876c4953047852e5a451b170176bdfe168df90f697dca7ec9",
+      "internal/labreal/node.go": "1a481f9658026cd77b257f43af936554ab3e2b8a3e5fa366c433cfe6e410ed00",
+      "internal/labreal/path_alias_other.go": "6adc2b42bbc2fc534e58654dd5000498f94385736964e92aec3404c0079050ea",
+      "internal/labreal/path_alias_windows.go": "68c6b921e3f61e791daf25b14782986fd71f4338cb92b19253e04ba8f26c6bf8",
+      "internal/labreal/paths.go": "ea17650c14b1852c9f926f31488e353fdc0acf795042b6337c552e489e9feb02",
+      "internal/labreal/process_other.go": "1b716346b033b8e258435d7868a711d370da89627933ed53f51db8ff39d8c50f",
+      "internal/labreal/process_windows.go": "6435a6065ff4b449c94e2fe0262884383081f5d370df248d489ef4a5a64ed71e",
+      "internal/labreal/run.go": "98e1be42067a7400c03c56b30eac9e3f0d31ba8ddeb529f82c39fd0418d39550",
+      "internal/labreal/run_test.go": "51ccb55a166674b867fe8e356cba889ddbc88615d0c6d85be843a4c9d569aa08",
+      "internal/raftadapter/entropy.go": "3adf7fbfdd22637d4582962d64089aef01f10d6d35ea4c483d4925a1730b377b",
+      "internal/raftadapter/entropy_test.go": "706084c460684c211687d4eb4176ecac10a49abe6ef7fae93ec7248ad00c0415",
+      "internal/report/permissions_other_test.go": "5f043f79952ef8ab991c06c61c519dfde6780fa0783e5ce1f73ce5f63c58a918",
+      "internal/report/permissions_windows_test.go": "d2ac147604aa50fafca401e1dc12a7e269c4ecdd0f0c1fe903ca7ab0a608810e",
+      "internal/report/protect_other.go": "ba3124fc7b422960d7d66ae9a330385dd938b8e2d086922d5d9a2e73f8f8f3a0",
+      "internal/report/protect_windows.go": "7069851983221862839a408a50d1d2063b29eb5d939ed49e39db8ae915d6eeb5",
+      "internal/report/report.go": "d2ba55441b2b14e6fd4162988047a030dc312c643ba8106321afba6db452df91",
+      "internal/report/report_test.go": "758981588623565f9c32e790c5537cdb053229978f188c568b60fe5a2d3107b0",
+      "internal/report/target.go": "b30e040b4e420a1bc81d0ab744efb0b94709ae915345fc46ba84a3909d2a48e3",
+      "internal/report/target_test.go": "8e64dda54e656c5d8cf3380a5f522743bd578b610cfe6c31bd9c7403ec16ef77",
+      "internal/scenario/run.go": "79a555a5fd9988c5cb2888d6c16c24a67f21e0063fe8cabe7fc98e53f4fed252",
+      "internal/scenario/schema.go": "b4dbe686ab8ff9a50f9be3955630e0ca2e2e3c8c635859b5295de567f63a7a1a",
+      "internal/scenario/schema_test.go": "e9a171a8ee85cb8ca805cba6a27623cbe08ad94d4eded3ab230c0450c15e1d87",
+      "internal/scenario/trace.go": "3ae2f8a3a887dd2d9a78c104367f13e484360a4b921c82e35a30b94a139871b0",
+      "internal/sim/benchmark_test.go": "3371d455c57e9a371b603ac2d915c5e19b5153a1fba8d22eada61fb04bc65d0d",
+      "internal/sim/sim.go": "9e6adcf34507acc1097210bafbf45720db9c7f09562cbb3208dbde56c194a266",
+      "internal/sim/sim_test.go": "6d04ffbe1a9bfbd6cef009cb6770c555336b0d5e63f9dea86da0069c6dabb55e",
+      "internal/strictjson/strictjson.go": "2984de18b1220255b5ae67c86e8ee650eecc042192188ad0829796fd0df09e49",
+      "internal/strictjson/strictjson_test.go": "3fc933ea2752a204b232a6ca75c2d019a83f645b8ffc9c0d886d264292e63f35",
+      "internal/target/README.md": "7e5dd045c6cec90f171b7d58729d9f526e15184493a719a87a602291addf6d05",
+      "internal/target/api.go": "2ccbfbc8be5e883dd71fab7e1b3710cde100ee10585c7dc5d90e310c989e88e5",
+      "internal/target/command.go": "1c2a9c9508956027aa145345e09e2005a1c50f93f2b9bcea0408e83d6f7805aa",
+      "internal/target/config_limit_test.go": "f0fd7a38ecb4867034d8833551b30a75f0de0d4b743ed6a956de138aec9bf358",
+      "internal/target/file_store.go": "8440551afb0980ba1da106fb6d9150d0c84c3782840edc385fc0c4e3bde45486",
+      "internal/target/file_store_test.go": "4b064b47ae2fe85526bb9dd21169ff97dcf57269cb3bc99aed7545df23d106dc",
+      "internal/target/store.go": "b9717b5381ba4ded6eb776447c417bec8d518ecf406afe7a276f0e4f5da944f8",
+      "internal/target/target.go": "99695464287ea16871656cac1eb2596f20d41e7f106aecdadf6d271870c22587",
+      "internal/target/target_test.go": "46bfeb2281f7b941c40aedf052ec008ba4e219a29d4a3a637169fa4b88517b73",
+      "scripts/bootstrap.py": "737acaefd374cf4d56b3d9d12471da4bfec071036fcdf3deb2b31e9ae6c7a071",
+      "scripts/build.py": "ac4826cb801c00fbc654896d2c60a6554099379d90fad35d4e670fadc8ad8745",
+      "scripts/campaign.py": "dca31bfb279ea176a82b34ad574035f87f7ab77fcca4541d6332f7c6edfaa500",
+      "scripts/check_integrity.py": "467885ae3bc14a5128381b5472f03892e3d39eb81602de04635270d0ed54c6d2",
+      "scripts/clean_verify.py": "f189de89d7fce40f6842b1d1902ef9217ad1c64c95e8845ebca6b6a841d146d6",
+      "scripts/demo.py": "5309d490978261c17e72b3100027aaf60ca0ae6236e1a0cfacd4e6ca9e2491ce",
+      "scripts/full_gate.py": "fc4b76928a8d165724f36565ada6e1c0bbcade9d80a9450ebcbab5c0c80f4689",
+      "scripts/mutation.py": "94e5aad3acb5292e26f9883db7603eb6ada98e938aef8a522a41c1c481bd7bf4",
+      "scripts/public_audit.py": "b1cb8f1a3df56e724a87f0c94513d47e614f5c2bfd17425f1ec2944aa743801b",
+      "scripts/real_lab.py": "f72f00bb296c0d78e8f5ab0062f5f194ca1290f5454e16c5dbdd12e7c89a8c78",
+      "scripts/run_evidence.py": "c9770fe2715f17b9d2cae7f30374586596addebdf0069b28321665ba50985d32",
+      "scripts/security_online.py": "cc79f32ab5f3e573e7f0e5ae536c6e924ea56b7d828088e39249d4d17e132153",
+      "scripts/summarize_benchmarks.py": "4e23d933dd7fc544ca20d2e1a392eb3ccb90cf11e25c1274e0b4a1bdbbc2549d",
+      "scripts/supported_toolchain.py": "73b7bd79c09a20f1a4366a3e480fd45efbe49ffd02375fc5cca572377606268c",
+      "scripts/target_mutation.py": "7506c8b9d46e3b4bbba7db92f8de378e7d1384dffc57a7cbd470774e509bd3be",
+      "scripts/teardown.py": "8e990bab682a03fa8894626a0f6797bcc2ae0796d9bbd5d029f0a002a2165b87",
+      "scripts/test_evidence.py": "74ab0f0ec2650ca1ebd2c2ee65da5df276709947cb408adc633d38352a2c1bd3",
+      "scripts/test_full_gate.py": "fe2d06644c9abd7a543bda2c16bbe455e04c8ed2bf6d5424d4dbe631fcd269ea",
+      "scripts/test_prepare.py": "88c6f3069ae27d72ddd9eb2ac1f43c71bba1bd5c922689fa036c63e50e49829c",
+      "scripts/test_public_audit.py": "43ce0002514a09149760c1197035d66767c01ae06744a27e5deb5555407cc4b0",
+      "scripts/test_teardown.py": "8d57184d589a22dede593b805f182a42f0636bc0a5914bc1db12a1fb9253bb06",
+      "tests/acceptance_locked/AGENTS.md": "d2cbbda56c7a5b44b6ad4976f4ba62a4dfcc71a2b1d45da1d10cda72fadc1426",
+      "tests/acceptance_locked/acceptance_test.go": "1fbf07590a220c918b78ef2d403b8071030640cf513df9bad1e37e9afb4ee9be",
+      "tests/acceptance_locked/spec.json": "db3c2f565c170a2511e8abd28aad13cf62f3d1c557c7dc2d8f311a007310d9e6",
+      "tests/acceptance_locked/spec.sha256": "4e4d3a788fb7242085f703206ebb23651e8be860ff2c64d2c1ebbbe88e0ef598",
+      "tests/differential/checker_test.go": "b0422522e14806c92561b03c051d943f91c2a18c9ccbb25f37c27ceafb7aa1a0",
+      "tests/differential/oracle_test.go": "59ca592ea6ada35983c4476e18207fc6eecbd208f1d8a569e79a1b6c1f1bd46a",
+      "tests/differential/porcupine_test.go": "baf6097854b81de8c2a0cc371471c7571afdb8a3271a903e91cb1b173e01f0a9",
+      "tests/differential/target_test.go": "b6cde622c1aea10dc8f556287487e7158148510c4b3d2a097aff7ebdd7c5242a",
+      "tests/integration/cli_test.go": "2080e051e857f7c83202090acd6482e6042242bb789411d8ccd8e0b46daf4da1",
+      "tests/integration/target_cli_test.go": "c396cdb68a1ba55227a3567ba628de39d7d3b6de4a4d5d0d679b4a3bbde47e4c",
+      "tests/security/limits_test.go": "48b532d04634dd2990bf1533e67ee305aaf1c55646511d974f9d09c98993a702",
+      "tests/security/target_fuzz_test.go": "9563cd0c6c1d94885622a2551343c2ff5d8470665a48f532960111f97675b316",
+      "tests/system/admission_test.go": "5c813e1770ca505038a51e7f437ff34dce38bc5c0dbef27b567ea5dff56770bd",
+      "tests/system/benchmark_test.go": "f5fbec33625e0d4b387f34fd1dd392b307634e5387fc0e3c447f0ace54b914ff",
+      "tests/system/campaign_regression_test.go": "3000b102ba32757de91076343b71db9919369265766c57e64978cf391b41e123",
+      "tests/system/campaign_test.go": "e8b8dc93b9d24c68d0d0bb29a09f73e7549ad5e02029ae264e7420a8fe4c5144",
+      "tests/system/helpers_test.go": "a752033561bf8463da1da50b04a531913c47e379edc76e45e29b12f026c303c1",
+      "tests/system/persistence_test.go": "d8b97300ce158654a99c84dfe3ffb8cca3b9d4ee9cc213507aea2cc6243c560c",
+      "tests/system/raft_test.go": "1a1a8d3d1ecccb1c8e3d8f17049b9cbd7853ae62b81e3f6c204c2b2f8dbf54b0",
+      "tests/system/real_process_test.go": "fffd98171dd9f7c1397cc0227c43070808dd815a73c5814eca50a2a7fbaa778e",
+      "tests/system/reducer_review_test.go": "3f1130913ed32828887002e5bfa10f8bad9a8818cbeb57ec4b2ce8fb219d9e20",
+      "tests/system/reducer_test.go": "e42dc2b0b729fb47f2961e1aab54fb291798e71179528268bf10a740d0cf713e",
+      "tests/system/replay_test.go": "50c89d3c7c9aa6998faf80df358c7c98210b294b72d792140771e68a50570339",
+      "third_party/raft-patch/election-random.patch": "01c123e0f55357ad02fbbee759e216a93b5805f5c1523a60d3eb283fd471c647",
+      "third_party/raft-patch/lock.json": "ab52275711d953cc691b043a1eef27827fe66c8017de7cd6dfbdddba66618979",
+      "third_party/raft-patch/prepare.py": "ae985c1541566679a9d0e985d8061d6900d34f25421bddc34ec8f3f6a4bac0d6",
+      "toolchain.lock.json": "4e952b9f4eb4a21e31df5ea2c6acf883a70744eda52ca39d973762530f50ebac",
+      "verification/schema.json": "1709ae091c76838b1cc17f583a2b603840e7cfade2bc19f1b4e6a6fd16040493"
+    },
+    "baseline_path": "[local-evidence-root]/reviews/public-cleanup-final-source.json",
+    "baseline_raw_sha256": "63788f1085590a283fc4ffac0b0bfc69e02b0ada74984309ab0b5be9052cfb86",
+    "every_hash_equal_accepted_cleaned_source": true
+  },
+  "inspected_files": [
+    {
+      "path": "internal/scenario/trace.go",
+      "sha256": "3ae2f8a3a887dd2d9a78c104367f13e484360a4b921c82e35a30b94a139871b0"
+    },
+    {
+      "path": "internal/scenario/run.go",
+      "sha256": "79a555a5fd9988c5cb2888d6c16c24a67f21e0063fe8cabe7fc98e53f4fed252"
+    },
+    {
+      "path": "tests/security/target_fuzz_test.go",
+      "sha256": "9563cd0c6c1d94885622a2551343c2ff5d8470665a48f532960111f97675b316"
+    },
+    {
+      "path": "internal/history/check.go",
+      "sha256": "9711c04ac3d6b8310d4b335e9e2906bd4bc037672efb6aaef913a653ca6b4c06"
+    },
+    {
+      "path": "cmd/faultbraid/target.go",
+      "sha256": "b1a1fd02a97259e2980da40b4c56d3c22b1284f3c1dfea0607fc75cdc4c4b057"
+    },
+    {
+      "path": "internal/campaign/reduce.go",
+      "sha256": "d49f513cec16846494d41ffd4591e4f8bfa63383302a9c322e83332c5beb07cc"
+    },
+    {
+      "path": "internal/campaign/seeds.go",
+      "sha256": "2b2cdbb3143453ccd1b2512fb168491415ca61f4a7ad03232880ae0df1778940"
+    },
+    {
+      "path": "ACCEPTANCE_SPEC.md",
+      "sha256": "4abd743e0dbd1bbb781d154474dd5317bc05feab41859d80d4b6275b85e6a90a"
+    },
+    {
+      "path": "API_SPEC.md",
+      "sha256": "d8f891f46eab80048a998c98bc002def71ec32fae8a031fc971ab1869183e412"
+    }
+  ],
+  "observed_hosted_failure": {
+    "workflow_run_id": 38521875962,
+    "attempt": 1,
+    "commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+    "status": "FAIL",
+    "case": "FuzzTargetTraceReplay/seed#0",
+    "reported_seed_duration_seconds": 0.45,
+    "message": "successful replay lacks source identity or finished after cancellation",
+    "log_path": "[local-evidence-root]/runtime/badge-failed-run-38521875962-attempt-1.txt",
+    "log_bytes": 26909,
+    "log_sha256": "dff7b6edf47d03ff885e18aaa93d87aedfb0a21c320cc312d1d9781bf7ada4df",
+    "intake_command": {
+      "path": "[local-evidence-root]/runtime/badge-current-linux-failure-intake/20261014T062810-dba58dc6bb/run.json",
+      "raw_record_sha256": "135fb6816567ad8c239ca07ed0fda4d087aaeab68cbd6d21a87c704ec680f671",
+      "run_id": "20261014T062810-dba58dc6bb",
+      "status": "PASS",
+      "command": [
+        "python",
+        "[local-evidence-root]/scripts/read_owned_ci_failure.py",
+        "--run",
+        "38521875962",
+        "--commit",
+        "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378"
+      ],
+      "reason": "completed",
+      "exit_code": 0,
+      "duration_seconds": 4.535236600000644,
+      "source_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+      "source_tree_sha256": "05047573078ae775f06275e934bbf3081709c5d5169f92453f601d1860c9fdb1",
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/badge-current-linux-failure-intake/20261014T062810-dba58dc6bb/stdout.txt",
+        "sha256": "57851037ea2d4d303c66b15f3b7c6f72ce4237c5c9870a25bfe45ededc35e3a1",
+        "bytes": 491
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/badge-current-linux-failure-intake/20261014T062810-dba58dc6bb/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    },
+    "exact_cancellation_interleaving_proven": false
+  },
+  "findings": [
+    {
+      "id": "FV-REPLAY-CANCEL-01",
+      "status": "OPEN",
+      "fact": "Replay checks identity/digest and executes both actual entropy replay and fresh-seed target, but has no explicit ctx.Err guard after the final DeepEqual or before successful return.",
+      "risk": "Cancellation in final target encoding/comparison can be missed as an affirmative replay result.",
+      "actual_old_failure_cause_proven": false
+    },
+    {
+      "id": "FV-REPLAY-CANCEL-02",
+      "status": "OPEN",
+      "fact": "Target run has one explicit context check in its dispatch loop; the checker also probes context. Final result/digest/encoding work has no terminal cancellation normalization.",
+      "risk": "A previously definitive result can remain definitive if cancellation is first observed during finalization.",
+      "actual_old_failure_cause_proven": false
+    },
+    {
+      "id": "FV-REPLAY-CANCEL-03",
+      "status": "OPEN_ERRONEOUS_CALLER_OBSERVATION",
+      "fact": "The fuzz caller requires ctx.Err to remain nil after Replay returns nil. A concurrent deadline can expire after a legitimate successful return and before that caller observation.",
+      "risk": "The existing assertion can reject correct replay even after terminal cancellation checks are added.",
+      "logical_claim": "A callee cannot guarantee the future liveness of an independently cancelable context after returning.",
+      "concrete_exception_approved": false
+    }
+  ],
+  "minimal_semantic_repair_recommendation": [
+    "Add Replay cancellation checks at entry/phase transitions as useful and at the final verdict commitment after comparisons; return cancellation instead of affirmative replay when cancellation is observed there.",
+    "If repairing Run finalization, retain its existing INCONCLUSIVE trace contract: clear any failure fingerprint, preserve honest history/state observations, and recompute the canonical digest after cancellation changes the result. Avoid turning context exhaustion into INVALID_INPUT or campaign execution ERROR.",
+    "Keep strict source identity, full entropy replay, fresh-seed execution and equality/tamper assertions. Saved INCONCLUSIVE trace agreement under an uncanceled context remains distinct from execution cancellation.",
+    "Define the successful verdict at an internal final cancellation observation. Do not promise that the external context will still be live when a caller later inspects it."
+  ],
+  "meaningful_control_designs": [
+    {
+      "name": "actual-target-success-then-caller-cancellation",
+      "status": "NOT RUN",
+      "context": "Ordinary context.WithCancel; no custom context or mocked target required",
+      "procedure": "Run the actual target to obtain an identified trace; Replay with a live cancellable context and require nil; deliberately call cancel after Replay returns, then apply the original ctx.Err post-return assertion. It fails although the callee completed before cancellation.",
+      "proves": "The old caller predicate is not a valid persistent liveness guarantee; it does not reproduce the opaque hosted timer interleaving."
+    },
+    {
+      "name": "actual-target-late-finalization-cancellation",
+      "status": "NOT RUN",
+      "context": "Clearly labelled test-only counting/snapshot cancellation context delegating to an ordinary cancelable context",
+      "procedure": "Calibrate the original uncanceled real Replay context observations, pin the original last-checker/target probe site and count, and inject cancellation immediately after that live observation but before encoding/comparison. Keep the same pinned injection site for corrected-source controls. Require cancellation rejection and unchanged successful replay without injection.",
+      "limitations": "This custom deterministic phase injection is not a natural 300ms timeout or proof of the hosted interleaving. Do not recalibrate to cancel after every candidate implementation's final check: that would test the unavoidable post-observation interval instead of the repaired finalization gap. The target, Raft/entropy/history and comparisons must remain actual."
+    },
+    {
+      "name": "cancellation-corrected-control-mutation",
+      "status": "NOT RUN",
+      "procedure": "In disposable owned copies run PASS / remove the exact new terminal guard or normalization -> FAIL / restore original bytes -> PASS. Bind file/site/tree hashes and named specific failure; retain uncanceled digest equality, identity/tamper rejection and cancellation/INCONCLUSIVE behavior."
+    }
+  ],
+  "test_spec_exception": {
+    "required_for_code_only_guard_addition": false,
+    "required_if_existing_post_return_liveness_assertion_is_removed_or_replaced": true,
+    "status": "PROSPECTIVE_EXCEPTION_NOT_YET_AUTHORED_OR_APPROVED"
+  },
+  "actual_prior_outcomes_preserved": {
+    "current_local_full_make_verify": {
+      "path": "[local-evidence-root]/runtime/badge-final-local-full-after-isolation/20261014T060747-c59b0bd7b3/run.json",
+      "raw_record_sha256": "ab2709b5a8685e1f38ef34f91059b7554c41056980cf1352c2c2501a984ae45d",
+      "run_id": "20261014T060747-c59b0bd7b3",
+      "status": "PASS",
+      "command": [
+        "make",
+        "verify"
+      ],
+      "reason": "completed",
+      "exit_code": 0,
+      "duration_seconds": 714.7310020000004,
+      "source_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+      "source_tree_sha256": "05047573078ae775f06275e934bbf3081709c5d5169f92453f601d1860c9fdb1",
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/badge-final-local-full-after-isolation/20261014T060747-c59b0bd7b3/stdout.txt",
+        "sha256": "2cf1bd43e3fd6d7d3c9a18d27844e5341820093499a966bf08e8afdc2847b51b",
+        "bytes": 8340
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/badge-final-local-full-after-isolation/20261014T060747-c59b0bd7b3/stderr.txt",
+        "sha256": "01e821119f6a4155ea8370f343e534890d518c21ba4fa454ab9153b950a9e8a3",
+        "bytes": 12121
+      }
+    },
+    "prior_same_source_full_native_failure": {
+      "path": "[local-evidence-root]/runtime/badge-final-local-full/20261014T055735-4dd638195f/run.json",
+      "raw_record_sha256": "c1c2f059d280c24003e370cad171a8f54f5db069cb1bb765bfa9e094d35d9ce5",
+      "run_id": "20261014T055735-4dd638195f",
+      "status": "FAIL",
+      "command": [
+        "make",
+        "verify"
+      ],
+      "reason": "completed",
+      "exit_code": 2,
+      "duration_seconds": 292.88442489999943,
+      "source_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+      "source_tree_sha256": "05047573078ae775f06275e934bbf3081709c5d5169f92453f601d1860c9fdb1",
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/badge-final-local-full/20261014T055735-4dd638195f/stdout.txt",
+        "sha256": "17b34aecaea6a42a79504532efc1afa7cf6078b14f079f50fe8b798a358218e5",
+        "bytes": 6097
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/badge-final-local-full/20261014T055735-4dd638195f/stderr.txt",
+        "sha256": "f5d66d8524101a6485f6ab117b22dbf82d7c383f9fc8e319c5c8bdd2466999c0",
+        "bytes": 12160
+      }
+    },
+    "old_distinct_kernel_fromfiles_failure": {
+      "run_id": 38450172327,
+      "attempt": 1,
+      "path": "[local-evidence-root]/runtime/badge-failed-kernel-38450172327.txt",
+      "sha256": "8902a403f132e906e2691a0b91794746399d3f9ab0a6b75872047ffdfdad0645",
+      "scope": "Different old source and failure path; no root-cause closure"
+    },
+    "prior_native_and_harness_supplement": {
+      "path": "[local-evidence-root]/reviews/final-independent-20261014-badge-native-supplement.json",
+      "sha256": "f0eb0fd88ac969149a38fef5ebe24e2b8a7d8ef361a5a7c07b22cdfc30f56ee2",
+      "bytes_unchanged": true
+    }
+  },
+  "primary_context_source": {
+    "url": "https://pkg.go.dev/context#Context",
+    "local_supported_sdk_path": "[local-evidence-root]/tools/go1.27.2/go/src/context/context.go",
+    "local_supported_sdk_sha256": "971f00ffa375b79d3f65e6da33cca3a493cc3fce091c589233abfb4283e29b7d",
+    "inference": "Err describes cancellation at an observation, and canceling an independent context can occur after an operation has completed; it does not certify future liveness."
+  },
+  "PASS": [
+    "Exact pre-fix source and all131 protected execution inputs match the accepted unchanged-input map",
+    "Actual failed CI log/intake and prior full make verify PASS/FAIL bytes and streams are intact",
+    "Separate production finalization gap and impossible post-return caller guarantee are identified"
+  ],
+  "FAIL": [
+    {
+      "kind": "actual hosted kernel workflow",
+      "run_id": 38521875962,
+      "attempt": 1,
+      "status": "FAIL"
+    },
+    {
+      "kind": "prior actual full local native ordering failure",
+      "run_id": "20261014T055735-4dd638195f",
+      "status": "FAIL"
+    }
+  ],
+  "NOT_RUN_OR_UNPROVEN": [
+    "No actual target control, patched-source tests or full acceptance rerun executed by this diagnostic helper",
+    "No Linux repair PASS or exact original cancellation phase inferred from the 0.45s whole-seed duration",
+    "Other newly reported hosted workflow terminal outcomes are not independently verified in this narrow diagnosis",
+    "No concrete test exception approval or current production source fix is issued"
+  ],
+  "public_or_root_status_writes_by_reviewer": false,
+  "owned_source_unchanged": true
+}

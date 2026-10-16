@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "run_id": "20261015T173938-d74d63a410",
+  "category": "private-diagnostic-prepare",
+  "requirements": [
+    "AC-001"
+  ],
+  "command": [
+    "[python-runtime-root]\\python.exe",
+    "[local-evidence-root]\\proposals\\a11-go-source-walk\\prepare_probe.py"
+  ],
+  "cwd": "[recorded-working-root]",
+  "started_utc": "2026-10-15T17:39:38.689518+00:00",
+  "ended_utc": "2026-10-15T17:39:38.786748+00:00",
+  "duration_seconds": 0.1090000000258442,
+  "status": "PASS",
+  "reason": "completed",
+  "exit_code": 0,
+  "environment": {
+    "os": "Windows",
+    "release": "11",
+    "architecture": "AMD64",
+    "python": "3.12.14",
+    "go": "go version go1.27.2 windows/amd64",
+    "cpu": "13th Gen Intel(R) Core(TM) i9-13900H",
+    "logical_cpus": 20,
+    "host_memory": "34048978944 bytes",
+    "container_limits": "not inferred from host totals"
+  },
+  "source": {
+    "git_commit": null,
+    "git_dirty": true,
+    "source_tree_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "files": []
+  },
+  "stdout": {
+    "path": "verification/curated/20261015T173938-d74d63a410/stdout.txt",
+    "sha256": "22032b90946679ac68f5f467aa813591c054dfa66c8f71cecf3209f42b2c5b00",
+    "bytes": 204
+  },
+  "stderr": {
+    "path": "verification/curated/20261015T173938-d74d63a410/stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "curation": {
+    "schema_version": 1,
+    "raw_record_sha256": "cd1cdb21073383a82df095d5e2349ef0bfe1ed31385ed99f4875c215af6f8574",
+    "scope": "selected real engineering command; excludes agent session/chat/prompt data",
+    "source_identity_status": "original fields and full file hashes unchanged",
+    "streams": {
+      "stdout": {
+        "raw_sha256": "b85ea477854cb78491346fd3f17b7108ca0dd18829ef2d35061b3cbeafcf1993",
+        "raw_bytes": 301,
+        "curated_sha256": "22032b90946679ac68f5f467aa813591c054dfa66c8f71cecf3209f42b2c5b00",
+        "curated_bytes": 204,
+        "redactions": [
+          {
+            "kind": "CRLF-to-LF-text-normalization",
+            "count": 1
+          },
+          {
+            "kind": "operator-path-prefix",
+            "replacement": "[local-evidence-root]",
+            "count": 1
+          }
+        ]
+      },
+      "stderr": {
+        "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_bytes": 0,
+        "curated_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "curated_bytes": 0,
+        "redactions": []
+      }
+    },
+    "metadata_redactions": [
+      {
+        "kind": "operator-path-prefix",
+        "replacement": "[python-runtime-root]",
+        "count": 1
+      },
+      {
+        "kind": "operator-path-prefix",
+        "replacement": "[local-evidence-root]",
+        "count": 1
+      },
+      {
+        "kind": "operator-path-prefix",
+        "replacement": "[recorded-working-root]",
+        "count": 1
+      }
+    ]
+  }
+}

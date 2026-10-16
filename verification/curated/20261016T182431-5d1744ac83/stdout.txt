@@ -1,0 +1,1 @@
+{"status":"PASS","verdict":"INVALID","digest":"feb8af56d1665469075cd4e14029a8dd9e4e70039ffbbac3c846fb84d593bc70","scope":"raft-trace-v1","directory":"[recorded-working-root]\\.local-runs\\campaign-20261016T182415-8db83d\\selected-unsafe"}

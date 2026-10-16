@@ -1,0 +1,248 @@
+=== RUN   TestFromFilesMissingIgnoredMetadata
+=== RUN   TestFromFilesMissingIgnoredMetadata/.git/walk
+=== RUN   TestFromFilesMissingIgnoredMetadata/.git/walk-nil-entry
+=== RUN   TestFromFilesMissingIgnoredMetadata/.git/info
+=== RUN   TestFromFilesMissingIgnoredMetadata/.local-runs/walk
+=== RUN   TestFromFilesMissingIgnoredMetadata/.local-runs/walk-nil-entry
+=== RUN   TestFromFilesMissingIgnoredMetadata/.local-runs/info
+=== RUN   TestFromFilesMissingIgnoredMetadata/bin/walk
+=== RUN   TestFromFilesMissingIgnoredMetadata/bin/walk-nil-entry
+=== RUN   TestFromFilesMissingIgnoredMetadata/bin/info
+=== RUN   TestFromFilesMissingIgnoredMetadata/__pycache__/walk
+=== RUN   TestFromFilesMissingIgnoredMetadata/__pycache__/walk-nil-entry
+=== RUN   TestFromFilesMissingIgnoredMetadata/__pycache__/info
+=== RUN   TestFromFilesMissingIgnoredMetadata/.pytest_cache/walk
+=== RUN   TestFromFilesMissingIgnoredMetadata/.pytest_cache/walk-nil-entry
+=== RUN   TestFromFilesMissingIgnoredMetadata/.pytest_cache/info
+=== RUN   TestFromFilesMissingIgnoredMetadata/.git/transient/walk
+=== RUN   TestFromFilesMissingIgnoredMetadata/.git/transient/walk-nil-entry
+=== RUN   TestFromFilesMissingIgnoredMetadata/.git/transient/info
+=== RUN   TestFromFilesMissingIgnoredMetadata/nested/.git/transient/walk
+=== RUN   TestFromFilesMissingIgnoredMetadata/nested/.git/transient/walk-nil-entry
+=== RUN   TestFromFilesMissingIgnoredMetadata/nested/.git/transient/info
+=== RUN   TestFromFilesMissingIgnoredMetadata/.local-runs/transient/walk
+=== RUN   TestFromFilesMissingIgnoredMetadata/.local-runs/transient/walk-nil-entry
+=== RUN   TestFromFilesMissingIgnoredMetadata/.local-runs/transient/info
+=== RUN   TestFromFilesMissingIgnoredMetadata/nested/.local-runs/transient/walk
+=== RUN   TestFromFilesMissingIgnoredMetadata/nested/.local-runs/transient/walk-nil-entry
+=== RUN   TestFromFilesMissingIgnoredMetadata/nested/.local-runs/transient/info
+=== RUN   TestFromFilesMissingIgnoredMetadata/bin/transient/walk
+=== RUN   TestFromFilesMissingIgnoredMetadata/bin/transient/walk-nil-entry
+=== RUN   TestFromFilesMissingIgnoredMetadata/bin/transient/info
+=== RUN   TestFromFilesMissingIgnoredMetadata/nested/bin/transient/walk
+=== RUN   TestFromFilesMissingIgnoredMetadata/nested/bin/transient/walk-nil-entry
+=== RUN   TestFromFilesMissingIgnoredMetadata/nested/bin/transient/info
+=== RUN   TestFromFilesMissingIgnoredMetadata/__pycache__/transient/walk
+=== RUN   TestFromFilesMissingIgnoredMetadata/__pycache__/transient/walk-nil-entry
+=== RUN   TestFromFilesMissingIgnoredMetadata/__pycache__/transient/info
+=== RUN   TestFromFilesMissingIgnoredMetadata/nested/__pycache__/transient/walk
+=== RUN   TestFromFilesMissingIgnoredMetadata/nested/__pycache__/transient/walk-nil-entry
+=== RUN   TestFromFilesMissingIgnoredMetadata/nested/__pycache__/transient/info
+=== RUN   TestFromFilesMissingIgnoredMetadata/.pytest_cache/transient/walk
+=== RUN   TestFromFilesMissingIgnoredMetadata/.pytest_cache/transient/walk-nil-entry
+=== RUN   TestFromFilesMissingIgnoredMetadata/.pytest_cache/transient/info
+=== RUN   TestFromFilesMissingIgnoredMetadata/nested/.pytest_cache/transient/walk
+=== RUN   TestFromFilesMissingIgnoredMetadata/nested/.pytest_cache/transient/walk-nil-entry
+=== RUN   TestFromFilesMissingIgnoredMetadata/nested/.pytest_cache/transient/info
+--- PASS: TestFromFilesMissingIgnoredMetadata (0.06s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/.git/walk (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/.git/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/.git/info (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/.local-runs/walk (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/.local-runs/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/.local-runs/info (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/bin/walk (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/bin/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/bin/info (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/__pycache__/walk (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/__pycache__/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/__pycache__/info (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/.pytest_cache/walk (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/.pytest_cache/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/.pytest_cache/info (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/.git/transient/walk (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/.git/transient/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/.git/transient/info (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/nested/.git/transient/walk (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/nested/.git/transient/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/nested/.git/transient/info (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/.local-runs/transient/walk (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/.local-runs/transient/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/.local-runs/transient/info (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/nested/.local-runs/transient/walk (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/nested/.local-runs/transient/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/nested/.local-runs/transient/info (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/bin/transient/walk (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/bin/transient/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/bin/transient/info (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/nested/bin/transient/walk (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/nested/bin/transient/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/nested/bin/transient/info (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/__pycache__/transient/walk (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/__pycache__/transient/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/__pycache__/transient/info (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/nested/__pycache__/transient/walk (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/nested/__pycache__/transient/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/nested/__pycache__/transient/info (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/.pytest_cache/transient/walk (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/.pytest_cache/transient/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/.pytest_cache/transient/info (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/nested/.pytest_cache/transient/walk (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/nested/.pytest_cache/transient/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesMissingIgnoredMetadata/nested/.pytest_cache/transient/info (0.00s)
+=== RUN   TestFromFilesDirectoryRemovedDuringRealWalk
+=== RUN   TestFromFilesDirectoryRemovedDuringRealWalk/.git
+=== RUN   TestFromFilesDirectoryRemovedDuringRealWalk/.local-runs
+=== RUN   TestFromFilesDirectoryRemovedDuringRealWalk/bin
+=== RUN   TestFromFilesDirectoryRemovedDuringRealWalk/__pycache__
+=== RUN   TestFromFilesDirectoryRemovedDuringRealWalk/.pytest_cache
+=== RUN   TestFromFilesDirectoryRemovedDuringRealWalk/.gitx
+=== RUN   TestFromFilesDirectoryRemovedDuringRealWalk/.github
+=== RUN   TestFromFilesDirectoryRemovedDuringRealWalk/source-dir
+--- PASS: TestFromFilesDirectoryRemovedDuringRealWalk (0.05s)
+    --- PASS: TestFromFilesDirectoryRemovedDuringRealWalk/.git (0.01s)
+    --- PASS: TestFromFilesDirectoryRemovedDuringRealWalk/.local-runs (0.01s)
+    --- PASS: TestFromFilesDirectoryRemovedDuringRealWalk/bin (0.01s)
+    --- PASS: TestFromFilesDirectoryRemovedDuringRealWalk/__pycache__ (0.01s)
+    --- PASS: TestFromFilesDirectoryRemovedDuringRealWalk/.pytest_cache (0.01s)
+    --- PASS: TestFromFilesDirectoryRemovedDuringRealWalk/.gitx (0.01s)
+    --- PASS: TestFromFilesDirectoryRemovedDuringRealWalk/.github (0.00s)
+    --- PASS: TestFromFilesDirectoryRemovedDuringRealWalk/source-dir (0.01s)
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/source.go/walk
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/source.go/walk-nil-entry
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/source.go/info
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/nested/source.go/walk
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/nested/source.go/walk-nil-entry
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/nested/source.go/info
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/.github/transient/walk
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/.github/transient/walk-nil-entry
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/.github/transient/info
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/.gitx/transient/walk
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/.gitx/transient/walk-nil-entry
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/.gitx/transient/info
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/.local-run/transient/walk
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/.local-run/transient/walk-nil-entry
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/.local-run/transient/info
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/binary/transient/walk
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/binary/transient/walk-nil-entry
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/binary/transient/info
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/__pycache__x/transient/walk
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/__pycache__x/transient/walk-nil-entry
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/__pycache__x/transient/info
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/.pytest_cachex/transient/walk
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/.pytest_cachex/transient/walk-nil-entry
+=== RUN   TestFromFilesRejectsMissingIncludedMetadata/.pytest_cachex/transient/info
+--- PASS: TestFromFilesRejectsMissingIncludedMetadata (0.02s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/source.go/walk (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/source.go/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/source.go/info (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/nested/source.go/walk (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/nested/source.go/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/nested/source.go/info (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/.github/transient/walk (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/.github/transient/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/.github/transient/info (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/.gitx/transient/walk (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/.gitx/transient/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/.gitx/transient/info (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/.local-run/transient/walk (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/.local-run/transient/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/.local-run/transient/info (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/binary/transient/walk (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/binary/transient/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/binary/transient/info (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/__pycache__x/transient/walk (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/__pycache__x/transient/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/__pycache__x/transient/info (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/.pytest_cachex/transient/walk (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/.pytest_cachex/transient/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesRejectsMissingIncludedMetadata/.pytest_cachex/transient/info (0.00s)
+=== RUN   TestFromFilesRejectsOtherMetadataErrors
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/permission_denied/.git/walk
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/permission_denied/.git/walk-nil-entry
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/permission_denied/.git/info
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/permission_denied/.local-runs/walk
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/permission_denied/.local-runs/walk-nil-entry
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/permission_denied/.local-runs/info
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/permission_denied/bin/walk
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/permission_denied/bin/walk-nil-entry
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/permission_denied/bin/info
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/permission_denied/__pycache__/walk
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/permission_denied/__pycache__/walk-nil-entry
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/permission_denied/__pycache__/info
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/permission_denied/.pytest_cache/walk
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/permission_denied/.pytest_cache/walk-nil-entry
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/permission_denied/.pytest_cache/info
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/.git/walk
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/.git/walk-nil-entry
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/.git/info
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/.local-runs/walk
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/.local-runs/walk-nil-entry
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/.local-runs/info
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/bin/walk
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/bin/walk-nil-entry
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/bin/info
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/__pycache__/walk
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/__pycache__/walk-nil-entry
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/__pycache__/info
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/.pytest_cache/walk
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/.pytest_cache/walk-nil-entry
+=== RUN   TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/.pytest_cache/info
+--- PASS: TestFromFilesRejectsOtherMetadataErrors (0.03s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/permission_denied/.git/walk (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/permission_denied/.git/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/permission_denied/.git/info (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/permission_denied/.local-runs/walk (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/permission_denied/.local-runs/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/permission_denied/.local-runs/info (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/permission_denied/bin/walk (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/permission_denied/bin/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/permission_denied/bin/info (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/permission_denied/__pycache__/walk (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/permission_denied/__pycache__/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/permission_denied/__pycache__/info (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/permission_denied/.pytest_cache/walk (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/permission_denied/.pytest_cache/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/permission_denied/.pytest_cache/info (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/.git/walk (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/.git/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/.git/info (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/.local-runs/walk (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/.local-runs/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/.local-runs/info (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/bin/walk (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/bin/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/bin/info (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/__pycache__/walk (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/__pycache__/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/__pycache__/info (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/.pytest_cache/walk (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/.pytest_cache/walk-nil-entry (0.00s)
+    --- PASS: TestFromFilesRejectsOtherMetadataErrors/controlled_sharing_violation/.pytest_cache/info (0.00s)
+=== RUN   TestFromFilesIgnoresOnlyExactPathComponents
+--- PASS: TestFromFilesIgnoresOnlyExactPathComponents (0.06s)
+=== RUN   TestFromFilesRejectsAliasesInsideIgnoredMetadata
+=== RUN   TestFromFilesRejectsAliasesInsideIgnoredMetadata/.git
+=== RUN   TestFromFilesRejectsAliasesInsideIgnoredMetadata/.local-runs
+=== RUN   TestFromFilesRejectsAliasesInsideIgnoredMetadata/bin
+=== RUN   TestFromFilesRejectsAliasesInsideIgnoredMetadata/__pycache__
+=== RUN   TestFromFilesRejectsAliasesInsideIgnoredMetadata/.pytest_cache
+--- PASS: TestFromFilesRejectsAliasesInsideIgnoredMetadata (0.01s)
+    --- PASS: TestFromFilesRejectsAliasesInsideIgnoredMetadata/.git (0.00s)
+    --- PASS: TestFromFilesRejectsAliasesInsideIgnoredMetadata/.local-runs (0.00s)
+    --- PASS: TestFromFilesRejectsAliasesInsideIgnoredMetadata/bin (0.00s)
+    --- PASS: TestFromFilesRejectsAliasesInsideIgnoredMetadata/__pycache__ (0.00s)
+    --- PASS: TestFromFilesRejectsAliasesInsideIgnoredMetadata/.pytest_cache (0.00s)
+=== RUN   TestActualTreeMatchesEvidenceIdentity
+--- PASS: TestActualTreeMatchesEvidenceIdentity (0.47s)
+=== RUN   TestEvidenceIdentityBoundaryFilenames
+=== RUN   TestEvidenceIdentityBoundaryFilenames/delete-\x7f.dat
+=== RUN   TestEvidenceIdentityBoundaryFilenames/i0.dat
+=== RUN   TestEvidenceIdentityBoundaryFilenames/A.dat
+--- PASS: TestEvidenceIdentityBoundaryFilenames (0.45s)
+    --- PASS: TestEvidenceIdentityBoundaryFilenames/delete-\x7f.dat (0.14s)
+    --- PASS: TestEvidenceIdentityBoundaryFilenames/i0.dat (0.16s)
+    --- PASS: TestEvidenceIdentityBoundaryFilenames/A.dat (0.14s)
+PASS
+ok  	github.com/C-X1an/faultbraid/internal/buildinfo	4.433s

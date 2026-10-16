@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "control_id": "20261016T181201-26ebc4c53e",
+  "status": "PASS",
+  "scope": "one selected skipped-Store.Flush integration mutation; not overall mutation coverage",
+  "mutation": "skip_ready_store_flush",
+  "site": "internal/target/target.go",
+  "test": "TestAC013FlushBeforeSendAndResponse",
+  "isolated_source": ".local-runs/tm-d8a25636",
+  "source_original_unchanged": true,
+  "isolated_copy_restored": true,
+  "isolated_git_removed": true,
+  "killed_by_semantic_assertion": true,
+  "original_site_sha256": "99695464287ea16871656cac1eb2596f20d41e7f106aecdadf6d271870c22587",
+  "mutated_site_sha256": "d4934a3da9b82d1a207a84811c40e12ba1fc10a6eb0f0c0b1eba83457c2c13a0",
+  "source_after_sha256": "44ce91f43df84d9f41d17498be35b70069695b9b497cdbf8592f29c976adfa87",
+  "source_before": {
+    "git_commit": "05aa946f42939a2d11773c285632eae1327fee4c",
+    "git_dirty": false,
+    "source_tree_sha256": "44ce91f43df84d9f41d17498be35b70069695b9b497cdbf8592f29c976adfa87"
+  },
+  "raw_summary_sha256": "bdc42b015749838f2d41b08fb4435bac110d2904b7c073e7e4b53e9b97c4516b",
+  "curation_scope": "Field projection with exact original summary hash; selected semantic triplet exported. Setup-only command records retained privately.",
+  "runs": [
+    {
+      "run_id": "20261016T181209-21fddc88fb",
+      "category": "target-mutation-isolation",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261016T181210-1a2612c3f8",
+      "category": "target-mutation-prepare",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261016T181216-38ddad7940",
+      "category": "target-mutation-baseline",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261016T181226-0b87654ac7",
+      "category": "target-mutation-negative-control",
+      "status": "FAIL",
+      "exit_code": 1
+    },
+    {
+      "run_id": "20261016T181236-6e29566e85",
+      "category": "target-mutation-restored",
+      "status": "PASS",
+      "exit_code": 0
+    }
+  ]
+}

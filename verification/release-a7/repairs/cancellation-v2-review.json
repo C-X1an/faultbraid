@@ -1,0 +1,790 @@
+{
+  "schema_version": 1,
+  "kind": "independent-exact-cancellation-v2-exception-assessment",
+  "status": "PASS",
+  "exception_decision": "APPROVED_SCOPED_EXACT_V2_CODE_AND_APPROVED_DOCUMENT",
+  "scope": "Exact prospective supplemental test-exception and four-code/test-file repair review with original raw control/source/stream validation; no full release or current all24 approval",
+  "reviewed_utc": "2026-10-14T08:00:12.300313+00:00",
+  "reviewer": {
+    "method": "separate-read-only-native-verifier-resumed-session",
+    "model_diversity_claim": false,
+    "earlier_aborted_review_claimed_complete": false,
+    "paid_capacity_or_astra_used": false
+  },
+  "original_source": {
+    "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+    "git_dirty": false,
+    "source_tree_sha256": "05047573078ae775f06275e934bbf3081709c5d5169f92453f601d1860c9fdb1"
+  },
+  "reviewed_proposal_source": {
+    "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+    "git_dirty": true,
+    "source_tree_sha256": "ca275911fd4b4d000585ccfba0dea27f59a8d6f1947a5a4653a4cdec38f8ff13"
+  },
+  "reviewed_proposal_file_count": 641,
+  "frozen_patch": {
+    "path": "[local-evidence-root]/proposals/cancellation-repair/candidate-v2.patch",
+    "raw_sha256": "73d3aec1c4a99555dfc6c8801d2cd4a7a115e10596087eaaadcea75cdfab3ea0",
+    "bytes": 13337
+  },
+  "proposed_document": {
+    "path": "[local-evidence-root]/cancellation-proposal-e7ce/TEST_SPEC_EXCEPTION_REPLAY_CONTEXT_OBSERVATION.md",
+    "raw_sha256": "a4accbf53768b8437e8952444f2f3d192264c664b53071426f50c1c3de592bfc",
+    "bytes": 3814
+  },
+  "approved_document": {
+    "path": "[local-evidence-root]/reviews/final-independent-20261014-replay-context-approved.md",
+    "raw_sha256": "c59265977c3729e29c0a76c3cea592d8437fff74da08047c32b471c4437a736a",
+    "bytes": 5917
+  },
+  "approved_application": {
+    "four_code_test_hashes": {
+      "internal/scenario/run.go": "21b76027c4e9baa56954333ab68d0ee078550f096de8299dab6fd93257ba785c",
+      "internal/scenario/trace.go": "f08a24933b2d0443fd3c957c553e9a0efae4882300a19007cf4c2b745cfbcd84",
+      "tests/security/cancellation_test.go": "bdd10b47a05b5ef77be902e842d5eec117be59cef038e8c66047d8b6ed1dd7ea",
+      "tests/security/target_fuzz_test.go": "cfbecc17cfa8a74a20745cb1b29061ad2b3e8f0aa50e132380da83627a00b232"
+    },
+    "document_sha256": "c59265977c3729e29c0a76c3cea592d8437fff74da08047c32b471c4437a736a",
+    "installation_changes_source_digest_and_requires_fresh_evidence": true
+  },
+  "complete_source_delta": {
+    "added": [
+      "TEST_SPEC_EXCEPTION_REPLAY_CONTEXT_OBSERVATION.md",
+      "tests/security/cancellation_test.go"
+    ],
+    "removed": [],
+    "changed": [
+      {
+        "path": "internal/scenario/run.go",
+        "before_sha256": "79a555a5fd9988c5cb2888d6c16c24a67f21e0063fe8cabe7fc98e53f4fed252",
+        "after_sha256": "21b76027c4e9baa56954333ab68d0ee078550f096de8299dab6fd93257ba785c"
+      },
+      {
+        "path": "internal/scenario/trace.go",
+        "before_sha256": "3ae2f8a3a887dd2d9a78c104367f13e484360a4b921c82e35a30b94a139871b0",
+        "after_sha256": "f08a24933b2d0443fd3c957c553e9a0efae4882300a19007cf4c2b745cfbcd84"
+      },
+      {
+        "path": "tests/security/target_fuzz_test.go",
+        "before_sha256": "9563cd0c6c1d94885622a2551343c2ff5d8470665a48f532960111f97675b316",
+        "after_sha256": "cfbecc17cfa8a74a20745cb1b29061ad2b3e8f0aa50e132380da83627a00b232"
+      }
+    ]
+  },
+  "protected_input_review": {
+    "original_count": 131,
+    "original_hashes_verified": true,
+    "changed_existing_inputs": [
+      "internal/scenario/run.go",
+      "internal/scenario/trace.go",
+      "tests/security/target_fuzz_test.go"
+    ],
+    "added_execution_input": "tests/security/cancellation_test.go",
+    "locked_assertions_and_locked_digest_unchanged": true
+  },
+  "plan_integrity": {
+    "status": "PASS",
+    "phases": 8,
+    "tasks": 28,
+    "phase_plan_sha256": "207056f87a3eef18100f290307d7292c4dcf544e9640c80003ffa99bb833342d"
+  },
+  "original_independent_reports_retained": [
+    {
+      "path": "[local-evidence-root]/reviews/final-independent-20261014-replay-cancellation-diagnosis.json",
+      "raw_sha256": "98b9667a53eeb0103c4e9bc8964b3537f1ee08a6af09570bfa436b0fd97b94d2",
+      "bytes": 29240
+    },
+    {
+      "path": "[local-evidence-root]/reviews/final-independent-20261014-replay-cancellation-controls-review.json",
+      "raw_sha256": "c920c045018394935f2b5ef94015447bcb25604a15c3ca8a7976f95c7f505aba",
+      "bytes": 12912
+    },
+    {
+      "path": "[local-evidence-root]/reviews/final-independent-20261014-cancellation-proposal-01-rejection.json",
+      "raw_sha256": "aed835cef3dc1e111802e3530119507fa8fd813e8ee49b4b4633403bff1b9abf",
+      "bytes": 8754
+    }
+  ],
+  "review_helper_failures_retained": [
+    {
+      "record": {
+        "path": "[local-evidence-root]/reviews/cancellation-v2-review-evidence/20261014T075654-5ae775b4d7/run.json",
+        "raw_sha256": "0f83dc5760e45cda545937e08242fa8a9976520fdb592c4aed8ddbf99d70eec5",
+        "bytes": 113307
+      },
+      "reader_snapshot": {
+        "path": "[local-evidence-root]/reviews/final-independent-20261014-cancellation-v2-review.before-run-control-source-correction.py",
+        "raw_sha256": "11ed979bd316ac20fb874c06f8cc7c18dfb39ec59fc6ad9d489791550a0ec886",
+        "bytes": 19965
+      },
+      "status": "FAIL",
+      "reason": "Reader incorrectly assumed the original standalone Run control also had pristine Replay; source records prove unmodified Run and the previously verified Replay-only terminal guard. Corrected exact source check preserves that distinction.",
+      "production_source_changed_by_correction": false
+    },
+    {
+      "record": {
+        "path": "[local-evidence-root]/reviews/cancellation-v2-review-evidence/20261014T075822-f28c0dc3e7/run.json",
+        "raw_sha256": "73858d0b81cb46724a85b22ace85b766f99c3a971a056e69010c26b3c41e4bdb",
+        "bytes": 113308
+      },
+      "reader_snapshot": {
+        "path": "[local-evidence-root]/reviews/final-independent-20261014-cancellation-v2-review.before-v1-snapshot-path-correction.py",
+        "raw_sha256": "20ca6a70c8b0c094c39d9f037e799fa5d7cd403969ef0e6df91e0b7bbe887875",
+        "bytes": 20794
+      },
+      "status": "FAIL",
+      "reason": "Reader assumed the V1 snapshots retained directory structure; they are flattened files. Corrected the path and verified the V1 Run snapshot equals the exact States-only mutant.",
+      "production_source_changed_by_correction": false
+    }
+  ],
+  "original_control_snapshots": [
+    {
+      "path": "[local-evidence-root]/reviews/replay-cancellation-probes/initial-probe.go",
+      "raw_sha256": "e37c9634a7f8c77119df890ba9b6608fb24290ca8e88b82ee3c51275e6e3810f",
+      "bytes": 2296
+    },
+    {
+      "path": "[local-evidence-root]/reviews/replay-cancellation-probes/expanded-probe.go",
+      "raw_sha256": "ebed73d79f843a22506ede01e581f217e87e3ef59fdeffd21cb6ddc3e4481d6d",
+      "bytes": 3243
+    },
+    {
+      "path": "[local-evidence-root]/reviews/replay-cancellation-probes/before-trace.go",
+      "raw_sha256": "3ae2f8a3a887dd2d9a78c104367f13e484360a4b921c82e35a30b94a139871b0",
+      "bytes": 3756
+    },
+    {
+      "path": "[local-evidence-root]/reviews/replay-cancellation-probes/after-trace.go",
+      "raw_sha256": "579bdefe61fa7f92b24ad39571def7b0359ded4f7c95af32d4c9c4ca9682683d",
+      "bytes": 3762
+    }
+  ],
+  "originals_and_actual_controls": [
+    {
+      "run_id": "20261014T063657-bb8f9ed821",
+      "category": "private-real-target-terminal-cancellation-negative-control",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-v",
+        "-run",
+        "^TestDiagnosticCancellationDuringReplayFinalization$",
+        "./tests/security"
+      ],
+      "requirements": [
+        "AC-002",
+        "AC-018"
+      ],
+      "started_utc": "2026-10-14T06:36:57.297708+00:00",
+      "ended_utc": "2026-10-14T06:37:05.842444+00:00",
+      "duration_seconds": 8.544887400003063,
+      "status": "FAIL",
+      "reason": "completed",
+      "exit_code": 1,
+      "environment": {
+        "os": "Windows",
+        "release": "11",
+        "architecture": "AMD64",
+        "python": "3.13.14",
+        "go": "go version go1.27.2 windows/amd64",
+        "cpu": "13th Gen Intel(R) Core(TM) i9-13900H",
+        "logical_cpus": 20,
+        "host_memory": "34048978944 bytes",
+        "container_limits": "not inferred from host totals"
+      },
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/badge-replay-cancel-before/20261014T063657-bb8f9ed821/stdout.txt",
+        "sha256": "0c346db4dcdcd4ad91ff50ef79f8f46934e3566cde6344740b7d576760fdb55f",
+        "bytes": 478
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/badge-replay-cancel-before/20261014T063657-bb8f9ed821/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/badge-replay-cancel-before/20261014T063657-bb8f9ed821/run.json",
+      "raw_record_sha256": "bb045c33ee7973b406958d41167bb26c175cc8c89a5ca51655025f554ad82bde",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "40d3eda59b638ca2f4a9844faedfdf2a4bfa5608cb4482b0643f8febd786caaa"
+      },
+      "source_file_count": 640,
+      "reviewer_reexecuted_target": false,
+      "actual_test_counts": {
+        "top_level_started": 1,
+        "subtests_started": 0,
+        "top_level_failed": 1,
+        "subtests_failed": 0
+      }
+    },
+    {
+      "run_id": "20261014T063751-7aa12905dc",
+      "category": "intentional-legacy-caller-predicate-negative-control",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-v",
+        "-run",
+        "^TestDiagnosticCallerPredicateRejectsCompletedReplay$",
+        "./tests/security"
+      ],
+      "requirements": [
+        "AC-002",
+        "AC-018"
+      ],
+      "started_utc": "2026-10-14T06:37:51.149082+00:00",
+      "ended_utc": "2026-10-14T06:37:59.212953+00:00",
+      "duration_seconds": 8.064010999998573,
+      "status": "FAIL",
+      "reason": "completed",
+      "exit_code": 1,
+      "environment": {
+        "os": "Windows",
+        "release": "11",
+        "architecture": "AMD64",
+        "python": "3.13.14",
+        "go": "go version go1.27.2 windows/amd64",
+        "cpu": "13th Gen Intel(R) Core(TM) i9-13900H",
+        "logical_cpus": 20,
+        "host_memory": "34048978944 bytes",
+        "container_limits": "not inferred from host totals"
+      },
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/badge-replay-caller-before/20261014T063751-7aa12905dc/stdout.txt",
+        "sha256": "44166f9c58b84004fa624a954a6bf4d33f039f6e862fd857fe0c06143023682e",
+        "bytes": 357
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/badge-replay-caller-before/20261014T063751-7aa12905dc/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/badge-replay-caller-before/20261014T063751-7aa12905dc/run.json",
+      "raw_record_sha256": "986aba552963e301c0ba7e4ea9f2f50c9ae2f28b3365e9197feacba80db5a11b",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "4d4627a16d660ec150d626f5a9b15dd9f4423336dd6eebbf989b7e3f46c020f5"
+      },
+      "source_file_count": 640,
+      "reviewer_reexecuted_target": false,
+      "actual_test_counts": {
+        "top_level_started": 1,
+        "subtests_started": 0,
+        "top_level_failed": 1,
+        "subtests_failed": 0
+      }
+    },
+    {
+      "run_id": "20261014T063906-9c3858721c",
+      "category": "private-restored-terminal-cancellation-control",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-v",
+        "-run",
+        "^TestDiagnosticCancellationDuringReplayFinalization$",
+        "./tests/security"
+      ],
+      "requirements": [
+        "AC-002",
+        "AC-018"
+      ],
+      "started_utc": "2026-10-14T06:39:06.171059+00:00",
+      "ended_utc": "2026-10-14T06:39:16.154153+00:00",
+      "duration_seconds": 9.983240499997919,
+      "status": "PASS",
+      "reason": "completed",
+      "exit_code": 0,
+      "environment": {
+        "os": "Windows",
+        "release": "11",
+        "architecture": "AMD64",
+        "python": "3.13.14",
+        "go": "go version go1.27.2 windows/amd64",
+        "cpu": "13th Gen Intel(R) Core(TM) i9-13900H",
+        "logical_cpus": 20,
+        "host_memory": "34048978944 bytes",
+        "container_limits": "not inferred from host totals"
+      },
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/badge-replay-cancel-after/20261014T063906-9c3858721c/stdout.txt",
+        "sha256": "fab4dd18331ff8a7bc1cadebe1eb8f9dfb29203ff2854a8b28771ef70816e398",
+        "bytes": 342
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/badge-replay-cancel-after/20261014T063906-9c3858721c/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/badge-replay-cancel-after/20261014T063906-9c3858721c/run.json",
+      "raw_record_sha256": "474b96108b55e240cd52dee67fe775ab1015aeee5b6014e347a8332b66e25196",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "5ee7f69b7108961043612a921ad98c2a45b6d12d672f27d6f2c920266ec76a84"
+      },
+      "source_file_count": 640,
+      "reviewer_reexecuted_target": false,
+      "actual_test_counts": {
+        "top_level_started": 1,
+        "subtests_started": 0,
+        "top_level_failed": 0,
+        "subtests_failed": 0
+      }
+    },
+    {
+      "run_id": "20261014T064819-7f97c4ae97",
+      "category": "private-actual-run-terminal-cancellation-negative-control",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-v",
+        "-run",
+        "^TestDiagnosticRunCancellationDuringFinalization$",
+        "./tests/security"
+      ],
+      "requirements": [
+        "AC-002",
+        "AC-014"
+      ],
+      "started_utc": "2026-10-14T06:48:19.492748+00:00",
+      "ended_utc": "2026-10-14T06:48:26.110620+00:00",
+      "duration_seconds": 6.617942899996706,
+      "status": "FAIL",
+      "reason": "completed",
+      "exit_code": 1,
+      "environment": {
+        "os": "Windows",
+        "release": "11",
+        "architecture": "AMD64",
+        "python": "3.13.14",
+        "go": "go version go1.27.2 windows/amd64",
+        "cpu": "13th Gen Intel(R) Core(TM) i9-13900H",
+        "logical_cpus": 20,
+        "host_memory": "34048978944 bytes",
+        "container_limits": "not inferred from host totals"
+      },
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/badge-run-cancel-before/20261014T064819-7f97c4ae97/stdout.txt",
+        "sha256": "22b19b08c84673ba1d6b6ab5ba108d96ad917c38bdd42ab71f7cf6d65bf656db",
+        "bytes": 472
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/badge-run-cancel-before/20261014T064819-7f97c4ae97/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/badge-run-cancel-before/20261014T064819-7f97c4ae97/run.json",
+      "raw_record_sha256": "a53d3d8eb0c335ba8024c6794fade37e24c4743e86d97cecbef86a79e17cf528",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "f797454b0a797c2a576ea7d71ee4998d392c6c514bd728c381ba790ea171086d"
+      },
+      "source_file_count": 640,
+      "reviewer_reexecuted_target": false,
+      "actual_test_counts": {
+        "top_level_started": 1,
+        "subtests_started": 0,
+        "top_level_failed": 1,
+        "subtests_failed": 0
+      }
+    },
+    {
+      "run_id": "20261014T065115-219be55d67",
+      "category": "restored-actual-replay-and-run-terminal-cancellation",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-v",
+        "-run",
+        "^TestDiagnostic(CancellationDuringReplayFinalization|RunCancellationDuringFinalization)$",
+        "./tests/security"
+      ],
+      "requirements": [
+        "AC-002",
+        "AC-014",
+        "AC-018"
+      ],
+      "started_utc": "2026-10-14T06:51:15.647700+00:00",
+      "ended_utc": "2026-10-14T06:51:24.181308+00:00",
+      "duration_seconds": 8.533702699998685,
+      "status": "PASS",
+      "reason": "completed",
+      "exit_code": 0,
+      "environment": {
+        "os": "Windows",
+        "release": "11",
+        "architecture": "AMD64",
+        "python": "3.13.14",
+        "go": "go version go1.27.2 windows/amd64",
+        "cpu": "13th Gen Intel(R) Core(TM) i9-13900H",
+        "logical_cpus": 20,
+        "host_memory": "34048978944 bytes",
+        "container_limits": "not inferred from host totals"
+      },
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/badge-combined-cancel-after/20261014T065115-219be55d67/stdout.txt",
+        "sha256": "24fc8bdd9f11f128386bf46e4c06a72fb1b741b7fb67e867358db87cbe0b9ad0",
+        "bytes": 612
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/badge-combined-cancel-after/20261014T065115-219be55d67/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/badge-combined-cancel-after/20261014T065115-219be55d67/run.json",
+      "raw_record_sha256": "a2c0314729bbf3e03071f6d2fb138c882b45fa0f9df8d97e0fa39bd0279e1fdb",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "cec8eec1c674c7bcd643569dd120e949bec1add27b4a4b00c7a5df4b9e47dbff"
+      },
+      "source_file_count": 640,
+      "reviewer_reexecuted_target": false,
+      "actual_test_counts": {
+        "top_level_started": 2,
+        "subtests_started": 0,
+        "top_level_failed": 0,
+        "subtests_failed": 0
+      }
+    },
+    {
+      "run_id": "20261014T070726-13d7f5024a",
+      "category": "candidate-replay-terminal-and-observed-state-regressions",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-v",
+        "-run",
+        "^Test(ReplayRejectsCancellationBeforeAndDuringValidation|RunTerminalCancellationPreservesUnknownTraceAndDigest|CancellationAfterReplayReturnDoesNotInvalidateCompletedWork)$",
+        "./tests/security"
+      ],
+      "requirements": [
+        "AC-002",
+        "AC-014",
+        "AC-018"
+      ],
+      "started_utc": "2026-10-14T07:07:26.879058+00:00",
+      "ended_utc": "2026-10-14T07:07:35.438544+00:00",
+      "duration_seconds": 8.559560200003034,
+      "status": "PASS",
+      "reason": "completed",
+      "exit_code": 0,
+      "environment": {
+        "os": "Windows",
+        "release": "11",
+        "architecture": "AMD64",
+        "python": "3.13.14",
+        "go": "go version go1.27.2 windows/amd64",
+        "cpu": "13th Gen Intel(R) Core(TM) i9-13900H",
+        "logical_cpus": 20,
+        "host_memory": "34048978944 bytes",
+        "container_limits": "not inferred from host totals"
+      },
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/cancellation-proposal-v2-controls/20261014T070726-13d7f5024a/stdout.txt",
+        "sha256": "9b8527f7f9262d4c3cbe788ef24cbb0045e16b0909ba83cdba009c9f5d204dd1",
+        "bytes": 949
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/cancellation-proposal-v2-controls/20261014T070726-13d7f5024a/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/cancellation-proposal-v2-controls/20261014T070726-13d7f5024a/run.json",
+      "raw_record_sha256": "392ca2085856ed6194a3988d97cf71eca5207752dd24e36c6421b68b3c31d6c5",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "ca275911fd4b4d000585ccfba0dea27f59a8d6f1947a5a4653a4cdec38f8ff13"
+      },
+      "source_file_count": 641,
+      "reviewer_reexecuted_target": false,
+      "actual_test_counts": {
+        "top_level_started": 3,
+        "subtests_started": 3,
+        "top_level_failed": 0,
+        "subtests_failed": 0
+      }
+    },
+    {
+      "run_id": "20261014T071010-36a61b78a6",
+      "category": "intentional-replay-terminal-guard-defect",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-v",
+        "-run",
+        "^TestReplayRejectsCancellationBeforeAndDuringValidation$/576$",
+        "./tests/security"
+      ],
+      "requirements": [
+        "AC-002",
+        "AC-014",
+        "AC-018"
+      ],
+      "started_utc": "2026-10-14T07:10:10.450359+00:00",
+      "ended_utc": "2026-10-14T07:10:17.311487+00:00",
+      "duration_seconds": 6.86120789999768,
+      "status": "FAIL",
+      "reason": "completed",
+      "exit_code": 1,
+      "environment": {
+        "os": "Windows",
+        "release": "11",
+        "architecture": "AMD64",
+        "python": "3.13.14",
+        "go": "go version go1.27.2 windows/amd64",
+        "cpu": "13th Gen Intel(R) Core(TM) i9-13900H",
+        "logical_cpus": 20,
+        "host_memory": "34048978944 bytes",
+        "container_limits": "not inferred from host totals"
+      },
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/cancellation-proposal-v2-semantic-controls/replay-terminal-guard/20261014T071010-36a61b78a6/stdout.txt",
+        "sha256": "e3d4c18f2610bbdef0a134f07490960be7195a620717bec853699ab43ca0d34e",
+        "bytes": 434
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/cancellation-proposal-v2-semantic-controls/replay-terminal-guard/20261014T071010-36a61b78a6/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/cancellation-proposal-v2-semantic-controls/replay-terminal-guard/20261014T071010-36a61b78a6/run.json",
+      "raw_record_sha256": "2c384cd5681e225a8420faeca5014870666203af5114523f12f58fb0c3c720c2",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "94f0e2f26949217cac3afb7075891772a644b3923997cfa86cb49b6e7a76655b"
+      },
+      "source_file_count": 641,
+      "reviewer_reexecuted_target": false,
+      "actual_test_counts": {
+        "top_level_started": 1,
+        "subtests_started": 1,
+        "top_level_failed": 1,
+        "subtests_failed": 1
+      }
+    },
+    {
+      "run_id": "20261014T071020-1d4be8e652",
+      "category": "intentional-run-observed-state-count-defect",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-v",
+        "-run",
+        "^TestRunTerminalCancellationPreservesUnknownTraceAndDigest$",
+        "./tests/security"
+      ],
+      "requirements": [
+        "AC-002",
+        "AC-014",
+        "AC-018"
+      ],
+      "started_utc": "2026-10-14T07:10:20.063348+00:00",
+      "ended_utc": "2026-10-14T07:10:26.050480+00:00",
+      "duration_seconds": 5.987194600002113,
+      "status": "FAIL",
+      "reason": "completed",
+      "exit_code": 1,
+      "environment": {
+        "os": "Windows",
+        "release": "11",
+        "architecture": "AMD64",
+        "python": "3.13.14",
+        "go": "go version go1.27.2 windows/amd64",
+        "cpu": "13th Gen Intel(R) Core(TM) i9-13900H",
+        "logical_cpus": 20,
+        "host_memory": "34048978944 bytes",
+        "container_limits": "not inferred from host totals"
+      },
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/cancellation-proposal-v2-semantic-controls/run-observed-state-count/20261014T071020-1d4be8e652/stdout.txt",
+        "sha256": "83f7d681fdc1a870e5dea83737d857655349b9a965dc811cfe4c85218f13c948",
+        "bytes": 310
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/cancellation-proposal-v2-semantic-controls/run-observed-state-count/20261014T071020-1d4be8e652/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/cancellation-proposal-v2-semantic-controls/run-observed-state-count/20261014T071020-1d4be8e652/run.json",
+      "raw_record_sha256": "d15961d52e9d8c78c34d5b4ca118c489552bd916893ba7329764ff2b8960e710",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "b92ffea413455c90de2bd5f273565cf28831024d8bf56cfe3bd8e47fe995d26f"
+      },
+      "source_file_count": 641,
+      "reviewer_reexecuted_target": false,
+      "actual_test_counts": {
+        "top_level_started": 1,
+        "subtests_started": 0,
+        "top_level_failed": 1,
+        "subtests_failed": 0
+      }
+    },
+    {
+      "run_id": "20261014T071028-a434bbdcc7",
+      "category": "exact-candidate-restored-affected-race",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-v",
+        "./tests/security",
+        "./internal/scenario",
+        "./cmd/faultbraid"
+      ],
+      "requirements": [
+        "AC-002",
+        "AC-014",
+        "AC-018"
+      ],
+      "started_utc": "2026-10-14T07:10:28.737374+00:00",
+      "ended_utc": "2026-10-14T07:10:42.425118+00:00",
+      "duration_seconds": 13.68785619999835,
+      "status": "PASS",
+      "reason": "completed",
+      "exit_code": 0,
+      "environment": {
+        "os": "Windows",
+        "release": "11",
+        "architecture": "AMD64",
+        "python": "3.13.14",
+        "go": "go version go1.27.2 windows/amd64",
+        "cpu": "13th Gen Intel(R) Core(TM) i9-13900H",
+        "logical_cpus": 20,
+        "host_memory": "34048978944 bytes",
+        "container_limits": "not inferred from host totals"
+      },
+      "stdout": {
+        "path": "[local-evidence-root]/runtime/cancellation-proposal-v2-semantic-controls/restored/20261014T071028-a434bbdcc7/stdout.txt",
+        "sha256": "3da8ddd172dddd6a9f3fbb516b66d23059bf46a50bb3474c6c49146925a8b46b",
+        "bytes": 3738
+      },
+      "stderr": {
+        "path": "[local-evidence-root]/runtime/cancellation-proposal-v2-semantic-controls/restored/20261014T071028-a434bbdcc7/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "path": "[local-evidence-root]/runtime/cancellation-proposal-v2-semantic-controls/restored/20261014T071028-a434bbdcc7/run.json",
+      "raw_record_sha256": "2b41f8ecac6211d33d57830453e7d0d56c68d58a80b6199092ceec294ee5373c",
+      "source": {
+        "git_commit": "e7ce3f9da331f9e107a1b3f098ab93fdc27c1378",
+        "git_dirty": true,
+        "source_tree_sha256": "ca275911fd4b4d000585ccfba0dea27f59a8d6f1947a5a4653a4cdec38f8ff13"
+      },
+      "source_file_count": 641,
+      "reviewer_reexecuted_target": false,
+      "actual_test_counts": {
+        "top_level_started": 14,
+        "subtests_started": 17,
+        "top_level_failed": 0,
+        "subtests_failed": 0
+      }
+    }
+  ],
+  "sole_defect_source_deltas": {
+    "terminal_guard": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "path": "internal/scenario/trace.go",
+          "before_sha256": "f08a24933b2d0443fd3c957c553e9a0efae4882300a19007cf4c2b745cfbcd84",
+          "after_sha256": "e98c2a0ce156cb93d5a245b45c40f66fa6b5cd7f048dc2681be11954049b755f"
+        }
+      ]
+    },
+    "retained_state_count": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "path": "internal/scenario/run.go",
+          "before_sha256": "21b76027c4e9baa56954333ab68d0ee078550f096de8299dab6fd93257ba785c",
+          "after_sha256": "8c63088de2e6b1202200758edef7ce7e59bc45f300a67dfca44f4858b81f5934"
+        }
+      ]
+    },
+    "restored_full_map_equals_reviewed_v2": true
+  },
+  "original_hosted_failure": {
+    "path": "[local-evidence-root]/runtime/badge-failed-run-38521875962-attempt-1.txt",
+    "raw_sha256": "dff7b6edf47d03ff885e18aaa93d87aedfb0a21c320cc312d1d9781bf7ada4df",
+    "bytes": 26909,
+    "workflow_run_id": 38521875962,
+    "attempt": 1,
+    "status": "FAIL",
+    "precise_timer_interleaving_proven": false
+  },
+  "findings": [
+    {
+      "id": "FV-REPLAY-PROPOSAL-STATE-01",
+      "status": "CLOSED_IN_EXACT_V2_SCOPE",
+      "basis": "Measured States retained; States-only mutant fails the new preservation assertion and exact restoration passes."
+    },
+    {
+      "id": "FV-REPLAY-PROPOSAL-MUTATION-02",
+      "status": "CLOSED_IN_EXACT_V2_SCOPE",
+      "basis": "Pinned /576 specific to candidate after-fresh-run validation; removal only of the final guard fails the typed cancellation assertion and exact restoration passes."
+    },
+    {
+      "id": "FV-REPLAY-CANCEL-03",
+      "status": "APPROVED_ERRONEOUS_SUPPLEMENTAL_PREDICATE_REPLACEMENT",
+      "basis": "Ordinary actual Replay success followed strictly by cancellation rejects the retrospective context clause; source identity and all other fuzz comparisons retain identical bytes."
+    }
+  ],
+  "retained_coverage": [
+    "Real 300 ms deadline and defer cancel",
+    "Source/module/patch identity equality",
+    "Actual recorded-entropy and fresh-seed execution plus complete equality",
+    "All existing tamper checks",
+    "Extra uncancelled fresh-run fuzz comparison",
+    "Typed pre/during cancellation rejection",
+    "Run INCONCLUSIVE/noFailure/empty witness with honest States/history/events/choices and canonical bounded digest"
+  ],
+  "reviewed_failure_classification": "Both V2 negative controls are intentional defects and remain FAIL, not acceptance passes; restored Windows affected race check is PASS.",
+  "fixture_scope": {
+    "cancellation_schedule_injected": true,
+    "actual_target_history_entropy_and_comparisons": true,
+    "natural_300ms_linux_interleaving_reproduced": false
+  },
+  "NOT_RUN_OR_UNPROVEN": [
+    "Reviewer did not reexecute Go target tests or mutations",
+    "Exact original hosted cancellation interleaving",
+    "Fresh combined metadata/cancellation-source full acceptance",
+    "Fresh clean reproduction and all24 independent release review",
+    "Repaired-head hosted CI and rendered final badge"
+  ],
+  "remaining_release_requirements": [
+    "Install exact approved files and document without altering locked criteria",
+    "Keep original failure, V1 rejection and intentional defect/restored evidence",
+    "Run current-source affected/full/clean gates with fresh source identity",
+    "Separate current all24 acceptance assessment",
+    "Exact public/privacy audit and actual owned publication/hosted completion"
+  ],
+  "public_candidate_originals_or_root_status_mutated_by_reviewer": false
+}

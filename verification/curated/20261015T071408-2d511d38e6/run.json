@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "run_id": "20261015T071408-2d511d38e6",
+  "category": "tooling",
+  "requirements": [
+    "AC-018"
+  ],
+  "command": [
+    "python",
+    "check_source_scan.py",
+    "--out",
+    "../sif/c2",
+    "--actual-public"
+  ],
+  "cwd": "[recorded-working-root]",
+  "started_utc": "2026-10-15T07:14:08.128072+00:00",
+  "ended_utc": "2026-10-15T07:14:12.853277+00:00",
+  "duration_seconds": 4.735000000000582,
+  "status": "PASS",
+  "reason": "completed",
+  "exit_code": 0,
+  "environment": {
+    "os": "Windows",
+    "release": "11",
+    "architecture": "AMD64",
+    "python": "3.12.14",
+    "go": "go version go1.27.2 windows/amd64",
+    "cpu": "13th Gen Intel(R) Core(TM) i9-13900H",
+    "logical_cpus": 20,
+    "host_memory": "34048978944 bytes",
+    "container_limits": "not inferred from host totals"
+  },
+  "source": {
+    "git_commit": null,
+    "git_dirty": true,
+    "source_tree_sha256": "34523258b2e4eed14ceed4439ba7b0d8bfabe2776cbe8c86c2db3891e1ea376c",
+    "files": [
+      {
+        "path": "check_source_scan.py",
+        "sha256": "88694380bd847b3e803a65bf3cf44aca0432087ad9d045ec092118f30413d3f5"
+      },
+      {
+        "path": "original.py",
+        "sha256": "c9770fe2715f17b9d2cae7f30374586596addebdf0069b28321665ba50985d32"
+      },
+      {
+        "path": "proposal.json",
+        "sha256": "7c1ab156cdddc0981f97b4ad3d1cb68ad41601b2905966920fbe497aa4180bd7"
+      },
+      {
+        "path": "run_evidence_candidate.py",
+        "sha256": "27365fc4c9a6cd9487bda6b4fa9f1f73982f357c6c8bc05497d59d70c5608a22"
+      },
+      {
+        "path": "run_evidence_candidate_v1.py",
+        "sha256": "05b566d3b4a6e302f88b5b3486adcde3d01cc4aa98b89d1725165d2d8b8582b5"
+      }
+    ]
+  },
+  "stdout": {
+    "path": "verification/curated/20261015T071408-2d511d38e6/stdout.txt",
+    "sha256": "f347bdd2eeed5716f5e61198707ec255345850d99d5ebbaabddb4c60bfc54806",
+    "bytes": 854
+  },
+  "stderr": {
+    "path": "verification/curated/20261015T071408-2d511d38e6/stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "curation": {
+    "schema_version": 1,
+    "raw_record_sha256": "3784d5f70dd3fc91696b8bcaf5135341cbd1e63ffaf144affad068a30c52432f",
+    "scope": "selected real engineering command; excludes agent session/chat/prompt data",
+    "source_identity_status": "original fields and full file hashes unchanged",
+    "streams": {
+      "stdout": {
+        "raw_sha256": "b92aba7eb2195a659c751d6661228c1121a403576a5c8abe08e9b18715a5b117",
+        "raw_bytes": 855,
+        "curated_sha256": "f347bdd2eeed5716f5e61198707ec255345850d99d5ebbaabddb4c60bfc54806",
+        "curated_bytes": 854,
+        "redactions": [
+          {
+            "kind": "CRLF-to-LF-text-normalization",
+            "count": 1
+          }
+        ]
+      },
+      "stderr": {
+        "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_bytes": 0,
+        "curated_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "curated_bytes": 0,
+        "redactions": []
+      }
+    },
+    "metadata_redactions": [
+      {
+        "kind": "operator-path-prefix",
+        "replacement": "[recorded-working-root]",
+        "count": 1
+      }
+    ]
+  }
+}

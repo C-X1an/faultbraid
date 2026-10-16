@@ -1,0 +1,1 @@
+{"status": "PASS", "report": "[local-evidence-root]\\reviews\\a12-release-independent\\current-source-contract-control-v2.json", "sha256": "5e3b51aa9a0250ff18e8b7e160e443aa386eeb83a61c06109b5c4877e1b79b52", "checks": 267}

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "[recorded-working-root]\check_source_scan.py", line 64, in <module>
+    raise AssertionError(label + " accepted " + name)
+AssertionError: candidate accepted included_alias
