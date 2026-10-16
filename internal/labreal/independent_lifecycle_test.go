@@ -34,6 +34,13 @@ func TestMain(m *testing.M) {
 		os.Exit(2)
 	}
 	buildinfo.SourceTreeSHA, buildinfo.ModuleLockSHA, buildinfo.PatchSHA = identity.SourceTreeSHA, identity.ModuleLockSHA, identity.PatchSHA
+	if len(os.Args) > 1 && os.Args[1] == "s42-cleanup-wait" {
+		// Synthetic owned-process cleanup control only; never a Raft node.
+		fmt.Fprintln(os.Stdout, "independent cleanup helper ready")
+		time.Sleep(10 * time.Second)
+		fmt.Fprintln(os.Stdout, "independent cleanup helper late output")
+		os.Exit(0)
+	}
 	if len(os.Args) > 1 && os.Args[1] == "s42-intentional-exit" {
 		listener, err := net.Listen("tcp4", "127.0.0.1:0")
 		if err != nil {
@@ -68,10 +75,20 @@ func TestIndependentUnexpectedExitedChildMustNotBecomeSuccessfulOwnedStop(t *tes
 	if err != nil {
 		t.Fatal(err)
 	}
+	t.Cleanup(func() {
+		if err := closeIndependentStream(stdout); err != nil {
+			t.Errorf("close independent stdout: %v", err)
+		}
+	})
 	stderr, err := os.OpenFile(filepath.Join(directory, "child.stderr.ndjson"), os.O_CREATE|os.O_EXCL|os.O_WRONLY, 0600)
 	if err != nil {
 		t.Fatal(err)
 	}
+	t.Cleanup(func() {
+		if err := closeIndependentStream(stderr); err != nil {
+			t.Errorf("close independent stderr: %v", err)
+		}
+	})
 	executable, err := os.Executable()
 	if err != nil {
 		t.Fatal(err)
@@ -94,9 +111,13 @@ func TestIndependentUnexpectedExitedChildMustNotBecomeSuccessfulOwnedStop(t *tes
 	if err != nil {
 		t.Fatal(err)
 	}
-	defer c.owner.Close()
 	l.result.Processes[0].PID = c.command.Process.Pid
 	go func() { c.waitErr = c.command.Wait(); close(c.waited) }()
+	t.Cleanup(func() {
+		if err := cleanupIndependentChild(c); err != nil {
+			t.Errorf("independent helper cleanup: %v", err)
+		}
+	})
 	select {
 	case <-c.waited:
 	case <-time.After(5 * time.Second):

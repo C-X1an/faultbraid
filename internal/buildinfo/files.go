@@ -18,12 +18,29 @@ import (
 // FromFiles identifies a trusted local source directory. Production binaries
 // use Current's build-injected identity; tests can identify their actual tree.
 func FromFiles(root string) (Identity, error) {
-	return fromFilesWithWalker(root, filepath.WalkDir)
+	return fromFilesWithTraversal(root, walkSourceTree)
 }
 
 // The walker is injectable only inside this package for deterministic filesystem
 // error tests. The exported entry point always traverses the actual source tree.
 func fromFilesWithWalker(root string, walkDir func(string, fs.WalkDirFunc) error) (Identity, error) {
+	return fromFilesWithTraversal(root, func(root string, visit sourceVisitFunc) error {
+		return walkDir(root, func(path string, entry fs.DirEntry, walkErr error) error {
+			rel, err := filepath.Rel(root, path)
+			if err != nil {
+				return err
+			}
+			rel = filepath.ToSlash(rel)
+			ignored := false
+			for _, part := range strings.Split(rel, "/") {
+				ignored = ignored || ignoredSourceComponent(part)
+			}
+			return visit(path, rel, ignored, entry, walkErr)
+		})
+	})
+}
+
+func fromFilesWithTraversal(root string, walkTree func(string, sourceVisitFunc) error) (Identity, error) {
 	root, err := filepath.Abs(root)
 	if err != nil {
 		return Identity{}, err
@@ -33,18 +50,7 @@ func fromFilesWithWalker(root string, walkDir func(string, fs.WalkDirFunc) error
 		SHA  string `json:"sha256"`
 	}
 	files := []sourceFile{}
-	err = walkDir(root, func(path string, entry fs.DirEntry, walkErr error) error {
-		rel, err := filepath.Rel(root, path)
-		if err != nil {
-			return err
-		}
-		ignored := false
-		for _, part := range strings.Split(filepath.ToSlash(rel), "/") {
-			switch part {
-			case ".git", ".local-runs", "bin", "__pycache__", ".pytest_cache":
-				ignored = true
-			}
-		}
+	err = walkTree(root, func(path, rel string, ignored bool, entry fs.DirEntry, walkErr error) error {
 		if walkErr != nil {
 			if ignored && errors.Is(walkErr, fs.ErrNotExist) {
 				return nil
@@ -72,7 +78,7 @@ func fromFilesWithWalker(root string, walkDir func(string, fs.WalkDirFunc) error
 			return err
 		}
 		hash := sha256.Sum256(data)
-		files = append(files, sourceFile{filepath.ToSlash(rel), hex.EncodeToString(hash[:])})
+		files = append(files, sourceFile{rel, hex.EncodeToString(hash[:])})
 		return nil
 	})
 	if err != nil {
