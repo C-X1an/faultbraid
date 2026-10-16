@@ -14,6 +14,7 @@ import sys
 import uuid
 
 from run_evidence import execute, sha, source_identity
+from native_completion import completion_problems
 
 
 def main():
@@ -31,10 +32,12 @@ def main():
     base = root / '.local-runs' / ('real-lab-' + datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S') + '-' + uuid.uuid4().hex[:6])
     base.mkdir(mode=0o700)
     scenario_file = root / 'examples/raft-real.json'
+    completion_file = root / 'examples/raft-real-completions.json'
+    completion_plan = json.loads(completion_file.read_bytes())
     records, problems = [], []
     for concurrency in (1, 4, 16):
         directory = base / ('concurrency-' + str(concurrency))
-        record = execute([str(binary), 'lab-real', '-scenario', str(scenario_file), '-outdir', str(directory), '-concurrency', str(concurrency)], root, base / 'commands', 'production-native-conformance', ['AC-019'], timeout=70)
+        record = execute([str(binary), 'lab-real', '-scenario', str(scenario_file), '-outdir', str(directory), '-concurrency', str(concurrency), '-completion-plan', str(completion_file)], root, base / 'commands', 'production-native-conformance', ['AC-019'], timeout=70)
         entry = {'concurrency': concurrency, 'run_id': record['run_id'], 'status': record['status']}
         records.append(entry)
         if record['status'] != 'PASS':
@@ -50,6 +53,7 @@ def main():
             problems.append('native verdict, cleanup or OS scheduling scope missing')
         if result['request_concurrency'] != concurrency or not 1 <= result['observed_peak_request_concurrency'] <= concurrency:
             problems.append('native concurrency measurement outside declared bound')
+        problems.extend(completion_problems(result, completion_plan))
         processes, pids = result['processes'], set()
         if len(processes) != 4:
             problems.append('native kill/restart did not produce four process lifetimes')

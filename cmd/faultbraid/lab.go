@@ -25,6 +25,7 @@ func runReal(args []string, stdin io.Reader, stdout, stderr io.Writer) int {
 	input := flags.String("scenario", "", "scenario file or - for stdin")
 	directory := flags.String("outdir", "", "new native artifact directory")
 	concurrency := flags.Int("concurrency", 4, "maximum simultaneous requests, 1 through 16")
+	completionFile := flags.String("completion-plan", "", "optional native acknowledgement plan file")
 	if err := flags.Parse(args); err != nil || flags.NArg() != 0 || *input == "" || *concurrency < 1 || *concurrency > 16 {
 		return fail(stderr, "INVALID_INPUT", "invalid lab-real flags")
 	}
@@ -43,6 +44,22 @@ func runReal(args []string, stdin io.Reader, stdout, stderr io.Writer) int {
 	if err != nil {
 		return inputFailure(stderr, err)
 	}
+	var completionPlan nativeCompletionPlan
+	if *completionFile != "" {
+		if *completionFile == "-" {
+			return fail(stderr, "INVALID_INPUT", "native completion plan requires a file")
+		}
+		file, openErr := os.Open(*completionFile)
+		if openErr != nil {
+			return fail(stderr, "INVALID_INPUT", "cannot open native completion plan")
+		}
+		var planErr error
+		completionPlan, planErr = decodeNativeCompletionPlan(file)
+		closeErr := file.Close()
+		if planErr != nil || closeErr != nil {
+			return fail(stderr, "INVALID_INPUT", "invalid native completion plan")
+		}
+	}
 	identity := buildinfo.Current()
 	if !identity.Identified() {
 		return fail(stderr, "IO_ERROR", "identified build required; use make build")
@@ -53,7 +70,7 @@ func runReal(args []string, stdin io.Reader, stdout, stderr io.Writer) int {
 	}
 	ctx, cancel := context.WithTimeout(context.Background(), 60*time.Second)
 	defer cancel()
-	result, runErr := labreal.Run(ctx, s, labreal.Options{Executable: executable, Directory: *directory, Identity: identity, Concurrency: *concurrency})
+	result, runErr := labreal.Run(ctx, s, labreal.Options{Executable: executable, Directory: *directory, Identity: identity, Concurrency: *concurrency, CompletionDependencies: completionPlan.CompletionDependencies, RequiredCompletions: completionPlan.RequiredCompletions})
 	if info, err := os.Lstat(filepath.Join(*directory, ".faultbraid-lab-owner.json")); result.BinarySHA != "" && err == nil && info.Mode().IsRegular() {
 		for _, artifact := range []struct {
 			name  string
@@ -74,6 +91,9 @@ func runReal(args []string, stdin io.Reader, stdout, stderr io.Writer) int {
 		}
 	}
 	if runErr != nil {
+		if errors.Is(runErr, labreal.ErrCompletionDependency) {
+			return fail(stderr, "INVALID_INPUT", "invalid native completion dependency")
+		}
 		if errors.Is(runErr, context.DeadlineExceeded) || errors.Is(runErr, context.Canceled) || errors.Is(runErr, labreal.ErrLimit) {
 			_ = json.NewEncoder(stdout).Encode(map[string]any{"status": "INCONCLUSIVE", "scope": result.Mode, "cleanup_complete": result.CleanupComplete})
 			return 3

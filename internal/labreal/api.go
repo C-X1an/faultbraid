@@ -39,6 +39,10 @@ type Options struct {
 	Directory   string
 	Identity    buildinfo.Identity
 	Concurrency int
+	// Optional explicit native causality; empty preserves the original wall-time schedule.
+	CompletionDependencies []CompletionDependency
+	// After the fixed nominal end, await these requests within the existing run context.
+	RequiredCompletions []string
 }
 
 type Snapshot struct {
@@ -99,24 +103,28 @@ type Transport struct {
 }
 
 type Result struct {
-	Version          int                `json:"version"`
-	Mode             string             `json:"mode"`
-	Identity         buildinfo.Identity `json:"identity"`
-	BinarySHA        string             `json:"binary_sha256"`
-	TickMilliseconds int64              `json:"tick_milliseconds"`
-	Concurrency      int                `json:"request_concurrency"`
-	PeakConcurrency  int64              `json:"observed_peak_request_concurrency"`
-	DurationMillis   int64              `json:"duration_milliseconds"`
-	EntropyVersion   string             `json:"entropy_version"`
-	Scenario         scenario.Scenario  `json:"scenario"`
-	History          history.History    `json:"history"`
-	Check            history.Result     `json:"result"`
-	Attempts         []Attempt          `json:"attempts"`
-	Processes        []Process          `json:"processes"`
-	Journals         []Journal          `json:"journals"`
-	Transport        Transport          `json:"transport"`
-	CleanupComplete  bool               `json:"cleanup_complete"`
-	Reason           string             `json:"reason"`
+	Version                int                    `json:"version"`
+	Mode                   string                 `json:"mode"`
+	Identity               buildinfo.Identity     `json:"identity"`
+	BinarySHA              string                 `json:"binary_sha256"`
+	TickMilliseconds       int64                  `json:"tick_milliseconds"`
+	Concurrency            int                    `json:"request_concurrency"`
+	PeakConcurrency        int64                  `json:"observed_peak_request_concurrency"`
+	DurationMillis         int64                  `json:"duration_milliseconds"`
+	EntropyVersion         string                 `json:"entropy_version"`
+	Scenario               scenario.Scenario      `json:"scenario"`
+	History                history.History        `json:"history"`
+	Check                  history.Result         `json:"result"`
+	Attempts               []Attempt              `json:"attempts"`
+	Processes              []Process              `json:"processes"`
+	Journals               []Journal              `json:"journals"`
+	Transport              Transport              `json:"transport"`
+	CompletionDependencies []CompletionDependency `json:"completion_dependencies,omitempty"`
+	RequiredCompletions    []string               `json:"required_completions,omitempty"`
+	CompletionBarriers     []CompletionBarrier    `json:"completion_barriers,omitempty"`
+	ActionDispatches       []ActionDispatch       `json:"action_dispatches,omitempty"`
+	CleanupComplete        bool                   `json:"cleanup_complete"`
+	Reason                 string                 `json:"reason"`
 }
 
 type proposal struct {

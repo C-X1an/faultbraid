@@ -645,3 +645,11 @@ internal/labreal/reply_validation_test.go
 internal/buildinfo/source_walk.go
 internal/buildinfo/source_walk_test.go
 internal/labreal/independent_lifecycle_cleanup_test.go
+cmd/faultbraid/completion_plan.go
+cmd/faultbraid/completion_plan_test.go
+examples/raft-real-completions.json
+internal/labreal/completion.go
+internal/labreal/completion_test.go
+scripts/native_completion.py
+scripts/test_native_completion.py
+tests/system/native_causality_test.go

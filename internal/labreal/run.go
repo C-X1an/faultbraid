@@ -67,8 +67,10 @@ type observation struct {
 	err    error
 }
 type logicalRequest struct {
-	operation history.Operation
-	possible  bool
+	ackOrdinal int64
+	ackAction  string
+	operation  history.Operation
+	possible   bool
 }
 type outputBudget struct {
 	mu    sync.Mutex
@@ -136,6 +138,7 @@ func (w *childOutput) Write(data []byte) (int, error) {
 }
 
 type lab struct {
+	completedAttempts            map[string]completedAttempt
 	ctx                          context.Context
 	cancel                       context.CancelFunc
 	options                      Options
@@ -215,6 +218,14 @@ func Run(ctx context.Context, s scenario.Scenario, options Options) (result Resu
 	if err := validateReal(s, options); err != nil {
 		return result, err
 	}
+	// Validate and copy explicit causality before output or child creation.
+	var completionErr error
+	options, completionErr = checkedCompletionOptions(s, options)
+	if completionErr != nil {
+		return result, completionErr
+	}
+	result.CompletionDependencies = append([]CompletionDependency(nil), options.CompletionDependencies...)
+	result.RequiredCompletions = append([]string(nil), options.RequiredCompletions...)
 	if err := ctx.Err(); err != nil {
 		result.Reason = "cancelled before launch"
 		return result, err
@@ -317,12 +328,20 @@ func Run(ctx context.Context, s scenario.Scenario, options Options) (result Resu
 		if err := l.until(epoch.Add(time.Duration(action.At) * TickDuration)); err != nil {
 			return result, err
 		}
+		if err := l.awaitActionDependencies(action.ID); err != nil {
+			return result, err
+		}
 		if err := l.action(action); err != nil {
 			return result, err
 		}
 	}
 	if err := l.until(epoch.Add(time.Duration(s.Until()) * TickDuration)); err != nil {
 		return result, err
+	}
+	for _, id := range options.RequiredCompletions {
+		if err := l.awaitCompletion(CompletionDependency{RequestID: id}); err != nil {
+			return result, err
+		}
 	}
 	return result, nil
 }
@@ -417,6 +436,14 @@ func (l *lab) until(deadline time.Time) error {
 	}
 }
 func (l *lab) action(action scenario.Action) error {
+	if action.Kind != "invoke_write" && action.Kind != "invoke_read" {
+		for _, dependency := range l.options.CompletionDependencies {
+			if dependency.ActionID == action.ID {
+				l.result.ActionDispatches = append(l.result.ActionDispatches, ActionDispatch{ActionID: action.ID, Kind: action.Kind, ObservedOrdinal: atomic.LoadInt64(&l.ordinal)})
+				break
+			}
+		}
+	}
 	node := *action.Node
 	switch action.Kind {
 	case "crash":
@@ -699,6 +726,17 @@ func (l *lab) clientResult(outcome clientOutcome) error {
 	}
 	if reply.Status == "complete" && r.operation.Kind == "write" && reply.Value != r.operation.Value {
 		return errors.New("real lab: write result disagrees with replicated payload")
+	}
+	if reply.Status == "complete" && reply.Admission == "admitted" && outcome.err == nil {
+		if r.ackOrdinal == 0 || ordinal < r.ackOrdinal {
+			r.ackOrdinal, r.ackAction = ordinal, input.ID
+		}
+		if l.completedAttempts == nil {
+			l.completedAttempts = map[string]completedAttempt{}
+		}
+		if previous, exists := l.completedAttempts[input.ID]; !exists || ordinal < previous.ordinal {
+			l.completedAttempts[input.ID] = completedAttempt{id, ordinal}
+		}
 	}
 	if reply.Status == "complete" && (r.operation.Return == nil || ordinal < *r.operation.Return) {
 		r.operation.Return = new(ordinal)

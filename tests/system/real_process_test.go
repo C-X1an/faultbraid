@@ -119,7 +119,7 @@ func TestAC019ThreeRealProcessesJournalKillRestartAndCleanup(t *testing.T) {
 			}
 			ctx, cancel := context.WithTimeout(context.Background(), 18*time.Second)
 			defer cancel()
-			result, runErr := labreal.Run(ctx, realScenario(), labreal.Options{Executable: executable, Directory: directory, Identity: buildinfo.Current(), Concurrency: concurrency})
+			result, runErr := labreal.Run(ctx, realScenario(), labreal.Options{Executable: executable, Directory: directory, Identity: buildinfo.Current(), Concurrency: concurrency, CompletionDependencies: nativeConformanceDependencies(), RequiredCompletions: []string{"read9"}})
 			retainNativeResult(t, directory, result)
 			if runErr != nil || result.Check.Status != history.Valid || !result.CleanupComplete {
 				t.Fatalf("native conformance error=%v result=%+v cleanup=%v reason=%s", runErr, result.Check, result.CleanupComplete, result.Reason)
@@ -194,6 +194,7 @@ func TestAC019ThreeRealProcessesJournalKillRestartAndCleanup(t *testing.T) {
 					t.Fatal("retry reverted later durable value")
 				}
 			}
+			assertActualRetryAfterLaterAck(t, result, *write9.Return)
 			t.Logf("AC-019 actual same-test-binary processes=%d distinct-pids=%d socket-closure=%v http-posts=%d journal-bytes=%d configured-concurrency=%d observed-peak=%d duration-ms=%d source=%s binary=%s", len(result.Processes), len(pids), result.CleanupComplete, result.Transport.Delivered, journalBytes, concurrency, result.PeakConcurrency, result.DurationMillis, result.Identity.SourceTreeSHA, result.BinarySHA)
 		})
 	}

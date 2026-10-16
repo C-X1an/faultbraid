@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "completion_dependencies": [
+    {
+      "action_id": "read7-n1",
+      "request_id": "write7"
+    },
+    {
+      "action_id": "read7-n2",
+      "request_id": "write7"
+    },
+    {
+      "action_id": "read7-n3",
+      "request_id": "write7"
+    },
+    {
+      "action_id": "kill-node2",
+      "request_id": "read7"
+    },
+    {
+      "action_id": "write7-n1-retry",
+      "request_id": "write9"
+    },
+    {
+      "action_id": "write7-n2-retry",
+      "request_id": "write9"
+    },
+    {
+      "action_id": "write7-n3-retry",
+      "request_id": "write9"
+    },
+    {
+      "action_id": "read9-n1",
+      "request_id": "write9"
+    },
+    {
+      "action_id": "read9-n1",
+      "request_id": "write7",
+      "attempt_actions": [
+        "write7-n1-retry",
+        "write7-n2-retry",
+        "write7-n3-retry"
+      ]
+    },
+    {
+      "action_id": "read9-n2",
+      "request_id": "write9"
+    },
+    {
+      "action_id": "read9-n2",
+      "request_id": "write7",
+      "attempt_actions": [
+        "write7-n1-retry",
+        "write7-n2-retry",
+        "write7-n3-retry"
+      ]
+    },
+    {
+      "action_id": "read9-n3",
+      "request_id": "write9"
+    },
+    {
+      "action_id": "read9-n3",
+      "request_id": "write7",
+      "attempt_actions": [
+        "write7-n1-retry",
+        "write7-n2-retry",
+        "write7-n3-retry"
+      ]
+    }
+  ],
+  "required_completions": [
+    "read9"
+  ]
+}
