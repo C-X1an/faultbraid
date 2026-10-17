@@ -1,0 +1,48 @@
+{
+  "status": "DIAGNOSIS_EVIDENCE_FROZEN_NO_SOURCE_REPAIR_CLAIM",
+  "source": {
+    "git_commit": "147db6f31ab9a1fad2d030703c87fc3142f59a3e",
+    "git_dirty": false,
+    "source_tree_sha256": "fc6bd5c1f4969d0cd3ebd588dd83049b3a131ffcbacd698315e21f01497cdeeb"
+  },
+  "observations": {
+    "unchanged_serial_FromFiles_seconds": [
+      1.1236382,
+      1.1895915,
+      0.9845428
+    ],
+    "three_goroutines_same_Go_process_first_iteration_seconds": [
+      4.0168437,
+      4.1081812,
+      4.1081812
+    ],
+    "goroutine_scope_warning": "These calls share one Go runtime and GC. Their approximately4.1-second times are not three actual native helper processes and do not prove the sole cause of the failed3-second fixture.",
+    "actual_three_process_ABBA_summary": {
+      "streaming": {
+        "max_fingerprint_seconds": 1.2231604,
+        "median_allocated_bytes": 47427080.0,
+        "median_child_wall_seconds": 1.195000000006985
+      },
+      "unchanged": {
+        "max_fingerprint_seconds": 1.2949537,
+        "median_allocated_bytes": 118372412.0,
+        "median_child_wall_seconds": 1.2735000000102445
+      }
+    },
+    "streaming_allocation_reduction_fraction": 0.5993400894796331,
+    "streaming_median_child_wall_reduction_fraction": 0.06164114644886387,
+    "full_ignored_census_totals": {
+      "directories": 14045,
+      "regular_files": 43915,
+      "bytes": 2401471034,
+      "aliases": 0,
+      "other_entries": 0
+    },
+    "older_campaign_totals": {
+      "directories": 12192,
+      "regular_files": 36538,
+      "bytes": 2044001915
+    }
+  },
+  "prototype_status": "PRIVATE_MEASURED_PERFORMANCE_PROTOTYPE_ONLY_NOT_PROPOSED_FOR_INTEGRATION_AS_A_FIX"
+}

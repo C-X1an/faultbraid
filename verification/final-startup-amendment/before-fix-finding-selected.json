@@ -1,0 +1,45 @@
+{
+  "status": "FAIL_CURRENT_FINAL_VERIFICATION",
+  "reviewer": {
+    "id": "/root/a12_release_readonly_verifier",
+    "method": "separate-read-only-verifier",
+    "model_override": "NONE"
+  },
+  "source": {
+    "git_commit": "147db6f31ab9a1fad2d030703c87fc3142f59a3e",
+    "git_dirty": false,
+    "source_tree_sha256": "fc6bd5c1f4969d0cd3ebd588dd83049b3a131ffcbacd698315e21f01497cdeeb"
+  },
+  "findings": [
+    {
+      "id": "RV-A12-FINAL-NATIVE-01",
+      "priority": "P1",
+      "status": "OPEN_BEFORE_FIX",
+      "title": "Later final make verify failed before the completion-cancellation fixture established child readiness or workload admission; owned cleanup proof is incomplete",
+      "file": "tests/system/native_causality_test.go",
+      "line": 68,
+      "actual": "The unchanged3-second parent context expires. Retained native result has zero attempts, empty history/journals, no child readiness address or entropy protocol, all six raw child streams empty, three Waited=true/exit1 process records, SocketClosed=false and cleanup_complete=false. Final make verify is a completedFAIL170.109s/exit2, with this sole named test failure.",
+      "classification": "Actual final verification and the AC019 cancellation/cleanup assertion fail. The raw evidence is a startup/readiness interruption, not an observed blocked-completion wait: never-ack and blocked actions were never invoked. INCONCLUSIVE is the correct semantic status; current evidence does not establish a leaked live child or reachable socket, nor does it establish complete cleanup.",
+      "causal_source_inspection": [
+        "Run starts all three children, then waits for actual protocol readiness under the caller context and separate5-second readiness timer. The test's3-second context can end this phase before workload admission.",
+        "stop re-reads bounded retained stdout after owned Kill/Wait. When no ready address exists, its fixed-address TCP check is not performed and SocketClosed remains false, producing the observed closure-not-established error.",
+        "cleanup unconditionally hashes all three node journals. Here the journals do not exist; fileHash calls regularPath(path,false), whose Lstat missing-file path returns ErrUnsafePath. The generic ownership message therefore does not by itself show an alias, permission violation or malicious path.",
+        "The same-test-binary TestMain measures the complete source via buildinfo.FromFiles before dispatching lab-node. The later installed evidence enlarges the source set while retaining the146 execution inputs. Extra startup work is a hypothesis consistent with the empty pre-readiness streams; the preserved artifact contains no timing sample establishing a sole source-scan, OS scheduling or security-software cause."
+      ],
+      "required_next": "Preserve actual failed command/fixture/source/assertions/deadlines and diagnose startup/cancellation admission with concrete independently reviewed changes or controls. Do not assign successful cleanup without proof, weaken owned-path/socket/journal guards, inflate deadlines, skip/select away assertions, blindly retry to green or retag the earlier all24 judgment. Fresh affected and final/full verification is required after a compatible repair."
+    }
+  ],
+  "native_observations": {
+    "sha256": "13ff0cc20ad7f5be5226e3432778ecca18e465345c0a2222839885f0c565d3f3",
+    "duration_milliseconds": 3009,
+    "result": {
+      "status": "INCONCLUSIVE",
+      "witness": null,
+      "states": 0,
+      "reason": "native run was interrupted; inspect attempts and cleanup"
+    },
+    "cleanup_complete": false,
+    "all_six_child_streams_empty": true,
+    "three_node_journal_paths_absent": true
+  }
+}

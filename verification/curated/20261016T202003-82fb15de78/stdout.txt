@@ -1,0 +1,54 @@
+python3 scripts/bootstrap.py
+instrumented raft already prepared: .local-runs/raft
+{"status": "PASS", "go": "go version go1.27.2 windows/amd64", "release_pin": "1.27.2", "release_toolchain_matches": true, "note": "A seed source-compatibility run is not supported-toolchain release verification."}
+python3 scripts/check_integrity.py
+{"status": "PASS", "criteria": 24, "acceptance_sha256": "db3c2f565c170a2511e8abd28aad13cf62f3d1c557c7dc2d8f311a007310d9e6", "scope": "lock and narrow static hazards; not proof that all tests are adequate"}
+python3 scripts/build.py
+{"status": "PASS", "source_tree_sha256": "fc6bd5c1f4969d0cd3ebd588dd83049b3a131ffcbacd698315e21f01497cdeeb", "binary_sha256": "8f5532192be0e3f34552e0e023cccd45c084b43e26195092f1953013124f7f5d"}
+go vet ./...
+python3 -m compileall -q scripts
+go test -run '^$' ./...
+ok  	github.com/C-X1an/faultbraid/cmd/faultbraid	6.638s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/buildinfo	1.905s [no tests to run]
+?   	github.com/C-X1an/faultbraid/internal/campaign	[no test files]
+ok  	github.com/C-X1an/faultbraid/internal/history	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/labreal	7.611s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/raftadapter	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/report	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/scenario	2.563s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/sim	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/strictjson	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/target	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/tests/acceptance_locked	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/tests/differential	2.716s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/tests/integration	2.554s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/tests/security	2.728s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/tests/system	6.830s [no tests to run]
+go test -p 1 -count=1 ./...
+ok  	github.com/C-X1an/faultbraid/cmd/faultbraid	4.652s
+ok  	github.com/C-X1an/faultbraid/internal/buildinfo	9.775s
+?   	github.com/C-X1an/faultbraid/internal/campaign	[no test files]
+ok  	github.com/C-X1an/faultbraid/internal/history	1.992s
+ok  	github.com/C-X1an/faultbraid/internal/labreal	10.096s
+ok  	github.com/C-X1an/faultbraid/internal/raftadapter	1.640s
+ok  	github.com/C-X1an/faultbraid/internal/report	2.920s
+ok  	github.com/C-X1an/faultbraid/internal/scenario	2.354s
+ok  	github.com/C-X1an/faultbraid/internal/sim	2.191s
+ok  	github.com/C-X1an/faultbraid/internal/strictjson	1.631s
+ok  	github.com/C-X1an/faultbraid/internal/target	4.452s
+ok  	github.com/C-X1an/faultbraid/tests/acceptance_locked	1.864s
+ok  	github.com/C-X1an/faultbraid/tests/differential	4.306s
+ok  	github.com/C-X1an/faultbraid/tests/integration	16.537s
+ok  	github.com/C-X1an/faultbraid/tests/security	7.059s
+--- FAIL: TestNativeCompletionBarrierCancellationRetainsOwnedCleanup (3.01s)
+    native_causality_test.go:66: retained actual native fixture=.local-runs/real-process-tests/actual-4116069030/lab/native-result.json
+    native_causality_test.go:68: blocked completion cancellation/cleanup failed: err=context deadline exceeded
+        real lab: stopped socket closure was not established
+        real lab: stopped socket closure was not established
+        real lab: stopped socket closure was not established
+        real lab: output/executable path must be an owned regular path without aliases
+        real lab: output/executable path must be an owned regular path without aliases
+        real lab: output/executable path must be an owned regular path without aliases status=INCONCLUSIVE cleanup=false
+FAIL
+FAIL	github.com/C-X1an/faultbraid/tests/system	41.535s
+FAIL

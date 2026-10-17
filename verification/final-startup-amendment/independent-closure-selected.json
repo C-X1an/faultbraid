@@ -1,0 +1,35 @@
+{
+  "kind": "independent-scoped-final-native-startup-cleanup-review",
+  "status": "PASS_SCOPED_FINAL_NATIVE_STARTUP_CLEANUP_CLOSURE",
+  "reviewer": {
+    "id": "/root/a13_fresh_readonly_verifier",
+    "method": "separate-read-only-verifier",
+    "independent_from_authors_and_integrator": true,
+    "model_override": "NONE",
+    "new_Go_or_native_target_execution": "NONE; actual product commands and retained bytes independently checked"
+  },
+  "source": {
+    "git_commit": "147db6f31ab9a1fad2d030703c87fc3142f59a3e",
+    "git_dirty": false,
+    "source_tree_sha256": "fc6bd5c1f4969d0cd3ebd588dd83049b3a131ffcbacd698315e21f01497cdeeb"
+  },
+  "observations": [
+    "This new judgment is authored by the genuinely separate /root/a13_fresh_readonly_verifier. It is bound to clean147db6f31ab9a1fad2d030703c87fc3142f59a3e, sourcefc6bd5c1f4969d0cd3ebd588dd83049b3a131ffcbacd698315e21f01497cdeeb,1162 included files and the unchanged146 execution inputs.",
+    "Own actual read-only command20261017T152851-c708397b60 completed PASS111.156 seconds. It checked actual final PASS record0e254515b12e8005ac0f14a882677eb1bfe03eb4e49d47c110e40b892bacf5bf and preserved original before-fix findinga03ad18788294f047a542be5c93acf7696ab7bd7760ab3f941ce5bcb09fb59a9, together with original FAILc150a37e5fe28ed901ebd34a7d9ce80efca7166096a48436c490ecb8155eabd7. Source maps and sibling-stream byte counts/hashes match.",
+    "The historical failure expired before child readiness/workload admission: empty child streams, no attempts/journals, INCONCLUSIVE and cleanup incomplete. Its evidence did not prove a leaked live child or reachable socket. The original failure and authored open finding are not rewritten as successful execution.",
+    "The actual archive receipt and captured stdout match all printed receipt fields except its complete source map, and completion falls inside the actual archive-command interval. The exact previously independently reviewed selection totals36538 files/12192 directories/2044001915 bytes and complete before/after byte equality. This review does not repeat the2GiB archive hashing or claim a source-code fix.",
+    "Focused native fixtures9ef28e75 andb88a36b0 retain actual ready/entropy protocol, pending NODE_UNAVAILABLE response, no invocation of the blocked dependent action, three positive distinct PIDs, owned Wait, closed sockets and three actual matching journal files. Their results correctly remain INCONCLUSIVE while cleanup is complete. The source still contains both original3-second parent contexts.",
+    "The later actual exact147 make verify completed PASS689.000 seconds. Actual production native configured limits1/4/16 have legal independently checked histories, four actual child lifetimes, owned waits/closed sockets and byte-matching FileStore journals. Configured16 observed peak15; this is finite native conformance, not OS replay or physical power-loss proof.",
+    "Actual current full-run campaign accounting and all1000 trace bytes/hashes/source identities were checked, totaling157712616 trace-file bytes, with1000 independently verified legal witnesses and ten actual matching explicit-unsafe replays. This is finite schedule evidence, not exhaustive consensus correctness.",
+    "The startup goroutine measurement and actual separate-process measurements have distinct scopes. The private streaming prototype remains unintegrated performance evidence. Archival followed by successful focused/full execution is an observed sequence; no sole historical startup cause or universal timing improvement is established.",
+    "Original all24 assessment72f50954 remains bound to its originalf3d source. A separate fresh all24 judgment is issued for exact147 from this review. Private metadata staging, later-head final verification/export/publication and hosted Linux/CodeQL results remain separate gates."
+  ],
+  "findings": [
+    {
+      "id": "RV-A12-FINAL-NATIVE-01",
+      "status": "RESOLVED",
+      "before_fix_sha256": "a03ad18788294f047a542be5c93acf7696ab7bd7760ab3f941ce5bcb09fb59a9",
+      "summary": "The original actual final FAIL170.109/exit2 and open before-fix artifact remain immutable. The reviewed reversible archival changed no tracked source, raw record fields, assertions or deadlines. The subsequent actual focused race run observed both unchanged3-second cancellation tests passing with genuine readiness, pending unknown dead-node response, three waited/closed children and byte-matching journals. The actual unchanged147 full make verify then completed PASS689.000/exit0. Independent actual review c708397b60 rechecked these records and artifacts, the current production native profiles and complete current campaign. This closes the later local final-run verification/cleanup finding at the measured source and scope; it establishes no universal startup guarantee, sole historical cause, physical power-loss guarantee or new source-code repair."
+    }
+  ]
+}

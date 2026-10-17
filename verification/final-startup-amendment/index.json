@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "kind": "append-only-final-startup-engineering-amendment",
+  "measured_source": {
+    "git_commit": "147db6f31ab9a1fad2d030703c87fc3142f59a3e",
+    "git_dirty": false,
+    "source_tree_sha256": "fc6bd5c1f4969d0cd3ebd588dd83049b3a131ffcbacd698315e21f01497cdeeb"
+  },
+  "runs": [
+    {
+      "role": "final_failure",
+      "path": "verification/curated/20261016T202003-82fb15de78/run.json",
+      "status": "FAIL",
+      "run_id": "20261016T202003-82fb15de78",
+      "sha256": "564c250cae94f2ecc4264f630c7f68953a1697f389451d184d82bffe95190be7",
+      "raw_record_sha256": "c150a37e5fe28ed901ebd34a7d9ce80efca7166096a48436c490ecb8155eabd7"
+    },
+    {
+      "role": "archive_run",
+      "path": "verification/curated/20261017T150112-0d6482fbc8/run.json",
+      "status": "PASS",
+      "run_id": "20261017T150112-0d6482fbc8",
+      "sha256": "74d3e5d404e25db3c856996fb8b70ecbfc64201057ab2cf4cf93372ee3670cfa",
+      "raw_record_sha256": "abf87b21ff4f20f35df64947241654b69167ac29e34eadfbda3b9a8ae17307f7"
+    },
+    {
+      "role": "focused_run",
+      "path": "verification/curated/20261017T151118-23748680bb/run.json",
+      "status": "PASS",
+      "run_id": "20261017T151118-23748680bb",
+      "sha256": "4922a0d8e7ca37a799fe141a97d851792a15f7fa7737b39d8927919e8d605941",
+      "raw_record_sha256": "fd280d5850646d2920b2b4b93d8b73879bbb6fa287c930ba55773e729a11ce7f"
+    },
+    {
+      "role": "final_base_verify_run",
+      "path": "verification/curated/20261017T151427-fa38968ec2/run.json",
+      "status": "PASS",
+      "run_id": "20261017T151427-fa38968ec2",
+      "sha256": "b88ec6a62b5dacf76fd1680761d6d30a6dc74c75be3e0ba640ed0be8db285516",
+      "raw_record_sha256": "0e254515b12e8005ac0f14a882677eb1bfe03eb4e49d47c110e40b892bacf5bf"
+    },
+    {
+      "role": "closure_run",
+      "path": "verification/curated/20261017T152851-c708397b60/run.json",
+      "status": "PASS",
+      "run_id": "20261017T152851-c708397b60",
+      "sha256": "49a45f77f6d436b5cdd5836992fc9252a4f29058644db7be7bc4c60d848faa99",
+      "raw_record_sha256": "d153aa358e71e28650db966f8f0ba13f5f78ded41213ba61a473a56f3c8db7f2"
+    }
+  ],
+  "selected_artifacts": [
+    {
+      "path": "verification/final-startup-amendment/before-fix-finding-selected.json",
+      "original_role": "before_fix_finding",
+      "raw_sha256": "a03ad18788294f047a542be5c93acf7696ab7bd7760ab3f941ce5bcb09fb59a9",
+      "projection": "selected authored engineering fields; full original private paths/maps omitted",
+      "redactions": []
+    },
+    {
+      "path": "verification/final-startup-amendment/startup-diagnosis-selected.json",
+      "original_role": "startup_diagnosis",
+      "raw_sha256": "c8efef7a2dfd378f01175ffa869df81aa049ca74577b87694caecac6f8dc03d1",
+      "projection": "selected authored engineering fields; full original private paths/maps omitted",
+      "redactions": []
+    },
+    {
+      "path": "verification/final-startup-amendment/archive-selected.json",
+      "original_role": "archive_receipt",
+      "raw_sha256": "87f9049af864f58d076ec03b922daf0ce20af18e787aade931890e624afc2c4f",
+      "projection": "selected authored engineering fields; full original private paths/maps omitted",
+      "redactions": []
+    },
+    {
+      "path": "verification/final-startup-amendment/independent-closure-selected.json",
+      "original_role": "independent_closure",
+      "raw_sha256": "aa989a89655e60c8840c5cec8d4fe45c4f7227118012b34d5fc4a7301fe2d18a",
+      "projection": "selected authored engineering fields; full original private paths/maps omitted",
+      "redactions": []
+    }
+  ],
+  "acceptance_table_replacement": "NONE",
+  "all24_assessment_retagging": "NONE",
+  "later_head_verification_publication_hosted_checks": "NOT RUN"
+}

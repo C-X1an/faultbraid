@@ -1,0 +1,107 @@
+python3 scripts/bootstrap.py
+instrumented raft already prepared: .local-runs/raft
+{"status": "PASS", "go": "go version go1.27.2 windows/amd64", "release_pin": "1.27.2", "release_toolchain_matches": true, "note": "A seed source-compatibility run is not supported-toolchain release verification."}
+python3 scripts/check_integrity.py
+{"status": "PASS", "criteria": 24, "acceptance_sha256": "db3c2f565c170a2511e8abd28aad13cf62f3d1c557c7dc2d8f311a007310d9e6", "scope": "lock and narrow static hazards; not proof that all tests are adequate"}
+python3 scripts/build.py
+{"status": "PASS", "source_tree_sha256": "fc6bd5c1f4969d0cd3ebd588dd83049b3a131ffcbacd698315e21f01497cdeeb", "binary_sha256": "8f5532192be0e3f34552e0e023cccd45c084b43e26195092f1953013124f7f5d"}
+go vet ./...
+python3 -m compileall -q scripts
+go test -run '^$' ./...
+ok  	github.com/C-X1an/faultbraid/cmd/faultbraid	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/buildinfo	(cached) [no tests to run]
+?   	github.com/C-X1an/faultbraid/internal/campaign	[no test files]
+ok  	github.com/C-X1an/faultbraid/internal/history	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/labreal	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/raftadapter	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/report	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/scenario	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/sim	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/strictjson	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/target	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/tests/acceptance_locked	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/tests/differential	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/tests/integration	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/tests/security	(cached) [no tests to run]
+ok  	github.com/C-X1an/faultbraid/tests/system	(cached) [no tests to run]
+go test -p 1 -count=1 ./...
+ok  	github.com/C-X1an/faultbraid/cmd/faultbraid	3.939s
+ok  	github.com/C-X1an/faultbraid/internal/buildinfo	7.401s
+?   	github.com/C-X1an/faultbraid/internal/campaign	[no test files]
+ok  	github.com/C-X1an/faultbraid/internal/history	2.366s
+ok  	github.com/C-X1an/faultbraid/internal/labreal	8.019s
+ok  	github.com/C-X1an/faultbraid/internal/raftadapter	1.736s
+ok  	github.com/C-X1an/faultbraid/internal/report	3.201s
+ok  	github.com/C-X1an/faultbraid/internal/scenario	2.630s
+ok  	github.com/C-X1an/faultbraid/internal/sim	2.091s
+ok  	github.com/C-X1an/faultbraid/internal/strictjson	1.797s
+ok  	github.com/C-X1an/faultbraid/internal/target	3.980s
+ok  	github.com/C-X1an/faultbraid/tests/acceptance_locked	1.825s
+ok  	github.com/C-X1an/faultbraid/tests/differential	3.946s
+ok  	github.com/C-X1an/faultbraid/tests/integration	15.665s
+ok  	github.com/C-X1an/faultbraid/tests/security	4.172s
+ok  	github.com/C-X1an/faultbraid/tests/system	36.484s
+python3 -m unittest discover -s scripts -p 'test_*.py' -v
+{"fixture": "assignment_failure", "suspended_pid": 14016, "process_alive_after_cleanup": false, "command_executed": false, "run_status": "BLOCKED", "run_reason": "containment_error"}
+{"fixture": "descendant_cleanup", "parent_exits": true, "child_pid": 48060, "child_started": true, "child_alive_after_cleanup": false, "run_status": "PASS", "run_reason": "completed"}
+{"fixture": "descendant_cleanup", "parent_exits": false, "child_pid": 34628, "child_started": true, "child_alive_after_cleanup": false, "run_status": "FAIL", "run_reason": "timeout"}
+prepared instrumented raft v0.0.0 at .local-runs/raft
+instrumented raft already prepared: .local-runs/raft
+# Build/startup warmup runs TestMain/init and selects no named tests.
+go test -race -run '^$' ./...
+ok  	github.com/C-X1an/faultbraid/cmd/faultbraid	7.402s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/buildinfo	2.983s [no tests to run]
+?   	github.com/C-X1an/faultbraid/internal/campaign	[no test files]
+ok  	github.com/C-X1an/faultbraid/internal/history	3.136s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/labreal	7.826s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/raftadapter	2.533s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/report	3.850s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/scenario	3.717s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/sim	3.086s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/strictjson	2.851s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/internal/target	3.803s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/tests/acceptance_locked	2.851s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/tests/differential	3.834s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/tests/integration	3.718s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/tests/security	3.834s [no tests to run]
+ok  	github.com/C-X1an/faultbraid/tests/system	7.822s [no tests to run]
+# Every test still runs uncached in the serial race suite.
+go test -race -p 1 -count=1 ./...
+ok  	github.com/C-X1an/faultbraid/cmd/faultbraid	5.979s
+ok  	github.com/C-X1an/faultbraid/internal/buildinfo	8.292s
+?   	github.com/C-X1an/faultbraid/internal/campaign	[no test files]
+ok  	github.com/C-X1an/faultbraid/internal/history	2.898s
+ok  	github.com/C-X1an/faultbraid/internal/labreal	7.577s
+ok  	github.com/C-X1an/faultbraid/internal/raftadapter	2.388s
+ok  	github.com/C-X1an/faultbraid/internal/report	5.013s
+ok  	github.com/C-X1an/faultbraid/internal/scenario	3.725s
+ok  	github.com/C-X1an/faultbraid/internal/sim	2.900s
+ok  	github.com/C-X1an/faultbraid/internal/strictjson	2.740s
+ok  	github.com/C-X1an/faultbraid/internal/target	5.228s
+ok  	github.com/C-X1an/faultbraid/tests/acceptance_locked	2.620s
+ok  	github.com/C-X1an/faultbraid/tests/differential	8.637s
+ok  	github.com/C-X1an/faultbraid/tests/integration	16.473s
+ok  	github.com/C-X1an/faultbraid/tests/security	6.125s
+ok  	github.com/C-X1an/faultbraid/tests/system	66.049s
+python3 scripts/public_audit.py
+{"schema_version": 1, "status": "PASS", "files": 1162, "inventory_sha256": "ec41ca561b22c98751535bea61f0c67c0ae3e81957a747271ae5e456bd2738d7", "history": {"commits": 51, "blobs": 1043, "tags": 0, "ref_objects": 6, "index_entries": 1162, "complete": true}, "errors": [], "scope": "exact reviewed working/index files, complete reachable refs and exact ZIP bytes; heuristic detection is not exhaustive; manual content review required"}
+Implemented source checks passed. Full release evidence and independent review are a separate gate.
+python3 scripts/full_gate.py
+Current inspectable artifact prerequisites present; live full verification must still execute.
+python3 scripts/supported_toolchain.py
+go version go1.27.2 windows/amd64
+make system differential campaign real-lab security-online
+make[1]: Entering directory '[recorded-working-root]'
+go test -count=1 ./tests/system
+ok  	github.com/C-X1an/faultbraid/tests/system	35.266s
+go test -count=1 ./tests/differential
+ok  	github.com/C-X1an/faultbraid/tests/differential	3.048s
+python3 scripts/build.py
+{"status": "PASS", "source_tree_sha256": "fc6bd5c1f4969d0cd3ebd588dd83049b3a131ffcbacd698315e21f01497cdeeb", "binary_sha256": "8f5532192be0e3f34552e0e023cccd45c084b43e26195092f1953013124f7f5d"}
+python3 scripts/campaign.py
+{"status": "PASS", "count": 1000, "attempted": 1000, "valid": 1000, "invalid": 0, "inconclusive": 0, "errors": 0, "selected_failures": 1, "replay_attempts": 10, "duration_seconds": 13.079000000027008, "artifact": ".local-runs\\campaign-20261017T152443-95bdea\\summary.json", "problems": []}
+python3 scripts/real_lab.py
+{"schema_version": 1, "status": "PASS", "binary_sha256": "8f5532192be0e3f34552e0e023cccd45c084b43e26195092f1953013124f7f5d", "runs": [{"concurrency": 1, "run_id": "20261017T152515-11c538af2f", "status": "PASS", "native_sha256": "0380dc4e5b9c3ac05a15d4ed8df7d0af6c852c064c9f8f084dccf9b6a78b465c", "native_bytes": 23891, "artifact": ".local-runs/real-lab-20261017T152514-54c5e2/concurrency-1/native.json", "duration_milliseconds": 6068, "observed_peak_request_concurrency": 1, "successful_http_message_posts": 854, "journal_bytes": 2328, "actual_distinct_pids": 4, "cleanup_complete": true}, {"concurrency": 4, "run_id": "20261017T152523-931599c6c0", "status": "PASS", "native_sha256": "f7f3ae5e5e89975be3fb423b4c0c8a1fa62346cec56a4363e7ddd0a5c3dd3567", "native_bytes": 24355, "artifact": ".local-runs/real-lab-20261017T152514-54c5e2/concurrency-4/native.json", "duration_milliseconds": 6042, "observed_peak_request_concurrency": 4, "successful_http_message_posts": 877, "journal_bytes": 3651, "actual_distinct_pids": 4, "cleanup_complete": true}, {"concurrency": 16, "run_id": "20261017T152530-048161ad49", "status": "PASS", "native_sha256": "4d67cf9733d6219f39cb3bfbc25c60f353beb560a902461dd70f00d5f2580ae1", "native_bytes": 24338, "artifact": ".local-runs/real-lab-20261017T152514-54c5e2/concurrency-16/native.json", "duration_milliseconds": 6091, "observed_peak_request_concurrency": 15, "successful_http_message_posts": 888, "journal_bytes": 4029, "actual_distinct_pids": 4, "cleanup_complete": true}], "problems": [], "scope": "identified production executable; native loopback/File.Sync conformance; no OS replay or physical power-loss guarantee"}
+python3 scripts/security_online.py
+go version go1.27.2 windows/amd64
+make[1]: Leaving directory '[recorded-working-root]'
