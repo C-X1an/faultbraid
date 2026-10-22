@@ -11,6 +11,8 @@ API_SPEC.md
 ARCHITECTURE.md
 assets/faultbraid-hero-dark.svg
 assets/faultbraid-hero-light.svg
+assets/faultbraid-reduction-dark.svg
+assets/faultbraid-reduction-light.svg
 BENCHMARKS.md
 CHANGELOG.md
 CLAIMS_EVIDENCE.md
@@ -29,6 +31,7 @@ docs/adr/009-portable-source-identity.md
 docs/codec/raft-trace-v1.golden.json
 docs/demo/DEMO.md
 docs/demo/invalid-history.html
+docs/README.md
 docs/trace-codec.md
 EVALUATION.md
 examples/disk-trace.json

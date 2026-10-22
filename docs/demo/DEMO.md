@@ -1,6 +1,18 @@
 # Reviewer demonstration
 
+[← Documentation hub](../README.md) · [Project overview](../../README.md) · [Acceptance evidence](../../VERIFICATION_REPORT.md)
+
 This demonstration uses synthetic inputs and executes the built-in instrumented Raft target. It keeps the separate history/disk-model kernel visibly distinct.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="../../assets/faultbraid-reduction-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="../../assets/faultbraid-reduction-light.svg">
+    <img src="../../assets/faultbraid-reduction-dark.svg" width="1200" alt="Historical A7 unsafe-read example: executable reduction shrinks an eleven-action scenario to five actions, preserving an INVALID checker result.">
+  </picture>
+</p>
+
+The graphic summarizes one **historical A7** unsafe-read reduction: 11 scenario actions became five after 24 candidate checks. It is an illustrative diagram of a measured fixture, not a screenshot, global minimum, or claim of an upstream vulnerability. [Inspect the original record](../../verification/release-a7/demo/reduced/reduction.json).
 
 ## Generate the artifacts
 

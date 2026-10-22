@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://github.com/C-X1an/faultbraid/actions/workflows/kernel.yml"><img alt="Latest main kernel verification" src="https://github.com/C-X1an/faultbraid/actions/workflows/kernel.yml/badge.svg?branch=main&amp;event=push"></a>
-  <a href="https://github.com/C-X1an/faultbraid/actions/workflows/codeql.yml"><img alt="Latest main CodeQL scan conclusion" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2FC-X1an%2Ffaultbraid%2Factions%2Fworkflows%2Fcodeql.yml%2Fruns%3Fbranch%3Dmain%26event%3Dpush%26per_page%3D1&amp;query=%24.workflow_runs%5B0%5D.conclusion&amp;label=CodeQL%20analysis&amp;prefix=scan%3A%20&amp;style=flat-square&amp;color=526784"></a>
+  <a href="https://github.com/C-X1an/faultbraid/actions/workflows/codeql.yml"><img alt="Latest main CodeQL workflow status" src="https://github.com/C-X1an/faultbraid/actions/workflows/codeql.yml/badge.svg?branch=main&amp;event=push"></a>
   <a href=".go-version"><img alt="Go 1.27.2" src="https://img.shields.io/badge/Go-1.27.2-00ADD8?style=flat-square&amp;logo=go&amp;logoColor=white"></a>
   <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-526784?style=flat-square"></a>
   <img alt="Project maturity: experimental" src="https://img.shields.io/badge/status-experimental-D88363?style=flat-square">
@@ -36,6 +36,8 @@
 Distributed failures are hard to study when the decisive message, crash or delayed response cannot be reproduced. A passing test can hide an untested interleaving; an error can hide an operation that **actually took effect**.
 
 **FaultBraid turns a bounded failure into something you can inspect and rerun.** It controls virtual time, network delivery, crash points and election entropy; collects operation histories; checks whether they admit a legal sequential explanation; and reduces a failing **executable scenario**, not merely a screenshot or log excerpt.
+
+**Choose your path:** [Run the five-minute demo](docs/demo/DEMO.md) · [Read the architecture](ARCHITECTURE.md) · [Audit the evidence](CLAIMS_EVIDENCE.md).
 
 <table>
   <tr>
@@ -68,6 +70,16 @@ No cloud account, API key, database, hosted service or administrator privilege i
 
 **A stale read, made reproducible.** The deliberately defective `unsafe-local-read` variant bypasses quorum confirmation, allowing a minority-side read to return stale state after a write has been acknowledged by a majority. This is a **purpose-built diagnostic defect, not a reported etcd/raft vulnerability**.
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/faultbraid-reduction-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/faultbraid-reduction-light.svg">
+    <img src="assets/faultbraid-reduction-dark.svg" width="1200" alt="Illustration of one recorded A7 unsafe-read scenario. The original eleven actions are reduced to five executable actions: three directed partitions, one write of nine to node three, and an unsafe read from node two. The result remains INVALID after twenty-four candidate checks.">
+  </picture>
+</p>
+
+<p align="center"><sub>Illustrated from <a href="verification/release-a7/demo/reduced/reduction.json">the source-bound A7 reduction record</a>: 11 actions → 5; 24 candidate checks. Deletion one-minimal is <em>not</em> a global-minimum claim.</sub></p>
+
 | Experiment | What you will observe |
 |:--|:--|
 | **Safe Raft scenario** | A `VALID` history for the configured test. |
@@ -96,13 +108,13 @@ On Windows PowerShell, replace `./bin/faultbraid` with `.\bin\faultbraid.exe`. K
 
 ### A recorded, reproducible result
 
-The following measurements come from the identified **A6 source on Go 1.27.2 / Windows**, not a claim about all executions or the current checkout. The full inputs, command records and limitations are public in the [verification report](VERIFICATION_REPORT.md).
+The figures below refer to **recorded finite experiments**, not production usage or an assertion about every possible schedule. The latest retained A7 local execution packet (October 16, 2026) includes a [completed pipeline](verification/release-a7/pipeline.json), [24 source-bound acceptance results](verification/acceptance_results.json), and a [separate A7 assessment](verification/reviews/final-a7-assessment.json). They are historical evidence for their recorded source, **not a new run on this commit**.
 
-| **1,000 / 1,000** | **10 / 10** | **11 → 5** | **24 / 24** |
+| **1,000** | **10 ×** | **11 → 5** | **24 / 24** |
 |:--:|:--:|:--:|:--:|
-| Recorded finite campaign seeds accounted for as `VALID` | Selected unsafe-trace replays matched | Actions in the recorded reduced unsafe scenario | Locked criteria covered by the original separate assessment |
+| Configured finite campaign seeds with [retained outcomes](verification/release-a7/campaign-histories.jsonl) | Replays of the selected deliberately unsafe trace | Actions before and after executable [A7 reduction](verification/release-a7/demo/reduced/reduction.json) | Locked criteria in the [recorded A7 independent assessment](verification/reviews/final-a7-assessment.json) |
 
-The 1,000-seed campaign covers **finite configured schedules**. The reducer reports **deletion one-minimality within its search domain**, not a global minimum. Saved evidence is bound to its original source; use `make demo` to create replayable traces for this checkout.
+**Read the fine print:** tested schedules are finite; the reducer is deletion one-minimal only in its defined domain; a valid result is not universal correctness. Older A6 results remain available in [the verification report](VERIFICATION_REPORT.md). Generate fresh same-build traces with `make demo`.
 
 ## How FaultBraid works
 
@@ -144,6 +156,8 @@ A timeout can leave an operation **pending**: a possibly admitted write may have
 
 ## Evidence, not just claims
 
+**Badges show live GitHub workflow status for the selected branch/event; they are not substitutes for the separately gated full acceptance workflow.**
+
 FaultBraid’s release records distinguish what actually ran from targets, historical receipts and unmeasured properties. Start with the **[verification report](VERIFICATION_REPORT.md)** and **[claims-to-evidence map](CLAIMS_EVIDENCE.md)**.
 
 ~~~bash
@@ -179,6 +193,8 @@ The native lab measures the real built child executable at configured request-co
 Deterministic simulation cannot prove that the OS or real network will follow the same schedule. Benchmarks are synthetic measurements with environmental limitations; no production traffic, end-user scale or physical power-loss guarantee is claimed. See the [threat model](THREAT_MODEL.md), [security policy](SECURITY.md) and [limitations](LIMITATIONS.md).
 
 ## Documentation
+
+**[Browse the documentation hub →](docs/README.md)** for an ordered reading path from the first demo to the underlying source and evidence.
 
 | **Start here** | **Go deeper** |
 |:--|:--|
