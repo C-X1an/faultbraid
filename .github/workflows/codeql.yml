@@ -21,7 +21,7 @@ jobs:
         with:
           go-version-file: .go-version
           cache: false
-      - uses: github/codeql-action/init@9f759ee644a3e7c15c1390abf49868036c00067b
+      - uses: github/codeql-action/init@24c54180a607b1449ed407dd24f251e4e9147c8d
         with:
           languages: go
           build-mode: manual
