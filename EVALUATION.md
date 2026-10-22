@@ -1,4 +1,6 @@
 # Evaluation and evidence
+
+[← Field guide](docs/README.md) · [Overview](README.md) · [Try the demo](docs/demo/DEMO.md) · [Verification](VERIFICATION_REPORT.md)
 A passing seed suite is not full-project acceptance. Canonical criteria live in ACCEPTANCE_SPEC.md. Product verdicts and test statuses are different: a correct test may PASS because the checker returned INVALID for a known-bad history.
 
 ## Layers

@@ -1,5 +1,11 @@
 # Explicit limitations
 
+[← Field guide](docs/README.md) · [Overview](README.md) · [Try the demo](docs/demo/DEMO.md) · [Verification](VERIFICATION_REPORT.md)
+
+> [!NOTE]
+> This record preserves intermediate engineering diagnoses and the scope of each historical test. Some sections describe gates that were **pending when recorded**; consult the [dated A7 acceptance snapshot](VERIFICATION_REPORT.md) for later source-bound results. Supported functionality and non-goals remain governed by the actual implementation and tests.
+
+
 Frozen repaired runtime core: commit `05aa946f42939a2d11773c285632eae1327fee4c`, complete source SHA256 `44ce91f43df84d9f41d17498be35b70069695b9b497cdbf8592f29c976adfa87` (655 files, 146 execution inputs). This measured core includes the exact independently scoped candidate-03 collector repair, separately reviewed source-scan/additive-test repair and exact reviewed race warmup, followed by the independently reviewed equivalent Go traversal and additive lifecycle cleanup. The exact A12 transition adds explicit native acknowledgment dependencies, attempt filters, terminal completion and the CLI production plan; separate current source review is required by this helper. Later prose/evidence installation changes the complete tree identity and must preserve the frozen execution-input map. Historical A6/C5 PASS results do not cover the repaired source.
 
 Full ordinary and race test suites explicitly use `-p 1` for Go package execution. Native request concurrency 1/4/16, locked assertions, the native 18 s context and 25 ms tick, and the replay 300 ms context are unchanged. New source-bound evidence is designated for [the local pipeline](verification/release-a7/pipeline.json), [clean reproduction](verification/release-a7/clean-summary.json) and [acceptance results](verification/acceptance_results.json). These links are prospective until the corresponding actual records are completed and installed; this four-document correction credits no new PASS. A current separate assessment of all 24 criteria, final full verification, exact public inventory/history/privacy audit, publication, repaired-head hosted CI and truthful badges remain separate requirements.

@@ -1,5 +1,7 @@
 # CLI, history and trace contracts
 
+[← Field guide](docs/README.md) · [Overview](README.md) · [Try the demo](docs/demo/DEMO.md) · [Verification](VERIFICATION_REPORT.md)
+
 Version 1 preserves the locked behavior in [ACCEPTANCE_SPEC.md](ACCEPTANCE_SPEC.md). Product verdicts VALID, INVALID and INCONCLUSIVE are distinct from command/evidence statuses such as PASS, FAIL and NOT RUN.
 
 ## Input, output and exit codes

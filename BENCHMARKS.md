@@ -1,5 +1,11 @@
 # Benchmark methodology and measured results
 
+[← Field guide](docs/README.md) · [Overview](README.md) · [Try the demo](docs/demo/DEMO.md) · [Verification](VERIFICATION_REPORT.md)
+
+> [!NOTE]
+> The detailed numbers below are the **historical A6 measurements** on their recorded Windows/Go environment. A later [source-bound A7 benchmark summary](verification/release-a7/benchmark-summary.json) is retained separately. Neither dataset represents production request throughput, native latency percentiles or measured user scale.
+
+
 A separate warmup followed by seven measured repetitions per group produced91 samples across13 groups;100ms requested intervals and CPU4. [20261012T174444-800c31eb52](verification/curated/20261012T174444-800c31eb52/run.json) (26.806s); warmup [20261012T174402-281571dc69](verification/curated/20261012T174402-281571dc69/run.json) (8.338s). Executed commit `65d10e1c83950f97d0857b3145ba9f91fe848e2f`, complete source SHA256 `89a9af213b2c131854762a0e312108fbd90bba07bee9754a3a611327f4a60f39` (1512 files). Later prose/evidence curation preserves original identities; the gate compares every execution input.
 
 Intel Core i9-13900H,20 logical CPUs,34,048,978,944 host bytes; Windows11 amd64 and Go1.27.2. Host totals are not allocation limits. No other FaultBraid heavy work was scheduled during the measured run; the shared desktop was not an exclusive benchmark machine. Calibration, setup and GC may affect samples. No fastest-run selection or cross-host speedup claim.

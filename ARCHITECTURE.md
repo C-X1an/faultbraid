@@ -1,5 +1,7 @@
 # Architecture
 
+[← Field guide](docs/README.md) · [Overview](README.md) · [Try the demo](docs/demo/DEMO.md) · [Verification](VERIFICATION_REPORT.md)
+
 FaultBraid implements one fixed-three-voter integer-register target, one bounded checker and one offline inspector. It uses instrumented etcd/raft v3.7.0 for consensus and owns the surrounding entropy, storage, transport, collection and evidence boundaries. Implementation is present; final release approval remains separately gated by source-matched verification and independent review.
 
 ## Components and ownership

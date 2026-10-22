@@ -1,4 +1,6 @@
 # Threat model
+
+[← Field guide](docs/README.md) · [Overview](README.md) · [Try the demo](docs/demo/DEMO.md) · [Verification](VERIFICATION_REPORT.md)
 Method: STRIDE at explicit trust boundaries, plus resource/evidence abuse. This document is a design, not evidence that the system is secure.
 
 Assets: correctness of verdicts, source/trace provenance, host files, CI tokens, private planning material, reviewer trust and machine resources. Actors: trusted maintainer, authorized engineer, untrusted input author, fork PR author, compromised dependency and local privileged attacker. Core code and OS are trusted; imported bytes are not. There is no multi-tenant service or live model in the core.
