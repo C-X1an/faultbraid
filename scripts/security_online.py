@@ -11,4 +11,9 @@ metadata=json.loads(Path(r['stdout']['path']).read_text());version=metadata['Ver
 if not version.startswith('v') or metadata.get('Path')!='golang.org/x/vuln':sys.exit('unexpected tool module metadata')
 (out/'resolved-tool.json').write_text(json.dumps(metadata,indent=2)+'\n')
 r=execute(['go','run','golang.org/x/vuln/cmd/govulncheck@'+version,'./...'],root,out,'govulncheck',timeout=600)
-sys.exit(0 if r['status']=='PASS' else 1)
+if r['status']!='PASS':
+ print(f"govulncheck {r['status']} (reason={r['reason']}, exit_code={r['exit_code']})",file=sys.stderr)
+ for stream in ('stdout','stderr'):
+  detail=Path(r[stream]['path']).read_text(encoding='utf-8',errors='replace')
+  if detail:print(f'--- govulncheck {stream} (last 8192 characters) ---\n'+detail[-8192:],file=sys.stderr)
+ sys.exit(1)

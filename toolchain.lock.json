@@ -1,13 +1,16 @@
 {
-  "recommended_release_toolchain": "go1.27.2",
-  "release_date": "2026-10-08",
-  "verified_from": "https://go.dev/doc/devel/release#go1.27.2",
-  "research_as_of": "2026-10-10",
+  "recommended_release_toolchain": "go1.27.3",
+  "release_date": "2026-10-19",
+  "verified_from": "https://go.dev/doc/devel/release#go1.27.3",
+  "research_as_of": "2026-11-03",
   "source_minimum": "go1.26.0",
   "research_runtime_observed": "go1.23.2 linux/amd64",
   "supported_runtime_executed_in_research_container": false,
   "execution_host_observed": "go1.27.2 windows/amd64",
-  "archive_sha256": "1314008898bd40df77af4b014f777f08873dbdfbcd3d92308728ee03304fe04f",
-  "archive_url": "https://go.dev/dl/go1.27.2.windows-amd64.zip",
-  "policy": "Release/CI pin remains1.27.2. The resolved Raft and Windows API modules require Go1.26. Historical kernel evidence remains Go1.23.2. Verify all full checks before claiming release support."
+  "archive_sha256": "f26081f438319757f8a1b46d7d0b2c5ec7583d4038e485e0aa725cfde7885fff",
+  "archive_url": "https://go.dev/dl/go1.27.3.windows-amd64.zip",
+  "archive_sha256_source": "https://go.dev/dl/?mode=json&include=all",
+  "archive_locally_downloaded_and_validated": false,
+  "security_scan_ci": "https://github.com/C-X1an/faultbraid/actions/runs/41653980738",
+  "policy": "Release/CI pin is Go1.27.3 after fixing the GO-2026-6809 standard-library finding. Windows/amd64 checksum is from official Go download metadata; no local Go1.27.3 Windows execution is claimed. Historical Go1.27.2 Windows and Go1.23.2 Linux evidence retains its original identity. Verify all full checks before claiming release support."
 }

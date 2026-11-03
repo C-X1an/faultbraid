@@ -4,7 +4,7 @@ FaultBraid runs as a local CLI. Its only network service is the explicitly invok
 
 ## Setup and execution
 
-Install the pinned Go 1.27.2 toolchain, Python 3.11+, Git, Make and GCC on an authorized development host. On Windows, Make uses `sh.exe`. `make bootstrap` checks tools and reproducibly prepares the locked instrumented Raft module; it does not silently certify a mismatched Go version as a release toolchain.
+Install the pinned Go 1.27.3 toolchain, Python 3.11+, Git, Make and GCC on an authorized development host. On Windows, Make uses `sh.exe`. `make bootstrap` checks tools and reproducibly prepares the locked instrumented Raft module; it does not silently certify a mismatched Go version as a release toolchain.
 
 ~~~sh
 make bootstrap

@@ -9,7 +9,7 @@
 <p align="center">
   <a href="https://github.com/C-X1an/faultbraid/actions/workflows/kernel.yml"><img alt="Latest main kernel verification" src="https://github.com/C-X1an/faultbraid/actions/workflows/kernel.yml/badge.svg?branch=main&amp;event=push"></a>
   <a href="https://github.com/C-X1an/faultbraid/actions/workflows/codeql.yml"><img alt="Latest main CodeQL workflow status" src="https://github.com/C-X1an/faultbraid/actions/workflows/codeql.yml/badge.svg?branch=main&amp;event=push"></a>
-  <a href=".go-version"><img alt="Go 1.27.2" src="https://img.shields.io/badge/Go-1.27.2-00ADD8?style=flat-square&amp;logo=go&amp;logoColor=white"></a>
+  <a href=".go-version"><img alt="Go 1.27.3" src="https://img.shields.io/badge/Go-1.27.3-00ADD8?style=flat-square&amp;logo=go&amp;logoColor=white"></a>
   <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-526784?style=flat-square"></a>
   <img alt="Project maturity: experimental" src="https://img.shields.io/badge/status-experimental-D88363?style=flat-square">
 </p>
@@ -50,7 +50,7 @@ Distributed failures are hard to study when the decisive message, crash or delay
 
 ## Quickstart
 
-**You need:** Go **1.27.2** (pinned in [`.go-version`](.go-version)), Python 3.11+, Git, Make and GCC for race detection. Linux and Windows were exercised for the recorded release; use Linux or WSL2 for the simplest setup. Windows Make requires `sh.exe` on `PATH`.
+**You need:** Go **1.27.3** (pinned in [`.go-version`](.go-version)), Python 3.11+, Git, Make and GCC for race detection. Historical release evidence includes Linux and Windows; use Linux or WSL2 for the simplest setup. Windows Make requires `sh.exe` on `PATH`.
 
 ~~~bash
 git clone https://github.com/C-X1an/faultbraid.git

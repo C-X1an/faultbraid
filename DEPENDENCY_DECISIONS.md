@@ -21,3 +21,7 @@ Official downloads and checksum validation completed for Go1.27.2 Windows/amd64.
 
 ## Final support-resolution update (2026-10-10)
 Official Go release-history/rebuild search results resolve Go 1.27.2, released 2026-10-08 (S40). The supported verification/CI pin is 1.27.2. Earlier cached endpoint observations in this document are historical and superseded for version selection. The actual research container remains Go 1.23.2; no supported-toolchain execution is claimed. Resolve raft/Porcupine versions and source digests before adding dependencies; do not invent go.sum entries.
+
+## Security patch update (2026-11-03)
+
+The preceding 2026-10-10 toolchain decision is historical. The hosted `govulncheck` scan on Go1.27.2 reported GO-2026-6809 in the standard-library `crypto/x509` package; the advisory identifies Go1.27.3 as fixed. The current release/CI pin is now Go1.27.3. The isolated hosted `make bootstrap` and `make security-online` run succeeded with that pin; this establishes a targeted scan result, not new full-release or Windows-runtime verification. No dependency module versions or locked acceptance criteria changed.
